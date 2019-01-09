@@ -32,7 +32,7 @@ func initJaeger(service string) (opentracing.Tracer, io.Closer) {
 		cfg = &config.Configuration{
 			Sampler: &config.SamplerConfig{
 				Type:  "probabilistic",
-				Param: 0.4,
+				Param: 0.2,
 			},
 			Reporter: &config.ReporterConfig{
 				LogSpans: false,

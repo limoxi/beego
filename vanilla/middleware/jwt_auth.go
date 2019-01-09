@@ -17,6 +17,8 @@ import (
 	"errors"
 	"github.com/opentracing/opentracing-go"
 	"github.com/kfchen81/beego"
+	"github.com/opentracing/opentracing-go/ext"
+	"github.com/kfchen81/beego/orm"
 )
 
 var SALT string = "030e2cf548cf9da683e340371d1a74ee"
@@ -111,6 +113,22 @@ var JWTAuthFilter = func(ctx *context.Context) {
 		}
 		
 		bCtx := gBContextFactory.NewContext(go_context.Background(), ctx.Request, userId, jwtToken, js) //bCtx is for "business context"
+		
+		//enhance business context
+		{
+			//add tracing span
+			spanCtx, _ := vanilla.Tracer.Extract(opentracing.HTTPHeaders, opentracing.HTTPHeadersCarrier(ctx.Request.Header))
+			uri := ctx.Request.URL.Path
+			operationName := fmt.Sprintf("%s %s", ctx.Request.Method, uri)
+			span := vanilla.Tracer.StartSpan(operationName, ext.RPCServerOption(spanCtx))
+			bCtx = opentracing.ContextWithSpan(bCtx, span)
+			
+			//add orm
+			bCtx = go_context.WithValue(bCtx, "jwt", jwtToken)
+			o := orm.NewOrmWithSpan(span)
+			bCtx = go_context.WithValue(bCtx, "orm", o)
+		}
+		
 		ctx.Input.SetData("bContext", bCtx)
 		ctx.Input.SetData("span", opentracing.SpanFromContext(bCtx))
 	} else {

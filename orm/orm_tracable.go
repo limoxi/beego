@@ -15,6 +15,7 @@
 package orm
 
 import (
+	"context"
 	"database/sql"
 	"fmt"
 	"strings"
@@ -131,6 +132,23 @@ func (d *dbQueryTracable) Begin() (*sql.Tx, error) {
 	tx, err := d.db.(txer).Begin()
 	if Debug {
 		debugLogQueies(d.alias, "[orm_tracable] db.Begin", "START TRANSACTION", a, err)
+	}
+	return tx, err
+}
+
+func (d *dbQueryTracable) BeginTx(ctx context.Context, opts *sql.TxOptions) (*sql.Tx, error) {
+	span := d.CreateSpan("BEGIN")
+	if span != nil {
+		defer span.Finish()
+	}
+	
+	var a time.Time
+	if Debug {
+		a = time.Now()
+	}
+	tx, err := d.db.(txer).BeginTx(ctx, opts)
+	if Debug {
+		debugLogQueies(d.alias, "[orm_tracable] db.BeginTx", "START TRANSACTION", a, err)
 	}
 	return tx, err
 }
