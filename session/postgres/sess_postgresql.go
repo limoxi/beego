@@ -38,8 +38,8 @@
 //
 // Usage:
 // import(
-//   _ "github.com/astaxie/beego/session/postgresql"
-//   "github.com/astaxie/beego/session"
+//   _ "github.com/kfchen81/beego/session/postgresql"
+//   "github.com/kfchen81/beego/session"
 // )
 //
 //	func init() {
@@ -56,7 +56,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/astaxie/beego/session"
+	"github.com/kfchen81/beego/session"
 	// import postgresql Driver
 	_ "github.com/lib/pq"
 )

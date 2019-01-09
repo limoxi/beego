@@ -22,11 +22,11 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/astaxie/beego/config"
-	"github.com/astaxie/beego/context"
-	"github.com/astaxie/beego/logs"
-	"github.com/astaxie/beego/session"
-	"github.com/astaxie/beego/utils"
+	"github.com/kfchen81/beego/config"
+	"github.com/kfchen81/beego/context"
+	"github.com/kfchen81/beego/logs"
+	"github.com/kfchen81/beego/session"
+	"github.com/kfchen81/beego/utils"
 )
 
 // Config is the main struct for BConfig

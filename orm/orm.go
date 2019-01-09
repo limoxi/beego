@@ -21,7 +21,7 @@
 //
 //	import (
 //		"fmt"
-//		"github.com/astaxie/beego/orm"
+//		"github.com/kfchen81/beego/orm"
 //		_ "github.com/go-sql-driver/mysql" // import your used driver
 //	)
 //
@@ -61,6 +61,7 @@ import (
 	"os"
 	"reflect"
 	"time"
+	"github.com/opentracing/opentracing-go"
 )
 
 // DebugQueries define the debug
@@ -94,6 +95,7 @@ type orm struct {
 	alias *alias
 	db    dbQuerier
 	isTx  bool
+	span opentracing.Span
 }
 
 var _ Ormer = new(orm)
@@ -449,9 +451,11 @@ func (o *orm) Using(name string) error {
 	if al, ok := dataBaseCache.get(name); ok {
 		o.alias = al
 		if Debug {
-			o.db = newDbQueryLog(al, al.DB)
+			//o.db = newDbQueryLog(al, al.DB)
+			o.db = newDbQueryTracable(al, al.DB, o.span)
 		} else {
-			o.db = al.DB
+			//o.db = al.DB
+			o.db = newDbQueryTracable(al, al.DB, o.span)
 		}
 	} else {
 		return fmt.Errorf("<Ormer.Using> unknown db alias name `%s`", name)
@@ -475,9 +479,11 @@ func (o *orm) BeginTx(ctx context.Context, opts *sql.TxOptions) error {
 	}
 	o.isTx = true
 	if Debug {
-		o.db.(*dbQueryLog).SetDB(tx)
+		//o.db.(*dbQueryLog).SetDB(tx)
+		o.db.(*dbQueryTracable).SetDB(tx)
 	} else {
-		o.db = tx
+		//o.db = tx
+		o.db.(*dbQueryTracable).SetDB(tx)
 	}
 	return nil
 }
@@ -527,6 +533,18 @@ func NewOrm() Ormer {
 	BootStrap() // execute only once
 
 	o := new(orm)
+	err := o.Using("default")
+	if err != nil {
+		panic(err)
+	}
+	return o
+}
+
+func NewOrmWithSpan(span opentracing.Span) Ormer {
+	BootStrap() // execute only once
+	
+	o := new(orm)
+	o.span = span
 	err := o.Using("default")
 	if err != nil {
 		panic(err)
