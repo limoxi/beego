@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>flamingo Service Console - Golang</title>
+		<title>{{.ServiceName}}  Service Console - Golang</title>
 
 		<link type="text/css" rel="stylesheet" media="all" href="/static/lib/bootstrap-3.3.4/css/bootstrap.min.css">
 		<link type="text/css" rel="stylesheet" media="all" href="/static/css/base.css">
@@ -16,7 +16,7 @@
 		<nav class="navbar navbar-default" style="margin-bottom: 5px;">
 			<div class="container-fluid">
 				<div class="navbar-header">
-					<a class="navbar-brand" href="#">flamingo Service Console - Golang</a>
+					<a class="navbar-brand" href="#">{{.ServiceName}} Service Console - Golang</a>
 				</div>
 			</div><!-- /.container-fluid -->
 		</nav>

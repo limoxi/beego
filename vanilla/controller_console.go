@@ -47,6 +47,9 @@ func (c *ConsoleController) Get() {
 		resources = append(resources, resource)
 	}
 	
+	serviceName := beego.AppConfig.String("appname")
+	
+	c.Data["ServiceName"] = serviceName
 	c.Data["Resources"] = resources
 	c.TplName = "service_console.tpl"
 

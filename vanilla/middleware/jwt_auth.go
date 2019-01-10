@@ -28,16 +28,21 @@ var JWTAuthFilter = func(ctx *context.Context) {
 	uri := ctx.Request.RequestURI
 	
 	if uri == "/" {
-		bCtx := gBContextFactory.NewContext(go_context.Background(), ctx.Request, 0, "", nil) //bCtx is for "business context"
-		ctx.Input.SetData("bContext", bCtx)
+		if gBContextFactory != nil {
+			bCtx := gBContextFactory.NewContext(go_context.Background(), ctx.Request, 0, "", nil) //bCtx is for "business context"
+			ctx.Input.SetData("bContext", bCtx)
+		}
 		return
 	}
 	
 	for _, skipUrl := range SKIP_JWT_CHECK_URLS {
 		if strings.Contains(uri, skipUrl) {
 			beego.Debug("[jwt_middleware] skip jwt check", "url", skipUrl)
-			bCtx := gBContextFactory.NewContext(go_context.Background(), ctx.Request, 0, "", nil) //bCtx is for "business context"
-			ctx.Input.SetData("bContext", bCtx)
+			beego.Debug(gBContextFactory)
+			if gBContextFactory != nil {
+				bCtx := gBContextFactory.NewContext(go_context.Background(), ctx.Request, 0, "", nil) //bCtx is for "business context"
+				ctx.Input.SetData("bContext", bCtx)
+			}
 			return
 		}
 	}
