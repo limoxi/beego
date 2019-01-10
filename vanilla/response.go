@@ -1,7 +1,7 @@
 package vanilla
 
-type Map map[string]interface{}
-type FillOption map[string]bool
+type Map = map[string]interface{}
+type FillOption = map[string]bool
 
 type Response2 struct {
 	Code        int32                  `json:"code"`
