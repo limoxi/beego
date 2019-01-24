@@ -13,6 +13,7 @@ import (
 	"github.com/bitly/go-simplejson"
 	"github.com/opentracing/opentracing-go"
 	"encoding/json"
+	"gopkg.in/redsync.v1"
 )
 
 type RestResourceInterface interface {
@@ -24,6 +25,7 @@ type RestResourceInterface interface {
 	GetParameters() map[string][]string
 	GetBusinessContext() context.Context
 	SetBeegoController(ctx *beego_context.Context, data map[interface{}]interface{})
+	GetLockKey() string
 }
 
 /*RestResource 扩展beego.Controller, 作为rest中各个资源的基类
@@ -32,6 +34,7 @@ type RestResource struct {
 	beego.Controller
 
 	Name2JSON      map[string]map[string]interface{}
+	Name2RAWJSON      map[string]*simplejson.Json
 	Name2JSONArray map[string][]interface{}
 	Filters        map[string]interface{}
 }
@@ -63,6 +66,12 @@ func (r *RestResource) IsForDevTest() bool {
  */
 func (r *RestResource) DisableTx() bool {
 	return false
+}
+
+/*GetLockKey 获取锁的key
+ */
+func (r *RestResource) GetLockKey() string {
+	return ""
 }
 
 /*Parameters 获取需要检查的参数
@@ -103,6 +112,7 @@ func (r *RestResource) Prepare() {
 	
 	method := r.Ctx.Input.Method()
 	r.Name2JSON = make(map[string]map[string]interface{})
+	r.Name2RAWJSON = make(map[string]*simplejson.Json)
 	r.Name2JSONArray = make(map[string][]interface{})
 	r.Filters = make(map[string]interface{})
 
@@ -175,6 +185,17 @@ func (r *RestResource) Prepare() {
 								}
 							}
 						}
+					} else if paramType == "json-raw" {
+						value := r.GetString(param)
+						if value == "" && canMissParam == true {
+							goto set_orm
+						}
+						js, err := simplejson.NewJson([]byte(value))
+						if err != nil {
+							r.returnValidateParameterFailResponse(param, paramType, err.Error())
+						} else {
+							r.Name2RAWJSON[param] = js
+						}
 					} else if paramType == "json-array" {
 						value := r.GetString(param)
 						js, err := simplejson.NewJson([]byte(value))
@@ -211,6 +232,19 @@ set_orm:
 					}
 				} else {
 				}
+				
+				
+			}
+		}
+		
+		lockKey := app.GetLockKey()
+		beego.Warn(lockKey)
+		if lockKey == "" {
+			//do not lock
+		} else {
+			mutex := Lock.Lock(lockKey)
+			if mutex != nil {
+				r.Ctx.Input.Data()["sessionRestMutex"] = mutex
 			}
 		}
 	}
@@ -229,10 +263,20 @@ func (r *RestResource) Finish() {
 			}
 		}
 
+		//提交open tracing的span
 		span := opentracing.SpanFromContext(bCtx)
 		if span != nil {
 			beego.Debug("[Tracing] finish span in Controller.Finish")
 			span.(opentracing.Span).Finish()
+		}
+		
+		//释放锁
+		//注意：锁的释放必须在数据库的事务提交之后进行
+		if mutex, ok := r.Ctx.Input.Data()["sessionRestMutex"]; ok {
+			if mutex != nil {
+				beego.Debug("[lock] release resource lock @1")
+				mutex.(*redsync.Mutex).Unlock()
+			}
 		}
 	}
 }
@@ -274,6 +318,15 @@ func (r *RestResource) GetStringArray(key string) []string {
 //GetJSONArray 与key对应的返回json map数据
 func (r *RestResource) GetJSON(key string) map[string]interface{} {
 	if data, ok := r.Name2JSON[key]; ok {
+		return data
+	} else {
+		return nil
+	}
+}
+
+//GetRawJSON 与key对应的返回json数据
+func (r *RestResource) GetRawJSON(key string) *simplejson.Json {
+	if data, ok := r.Name2RAWJSON[key]; ok {
 		return data
 	} else {
 		return nil

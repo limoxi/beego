@@ -11,6 +11,7 @@ import (
 	"bytes"
 	"runtime"
 	"strings"
+	"gopkg.in/redsync.v1"
 )
 
 func RecoverPanic(ctx *context.Context) {
@@ -27,6 +28,14 @@ func RecoverPanic(ctx *context.Context) {
 		if span != nil {
 			beego.Info("[Tracing] finish span in recoverPanic")
 			span.(opentracing.Span).Finish()
+		}
+		
+		//释放锁
+		if mutex, ok := ctx.Input.Data()["sessionRestMutex"]; ok {
+			if mutex != nil {
+				beego.Debug("[lock] release resource lock @2")
+				mutex.(*redsync.Mutex).Unlock()
+			}
 		}
 		
 		if err == beego.ErrAbort {

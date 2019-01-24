@@ -51,7 +51,7 @@ func Router(r RestResourceInterface) {
 		itemSclie := items[:]
 		itemSlice := append(itemSclie, lastItem)
 		url := fmt.Sprintf("/%s/", strings.Join(itemSlice, "/"))
-		beego.Info(fmt.Sprintf("[resource]: %s -> %s", url, reflect.TypeOf(r)))
+		//beego.Info(fmt.Sprintf("[resource]: %s -> %s", url, reflect.TypeOf(r)))
 		beego.Router(url, r)
 	}
 }
