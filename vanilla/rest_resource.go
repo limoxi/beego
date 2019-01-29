@@ -65,7 +65,12 @@ func (r *RestResource) IsForDevTest() bool {
 /*DisableTx 是否关闭事务支持
  */
 func (r *RestResource) DisableTx() bool {
-	return false
+	method := r.Ctx.Input.Method()
+	if method == "GET" {
+		return true
+	} else {
+		return false
+	}
 }
 
 /*GetLockKey 获取锁的key

@@ -35,6 +35,7 @@ package vanilla
 
 import (
 	"github.com/kfchen81/beego"
+	"sort"
 )
 
 type ConsoleController struct {
@@ -46,6 +47,7 @@ func (c *ConsoleController) Get() {
 	for _, resource := range RESOURCES {
 		resources = append(resources, resource)
 	}
+	sort.Strings(resources)
 	
 	serviceName := beego.AppConfig.String("appname")
 	
