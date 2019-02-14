@@ -2,6 +2,7 @@ package vanilla
 
 import (
 	"github.com/kfchen81/beego/context"
+	"github.com/kfchen81/beego/metrics"
 	
 	"github.com/kfchen81/beego"
 	"github.com/kfchen81/beego/orm"
@@ -37,6 +38,8 @@ func RecoverPanic(ctx *context.Context) {
 				mutex.(*redsync.Mutex).Unlock()
 			}
 		}
+		
+		metrics.GetPanicCounter().Inc()
 		
 		if err == beego.ErrAbort {
 			return

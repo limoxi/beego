@@ -7,6 +7,7 @@ import (
 	"reflect"
 
 	"github.com/kfchen81/beego"
+	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"os"
 )
 
@@ -59,5 +60,6 @@ func Router(r RestResourceInterface) {
 func init() {
 	beego.Router("/console/console/", &ConsoleController{})
 	beego.Router("/op/health/", &OpHealthController{})
+	beego.Handler("/metrics", promhttp.Handler())
 	beego.Router("/", &IndexController{})
 }

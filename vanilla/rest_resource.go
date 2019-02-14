@@ -3,16 +3,18 @@ package vanilla
 import (
 	"context"
 	"fmt"
+	"github.com/kfchen81/beego/metrics"
+	"net/http"
 	"strconv"
 	"strings"
-
+	
 	"github.com/kfchen81/beego"
-
+	
+	"encoding/json"
+	"github.com/bitly/go-simplejson"
 	beego_context "github.com/kfchen81/beego/context"
 	"github.com/kfchen81/beego/orm"
-	"github.com/bitly/go-simplejson"
 	"github.com/opentracing/opentracing-go"
-	"encoding/json"
 	"gopkg.in/redsync.v1"
 )
 
@@ -37,6 +39,60 @@ type RestResource struct {
 	Name2RAWJSON      map[string]*simplejson.Json
 	Name2JSONArray map[string][]interface{}
 	Filters        map[string]interface{}
+}
+
+
+// Init generates default values of controller operations.
+func (c *RestResource) Init(ctx *beego_context.Context, controllerName, actionName string, app interface{}) {
+	c.Controller.Init(ctx, controllerName, actionName, app)
+}
+
+// Get adds a request function to handle GET request.
+func (c *RestResource) Get() {
+	http.Error(c.Ctx.ResponseWriter, "Method Not Allowed", 405)
+}
+
+// Post adds a request function to handle POST request.
+func (c *RestResource) Post() {
+	http.Error(c.Ctx.ResponseWriter, "Method Not Allowed", 405)
+}
+
+// Delete adds a request function to handle DELETE request.
+func (c *RestResource) Delete() {
+	http.Error(c.Ctx.ResponseWriter, "Method Not Allowed", 405)
+}
+
+// Put adds a request function to handle PUT request.
+func (c *RestResource) Put() {
+	http.Error(c.Ctx.ResponseWriter, "Method Not Allowed", 405)
+}
+
+// Head adds a request function to handle HEAD request.
+func (c *RestResource) Head() {
+	http.Error(c.Ctx.ResponseWriter, "Method Not Allowed", 405)
+}
+
+// Patch adds a request function to handle PATCH request.
+func (c *RestResource) Patch() {
+	http.Error(c.Ctx.ResponseWriter, "Method Not Allowed", 405)
+}
+
+// Options adds a request function to handle OPTIONS request.
+func (c *RestResource) Options() {
+	http.Error(c.Ctx.ResponseWriter, "Method Not Allowed", 405)
+}
+
+// HandlerFunc call function with the name
+func (c *RestResource) HandlerFunc(fnname string) bool {
+	return c.Controller.HandlerFunc(fnname)
+}
+
+// URLMapping register the internal RestResource router.
+func (c *RestResource) URLMapping() {}
+
+// Mapping the method to function
+func (c *RestResource) Mapping(method string, fn func()) {
+	c.Controller.Mapping(method, fn)
 }
 
 /*Resource 返回resource名
@@ -122,6 +178,9 @@ func (r *RestResource) Prepare() {
 	r.Filters = make(map[string]interface{})
 
 	if app, ok := r.AppController.(RestResourceInterface); ok {
+		//记录counter
+		metrics.GetEndpointCounter().WithLabelValues(app.Resource(), method).Inc()
+		
 		method2parameters := app.GetParameters()
 		if method2parameters != nil {
 			if parameters, ok := method2parameters[method]; ok {

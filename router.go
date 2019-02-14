@@ -16,6 +16,7 @@ package beego
 
 import (
 	"fmt"
+	"github.com/kfchen81/beego/metrics"
 	"net/http"
 	"path"
 	"path/filepath"
@@ -25,7 +26,7 @@ import (
 	"strings"
 	"sync"
 	"time"
-
+	
 	beecontext "github.com/kfchen81/beego/context"
 	"github.com/kfchen81/beego/context/param"
 	"github.com/kfchen81/beego/logs"
@@ -659,6 +660,10 @@ func (p *ControllerRegister) execFilter(context *beecontext.Context, urlPath str
 
 // Implement http.Handler interface.
 func (p *ControllerRegister) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+	//gauge := metrics.GetConcurrentVisitGauge()
+	//gauge.Inc()
+	//defer gauge.Dec()
+	
 	startTime := time.Now()
 	var (
 		runRouter    reflect.Type
@@ -892,6 +897,10 @@ Admin:
 	logAccess(context, &startTime, statusCode)
 
 	timeDur := time.Since(startTime)
+	method := context.Input.Method()
+	//metrics.GetEndpointSummary().WithLabelValues(urlPath, method).Observe(timeDur.Seconds())
+	metrics.GetEndpointHistogram().WithLabelValues(urlPath, method).Observe(timeDur.Seconds())
+	
 	context.ResponseWriter.Elapsed = timeDur
 	if BConfig.Listen.EnableAdmin {
 		pattern := ""
