@@ -1,7 +1,7 @@
 package aliyun
 
 import (
-	"gskep/vanilla/aliyun/mns"
+	"github.com/kfchen81/beego/vanilla/aliyun/mns"
 	"github.com/kfchen81/beego"
 )
 
@@ -61,10 +61,10 @@ const mnsAccessKeySecret string = "tmknbdsCUkC1212eSozF63keM9LcQc"
 //}
 
 func (this *MNSService) Send(message string) (bool, error) {
-	return this.SendWithTag(message, "normal")
+	return this.SendWithTag([]byte(message), "normal")
 }
 
-func (this *MNSService) SendWithTag(message string, tag string) (bool, error) {
+func (this *MNSService) SendWithTag(message []byte, tag string) (bool, error) {
 	client := mns.NewAliMNSClient(endpoint,
 		mnsAccessKeyId,
 		mnsAccessKeySecret)

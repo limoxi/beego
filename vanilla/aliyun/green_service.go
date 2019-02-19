@@ -1,8 +1,8 @@
 package aliyun
 
 import (
-	"gskep/vanilla/aliyun/green"
-	"gskep/vanilla/uuid"
+	"github.com/kfchen81/beego/vanilla/aliyun/green"
+	"github.com/kfchen81/beego/vanilla/uuid"
 	"github.com/bitly/go-simplejson"
 	"github.com/kfchen81/beego"
 	"encoding/json"

@@ -10,7 +10,7 @@ import (
 	"crypto/md5"
 	"time"
 
-	"gskep/vanilla/uuid"
+	"github.com/kfchen81/beego/vanilla/uuid"
 )
 
 //const host string = "http://green.cn-shanghai.aliyuncs.com"
