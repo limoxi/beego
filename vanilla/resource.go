@@ -13,6 +13,7 @@ import (
 	"time"
 	
 	"github.com/kfchen81/beego"
+	"github.com/kfchen81/beego/orm"
 	"github.com/bitly/go-simplejson"
 	"os"
 	"github.com/opentracing/opentracing-go/ext"
@@ -207,6 +208,46 @@ func (this *Resource) LoginAs(username string) *Resource {
 	respData := resp.Data()
 	this.CustomJWTToken, _ = respData.Get("sid").String()
 	return this
+}
+
+func CronLogin(o orm.Ormer) (*Resource, error) {
+	apiServerHost := beego.AppConfig.String("api::API_SERVER_HOST")
+	apiUrl := fmt.Sprintf("http://%s/skep/account/logined_corp_user", apiServerHost)
+	params := url.Values{"_v": {"1"}}
+	params.Set("_method", "put")
+	apiUrl += "?" + params.Encode()
+	
+	values := url.Values{}
+	
+	values.Set("username", "manager")
+	values.Set("password", "dc120c3e372d9ba9998a52c9d8edcdcb")
+	
+	resp, err := http.PostForm(apiUrl, values)
+	
+	defer resp.Body.Close()
+	
+	body, err := ioutil.ReadAll(resp.Body)
+	jsonObj := new(simplejson.Json)
+	err = jsonObj.UnmarshalJSON(body)
+	
+	jsonData, err := jsonObj.Map()
+	
+	if err != nil {
+		return nil, err
+	}
+	
+	dataMap := jsonData["data"].(map[string]interface{})
+	jwt := dataMap["sid"].(string)
+	
+	ctx := context.Background()
+	span := opentracing.StartSpan("CRONTAB")
+	ctx = opentracing.ContextWithSpan(ctx, span)
+	ctx = context.WithValue(ctx, "jwt", jwt)
+	ctx = context.WithValue(ctx, "orm", o)
+	resource := NewResource(ctx)
+	resource.CustomJWTToken = jwt
+	
+	return resource, nil
 }
 
 func NewResource(ctx context.Context) *Resource {
