@@ -87,6 +87,8 @@ func (this *Resource) request(method string, service string, resource string, da
 				value = fmt.Sprint("%t", v)
 			case string:
 				value = v.(string)
+			case float64:
+				value = fmt.Sprintf("%f", v)
 			default:
 				beego.Warn("unknown type: ", t)
 			}
@@ -116,6 +118,8 @@ func (this *Resource) request(method string, service string, resource string, da
 				value = fmt.Sprint("%t", v)
 			case string:
 				value = v.(string)
+			case float64:
+				value = fmt.Sprintf("%f", v)
 			default:
 				beego.Warn("unknown type: ", t)
 			}
