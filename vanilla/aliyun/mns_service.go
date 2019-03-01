@@ -9,8 +9,9 @@ type MNSService struct {
 }
 
 const endpoint string = "http://1644780993058984.mns.cn-beijing.aliyuncs.com/"
-const mnsAccessKeyId string = "LTAIO6NdtE5IWTIC"
-const mnsAccessKeySecret string = "tmknbdsCUkC1212eSozF63keM9LcQc"
+
+var mnsAccessKeyId = beego.AppConfig.String("system::ACCESS_KEY_ID")
+var mnsAccessKeySecret = beego.AppConfig.String("system::ACCESS_KEY_SECRET")
 //
 //func (this *MNSService) send(response string) bool {
 //	jsonObj := new(simplejson.Json)

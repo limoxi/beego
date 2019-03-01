@@ -17,11 +17,11 @@ const MAX_RATE = 90.0
 type GreenService struct {
 }
 
-const accessKeyId string = "LTAIO6NdtE5IWTIC"
-const accessKeySecret string = "tmknbdsCUkC1212eSozF63keM9LcQc"
 const seed string = "VpJz55jhJnsX9tcCZcXC"
 
 var enableContentCheck, _ = beego.AppConfig.Bool("system::ENABLE_CONTENT_CHECK")
+var accessKeyId = beego.AppConfig.String("system::ACCESS_KEY_ID")
+var accessKeySecret = beego.AppConfig.String("system::ACCESS_KEY_SECRET")
 
 func (this *GreenService) shouldBlock(response string) bool {
 	jsonObj := new(simplejson.Json)
