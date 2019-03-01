@@ -6,7 +6,6 @@ import (
 	"github.com/kfchen81/beego/metrics"
 	"github.com/opentracing/opentracing-go"
 	"gopkg.in/redsync.v1"
-	
 	"bytes"
 	"fmt"
 	"runtime"
