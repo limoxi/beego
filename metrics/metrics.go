@@ -39,6 +39,11 @@ var panicCounter = promauto.NewCounter(prometheus.CounterOpts{
 	Help: "total counts for panic",
 })
 
+var businessErrorCounter = promauto.NewCounter(prometheus.CounterOpts{
+	Name: "business_error_total",
+	Help: "total counts for business error",
+})
+
 func GetEndpointCounter() *prometheus.CounterVec {
 	return endpointCounter
 }
@@ -53,6 +58,10 @@ func GetEndpointHistogram() *prometheus.HistogramVec {
 
 func GetPanicCounter() prometheus.Counter {
 	return panicCounter
+}
+
+func GetBusinessErrorCounter() prometheus.Counter {
+	return businessErrorCounter
 }
 
 func init() {

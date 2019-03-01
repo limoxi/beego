@@ -1,19 +1,50 @@
 package vanilla
 
 import (
+	raven "github.com/getsentry/raven-go"
 	"github.com/kfchen81/beego/context"
 	"github.com/kfchen81/beego/metrics"
-	
-	"github.com/kfchen81/beego"
-	"github.com/kfchen81/beego/orm"
-	"github.com/kfchen81/beego/logs"
 	"github.com/opentracing/opentracing-go"
-	"fmt"
+	"gopkg.in/redsync.v1"
+	
 	"bytes"
+	"fmt"
 	"runtime"
 	"strings"
-	"gopkg.in/redsync.v1"
+
+	"github.com/kfchen81/beego"
+	"github.com/kfchen81/beego/logs"
+	"github.com/kfchen81/beego/orm"
 )
+
+func isEnableSentry() bool {
+	return beego.AppConfig.DefaultBool("sentry::ENABLE_SENTRY", false)
+}
+
+// CapturePanicToSentry will collect error info then send to sentry
+func CapturePanicToSentry(ctx *context.Context, err error) {
+	if !isEnableSentry() {
+		return
+	}
+	rvalStr := fmt.Sprint(err)
+	skipFramesCount := beego.AppConfig.DefaultInt("sentry::SKIP_FRAMES_COUNT", 3)
+	contextLineCount := beego.AppConfig.DefaultInt("sentry::CONTEXT_LINE_COUNT", 5)
+	appRootPath := beego.AppConfig.String("appname")
+	inAppPaths := []string{appRootPath}
+
+	var sStacktrace *raven.Stacktrace
+	var sError, ok = err.(error)
+	if ok {
+		// if sError, ok := err.(error); ok {
+		sStacktrace = raven.GetOrNewStacktrace(sError, skipFramesCount, contextLineCount, inAppPaths)
+	} else {
+		sStacktrace = raven.NewStacktrace(skipFramesCount, contextLineCount, inAppPaths)
+	}
+	sException := raven.NewException(sError, sStacktrace)
+	var packet *raven.Packet
+	packet = raven.NewPacket(rvalStr, sException, raven.NewHttp(ctx.Request))
+	raven.Capture(packet, nil)
+}
 
 func RecoverPanic(ctx *context.Context) {
 	if err := recover(); err != nil {
@@ -23,14 +54,14 @@ func RecoverPanic(ctx *context.Context) {
 			o.(orm.Ormer).Rollback()
 			beego.Warn("[ORM] rollback transaction")
 		}
-		
+
 		//finish span
 		span := ctx.Input.GetData("span")
 		if span != nil {
 			beego.Info("[Tracing] finish span in recoverPanic")
 			span.(opentracing.Span).Finish()
 		}
-		
+
 		//释放锁
 		if mutex, ok := ctx.Input.Data()["sessionRestMutex"]; ok {
 			if mutex != nil {
@@ -38,32 +69,32 @@ func RecoverPanic(ctx *context.Context) {
 				mutex.(*redsync.Mutex).Unlock()
 			}
 		}
-		
+
 		//记录panic counter
 		//1. 非BusinessError需要记录
 		//2. IsPanicError为true的BusinessError需要记录
+		CapturePanicToSentry(ctx, err.(error))
 		if be, ok := err.(*BusinessError); ok {
 			if be.IsPanicError() {
 				metrics.GetPanicCounter().Inc()
+			} else {
+				metrics.GetBusinessErrorCounter().Inc()
 			}
 		} else {
 			metrics.GetPanicCounter().Inc()
 		}
-		
+
 		if err == beego.ErrAbort {
 			return
 		}
-		if !beego.BConfig.RecoverPanic {
-			panic(err)
-		}
-		
+
 		errMsg := ""
 		if be, ok := err.(*BusinessError); ok {
 			errMsg = fmt.Sprintf("%s:%s", be.ErrCode, be.ErrMsg)
 		} else {
 			errMsg = fmt.Sprintf("%s", err)
 		}
-		
+
 		//log error info
 		var buffer bytes.Buffer
 		buffer.WriteString(fmt.Sprintf("[Unprocessed_Exception] %s\n", errMsg))
@@ -80,7 +111,7 @@ func RecoverPanic(ctx *context.Context) {
 		} else {
 			logs.Critical(strings.Replace(buffer.String(), "\n", ";  ", -1))
 		}
-		
+
 		//return error response
 		var resp Map
 		if be, ok := err.(*BusinessError); ok {
@@ -98,8 +129,8 @@ func RecoverPanic(ctx *context.Context) {
 				endpoint = endpoint[:pos]
 			}
 			resp = Map{
-				"code":        531,
-				"data":        Map{
+				"code": 531,
+				"data": Map{
 					"endpoint": endpoint,
 				},
 				"errCode":     "system:exception",
@@ -108,5 +139,11 @@ func RecoverPanic(ctx *context.Context) {
 			}
 		}
 		ctx.Output.JSON(resp, true, true)
+	}
+}
+
+func init() {
+	if isEnableSentry() {
+		raven.SetDSN(beego.AppConfig.String("sentry::SENTRY_DSN"))
 	}
 }
