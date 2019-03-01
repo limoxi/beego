@@ -39,7 +39,16 @@ func RecoverPanic(ctx *context.Context) {
 			}
 		}
 		
-		metrics.GetPanicCounter().Inc()
+		//记录panic counter
+		//1. 非BusinessError需要记录
+		//2. IsPanicError为true的BusinessError需要记录
+		if be, ok := err.(*BusinessError); ok {
+			if be.IsPanicError() {
+				metrics.GetPanicCounter().Inc()
+			}
+		} else {
+			metrics.GetPanicCounter().Inc()
+		}
 		
 		if err == beego.ErrAbort {
 			return
@@ -51,7 +60,6 @@ func RecoverPanic(ctx *context.Context) {
 		errMsg := ""
 		if be, ok := err.(*BusinessError); ok {
 			errMsg = fmt.Sprintf("%s:%s", be.ErrCode, be.ErrMsg)
-			
 		} else {
 			errMsg = fmt.Sprintf("%s", err)
 		}
