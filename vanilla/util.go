@@ -1,5 +1,10 @@
 package vanilla
 
+import (
+	"fmt"
+	"strconv"
+)
+
 func ExtractUniqueIds(datas []IIDable, idType string) []int {
 	id2bool := make(map[int]bool)
 
@@ -14,6 +19,11 @@ func ExtractUniqueIds(datas []IIDable, idType string) []int {
 	}
 	
 	return ids
+}
+
+func Decimal(value float64) float64 {
+	value, _ = strconv.ParseFloat(fmt.Sprintf("%.2f", value), 64)
+	return value
 }
 
 func init() {

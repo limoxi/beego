@@ -10,7 +10,7 @@ import (
 )
 
 type ILock interface {
-	Lock(key string) *redsync.Mutex
+	Lock(key string) (*redsync.Mutex, error)
 }
 
 //DummyLock 空的锁引擎
@@ -18,9 +18,9 @@ type DummyLock struct {
 
 }
 
-func (this *DummyLock) Lock(key string) *redsync.Mutex {
+func (this *DummyLock) Lock(key string) (*redsync.Mutex, error) {
 	beego.Debug(fmt.Sprintf("[lock] lock by dummy engine : %s", key))
-	return nil
+	return nil, nil
 }
 
 //RedisLock 基于redis的锁引擎
@@ -28,19 +28,19 @@ type RedisLock struct {
 	engine *redsync.Redsync
 }
 
-func (this *RedisLock) Lock(key string) *redsync.Mutex {
+func (this *RedisLock) Lock(key string) (*redsync.Mutex, error) {
 	beego.Debug(fmt.Sprintf("[lock] lock by redis engine : %s", key))
 	if this.engine == nil {
 		beego.Warn("[lock] redsync engine is nil")
-		return nil
+		return nil, nil
 	} else {
 		mutex := this.engine.NewMutex(key, redsync.SetExpiry(10*time.Second))
 		err := mutex.Lock()
 		if err != nil {
 			beego.Error(err)
-			return nil
+			return nil, err
 		} else {
-			return mutex
+			return mutex, nil
 		}
 	}
 }

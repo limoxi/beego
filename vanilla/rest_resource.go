@@ -306,7 +306,7 @@ set_orm:
 		if lockKey == "" {
 			//do not lock
 		} else {
-			mutex := Lock.Lock(lockKey)
+			mutex, _ := Lock.Lock(lockKey)
 			if mutex != nil {
 				r.Ctx.Input.Data()["sessionRestMutex"] = mutex
 			}
