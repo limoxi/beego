@@ -18,9 +18,12 @@ import (
 	"gopkg.in/redsync.v1"
 )
 
+var emptyStringArray = make([]string, 0)
+
 type RestResourceInterface interface {
 	beego.ControllerInterface
 	Resource() string
+	GetAlias() []string
 	EnableHTMLResource() bool
 	IsForDevTest() bool
 	DisableTx() bool
@@ -99,6 +102,12 @@ func (c *RestResource) Mapping(method string, fn func()) {
  */
 func (r *RestResource) Resource() string {
 	return ""
+}
+
+/*GetAlias 返回别名集合
+ */
+func (r *RestResource) GetAlias() []string {
+	return emptyStringArray
 }
 
 func (r *RestResource) SetBeegoController(ctx *beego_context.Context, data map[interface{}]interface{}) {

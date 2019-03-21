@@ -42,6 +42,16 @@ func Router(r RestResourceInterface) {
 		beego.Info(fmt.Sprintf("[resource]: %s -> %s", url, reflect.TypeOf(r)))
 		beego.Router(url, r)
 	}
+	
+	//alias url
+	{
+		for _, alias := range r.GetAlias() {
+			items := strings.Split(alias, ".")
+			url := fmt.Sprintf("/%s/", strings.Join(items, "/"))
+			beego.Info(fmt.Sprintf("[resource alias]: %s -> %s", url, reflect.TypeOf(r)))
+			beego.Router(url, r)
+		}
+	}
 
 	// api url
 	{

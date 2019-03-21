@@ -45,7 +45,12 @@ func (this *Resource) request(method string, service string, resource string, da
 	if this.CustomJWTToken != "" {
 		jwtToken = this.CustomJWTToken
 	} else {
-		jwtToken = this.Ctx.Value("jwt").(string)
+		var ok bool
+		if jwtToken, ok = this.Ctx.Value("jwt").(string); ok {
+		
+		} else {
+			jwtToken = ""
+		}
 	}
 	
 	usePeanutPure := os.Getenv("USE_PEANUT_PURE")

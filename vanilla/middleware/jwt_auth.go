@@ -30,6 +30,8 @@ var JWTAuthFilter = func(ctx *context.Context) {
 	if uri == "/" {
 		if gBContextFactory != nil {
 			bCtx := gBContextFactory.NewContext(go_context.Background(), ctx.Request, 0, "", nil) //bCtx is for "business context"
+			o := orm.NewOrm()
+			bCtx = go_context.WithValue(bCtx, "orm", o)
 			ctx.Input.SetData("bContext", bCtx)
 		}
 		return
@@ -38,9 +40,10 @@ var JWTAuthFilter = func(ctx *context.Context) {
 	for _, skipUrl := range SKIP_JWT_CHECK_URLS {
 		if strings.Contains(uri, skipUrl) {
 			beego.Debug("[jwt_middleware] skip jwt check", "url", skipUrl)
-			beego.Debug(gBContextFactory)
 			if gBContextFactory != nil {
 				bCtx := gBContextFactory.NewContext(go_context.Background(), ctx.Request, 0, "", nil) //bCtx is for "business context"
+				o := orm.NewOrm()
+				bCtx = go_context.WithValue(bCtx, "orm", o)
 				ctx.Input.SetData("bContext", bCtx)
 			}
 			return
