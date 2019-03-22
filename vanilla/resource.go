@@ -20,6 +20,8 @@ import (
 	"github.com/opentracing/opentracing-go"
 )
 
+var _PLATFORM_SECRET string
+
 type ResourceResponse struct {
 	RespData *simplejson.Json
 }
@@ -205,9 +207,14 @@ func (this *Resource) Delete(service string, resource string, data Map) (resp *R
 }
 
 func (this *Resource) LoginAs(username string) *Resource {
-	resp, err := this.Put("skep", "account.logined_corp_user", Map{
+	if _PLATFORM_SECRET == "" {
+		beego.Error("_PLATFORM_SECRET is '', Please set _PLATFORM_SECRET in your *.conf file")
+		return nil
+	}
+	
+	resp, err := this.Put("gskep", "login.logined_corp_user", Map{
 		"username": username,
-		"password": "s:66668888",
+		"password": _PLATFORM_SECRET,
 	})
 	if err != nil {
 		beego.Error(err)
@@ -217,6 +224,10 @@ func (this *Resource) LoginAs(username string) *Resource {
 	respData := resp.Data()
 	this.CustomJWTToken, _ = respData.Get("sid").String()
 	return this
+}
+
+func (this *Resource) LoginAsManager() *Resource {
+	return this.LoginAs("manager")
 }
 
 func CronLogin(o orm.Ormer) (*Resource, error) {
@@ -268,4 +279,9 @@ func NewResource(ctx context.Context) *Resource {
 func ToJsonString(obj interface{}) string {
 	bytes, _ := json.Marshal(obj)
 	return string(bytes)
+}
+
+func init() {
+	_PLATFORM_SECRET = beego.AppConfig.String("system::PLATFORM_SECRET")
+	beego.Info("[init] use _PLATFORM_SECRET: " + _PLATFORM_SECRET)
 }
