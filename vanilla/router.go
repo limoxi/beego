@@ -46,8 +46,13 @@ func Router(r RestResourceInterface) {
 	//alias url
 	{
 		for _, alias := range r.GetAlias() {
-			items := strings.Split(alias, ".")
-			url := fmt.Sprintf("/%s/", strings.Join(items, "/"))
+			url := alias
+			if url[0] != '/' {
+				url = "/" + url
+			}
+			if url[len(url)-1] != '/' {
+				url = url + "/"
+			}
 			beego.Info(fmt.Sprintf("[resource alias]: %s -> %s", url, reflect.TypeOf(r)))
 			beego.Router(url, r)
 		}
@@ -64,6 +69,17 @@ func Router(r RestResourceInterface) {
 		url := fmt.Sprintf("/%s/", strings.Join(itemSlice, "/"))
 		//beego.Info(fmt.Sprintf("[resource]: %s -> %s", url, reflect.TypeOf(r)))
 		beego.Router(url, r)
+	}
+	
+	// python eaglet protocol url
+	{
+		items := strings.Split(resource, ".")
+		if len(items) > 2 {
+			appItems := items[0 : len(items)-1]
+			resourceItem := items[len(items)-1]
+			url := fmt.Sprintf("/%s/%s/", strings.Join(appItems, "."), resourceItem)
+			beego.Router(url, r)
+		}
 	}
 }
 
