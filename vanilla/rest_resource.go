@@ -413,7 +413,7 @@ func (r *RestResource) GetFillOptions(key string) FillOption {
 			fillOption[key] = true
 		}
 	} else {
-		return nil
+		return fillOption
 	}
 	
 	return fillOption
