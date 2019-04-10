@@ -8,6 +8,7 @@ import (
 )
 
 var AREA = make(map[string][]map[string]interface{})
+var provinces = make([]*Province, 0)
 var name2Province = make(map[string]*Province)
 var id2Province = make(map[int]*Province)
 var name2City = make(map[string]*City)
@@ -21,6 +22,11 @@ type Province struct {
 	Id int
 	Name string
 	Cities []*City
+}
+
+// IsDGC 是否是直辖市
+func (this *Province) IsDGC() bool {
+	return len(this.Cities) == 1
 }
 
 func NewProvince(data map[string]interface{}) *Province{
@@ -81,6 +87,10 @@ func NewAreaService() *AreaService {
 /*
   Province相关api
  */
+
+func (this *AreaService) GetProvinces() []*Province {
+	return provinces
+}
 
 func (this *AreaService) GetProvinceByName(name string) *Province{
 	return name2Province[name]
@@ -251,6 +261,7 @@ func init(){
 		case "PROVINCES":
 			for _, data := range arrs {
 				province := NewProvince(data)
+				provinces = append(provinces, province)
 				name2Province[province.Name] = province
 				id2Province[province.Id] = province
 			}
