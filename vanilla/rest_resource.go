@@ -287,7 +287,12 @@ func (r *RestResource) Prepare() {
 set_orm:
 				for key, _ := range actualParams {
 					if strings.HasPrefix(key, "__f") {
-						r.Filters[key] = actualParams.Get(key)
+						if strings.HasSuffix(key, "-in") {
+							ary := r.Ctx.Request.Form[key]
+							r.Filters[key] = ary
+						} else {
+							r.Filters[key] = actualParams.Get(key)
+						}
 					}
 				}
 

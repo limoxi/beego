@@ -91,7 +91,7 @@ func (this *Resource) request(method string, service string, resource string, da
 			case int:
 				value = fmt.Sprintf("%d", v)
 			case bool:
-				value = fmt.Sprint("%t", v)
+				value = fmt.Sprintf("%t", v)
 			case string:
 				value = v.(string)
 			case float64:
@@ -122,7 +122,7 @@ func (this *Resource) request(method string, service string, resource string, da
 			case int:
 				value = fmt.Sprintf("%d", v)
 			case bool:
-				value = fmt.Sprint("%t", v)
+				value = fmt.Sprintf("%t", v)
 			case string:
 				value = v.(string)
 			case float64:
