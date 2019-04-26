@@ -21,6 +21,7 @@ import (
 )
 
 var _PLATFORM_SECRET string
+var _USER_LOGIN_SECRET string
 
 type ResourceResponse struct {
 	RespData *simplejson.Json
@@ -186,7 +187,12 @@ func (this *Resource) request(method string, service string, resource string, da
 		return resourceResp, nil
 	} else {
 		beego.Error(jsonObj)
-		return resourceResp, errors.New("business_error")
+		errCode := jsonObj.Get("errCode")
+		if errCode == nil {
+			return resourceResp, errors.New("remote_service_error")
+		} else {
+			return resourceResp, errors.New(errCode.MustString())
+		}
 	}
 }
 
@@ -215,6 +221,26 @@ func (this *Resource) LoginAs(username string) *Resource {
 	resp, err := this.Put("gskep", "login.logined_corp_user", Map{
 		"username": username,
 		"password": _PLATFORM_SECRET,
+	})
+	if err != nil {
+		beego.Error(err)
+		return nil
+	}
+	
+	respData := resp.Data()
+	this.CustomJWTToken, _ = respData.Get("sid").String()
+	return this
+}
+
+func (this *Resource) LoginAsUser(unionid string) *Resource {
+	if _USER_LOGIN_SECRET == "" {
+		beego.Error("_USER_LOGIN_SECRET is '', Please set _USER_LOGIN_SECRET in your *.conf file")
+		return nil
+	}
+	
+	resp, err := this.Put("gskep", "login.logined_h5_user", Map{
+		"unionid": unionid,
+		"secret": _USER_LOGIN_SECRET,
 	})
 	if err != nil {
 		beego.Error(err)
@@ -283,5 +309,7 @@ func ToJsonString(obj interface{}) string {
 
 func init() {
 	_PLATFORM_SECRET = beego.AppConfig.String("system::PLATFORM_SECRET")
+	_USER_LOGIN_SECRET = beego.AppConfig.String("system::USER_LOGIN_SECRET")
 	beego.Info("[init] use _PLATFORM_SECRET: " + _PLATFORM_SECRET)
+	beego.Info("[init] use _USER_LOGIN_SECRET: " + _USER_LOGIN_SECRET)
 }
