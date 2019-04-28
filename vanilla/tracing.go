@@ -28,6 +28,11 @@ func initJaeger(service string) (opentracing.Tracer, io.Closer) {
 				BufferFlushInterval: 1 * time.Second,
 			},
 		}
+	} else if tracingMode == "disable" {
+		cfg = &config.Configuration{
+			Disabled: true,
+		}
+		beego.Warn("Open Tracing is disabled!!")
 	} else {
 		cfg = &config.Configuration{
 			Sampler: &config.SamplerConfig{
