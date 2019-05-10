@@ -1,4 +1,4 @@
-package event
+package event_bak
 
 import (
 	"github.com/kfchen81/beego"
