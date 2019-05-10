@@ -1,4 +1,4 @@
-package event
+package event_bak
 
 import (
 	"encoding/json"
@@ -11,7 +11,7 @@ type MNSBroker struct {
 }
 
 func (this *MNSBroker) Send(asyncEvent *AsyncEvent){
-	beego.Info("sending event: ", asyncEvent.Name)
+	beego.Info("sending event_bak: ", asyncEvent.Name)
 
 	messageData := asyncEvent.Data
 	jsonBytes, err := json.Marshal(messageData)
