@@ -56,6 +56,27 @@ func (this *ESClient) Update(data map[string]interface{}, filters map[string]int
 	}
 }
 
+func (this *ESClient) Push(id int, data interface{}) {
+	// Add a document
+	indexResult, err := this.client.Index().
+		Index(this.indexName).
+		Type(this.docType).
+		Id(string(id)).
+		BodyJson(&data).
+		Do(this.Ctx)
+	if err != nil {
+		errMsg := fmt.Errorf("es_push doc(id:%d) to index %s: %v", id, this.indexName, err)
+		beego.Error(errMsg)
+		panic(vanilla.NewSystemError("es_push:failed", errMsg.Error()))
+	}
+	if indexResult == nil {
+		errMsg := fmt.Errorf("es_push doc(id:%d) to index %s: result is %v",
+			id, this.indexName, indexResult)
+		beego.Error(errMsg)
+		panic(vanilla.NewSystemError("es_push:failed", errMsg.Error()))
+	}
+}
+
 func NewESClient(ctx context.Context) *ESClient{
 
 	host := beego.AppConfig.String("es::ES_SEARCH_HOST")
