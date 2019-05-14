@@ -15,8 +15,9 @@
 package beego
 
 import (
+	"fmt"
 	"strings"
-
+	
 	"github.com/kfchen81/beego/logs"
 )
 
@@ -67,7 +68,15 @@ func Critical(v ...interface{}) {
 
 // Error logs a message at error level.
 func Error(v ...interface{}) {
-	logs.Error(generateFmtStr(len(v)), v...)
+	format := generateFmtStr(len(v))
+	logs.Error(format, v...)
+	
+	//vanilla: push to sentry
+	{
+		
+		msg := fmt.Sprintf(format, v...)
+		PushErrorToSentry(msg)
+	}
 }
 
 // Warning logs a message at warning level.
