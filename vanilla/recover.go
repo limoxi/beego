@@ -1,14 +1,16 @@
 package vanilla
 
 import (
-	raven "github.com/getsentry/raven-go"
+	"bytes"
+	go_context "context"
+	"fmt"
+	"github.com/getsentry/raven-go"
 	"github.com/kfchen81/beego/context"
 	"github.com/kfchen81/beego/metrics"
 	"github.com/opentracing/opentracing-go"
 	"gopkg.in/redsync.v1"
-	"bytes"
-	"fmt"
 	"runtime"
+	"runtime/debug"
 	"strings"
 
 	"github.com/kfchen81/beego"
@@ -140,6 +142,50 @@ func RecoverPanic(ctx *context.Context) {
 		ctx.Output.JSON(resp, true, true)
 	}
 }
+
+// captureTaskPanicToSentry will collect error in tasks then send to sentry
+func captureTaskPanicToSentry(ctx go_context.Context, err error) {
+	if !isEnableSentry() {
+		return
+	}
+	tags := map[string]string{
+		"task_name": ctx.Value("taskName").(string),
+		"service_name": beego.AppConfig.String("appname"),
+	}
+	var packet *raven.Packet
+
+	errMsg := err.Error()
+	if be, ok := err.(*BusinessError); ok{
+		errMsg = be.ErrMsg
+	}
+
+	packet = raven.NewPacket(err.Error())
+	stack := string(debug.Stack())
+	packet.Extra = map[string]interface{}{
+		"errMsg": errMsg,
+		"stacktrace": stack,
+	}
+	raven.Capture(packet, tags)
+	// local log
+	if beego.BConfig.RunMode == "dev"{
+		logs.Critical(stack)
+	}
+}
+
+// RecoverFromCronTaskPanic crontask的recover
+func RecoverFromCronTaskPanic(ctx go_context.Context) {
+	o := GetOrmFromContext(ctx)
+	if err := recover(); err!=nil{
+		beego.Info("recover from cron task panic...")
+		if o != nil{
+			o.Rollback()
+			beego.Warn("[ORM] rollback transaction for cron task")
+		}
+		// 推送日志到sentry
+		captureTaskPanicToSentry(ctx, err.(error))
+	}
+}
+
 
 func init() {
 	if isEnableSentry() {
