@@ -3,9 +3,9 @@ package beego
 import (
 	go_context "context"
 	"fmt"
-	"github.com/astaxie/beego/logs"
 	"github.com/getsentry/raven-go"
 	"github.com/kfchen81/beego/context"
+	"github.com/kfchen81/beego/logs"
 	"runtime/debug"
 	
 	"os"
