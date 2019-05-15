@@ -56,12 +56,12 @@ func (this *ESClient) Update(data map[string]interface{}, filters map[string]int
 	}
 }
 
-func (this *ESClient) Push(id int, data interface{}) {
+func (this *ESClient) Push(id string, data interface{}) {
 	// Add a document
 	indexResult, err := this.client.Index().
 		Index(this.indexName).
 		Type(this.docType).
-		Id(string(id)).
+		Id(id).
 		BodyJson(&data).
 		Do(this.Ctx)
 	if err != nil {
