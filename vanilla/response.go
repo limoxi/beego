@@ -17,6 +17,7 @@ type Response struct {
 	ErrCode string `json:"errCode"`
 	ErrMsg      string                 `json:"errMsg"`
 	InnerErrMsg string                 `json:"innerErrMsg"`
+	MachineInfo map[string]interface{} `json:"_pod"`
 }
 
 func MakeResponse2(data map[string]interface{}) *Response {
@@ -26,6 +27,7 @@ func MakeResponse2(data map[string]interface{}) *Response {
 		"",
 		"",
 		"",
+		GetMachineInfo(),
 	}
 }
 
@@ -36,6 +38,7 @@ func MakeResponse(data interface{}) *Response {
 		"",
 		"",
 		"",
+		GetMachineInfo(),
 	}
 }
 
@@ -51,5 +54,6 @@ func MakeErrorResponse(code int32, errCode string, errMsg string, innerErrMsgs .
 		errCode,
 		errMsg,
 		innerErrMsg,
+		GetMachineInfo(),
 	}
 }

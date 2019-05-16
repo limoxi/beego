@@ -172,6 +172,7 @@ func (r *RestResource) returnValidateParameterFailResponse(parameter string, par
 		"rest:missing_argument",
 		fmt.Sprintf("missing or invalid argument: %s(%s)", parameter, paramType),
 		innerErrMsg,
+		GetMachineInfo(),
 	}
 	r.ServeJSON()
 }
