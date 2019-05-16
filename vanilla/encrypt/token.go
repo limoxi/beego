@@ -1,11 +1,15 @@
 package encrypt
 
 import (
+	"encoding/hex"
 	"errors"
+	"fmt"
 	"github.com/kfchen81/beego"
 	"net/url"
 	"strings"
 )
+
+const _MAGIC_CODE = "<->";
 
 func hexCharCodeToStr(hexCode string) string {
 	if hexCode[0] == '0' && (hexCode[1] == 'x' || hexCode[1] == 'X') {
@@ -48,4 +52,26 @@ func DecodeToken(token string) (string, string, error) {
 	originStr := hexCharCodeToStr(strings.Trim(hexCode, " "))
 	items := strings.Split(originStr, "_<->_")
 	return items[0], items[1], nil
+}
+
+func strToHexCharCode(str string) string {
+	if str == "" {
+		return ""
+	}
+	
+	return hex.EncodeToString([]byte(str))
+}
+
+func EncodeToken(key1 string, key2 string) string {
+	str := fmt.Sprintf("%s_%s_%s", key1, _MAGIC_CODE, key2)
+	hexStr := strToHexCharCode(str)
+	
+	hexStrLen := len(hexStr)
+	buf := make([]byte, 0)
+	for i := 0; i < hexStrLen; i += 1 {
+		buf = append(buf, hexStr[i])
+		buf = append(buf, '0')
+	}
+	
+	return strings.ToUpper(string(buf))
 }
