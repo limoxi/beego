@@ -38,7 +38,8 @@ var CorpTokenAuthFilter = func(ctx *context.Context) {
 	
 	if gBContextFactory != nil {
 		jsonData := simplejson.New()
-		jsonData.Set("corp_id_from_token", corpId)
+		jsonData.Set("corp_id", corpId)
+		jsonData.Set("__source", "corp_token_auth")
 		bCtx := gBContextFactory.NewContext(go_context.Background(), ctx.Request, 0, "", jsonData) //bCtx is for "business context"
 		
 		//add tracing span
