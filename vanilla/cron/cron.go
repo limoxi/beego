@@ -3,6 +3,7 @@ package cron
 import (
 	"context"
 	"github.com/kfchen81/beego"
+	"github.com/kfchen81/beego/orm"
 	"github.com/kfchen81/beego/toolbox"
 	"github.com/kfchen81/beego/vanilla"
 )
@@ -20,28 +21,43 @@ func (this *CronTask) OnlyRun() {
 
 var name2task = make(map[string]*CronTask)
 
-func taskWrapper(ctx context.Context, fn toolbox.TaskFunc) toolbox.TaskFunc{
-	o := vanilla.GetOrmFromContext(ctx)
-	if o == nil{
-		beego.Warn("task run without db transaction")
-		return fn
-	}
+func newTaskCtx() *TaskContext{
+	inst := new(TaskContext)
+	ctx := context.Background()
+	o := orm.NewOrm()
+	resource := GetManagerResource(ctx)
+	inst.SetCtx(ctx, o).SetResource(resource)
+	return inst
+}
+
+func taskWrapper(task taskInterface) toolbox.TaskFunc{
+
 	return func() error{
-		o.Begin()
+		taskCtx := newTaskCtx()
+		o := taskCtx.GetOrm()
+		ctx := taskCtx.GetCtx()
+
 		defer vanilla.RecoverFromCronTaskPanic(ctx)
-		fnErr := fn()
-		o.Commit()
-		return fnErr
+		if task.IsEnableTx(){
+			o.Begin()
+			fnErr := task.Run(taskCtx)
+			o.Commit()
+			return fnErr
+		}else{
+			return task.Run(taskCtx)
+		}
 	}
 }
 
-func RegisterCronTaskWithContext(tname string, spec string, f toolbox.TaskFunc, ctx context.Context) *CronTask {
-	ctx = context.WithValue(ctx, "taskName", tname)
-	wrappedFn := taskWrapper(ctx, f)
-	if wrappedFn == nil{
-		beego.Error("register task [%s] failed", tname)
-		return nil
-	}
+func RegisterPipeTask(pi pipeInterface, spec string) *CronTask{
+	task := RegisterTask(pi.(taskInterface), spec)
+	pi.RunConsumer()
+	return task
+}
+
+func RegisterTask(task taskInterface, spec string) *CronTask {
+	tname := task.GetName()
+	wrappedFn := taskWrapper(task)
 	cronTask := &CronTask{
 		name: tname,
 		spec: spec,
