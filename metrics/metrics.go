@@ -39,6 +39,11 @@ var panicCounter = promauto.NewCounter(prometheus.CounterOpts{
 	Help: "total counts for panic",
 })
 
+var resourceRetryCounter = promauto.NewCounter(prometheus.CounterOpts{
+	Name: "resource_retry_total",
+	Help: "total counts for resource's retry",
+})
+
 var businessErrorCounter = promauto.NewCounter(prometheus.CounterOpts{
 	Name: "business_error_total",
 	Help: "total counts for business error",
@@ -62,6 +67,10 @@ func GetPanicCounter() prometheus.Counter {
 
 func GetBusinessErrorCounter() prometheus.Counter {
 	return businessErrorCounter
+}
+
+func GetResourceRetryCounter() prometheus.Counter {
+	return resourceRetryCounter
 }
 
 func init() {

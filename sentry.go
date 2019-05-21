@@ -5,18 +5,21 @@ import (
 	"fmt"
 	"github.com/getsentry/raven-go"
 	"github.com/kfchen81/beego/context"
-	"github.com/kfchen81/beego/logs"
+	"net/http"
 	"runtime/debug"
+	"strings"
 	
 	"os"
 )
+
+var sentryChannel = make(chan map[string]interface{}, 3)
 
 func isEnableSentry() bool {
 	return AppConfig.DefaultBool("sentry::ENABLE_SENTRY", false)
 }
 
 // CapturePanicToSentry will collect error info then send to sentry
-func CaptureErrorToSentry(ctx *context.Context, err error) {
+func CaptureErrorToSentry(ctx *context.Context, err interface{}) {
 	if !isEnableSentry() {
 		beegoMode := os.Getenv("BEEGO_RUNMODE")
 		if beegoMode == "prod" {
@@ -25,74 +28,160 @@ func CaptureErrorToSentry(ctx *context.Context, err error) {
 		return
 	}
 	
-	rvalStr := fmt.Sprint(err)
-	skipFramesCount := AppConfig.DefaultInt("sentry::SKIP_FRAMES_COUNT", 3)
-	contextLineCount := AppConfig.DefaultInt("sentry::CONTEXT_LINE_COUNT", 5)
-	appRootPath := AppConfig.String("appname")
-	inAppPaths := []string{appRootPath}
+	data := make(map[string]interface{})
+	data["err_msg"] = fmt.Sprint(err)
+	data["service_name"] = AppConfig.String("appname")
 	
-	var sStacktrace *raven.Stacktrace
-	var sError, ok = err.(error)
+	//skipFramesCount := AppConfig.DefaultInt("sentry::SKIP_FRAMES_COUNT", 3)
+	//contextLineCount := AppConfig.DefaultInt("sentry::CONTEXT_LINE_COUNT", 5)
+	//appRootPath := AppConfig.String("appname")
+	//inAppPaths := []string{appRootPath}
+	
+	//var sStacktrace *raven.Stacktrace
+	//var sError, ok = err.(error)
+	//if ok {
+	//	sStacktrace = raven.GetOrNewStacktrace(sError, skipFramesCount, contextLineCount, inAppPaths)
+	//} else {
+	//	sStacktrace = raven.NewStacktrace(skipFramesCount, contextLineCount, inAppPaths)
+	//}
+	//sStacktrace = raven.NewStacktrace(skipFramesCount, contextLineCount, inAppPaths)
+	//sException := raven.NewException(sError, sStacktrace)
+	//spew.Dump(sStacktrace)
+	data["stack"] = string(debug.Stack())
+	data["raven_http"] = raven.NewHttp(ctx.Request)
+	data["http_request"] = ctx.Request
+	
+	sentryChannel <- data
+}
+
+func CaptureTaskErrorToSentry(ctx go_context.Context, errMsg string) {
+	if !isEnableSentry() {
+		beegoMode := os.Getenv("BEEGO_RUNMODE")
+		if beegoMode == "prod" {
+			Warn("Sentry is not enabled under prod mode, Please enable it!!!!")
+		}
+		return
+	}
+	
+	data := make(map[string]interface{})
+	data["err_msg"] = errMsg
+	data["service_name"] = AppConfig.String("appname")
+	
+	data["stack"] = string(debug.Stack())
+	
+	sentryChannel <- data
+}
+
+func PushErrorToSentry(errMsg string, req *http.Request) {
+	if !isEnableSentry() {
+		return
+	}
+	
+	data := make(map[string]interface{})
+	data["err_msg"] = errMsg
+	data["service_name"] = AppConfig.String("appname")
+	
+	//stack := string(debug.Stack())
+	data["stack"] = "ignore"
+	if req != nil {
+		data["raven_http"] = raven.NewHttp(req)
+		data["http_request"] = req
+	}
+	sentryChannel <- data
+}
+
+func sendSentryPacketV1(data map[string]interface{}) {
+	var packet *raven.Packet
+	errMsg := data["err_msg"].(string)
+	packet = raven.NewPacket(errMsg)
+	
+	stack := data["stack"].(string)
+	packet.Extra = map[string]interface{}{
+		"stacktrace": stack,
+	}
+	
+	tags := map[string]string{
+		"service_name": data["service_name"].(string),
+	}
+	raven.Capture(packet, tags)
+	Info("push v1 data to sentry success")
+}
+
+func sendSentryPacketV2(data map[string]interface{}) {
+	var packet *raven.Packet
+	errMsg := data["err_msg"].(string)
+	
+	//封装http request
+	httpRequest, ok := data["http_request"].(*http.Request)
 	if ok {
-		// if sError, ok := err.(error); ok {
-		sStacktrace = raven.GetOrNewStacktrace(sError, skipFramesCount, contextLineCount, inAppPaths)
+		ravenHttp := raven.NewHttp(httpRequest)
+		
+		method := strings.ToLower(httpRequest.Method)
+		if method == "post" || method == "put" || method == "delete" {
+			data := make(map[string]string)
+			for key, _ := range httpRequest.PostForm {
+				value := httpRequest.PostForm.Get(key)
+				if len(value) >= 100 {
+					value = value[:100] + "..."
+				}
+				data[key] = value
+			}
+			ravenHttp.Data = data
+		}
+		
+		packet = raven.NewPacket(errMsg, ravenHttp)
 	} else {
-		sStacktrace = raven.NewStacktrace(skipFramesCount, contextLineCount, inAppPaths)
-	}
-	sException := raven.NewException(sError, sStacktrace)
-	var packet *raven.Packet
-	if ctx == nil {
-		packet = raven.NewPacket(rvalStr, sException)
-	} else {
-		packet = raven.NewPacket(rvalStr, sException, raven.NewHttp(ctx.Request))
+		packet = raven.NewPacket(errMsg)
 	}
 	
-	raven.Capture(packet, nil)
-}
-
-func CaptureTaskErrorToSentry(ctx go_context.Context, errMsg string, taskErrMsg string) {
-	if !isEnableSentry() {
-		return
+	//确定堆栈信息
+	stack, ok := data["stack"].(string)
+	if !ok {
+		stack = "no stack"
 	}
-	tags := map[string]string{
-		"task_name": ctx.Value("taskName").(string),
-		"service_name": AppConfig.String("appname"),
-	}
-	var packet *raven.Packet
-	
-	packet = raven.NewPacket(errMsg)
-	stack := string(debug.Stack())
-	packet.Extra = map[string]interface{}{
-		"errMsg": taskErrMsg,
-		"stacktrace": stack,
-	}
-	raven.Capture(packet, tags)
-	// local log
-	if BConfig.RunMode == "dev"{
-		logs.Critical(stack)
-	}
-}
-
-func PushErrorToSentry(errMsg string) {
-	if !isEnableSentry() {
-		return
-	}
-	tags := map[string]string{
-		"service_name": AppConfig.String("appname"),
-	}
-	var packet *raven.Packet
-	
-	packet = raven.NewPacket(errMsg)
-	stack := string(debug.Stack())
 	packet.Extra = map[string]interface{}{
 		"stacktrace": stack,
 	}
+	
+	//其他Tag
+	tags := map[string]string{
+		"service_name": data["service_name"].(string),
+	}
+	
+	//发送给Raven
 	raven.Capture(packet, tags)
+}
+
+func runSentryWorker(ch chan map[string]interface{}) {
+	Info("[sentry] push-worker is ready to receive message...")
+	
+	for {
+		data := <-sentryChannel
+		
+		sendSentryPacketV2(data)
+	}
+}
+
+func startSentryWorker() {
+	Info("[sentry] start push-worker")
+	defer func() {
+		if err := recover(); err != nil {
+			stack := debug.Stack()
+			fmt.Printf("\n>>>>>>>>>>>>>>>>>>>>\n%v\n%s\n<<<<<<<<<<<<<<<<<<<<\n", err, string(stack))
+			//restart worker
+			go startSentryWorker()
+		}
+	}()
+	
+	runSentryWorker(sentryChannel)
 }
 
 func init() {
 	if isEnableSentry() {
 		raven.SetDSN(AppConfig.String("sentry::SENTRY_DSN"))
 		Info(fmt.Sprintf("[sentry] enable:%t, dsn:%s ", isEnableSentry(), AppConfig.String("sentry::SENTRY_DSN")))
+		go startSentryWorker()
+	} else {
+		Warn("[sentry] sentry is DISABLED!!!")
 	}
 }

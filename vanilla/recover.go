@@ -16,31 +16,6 @@ import (
 	"github.com/kfchen81/beego/orm"
 )
 
-// CapturePanicToSentry will collect error info then send to sentry
-//func BakCapturePanicToSentry(ctx *context.Context, err error) {
-//	if !isEnableSentry() {
-//		return
-//	}
-//	rvalStr := fmt.Sprint(err)
-//	skipFramesCount := beego.AppConfig.DefaultInt("sentry::SKIP_FRAMES_COUNT", 3)
-//	contextLineCount := beego.AppConfig.DefaultInt("sentry::CONTEXT_LINE_COUNT", 5)
-//	appRootPath := beego.AppConfig.String("appname")
-//	inAppPaths := []string{appRootPath}
-//
-//	var sStacktrace *raven.Stacktrace
-//	var sError, ok = err.(error)
-//	if ok {
-//		// if sError, ok := err.(error); ok {
-//		sStacktrace = raven.GetOrNewStacktrace(sError, skipFramesCount, contextLineCount, inAppPaths)
-//	} else {
-//		sStacktrace = raven.NewStacktrace(skipFramesCount, contextLineCount, inAppPaths)
-//	}
-//	sException := raven.NewException(sError, sStacktrace)
-//	var packet *raven.Packet
-//	packet = raven.NewPacket(rvalStr, sException, raven.NewHttp(ctx.Request))
-//	raven.Capture(packet, nil)
-//}
-
 func RecoverPanic(ctx *context.Context) {
 	if err := recover(); err != nil {
 		//rollback tx
@@ -68,7 +43,7 @@ func RecoverPanic(ctx *context.Context) {
 		//记录panic counter
 		//1. 非BusinessError需要记录
 		//2. IsPanicError为true的BusinessError需要记录
-		beego.CaptureErrorToSentry(ctx, err.(error))
+		beego.CaptureErrorToSentry(ctx, err)
 		if be, ok := err.(*BusinessError); ok {
 			if be.IsPanicError() {
 				metrics.GetPanicCounter().Inc()
@@ -137,35 +112,6 @@ func RecoverPanic(ctx *context.Context) {
 	}
 }
 
-// captureTaskPanicToSentry will collect error in tasks then send to sentry
-//func captureTaskPanicToSentry(ctx go_context.Context, err error) {
-//	if !isEnableSentry() {
-//		return
-//	}
-//	tags := map[string]string{
-//		"task_name": ctx.Value("taskName").(string),
-//		"service_name": beego.AppConfig.String("appname"),
-//	}
-//	var packet *raven.Packet
-//
-//	errMsg := err.Error()
-//	if be, ok := err.(*BusinessError); ok{
-//		errMsg = be.ErrMsg
-//	}
-//
-//	packet = raven.NewPacket(err.Error())
-//	stack := string(debug.Stack())
-//	packet.Extra = map[string]interface{}{
-//		"errMsg": errMsg,
-//		"stacktrace": stack,
-//	}
-//	raven.Capture(packet, tags)
-//	// local log
-//	if beego.BConfig.RunMode == "dev"{
-//		logs.Critical(stack)
-//	}
-//}
-
 // RecoverFromCronTaskPanic crontask的recover
 func RecoverFromCronTaskPanic(ctx go_context.Context) {
 	o := GetOrmFromContext(ctx)
@@ -179,20 +125,15 @@ func RecoverFromCronTaskPanic(ctx go_context.Context) {
 		{
 			// 推送日志到sentry
 			errMsg := err.(error).Error()
-			taskErrMsg := ""
 			if be, ok := err.(*BusinessError); ok{
-				errMsg = be.ErrMsg
+				errMsg = fmt.Sprintf("%s - %s", be.ErrCode, be.ErrMsg)
 			}
-			beego.CaptureTaskErrorToSentry(ctx, errMsg, taskErrMsg)
+			beego.Error(errMsg)
+			beego.CaptureTaskErrorToSentry(ctx, errMsg)
 		}
 		
 	}
 }
 
 func init() {
-	/*
-	if isEnableSentry() {
-		raven.SetDSN(beego.AppConfig.String("sentry::SENTRY_DSN"))
-	}
-	*/
 }
