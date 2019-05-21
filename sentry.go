@@ -12,7 +12,7 @@ import (
 	"os"
 )
 
-var sentryChannel = make(chan map[string]interface{}, 3)
+var sentryChannel = make(chan map[string]interface{}, 2048)
 
 func isEnableSentry() bool {
 	return AppConfig.DefaultBool("sentry::ENABLE_SENTRY", false)
