@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"github.com/kfchen81/beego/logs"
 	"github.com/kfchen81/beego/metrics"
 	"io/ioutil"
 	"net"
@@ -190,7 +191,7 @@ func (this *Resource) request(method string, service string, resource string, da
 	if resourceResp.IsSuccess() {
 		return resourceResp, nil, nil
 	} else {
-		beego.Error(jsonObj)
+		logs.Critical(jsonObj)
 		errCode := jsonObj.Get("errCode")
 		if errCode == nil {
 			return resourceResp, errors.New("remote_service_error"), nil
@@ -247,7 +248,7 @@ func (this *Resource) LoginAs(username string) *Resource {
 		"password": _PLATFORM_SECRET,
 	})
 	if err != nil {
-		beego.Error(err)
+		logs.Critical(err)
 		return nil
 	}
 	
@@ -267,7 +268,7 @@ func (this *Resource) LoginAsUser(unionid string) *Resource {
 		"secret": _USER_LOGIN_SECRET,
 	})
 	if err != nil {
-		beego.Error(err)
+		logs.Critical(err)
 		return nil
 	}
 	
