@@ -20,7 +20,7 @@ func isEnableSentry() bool {
 }
 
 // CapturePanicToSentry will collect error info then send to sentry
-func CaptureErrorToSentry(ctx *context.Context, err interface{}) {
+func CaptureErrorToSentry(ctx *context.Context, err string) {
 	if !isEnableSentry() {
 		beegoMode := os.Getenv("BEEGO_RUNMODE")
 		if beegoMode == "prod" {
@@ -30,7 +30,7 @@ func CaptureErrorToSentry(ctx *context.Context, err interface{}) {
 	}
 	
 	data := make(map[string]interface{})
-	data["err_msg"] = fmt.Sprint(err)
+	data["err_msg"] = err
 	data["service_name"] = AppConfig.String("appname")
 	
 	//skipFramesCount := AppConfig.DefaultInt("sentry::SKIP_FRAMES_COUNT", 3)

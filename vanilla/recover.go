@@ -5,6 +5,7 @@ import (
 	go_context "context"
 	"fmt"
 	"github.com/kfchen81/beego/context"
+	"github.com/kfchen81/beego/logs"
 	"github.com/kfchen81/beego/metrics"
 	"github.com/opentracing/opentracing-go"
 	"gopkg.in/redsync.v1"
@@ -12,7 +13,6 @@ import (
 	"strings"
 	
 	"github.com/kfchen81/beego"
-	"github.com/kfchen81/beego/logs"
 	"github.com/kfchen81/beego/orm"
 )
 
@@ -39,11 +39,21 @@ func RecoverPanic(ctx *context.Context) {
 				mutex.(*redsync.Mutex).Unlock()
 			}
 		}
-
+		
+		//记录到sentry
+		{
+			errMsg := ""
+			if be, ok := err.(*BusinessError); ok {
+				errMsg = fmt.Sprintf("%s - %s", be.ErrCode, be.ErrMsg)
+			} else {
+				errMsg = fmt.Sprint(err)
+			}
+			beego.CaptureErrorToSentry(ctx, errMsg)
+		}
+		
 		//记录panic counter
 		//1. 非BusinessError需要记录
 		//2. IsPanicError为true的BusinessError需要记录
-		beego.CaptureErrorToSentry(ctx, err)
 		if be, ok := err.(*BusinessError); ok {
 			if be.IsPanicError() {
 				metrics.GetPanicCounter().Inc()
@@ -128,7 +138,7 @@ func RecoverFromCronTaskPanic(ctx go_context.Context) {
 			if be, ok := err.(*BusinessError); ok{
 				errMsg = fmt.Sprintf("%s - %s", be.ErrCode, be.ErrMsg)
 			}
-			beego.Error(errMsg)
+			logs.Critical(errMsg)
 			beego.CaptureTaskErrorToSentry(ctx, errMsg)
 		}
 		
