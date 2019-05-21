@@ -8,6 +8,7 @@ import (
 	"net/http"
 	"runtime/debug"
 	"strings"
+	"time"
 	
 	"os"
 )
@@ -51,7 +52,13 @@ func CaptureErrorToSentry(ctx *context.Context, err interface{}) {
 	data["raven_http"] = raven.NewHttp(ctx.Request)
 	data["http_request"] = ctx.Request
 	
-	sentryChannel <- data
+	select {
+	case sentryChannel <- data:
+	
+	case <-time.After(time.Millisecond * 500):
+		Warn("[sentry] push timeout")
+	}
+	
 }
 
 func CaptureTaskErrorToSentry(ctx go_context.Context, errMsg string) {
@@ -69,7 +76,12 @@ func CaptureTaskErrorToSentry(ctx go_context.Context, errMsg string) {
 	
 	data["stack"] = string(debug.Stack())
 	
-	sentryChannel <- data
+	select {
+	case sentryChannel <- data:
+	
+	case <-time.After(time.Millisecond * 500):
+		Warn("[sentry] push timeout")
+	}
 }
 
 func PushErrorToSentry(errMsg string, req *http.Request) {
@@ -87,7 +99,12 @@ func PushErrorToSentry(errMsg string, req *http.Request) {
 		data["raven_http"] = raven.NewHttp(req)
 		data["http_request"] = req
 	}
-	sentryChannel <- data
+	select {
+	case sentryChannel <- data:
+	
+	case <-time.After(time.Millisecond * 500):
+		Warn("[sentry] push timeout")
+	}
 }
 
 func sendSentryPacketV1(data map[string]interface{}) {
