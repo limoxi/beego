@@ -166,11 +166,12 @@ func (this *Resource) request(method string, service string, resource string, da
 
 	//执行request，获得response
 	resp, err := netClient.Do(req)
-	defer resp.Body.Close()
 
 	if err != nil {
 		return nil, err, err
 	}
+	
+	defer resp.Body.Close()
 
 	//获取response的内容
 	body, err := ioutil.ReadAll(resp.Body)
