@@ -38,7 +38,7 @@ type pipeInterface interface {
 	AddData(data interface{}) error
 	GetData() interface{}
 	GetCap() int
-	RunConsumer()
+	RunConsumer(data interface{}, taskCtx *TaskContext)
 }
 
 type Pipe struct{
