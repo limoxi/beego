@@ -2,10 +2,13 @@ package cron
 
 import (
 	"context"
+	"fmt"
 	"github.com/kfchen81/beego"
 	"github.com/kfchen81/beego/orm"
 	"github.com/kfchen81/beego/toolbox"
 	"github.com/kfchen81/beego/vanilla"
+	"math"
+	"runtime/debug"
 )
 
 type CronTask struct {
@@ -49,9 +52,31 @@ func taskWrapper(task taskInterface) toolbox.TaskFunc{
 	}
 }
 
+func fetchData(pi pipeInterface){
+	go func(){
+		defer func(){
+			if err := recover(); err!=nil{
+				beego.Warn(string(debug.Stack()))
+				fetchData(pi)
+				dingMsg := fmt.Sprintf("> goroutine from task(%s) dead \n\n 错误信息: %s \n\n", pi.(taskInterface).GetName(), err.(error).Error())
+				vanilla.NewDingBot().Use("xiuer").Error(dingMsg)
+			}
+		}()
+		for{
+			data := pi.GetData()
+			if data != nil{
+				taskCtx := newTaskCtx()
+				pi.RunConsumer(data, taskCtx)
+			}
+		}
+	}()
+}
+
 func RegisterPipeTask(pi pipeInterface, spec string) *CronTask{
 	task := RegisterTask(pi.(taskInterface), spec)
-	pi.RunConsumer()
+	for i := int(math.Ceil(float64(pi.GetCap())/10)); i>0; i--{
+		fetchData(pi)
+	}
 	return task
 }
 
@@ -91,12 +116,12 @@ func StartCronTasks() {
 
 	if onlyRunTask != nil {
 		cronTask := onlyRunTask
-		beego.Info("[cron] create cron task ", cronTask.name)
+		beego.Info("[cron] create cron task ", cronTask.name, cronTask.spec)
 		task := toolbox.NewTask(cronTask.name, cronTask.spec, cronTask.taskFunc)
 		toolbox.AddTask(cronTask.name, task)
 	} else {
 		for _, cronTask := range name2task {
-			beego.Info("[cron] create cron task ", cronTask.name)
+			beego.Info("[cron] create cron task ", cronTask.name, cronTask.spec)
 			task := toolbox.NewTask(cronTask.name, cronTask.spec, cronTask.taskFunc)
 			toolbox.AddTask(cronTask.name, task)
 		}

@@ -166,7 +166,10 @@ func (this *Resource) request(method string, service string, resource string, da
 
 	//执行request，获得response
 	resp, err := netClient.Do(req)
-	defer resp.Body.Close()
+
+	if resp != nil{
+		defer resp.Body.Close()
+	}
 
 	if err != nil {
 		return nil, err, err
