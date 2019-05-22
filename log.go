@@ -16,6 +16,7 @@ package beego
 
 import (
 	"fmt"
+	"net/http"
 	"strings"
 	
 	"github.com/kfchen81/beego/logs"
@@ -75,7 +76,19 @@ func Error(v ...interface{}) {
 	{
 		
 		msg := fmt.Sprintf(format, v...)
-		PushErrorToSentry(msg)
+		PushErrorToSentry(msg, nil)
+	}
+}
+
+func HError(req *http.Request, v ...interface{}) {
+	format := generateFmtStr(len(v))
+	logs.Error(format, v...)
+	
+	//vanilla: push to sentry
+	{
+		
+		msg := fmt.Sprintf(format, v...)
+		PushErrorToSentry(msg, req)
 	}
 }
 

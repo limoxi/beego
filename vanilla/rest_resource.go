@@ -317,7 +317,6 @@ set_orm:
 		}
 		
 		lockKey := app.GetLockKey()
-		beego.Warn(lockKey)
 		if lockKey == "" {
 			//do not lock
 		} else {

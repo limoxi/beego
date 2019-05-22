@@ -5,6 +5,8 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"github.com/kfchen81/beego/logs"
+	"github.com/kfchen81/beego/metrics"
 	"io/ioutil"
 	"net"
 	"net/http"
@@ -22,6 +24,9 @@ import (
 
 var _PLATFORM_SECRET string
 var _USER_LOGIN_SECRET string
+
+const _RETRY_COUNT = 3
+var _SERVICE_NAME string
 
 type ResourceResponse struct {
 	RespData *simplejson.Json
@@ -43,7 +48,7 @@ type Resource struct {
 	CustomJWTToken string
 }
 
-func (this *Resource) request(method string, service string, resource string, data Map) (respData *ResourceResponse, err error) {
+func (this *Resource) request(method string, service string, resource string, data Map) (respData *ResourceResponse, err error, httpErr error) {
 	var jwtToken string
 	if this.CustomJWTToken != "" {
 		jwtToken = this.CustomJWTToken
@@ -75,7 +80,7 @@ func (this *Resource) request(method string, service string, resource string, da
 	}
 
 	//构建url.Values
-	params := url.Values{"_v": {"1"}}
+	params := url.Values{"_v": {"1"}, "__source_service":{_SERVICE_NAME}}
 
 	//处理resource
 	pos := strings.LastIndexByte(resource, '.')
@@ -138,7 +143,7 @@ func (this *Resource) request(method string, service string, resource string, da
 	}
 	//req, err := http.NewRequest("GET", apiUrl, strings.NewReader(values.Encode()))
 	if err != nil {
-		return nil, err
+		return nil, err, err
 	}
 
 	if method != "GET" {
@@ -164,19 +169,19 @@ func (this *Resource) request(method string, service string, resource string, da
 	defer resp.Body.Close()
 
 	if err != nil {
-		return nil, err
+		return nil, err, err
 	}
 
 	//获取response的内容
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
-		return nil, err
+		return nil, err, err
 	}
 
 	jsonObj := new(simplejson.Json)
 	err = jsonObj.UnmarshalJSON(body)
 	if err != nil {
-		return nil, err
+		return nil, err, err
 	}
 
 	resourceResp := new(ResourceResponse)
@@ -184,32 +189,52 @@ func (this *Resource) request(method string, service string, resource string, da
 	//fmt.Println(string(body))
 
 	if resourceResp.IsSuccess() {
-		return resourceResp, nil
+		return resourceResp, nil, nil
 	} else {
-		beego.Error(jsonObj)
+		logs.Critical(jsonObj)
 		errCode := jsonObj.Get("errCode")
 		if errCode == nil {
-			return resourceResp, errors.New("remote_service_error")
+			return resourceResp, errors.New("remote_service_error"), nil
 		} else {
-			return resourceResp, errors.New(errCode.MustString())
+			return resourceResp, errors.New(errCode.MustString()), nil
 		}
 	}
 }
 
+func (this *Resource) requestWithRetry(method string, service string, resource string, data Map) (resp *ResourceResponse, err error) {
+	var httpErr error
+	for i := 0; i < _RETRY_COUNT; i++ {
+		if i > 0 {
+			metrics.GetResourceRetryCounter().Inc()
+		}
+		resp, err, httpErr = this.request(method, service, resource, data)
+		
+		if httpErr == nil {
+			break
+		}
+		
+		if i >= _RETRY_COUNT-1 {
+			break
+		}
+	}
+	
+	return resp, err
+}
+
 func (this *Resource) Get(service string, resource string, data Map) (resp *ResourceResponse, err error) {
-	return this.request("GET", service, resource, data)
+	return this.requestWithRetry("GET", service, resource, data)
 }
 
 func (this *Resource) Put(service string, resource string, data Map) (resp *ResourceResponse, err error) {
-	return this.request("PUT", service, resource, data)
+	return this.requestWithRetry("PUT", service, resource, data)
 }
 
 func (this *Resource) Post(service string, resource string, data Map) (resp *ResourceResponse, err error) {
-	return this.request("POST", service, resource, data)
+	return this.requestWithRetry("POST", service, resource, data)
 }
 
 func (this *Resource) Delete(service string, resource string, data Map) (resp *ResourceResponse, err error) {
-	return this.request("DELETE", service, resource, data)
+	return this.requestWithRetry("DELETE", service, resource, data)
 }
 
 func (this *Resource) LoginAs(username string) *Resource {
@@ -223,7 +248,7 @@ func (this *Resource) LoginAs(username string) *Resource {
 		"password": _PLATFORM_SECRET,
 	})
 	if err != nil {
-		beego.Error(err)
+		logs.Critical(err)
 		return nil
 	}
 	
@@ -243,7 +268,7 @@ func (this *Resource) LoginAsUser(unionid string) *Resource {
 		"secret": _USER_LOGIN_SECRET,
 	})
 	if err != nil {
-		beego.Error(err)
+		logs.Critical(err)
 		return nil
 	}
 	
@@ -310,6 +335,7 @@ func ToJsonString(obj interface{}) string {
 func init() {
 	_PLATFORM_SECRET = beego.AppConfig.String("system::PLATFORM_SECRET")
 	_USER_LOGIN_SECRET = beego.AppConfig.String("system::USER_LOGIN_SECRET")
+	_SERVICE_NAME = beego.AppConfig.String("appname")
 	beego.Info("[init] use _PLATFORM_SECRET: " + _PLATFORM_SECRET)
 	beego.Info("[init] use _USER_LOGIN_SECRET: " + _USER_LOGIN_SECRET)
 }
