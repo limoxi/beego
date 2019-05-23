@@ -80,35 +80,22 @@ type TaskContext struct{
 	ctx context.Context
 }
 
+func (this *TaskContext) Init(ctx context.Context, o orm.Ormer, resource *vanilla.Resource){
+	this.ctx = ctx
+	this.orm = o
+	this.resource = resource
+}
+
 func (this *TaskContext) GetOrm() orm.Ormer{
 	return this.orm
-}
-func (this *TaskContext) SetOrm(o orm.Ormer) *TaskContext{
-	this.orm = o
-	if this.ctx != nil{
-		this.ctx = context.WithValue(this.ctx, "orm", o)
-	}
-	return this
 }
 
 func (this *TaskContext) GetCtx() context.Context{
 	return this.ctx
 }
-func (this *TaskContext) SetCtx(ctx context.Context, o orm.Ormer) *TaskContext{
-	this.ctx = ctx
-	if o != nil{
-		this.ctx = context.WithValue(this.ctx, "orm", o)
-		this.orm = o
-	}
-	return this
-}
 
 func (this *TaskContext) GetResource() *vanilla.Resource{
 	return this.resource
-}
-func (this *TaskContext) SetResource(resource *vanilla.Resource) *TaskContext{
-	this.resource = resource
-	return this
 }
 
 var managerToken string
