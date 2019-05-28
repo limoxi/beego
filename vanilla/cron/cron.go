@@ -28,8 +28,11 @@ func newTaskCtx() *TaskContext{
 	inst := new(TaskContext)
 	ctx := context.Background()
 	o := orm.NewOrm()
+	ctx = context.WithValue(ctx, "orm", o)
 	resource := GetManagerResource(ctx)
-	inst.SetCtx(ctx, o).SetResource(resource)
+	ctx = context.WithValue(ctx, "jwt", resource.CustomJWTToken)
+	resource.Ctx = ctx
+	inst.Init(ctx, o, resource)
 	return inst
 }
 
