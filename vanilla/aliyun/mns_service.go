@@ -1,7 +1,6 @@
 package aliyun
 
 import (
-	"github.com/kfchen81/beego/vanilla/aliyun/mns"
 	"github.com/kfchen81/beego"
 )
 
@@ -66,24 +65,25 @@ func (this *MNSService) Send(message string) (bool, error) {
 }
 
 func (this *MNSService) SendWithTag(message []byte, tag string) (bool, error) {
-	client := mns.NewAliMNSClient(endpoint,
-		mnsAccessKeyId,
-		mnsAccessKeySecret)
-	
-	msg := mns.TopicMessageSendRequest{
-		MessageBody: []byte(message),
-		MessageTag: tag,
-	}
-	
-	topic := mns.NewMNSTopic("DevTopic", client)
-	_, err := topic.SendMessage(msg)
-	if err != nil {
-		beego.Error(err)
-		return false, err
-	} else {
-		beego.Notice("send message success")
-		return true, nil
-	}
+	//client := mns.NewAliMNSClient(endpoint,
+	//	mnsAccessKeyId,
+	//	mnsAccessKeySecret)
+	//
+	//msg := mns.TopicMessageSendRequest{
+	//	MessageBody: []byte(message),
+	//	MessageTag: tag,
+	//}
+	//
+	//topic := mns.NewMNSTopic("DevTopic", client)
+	//_, err := topic.SendMessage(msg)
+	//if err != nil {
+	//	beego.Error(err)
+	//	return false, err
+	//} else {
+	//	beego.Notice("send message success")
+	//	return true, nil
+	//}
+	panic("not implemented")
 }
 
 

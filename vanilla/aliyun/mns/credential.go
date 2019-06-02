@@ -8,7 +8,8 @@ import (
 	"sort"
 	"strings"
 	"time"
-	
+
+	"github.com/kfchen81/beego/vanilla/gogap/errors"
 )
 
 const (
@@ -79,7 +80,7 @@ func (p *AliMNSCredential) Signature(method Method, headers map[string]string, r
 
 	sha1Hash := hmac.New(sha1.New, []byte(p.accessKeySecret))
 	if _, e := sha1Hash.Write([]byte(stringToSign)); e != nil {
-		err = e
+		err = ERR_SIGN_MESSAGE_FAILED.New(errors.Params{"err": e})
 		return
 	}
 
