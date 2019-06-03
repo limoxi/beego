@@ -6,7 +6,6 @@ import (
 	"encoding/base64"
 	"encoding/xml"
 	"fmt"
-	"github.com/kfchen81/beego"
 	"net"
 	"net/http"
 	neturl "net/url"
@@ -14,7 +13,7 @@ import (
 	"strings"
 	"sync"
 	"time"
-
+	
 	"github.com/kfchen81/beego/vanilla/gogap/errors"
 )
 
@@ -218,7 +217,6 @@ func (p *aliMNSClient) Send(method Method, headers map[string]string, message in
 
 	url := buffer.String()
 	
-	beego.Notice(string(xmlContent))
 	postBodyReader := strings.NewReader(string(xmlContent))
 	
 	var req *http.Request

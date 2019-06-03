@@ -107,6 +107,30 @@ func PushErrorToSentry(errMsg string, req *http.Request) {
 	}
 }
 
+func PushErrorWithExtraDataToSentry(errMsg string, extra map[string]interface{}, req *http.Request) {
+	if !isEnableSentry() {
+		return
+	}
+	
+	data := make(map[string]interface{})
+	data["err_msg"] = errMsg
+	data["service_name"] = AppConfig.String("appname")
+	
+	//stack := string(debug.Stack())
+	data["stack"] = "ignore"
+	data["extra"] = extra
+	if req != nil {
+		data["raven_http"] = raven.NewHttp(req)
+		data["http_request"] = req
+	}
+	select {
+	case sentryChannel <- data:
+	
+	case <-time.After(time.Millisecond * 500):
+		Warn("[sentry] push timeout")
+	}
+}
+
 func sendSentryPacketV1(data map[string]interface{}) {
 	var packet *raven.Packet
 	errMsg := data["err_msg"].(string)
@@ -151,14 +175,19 @@ func sendSentryPacketV2(data map[string]interface{}) {
 		packet = raven.NewPacket(errMsg)
 	}
 	
+	//确定extra
+	if extra, ok := data["extra"]; ok {
+		packet.Extra = extra.(map[string]interface{})
+	} else {
+		packet.Extra = make(map[string]interface{})
+	}
+	
 	//确定堆栈信息
 	stack, ok := data["stack"].(string)
 	if !ok {
 		stack = "no stack"
 	}
-	packet.Extra = map[string]interface{}{
-		"stacktrace": stack,
-	}
+	packet.Extra["stacktrace"] = stack
 	
 	//其他Tag
 	tags := map[string]string{
