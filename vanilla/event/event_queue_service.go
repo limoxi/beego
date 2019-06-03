@@ -86,15 +86,15 @@ func RegisterEventHandler(event string, handler MessageHandler) {
 	event2handler[event] = handler
 }
 
-type MnsQueueService struct {
+type EventQueueService struct {
 }
 
-func NewMnsQueueService() *MnsQueueService {
-	service := new(MnsQueueService)
+func NewEventQueueService() *EventQueueService {
+	service := new(EventQueueService)
 	return service
 }
 
-func (this *MnsQueueService) Listen() {
+func (this *EventQueueService) Listen() {
 	defer func(){
 		if err := recover(); err!=nil{
 			beego.Error(err)
