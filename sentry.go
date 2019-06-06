@@ -93,8 +93,8 @@ func PushErrorToSentry(errMsg string, req *http.Request) {
 	data["err_msg"] = errMsg
 	data["service_name"] = AppConfig.String("appname")
 	
-	//stack := string(debug.Stack())
-	data["stack"] = "ignore"
+	stack := string(debug.Stack())
+	data["stack"] = stack
 	if req != nil {
 		data["raven_http"] = raven.NewHttp(req)
 		data["http_request"] = req
