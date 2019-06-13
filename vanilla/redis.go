@@ -21,10 +21,6 @@ type redisStruct struct {
 
 // actually do the redis cmds, args[0] must be the key name.
 func (this *redisStruct) Do(ctx context.Context, commandName string, args ...interface{}) (reply interface{}, err error) {
-	if len(args) < 1 {
-		return nil, errors.New("missing required arguments")
-	}
-	
 	//记录open tracing
 	span := opentracing.SpanFromContext(ctx)
 	if span != nil {

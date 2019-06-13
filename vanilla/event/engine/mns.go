@@ -2,8 +2,8 @@ package engine
 
 import (
 	"encoding/json"
-	"github.com/aliyun/aliyun-mns-go-sdk"
 	"github.com/kfchen81/beego"
+	ali_mns "github.com/kfchen81/beego/vanilla/aliyun/mns"
 )
 
 type mnsConf struct{
@@ -47,6 +47,7 @@ func (this *mnsEngine) Send(data map[string]interface{}, tag string){
 	if err != nil{
 		beego.Error(err)
 	}
+	
 }
 
 

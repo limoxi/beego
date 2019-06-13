@@ -25,6 +25,10 @@ func (t Task) GetName() string{
 	return t.name
 }
 
+func (t Task) SetName(name string) {
+	t.name = name
+}
+
 func (t Task) IsEnableTx() bool{
 	return true
 }

@@ -84,17 +84,39 @@ func RegisterPipeTask(pi pipeInterface, spec string) *CronTask{
 }
 
 func RegisterTask(task taskInterface, spec string) *CronTask {
-	tname := task.GetName()
-	wrappedFn := taskWrapper(task)
-	cronTask := &CronTask{
-		name: tname,
-		spec: spec,
-		taskFunc: wrappedFn,
-		onlyRunThisTask: false,
+	if beego.AppConfig.DefaultBool("system::ENABLE_CRON_MODE", false) {
+		tname := task.GetName()
+		wrappedFn := taskWrapper(task)
+		cronTask := &CronTask{
+			name: tname,
+			spec: spec,
+			taskFunc: wrappedFn,
+			onlyRunThisTask: false,
+		}
+		name2task[tname] = cronTask
+		
+		return cronTask
+	} else {
+		return nil
 	}
-	name2task[tname] = cronTask
+}
 
-	return cronTask
+func RegisterTaskInRestMode(task taskInterface, spec string) *CronTask {
+	if !beego.AppConfig.DefaultBool("system::ENABLE_CRON_MODE", false) {
+		tname := task.GetName()
+		wrappedFn := taskWrapper(task)
+		cronTask := &CronTask{
+			name: tname,
+			spec: spec,
+			taskFunc: wrappedFn,
+			onlyRunThisTask: false,
+		}
+		name2task[tname] = cronTask
+		
+		return cronTask
+	} else {
+		return nil
+	}
 }
 
 func RegisterCronTask(tname string, spec string, f toolbox.TaskFunc) *CronTask {
@@ -131,4 +153,8 @@ func StartCronTasks() {
 	}
 
 	toolbox.StartTask()
+}
+
+func StopCronTasks() {
+	toolbox.StopTask()
 }

@@ -12,6 +12,7 @@ import (
 	"net/http"
 	"net/url"
 	"strings"
+	"sync"
 	"time"
 	
 	"github.com/kfchen81/beego"
@@ -24,9 +25,43 @@ import (
 
 var _PLATFORM_SECRET string
 var _USER_LOGIN_SECRET string
+var _ENABLE_RESOURCE_LOGIN_CACHE bool
 
 const _RETRY_COUNT = 3
 var _SERVICE_NAME string
+
+// Login Cache: 登录信息的缓存机制
+type loginCache struct {
+	cache map[string]string
+	sync.RWMutex
+}
+
+func (this *loginCache) Get(key string) string {
+	this.RLock()
+	defer this.RUnlock()
+	
+	if val, ok := this.cache[key]; ok {
+		return val
+	} else {
+		return ""
+	}
+}
+
+func (this *loginCache) Set(key string, val string) {
+	this.Lock()
+	defer this.Unlock()
+	
+	if len(this.cache) > 10000 {
+		this.cache = make(map[string]string)
+	}
+	this.cache[key] = val
+}
+
+var _LOGIN_CACHE = loginCache{
+	cache: make(map[string]string),
+}
+
+// Request
 
 type ResourceResponse struct {
 	RespData *simplejson.Json
@@ -46,6 +81,7 @@ func (this *ResourceResponse) Data() *simplejson.Json {
 type Resource struct {
 	Ctx context.Context
 	CustomJWTToken string
+	disableRetry bool
 }
 
 func (this *Resource) request(method string, service string, resource string, data Map) (respData *ResourceResponse, err error, httpErr error) {
@@ -214,6 +250,10 @@ func (this *Resource) requestWithRetry(method string, service string, resource s
 			break
 		}
 		
+		if this.disableRetry {
+			break
+		}
+		
 		if i >= _RETRY_COUNT-1 {
 			break
 		}
@@ -244,6 +284,14 @@ func (this *Resource) LoginAs(username string) *Resource {
 		return nil
 	}
 	
+	if _ENABLE_RESOURCE_LOGIN_CACHE {
+		jwt := _LOGIN_CACHE.Get(username)
+		if jwt != "" {
+			this.CustomJWTToken = jwt
+			return this
+		}
+	}
+	
 	resp, err := this.Put("gskep", "login.logined_corp_user", Map{
 		"username": username,
 		"password": _PLATFORM_SECRET,
@@ -254,7 +302,11 @@ func (this *Resource) LoginAs(username string) *Resource {
 	}
 	
 	respData := resp.Data()
-	this.CustomJWTToken, _ = respData.Get("sid").String()
+	jwt, _ := respData.Get("sid").String()
+	if _ENABLE_RESOURCE_LOGIN_CACHE {
+		_LOGIN_CACHE.Set(username, jwt)
+	}
+	this.CustomJWTToken = jwt
 	return this
 }
 
@@ -262,6 +314,16 @@ func (this *Resource) LoginAsUser(unionid string) *Resource {
 	if _USER_LOGIN_SECRET == "" {
 		beego.Error("_USER_LOGIN_SECRET is '', Please set _USER_LOGIN_SECRET in your *.conf file")
 		return nil
+	}
+	
+	beego.Error(_ENABLE_RESOURCE_LOGIN_CACHE)
+	if _ENABLE_RESOURCE_LOGIN_CACHE {
+		jwt := _LOGIN_CACHE.Get(unionid)
+		beego.Error("use login cache to fetch jwt ", jwt)
+		if jwt != "" {
+			this.CustomJWTToken = jwt
+			return this
+		}
 	}
 	
 	resp, err := this.Put("gskep", "login.logined_h5_user", Map{
@@ -274,12 +336,21 @@ func (this *Resource) LoginAsUser(unionid string) *Resource {
 	}
 	
 	respData := resp.Data()
-	this.CustomJWTToken, _ = respData.Get("sid").String()
+	jwt, _ := respData.Get("sid").String()
+	if _ENABLE_RESOURCE_LOGIN_CACHE {
+		_LOGIN_CACHE.Set(unionid, jwt)
+	}
+	this.CustomJWTToken = jwt
 	return this
 }
 
 func (this *Resource) LoginAsManager() *Resource {
 	return this.LoginAs("manager")
+}
+
+func (this *Resource) DisableRetry() *Resource {
+	this.disableRetry = true
+	return this
 }
 
 func CronLogin(o orm.Ormer) (*Resource, error) {
@@ -325,6 +396,7 @@ func CronLogin(o orm.Ormer) (*Resource, error) {
 func NewResource(ctx context.Context) *Resource {
 	resource := new(Resource)
 	resource.Ctx = ctx
+	resource.disableRetry = false
 	return resource
 }
 
@@ -337,6 +409,8 @@ func init() {
 	_PLATFORM_SECRET = beego.AppConfig.String("system::PLATFORM_SECRET")
 	_USER_LOGIN_SECRET = beego.AppConfig.String("system::USER_LOGIN_SECRET")
 	_SERVICE_NAME = beego.AppConfig.String("appname")
-	beego.Info("[init] use _PLATFORM_SECRET: " + _PLATFORM_SECRET)
-	beego.Info("[init] use _USER_LOGIN_SECRET: " + _USER_LOGIN_SECRET)
+	_ENABLE_RESOURCE_LOGIN_CACHE = beego.AppConfig.DefaultBool("system::ENABLE_RESOURCE_LOGIN_CACHE", false)
+	beego.Info("[init] use _PLATFORM_SECRET: ", _PLATFORM_SECRET)
+	beego.Info("[init] use _USER_LOGIN_SECRET: ", _USER_LOGIN_SECRET)
+	beego.Info("[init] use _ENABLE_RESOURCE_LOGIN_CACHE: ", _ENABLE_RESOURCE_LOGIN_CACHE)
 }

@@ -1,9 +1,10 @@
 package mns
 
 import (
+	"io/ioutil"
 	"net/http"
-	"errors"
-	"fmt"
+	
+	"github.com/kfchen81/beego/vanilla/gogap/errors"
 )
 
 func send(client MNSClient, decoder MNSDecoder, method Method, headers map[string]string, message interface{}, resource string, v interface{}) (statusCode int, err error) {
@@ -11,37 +12,41 @@ func send(client MNSClient, decoder MNSDecoder, method Method, headers map[strin
 	if resp, err = client.Send(method, headers, message, resource); err != nil {
 		return
 	}
+	
+	defer resp.Body.Close()
 
 	if resp != nil {
-		defer resp.Body.Close()
 		statusCode = resp.StatusCode
 
-		if resp.StatusCode != http.StatusCreated &&
-			resp.StatusCode != http.StatusOK &&
-			resp.StatusCode != http.StatusNoContent {
+		if statusCode != http.StatusCreated &&
+			statusCode != http.StatusOK &&
+			statusCode != http.StatusNoContent {
 
-			errResp := ErrorMessageResponse{}
-			if e := decoder.Decode(resp.Body, &errResp); e != nil {
-				err = e
-				return
+			// get the response body
+			//   the body is set in error when decoding xml failed
+			//获取response的内容
+			bodyBytes, err := ioutil.ReadAll(resp.Body)
+			if err != nil {
+				return statusCode, err
 			}
-			err = ParseError(errResp, resource)
-			return
+
+			var e2 error
+			err, e2 = decoder.DecodeError(bodyBytes, resource)
+
+			if e2 != nil {
+				err = ERR_UNMARSHAL_ERROR_RESPONSE_FAILED.New(errors.Params{"err": e2, "resp":string(bodyBytes)})
+				return statusCode, err
+			}
+			return statusCode, err
 		}
 
 		if v != nil {
 			if e := decoder.Decode(resp.Body, v); e != nil {
-				err = err
-				return
+				err = ERR_UNMARSHAL_RESPONSE_FAILED.New(errors.Params{"err": e})
+				return statusCode, err
 			}
 		}
 	}
 
-	return
-}
-
-func ParseError(resp ErrorMessageResponse, resource string) (err error) {
-	errMsg := fmt.Sprintf("ali_mns response status error,code: %s, message: %s, resource: %s, request id: %s, host id: %s", resp.Code, resp.Message, resource, resp.RequestId, resp.HostId)
-	err = errors.New(errMsg)
-	return
+	return statusCode, err
 }
