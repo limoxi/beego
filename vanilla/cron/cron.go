@@ -77,14 +77,16 @@ func fetchData(pi pipeInterface){
 
 func RegisterPipeTask(pi pipeInterface, spec string) *CronTask{
 	task := RegisterTask(pi.(taskInterface), spec)
-	for i := int(math.Ceil(float64(pi.GetCap())/10)); i>0; i--{
-		fetchData(pi)
+	if task != nil{
+		for i := int(math.Ceil(float64(pi.GetCap())/10)); i>0; i--{
+			fetchData(pi)
+		}
 	}
 	return task
 }
 
 func RegisterTask(task taskInterface, spec string) *CronTask {
-	if beego.AppConfig.DefaultBool("system::ENABLE_CRON_MODE", false) {
+	if beego.AppConfig.DefaultBool("system::ENABLE_CRON_MODE", false) || beego.AppConfig.String("system::SERVICE_MODE") == "cron" {
 		tname := task.GetName()
 		wrappedFn := taskWrapper(task)
 		cronTask := &CronTask{
@@ -102,7 +104,7 @@ func RegisterTask(task taskInterface, spec string) *CronTask {
 }
 
 func RegisterTaskInRestMode(task taskInterface, spec string) *CronTask {
-	if !beego.AppConfig.DefaultBool("system::ENABLE_CRON_MODE", false) {
+	if !beego.AppConfig.DefaultBool("system::ENABLE_CRON_MODE", false) && beego.AppConfig.String("system::SERVICE_MODE") == "rest" {
 		tname := task.GetName()
 		wrappedFn := taskWrapper(task)
 		cronTask := &CronTask{
