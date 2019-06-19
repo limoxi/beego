@@ -17,19 +17,19 @@ type Task struct {
 	name string
 }
 
-func (t Task) Run(taskContext *TaskContext) error{
+func (t *Task) Run(taskContext *TaskContext) error{
 	return errors.New("Run not implemented")
 }
 
-func (t Task) GetName() string{
+func (t *Task) GetName() string{
 	return t.name
 }
 
-func (t Task) SetName(name string) {
+func (t *Task) SetName(name string) {
 	t.name = name
 }
 
-func (t Task) IsEnableTx() bool{
+func (t *Task) IsEnableTx() bool{
 	return true
 }
 
