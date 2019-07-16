@@ -4,17 +4,11 @@ import (
 	"github.com/kfchen81/beego/context"
 	
 	go_context "context"
-	"crypto/hmac"
-	"crypto/sha256"
-	"encoding/base64"
 	"fmt"
-	"log"
 	"strings"
 	
 	"github.com/kfchen81/beego/vanilla"
-	
-	"errors"
-	"github.com/bitly/go-simplejson"
+
 	"github.com/kfchen81/beego"
 	"github.com/kfchen81/beego/orm"
 	"github.com/opentracing/opentracing-go"
@@ -73,71 +67,24 @@ var JWTAuthFilter = func(ctx *context.Context) {
 	}
 	
 	if jwtToken != "" {
-		items := strings.Split(jwtToken, ".")
-		if len(items) != 3 {
-			//jwt token 格式不对
-			response := vanilla.MakeErrorResponse(500, "jwt:invalid_jwt_token", fmt.Sprintf("无效的jwt token 1 - [%s]", jwtToken))
+		js, err := vanilla.DecodeJWT(jwtToken)
+
+		if err != nil{
+			response := vanilla.MakeErrorResponse(500, "jwt:invalid_jwt_token", err.Error())
 			ctx.Output.JSON(response, true, false)
 			return
 		}
 
-		headerB64Code, payloadB64Code, expectedSignature := items[0], items[1], items[2]
-		message := fmt.Sprintf("%s.%s", headerB64Code, payloadB64Code)
-
-		h := hmac.New(sha256.New, []byte(SALT))
-		h.Write([]byte(message))
-		actualSignature := base64.StdEncoding.EncodeToString(h.Sum(nil))
-
-		if expectedSignature != actualSignature {
-			//jwt token的signature不匹配
-			response := vanilla.MakeErrorResponse(500, "jwt:invalid_jwt_token", fmt.Sprintf("无效的jwt token 2 - [%s]", jwtToken))
-			ctx.Output.JSON(response, true, false)
-			return
-		}
-
-		decodeBytes, err := base64.StdEncoding.DecodeString(payloadB64Code)
-		if err != nil {
-			log.Fatalln(err)
-		}
-		js, err := simplejson.NewJson([]byte(decodeBytes))
-
-		if err != nil {
-			response := vanilla.MakeErrorResponse(500, "jwt:invalid_jwt_token", fmt.Sprintf("无效的jwt token 3 - [%s]", jwtToken))
-			ctx.Output.JSON(response, true, false)
-			return
-		}
-
-		//beego.Warn("**********>>>>>>>>>>**********>>>>>>>>>>")
-		//beego.Warn(string(decodeBytes))
-		//beego.Warn("**********>>>>>>>>>>**********>>>>>>>>>>")
-		jwtType, err := js.Get("type").Int()
-		if err != nil {
-			log.Fatalln(err)
-			response := vanilla.MakeErrorResponse(500, "jwt:invalid_jwt_token", fmt.Sprintf("无效的jwt token 4.1 - [%s]", jwtToken))
-			ctx.Output.JSON(response, true, false)
-			return
-		}
-		
-		var userId int
-		var err2 error
-		if jwtType == 1 {
-			userId, err2 = js.Get("user_id").Int()
-		} else if jwtType == 2 {
-			userId, err2 = js.Get("uid").Int()
-		} else if jwtType == 3 {
-			userId, err2 = js.Get("user").Get("uid").Int()
-		} else {
-			err2 = errors.New(fmt.Sprintf("invalid jwt type: %d", jwtType))
-		}
-		if err2 != nil {
-			beego.Error(err2)
-			response := vanilla.MakeErrorResponse(500, "jwt:invalid_jwt_token", fmt.Sprintf("无效的jwt token 4.2 - [%s]", jwtToken))
+		userId, authUserId, err := vanilla.ParseUserIdFromJwtData(js)
+		if err != nil{
+			response := vanilla.MakeErrorResponse(500, "jwt:invalid_jwt_token", err.Error())
 			ctx.Output.JSON(response, true, false)
 			return
 		}
 		
 		bCtx := gBContextFactory.NewContext(go_context.Background(), ctx.Request, userId, jwtToken, js) //bCtx is for "business context"
-		
+		bCtx = go_context.WithValue(bCtx, "user_id", userId)
+		bCtx = go_context.WithValue(bCtx, "uid", authUserId)
 		//enhance business context
 		{
 			//add tracing span

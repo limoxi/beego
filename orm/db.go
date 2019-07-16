@@ -747,7 +747,19 @@ func (d *dbBase) UpdateBatch(q dbQuerier, qs *querySet, mi *modelInfo, cond *Con
 				cols = append(cols, col+" = "+col+" / ?")
 			}
 			values[i] = c.value
-		} else {
+		}else if c, ok := values[i].(colFloatValue); ok {
+			switch c.opt {
+			case ColAdd:
+				cols = append(cols, col+" = "+col+" + ?")
+			case ColMinus:
+				cols = append(cols, col+" = "+col+" - ?")
+			case ColMultiply:
+				cols = append(cols, col+" = "+col+" * ?")
+			case ColExcept:
+				cols = append(cols, col+" = "+col+" / ?")
+			}
+			values[i] = c.value
+		}else {
 			cols = append(cols, col+" = ?")
 		}
 	}

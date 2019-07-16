@@ -24,6 +24,11 @@ type colValue struct {
 	opt   operator
 }
 
+type colFloatValue struct{
+	value float64
+	opt operator
+}
+
 type operator int
 
 // define Col operations
@@ -49,6 +54,22 @@ func ColValue(opt operator, value interface{}) interface{} {
 		panic(fmt.Errorf("orm.ColValue doesn't support non string/numeric type, %s", err))
 	}
 	var val colValue
+	val.value = v
+	val.opt = opt
+	return val
+}
+
+func ColFloatValue(opt operator, value interface{}) interface{} {
+	switch opt {
+	case ColAdd, ColMinus, ColMultiply, ColExcept:
+	default:
+		panic(fmt.Errorf("orm.ColFloatValue wrong operator"))
+	}
+	v, err := StrTo(ToStr(value)).Float64()
+	if err != nil {
+		panic(fmt.Errorf("orm.ColFloatValue doesn't support non string/numeric type, %s", err))
+	}
+	var val colFloatValue
 	val.value = v
 	val.opt = opt
 	return val
