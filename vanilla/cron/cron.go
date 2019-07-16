@@ -31,6 +31,9 @@ func newTaskCtx() *TaskContext{
 	ctx = context.WithValue(ctx, "orm", o)
 	resource := GetManagerResource(ctx)
 	ctx = context.WithValue(ctx, "jwt", resource.CustomJWTToken)
+	userId, authUserId, _ := vanilla.ParseUserIdFromJwtToken(resource.CustomJWTToken)
+	ctx = context.WithValue(ctx, "user_id", userId)
+	ctx = context.WithValue(ctx, "uid", authUserId)
 	resource.Ctx = ctx
 	inst.Init(ctx, o, resource)
 	return inst

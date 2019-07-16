@@ -107,7 +107,9 @@ var managerToken string
 func GetManagerResource(ctx context.Context) *vanilla.Resource{
 	if managerToken == ""{
 		resource := vanilla.NewResource(ctx).LoginAsManager()
-		managerToken = resource.CustomJWTToken
+		if resource != nil{
+			managerToken = resource.CustomJWTToken
+		}
 	}
 
 	res := vanilla.NewResource(ctx)
