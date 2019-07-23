@@ -81,7 +81,11 @@ func fetchData(pi pipeInterface){
 func RegisterPipeTask(pi pipeInterface, spec string) *CronTask{
 	task := RegisterTask(pi.(taskInterface), spec)
 	if task != nil{
-		for i := int(math.Ceil(float64(pi.GetCap())/10)); i>0; i--{
+		if pi.EnableParallel(){ // 并行模式下，开启通道容量十分之一的goroutine消费通道
+			for i := int(math.Ceil(float64(pi.GetCap())/10)); i>0; i--{
+				fetchData(pi)
+			}
+		}else{
 			fetchData(pi)
 		}
 	}

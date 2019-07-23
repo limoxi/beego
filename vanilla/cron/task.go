@@ -43,6 +43,7 @@ type pipeInterface interface {
 	GetData() interface{}
 	GetCap() int
 	RunConsumer(data interface{}, taskCtx *TaskContext)
+	EnableParallel() bool
 }
 
 type Pipe struct{
@@ -69,6 +70,11 @@ func (p Pipe) GetCap() int{
 
 func (p Pipe) RunConsumer() error{
 	return errors.New("RunConsumer not implemented")
+}
+
+// EnableParallel 启用并行，默认启用
+func (p Pipe) EnableParallel() bool{
+	return true
 }
 
 func NewPipe(chCap int) Pipe{
