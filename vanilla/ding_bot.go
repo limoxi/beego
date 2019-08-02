@@ -16,6 +16,7 @@ var envName string
 type DingBot struct{
 	apiUrl string
 	token string
+	botName string
 }
 
 func (this *DingBot) SetToken(token string) *DingBot{
@@ -30,6 +31,7 @@ func (this *DingBot) Use(name string) *DingBot{
 	}else{
 		if token, ok := botConf[name]; ok{
 			this.token = token.(string)
+			this.botName = name
 		}
 	}
 
@@ -60,6 +62,12 @@ func (this *DingBot) parseConf() (map[string]interface{}, error){
 func (this *DingBot) send(title, msg string){
 	if this.token == "" || mode == "develop"{
 		// 开发环境或token不存在则只打印
+		beego.Info(title, msg)
+		return
+	}
+
+	if mode != "deploy" && this.botName == "xiuer"{
+		// 秀儿只在生产环境使用
 		beego.Info(title, msg)
 		return
 	}
