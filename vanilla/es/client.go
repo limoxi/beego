@@ -2,10 +2,13 @@ package es
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"github.com/kfchen81/beego"
 	"github.com/kfchen81/beego/vanilla"
 	"github.com/olivere/elastic"
+	"math"
+	"reflect"
 	"strings"
 )
 
@@ -16,15 +19,27 @@ type ESClient struct{
 
 	indexName string
 	docType string
+
+	withNoHits bool
+
+	pageInfo *vanilla.PageInfo
+
+	searchResult *elastic.SearchResult
 }
 
 func (this *ESClient) Use(indexName string) *ESClient{
 	this.indexName = indexName
+	this.docType = indexName
 	return this
 }
 
 func (this *ESClient) Select(docType string) *ESClient{
 	this.docType = docType
+	return this
+}
+
+func (this *ESClient) NoHits() *ESClient{
+	this.withNoHits = true
 	return this
 }
 
@@ -75,6 +90,151 @@ func (this *ESClient) Push(id string, data interface{}) {
 		beego.Error(errMsg)
 		panic(vanilla.NewSystemError("es_push:failed", errMsg.Error()))
 	}
+}
+
+// Search 查询
+// args: [pageInfo, sortAttrs, rawAggs, aggs]
+func (this *ESClient) Search(filters map[string]interface{}, args ...map[string]interface{}) *ESClient{
+	parser := NewQueryParser()
+	query := parser.Parse(filters)
+	searchService := this.client.Search().Index(this.indexName).Type(this.docType).MaxResponseSize(20<<32)
+
+	switch len(args) {
+	case 1:
+		param := args[0]
+		if p, ok := param["pageInfo"]; ok && p != nil{
+			// 分页
+			pageInfo := p.(*vanilla.PageInfo)
+			this.pageInfo = pageInfo
+			searchService = searchService.From((pageInfo.Page-1)*pageInfo.CountPerPage).Size(pageInfo.CountPerPage)
+		}
+		if p, ok := param["sortAttrs"]; ok && p != nil{
+			// 排序
+			sortAttrs := p.([]string)
+			for _, sat := range sortAttrs{
+				sps := strings.Split(sat, "-")
+				var sortField string
+				var asc bool
+				if len(sps) == 1{
+					sortField = sps[0]
+					asc = true
+				}else{
+					sortField = sps[1]
+					asc = sps[0] == "+"
+				}
+				searchService = searchService.Sort(sortField, asc)
+			}
+		}
+		if p, ok := param["rawAggs"]; ok && p != nil{
+			// 聚合
+			var aggs map[string]interface{}
+			err := json.Unmarshal([]byte(p.(string)), &aggs)
+			if err != nil{
+				beego.Error(err)
+				panic(vanilla.NewSystemError("es:invalid_aggs_format", "不合法的聚合查询参数"))
+			}
+			for name, aggData := range aggs{
+				searchService = searchService.Aggregation(name, newAggregation(aggData))
+			}
+		}
+		if p , ok := param["aggs"]; ok && p != nil{
+			for _, agg := range p.([]*NamedAggregation){
+				searchService = searchService.Aggregation(agg.GetName(), agg.GetAggregation())
+			}
+		}
+	}
+
+	// 不返回任何结果，用于只获取聚合数据
+	if this.withNoHits{
+		searchService = searchService.Size(0)
+	}
+
+	result, err := searchService.Query(query).Do(this.Ctx)
+	if err != nil{
+		beego.Error(err)
+	}
+	this.searchResult = result
+	return this
+}
+
+// BindRecords 将搜索记录绑定到一个包含struct的slice中
+// container一定是某个slice的地址，如:
+//		var orders []*Order
+//		es.BindRecords(&orders)
+func (this *ESClient) BindRecords(container interface{}){
+	if this.searchResult == nil || this.withNoHits{
+		return
+	}
+
+	containerType := reflect.TypeOf(container).Elem()
+	slice := reflect.Indirect(reflect.MakeSlice(containerType, 0, 0))
+
+	elmType := containerType.Elem().Elem()
+	hits := this.searchResult.Hits.Hits
+	for _, hit := range hits{
+		js, _ := hit.Source.MarshalJSON()
+		elmIface := reflect.New(elmType).Interface()
+		json.Unmarshal(js, elmIface)
+		slice = reflect.Append(slice, reflect.ValueOf(elmIface))
+	}
+	reflect.Indirect(reflect.ValueOf(container)).Set(slice)
+}
+
+func (this *ESClient) GetSearchRecords() []*elastic.SearchHit{
+	return this.searchResult.Hits.Hits
+}
+
+func (this *ESClient) GetSearchResult() *elastic.SearchResult{
+	return this.searchResult
+}
+
+func (this *ESClient) GetPageResult() vanilla.INextPageInfo{
+	if this.pageInfo != nil{
+		return vanilla.MockPaginate(this.searchResult.TotalHits(), this.pageInfo)
+	}
+	return nil
+}
+
+func (this *ESClient) GetAggregation() elastic.Aggregations{
+	if this.searchResult == nil{
+		return nil
+	}
+	return this.searchResult.Aggregations
+}
+
+// GetSumAgg 聚合查询
+func (this *ESClient) GetSumAgg(name string) float64{
+	result, ok := this.GetAggregation().Sum(name)
+	if ok{
+		return math.Trunc(*result.Value*1e2+0.5)*1e-2 // 四舍五入保留两位小数
+	}
+	return 0
+}
+
+// GetNestedSumAgg 嵌套聚合查询
+func (this *ESClient) GetNestedSumAgg(nestedName, aggName string) float64{
+	nestAgg, ok := this.GetAggregation().Nested(nestedName)
+	if ok{
+		result, innerOk := nestAgg.Sum(aggName)
+		if innerOk{
+			return math.Trunc(*result.Value*1e2+0.5)*1e-2 // 四舍五入保留两位小数
+		}
+	}
+	return 0
+}
+// GetNestedSumAggWithFilter 带filter的嵌套聚合查询
+func (this *ESClient) GetNestedSumAggWithFilter(nestedName, aggName string) float64{
+	nestAgg, ok := this.GetAggregation().Nested(nestedName)
+	if ok{
+		filterAgg, iOk := nestAgg.Filter(aggName)
+		if iOk{
+			result, iiOk := filterAgg.Sum(aggName)
+			if iiOk{
+				return math.Trunc(*result.Value*1e2+0.5)*1e-2 // 四舍五入保留两位小数
+			}
+		}
+	}
+	return 0
 }
 
 func NewESClient(ctx context.Context) *ESClient{
