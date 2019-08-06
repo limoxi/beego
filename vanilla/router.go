@@ -2,6 +2,7 @@ package vanilla
 
 import (
 	"fmt"
+	"github.com/gasxia/beego/vanilla/restws"
 	"strings"
 
 	"reflect"
@@ -87,5 +88,6 @@ func init() {
 	beego.Router("/console/console/", &ConsoleController{})
 	beego.Router("/op/health/", &OpHealthController{})
 	beego.Handler("/metrics", promhttp.Handler())
+	beego.Router("/restws", &restws.RestWS{})
 	beego.Router("/", &IndexController{})
 }

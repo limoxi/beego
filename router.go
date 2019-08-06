@@ -122,6 +122,10 @@ type ControllerInfo struct {
 	methodParams   []*param.MethodParam
 }
 
+func (c ControllerInfo) Init() ControllerInterface {
+	return c.initialize()
+}
+
 // ControllerRegister containers registered router rules, controller handlers and filters.
 type ControllerRegister struct {
 	routers      map[string]*Tree
