@@ -2,7 +2,7 @@ package vanilla
 
 import (
 	"fmt"
-	"github.com/gasxia/beego/vanilla/restws"
+	"./restws"
 	"strings"
 
 	"reflect"
