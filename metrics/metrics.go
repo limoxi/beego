@@ -49,6 +49,15 @@ var businessErrorCounter = promauto.NewCounter(prometheus.CounterOpts{
 	Help: "total counts for business error",
 })
 
+var restwsGauge = promauto.NewGauge(prometheus.GaugeOpts{
+	Name: "restws_connection",
+	Help: "Number of rest proxy websocket connection is active",
+})
+
+func GetRestwsGauge() prometheus.Gauge {
+	return restwsGauge
+}
+
 func GetEndpointCounter() *prometheus.CounterVec {
 	return endpointCounter
 }

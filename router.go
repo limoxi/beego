@@ -637,6 +637,10 @@ func (p *ControllerRegister) geturl(t *Tree, url, controllName, methodName strin
 	return false, ""
 }
 
+func (p *ControllerRegister) ExecFilter(context *beecontext.Context, urlPath string, pos int) (started bool) {
+	return p.execFilter(context, urlPath, pos)
+
+}
 func (p *ControllerRegister) execFilter(context *beecontext.Context, urlPath string, pos int) (started bool) {
 	var preFilterParams map[string]string
 	for _, filterR := range p.filters[pos] {

@@ -1,4 +1,4 @@
-package restws
+package vanilla
 
 import (
 	"bytes"
@@ -6,7 +6,6 @@ import (
 	"github.com/kfchen81/beego/context"
 	"github.com/kfchen81/beego/logs"
 	"github.com/kfchen81/beego/metrics"
-	"github.com/kfchen81/beego/vanilla"
 	"github.com/opentracing/opentracing-go"
 	"gopkg.in/redsync.v1"
 	"runtime"
@@ -16,7 +15,7 @@ import (
 	"github.com/kfchen81/beego/orm"
 )
 
-func RecoverPanic(err interface{}, ctx *context.Context, restReq RestRequest) (resp WsResponse) {
+func WsRestRecoverPanic(err interface{}, ctx *context.Context, restReq RestRequest) (resp WsResponse) {
 	//err := recover()
 	if err != nil {
 		//rollback tx
@@ -44,7 +43,7 @@ func RecoverPanic(err interface{}, ctx *context.Context, restReq RestRequest) (r
 		//记录到sentry
 		{
 			errMsg := ""
-			if be, ok := err.(*vanilla.BusinessError); ok {
+			if be, ok := err.(*BusinessError); ok {
 				errMsg = fmt.Sprintf("%s - %s", be.ErrCode, be.ErrMsg)
 			} else {
 				errMsg = fmt.Sprint(err)
@@ -55,7 +54,7 @@ func RecoverPanic(err interface{}, ctx *context.Context, restReq RestRequest) (r
 		//记录panic counter
 		//1. 非BusinessError需要记录
 		//2. IsPanicError为true的BusinessError需要记录
-		if be, ok := err.(*vanilla.BusinessError); ok {
+		if be, ok := err.(*BusinessError); ok {
 			if be.IsPanicError() {
 				metrics.GetPanicCounter().Inc()
 			} else {
@@ -70,7 +69,7 @@ func RecoverPanic(err interface{}, ctx *context.Context, restReq RestRequest) (r
 		}
 
 		errMsg := ""
-		if be, ok := err.(*vanilla.BusinessError); ok {
+		if be, ok := err.(*BusinessError); ok {
 			errMsg = fmt.Sprintf("%s:%s", be.ErrCode, be.ErrMsg)
 		} else {
 			errMsg = fmt.Sprintf("%s", err)
@@ -94,9 +93,9 @@ func RecoverPanic(err interface{}, ctx *context.Context, restReq RestRequest) (r
 		}
 
 		//return error response
-		if be, ok := err.(*vanilla.BusinessError); ok {
+		if be, ok := err.(*BusinessError); ok {
 			resp = WsResponse{
-				Response: &vanilla.Response{
+				Response: &Response{
 					Code: 500,
 					Data: nil,
 					ErrMsg: be.ErrMsg,
@@ -111,9 +110,9 @@ func RecoverPanic(err interface{}, ctx *context.Context, restReq RestRequest) (r
 				endpoint = endpoint[:pos]
 			}
 			resp = WsResponse{
-				Response: &vanilla.Response{
+				Response: &Response{
 					Code: 541,
-					Data: vanilla.Map{
+					Data: Map{
 						"endpoint": restReq.Path,
 					},
 					ErrMsg: fmt.Sprintf("%s", err),
@@ -125,9 +124,9 @@ func RecoverPanic(err interface{}, ctx *context.Context, restReq RestRequest) (r
 		return
 	}
 	resp = WsResponse{
-		Response: &vanilla.Response{
+		Response: &Response{
 			Code: 541,
-			Data: vanilla.Map{
+			Data: Map{
 				"endpoint": restReq.Path,
 			},
 			ErrMsg: "unknown",

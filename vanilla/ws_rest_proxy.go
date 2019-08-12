@@ -1,23 +1,23 @@
-package restws
+package vanilla
 
 import (
-	"context"
 	"encoding/json"
 	"fmt"
+	"github.com/kfchen81/beego/metrics"
 	"github.com/gorilla/websocket"
 	"github.com/kfchen81/beego"
-	"github.com/kfchen81/beego/vanilla"
+	beeContext "github.com/kfchen81/beego/context"
 	"net/http"
 	"strings"
 	"time"
 )
 
-type RestWS struct {
-	vanilla.RestResource
+type RestProxy struct {
+	RestResource
 }
 
-func (this *RestWS) Resource() string {
-	return "restws"
+func (this *RestProxy) Resource() string {
+	return "ws.rest_proxy"
 }
 
 const (
@@ -47,7 +47,7 @@ type RestRequest struct {
 	Rid    string `json:"rid"`
 }
 
-func (this *RestWS) Get() {
+func (this *RestProxy) Get() {
 	ws, err := upgrader.Upgrade(this.Ctx.ResponseWriter, this.Ctx.Request, nil)
 
 	if err != nil {
@@ -55,32 +55,34 @@ func (this *RestWS) Get() {
 		return
 	}
 
-	restwsGauge.Inc()
+	metrics.GetRestwsGauge().Inc()
 
-	bCtx := this.GetBusinessContext()
-	bCtx = context.WithValue(bCtx, "isWsMode", true)
-	reader(ws, bCtx)
+	respChan := make(chan WsResponse)
+	defer close(respChan)
+	go write(ws, respChan)
+	reader(ws, this.Ctx, respChan)
+
 }
 
-func reader(ws *websocket.Conn, bCtx context.Context) {
+func reader(ws *websocket.Conn, ctx *beeContext.Context, respChan chan<- WsResponse) {
 	defer func() {
 		ws.Close()
-		restwsGauge.Dec()
+		metrics.GetRestwsGauge().Dec()
 	}()
 	for {
 		req := new(RestRequest)
 		ws.SetReadDeadline(time.Now().Add(readWait))
 		err := ws.ReadJSON(req)
 		if err != nil {
-			beego.Error("Read Error:", err)
+			beego.Info("Read Error:", err)
 			break
 		}
 
-		go handle(ws, bCtx, req)
+		go handle(ctx, req, respChan)
 	}
 }
 
-func handle(ws *websocket.Conn, bCtx context.Context, req *RestRequest) {
+func handle(ctx *beeContext.Context, req *RestRequest, respChan chan<- WsResponse) {
 	defer func() {
 		err := recover()
 		if err != nil {
@@ -88,19 +90,30 @@ func handle(ws *websocket.Conn, bCtx context.Context, req *RestRequest) {
 		}
 	}()
 	log(req)
-	resp := handleRequest(*req, bCtx)
-	content, err := json.Marshal(resp)
-	if err != nil {
-		beego.Error("Encode websocket data error:", err)
-		return
-	}
-	ws.SetWriteDeadline(time.Now().Add(writeWait))
-	if err := ws.WriteMessage(websocket.TextMessage, content); err != nil {
-		beego.Error("Write Error:", err)
-		ws.Close()
-		return
-	}
+	resp := handleRequest(*req, ctx)
+	respChan <- resp
+}
 
+func write(ws *websocket.Conn, respChan <-chan WsResponse) {
+	defer func() {
+		err := recover()
+		if err != nil {
+			beego.Error("Write Recover:", err)
+		}
+	}()
+	for resp := range respChan{
+		content, err := json.Marshal(resp)
+		if err != nil {
+			beego.Error("Encode websocket data error:", err)
+			return
+		}
+		ws.SetWriteDeadline(time.Now().Add(writeWait))
+		if err := ws.WriteMessage(websocket.TextMessage, content); err != nil {
+			beego.Info("Write Error:", err)
+			ws.Close()
+			return
+		}
+	}
 }
 
 func log(req *RestRequest) {
@@ -111,3 +124,4 @@ func log(req *RestRequest) {
 	beego.Info(fmt.Sprintf("[%s] Method:%s Path:%s Params:%s Rid:%s",
 		now, req.Method, req.Path, req.Params, req.Rid))
 }
+
