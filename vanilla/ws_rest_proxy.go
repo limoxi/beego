@@ -67,16 +67,18 @@ func (this *RestProxy) Get() {
 	metrics.GetRestwsGauge().Inc()
 
 	respChan := make(chan WsResponse)
-	stopCh := make(chan struct{})
+	stopRespCh := make(chan struct{})
+	closeCh := make(chan struct{})
 	defer func() {
+		close(closeCh)
 		ws.Close()
 		metrics.GetRestwsGauge().Dec()
 	}()
-	go writer(ws, respChan, stopCh)
-	reader(ws, this.Ctx, respChan, stopCh)
+	go writer(ws, respChan, stopRespCh, closeCh)
+	reader(ws, this.Ctx, respChan, stopRespCh)
 }
 
-func reader(ws *websocket.Conn, ctx *beeContext.Context, respChan chan<- WsResponse, stopCh chan struct{}) {
+func reader(ws *websocket.Conn, ctx *beeContext.Context, respChan chan<- WsResponse, stopRespCh chan struct{}) {
 	for {
 		req := new(RestRequest)
 		ws.SetReadDeadline(time.Now().Add(readWait))
@@ -86,11 +88,11 @@ func reader(ws *websocket.Conn, ctx *beeContext.Context, respChan chan<- WsRespo
 			metrics.GetRestwsErrorCounter().WithLabelValues("reader").Inc()
 			break
 		}
-		go handle(ctx, req, respChan, stopCh)
+		go handle(ctx, req, respChan, stopRespCh)
 	}
 }
 
-func handle(ctx *beeContext.Context, req *RestRequest, respChan chan<- WsResponse, stopCh chan struct{}) {
+func handle(ctx *beeContext.Context, req *RestRequest, respChan chan<- WsResponse, stopRespCh chan struct{}) {
 	defer func() {
 		err := recover()
 		if err != nil {
@@ -101,13 +103,13 @@ func handle(ctx *beeContext.Context, req *RestRequest, respChan chan<- WsRespons
 	log(req)
 	resp := handleRequest(*req, ctx)
 	select {
-	case <-stopCh:
+	case <-stopRespCh:
 		return
 	case respChan <- resp:
 	}
 }
 
-func writer(ws *websocket.Conn, respChan <-chan WsResponse, stopCh chan struct{}) {
+func writer(ws *websocket.Conn, respChan <-chan WsResponse, stopRespCh chan struct{}, closeCh chan struct{}) {
 	defer func() {
 		err := recover()
 		if err != nil {
@@ -116,20 +118,25 @@ func writer(ws *websocket.Conn, respChan <-chan WsResponse, stopCh chan struct{}
 		}
 	}()
 	defer func() {
-		close(stopCh)
+		close(stopRespCh)
 		ws.Close()
 	}()
-	for resp := range respChan {
-		content, err := json.Marshal(resp)
-		if err != nil {
-			beego.Error("Encode websocket data error:", err)
+	for {
+		select {
+		case <- closeCh:
 			return
-		}
-		ws.SetWriteDeadline(time.Now().Add(writeWait))
-		if err := ws.WriteMessage(websocket.TextMessage, content); err != nil {
-			beego.Info("Write Error:", err)
-			metrics.GetRestwsErrorCounter().WithLabelValues("writer").Inc()
-			return
+		case resp := <-	respChan:
+			content, err := json.Marshal(resp)
+			if err != nil {
+				beego.Error("Encode websocket data error:", err)
+				return
+			}
+			ws.SetWriteDeadline(time.Now().Add(writeWait))
+			if err := ws.WriteMessage(websocket.TextMessage, content); err != nil {
+				beego.Info("Write Error:", err)
+				metrics.GetRestwsErrorCounter().WithLabelValues("writer").Inc()
+				return
+			}
 		}
 	}
 }
