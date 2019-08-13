@@ -122,6 +122,10 @@ type ControllerInfo struct {
 	methodParams   []*param.MethodParam
 }
 
+func (c ControllerInfo) Init() ControllerInterface {
+	return c.initialize()
+}
+
 // ControllerRegister containers registered router rules, controller handlers and filters.
 type ControllerRegister struct {
 	routers      map[string]*Tree
@@ -631,6 +635,10 @@ func (p *ControllerRegister) geturl(t *Tree, url, controllName, methodName strin
 	}
 
 	return false, ""
+}
+
+func (p *ControllerRegister) ExecFilter(context *beecontext.Context, urlPath string, pos int) (started bool) {
+	return p.execFilter(context, urlPath, pos)
 }
 
 func (p *ControllerRegister) execFilter(context *beecontext.Context, urlPath string, pos int) (started bool) {
