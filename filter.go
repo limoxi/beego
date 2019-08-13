@@ -42,7 +42,3 @@ func (f *FilterRouter) ValidRouter(url string, ctx *context.Context) bool {
 	}
 	return false
 }
-
-func (f *FilterRouter) Run(ctx *context.Context) {
-	f.filterFunc(ctx)
-}

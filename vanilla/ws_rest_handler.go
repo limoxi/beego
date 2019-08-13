@@ -40,7 +40,7 @@ func handleRequest(restReq RestRequest, rawCtx *beecontext.Context) (resp WsResp
 	}
 
 	cr := beego.BeeApp.Handlers
-	cron, findRouter := cr.FindRouter(ctx)
+	controllerInfo, findRouter := cr.FindRouter(ctx)
 	if !findRouter {
 		resp = WsResponse{
 			Response: &Response{
@@ -56,7 +56,7 @@ func handleRequest(restReq RestRequest, rawCtx *beecontext.Context) (resp WsResp
 		return
 		//exception("404", context)
 	}
-	execController := cron.Init()
+	execController := controllerInfo.Init()
 	execController.Init(ctx, "restws.request", ctx.Input.Method(), execController)
 
 	//call prepare function

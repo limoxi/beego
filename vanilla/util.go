@@ -3,8 +3,22 @@ package vanilla
 import (
 	"fmt"
 	"github.com/kfchen81/beego"
+	"net/url"
 	"strconv"
+	"strings"
 )
+
+func HostDomain(host string) string {
+	u :=  url.URL{
+		Host: host,
+	}
+	parts := strings.Split(u.Hostname(), ".")
+	if len(parts) < 2 {
+		return host
+	}
+	domain := parts[len(parts)-2] + "." +  parts[len(parts)-1]
+	return domain
+}
 
 func ExtractUniqueIds(datas []IIDable, idType string) []int {
 	id2bool := make(map[int]bool)
