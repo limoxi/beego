@@ -7,9 +7,9 @@ import (
 	"net/http"
 	"strconv"
 	"strings"
-	
+
 	"github.com/kfchen81/beego"
-	
+
 	"encoding/json"
 	"github.com/bitly/go-simplejson"
 	beego_context "github.com/kfchen81/beego/context"
@@ -31,6 +31,7 @@ type RestResourceInterface interface {
 	GetBusinessContext() context.Context
 	SetBeegoController(ctx *beego_context.Context, data map[interface{}]interface{})
 	GetLockKey() string
+	GetLockOptions() map[string]interface{}
 }
 
 /*RestResource 扩展beego.Controller, 作为rest中各个资源的基类
@@ -142,6 +143,10 @@ func (r *RestResource) DisableTx() bool {
  */
 func (r *RestResource) GetLockKey() string {
 	return ""
+}
+
+func (r *RestResource) GetLockOptions() map[string]interface{}{
+	return nil
 }
 
 /*Parameters 获取需要检查的参数
@@ -285,7 +290,7 @@ func (r *RestResource) Prepare() {
 						}
 					}
 				}
-set_orm:
+			set_orm:
 				for key, _ := range actualParams {
 					if strings.HasPrefix(key, "__f") {
 						if strings.HasSuffix(key, "-in") {
@@ -311,16 +316,37 @@ set_orm:
 					}
 				} else {
 				}
-				
-				
+
+
 			}
 		}
-		
-		lockKey := app.GetLockKey()
-		if lockKey == "" {
-			//do not lock
-		} else {
-			mutex, _ := Lock.Lock(lockKey)
+		lockOptions := map[string]interface{}{
+			"key": fmt.Sprintf("rest_api_lock_%s_%s", app.Resource(), method),
+		}
+		customOptions := app.GetLockOptions()
+		needLock := false
+		if customOptions != nil{
+			if v, ok := customOptions["key"]; ok && v != nil{
+				lockOptions["key"] = v
+			}
+			if v, ok := customOptions["timeout"]; ok && v != nil{
+				lockOptions["timeout"] = v
+			}
+			if v, ok := customOptions["retries"]; ok && v != nil{
+				lockOptions["retries"] = v
+			}
+			needLock = true
+		}else{
+			lockKey := app.GetLockKey()
+			if lockKey == "" {
+				//do not lock
+			} else {
+				lockOptions["key"] = lockKey
+				needLock = true
+			}
+		}
+		if needLock{
+			mutex, _ := Lock.Lock(lockOptions["key"].(string), lockOptions)
 			if mutex != nil {
 				r.Ctx.Input.Data()["sessionRestMutex"] = mutex
 			}
