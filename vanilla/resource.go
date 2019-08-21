@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"github.com/gasxia/beego/vanilla/cache"
 	"github.com/kfchen81/beego/logs"
 	"github.com/kfchen81/beego/metrics"
 	"io/ioutil"
@@ -12,15 +13,14 @@ import (
 	"net/http"
 	"net/url"
 	"strings"
-	"sync"
 	"time"
-	
+
+	"github.com/bitly/go-simplejson"
 	"github.com/kfchen81/beego"
 	"github.com/kfchen81/beego/orm"
-	"github.com/bitly/go-simplejson"
-	"os"
-	"github.com/opentracing/opentracing-go/ext"
 	"github.com/opentracing/opentracing-go"
+	"github.com/opentracing/opentracing-go/ext"
+	"os"
 )
 
 var _PLATFORM_SECRET string
@@ -31,36 +31,27 @@ const _RETRY_COUNT = 3
 var _SERVICE_NAME string
 
 // Login Cache: 登录信息的缓存机制
-type loginCache struct {
-	cache map[string]string
-	sync.RWMutex
+// find jwt in which cache and key
+type cacheKey struct {
+	incache cache.Cache
+	key interface{}
+}
+var jwt2CacheKey = map[string]cacheKey{}
+
+const LoginCacheSize = 1000
+var onEvictCallback cache.EvictCallback = func(key interface{}, value interface{}) {
+	delete(jwt2CacheKey, key.(string))
 }
 
-func (this *loginCache) Get(key string) string {
-	this.RLock()
-	defer this.RUnlock()
-	
-	if val, ok := this.cache[key]; ok {
-		return val
-	} else {
-		return ""
-	}
-}
+var onEvictOption = cache.WithEvictCallBack(onEvictCallback)
 
-func (this *loginCache) Set(key string, val string) {
-	this.Lock()
-	defer this.Unlock()
-	
-	if len(this.cache) > 10000 {
-		this.cache = make(map[string]string)
-	}
-	this.cache[key] = val
-}
+var corpTTLOption = cache.WithTTL(time.Duration(24) * time.Hour)
+var corpLoginCache = cache.NewLRUCache(LoginCacheSize, corpTTLOption, onEvictOption)
 
-var _LOGIN_CACHE = loginCache{
-	cache: make(map[string]string),
-}
+var userTTLOption = cache.WithTTL(time.Duration(3) * time.Hour)
+var userLoginCache = cache.NewLRUCache(LoginCacheSize, userTTLOption, onEvictOption)
 
+const InvaildJwtError = "jwt:invalid_jwt_token"
 // Request
 
 type ResourceResponse struct {
@@ -233,9 +224,24 @@ func (this *Resource) request(method string, service string, resource string, da
 		if errCode == nil {
 			return resourceResp, errors.New("remote_service_error"), nil
 		} else {
+			this.handleJWTError(errCode.MustString())
 			return resourceResp, errors.New(errCode.MustString()), nil
 		}
 	}
+}
+
+func (this *Resource) handleJWTError(errCode string) {
+	if errCode != InvaildJwtError {
+		return
+	}
+	if this.CustomJWTToken == "" {
+		return
+	}
+	ck := jwt2CacheKey[this.CustomJWTToken]
+	ck.incache.Del(ck.key)
+	// will be delete in onEvictCallback
+	// delete(jwt2CacheKey, this.CustomJWTToken)
+	// todo retry login then request
 }
 
 func (this *Resource) requestWithRetry(method string, service string, resource string, data Map) (resp *ResourceResponse, err error) {
@@ -285,9 +291,9 @@ func (this *Resource) LoginAs(username string) *Resource {
 	}
 	
 	if _ENABLE_RESOURCE_LOGIN_CACHE {
-		jwt := _LOGIN_CACHE.Get(username)
-		if jwt != "" {
-			this.CustomJWTToken = jwt
+		if jwt, ok := corpLoginCache.Get(username); ok {
+			// todo 统计cache命中率
+			this.CustomJWTToken = jwt.(string)
 			return this
 		}
 	}
@@ -304,7 +310,11 @@ func (this *Resource) LoginAs(username string) *Resource {
 	respData := resp.Data()
 	jwt, _ := respData.Get("sid").String()
 	if _ENABLE_RESOURCE_LOGIN_CACHE {
-		_LOGIN_CACHE.Set(username, jwt)
+		corpLoginCache.Set(username, jwt)
+		jwt2CacheKey[jwt] = cacheKey{
+			corpLoginCache,
+			username,
+		}
 	}
 	this.CustomJWTToken = jwt
 	return this
@@ -318,10 +328,9 @@ func (this *Resource) LoginAsUser(unionid string) *Resource {
 	
 	beego.Error(_ENABLE_RESOURCE_LOGIN_CACHE)
 	if _ENABLE_RESOURCE_LOGIN_CACHE {
-		jwt := _LOGIN_CACHE.Get(unionid)
-		beego.Error("use login cache to fetch jwt ", jwt)
-		if jwt != "" {
-			this.CustomJWTToken = jwt
+		if jwt, ok := userLoginCache.Get(unionid); ok {
+			// todo 统计cache命中率
+			this.CustomJWTToken = jwt.(string)
 			return this
 		}
 	}
@@ -338,7 +347,11 @@ func (this *Resource) LoginAsUser(unionid string) *Resource {
 	respData := resp.Data()
 	jwt, _ := respData.Get("sid").String()
 	if _ENABLE_RESOURCE_LOGIN_CACHE {
-		_LOGIN_CACHE.Set(unionid, jwt)
+		userLoginCache.Set(unionid, jwt)
+		jwt2CacheKey[jwt] = cacheKey{
+			userLoginCache,
+			unionid,
+		}
 	}
 	this.CustomJWTToken = jwt
 	return this
