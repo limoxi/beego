@@ -61,6 +61,17 @@ var restwsErrorCounter = promauto.NewCounterVec(prometheus.CounterOpts{
 	[]string{"option"},
 )
 
+var jwtCacheCounter = promauto.NewCounterVec(prometheus.CounterOpts{
+	Name: "jwt_cache_gets_total",
+	Help: "total counts of get jwt from cache",
+},
+	[]string{"result", "role"},
+)
+
+func GetJwtCacheCounter() *prometheus.CounterVec {
+	return jwtCacheCounter
+}
+
 func GetRestwsGauge() prometheus.Gauge {
 	return restwsGauge
 }

@@ -33,8 +33,8 @@ var _SERVICE_NAME string
 // Login Cache: 登录信息的缓存机制
 // find jwt in which cache and key
 type cacheKey struct {
-	incache cache.Cache
-	key interface{}
+	roleCache cache.Cache
+	key   interface{}
 }
 var jwt2CacheKey = map[string]cacheKey{}
 
@@ -48,7 +48,7 @@ var onEvictOption = cache.WithEvictCallBack(onEvictCallback)
 var corpTTLOption = cache.WithTTL(time.Duration(24) * time.Hour)
 var corpLoginCache = cache.NewLRUCache(LoginCacheSize, corpTTLOption, onEvictOption)
 
-var userTTLOption = cache.WithTTL(time.Duration(3) * time.Hour)
+var userTTLOption = cache.WithTTL(time.Duration(24) * time.Hour)
 var userLoginCache = cache.NewLRUCache(LoginCacheSize, userTTLOption, onEvictOption)
 
 const InvaildJwtError = "jwt:invalid_jwt_token"
@@ -238,7 +238,8 @@ func (this *Resource) handleJWTError(errCode string) {
 		return
 	}
 	ck := jwt2CacheKey[this.CustomJWTToken]
-	ck.incache.Del(ck.key)
+	ck.roleCache.Del(ck.key)
+	// todo cache token invalid
 	// will be delete in onEvictCallback
 	// delete(jwt2CacheKey, this.CustomJWTToken)
 	// todo retry login then request
@@ -291,10 +292,13 @@ func (this *Resource) LoginAs(username string) *Resource {
 	}
 	
 	if _ENABLE_RESOURCE_LOGIN_CACHE {
+		counter := metrics.GetJwtCacheCounter()
 		if jwt, ok := corpLoginCache.Get(username); ok {
-			// todo 统计cache命中率
+			counter.WithLabelValues("hit", "corp").Inc()
 			this.CustomJWTToken = jwt.(string)
 			return this
+		} else {
+			counter.WithLabelValues("miss", "corp").Inc()
 		}
 	}
 	
@@ -328,10 +332,13 @@ func (this *Resource) LoginAsUser(unionid string) *Resource {
 	
 	beego.Error(_ENABLE_RESOURCE_LOGIN_CACHE)
 	if _ENABLE_RESOURCE_LOGIN_CACHE {
+		counter := metrics.GetJwtCacheCounter()
 		if jwt, ok := userLoginCache.Get(unionid); ok {
-			// todo 统计cache命中率
+			counter.WithLabelValues("hit", "user").Inc()
 			this.CustomJWTToken = jwt.(string)
 			return this
+		} else {
+			counter.WithLabelValues("miss", "user").Inc()
 		}
 	}
 	
