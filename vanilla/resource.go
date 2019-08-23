@@ -5,22 +5,21 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"github.com/bitly/go-simplejson"
 	"github.com/gasxia/beego/vanilla/cache"
+	"github.com/kfchen81/beego"
 	"github.com/kfchen81/beego/logs"
 	"github.com/kfchen81/beego/metrics"
+	"github.com/kfchen81/beego/orm"
+	"github.com/opentracing/opentracing-go"
+	"github.com/opentracing/opentracing-go/ext"
 	"io/ioutil"
 	"net"
 	"net/http"
 	"net/url"
+	"os"
 	"strings"
 	"time"
-
-	"github.com/bitly/go-simplejson"
-	"github.com/kfchen81/beego"
-	"github.com/kfchen81/beego/orm"
-	"github.com/opentracing/opentracing-go"
-	"github.com/opentracing/opentracing-go/ext"
-	"os"
 )
 
 var _PLATFORM_SECRET string
