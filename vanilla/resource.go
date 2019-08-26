@@ -6,11 +6,11 @@ import (
 	"errors"
 	"fmt"
 	"github.com/bitly/go-simplejson"
-	"github.com/gasxia/beego/vanilla/cache"
 	"github.com/kfchen81/beego"
 	"github.com/kfchen81/beego/logs"
 	"github.com/kfchen81/beego/metrics"
 	"github.com/kfchen81/beego/orm"
+	"github.com/kfchen81/beego/vanilla/cache"
 	"github.com/opentracing/opentracing-go"
 	"github.com/opentracing/opentracing-go/ext"
 	"io/ioutil"
@@ -27,30 +27,22 @@ var _USER_LOGIN_SECRET string
 var _ENABLE_RESOURCE_LOGIN_CACHE bool
 
 const _RETRY_COUNT = 3
+
 var _SERVICE_NAME string
 
 // Login Cache: 登录信息的缓存机制
-// find jwt in which cache and key
-type cacheKey struct {
-	roleCache cache.Cache
-	key   interface{}
-}
-var jwt2CacheKey = map[string]cacheKey{}
+const LoginCacheSize = 10000
 
-const LoginCacheSize = 1000
-var onEvictCallback cache.EvictCallback = func(key interface{}, value interface{}) {
-	delete(jwt2CacheKey, key.(string))
-}
-
-var onEvictOption = cache.WithEvictCallBack(onEvictCallback)
+var v2kOption = cache.WithValue2Key()
 
 var corpTTLOption = cache.WithTTL(time.Duration(24) * time.Hour)
-var corpLoginCache = cache.NewLRUCache(LoginCacheSize, corpTTLOption, onEvictOption)
+var corpLoginCache = cache.NewLRUCache("corp_jwt_token", LoginCacheSize, corpTTLOption, v2kOption)
 
 var userTTLOption = cache.WithTTL(time.Duration(24) * time.Hour)
-var userLoginCache = cache.NewLRUCache(LoginCacheSize, userTTLOption, onEvictOption)
+var userLoginCache = cache.NewLRUCache("user_jwt_token", LoginCacheSize, userTTLOption, v2kOption)
 
-const InvaildJwtError = "jwt:invalid_jwt_token"
+const InvalidJwtError = "jwt:invalid_jwt_token"
+
 // Request
 
 type ResourceResponse struct {
@@ -69,9 +61,9 @@ func (this *ResourceResponse) Data() *simplejson.Json {
 /*RestResource 扩展beego.Controller, 作为rest中各个资源的基类
  */
 type Resource struct {
-	Ctx context.Context
+	Ctx            context.Context
 	CustomJWTToken string
-	disableRetry bool
+	disableRetry   bool
 }
 
 func (this *Resource) request(method string, service string, resource string, data Map) (respData *ResourceResponse, err error, httpErr error) {
@@ -81,17 +73,17 @@ func (this *Resource) request(method string, service string, resource string, da
 	} else {
 		var ok bool
 		if jwtToken, ok = this.Ctx.Value("jwt").(string); ok {
-		
+
 		} else {
 			jwtToken = ""
 		}
 	}
-	
+
 	usePeanutPure := os.Getenv("USE_PEANUT_PURE")
 	if usePeanutPure == "1" && service == "peanut" {
 		service = "peanut_pure"
 	}
-	
+
 	apiServerHost := beego.AppConfig.String("api::API_SERVER_HOST")
 	//创建client
 	var netTransport = &http.Transport{
@@ -106,7 +98,7 @@ func (this *Resource) request(method string, service string, resource string, da
 	}
 
 	//构建url.Values
-	params := url.Values{"_v": {"1"}, "__source_service":{_SERVICE_NAME}}
+	params := url.Values{"_v": {"1"}, "__source_service": {_SERVICE_NAME}}
 
 	//处理resource
 	pos := strings.LastIndexByte(resource, '.')
@@ -176,7 +168,7 @@ func (this *Resource) request(method string, service string, resource string, da
 		req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
 	}
 	req.Header.Set("AUTHORIZATION", jwtToken)
-	
+
 	//inject open tracing
 	span := opentracing.SpanFromContext(this.Ctx)
 	if span != nil {
@@ -196,7 +188,7 @@ func (this *Resource) request(method string, service string, resource string, da
 	if err != nil {
 		return nil, err, err
 	}
-	
+
 	defer resp.Body.Close()
 
 	//获取response的内容
@@ -230,18 +222,18 @@ func (this *Resource) request(method string, service string, resource string, da
 }
 
 func (this *Resource) handleJWTError(errCode string) {
-	if errCode != InvaildJwtError {
+	if !_ENABLE_RESOURCE_LOGIN_CACHE {
+		return
+	}
+	if errCode != InvalidJwtError {
 		return
 	}
 	if this.CustomJWTToken == "" {
 		return
 	}
-	ck := jwt2CacheKey[this.CustomJWTToken]
-	ck.roleCache.Del(ck.key)
-	// todo cache token invalid
-	// will be delete in onEvictCallback
-	// delete(jwt2CacheKey, this.CustomJWTToken)
-	// todo retry login then request
+	corpLoginCache.DelByValue(this.CustomJWTToken)
+	userLoginCache.DelByValue(this.CustomJWTToken)
+	metrics.GetErrorJwtInCacheCounter().Inc()
 }
 
 func (this *Resource) requestWithRetry(method string, service string, resource string, data Map) (resp *ResourceResponse, err error) {
@@ -251,20 +243,20 @@ func (this *Resource) requestWithRetry(method string, service string, resource s
 			metrics.GetResourceRetryCounter().Inc()
 		}
 		resp, err, httpErr = this.request(method, service, resource, data)
-		
+
 		if httpErr == nil {
 			break
 		}
-		
+
 		if this.disableRetry {
 			break
 		}
-		
+
 		if i >= _RETRY_COUNT-1 {
 			break
 		}
 	}
-	
+
 	return resp, err
 }
 
@@ -289,7 +281,7 @@ func (this *Resource) LoginAs(username string) *Resource {
 		beego.Error("_PLATFORM_SECRET is '', Please set _PLATFORM_SECRET in your *.conf file")
 		return nil
 	}
-	
+
 	if _ENABLE_RESOURCE_LOGIN_CACHE {
 		counter := metrics.GetJwtCacheCounter()
 		if jwt, ok := corpLoginCache.Get(username); ok {
@@ -300,7 +292,7 @@ func (this *Resource) LoginAs(username string) *Resource {
 			counter.WithLabelValues("miss", "corp").Inc()
 		}
 	}
-	
+
 	resp, err := this.Put("gskep", "login.logined_corp_user", Map{
 		"username": username,
 		"password": _PLATFORM_SECRET,
@@ -309,15 +301,11 @@ func (this *Resource) LoginAs(username string) *Resource {
 		logs.Critical(err)
 		return nil
 	}
-	
+
 	respData := resp.Data()
 	jwt, _ := respData.Get("sid").String()
 	if _ENABLE_RESOURCE_LOGIN_CACHE {
 		corpLoginCache.Set(username, jwt)
-		jwt2CacheKey[jwt] = cacheKey{
-			corpLoginCache,
-			username,
-		}
 	}
 	this.CustomJWTToken = jwt
 	return this
@@ -328,7 +316,7 @@ func (this *Resource) LoginAsUser(unionid string) *Resource {
 		beego.Error("_USER_LOGIN_SECRET is '', Please set _USER_LOGIN_SECRET in your *.conf file")
 		return nil
 	}
-	
+
 	beego.Error(_ENABLE_RESOURCE_LOGIN_CACHE)
 	if _ENABLE_RESOURCE_LOGIN_CACHE {
 		counter := metrics.GetJwtCacheCounter()
@@ -340,24 +328,20 @@ func (this *Resource) LoginAsUser(unionid string) *Resource {
 			counter.WithLabelValues("miss", "user").Inc()
 		}
 	}
-	
+
 	resp, err := this.Put("gskep", "login.logined_h5_user", Map{
 		"unionid": unionid,
-		"secret": _USER_LOGIN_SECRET,
+		"secret":  _USER_LOGIN_SECRET,
 	})
 	if err != nil {
 		logs.Critical(err)
 		return nil
 	}
-	
+
 	respData := resp.Data()
 	jwt, _ := respData.Get("sid").String()
 	if _ENABLE_RESOURCE_LOGIN_CACHE {
 		userLoginCache.Set(unionid, jwt)
-		jwt2CacheKey[jwt] = cacheKey{
-			userLoginCache,
-			unionid,
-		}
 	}
 	this.CustomJWTToken = jwt
 	return this
@@ -378,29 +362,29 @@ func CronLogin(o orm.Ormer) (*Resource, error) {
 	params := url.Values{"_v": {"1"}}
 	params.Set("_method", "put")
 	apiUrl += "?" + params.Encode()
-	
+
 	values := url.Values{}
-	
+
 	values.Set("username", "manager")
 	values.Set("password", "dc120c3e372d9ba9998a52c9d8edcdcb")
-	
+
 	resp, err := http.PostForm(apiUrl, values)
-	
+
 	defer resp.Body.Close()
-	
+
 	body, err := ioutil.ReadAll(resp.Body)
 	jsonObj := new(simplejson.Json)
 	err = jsonObj.UnmarshalJSON(body)
-	
+
 	jsonData, err := jsonObj.Map()
-	
+
 	if err != nil {
 		return nil, err
 	}
-	
+
 	dataMap := jsonData["data"].(map[string]interface{})
 	jwt := dataMap["sid"].(string)
-	
+
 	ctx := context.Background()
 	span := opentracing.StartSpan("CRONTAB")
 	ctx = opentracing.ContextWithSpan(ctx, span)
@@ -408,7 +392,7 @@ func CronLogin(o orm.Ormer) (*Resource, error) {
 	ctx = context.WithValue(ctx, "orm", o)
 	resource := NewResource(ctx)
 	resource.CustomJWTToken = jwt
-	
+
 	return resource, nil
 }
 

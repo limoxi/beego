@@ -24,4 +24,8 @@ type Cache interface {
 	// Del deletes an item from the cache by key. Returns if an item was
 	// actually deleted.
 	Del(key interface{}) bool
+
+	// Del deletes an item from the cache by value. Returns if an item was
+	// actually deleted.
+	DelByValue(value interface{}) bool
 }

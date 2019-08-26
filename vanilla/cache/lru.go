@@ -2,6 +2,7 @@ package cache
 
 import (
 	"container/list"
+	"github.com/kfchen81/beego/metrics"
 	"sync"
 	"time"
 )
@@ -30,27 +31,36 @@ func WithEvictCallBack(callback EvictCallback) Option {
 	}
 }
 
-func WithoutReset() Option {
+func WithReset() Option {
 	return func(c *cache) {
 		c.NoReset = true
 	}
 }
 
+func WithValue2Key() Option {
+	return func(c *cache) {
+		c.enableValue2Key = true
+	}
+}
+
 // cache is the type that implements the ttlru
 type cache struct {
-	cap       int
-	ttl       time.Duration
-	items     map[interface{}]*entry
-	evictList *list.List
-	lock      sync.RWMutex
-	NoReset   bool
-	onEvict EvictCallback
+	name            string
+	cap             int
+	ttl             time.Duration
+	items           map[interface{}]*entry
+	evictList       *list.List
+	lock            sync.RWMutex
+	NoReset         bool
+	onEvict         EvictCallback
+	enableValue2Key bool
+	value2Key       map[interface{}]interface{}
 }
 
 // New creates a new Cache with cap entries that expire after ttl has
 // elapsed since the item was added, modified or accessed.
-func NewLRUCache(cap int, opts ...Option) Cache {
-	c := cache{cap: cap}
+func NewLRUCache(name string, cap int, opts ...Option) Cache {
+	c := cache{cap: cap, name: name}
 
 	for _, opt := range opts {
 		opt(&c)
@@ -61,6 +71,9 @@ func NewLRUCache(cap int, opts ...Option) Cache {
 	}
 
 	c.items = make(map[interface{}]*entry, cap)
+	if c.enableValue2Key {
+		c.value2Key = make(map[interface{}]interface{}, cap)
+	}
 	c.evictList = list.New()
 	return &c
 }
@@ -80,11 +93,14 @@ func (c *cache) Set(key, value interface{}) bool {
 	if evict {
 		if ele := c.evictList.Back(); ele != nil {
 			ent := ele.Value.(*entry)
+			metrics.GetLRUCacheCounter().WithLabelValues(c.name, "evict").Inc()
 			c.removeEntry(ent)
 		}
 	}
 
 	c.insertEntry(key, value)
+
+	metrics.GetLRUCacheCounter().WithLabelValues(c.name, "set").Inc()
 	return evict
 }
 
@@ -111,12 +127,19 @@ func (c *cache) insertEntry(key, value interface{}) *entry {
 	}
 
 	c.items[key] = ent
+	if c.enableValue2Key {
+		c.value2Key[value] = key
+	}
 	return ent
 }
 
 func (c *cache) updateEntry(e *entry, value interface{}) {
 	// must already have a write lock
 
+	if c.enableValue2Key {
+		delete(c.value2Key, e.value)
+		c.value2Key[value] = e.key
+	}
 	// update with the new value
 	e.value = value
 
@@ -147,6 +170,9 @@ func (c *cache) removeEntry(e *entry) {
 	// must already have a write lock
 	// delete the item from the map
 	delete(c.items, e.key)
+	if c.enableValue2Key {
+		delete(c.value2Key, e.value)
+	}
 	if e.element != nil {
 		c.evictList.Remove(e.element)
 		e.element = nil // avoid memory leaks
@@ -165,10 +191,11 @@ func (c *cache) Get(key interface{}) (interface{}, bool) {
 		// check just to be safe
 		if c.ttl == 0 || time.Now().Before(ent.expires) {
 			c.renewEntry(ent, !c.NoReset)
+			metrics.GetLRUCacheCounter().WithLabelValues(c.name, "get-hit").Inc()
 			return ent.value, true
 		}
 	}
-
+	metrics.GetLRUCacheCounter().WithLabelValues(c.name, "get-miss").Inc()
 	return nil, false
 }
 
@@ -202,13 +229,16 @@ func (c *cache) Purge() {
 	c.lock.Lock()
 	defer c.lock.Unlock()
 
-	for _, ent  := range c.items {
+	for _, ent := range c.items {
 		if c.onEvict != nil {
 			c.onEvict(ent.key, ent.value)
 		}
 	}
 	c.evictList.Init()
 	c.items = make(map[interface{}]*entry, c.cap)
+	if c.enableValue2Key {
+		c.value2Key = make(map[interface{}]interface{}, c.cap)
+	}
 }
 
 func (c *cache) Del(key interface{}) bool {
@@ -221,4 +251,21 @@ func (c *cache) Del(key interface{}) bool {
 	}
 
 	return false
+}
+
+func (c *cache) getKeyByValue(value interface{}) interface{} {
+	if !c.enableValue2Key {
+		return nil
+	}
+	c.lock.RUnlock()
+	defer c.lock.RUnlock()
+	return c.value2Key[value]
+}
+
+func (c *cache) DelByValue(value interface{}) bool {
+	key := c.getKeyByValue(value)
+	if key == nil {
+		return false
+	}
+	return c.Del(key)
 }
