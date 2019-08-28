@@ -70,11 +70,13 @@ func NewLRUCache(name string, cap int, opts ...Option) Cache {
 		return nil
 	}
 
+	metrics.GetLRUCacheCounter().WithLabelValues(c.name, "evict").Inc()
 	c.items = make(map[interface{}]*entry, cap)
 	if c.enableValue2Key {
 		c.value2Key = make(map[interface{}]interface{}, cap)
 	}
 	c.evictList = list.New()
+	metrics.GetLRUCacheCounter().DeleteLabelValues(c.name)
 	return &c
 }
 

@@ -283,13 +283,9 @@ func (this *Resource) LoginAs(username string) *Resource {
 	}
 
 	if _ENABLE_RESOURCE_LOGIN_CACHE {
-		counter := metrics.GetJwtCacheCounter()
 		if jwt, ok := corpLoginCache.Get(username); ok {
-			counter.WithLabelValues("hit", "corp").Inc()
 			this.CustomJWTToken = jwt.(string)
 			return this
-		} else {
-			counter.WithLabelValues("miss", "corp").Inc()
 		}
 	}
 
@@ -319,13 +315,9 @@ func (this *Resource) LoginAsUser(unionid string) *Resource {
 
 	beego.Error(_ENABLE_RESOURCE_LOGIN_CACHE)
 	if _ENABLE_RESOURCE_LOGIN_CACHE {
-		counter := metrics.GetJwtCacheCounter()
 		if jwt, ok := userLoginCache.Get(unionid); ok {
-			counter.WithLabelValues("hit", "user").Inc()
 			this.CustomJWTToken = jwt.(string)
 			return this
-		} else {
-			counter.WithLabelValues("miss", "user").Inc()
 		}
 	}
 
