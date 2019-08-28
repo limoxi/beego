@@ -7,8 +7,8 @@ import (
 	"github.com/kfchen81/beego/orm"
 	"github.com/kfchen81/beego/toolbox"
 	"github.com/kfchen81/beego/vanilla"
-	"math"
 	"runtime/debug"
+	"time"
 )
 
 type CronTask struct {
@@ -47,24 +47,31 @@ func taskWrapper(task taskInterface) toolbox.TaskFunc{
 		ctx := taskCtx.GetCtx()
 
 		defer vanilla.RecoverFromCronTaskPanic(ctx)
+		var fnErr error
+		taskName := task.GetName()
+		startTime := time.Now()
+		beego.Info(fmt.Sprintf("[%s] run...", taskName))
 		if task.IsEnableTx(){
 			o.Begin()
-			fnErr := task.Run(taskCtx)
+			fnErr = task.Run(taskCtx)
 			o.Commit()
-			return fnErr
 		}else{
-			return task.Run(taskCtx)
+			fnErr = task.Run(taskCtx)
 		}
+		dur := time.Since(startTime)
+		beego.Info(fmt.Sprintf("[%s] done, cost %g s", taskName, dur.Seconds()))
+		return fnErr
 	}
 }
 
 func fetchData(pi pipeInterface){
+	taskName := pi.(taskInterface).GetName()
 	go func(){
 		defer func(){
 			if err := recover(); err!=nil{
 				beego.Warn(string(debug.Stack()))
 				fetchData(pi)
-				dingMsg := fmt.Sprintf("> goroutine from task(%s) dead \n\n 错误信息: %s \n\n", pi.(taskInterface).GetName(), err.(error).Error())
+				dingMsg := fmt.Sprintf("> goroutine from task(%s) dead \n\n 错误信息: %s \n\n", taskName, err.(error).Error())
 				vanilla.NewDingBot().Use("xiuer").Error(dingMsg)
 			}
 		}()
@@ -72,7 +79,11 @@ func fetchData(pi pipeInterface){
 			data := pi.GetData()
 			if data != nil{
 				taskCtx := newTaskCtx()
+				beego.Info(fmt.Sprintf("[%s] consume data...", taskName))
+				startTime := time.Now()
 				pi.RunConsumer(data, taskCtx)
+				dur := time.Since(startTime)
+				beego.Info(fmt.Sprintf("[%s] consume done, cost %g s !", taskName, dur.Seconds()))
 			}
 		}
 	}()
@@ -82,7 +93,7 @@ func RegisterPipeTask(pi pipeInterface, spec string) *CronTask{
 	task := RegisterTask(pi.(taskInterface), spec)
 	if task != nil{
 		if pi.EnableParallel(){ // 并行模式下，开启通道容量十分之一的goroutine消费通道
-			for i := int(math.Ceil(float64(pi.GetCap())/10)); i>0; i--{
+			for i := pi.GetConsumerCount(); i>0; i--{
 				fetchData(pi)
 			}
 		}else{

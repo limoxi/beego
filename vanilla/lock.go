@@ -10,7 +10,32 @@ import (
 )
 
 type ILock interface {
-	Lock(key string, args ...map[string]interface{}) (*redsync.Mutex, error)
+	Lock(key string, args ...*LockOption) (*redsync.Mutex, error)
+}
+
+type LockOption struct{
+	key string
+	timeout int
+	tries int
+}
+
+func (this *LockOption) SetTimeout(n int) *LockOption{
+	this.timeout = n
+	return this
+}
+
+func (this *LockOption) SetTryTimes(n int) *LockOption{
+	this.tries = n
+	return this
+}
+
+func NewLockOption(key string) *LockOption{
+	instance := new(LockOption)
+	instance.key = key
+	instance.timeout = 10
+	instance.tries = 3
+
+	return instance
 }
 
 //DummyLock 空的锁引擎
@@ -18,7 +43,7 @@ type DummyLock struct {
 
 }
 
-func (this *DummyLock) Lock(key string, args ...map[string]interface{}) (*redsync.Mutex, error) {
+func (this *DummyLock) Lock(key string, args ...*LockOption) (*redsync.Mutex, error) {
 	beego.Debug(fmt.Sprintf("[lock] lock by dummy engine : %s", key))
 	return nil, nil
 }
@@ -28,47 +53,28 @@ type RedisLock struct {
 	engine *redsync.Redsync
 }
 
-func (this *RedisLock) Lock(key string, args ...map[string]interface{}) (*redsync.Mutex, error) {
+func (this *RedisLock) Lock(key string, args ...*LockOption) (*redsync.Mutex, error) {
 	beego.Debug(fmt.Sprintf("[lock] lock by redis engine : %s", key))
 	if this.engine == nil {
 		beego.Warn("[lock] redsync engine is nil")
 		return nil, nil
 	} else {
-		timeout := 10
-		retries := 3
+		var option *LockOption
 		switch len(args) {
 		case 1:
-			option := args[0]
-			if v, ok := option["timeout"]; ok && v != nil{
-				timeout = v.(int)
-			}
-			if v, ok := option["retries"]; ok && v != nil{
-				retries = v.(int)
-			}
+			option = args[0]
+		default:
+			option = NewLockOption(key)
 		}
-		mutex := this.engine.NewMutex(key, redsync.SetExpiry(time.Duration(timeout)*time.Second), redsync.SetTries(retries))
+		mutex := this.engine.NewMutex(key, redsync.SetExpiry(time.Duration(option.timeout)*time.Second), redsync.SetTries(option.tries))
 		err := mutex.Lock()
 		if err != nil {
 			beego.Error(err)
 			return nil, err
 		} else {
-			return mutex, nil
-		}
-	}
-}
-
-func (this *RedisLock) LockWithTimeOut(key string, timeout int) (*redsync.Mutex, error){
-	beego.Debug(fmt.Sprintf("[lock] lock by redis engine : %s-%d", key, timeout))
-	if this.engine == nil {
-		beego.Warn("[lock] redsync engine is nil")
-		return nil, nil
-	} else {
-		mutex := this.engine.NewMutex(key, redsync.SetExpiry(time.Duration(timeout)*time.Second))
-		err := mutex.Lock()
-		if err != nil {
-			beego.Error(err)
-			return nil, err
-		} else {
+			if mutex != nil{
+				beego.Debug(fmt.Sprintf("[lock] redis lock: %s acquired", key))
+			}
 			return mutex, nil
 		}
 	}

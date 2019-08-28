@@ -31,7 +31,7 @@ type RestResourceInterface interface {
 	GetBusinessContext() context.Context
 	SetBeegoController(ctx *beego_context.Context, data map[interface{}]interface{})
 	GetLockKey() string
-	GetLockOptions() map[string]interface{}
+	GetLockOption() *LockOption
 }
 
 /*RestResource 扩展beego.Controller, 作为rest中各个资源的基类
@@ -145,7 +145,7 @@ func (r *RestResource) GetLockKey() string {
 	return ""
 }
 
-func (r *RestResource) GetLockOptions() map[string]interface{}{
+func (r *RestResource) GetLockOption() *LockOption{
 	return nil
 }
 
@@ -177,6 +177,18 @@ func (r *RestResource) returnValidateParameterFailResponse(parameter string, par
 		"rest:missing_argument",
 		fmt.Sprintf("missing or invalid argument: %s(%s)", parameter, paramType),
 		innerErrMsg,
+		GetMachineInfo(),
+	}
+	r.ServeJSON()
+}
+
+func (r *RestResource) returnAcquireLockFailedResponse(lockKey string){
+	r.Data["json"] = &Response{
+		500,
+		nil,
+		"rest:acquire_lock_failed",
+		fmt.Sprintf("acquire_lock_failed: %s", lockKey),
+		"",
 		GetMachineInfo(),
 	}
 	r.ServeJSON()
@@ -247,7 +259,7 @@ func (r *RestResource) Prepare() {
 					} else if paramType == "json" {
 						value := r.GetString(param)
 						if value == "" && canMissParam == true {
-							goto set_orm
+							continue
 						}
 						js, err := simplejson.NewJson([]byte(value))
 						if err != nil {
@@ -267,7 +279,7 @@ func (r *RestResource) Prepare() {
 					} else if paramType == "json-raw" {
 						value := r.GetString(param)
 						if value == "" && canMissParam == true {
-							goto set_orm
+							continue
 						}
 						js, err := simplejson.NewJson([]byte(value))
 						if err != nil {
@@ -277,6 +289,9 @@ func (r *RestResource) Prepare() {
 						}
 					} else if paramType == "json-array" {
 						value := r.GetString(param)
+						if value == "" && canMissParam == true {
+							continue
+						}
 						js, err := simplejson.NewJson([]byte(value))
 						if err != nil {
 							r.returnValidateParameterFailResponse(param, paramType, err.Error())
@@ -290,7 +305,7 @@ func (r *RestResource) Prepare() {
 						}
 					}
 				}
-			set_orm:
+
 				for key, _ := range actualParams {
 					if strings.HasPrefix(key, "__f") {
 						if strings.HasSuffix(key, "-in") {
@@ -301,39 +316,16 @@ func (r *RestResource) Prepare() {
 						}
 					}
 				}
-
-				bCtx := r.GetBusinessContext()
-				o := GetOrmFromContext(bCtx)
-				r.Ctx.Input.Data()["sessionOrm"] = o
-				if !r.Ctx.ResponseWriter.Started {
-					if o != nil {
-						if app, ok := r.AppController.(RestResourceInterface); ok {
-							if !app.DisableTx() {
-								o.Begin()
-								beego.Debug("[ORM] start transaction")
-							}
-						}
-					}
-				} else {
-				}
-
-
 			}
 		}
-		lockOptions := map[string]interface{}{
-			"key": fmt.Sprintf("rest_api_lock_%s_%s", app.Resource(), method),
-		}
-		customOptions := app.GetLockOptions()
+		var lockOption *LockOption
+		defaultKey := fmt.Sprintf("rest_api_lock_%s_%s", app.Resource(), method)
+		customLockOption := app.GetLockOption()
 		needLock := false
-		if customOptions != nil{
-			if v, ok := customOptions["key"]; ok && v != nil{
-				lockOptions["key"] = v
-			}
-			if v, ok := customOptions["timeout"]; ok && v != nil{
-				lockOptions["timeout"] = v
-			}
-			if v, ok := customOptions["retries"]; ok && v != nil{
-				lockOptions["retries"] = v
+		if customLockOption != nil{
+			lockOption = customLockOption
+			if lockOption.key == ""{
+				lockOption.key = defaultKey
 			}
 			needLock = true
 		}else{
@@ -341,14 +333,31 @@ func (r *RestResource) Prepare() {
 			if lockKey == "" {
 				//do not lock
 			} else {
-				lockOptions["key"] = lockKey
+				lockOption = NewLockOption(lockKey)
 				needLock = true
 			}
 		}
-		if needLock{
-			mutex, _ := Lock.Lock(lockOptions["key"].(string), lockOptions)
+		if needLock && lockOption != nil{
+			mutex, err := Lock.Lock(lockOption.key, lockOption)
+			if err != nil{
+				r.returnAcquireLockFailedResponse(lockOption.key)
+			}
 			if mutex != nil {
 				r.Ctx.Input.Data()["sessionRestMutex"] = mutex
+			}
+		}
+
+		bCtx := r.GetBusinessContext()
+		o := GetOrmFromContext(bCtx)
+		r.Ctx.Input.Data()["sessionOrm"] = o
+		if !r.Ctx.ResponseWriter.Started {
+			if o != nil {
+				if app, ok := r.AppController.(RestResourceInterface); ok {
+					if !app.DisableTx() {
+						o.Begin()
+						beego.Debug("[ORM] start transaction")
+					}
+				}
 			}
 		}
 	}

@@ -5,11 +5,13 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/kfchen81/beego"
+	"github.com/kfchen81/beego/metrics"
 	"github.com/kfchen81/beego/vanilla"
 	"github.com/olivere/elastic"
 	"math"
 	"reflect"
 	"strings"
+	"time"
 )
 
 type ESClient struct{
@@ -62,9 +64,12 @@ func (this *ESClient) prepareUpdateData(updateService *elastic.UpdateByQueryServ
 }
 
 func (this *ESClient) Update(data map[string]interface{}, filters map[string]interface{}){
+	startTime := time.Now()
 	updateService := this.client.UpdateByQuery(this.indexName).Type(this.docType)
 	this.prepareUpdateData(updateService, data, filters)
 	_, err := updateService.Do(this.Ctx)
+	timeDur := time.Since(startTime)
+	metrics.GetEndpointHistogram().WithLabelValues("es", fmt.Sprintf("%s_%s_update", this.indexName, this.docType)).Observe(timeDur.Seconds())
 	if err != nil{
 		beego.Error(err)
 		panic(vanilla.NewSystemError("es_update:failed", "更新索引数据失败"))
@@ -73,19 +78,22 @@ func (this *ESClient) Update(data map[string]interface{}, filters map[string]int
 
 func (this *ESClient) Push(id string, data interface{}) {
 	// Add a document
+	startTime := time.Now()
 	indexResult, err := this.client.Index().
 		Index(this.indexName).
 		Type(this.docType).
 		Id(id).
 		BodyJson(&data).
 		Do(this.Ctx)
+	timeDur := time.Since(startTime)
+	metrics.GetEndpointHistogram().WithLabelValues("es", fmt.Sprintf("%s_%s_push", this.indexName, this.docType)).Observe(timeDur.Seconds())
 	if err != nil {
-		errMsg := fmt.Errorf("es_push doc(id:%d) to index %s: %v", id, this.indexName, err)
+		errMsg := fmt.Errorf("es_push doc(id:%s) to index %s: %v", id, this.indexName, err)
 		beego.Error(errMsg)
 		panic(vanilla.NewSystemError("es_push:failed", errMsg.Error()))
 	}
 	if indexResult == nil {
-		errMsg := fmt.Errorf("es_push doc(id:%d) to index %s: result is %v",
+		errMsg := fmt.Errorf("es_push doc(id:%s) to index %s: result is %v",
 			id, this.indexName, indexResult)
 		beego.Error(errMsg)
 		panic(vanilla.NewSystemError("es_push:failed", errMsg.Error()))
@@ -148,8 +156,10 @@ func (this *ESClient) Search(filters map[string]interface{}, args ...map[string]
 	if this.withNoHits{
 		searchService = searchService.Size(0)
 	}
-
+	startTime := time.Now()
 	result, err := searchService.Query(query).Do(this.Ctx)
+	timeDur := time.Since(startTime)
+	metrics.GetEndpointHistogram().WithLabelValues("es", fmt.Sprintf("%s_%s_search", this.indexName, this.docType)).Observe(timeDur.Seconds())
 	if err != nil{
 		beego.Error(err)
 	}

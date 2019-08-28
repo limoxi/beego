@@ -5,6 +5,7 @@ import (
 	"github.com/kfchen81/beego/orm"
 	"github.com/kfchen81/beego/vanilla"
 	"github.com/pkg/errors"
+	"math"
 )
 
 type taskInterface interface {
@@ -42,6 +43,7 @@ type pipeInterface interface {
 	AddData(data interface{}) error
 	GetData() interface{}
 	GetCap() int
+	GetConsumerCount() int
 	RunConsumer(data interface{}, taskCtx *TaskContext)
 	EnableParallel() bool
 }
@@ -66,6 +68,12 @@ func (p Pipe) AddData(data interface{}) error{
 
 func (p Pipe) GetCap() int{
 	return p.chCap
+}
+
+// GetConsumerCount 消费者数量
+// 默认为通道容量十分之一
+func (p Pipe) GetConsumerCount() int{
+	return int(math.Ceil(float64(p.GetCap())/10))
 }
 
 func (p Pipe) RunConsumer() error{
@@ -111,9 +119,9 @@ func (this *TaskContext) GetResource() *vanilla.Resource{
 var managerToken string
 
 func GetManagerResource(ctx context.Context) *vanilla.Resource{
-	if managerToken == ""{
+	if managerToken == "" {
 		resource := vanilla.NewResource(ctx).LoginAsManager()
-		if resource != nil{
+		if resource != nil {
 			managerToken = resource.CustomJWTToken
 		}
 	}
