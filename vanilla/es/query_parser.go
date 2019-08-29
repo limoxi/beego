@@ -254,7 +254,7 @@ func(this *QueryParser) makeQuery(k string, v interface{})(map[string]interface{
 					key: v.([]interface{}),
 				},
 			}
-		case "lt", "gt":
+		case "lt", "gt", "lte", "gte":
 			mustNode = 	map[string]interface{}{
 				"range": map[string]map[string]interface{}{
 					key: {
