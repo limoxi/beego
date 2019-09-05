@@ -31,15 +31,15 @@ const _RETRY_COUNT = 3
 var _SERVICE_NAME string
 
 // Login Cache: 登录信息的缓存机制
-const LoginCacheSize = 10000
+var _RESOURCE_LOGIN_CACHE_SIZE int
 
 var v2kOption = cache.WithValue2Key()
 
 var corpTTLOption = cache.WithTTL(time.Duration(24) * time.Hour)
-var corpLoginCache = cache.NewLRUCache("corp_jwt_token", LoginCacheSize, corpTTLOption, v2kOption)
+var corpLoginCache = cache.NewLRUCache("corp_jwt_token", _RESOURCE_LOGIN_CACHE_SIZE, corpTTLOption, v2kOption)
 
 var userTTLOption = cache.WithTTL(time.Duration(24) * time.Hour)
-var userLoginCache = cache.NewLRUCache("user_jwt_token", LoginCacheSize, userTTLOption, v2kOption)
+var userLoginCache = cache.NewLRUCache("user_jwt_token", _RESOURCE_LOGIN_CACHE_SIZE, userTTLOption, v2kOption)
 
 const InvalidJwtError = "jwt:invalid_jwt_token"
 
@@ -404,8 +404,10 @@ func init() {
 	_PLATFORM_SECRET = beego.AppConfig.String("system::PLATFORM_SECRET")
 	_USER_LOGIN_SECRET = beego.AppConfig.String("system::USER_LOGIN_SECRET")
 	_SERVICE_NAME = beego.AppConfig.String("appname")
-	_ENABLE_RESOURCE_LOGIN_CACHE = beego.AppConfig.DefaultBool("system::ENABLE_RESOURCE_LOGIN_CACHE", false)
+	_ENABLE_RESOURCE_LOGIN_CACHE = beego.AppConfig.DefaultBool("system::ENABLE_RESOURCE_LOGIN_CACHE", true)
+	_RESOURCE_LOGIN_CACHE_SIZE = beego.AppConfig.DefaultInt("system::RESOURCE_LOGIN_CACHE_SIZE", 100)
 	beego.Info("[init] use _PLATFORM_SECRET: ", _PLATFORM_SECRET)
 	beego.Info("[init] use _USER_LOGIN_SECRET: ", _USER_LOGIN_SECRET)
 	beego.Info("[init] use _ENABLE_RESOURCE_LOGIN_CACHE: ", _ENABLE_RESOURCE_LOGIN_CACHE)
+	beego.Info("[init] use _RESOURCE_LOGIN_CACHE_SIZE: ", _RESOURCE_LOGIN_CACHE_SIZE)
 }
