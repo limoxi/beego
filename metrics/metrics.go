@@ -8,9 +8,9 @@ import (
 )
 
 var endpointCounter = promauto.NewCounterVec(prometheus.CounterOpts{
-		Name: "endpoint_call_total",
-		Help: "total counts for panic",
-	},
+	Name: "endpoint_call_total",
+	Help: "total counts for panic",
+},
 	[]string{"endpoint", "method"},
 )
 
@@ -27,10 +27,10 @@ var endpointSummary = promauto.NewSummaryVec(
 //var normDomain = 0.0002
 //var normMean = 0.00001
 var endpointHistogram = promauto.NewHistogramVec(prometheus.HistogramOpts{
-		Name:    "endpoint_durations_histogram_seconds",
-		Help:    "endpoint latency distributions.",
+	Name: "endpoint_durations_histogram_seconds",
+	Help: "endpoint latency distributions.",
 	//Buckets: prometheus.LinearBuckets(normMean-5*normDomain, .5*normDomain, 20),
-	},
+},
 	[]string{"endpoint", "method"},
 )
 
@@ -60,6 +60,26 @@ var restwsErrorCounter = promauto.NewCounterVec(prometheus.CounterOpts{
 },
 	[]string{"option"},
 )
+
+var errorJwtInCacheCounter = promauto.NewCounter(prometheus.CounterOpts{
+	Name: "error_jwt_in_cache_count",
+	Help: "count of get error jwt from cache",
+})
+
+var lruCacheCounter = promauto.NewCounterVec(prometheus.CounterOpts{
+	Name: "lru_cache_counter",
+	Help: "Number of operations on the lru cache",
+},
+	[]string{"name", "operation"},
+)
+
+func GetLRUCacheCounter() *prometheus.CounterVec {
+	return lruCacheCounter
+}
+
+func GetErrorJwtInCacheCounter() prometheus.Counter {
+	return errorJwtInCacheCounter
+}
 
 func GetRestwsGauge() prometheus.Gauge {
 	return restwsGauge

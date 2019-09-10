@@ -5,22 +5,21 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"github.com/bitly/go-simplejson"
+	"github.com/kfchen81/beego"
 	"github.com/kfchen81/beego/logs"
 	"github.com/kfchen81/beego/metrics"
+	"github.com/kfchen81/beego/orm"
+	"github.com/kfchen81/beego/vanilla/cache"
+	"github.com/opentracing/opentracing-go"
+	"github.com/opentracing/opentracing-go/ext"
 	"io/ioutil"
 	"net"
 	"net/http"
 	"net/url"
-	"strings"
-	"sync"
-	"time"
-	
-	"github.com/kfchen81/beego"
-	"github.com/kfchen81/beego/orm"
-	"github.com/bitly/go-simplejson"
 	"os"
-	"github.com/opentracing/opentracing-go/ext"
-	"github.com/opentracing/opentracing-go"
+	"strings"
+	"time"
 )
 
 var _PLATFORM_SECRET string
@@ -28,38 +27,21 @@ var _USER_LOGIN_SECRET string
 var _ENABLE_RESOURCE_LOGIN_CACHE bool
 
 const _RETRY_COUNT = 3
+
 var _SERVICE_NAME string
 
 // Login Cache: 登录信息的缓存机制
-type loginCache struct {
-	cache map[string]string
-	sync.RWMutex
-}
+var _RESOURCE_LOGIN_CACHE_SIZE int
 
-func (this *loginCache) Get(key string) string {
-	this.RLock()
-	defer this.RUnlock()
-	
-	if val, ok := this.cache[key]; ok {
-		return val
-	} else {
-		return ""
-	}
-}
+var v2kOption = cache.WithValue2Key()
 
-func (this *loginCache) Set(key string, val string) {
-	this.Lock()
-	defer this.Unlock()
-	
-	if len(this.cache) > 10000 {
-		this.cache = make(map[string]string)
-	}
-	this.cache[key] = val
-}
+var corpTTLOption = cache.WithTTL(time.Duration(24) * time.Hour)
+var corpLoginCache = cache.NewLRUCache("corp_jwt_token", _RESOURCE_LOGIN_CACHE_SIZE, corpTTLOption, v2kOption)
 
-var _LOGIN_CACHE = loginCache{
-	cache: make(map[string]string),
-}
+var userTTLOption = cache.WithTTL(time.Duration(24) * time.Hour)
+var userLoginCache = cache.NewLRUCache("user_jwt_token", _RESOURCE_LOGIN_CACHE_SIZE, userTTLOption, v2kOption)
+
+const InvalidJwtError = "jwt:invalid_jwt_token"
 
 // Request
 
@@ -79,9 +61,9 @@ func (this *ResourceResponse) Data() *simplejson.Json {
 /*RestResource 扩展beego.Controller, 作为rest中各个资源的基类
  */
 type Resource struct {
-	Ctx context.Context
+	Ctx            context.Context
 	CustomJWTToken string
-	disableRetry bool
+	disableRetry   bool
 }
 
 func (this *Resource) request(method string, service string, resource string, data Map) (respData *ResourceResponse, err error, httpErr error) {
@@ -91,17 +73,17 @@ func (this *Resource) request(method string, service string, resource string, da
 	} else {
 		var ok bool
 		if jwtToken, ok = this.Ctx.Value("jwt").(string); ok {
-		
+
 		} else {
 			jwtToken = ""
 		}
 	}
-	
+
 	usePeanutPure := os.Getenv("USE_PEANUT_PURE")
 	if usePeanutPure == "1" && service == "peanut" {
 		service = "peanut_pure"
 	}
-	
+
 	apiServerHost := beego.AppConfig.String("api::API_SERVER_HOST")
 	//创建client
 	var netTransport = &http.Transport{
@@ -116,7 +98,7 @@ func (this *Resource) request(method string, service string, resource string, da
 	}
 
 	//构建url.Values
-	params := url.Values{"_v": {"1"}, "__source_service":{_SERVICE_NAME}}
+	params := url.Values{"_v": {"1"}, "__source_service": {_SERVICE_NAME}}
 
 	//处理resource
 	pos := strings.LastIndexByte(resource, '.')
@@ -186,7 +168,7 @@ func (this *Resource) request(method string, service string, resource string, da
 		req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
 	}
 	req.Header.Set("AUTHORIZATION", jwtToken)
-	
+
 	//inject open tracing
 	span := opentracing.SpanFromContext(this.Ctx)
 	if span != nil {
@@ -206,7 +188,7 @@ func (this *Resource) request(method string, service string, resource string, da
 	if err != nil {
 		return nil, err, err
 	}
-	
+
 	defer resp.Body.Close()
 
 	//获取response的内容
@@ -233,9 +215,25 @@ func (this *Resource) request(method string, service string, resource string, da
 		if errCode == nil {
 			return resourceResp, errors.New("remote_service_error"), nil
 		} else {
+			this.handleJWTError(errCode.MustString())
 			return resourceResp, errors.New(errCode.MustString()), nil
 		}
 	}
+}
+
+func (this *Resource) handleJWTError(errCode string) {
+	if !_ENABLE_RESOURCE_LOGIN_CACHE {
+		return
+	}
+	if errCode != InvalidJwtError {
+		return
+	}
+	if this.CustomJWTToken == "" {
+		return
+	}
+	corpLoginCache.DelByValue(this.CustomJWTToken)
+	userLoginCache.DelByValue(this.CustomJWTToken)
+	metrics.GetErrorJwtInCacheCounter().Inc()
 }
 
 func (this *Resource) requestWithRetry(method string, service string, resource string, data Map) (resp *ResourceResponse, err error) {
@@ -245,20 +243,20 @@ func (this *Resource) requestWithRetry(method string, service string, resource s
 			metrics.GetResourceRetryCounter().Inc()
 		}
 		resp, err, httpErr = this.request(method, service, resource, data)
-		
+
 		if httpErr == nil {
 			break
 		}
-		
+
 		if this.disableRetry {
 			break
 		}
-		
+
 		if i >= _RETRY_COUNT-1 {
 			break
 		}
 	}
-	
+
 	return resp, err
 }
 
@@ -283,15 +281,14 @@ func (this *Resource) LoginAs(username string) *Resource {
 		beego.Error("_PLATFORM_SECRET is '', Please set _PLATFORM_SECRET in your *.conf file")
 		return nil
 	}
-	
+
 	if _ENABLE_RESOURCE_LOGIN_CACHE {
-		jwt := _LOGIN_CACHE.Get(username)
-		if jwt != "" {
-			this.CustomJWTToken = jwt
+		if jwt, ok := corpLoginCache.Get(username); ok {
+			this.CustomJWTToken = jwt.(string)
 			return this
 		}
 	}
-	
+
 	resp, err := this.Put("gskep", "login.logined_corp_user", Map{
 		"username": username,
 		"password": _PLATFORM_SECRET,
@@ -300,11 +297,11 @@ func (this *Resource) LoginAs(username string) *Resource {
 		logs.Critical(err)
 		return nil
 	}
-	
+
 	respData := resp.Data()
 	jwt, _ := respData.Get("sid").String()
 	if _ENABLE_RESOURCE_LOGIN_CACHE {
-		_LOGIN_CACHE.Set(username, jwt)
+		corpLoginCache.Set(username, jwt)
 	}
 	this.CustomJWTToken = jwt
 	return this
@@ -315,30 +312,28 @@ func (this *Resource) LoginAsUser(unionid string) *Resource {
 		beego.Error("_USER_LOGIN_SECRET is '', Please set _USER_LOGIN_SECRET in your *.conf file")
 		return nil
 	}
-	
+
 	beego.Error(_ENABLE_RESOURCE_LOGIN_CACHE)
 	if _ENABLE_RESOURCE_LOGIN_CACHE {
-		jwt := _LOGIN_CACHE.Get(unionid)
-		beego.Error("use login cache to fetch jwt ", jwt)
-		if jwt != "" {
-			this.CustomJWTToken = jwt
+		if jwt, ok := userLoginCache.Get(unionid); ok {
+			this.CustomJWTToken = jwt.(string)
 			return this
 		}
 	}
-	
+
 	resp, err := this.Put("gskep", "login.logined_h5_user", Map{
 		"unionid": unionid,
-		"secret": _USER_LOGIN_SECRET,
+		"secret":  _USER_LOGIN_SECRET,
 	})
 	if err != nil {
 		logs.Critical(err)
 		return nil
 	}
-	
+
 	respData := resp.Data()
 	jwt, _ := respData.Get("sid").String()
 	if _ENABLE_RESOURCE_LOGIN_CACHE {
-		_LOGIN_CACHE.Set(unionid, jwt)
+		userLoginCache.Set(unionid, jwt)
 	}
 	this.CustomJWTToken = jwt
 	return this
@@ -359,29 +354,29 @@ func CronLogin(o orm.Ormer) (*Resource, error) {
 	params := url.Values{"_v": {"1"}}
 	params.Set("_method", "put")
 	apiUrl += "?" + params.Encode()
-	
+
 	values := url.Values{}
-	
+
 	values.Set("username", "manager")
 	values.Set("password", "dc120c3e372d9ba9998a52c9d8edcdcb")
-	
+
 	resp, err := http.PostForm(apiUrl, values)
-	
+
 	defer resp.Body.Close()
-	
+
 	body, err := ioutil.ReadAll(resp.Body)
 	jsonObj := new(simplejson.Json)
 	err = jsonObj.UnmarshalJSON(body)
-	
+
 	jsonData, err := jsonObj.Map()
-	
+
 	if err != nil {
 		return nil, err
 	}
-	
+
 	dataMap := jsonData["data"].(map[string]interface{})
 	jwt := dataMap["sid"].(string)
-	
+
 	ctx := context.Background()
 	span := opentracing.StartSpan("CRONTAB")
 	ctx = opentracing.ContextWithSpan(ctx, span)
@@ -389,7 +384,7 @@ func CronLogin(o orm.Ormer) (*Resource, error) {
 	ctx = context.WithValue(ctx, "orm", o)
 	resource := NewResource(ctx)
 	resource.CustomJWTToken = jwt
-	
+
 	return resource, nil
 }
 
@@ -409,8 +404,10 @@ func init() {
 	_PLATFORM_SECRET = beego.AppConfig.String("system::PLATFORM_SECRET")
 	_USER_LOGIN_SECRET = beego.AppConfig.String("system::USER_LOGIN_SECRET")
 	_SERVICE_NAME = beego.AppConfig.String("appname")
-	_ENABLE_RESOURCE_LOGIN_CACHE = beego.AppConfig.DefaultBool("system::ENABLE_RESOURCE_LOGIN_CACHE", false)
+	_ENABLE_RESOURCE_LOGIN_CACHE = beego.AppConfig.DefaultBool("system::ENABLE_RESOURCE_LOGIN_CACHE", true)
+	_RESOURCE_LOGIN_CACHE_SIZE = beego.AppConfig.DefaultInt("system::RESOURCE_LOGIN_CACHE_SIZE", 100)
 	beego.Info("[init] use _PLATFORM_SECRET: ", _PLATFORM_SECRET)
 	beego.Info("[init] use _USER_LOGIN_SECRET: ", _USER_LOGIN_SECRET)
 	beego.Info("[init] use _ENABLE_RESOURCE_LOGIN_CACHE: ", _ENABLE_RESOURCE_LOGIN_CACHE)
+	beego.Info("[init] use _RESOURCE_LOGIN_CACHE_SIZE: ", _RESOURCE_LOGIN_CACHE_SIZE)
 }
