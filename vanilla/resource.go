@@ -186,7 +186,8 @@ func (this *Resource) request(method string, service string, resource string, da
 		req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
 	}
 	req.Header.Set("AUTHORIZATION", jwtToken)
-	
+	req.Header.Set(REQUEST_HEADER_FORMAT, GetRequestModeFromCtx(this.Ctx).String())
+
 	//inject open tracing
 	span := opentracing.SpanFromContext(this.Ctx)
 	if span != nil {
