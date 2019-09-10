@@ -27,7 +27,6 @@ var _USER_LOGIN_SECRET string
 var _ENABLE_RESOURCE_LOGIN_CACHE bool
 
 const _RETRY_COUNT = 3
-
 var _SERVICE_NAME string
 
 // Login Cache: 登录信息的缓存机制
@@ -73,17 +72,17 @@ func (this *Resource) request(method string, service string, resource string, da
 	} else {
 		var ok bool
 		if jwtToken, ok = this.Ctx.Value("jwt").(string); ok {
-
+		
 		} else {
 			jwtToken = ""
 		}
 	}
-
+	
 	usePeanutPure := os.Getenv("USE_PEANUT_PURE")
 	if usePeanutPure == "1" && service == "peanut" {
 		service = "peanut_pure"
 	}
-
+	
 	apiServerHost := beego.AppConfig.String("api::API_SERVER_HOST")
 	//创建client
 	var netTransport = &http.Transport{
@@ -168,6 +167,7 @@ func (this *Resource) request(method string, service string, resource string, da
 		req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
 	}
 	req.Header.Set("AUTHORIZATION", jwtToken)
+	req.Header.Set(REQUEST_HEADER_FORMAT, GetRequestModeFromCtx(this.Ctx).String())
 
 	//inject open tracing
 	span := opentracing.SpanFromContext(this.Ctx)
@@ -188,7 +188,7 @@ func (this *Resource) request(method string, service string, resource string, da
 	if err != nil {
 		return nil, err, err
 	}
-
+	
 	defer resp.Body.Close()
 
 	//获取response的内容
@@ -243,20 +243,20 @@ func (this *Resource) requestWithRetry(method string, service string, resource s
 			metrics.GetResourceRetryCounter().Inc()
 		}
 		resp, err, httpErr = this.request(method, service, resource, data)
-
+		
 		if httpErr == nil {
 			break
 		}
-
+		
 		if this.disableRetry {
 			break
 		}
-
+		
 		if i >= _RETRY_COUNT-1 {
 			break
 		}
 	}
-
+	
 	return resp, err
 }
 
@@ -281,14 +281,14 @@ func (this *Resource) LoginAs(username string) *Resource {
 		beego.Error("_PLATFORM_SECRET is '', Please set _PLATFORM_SECRET in your *.conf file")
 		return nil
 	}
-
+	
 	if _ENABLE_RESOURCE_LOGIN_CACHE {
 		if jwt, ok := corpLoginCache.Get(username); ok {
 			this.CustomJWTToken = jwt.(string)
 			return this
 		}
 	}
-
+	
 	resp, err := this.Put("gskep", "login.logined_corp_user", Map{
 		"username": username,
 		"password": _PLATFORM_SECRET,
@@ -297,7 +297,7 @@ func (this *Resource) LoginAs(username string) *Resource {
 		logs.Critical(err)
 		return nil
 	}
-
+	
 	respData := resp.Data()
 	jwt, _ := respData.Get("sid").String()
 	if _ENABLE_RESOURCE_LOGIN_CACHE {
@@ -312,7 +312,7 @@ func (this *Resource) LoginAsUser(unionid string) *Resource {
 		beego.Error("_USER_LOGIN_SECRET is '', Please set _USER_LOGIN_SECRET in your *.conf file")
 		return nil
 	}
-
+	
 	beego.Error(_ENABLE_RESOURCE_LOGIN_CACHE)
 	if _ENABLE_RESOURCE_LOGIN_CACHE {
 		if jwt, ok := userLoginCache.Get(unionid); ok {
@@ -320,16 +320,16 @@ func (this *Resource) LoginAsUser(unionid string) *Resource {
 			return this
 		}
 	}
-
+	
 	resp, err := this.Put("gskep", "login.logined_h5_user", Map{
 		"unionid": unionid,
-		"secret":  _USER_LOGIN_SECRET,
+		"secret": _USER_LOGIN_SECRET,
 	})
 	if err != nil {
 		logs.Critical(err)
 		return nil
 	}
-
+	
 	respData := resp.Data()
 	jwt, _ := respData.Get("sid").String()
 	if _ENABLE_RESOURCE_LOGIN_CACHE {
@@ -354,29 +354,29 @@ func CronLogin(o orm.Ormer) (*Resource, error) {
 	params := url.Values{"_v": {"1"}}
 	params.Set("_method", "put")
 	apiUrl += "?" + params.Encode()
-
+	
 	values := url.Values{}
-
+	
 	values.Set("username", "manager")
 	values.Set("password", "dc120c3e372d9ba9998a52c9d8edcdcb")
-
+	
 	resp, err := http.PostForm(apiUrl, values)
-
+	
 	defer resp.Body.Close()
-
+	
 	body, err := ioutil.ReadAll(resp.Body)
 	jsonObj := new(simplejson.Json)
 	err = jsonObj.UnmarshalJSON(body)
-
+	
 	jsonData, err := jsonObj.Map()
-
+	
 	if err != nil {
 		return nil, err
 	}
-
+	
 	dataMap := jsonData["data"].(map[string]interface{})
 	jwt := dataMap["sid"].(string)
-
+	
 	ctx := context.Background()
 	span := opentracing.StartSpan("CRONTAB")
 	ctx = opentracing.ContextWithSpan(ctx, span)
@@ -384,7 +384,7 @@ func CronLogin(o orm.Ormer) (*Resource, error) {
 	ctx = context.WithValue(ctx, "orm", o)
 	resource := NewResource(ctx)
 	resource.CustomJWTToken = jwt
-
+	
 	return resource, nil
 }
 

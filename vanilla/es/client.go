@@ -19,6 +19,8 @@ type ESClient struct{
 
 	client *elastic.Client
 
+	syncUpdate bool // 是否等待更新完成
+
 	indexName string
 	docType string
 
@@ -45,6 +47,11 @@ func (this *ESClient) NoHits() *ESClient{
 	return this
 }
 
+func (this *ESClient) UseSyncUpdate(b bool) *ESClient{
+	this.syncUpdate = b
+	return this
+}
+
 func (this *ESClient) prepareUpdateData(updateService *elastic.UpdateByQueryService, data map[string]interface{}, filters map[string]interface{}){
 	// make query
 	parser := NewQueryParser()
@@ -60,7 +67,7 @@ func (this *ESClient) prepareUpdateData(updateService *elastic.UpdateByQueryServ
 	eScript.Lang("painless").Params(data)
 	updateService.Script(eScript)
 	// make params
-	updateService.Conflicts("proceed").Slices(50).WaitForCompletion(false).Size(-1)
+	updateService.Conflicts("proceed").Slices(50).WaitForCompletion(this.syncUpdate).Size(-1)
 }
 
 func (this *ESClient) Update(data map[string]interface{}, filters map[string]interface{}){
