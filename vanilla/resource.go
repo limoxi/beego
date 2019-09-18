@@ -35,10 +35,10 @@ var _RESOURCE_LOGIN_CACHE_SIZE int
 var v2kOption = cache.WithValue2Key()
 
 var corpTTLOption = cache.WithTTL(time.Duration(24) * time.Hour)
-var corpLoginCache = cache.NewLRUCache("corp_jwt_token", _RESOURCE_LOGIN_CACHE_SIZE, corpTTLOption, v2kOption)
+var corpLoginCache cache.Cache
 
 var userTTLOption = cache.WithTTL(time.Duration(24) * time.Hour)
-var userLoginCache = cache.NewLRUCache("user_jwt_token", _RESOURCE_LOGIN_CACHE_SIZE, userTTLOption, v2kOption)
+var userLoginCache cache.Cache
 
 const InvalidJwtError = "jwt:invalid_jwt_token"
 
@@ -167,7 +167,10 @@ func (this *Resource) request(method string, service string, resource string, da
 		req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
 	}
 	req.Header.Set("AUTHORIZATION", jwtToken)
-	req.Header.Set(REQUEST_HEADER_FORMAT, GetRequestModeFromCtx(this.Ctx).String())
+	modeIf := this.Ctx.Value(REQUEST_MODE_CTX_KEY)
+	if modeIf != nil{
+		req.Header.Set(REQUEST_HEADER_FORMAT, strings.ToUpper(modeIf.(string)))
+	}
 
 	//inject open tracing
 	span := opentracing.SpanFromContext(this.Ctx)
@@ -410,4 +413,7 @@ func init() {
 	beego.Info("[init] use _USER_LOGIN_SECRET: ", _USER_LOGIN_SECRET)
 	beego.Info("[init] use _ENABLE_RESOURCE_LOGIN_CACHE: ", _ENABLE_RESOURCE_LOGIN_CACHE)
 	beego.Info("[init] use _RESOURCE_LOGIN_CACHE_SIZE: ", _RESOURCE_LOGIN_CACHE_SIZE)
+
+	userLoginCache = cache.NewLRUCache("user_jwt_token", _RESOURCE_LOGIN_CACHE_SIZE, userTTLOption, v2kOption)
+	corpLoginCache = cache.NewLRUCache("corp_jwt_token", _RESOURCE_LOGIN_CACHE_SIZE, corpTTLOption, v2kOption)
 }
