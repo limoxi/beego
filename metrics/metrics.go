@@ -73,6 +73,60 @@ var lruCacheCounter = promauto.NewCounterVec(prometheus.CounterOpts{
 	[]string{"name", "operation"},
 )
 
+var esRequestTimer = promauto.NewHistogramVec(prometheus.HistogramOpts{
+	Name: "es_request_timer",
+	Help: "the time of a es request",
+}, []string{"index", "action"})
+
+var taChannelIsFullCounter = promauto.NewCounter(prometheus.CounterOpts{
+	Name: "ta_channel_is_full_counter",
+	Help: "count when ta channel is full",
+})
+
+var taTracedDataCounter = promauto.NewCounter(prometheus.CounterOpts{
+	Name: "ta_traced_data_counter",
+	Help: "data count that ta traced",
+})
+
+var taConsumerCounter = promauto.NewGauge(prometheus.GaugeOpts{
+	Name: "ta_consumer_counter",
+	Help: "count of ta consumer",
+})
+
+var taServerPushCounter = promauto.NewGaugeVec(prometheus.GaugeOpts{
+	Name: "ta_server_push_counter",
+	Help: "count of ta pushed times and failed times",
+}, []string{"name"})
+
+var taServerPushTimer = promauto.NewHistogram(prometheus.HistogramOpts{
+	Name: "ta_server_push_timer",
+	Help: "using time of ta server push",
+})
+
+func GetEsRequestTimer() *prometheus.HistogramVec{
+	return esRequestTimer
+}
+
+func GetTaChannelIsFullCounter() prometheus.Counter{
+	return taChannelIsFullCounter
+}
+
+func GetTaTracedDataCounter() prometheus.Counter{
+	return taTracedDataCounter
+}
+
+func GetTaConsumerCounter() prometheus.Gauge{
+	return taConsumerCounter
+}
+
+func GetTaServerPushCounter() *prometheus.GaugeVec{
+	return taServerPushCounter
+}
+
+func GetTaServerPushTimer() prometheus.Histogram{
+	return taServerPushTimer
+}
+
 func GetLRUCacheCounter() *prometheus.CounterVec {
 	return lruCacheCounter
 }

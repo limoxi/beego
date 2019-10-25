@@ -308,11 +308,26 @@ func (r *RestResource) Prepare() {
 
 				for key, _ := range actualParams {
 					if strings.HasPrefix(key, "__f") {
-						if strings.HasSuffix(key, "-in") {
-							ary := r.Ctx.Request.Form[key]
-							r.Filters[key] = ary
-						} else {
-							r.Filters[key] = actualParams.Get(key)
+						sps := strings.Split(key, "-")
+						op := sps[2]
+						switch op {
+						case "in", "range", "notin":
+							value := r.GetString(key)
+							if value != ""{
+								js, err := simplejson.NewJson([]byte(value))
+								if err != nil {
+									r.returnValidateParameterFailResponse(key, "__f", err.Error())
+								} else {
+									data, err := js.Array()
+									if err != nil {
+										r.returnValidateParameterFailResponse(key, "__f", err.Error())
+									} else {
+										r.Filters[key] = data
+									}
+								}
+							}
+						default:
+							r.Filters[key] = r.GetString(key)
 						}
 					}
 				}

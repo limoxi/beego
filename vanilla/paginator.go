@@ -41,6 +41,7 @@ func (this PaginateResult) ToMap() map[string]interface{} {
 		"next":          this.Next,
 		"prev":          this.Prev,
 		"total_count":   this.TotalCount,
+		"object_count":  this.TotalCount,
 		"cur_page":      this.CurPage,
 		"display_pages": this.DisplayPages,
 		"max_page":      this.MaxPage,

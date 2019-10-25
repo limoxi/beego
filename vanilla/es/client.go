@@ -74,9 +74,18 @@ func (this *ESClient) Update(data map[string]interface{}, filters map[string]int
 	startTime := time.Now()
 	updateService := this.client.UpdateByQuery(this.indexName).Type(this.docType)
 	this.prepareUpdateData(updateService, data, filters)
-	_, err := updateService.Do(this.Ctx)
+	// 失败后最多重试3次
+	var err error
+	for count:=3; count>=0; count--{
+		_, err = updateService.Do(this.Ctx)
+		if err == nil{
+			break
+		}
+		time.Sleep(time.Millisecond * 100)
+	}
+
 	timeDur := time.Since(startTime)
-	metrics.GetEndpointHistogram().WithLabelValues("es", fmt.Sprintf("%s_%s_update", this.indexName, this.docType)).Observe(timeDur.Seconds())
+	metrics.GetEsRequestTimer().WithLabelValues(this.indexName, "update").Observe(timeDur.Seconds())
 	if err != nil{
 		beego.Error(err)
 		panic(vanilla.NewSystemError("es_update:failed", "更新索引数据失败"))
@@ -93,7 +102,7 @@ func (this *ESClient) Push(id string, data interface{}) {
 		BodyJson(&data).
 		Do(this.Ctx)
 	timeDur := time.Since(startTime)
-	metrics.GetEndpointHistogram().WithLabelValues("es", fmt.Sprintf("%s_%s_push", this.indexName, this.docType)).Observe(timeDur.Seconds())
+	metrics.GetEsRequestTimer().WithLabelValues(this.indexName, "push").Observe(timeDur.Seconds())
 	if err != nil {
 		errMsg := fmt.Errorf("es_push doc(id:%s) to index %s: %v", id, this.indexName, err)
 		beego.Error(errMsg)
@@ -166,7 +175,7 @@ func (this *ESClient) Search(filters map[string]interface{}, args ...map[string]
 	startTime := time.Now()
 	result, err := searchService.Query(query).Do(this.Ctx)
 	timeDur := time.Since(startTime)
-	metrics.GetEndpointHistogram().WithLabelValues("es", fmt.Sprintf("%s_%s_search", this.indexName, this.docType)).Observe(timeDur.Seconds())
+	metrics.GetEsRequestTimer().WithLabelValues(this.indexName, "search").Observe(timeDur.Seconds())
 	if err != nil{
 		beego.Error(err)
 	}

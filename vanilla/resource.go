@@ -316,7 +316,6 @@ func (this *Resource) LoginAsUser(unionid string) *Resource {
 		return nil
 	}
 	
-	beego.Error(_ENABLE_RESOURCE_LOGIN_CACHE)
 	if _ENABLE_RESOURCE_LOGIN_CACHE {
 		if jwt, ok := userLoginCache.Get(unionid); ok {
 			this.CustomJWTToken = jwt.(string)

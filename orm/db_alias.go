@@ -232,6 +232,8 @@ func RegisterDataBase(aliasName, driverName, dataSource string, params ...int) e
 			SetMaxIdleConns(al.Name, v)
 		case 1:
 			SetMaxOpenConns(al.Name, v)
+		case 2:
+			db.SetConnMaxLifetime(time.Duration(v) * time.Second)
 		}
 	}
 
