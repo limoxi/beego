@@ -7,9 +7,9 @@ import (
 	"net/http"
 	"strconv"
 	"strings"
-	
+
 	"github.com/kfchen81/beego"
-	
+
 	"encoding/json"
 	"github.com/bitly/go-simplejson"
 	beego_context "github.com/kfchen81/beego/context"
@@ -31,6 +31,7 @@ type RestResourceInterface interface {
 	GetBusinessContext() context.Context
 	SetBeegoController(ctx *beego_context.Context, data map[interface{}]interface{})
 	GetLockKey() string
+	GetLockOption() *LockOption
 }
 
 /*RestResource 扩展beego.Controller, 作为rest中各个资源的基类
@@ -144,6 +145,10 @@ func (r *RestResource) GetLockKey() string {
 	return ""
 }
 
+func (r *RestResource) GetLockOption() *LockOption{
+	return nil
+}
+
 /*Parameters 获取需要检查的参数
  */
 func (r *RestResource) GetParameters() map[string][]string {
@@ -172,6 +177,18 @@ func (r *RestResource) returnValidateParameterFailResponse(parameter string, par
 		"rest:missing_argument",
 		fmt.Sprintf("missing or invalid argument: %s(%s)", parameter, paramType),
 		innerErrMsg,
+		GetMachineInfo(),
+	}
+	r.ServeJSON()
+}
+
+func (r *RestResource) returnAcquireLockFailedResponse(lockKey string){
+	r.Data["json"] = &Response{
+		500,
+		nil,
+		"rest:acquire_lock_failed",
+		fmt.Sprintf("acquire_lock_failed: %s", lockKey),
+		"",
 		GetMachineInfo(),
 	}
 	r.ServeJSON()
@@ -242,7 +259,7 @@ func (r *RestResource) Prepare() {
 					} else if paramType == "json" {
 						value := r.GetString(param)
 						if value == "" && canMissParam == true {
-							goto set_orm
+							continue
 						}
 						js, err := simplejson.NewJson([]byte(value))
 						if err != nil {
@@ -262,7 +279,7 @@ func (r *RestResource) Prepare() {
 					} else if paramType == "json-raw" {
 						value := r.GetString(param)
 						if value == "" && canMissParam == true {
-							goto set_orm
+							continue
 						}
 						js, err := simplejson.NewJson([]byte(value))
 						if err != nil {
@@ -272,6 +289,9 @@ func (r *RestResource) Prepare() {
 						}
 					} else if paramType == "json-array" {
 						value := r.GetString(param)
+						if value == "" && canMissParam == true {
+							continue
+						}
 						js, err := simplejson.NewJson([]byte(value))
 						if err != nil {
 							r.returnValidateParameterFailResponse(param, paramType, err.Error())
@@ -285,44 +305,74 @@ func (r *RestResource) Prepare() {
 						}
 					}
 				}
-set_orm:
+
 				for key, _ := range actualParams {
 					if strings.HasPrefix(key, "__f") {
-						if strings.HasSuffix(key, "-in") {
-							ary := r.Ctx.Request.Form[key]
-							r.Filters[key] = ary
-						} else {
-							r.Filters[key] = actualParams.Get(key)
-						}
-					}
-				}
-
-				bCtx := r.GetBusinessContext()
-				o := GetOrmFromContext(bCtx)
-				r.Ctx.Input.Data()["sessionOrm"] = o
-				if !r.Ctx.ResponseWriter.Started {
-					if o != nil {
-						if app, ok := r.AppController.(RestResourceInterface); ok {
-							if !app.DisableTx() {
-								o.Begin()
-								beego.Debug("[ORM] start transaction")
+						sps := strings.Split(key, "-")
+						op := sps[2]
+						switch op {
+						case "in", "range", "notin":
+							value := r.GetString(key)
+							if value != ""{
+								js, err := simplejson.NewJson([]byte(value))
+								if err != nil {
+									r.returnValidateParameterFailResponse(key, "__f", err.Error())
+								} else {
+									data, err := js.Array()
+									if err != nil {
+										r.returnValidateParameterFailResponse(key, "__f", err.Error())
+									} else {
+										r.Filters[key] = data
+									}
+								}
 							}
+						default:
+							r.Filters[key] = r.GetString(key)
 						}
 					}
-				} else {
 				}
-				
-				
 			}
 		}
-		
-		lockKey := app.GetLockKey()
-		if lockKey == "" {
-			//do not lock
-		} else {
-			mutex, _ := Lock.Lock(lockKey)
+		var lockOption *LockOption
+		defaultKey := fmt.Sprintf("rest_api_lock_%s_%s", app.Resource(), method)
+		customLockOption := app.GetLockOption()
+		needLock := false
+		if customLockOption != nil{
+			lockOption = customLockOption
+			if lockOption.key == ""{
+				lockOption.key = defaultKey
+			}
+			needLock = true
+		}else{
+			lockKey := app.GetLockKey()
+			if lockKey == "" {
+				//do not lock
+			} else {
+				lockOption = NewLockOption(lockKey)
+				needLock = true
+			}
+		}
+		if needLock && lockOption != nil{
+			mutex, err := Lock.Lock(lockOption.key, lockOption)
+			if err != nil{
+				r.returnAcquireLockFailedResponse(lockOption.key)
+			}
 			if mutex != nil {
 				r.Ctx.Input.Data()["sessionRestMutex"] = mutex
+			}
+		}
+
+		bCtx := r.GetBusinessContext()
+		o := GetOrmFromContext(bCtx)
+		r.Ctx.Input.Data()["sessionOrm"] = o
+		if !r.Ctx.ResponseWriter.Started {
+			if o != nil {
+				if app, ok := r.AppController.(RestResourceInterface); ok {
+					if !app.DisableTx() {
+						o.Begin()
+						beego.Debug("[ORM] start transaction")
+					}
+				}
 			}
 		}
 	}

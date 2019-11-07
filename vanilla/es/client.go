@@ -5,17 +5,21 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/kfchen81/beego"
+	"github.com/kfchen81/beego/metrics"
 	"github.com/kfchen81/beego/vanilla"
 	"github.com/olivere/elastic"
 	"math"
 	"reflect"
 	"strings"
+	"time"
 )
 
 type ESClient struct{
 	vanilla.ServiceBase
 
 	client *elastic.Client
+
+	syncUpdate bool // 是否等待更新完成
 
 	indexName string
 	docType string
@@ -43,6 +47,11 @@ func (this *ESClient) NoHits() *ESClient{
 	return this
 }
 
+func (this *ESClient) UseSyncUpdate(b bool) *ESClient{
+	this.syncUpdate = b
+	return this
+}
+
 func (this *ESClient) prepareUpdateData(updateService *elastic.UpdateByQueryService, data map[string]interface{}, filters map[string]interface{}){
 	// make query
 	parser := NewQueryParser()
@@ -58,13 +67,25 @@ func (this *ESClient) prepareUpdateData(updateService *elastic.UpdateByQueryServ
 	eScript.Lang("painless").Params(data)
 	updateService.Script(eScript)
 	// make params
-	updateService.Conflicts("proceed").Slices(50).WaitForCompletion(false).Size(-1)
+	updateService.Conflicts("proceed").Slices(50).WaitForCompletion(this.syncUpdate).Size(-1)
 }
 
 func (this *ESClient) Update(data map[string]interface{}, filters map[string]interface{}){
+	startTime := time.Now()
 	updateService := this.client.UpdateByQuery(this.indexName).Type(this.docType)
 	this.prepareUpdateData(updateService, data, filters)
-	_, err := updateService.Do(this.Ctx)
+	// 失败后最多重试3次
+	var err error
+	for count:=3; count>=0; count--{
+		_, err = updateService.Do(this.Ctx)
+		if err == nil{
+			break
+		}
+		time.Sleep(time.Millisecond * 100)
+	}
+
+	timeDur := time.Since(startTime)
+	metrics.GetEsRequestTimer().WithLabelValues(this.indexName, "update").Observe(timeDur.Seconds())
 	if err != nil{
 		beego.Error(err)
 		panic(vanilla.NewSystemError("es_update:failed", "更新索引数据失败"))
@@ -73,19 +94,22 @@ func (this *ESClient) Update(data map[string]interface{}, filters map[string]int
 
 func (this *ESClient) Push(id string, data interface{}) {
 	// Add a document
+	startTime := time.Now()
 	indexResult, err := this.client.Index().
 		Index(this.indexName).
 		Type(this.docType).
 		Id(id).
 		BodyJson(&data).
 		Do(this.Ctx)
+	timeDur := time.Since(startTime)
+	metrics.GetEsRequestTimer().WithLabelValues(this.indexName, "push").Observe(timeDur.Seconds())
 	if err != nil {
-		errMsg := fmt.Errorf("es_push doc(id:%d) to index %s: %v", id, this.indexName, err)
+		errMsg := fmt.Errorf("es_push doc(id:%s) to index %s: %v", id, this.indexName, err)
 		beego.Error(errMsg)
 		panic(vanilla.NewSystemError("es_push:failed", errMsg.Error()))
 	}
 	if indexResult == nil {
-		errMsg := fmt.Errorf("es_push doc(id:%d) to index %s: result is %v",
+		errMsg := fmt.Errorf("es_push doc(id:%s) to index %s: result is %v",
 			id, this.indexName, indexResult)
 		beego.Error(errMsg)
 		panic(vanilla.NewSystemError("es_push:failed", errMsg.Error()))
@@ -148,8 +172,10 @@ func (this *ESClient) Search(filters map[string]interface{}, args ...map[string]
 	if this.withNoHits{
 		searchService = searchService.Size(0)
 	}
-
+	startTime := time.Now()
 	result, err := searchService.Query(query).Do(this.Ctx)
+	timeDur := time.Since(startTime)
+	metrics.GetEsRequestTimer().WithLabelValues(this.indexName, "search").Observe(timeDur.Seconds())
 	if err != nil{
 		beego.Error(err)
 	}

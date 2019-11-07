@@ -118,7 +118,7 @@ func(this *QueryParser) Parse(filters map[string]interface{}) *Query{
 		this.query.RemoveKey("match_all")
 	}
 
-	var nestPath2Query map[string]map[string]interface{}
+	nestPath2Query := make(map[string]map[string][]interface{})
 	for k, v := range filters{
 		realKey := strings.Split(k, "__")[0]
 		isNested := len(strings.Split(realKey, ".")) > 1
@@ -130,16 +130,13 @@ func(this *QueryParser) Parse(filters map[string]interface{}) *Query{
 		mustNode, mustNotNode := this.makeQuery(k, v)
 
 		var nestedPath string
-		nestMustArray := make([]interface{}, 0)
-		nestMustNotArray := make([]interface{}, 0)
-
 		if isNested{
 			nestedPath = strings.Split(realKey, ".")[0]
-			nestPath2Query = map[string]map[string]interface{}{
-				nestedPath: {
-					"must": &nestMustArray,
-					"must_not": &nestMustNotArray,
-				},
+			if _, ok := nestPath2Query[nestedPath]; !ok{
+				nestPath2Query[nestedPath] = map[string][]interface{}{
+					"must": make([]interface{}, 0),
+					"must_not": make([]interface{}, 0),
+				}
 			}
 		}
 
@@ -147,7 +144,7 @@ func(this *QueryParser) Parse(filters map[string]interface{}) *Query{
 			if !isNested{
 				this.mustArray = append(this.mustArray, mustNode)
 			}else{
-				nestMustArray = append(nestMustArray, mustNode)
+				nestPath2Query[nestedPath]["must"] = append(nestPath2Query[nestedPath]["must"], mustNode)
 			}
 		}
 
@@ -155,30 +152,30 @@ func(this *QueryParser) Parse(filters map[string]interface{}) *Query{
 			if !isNested{
 				this.mustNotArray = append(this.mustNotArray, mustNotNode)
 			}else{
-				nestMustNotArray = append(nestMustNotArray, mustNotNode)
+				nestPath2Query[nestedPath]["must_not"] = append(nestPath2Query[nestedPath]["must_not"], mustNotNode)
 			}
 		}
 	}
 
 	for nestPath, nestQuery := range nestPath2Query{
-		if len(*nestQuery["must"].(*[]interface{})) > 0{
+		if len(nestQuery["must"]) > 0{
 			this.mustArray = append(this.mustArray, map[string]interface{}{
 				"nested": map[string]interface{}{
 					"path": nestPath,
 					"query": map[string]interface{}{
-						"bool": map[string]interface{}{
+						"bool": map[string][]interface{}{
 							"must": nestQuery["must"],
 						},
 					},
 				},
 			})
 		}
-		if len(*nestQuery["must_not"].(*[]interface{})) > 0{
+		if len(nestQuery["must_not"]) > 0{
 			this.mustNotArray = append(this.mustNotArray, map[string]interface{}{
 				"nested": map[string]interface{}{
 					"path": nestPath,
 					"query": map[string]interface{}{
-						"bool": map[string]interface{}{
+						"bool": map[string][]interface{}{
 							"must_not": nestQuery["must_not"],
 						},
 					},
@@ -254,7 +251,7 @@ func(this *QueryParser) makeQuery(k string, v interface{})(map[string]interface{
 					key: v.([]interface{}),
 				},
 			}
-		case "lt", "gt":
+		case "lt", "gt", "lte", "gte":
 			mustNode = 	map[string]interface{}{
 				"range": map[string]map[string]interface{}{
 					key: {

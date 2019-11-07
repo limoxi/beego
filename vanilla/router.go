@@ -88,4 +88,5 @@ func init() {
 	beego.Router("/op/health/", &OpHealthController{})
 	beego.Handler("/metrics", promhttp.Handler())
 	beego.Router("/", &IndexController{})
+	Router(&RestProxy{})
 }

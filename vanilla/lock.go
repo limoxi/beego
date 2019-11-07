@@ -10,7 +10,32 @@ import (
 )
 
 type ILock interface {
-	Lock(key string) (*redsync.Mutex, error)
+	Lock(key string, args ...*LockOption) (*redsync.Mutex, error)
+}
+
+type LockOption struct{
+	key string
+	timeout int
+	tries int
+}
+
+func (this *LockOption) SetTimeout(n int) *LockOption{
+	this.timeout = n
+	return this
+}
+
+func (this *LockOption) SetTryTimes(n int) *LockOption{
+	this.tries = n
+	return this
+}
+
+func NewLockOption(key string) *LockOption{
+	instance := new(LockOption)
+	instance.key = key
+	instance.timeout = 10
+	instance.tries = 3
+
+	return instance
 }
 
 //DummyLock 空的锁引擎
@@ -18,7 +43,7 @@ type DummyLock struct {
 
 }
 
-func (this *DummyLock) Lock(key string) (*redsync.Mutex, error) {
+func (this *DummyLock) Lock(key string, args ...*LockOption) (*redsync.Mutex, error) {
 	beego.Debug(fmt.Sprintf("[lock] lock by dummy engine : %s", key))
 	return nil, nil
 }
@@ -28,18 +53,28 @@ type RedisLock struct {
 	engine *redsync.Redsync
 }
 
-func (this *RedisLock) Lock(key string) (*redsync.Mutex, error) {
+func (this *RedisLock) Lock(key string, args ...*LockOption) (*redsync.Mutex, error) {
 	beego.Debug(fmt.Sprintf("[lock] lock by redis engine : %s", key))
 	if this.engine == nil {
 		beego.Warn("[lock] redsync engine is nil")
 		return nil, nil
 	} else {
-		mutex := this.engine.NewMutex(key, redsync.SetExpiry(10*time.Second))
+		var option *LockOption
+		switch len(args) {
+		case 1:
+			option = args[0]
+		default:
+			option = NewLockOption(key)
+		}
+		mutex := this.engine.NewMutex(key, redsync.SetExpiry(time.Duration(option.timeout)*time.Second), redsync.SetTries(option.tries))
 		err := mutex.Lock()
 		if err != nil {
 			beego.Error(err)
 			return nil, err
 		} else {
+			if mutex != nil{
+				beego.Debug(fmt.Sprintf("[lock] redis lock: %s acquired", key))
+			}
 			return mutex, nil
 		}
 	}
@@ -59,7 +94,7 @@ func init() {
 	if lockEngine == "" {
 		lockEngine = "dummy"
 	}
-	
+
 	if lockEngine == "dummy" {
 		beego.Info("[lock] use DummyLock")
 		Lock = new(DummyLock)
@@ -68,7 +103,7 @@ func init() {
 		lockDbNum, _ = beego.AppConfig.Int("lock::REDIS_DB")
 		lockRedisPassword = beego.AppConfig.String("lock::REDIS_PASSWORD")
 		beego.Info(fmt.Sprintf("[lock] use RedisLock: %s - %d", lockRedisAddress, lockDbNum))
-		
+
 		// initialize a new pool
 		lockRedisPool = &redis.Pool{
 			MaxIdle:     10,
@@ -77,13 +112,13 @@ func init() {
 				if lockRedisAddress == "" {
 					return nil, errors.New("invalid redisAddress")
 				}
-				
+
 				c, err = redis.Dial("tcp", lockRedisAddress)
 				if err != nil {
 					beego.Error(err)
 					return nil, err
 				}
-				
+
 				if lockRedisPassword != "" {
 					if _, err := c.Do("AUTH", lockRedisPassword); err != nil {
 						beego.Error(err)
@@ -91,7 +126,7 @@ func init() {
 						return nil, err
 					}
 				}
-				
+
 				_, selecterr := c.Do("SELECT", lockDbNum)
 				if selecterr != nil {
 					beego.Error(selecterr)
@@ -109,11 +144,11 @@ func init() {
 				return err
 			},
 		}
-		
+
 		//pool热身
 		c := lockRedisPool.Get()
 		defer c.Close()
-		
+
 		//创建
 		Lock = &RedisLock{
 			engine: redsync.New([]redsync.Pool{lockRedisPool}),
