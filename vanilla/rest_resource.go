@@ -15,7 +15,7 @@ import (
 	beego_context "github.com/kfchen81/beego/context"
 	"github.com/kfchen81/beego/orm"
 	"github.com/opentracing/opentracing-go"
-	"gopkg.in/redsync.v1"
+	"github.com/go-redsync/redsync"
 )
 
 var emptyStringArray = make([]string, 0)
