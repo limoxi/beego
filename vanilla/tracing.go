@@ -14,7 +14,7 @@ var Tracer opentracing.Tracer
 var Closer io.Closer
 
 func initJaeger(service string) (opentracing.Tracer, io.Closer) {
-	tracingMode := beego.AppConfig.String("tracing::MODE")
+	tracingMode := beego.AppConfig.DefaultString("tracing::MODE", "dev")
 	var cfg *config.Configuration
 	
 	if tracingMode == "dev" {
@@ -56,7 +56,7 @@ func initJaeger(service string) (opentracing.Tracer, io.Closer) {
 }
 
 func init() {
-	serviceName := beego.AppConfig.String("appname")
+	serviceName := beego.AppConfig.DefaultString("appname", beego.BConfig.AppName)
 	Tracer, Closer = initJaeger(serviceName)
 	beego.Debug("[tracing] Tracer ", Tracer)
 }

@@ -24,6 +24,9 @@ const (
 	DEFAULT_CONSUMER_COUNT  = 3		// 默认消费者数量
 )
 
+var taAnalyser TDAnalytics
+var taSwitchOn bool
+
 var once sync.Once
 var prodBatchConsumer *ProdBatchConsumer
 
@@ -31,26 +34,48 @@ type ProdBatchConsumer struct {
 	serverUrl string         // 接收端地址
 	appId     string         // 项目 APP ID
 	Timeout   time.Duration  // 网络请求超时时间, 单位毫秒
-	ch        chan Data // 数据传输信道
+	ch        chan *batchData // 数据传输信道
 
 	batchSize int
 	consumerCount int // 消费者数量
 	tmpConsumerCount int32 // 临时线程数
 }
 
+// runConsumer
+// 每个消费者持有一个计时器，实现每隔1小时将buffer中的数据推到服务端
 func (this *ProdBatchConsumer) runConsumer(tmp bool){
 	metrics.GetTaConsumerCounter().Inc()
+	ticker := time.NewTicker(time.Hour) //计时器
 	go func() {
 		buffer := make([]Data, 0, this.batchSize)
+		flush := func() {
+			if len(buffer) > 0{
+				this.push(buffer)
+				buffer = buffer[:0]
+			}
+		}
+
+		go func() {
+			for _ = range ticker.C{
+				beego.Info("tok...")
+				if len(buffer) > 0{
+					this.ch <- &batchData{
+						t: TYPE_FLUSH,
+						d: Data{},
+					}
+				}
+			}
+		}()
 
 		defer func() {
+			ticker.Stop() // 停止计时器
 			if tmp{
 				atomic.AddInt32(&this.tmpConsumerCount, -1)
 				metrics.GetTaConsumerCounter().Dec()
 			}
 
 			if err := recover(); err != nil{
-				fmt.Println(err.(error).Error())
+				beego.Error(err)
 				if !tmp{ // 临时线程不会被重启
 					this.runConsumer(tmp)
 				}
@@ -58,19 +83,24 @@ func (this *ProdBatchConsumer) runConsumer(tmp bool){
 		}()
 
 		for {
-			data, ok := <- this.ch
+			bData, ok := <- this.ch
 			if !ok {
 				// 此时channel已关闭
 				if len(buffer) > 0{
-					this.push(buffer)
-					buffer = buffer[:0]
+					flush()
 				}
 				return
 			}
-			buffer = append(buffer, data)
-			if len(buffer) >= this.batchSize {
-				this.push(buffer)
-				buffer = buffer[:0]
+
+			switch bData.t {
+			case TYPE_DATA:
+				buffer = append(buffer, bData.d)
+				if len(buffer) < this.batchSize {
+					continue
+				}
+				fallthrough
+			case TYPE_FLUSH:
+				flush()
 				if tmp{
 					// 临时线程在完成一次push后即退出
 					return
@@ -88,7 +118,6 @@ func (this *ProdBatchConsumer)run(){
 }
 
 func (this *ProdBatchConsumer) send(dataStr string) error{
-	fmt.Println(dataStr)
 	buffer := bytes.NewBufferString(dataStr)
 	var resp *http.Response
 	req, _ := http.NewRequest("POST", this.serverUrl, buffer)
@@ -175,14 +204,17 @@ func (this *ProdBatchConsumer) Add(d Data) error {
 		return nil
 	}
 	select {
-	case this.ch <- d:
+	case this.ch <- &batchData{
+		t: TYPE_DATA,
+		d: d,
+	}:
 		metrics.GetTaTracedDataCounter().Inc()
 	default:
 		beego.Warn("[ta]: channel is full")
 		metrics.GetTaChannelIsFullCounter().Inc()
 		// 信道满时策略
 		// 1、新增临时线程处理，临时线程数不超过 2*当前持久consumer数
-		// 2、持久线程已达上限，抛弃信道中较老的数据
+		// 2、持久线程已达上限，抛弃数据并启动新的consumer
 		// 注意，当多个协程同时达到default逻辑块时，以下逻辑会使得只有一个协程能启动新的consumer，
 		// 		结果就是其他协程的消息丢失
 		if tcc := atomic.LoadInt32(&this.tmpConsumerCount); tcc < 2 * int32(this.consumerCount){
@@ -252,7 +284,7 @@ func GetProdBatchConsumer(serverUrl string, appId string, args ...int) Consumer 
 			serverUrl: fmt.Sprintf("%s/logagent", serverUrl),
 			appId:     appId,
 			Timeout:   time.Duration(timeout) * time.Second,
-			ch:        make(chan Data, PROD_CHANNEL_SIZE),
+			ch:        make(chan *batchData, PROD_CHANNEL_SIZE),
 			batchSize: batchSize,
 			consumerCount: consumerCount,
 		}
@@ -267,4 +299,23 @@ func GetTaAnalyst(args ...int) TDAnalytics{
 	appid := beego.AppConfig.DefaultString("ta::TA_APPID", "")
 	consumer := GetProdBatchConsumer(host, appid, args...)
 	return New(consumer)
+}
+
+func Track(eventName, accountId, distinctId string, data map[string]interface{}){
+	if taSwitchOn{
+		err := taAnalyser.Track(accountId, distinctId, eventName, data)
+		if err != nil{
+			beego.Error(err)
+		}
+	}else{
+		beego.Info("ta_analyze is closed")
+	}
+}
+
+func init(){
+	bufferSize := beego.AppConfig.DefaultInt("ta::TA_BUFFER_SIZE", DEFAULT_PROD_BATCH_SIZE)
+	consumerCount := beego.AppConfig.DefaultInt("ta::TA_CONSUMER_COUNT", DEFAULT_CONSUMER_COUNT)
+	beego.Info(fmt.Sprintf("init ta in %s mode with %d buffer_size and %d consumers...", beego.BConfig.RunMode, bufferSize, consumerCount))
+	taAnalyser = GetTaAnalyst(bufferSize, consumerCount)
+	taSwitchOn = beego.AppConfig.DefaultString("ta::TA_SWITCH", "off") == "on" // 功能开关
 }

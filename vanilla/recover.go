@@ -8,7 +8,7 @@ import (
 	"github.com/kfchen81/beego/logs"
 	"github.com/kfchen81/beego/metrics"
 	"github.com/opentracing/opentracing-go"
-	"gopkg.in/redsync.v1"
+	"github.com/go-redsync/redsync"
 	"runtime"
 	"strings"
 	

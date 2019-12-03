@@ -6,7 +6,7 @@ import (
 	"github.com/gomodule/redigo/redis"
 	"errors"
 	"time"
-	"gopkg.in/redsync.v1"
+	"github.com/go-redsync/redsync"
 )
 
 type ILock interface {

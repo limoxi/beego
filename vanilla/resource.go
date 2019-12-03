@@ -57,6 +57,19 @@ func (this *ResourceResponse) Data() *simplejson.Json {
 	return this.RespData.Get("data")
 }
 
+// Bind 将respData映射到struct，container一定要是指针类型
+func (this *ResourceResponse) Bind(container interface{}) error{
+	bs, err := this.Data().MarshalJSON()
+	if err != nil{
+		return err
+	}
+	err = json.Unmarshal(bs, container)
+	if err != nil{
+		return err
+	}
+	return nil
+}
+
 /*RestResource 扩展beego.Controller, 作为rest中各个资源的基类
  */
 type Resource struct {
