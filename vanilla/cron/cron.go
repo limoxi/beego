@@ -27,8 +27,13 @@ var name2task = make(map[string]*CronTask)
 func newTaskCtx() *TaskContext{
 	inst := new(TaskContext)
 	ctx := context.Background()
-	o := orm.NewOrm()
-	ctx = context.WithValue(ctx, "orm", o)
+	enableDb := beego.AppConfig.DefaultBool("db::ENABLE_DB", true)
+	var o orm.Ormer
+	if enableDb{
+		o = orm.NewOrm()
+		ctx = context.WithValue(ctx, "orm", o)
+	}
+
 	resource := GetManagerResource(ctx)
 	ctx = context.WithValue(ctx, "jwt", resource.CustomJWTToken)
 	userId, authUserId, _ := vanilla.ParseUserIdFromJwtToken(resource.CustomJWTToken)
@@ -51,7 +56,7 @@ func taskWrapper(task taskInterface) toolbox.TaskFunc{
 		taskName := task.GetName()
 		startTime := time.Now()
 		beego.Info(fmt.Sprintf("[%s] run...", taskName))
-		if task.IsEnableTx(){
+		if o != nil && task.IsEnableTx(){
 			o.Begin()
 			fnErr = task.Run(taskCtx)
 			o.Commit()
