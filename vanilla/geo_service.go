@@ -39,6 +39,10 @@ func (this *GeoService) CalculateDistance(lat1, lng1, lat2, lng2 float64) float6
 }
 
 func (this *GeoService) CalculateDistanceUseStr(strLat1, strLng1, strLat2, strLng2 string) float64 {
+	if strLat1 == "" || strLng1 == "" || strLat2 == "" || strLng2 == "" {
+		return MAX_DISTANCE
+	}
+	
 	lat1, err := strconv.ParseFloat(strLat1, 64)
 	if err != nil {
 		beego.Error(err)
