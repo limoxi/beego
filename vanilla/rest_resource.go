@@ -165,6 +165,16 @@ func (r *RestResource) GetBusinessContext() context.Context {
 	}
 }
 
+func (r *RestResource) GetCorpToken() string {
+	data := r.Ctx.Input.GetData("__corp_token")
+	if data == nil {
+		return ""
+	} else {
+		token := data.(string)
+		return token
+	}
+}
+
 //returnValidateParameterFailResponse 返回参数校验错误的response
 func (r *RestResource) returnValidateParameterFailResponse(parameter string, paramType string, innerErrMsgs ...string) {
 	innerErrMsg := ""
