@@ -80,7 +80,7 @@ func (this *GreenService) ShouldBlockImage(url string) bool {
 	
 	clientInfo := green.ClinetInfo{Ip:"127.0.0.1"}
 	bizType := "Green"
-	scenes := []string{"porn"}
+	scenes := []string{"porn", "terrorism"}
 	
 	task := green.Task{DataId:uuid.Rand().Hex(), Url:url}
 	tasks := []green.Task{task}
@@ -104,7 +104,7 @@ func (this *GreenService) ShouldBlockImages(urls []string) bool {
 	
 	clientInfo := green.ClinetInfo{Ip:"127.0.0.1"}
 	bizType := "Green"
-	scenes := []string{"porn"}
+	scenes := []string{"porn", "terrorism"}
 	
 	tasks := make([]green.Task, 0)
 	
