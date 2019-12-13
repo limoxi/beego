@@ -141,7 +141,7 @@ func doPaginate(itemCount int64, curPage int, itemCountPerPage int) INextPageInf
 
 	//计算需要显示的页数序列
 	if paginateResult.MaxPage <= 5 {
-		paginateResult.DisplayPages = _range(1, paginateResult.MaxPage+1)
+		paginateResult.DisplayPages = _range(1, paginateResult.MaxPage)
 	} else if curPage+2 <= paginateResult.MaxPage {
 		if curPage >= 3 {
 			paginateResult.DisplayPages = _range(curPage-2, curPage+3)
@@ -232,4 +232,15 @@ func Paginate(objects orm.QuerySeter, page *PageInfo, container interface{}) (IN
 func MockPaginate(itemCount int64, page *PageInfo) INextPageInfo {
 	nextPageInfo := doPaginate(itemCount, page.Page, page.CountPerPage)
 	return nextPageInfo
+}
+
+//MockPaginate 模拟进行分页
+func MockPaginateV2(itemCount int, page *PageInfo) (INextPageInfo, int, int) {
+	nextPageInfo := doPaginate(int64(itemCount), page.Page, page.CountPerPage)
+	start := (page.Page - 1) * page.CountPerPage
+	end := page.Page * page.CountPerPage - 1
+	if end >= itemCount{
+		end = itemCount
+	}
+	return nextPageInfo, start, end
 }
