@@ -2,6 +2,7 @@ package middleware
 
 import (
 	"github.com/kfchen81/beego/context"
+	"net/url"
 	
 	go_context "context"
 	"fmt"
