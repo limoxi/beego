@@ -7,6 +7,45 @@ import (
 	"strings"
 )
 
+var ZONE_NAMES = []string{"直辖市", "华北-东北", "华东地区", "华南-华中", "西北-西南", "其它"}
+
+var PROVINCEID2ZONE = map[int]string{
+	1: "直辖市",
+	2: "直辖市",
+	3: "华北-东北",
+	4: "华北-东北",
+	5: "华北-东北",
+	6: "华北-东北",
+	7: "华北-东北",
+	8: "华北-东北",
+	9: "直辖市",
+	10: "华东地区",
+	11: "华东地区",
+	12: "华东地区",
+	13: "华东地区",
+	14: "华东地区",
+	15: "华东地区",
+	16: "华南-华中",
+	17: "华南-华中",
+	18: "华南-华中",
+	19: "华南-华中",
+	20: "华南-华中",
+	21: "华南-华中",
+	22: "直辖市",
+	23: "西北-西南",
+	24: "西北-西南",
+	25: "西北-西南",
+	26: "西北-西南",
+	27: "西北-西南",
+	28: "西北-西南",
+	29: "西北-西南",
+	30: "西北-西南",
+	31: "西北-西南",
+	32: "其它",
+	33: "其它",
+	34: "其它",
+}
+
 var AREA = make(map[string][]map[string]interface{})
 var provinces = make([]*Province, 0)
 var name2Province = make(map[string]*Province)
@@ -21,6 +60,7 @@ var name2District = make(map[string]*District)
 type Province struct {
 	Id int
 	Name string
+	Zone string
 	Cities []*City
 }
 

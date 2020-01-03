@@ -58,5 +58,22 @@ func GetServiceMode() string {
 	return serviceMode
 }
 
+
+// RunInGoroutine
+func runAsGorutione(task func ()) {
+	defer func() {
+		if err := recover(); err != nil {
+			beego.Error(err)
+		}
+	}()
+	
+	task()
+}
+
+
+func RunInGoroutine(task func ()) {
+	go runAsGorutione(task)
+}
+
 func init() {
 }
