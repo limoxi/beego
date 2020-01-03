@@ -123,6 +123,7 @@ outFor:
 			}
 
 			var args []interface{}
+			existK := make(map[interface{}]struct{})
 			for i := 0; i < val.Len(); i++ {
 				v := val.Index(i)
 
@@ -134,15 +135,21 @@ outFor:
 				if vu == nil {
 					continue
 				}
+				if _, ok := existK[vu]; ok{
+					continue
+				}
 
 				args = append(args, vu)
+				existK[vu] = struct{}{}
 			}
 
 			if len(args) > 0 {
 				p := getFlatParams(fi, args, tz)
 				params = append(params, p...)
+				continue outFor
+			}else{
+				arg = -98765
 			}
-			continue outFor
 		case reflect.Struct:
 			if v, ok := arg.(time.Time); ok {
 				if fi != nil && fi.fieldType == TypeDateField {
