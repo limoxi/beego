@@ -2,6 +2,7 @@ package middleware
 
 import (
 	"github.com/kfchen81/beego/context"
+	"net/url"
 	
 	go_context "context"
 	"fmt"
@@ -66,6 +67,19 @@ var JWTAuthFilter = func(ctx *context.Context) {
 		jwtToken = ctx.Input.Query("_jwt")
 	}
 	
+	if jwtToken == "" {
+		cookie, err := ctx.Request.Cookie("_jwt")
+		if err != nil {
+			jwtToken = ""
+		} else {
+			jwtToken = cookie.Value
+			jwtToken, err = url.QueryUnescape(jwtToken)
+			if err != nil {
+				beego.Error(err)
+			}
+		}
+	}
+	
 	if jwtToken != "" {
 		js, err := vanilla.DecodeJWT(jwtToken)
 
@@ -99,6 +113,10 @@ var JWTAuthFilter = func(ctx *context.Context) {
 			o := orm.NewOrmWithSpan(span)
 			bCtx = go_context.WithValue(bCtx, "orm", o)
 		}
+		
+		// 识别user location
+		location := ctx.Input.Header("X-VXIAOCHENG-Loc")
+		bCtx = go_context.WithValue(bCtx, "user_loc", location)
 		
 		ctx.Input.SetData("bContext", bCtx)
 		ctx.Input.SetData("span", opentracing.SpanFromContext(bCtx))
