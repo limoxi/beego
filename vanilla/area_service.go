@@ -295,8 +295,7 @@ func (this *AreaService) GetAreaByCode(code string) *Area {
 
 func init(){
 	json.Unmarshal([]byte(areaJSON), &AREA)
-
-	for name, arrs := range AREA{
+	for name, arrs := range AREA {
 		switch name {
 		case "PROVINCES":
 			for _, data := range arrs {
@@ -316,62 +315,62 @@ func init(){
 				districts = append(districts, district)
 			}
 		}
-
-		for _, city := range cities {
-			name2City[city.Name] = city
-			id2City[city.Id] = city
-			//向province.Cities中加入city
-			if province, ok := id2Province[city.ProvinceId]; ok {
-				province.Cities = append(province.Cities, city)
-			}
-		}
-
-		for _, district := range districts {
-			name := fmt.Sprintf("%d_%s", district.CityId, district.Name)
-			name2District[name] = district
-			id2District[district.Id] = district
-
-			if city, ok := id2City[district.CityId]; ok {
-				city.Districts = append(city.Districts, district)
-			}
-		}
-
-		//for name, arrs := range AREA{
-		//	switch name {
-		//	case "PROVINCES":
-		//		for _, data := range arrs {
-		//			province := NewProvince(data)
-		//			provinces = append(provinces, province)
-		//			name2Province[province.Name] = province
-		//			id2Province[province.Id] = province
-		//		}
-		//
-		//	case "CITIES":
-		//		for _, data := range arrs {
-		//			city := NewCity(data)
-		//			name2City[city.Name] = city
-		//			id2City[city.Id] = city
-		//			//cities = append(cities, city)
-		//
-		//			//向province.Cities中加入city
-		//			if province, ok := id2Province[city.ProvinceId]; ok {
-		//				province.Cities = append(province.Cities, city)
-		//			}
-		//		}
-		//	case "DISTRICTS":
-		//		for _, data := range arrs {
-		//			district := NewDistrict(data)
-		//			name := fmt.Sprintf("%d_%s", district.CityId, district.Name)
-		//			name2District[name] = district
-		//			id2District[district.Id] = district
-		//
-		//			if city, ok := id2City[district.CityId]; ok {
-		//				city.Districts = append(city.Districts, district)
-		//			}
-		//		}
-		//	}
-		//}
 	}
+
+	for _, city := range cities {
+		name2City[city.Name] = city
+		id2City[city.Id] = city
+		//向province.Cities中加入city
+		if province, ok := id2Province[city.ProvinceId]; ok {
+			province.Cities = append(province.Cities, city)
+		}
+	}
+
+	for _, district := range districts {
+		name := fmt.Sprintf("%d_%s", district.CityId, district.Name)
+		name2District[name] = district
+		id2District[district.Id] = district
+
+		if city, ok := id2City[district.CityId]; ok {
+			city.Districts = append(city.Districts, district)
+		}
+	}
+
+	//for name, arrs := range AREA{
+	//	switch name {
+	//	case "PROVINCES":
+	//		for _, data := range arrs {
+	//			province := NewProvince(data)
+	//			provinces = append(provinces, province)
+	//			name2Province[province.Name] = province
+	//			id2Province[province.Id] = province
+	//		}
+	//
+	//	case "CITIES":
+	//		for _, data := range arrs {
+	//			city := NewCity(data)
+	//			name2City[city.Name] = city
+	//			id2City[city.Id] = city
+	//			//cities = append(cities, city)
+	//
+	//			//向province.Cities中加入city
+	//			if province, ok := id2Province[city.ProvinceId]; ok {
+	//				province.Cities = append(province.Cities, city)
+	//			}
+	//		}
+	//	case "DISTRICTS":
+	//		for _, data := range arrs {
+	//			district := NewDistrict(data)
+	//			name := fmt.Sprintf("%d_%s", district.CityId, district.Name)
+	//			name2District[name] = district
+	//			id2District[district.Id] = district
+	//
+	//			if city, ok := id2City[district.CityId]; ok {
+	//				city.Districts = append(city.Districts, district)
+	//			}
+	//		}
+	//	}
+	//}
 }
 
 const areaJSON = `{
