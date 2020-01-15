@@ -48,12 +48,12 @@ var PROVINCEID2ZONE = map[int]string{
 
 var AREA = make(map[string][]map[string]interface{})
 var provinces = make([]*Province, 0)
+var cities = make([]*City, 0)
+var districts = make([]*District, 0)
 var name2Province = make(map[string]*Province)
 var id2Province = make(map[int]*Province)
 var name2City = make(map[string]*City)
 var id2City = make(map[int]*City)
-//var cities = make([]*City, 0)
-//var cityId2districts = make(map[string][]*District)
 var id2District = make(map[int]*District)
 var name2District = make(map[string]*District)
 
@@ -126,7 +126,7 @@ func NewAreaService() *AreaService {
 
 /*
   Province相关api
- */
+*/
 
 func (this *AreaService) GetProvinces() []*Province {
 	return provinces
@@ -165,7 +165,7 @@ func (this *AreaService) GetProvincesByIds(ids []int) []*Province {
 
 /*
   City相关api
-  */
+*/
 
 func (this *AreaService) GetCityByName(name string) *City{
 	return name2City[name]
@@ -207,7 +207,7 @@ func (this *AreaService) GetCitiesForProvince(provinceId int) []*City {
 
 /*
  District相关api
- */
+*/
 func (this *AreaService) GetDistrictByName(cityId int, name string) *District{
 	name = fmt.Sprintf("%d_%s", cityId, name)
 	return name2District[name]
@@ -250,7 +250,7 @@ func (this *AreaService) GetDistrictsForCity(cityId int) []*District {
 
 /*
  Area相关api
- */
+*/
 
 // GetAreaByName 根据area name(北京市 北京市 东城区)获得area
 func (this *AreaService) GetAreaByName(name string) *Area {
@@ -295,8 +295,7 @@ func (this *AreaService) GetAreaByCode(code string) *Area {
 
 func init(){
 	json.Unmarshal([]byte(areaJSON), &AREA)
-
-	for name, arrs := range AREA{
+	for name, arrs := range AREA {
 		switch name {
 		case "PROVINCES":
 			for _, data := range arrs {
@@ -305,32 +304,73 @@ func init(){
 				name2Province[province.Name] = province
 				id2Province[province.Id] = province
 			}
-
 		case "CITIES":
 			for _, data := range arrs {
 				city := NewCity(data)
-				name2City[city.Name] = city
-				id2City[city.Id] = city
-				//cities = append(cities, city)
-				
-				//向province.Cities中加入city
-				if province, ok := id2Province[city.ProvinceId]; ok {
-					province.Cities = append(province.Cities, city)
-				}
+				cities = append(cities, city)
 			}
 		case "DISTRICTS":
 			for _, data := range arrs {
 				district := NewDistrict(data)
-				name := fmt.Sprintf("%d_%s", district.CityId, district.Name)
-				name2District[name] = district
-				id2District[district.Id] = district
-				
-				if city, ok := id2City[district.CityId]; ok {
-					city.Districts = append(city.Districts, district)
-				}
+				districts = append(districts, district)
 			}
 		}
 	}
+
+	for _, city := range cities {
+		name2City[city.Name] = city
+		id2City[city.Id] = city
+		//向province.Cities中加入city
+		if province, ok := id2Province[city.ProvinceId]; ok {
+			province.Cities = append(province.Cities, city)
+		}
+	}
+
+	for _, district := range districts {
+		name := fmt.Sprintf("%d_%s", district.CityId, district.Name)
+		name2District[name] = district
+		id2District[district.Id] = district
+
+		if city, ok := id2City[district.CityId]; ok {
+			city.Districts = append(city.Districts, district)
+		}
+	}
+
+	//for name, arrs := range AREA{
+	//	switch name {
+	//	case "PROVINCES":
+	//		for _, data := range arrs {
+	//			province := NewProvince(data)
+	//			provinces = append(provinces, province)
+	//			name2Province[province.Name] = province
+	//			id2Province[province.Id] = province
+	//		}
+	//
+	//	case "CITIES":
+	//		for _, data := range arrs {
+	//			city := NewCity(data)
+	//			name2City[city.Name] = city
+	//			id2City[city.Id] = city
+	//			//cities = append(cities, city)
+	//
+	//			//向province.Cities中加入city
+	//			if province, ok := id2Province[city.ProvinceId]; ok {
+	//				province.Cities = append(province.Cities, city)
+	//			}
+	//		}
+	//	case "DISTRICTS":
+	//		for _, data := range arrs {
+	//			district := NewDistrict(data)
+	//			name := fmt.Sprintf("%d_%s", district.CityId, district.Name)
+	//			name2District[name] = district
+	//			id2District[district.Id] = district
+	//
+	//			if city, ok := id2City[district.CityId]; ok {
+	//				city.Districts = append(city.Districts, district)
+	//			}
+	//		}
+	//	}
+	//}
 }
 
 const areaJSON = `{
