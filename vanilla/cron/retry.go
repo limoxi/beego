@@ -5,7 +5,10 @@ import (
 	"fmt"
 	"github.com/kfchen81/beego"
 	"github.com/kfchen81/beego/vanilla/backoff"
+	"github.com/kfchen81/beego/logs"
+	"runtime"
 	"time"
+	"bytes"
 )
 
 type RetryTaskParam struct {
@@ -23,7 +26,18 @@ func retryTaskGorutione(maxMinutes int, taskParam *RetryTaskParam, goroutineTime
 	defer func() {
 		if err := recover(); err != nil {
 			beego.Error(err)
-			errMsg := fmt.Sprintf("%v", err)
+			errMsg := fmt.Sprintf("%s", err)
+			var buffer bytes.Buffer
+			buffer.WriteString(fmt.Sprintf("[Unprocessed_Exception] %s\n", errMsg))
+			for i := 1; ; i++ {
+				_, file, line, ok := runtime.Caller(i)
+				if !ok {
+					break
+				}
+				buffer.WriteString(fmt.Sprintf("%s:%d\n", file, line))
+			}
+			logs.Error(buffer.String())
+			
 			if goroutineTimes <= 3 {
 				time.Sleep(4 * time.Second)
 				beego.Warn(fmt.Sprintf("[retry] restart goroutine for %d times", goroutineTimes))

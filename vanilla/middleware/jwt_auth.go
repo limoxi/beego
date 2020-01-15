@@ -9,7 +9,7 @@ import (
 	"strings"
 	
 	"github.com/kfchen81/beego/vanilla"
-
+	
 	"github.com/kfchen81/beego"
 	"github.com/kfchen81/beego/orm"
 	"github.com/opentracing/opentracing-go"
@@ -38,7 +38,7 @@ var JWTAuthFilter = func(ctx *context.Context) {
 	
 	for _, skipUrl := range SKIP_JWT_CHECK_URLS {
 		if strings.Contains(uri, skipUrl) {
-			if strings.Contains(uri, "/logined_microapp_corp_user") || strings.Contains(uri, "/user_reflection") {
+			if strings.Contains(uri, "/logined_microapp_corp_user") || strings.Contains(uri, "/logined_angler_user") || strings.Contains(uri, "/user_reflection") {
 			
 			} else {
 				beego.Debug("[jwt_middleware] skip jwt check", "url", skipUrl)
