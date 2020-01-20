@@ -54,6 +54,7 @@ var (
 		"istartswith": true,
 		"iendswith":   true,
 		"in":          true,
+		"notin":       true,
 		"between":     true,
 		// "year":        true,
 		// "month":       true,
@@ -1162,12 +1163,16 @@ func (d *dbBase) GenerateOperatorSQL(mi *modelInfo, fi *fieldInfo, operator stri
 	arg := params[0]
 
 	switch operator {
-	case "in":
+	case "in", "notin":
 		marks := make([]string, len(params))
 		for i := range marks {
 			marks[i] = "?"
 		}
-		sql = fmt.Sprintf("IN (%s)", strings.Join(marks, ", "))
+		op := "IN"
+		if operator == "notin"{
+			op = "NOT IN"
+		}
+		sql = fmt.Sprintf("%s (%s)", op, strings.Join(marks, ", "))
 	case "between":
 		if len(params) != 2 {
 			panic(fmt.Errorf("operator `%s` need 2 args not %d", operator, len(params)))

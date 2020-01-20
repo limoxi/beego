@@ -76,8 +76,10 @@ func fetchData(pi pipeInterface){
 			if err := recover(); err!=nil{
 				beego.Warn(string(debug.Stack()))
 				fetchData(pi)
-				dingMsg := fmt.Sprintf("> goroutine from task(%s) dead \n\n 错误信息: %s \n\n", taskName, err.(error).Error())
+				errMsg := err.(error).Error()
+				dingMsg := fmt.Sprintf("> goroutine from task(%s) dead \n\n 错误信息: %s \n\n", taskName, errMsg)
 				vanilla.NewDingBot().Use("xiuer").Error(dingMsg)
+				beego.CaptureTaskErrorToSentry(context.Background(), errMsg)
 			}
 		}()
 		for{
