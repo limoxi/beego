@@ -374,16576 +374,17620 @@ func init(){
 }
 
 const areaJSON = `{
-	"PROVINCES": [
-		{
-			"id": "1",
-			"name": "北京市"
-		},
-		{
-			"id": "2",
-			"name": "天津市"
-		},
-		{
-			"id": "3",
-			"name": "河北省"
-		},
-		{
-			"id": "4",
-			"name": "山西省"
-		},
-		{
-			"id": "5",
-			"name": "内蒙古自治区"
-		},
-		{
-			"id": "6",
-			"name": "辽宁省"
-		},
-		{
-			"id": "7",
-			"name": "吉林省"
-		},
-		{
-			"id": "8",
-			"name": "黑龙江省"
-		},
-		{
-			"id": "9",
-			"name": "上海市"
-		},
-		{
-			"id": "10",
-			"name": "江苏省"
-		},
-		{
-			"id": "11",
-			"name": "浙江省"
-		},
-		{
-			"id": "12",
-			"name": "安徽省"
-		},
-		{
-			"id": "13",
-			"name": "福建省"
-		},
-		{
-			"id": "14",
-			"name": "江西省"
-		},
-		{
-			"id": "15",
-			"name": "山东省"
-		},
-		{
-			"id": "16",
-			"name": "河南省"
-		},
-		{
-			"id": "17",
-			"name": "湖北省"
-		},
-		{
-			"id": "18",
-			"name": "湖南省"
-		},
-		{
-			"id": "19",
-			"name": "广东省"
-		},
-		{
-			"id": "20",
-			"name": "广西壮族自治区"
-		},
-		{
-			"id": "21",
-			"name": "海南省"
-		},
-		{
-			"id": "22",
-			"name": "重庆市"
-		},
-		{
-			"id": "23",
-			"name": "四川省"
-		},
-		{
-			"id": "24",
-			"name": "贵州省"
-		},
-		{
-			"id": "25",
-			"name": "云南省"
-		},
-		{
-			"id": "26",
-			"name": "西藏自治区"
-		},
-		{
-			"id": "27",
-			"name": "陕西省"
-		},
-		{
-			"id": "28",
-			"name": "甘肃省"
-		},
-		{
-			"id": "29",
-			"name": "青海省"
-		},
-		{
-			"id": "30",
-			"name": "宁夏回族自治区"
-		},
-		{
-			"id": "31",
-			"name": "新疆维吾尔自治区"
-		},
-		{
-			"id": "32",
-			"name": "香港特别行政区"
-		},
-		{
-			"id": "33",
-			"name": "澳门特别行政区"
-		},
-		{
-			"id": "34",
-			"name": "台湾省"
-		}
-	],
-	"CITIES": [
-		{
-			"id": "1",
-			"province_id": "1",
-			"name": "北京市",
-			"zip_code": "100000"
-		},
-		{
-			"id": "2",
-			"province_id": "2",
-			"name": "天津市",
-			"zip_code": "100000"
-		},
-		{
-			"id": "3",
-			"province_id": "3",
-			"name": "石家庄市",
-			"zip_code": "050000"
-		},
-		{
-			"id": "4",
-			"province_id": "3",
-			"name": "唐山市",
-			"zip_code": "063000"
-		},
-		{
-			"id": "5",
-			"province_id": "3",
-			"name": "秦皇岛市",
-			"zip_code": "066000"
-		},
-		{
-			"id": "6",
-			"province_id": "3",
-			"name": "邯郸市",
-			"zip_code": "056000"
-		},
-		{
-			"id": "7",
-			"province_id": "3",
-			"name": "邢台市",
-			"zip_code": "054000"
-		},
-		{
-			"id": "8",
-			"province_id": "3",
-			"name": "保定市",
-			"zip_code": "071000"
-		},
-		{
-			"id": "9",
-			"province_id": "3",
-			"name": "张家口市",
-			"zip_code": "075000"
-		},
-		{
-			"id": "10",
-			"province_id": "3",
-			"name": "承德市",
-			"zip_code": "067000"
-		},
-		{
-			"id": "11",
-			"province_id": "3",
-			"name": "沧州市",
-			"zip_code": "061000"
-		},
-		{
-			"id": "12",
-			"province_id": "3",
-			"name": "廊坊市",
-			"zip_code": "065000"
-		},
-		{
-			"id": "13",
-			"province_id": "3",
-			"name": "衡水市",
-			"zip_code": "053000"
-		},
-		{
-			"id": "14",
-			"province_id": "4",
-			"name": "太原市",
-			"zip_code": "030000"
-		},
-		{
-			"id": "15",
-			"province_id": "4",
-			"name": "大同市",
-			"zip_code": "037000"
-		},
-		{
-			"id": "16",
-			"province_id": "4",
-			"name": "阳泉市",
-			"zip_code": "045000"
-		},
-		{
-			"id": "17",
-			"province_id": "4",
-			"name": "长治市",
-			"zip_code": "046000"
-		},
-		{
-			"id": "18",
-			"province_id": "4",
-			"name": "晋城市",
-			"zip_code": "048000"
-		},
-		{
-			"id": "19",
-			"province_id": "4",
-			"name": "朔州市",
-			"zip_code": "036000"
-		},
-		{
-			"id": "20",
-			"province_id": "4",
-			"name": "晋中市",
-			"zip_code": "030600"
-		},
-		{
-			"id": "21",
-			"province_id": "4",
-			"name": "运城市",
-			"zip_code": "044000"
-		},
-		{
-			"id": "22",
-			"province_id": "4",
-			"name": "忻州市",
-			"zip_code": "034000"
-		},
-		{
-			"id": "23",
-			"province_id": "4",
-			"name": "临汾市",
-			"zip_code": "041000"
-		},
-		{
-			"id": "24",
-			"province_id": "4",
-			"name": "吕梁市",
-			"zip_code": "030500"
-		},
-		{
-			"id": "25",
-			"province_id": "5",
-			"name": "呼和浩特市",
-			"zip_code": "010000"
-		},
-		{
-			"id": "26",
-			"province_id": "5",
-			"name": "包头市",
-			"zip_code": "014000"
-		},
-		{
-			"id": "27",
-			"province_id": "5",
-			"name": "乌海市",
-			"zip_code": "016000"
-		},
-		{
-			"id": "28",
-			"province_id": "5",
-			"name": "赤峰市",
-			"zip_code": "024000"
-		},
-		{
-			"id": "29",
-			"province_id": "5",
-			"name": "通辽市",
-			"zip_code": "028000"
-		},
-		{
-			"id": "30",
-			"province_id": "5",
-			"name": "鄂尔多斯市",
-			"zip_code": "010300"
-		},
-		{
-			"id": "31",
-			"province_id": "5",
-			"name": "呼伦贝尔市",
-			"zip_code": "021000"
-		},
-		{
-			"id": "32",
-			"province_id": "5",
-			"name": "巴彦淖尔市",
-			"zip_code": "014400"
-		},
-		{
-			"id": "33",
-			"province_id": "5",
-			"name": "乌兰察布市",
-			"zip_code": "011800"
-		},
-		{
-			"id": "34",
-			"province_id": "5",
-			"name": "兴安盟",
-			"zip_code": "137500"
-		},
-		{
-			"id": "35",
-			"province_id": "5",
-			"name": "锡林郭勒盟",
-			"zip_code": "011100"
-		},
-		{
-			"id": "36",
-			"province_id": "5",
-			"name": "阿拉善盟",
-			"zip_code": "016000"
-		},
-		{
-			"id": "37",
-			"province_id": "6",
-			"name": "沈阳市",
-			"zip_code": "110000"
-		},
-		{
-			"id": "38",
-			"province_id": "6",
-			"name": "大连市",
-			"zip_code": "116000"
-		},
-		{
-			"id": "39",
-			"province_id": "6",
-			"name": "鞍山市",
-			"zip_code": "114000"
-		},
-		{
-			"id": "40",
-			"province_id": "6",
-			"name": "抚顺市",
-			"zip_code": "113000"
-		},
-		{
-			"id": "41",
-			"province_id": "6",
-			"name": "本溪市",
-			"zip_code": "117000"
-		},
-		{
-			"id": "42",
-			"province_id": "6",
-			"name": "丹东市",
-			"zip_code": "118000"
-		},
-		{
-			"id": "43",
-			"province_id": "6",
-			"name": "锦州市",
-			"zip_code": "121000"
-		},
-		{
-			"id": "44",
-			"province_id": "6",
-			"name": "营口市",
-			"zip_code": "115000"
-		},
-		{
-			"id": "45",
-			"province_id": "6",
-			"name": "阜新市",
-			"zip_code": "123000"
-		},
-		{
-			"id": "46",
-			"province_id": "6",
-			"name": "辽阳市",
-			"zip_code": "111000"
-		},
-		{
-			"id": "47",
-			"province_id": "6",
-			"name": "盘锦市",
-			"zip_code": "124000"
-		},
-		{
-			"id": "48",
-			"province_id": "6",
-			"name": "铁岭市",
-			"zip_code": "112000"
-		},
-		{
-			"id": "49",
-			"province_id": "6",
-			"name": "朝阳市",
-			"zip_code": "122000"
-		},
-		{
-			"id": "50",
-			"province_id": "6",
-			"name": "葫芦岛市",
-			"zip_code": "125000"
-		},
-		{
-			"id": "51",
-			"province_id": "7",
-			"name": "长春市",
-			"zip_code": "130000"
-		},
-		{
-			"id": "52",
-			"province_id": "7",
-			"name": "吉林市",
-			"zip_code": "132000"
-		},
-		{
-			"id": "53",
-			"province_id": "7",
-			"name": "四平市",
-			"zip_code": "136000"
-		},
-		{
-			"id": "54",
-			"province_id": "7",
-			"name": "辽源市",
-			"zip_code": "136200"
-		},
-		{
-			"id": "55",
-			"province_id": "7",
-			"name": "通化市",
-			"zip_code": "134000"
-		},
-		{
-			"id": "56",
-			"province_id": "7",
-			"name": "白山市",
-			"zip_code": "134300"
-		},
-		{
-			"id": "57",
-			"province_id": "7",
-			"name": "松原市",
-			"zip_code": "131100"
-		},
-		{
-			"id": "58",
-			"province_id": "7",
-			"name": "白城市",
-			"zip_code": "137000"
-		},
-		{
-			"id": "59",
-			"province_id": "7",
-			"name": "延边朝鲜族自治州",
-			"zip_code": "133000"
-		},
-		{
-			"id": "60",
-			"province_id": "8",
-			"name": "哈尔滨市",
-			"zip_code": "150000"
-		},
-		{
-			"id": "61",
-			"province_id": "8",
-			"name": "齐齐哈尔市",
-			"zip_code": "161000"
-		},
-		{
-			"id": "62",
-			"province_id": "8",
-			"name": "鸡西市",
-			"zip_code": "158100"
-		},
-		{
-			"id": "63",
-			"province_id": "8",
-			"name": "鹤岗市",
-			"zip_code": "154100"
-		},
-		{
-			"id": "64",
-			"province_id": "8",
-			"name": "双鸭山市",
-			"zip_code": "155100"
-		},
-		{
-			"id": "65",
-			"province_id": "8",
-			"name": "大庆市",
-			"zip_code": "163000"
-		},
-		{
-			"id": "66",
-			"province_id": "8",
-			"name": "伊春市",
-			"zip_code": "152300"
-		},
-		{
-			"id": "67",
-			"province_id": "8",
-			"name": "佳木斯市",
-			"zip_code": "154000"
-		},
-		{
-			"id": "68",
-			"province_id": "8",
-			"name": "七台河市",
-			"zip_code": "154600"
-		},
-		{
-			"id": "69",
-			"province_id": "8",
-			"name": "牡丹江市",
-			"zip_code": "157000"
-		},
-		{
-			"id": "70",
-			"province_id": "8",
-			"name": "黑河市",
-			"zip_code": "164300"
-		},
-		{
-			"id": "71",
-			"province_id": "8",
-			"name": "绥化市",
-			"zip_code": "152000"
-		},
-		{
-			"id": "72",
-			"province_id": "8",
-			"name": "大兴安岭地区",
-			"zip_code": "165000"
-		},
-		{
-			"id": "73",
-			"province_id": "9",
-			"name": "上海市",
-			"zip_code": "200000"
-		},
-		{
-			"id": "74",
-			"province_id": "10",
-			"name": "南京市",
-			"zip_code": "210000"
-		},
-		{
-			"id": "75",
-			"province_id": "10",
-			"name": "无锡市",
-			"zip_code": "214000"
-		},
-		{
-			"id": "76",
-			"province_id": "10",
-			"name": "徐州市",
-			"zip_code": "221000"
-		},
-		{
-			"id": "77",
-			"province_id": "10",
-			"name": "常州市",
-			"zip_code": "213000"
-		},
-		{
-			"id": "78",
-			"province_id": "10",
-			"name": "苏州市",
-			"zip_code": "215000"
-		},
-		{
-			"id": "79",
-			"province_id": "10",
-			"name": "南通市",
-			"zip_code": "226000"
-		},
-		{
-			"id": "80",
-			"province_id": "10",
-			"name": "连云港市",
-			"zip_code": "222000"
-		},
-		{
-			"id": "81",
-			"province_id": "10",
-			"name": "淮安市",
-			"zip_code": "223200"
-		},
-		{
-			"id": "82",
-			"province_id": "10",
-			"name": "盐城市",
-			"zip_code": "224000"
-		},
-		{
-			"id": "83",
-			"province_id": "10",
-			"name": "扬州市",
-			"zip_code": "225000"
-		},
-		{
-			"id": "84",
-			"province_id": "10",
-			"name": "镇江市",
-			"zip_code": "212000"
-		},
-		{
-			"id": "85",
-			"province_id": "10",
-			"name": "泰州市",
-			"zip_code": "225300"
-		},
-		{
-			"id": "86",
-			"province_id": "10",
-			"name": "宿迁市",
-			"zip_code": "223800"
-		},
-		{
-			"id": "87",
-			"province_id": "11",
-			"name": "杭州市",
-			"zip_code": "310000"
-		},
-		{
-			"id": "88",
-			"province_id": "11",
-			"name": "宁波市",
-			"zip_code": "315000"
-		},
-		{
-			"id": "89",
-			"province_id": "11",
-			"name": "温州市",
-			"zip_code": "325000"
-		},
-		{
-			"id": "90",
-			"province_id": "11",
-			"name": "嘉兴市",
-			"zip_code": "314000"
-		},
-		{
-			"id": "91",
-			"province_id": "11",
-			"name": "湖州市",
-			"zip_code": "313000"
-		},
-		{
-			"id": "92",
-			"province_id": "11",
-			"name": "绍兴市",
-			"zip_code": "312000"
-		},
-		{
-			"id": "93",
-			"province_id": "11",
-			"name": "金华市",
-			"zip_code": "321000"
-		},
-		{
-			"id": "94",
-			"province_id": "11",
-			"name": "衢州市",
-			"zip_code": "324000"
-		},
-		{
-			"id": "95",
-			"province_id": "11",
-			"name": "舟山市",
-			"zip_code": "316000"
-		},
-		{
-			"id": "96",
-			"province_id": "11",
-			"name": "台州市",
-			"zip_code": "318000"
-		},
-		{
-			"id": "97",
-			"province_id": "11",
-			"name": "丽水市",
-			"zip_code": "323000"
-		},
-		{
-			"id": "98",
-			"province_id": "12",
-			"name": "合肥市",
-			"zip_code": "230000"
-		},
-		{
-			"id": "99",
-			"province_id": "12",
-			"name": "芜湖市",
-			"zip_code": "241000"
-		},
-		{
-			"id": "100",
-			"province_id": "12",
-			"name": "蚌埠市",
-			"zip_code": "233000"
-		},
-		{
-			"id": "101",
-			"province_id": "12",
-			"name": "淮南市",
-			"zip_code": "232000"
-		},
-		{
-			"id": "102",
-			"province_id": "12",
-			"name": "马鞍山市",
-			"zip_code": "243000"
-		},
-		{
-			"id": "103",
-			"province_id": "12",
-			"name": "淮北市",
-			"zip_code": "235000"
-		},
-		{
-			"id": "104",
-			"province_id": "12",
-			"name": "铜陵市",
-			"zip_code": "244000"
-		},
-		{
-			"id": "105",
-			"province_id": "12",
-			"name": "安庆市",
-			"zip_code": "246000"
-		},
-		{
-			"id": "106",
-			"province_id": "12",
-			"name": "黄山市",
-			"zip_code": "242700"
-		},
-		{
-			"id": "107",
-			"province_id": "12",
-			"name": "滁州市",
-			"zip_code": "239000"
-		},
-		{
-			"id": "108",
-			"province_id": "12",
-			"name": "阜阳市",
-			"zip_code": "236100"
-		},
-		{
-			"id": "109",
-			"province_id": "12",
-			"name": "宿州市",
-			"zip_code": "234100"
-		},
-		{
-			"id": "110",
-			"province_id": "12",
-			"name": "巢湖市",
-			"zip_code": "238000"
-		},
-		{
-			"id": "111",
-			"province_id": "12",
-			"name": "六安市",
-			"zip_code": "237000"
-		},
-		{
-			"id": "112",
-			"province_id": "12",
-			"name": "亳州市",
-			"zip_code": "236800"
-		},
-		{
-			"id": "113",
-			"province_id": "12",
-			"name": "池州市",
-			"zip_code": "247100"
-		},
-		{
-			"id": "114",
-			"province_id": "12",
-			"name": "宣城市",
-			"zip_code": "366000"
-		},
-		{
-			"id": "115",
-			"province_id": "13",
-			"name": "福州市",
-			"zip_code": "350000"
-		},
-		{
-			"id": "116",
-			"province_id": "13",
-			"name": "厦门市",
-			"zip_code": "361000"
-		},
-		{
-			"id": "117",
-			"province_id": "13",
-			"name": "莆田市",
-			"zip_code": "351100"
-		},
-		{
-			"id": "118",
-			"province_id": "13",
-			"name": "三明市",
-			"zip_code": "365000"
-		},
-		{
-			"id": "119",
-			"province_id": "13",
-			"name": "泉州市",
-			"zip_code": "362000"
-		},
-		{
-			"id": "120",
-			"province_id": "13",
-			"name": "漳州市",
-			"zip_code": "363000"
-		},
-		{
-			"id": "121",
-			"province_id": "13",
-			"name": "南平市",
-			"zip_code": "353000"
-		},
-		{
-			"id": "122",
-			"province_id": "13",
-			"name": "龙岩市",
-			"zip_code": "364000"
-		},
-		{
-			"id": "123",
-			"province_id": "13",
-			"name": "宁德市",
-			"zip_code": "352100"
-		},
-		{
-			"id": "124",
-			"province_id": "14",
-			"name": "南昌市",
-			"zip_code": "330000"
-		},
-		{
-			"id": "125",
-			"province_id": "14",
-			"name": "景德镇市",
-			"zip_code": "333000"
-		},
-		{
-			"id": "126",
-			"province_id": "14",
-			"name": "萍乡市",
-			"zip_code": "337000"
-		},
-		{
-			"id": "127",
-			"province_id": "14",
-			"name": "九江市",
-			"zip_code": "332000"
-		},
-		{
-			"id": "128",
-			"province_id": "14",
-			"name": "新余市",
-			"zip_code": "338000"
-		},
-		{
-			"id": "129",
-			"province_id": "14",
-			"name": "鹰潭市",
-			"zip_code": "335000"
-		},
-		{
-			"id": "130",
-			"province_id": "14",
-			"name": "赣州市",
-			"zip_code": "341000"
-		},
-		{
-			"id": "131",
-			"province_id": "14",
-			"name": "吉安市",
-			"zip_code": "343000"
-		},
-		{
-			"id": "132",
-			"province_id": "14",
-			"name": "宜春市",
-			"zip_code": "336000"
-		},
-		{
-			"id": "133",
-			"province_id": "14",
-			"name": "抚州市",
-			"zip_code": "332900"
-		},
-		{
-			"id": "134",
-			"province_id": "14",
-			"name": "上饶市",
-			"zip_code": "334000"
-		},
-		{
-			"id": "135",
-			"province_id": "15",
-			"name": "济南市",
-			"zip_code": "250000"
-		},
-		{
-			"id": "136",
-			"province_id": "15",
-			"name": "青岛市",
-			"zip_code": "266000"
-		},
-		{
-			"id": "137",
-			"province_id": "15",
-			"name": "淄博市",
-			"zip_code": "255000"
-		},
-		{
-			"id": "138",
-			"province_id": "15",
-			"name": "枣庄市",
-			"zip_code": "277100"
-		},
-		{
-			"id": "139",
-			"province_id": "15",
-			"name": "东营市",
-			"zip_code": "257000"
-		},
-		{
-			"id": "140",
-			"province_id": "15",
-			"name": "烟台市",
-			"zip_code": "264000"
-		},
-		{
-			"id": "141",
-			"province_id": "15",
-			"name": "潍坊市",
-			"zip_code": "261000"
-		},
-		{
-			"id": "142",
-			"province_id": "15",
-			"name": "济宁市",
-			"zip_code": "272100"
-		},
-		{
-			"id": "143",
-			"province_id": "15",
-			"name": "泰安市",
-			"zip_code": "271000"
-		},
-		{
-			"id": "144",
-			"province_id": "15",
-			"name": "威海市",
-			"zip_code": "265700"
-		},
-		{
-			"id": "145",
-			"province_id": "15",
-			"name": "日照市",
-			"zip_code": "276800"
-		},
-		{
-			"id": "146",
-			"province_id": "15",
-			"name": "莱芜市",
-			"zip_code": "271100"
-		},
-		{
-			"id": "147",
-			"province_id": "15",
-			"name": "临沂市",
-			"zip_code": "276000"
-		},
-		{
-			"id": "148",
-			"province_id": "15",
-			"name": "德州市",
-			"zip_code": "253000"
-		},
-		{
-			"id": "149",
-			"province_id": "15",
-			"name": "聊城市",
-			"zip_code": "252000"
-		},
-		{
-			"id": "150",
-			"province_id": "15",
-			"name": "滨州市",
-			"zip_code": "256600"
-		},
-		{
-			"id": "151",
-			"province_id": "15",
-			"name": "荷泽市",
-			"zip_code": "255000"
-		},
-		{
-			"id": "152",
-			"province_id": "16",
-			"name": "郑州市",
-			"zip_code": "450000"
-		},
-		{
-			"id": "153",
-			"province_id": "16",
-			"name": "开封市",
-			"zip_code": "475000"
-		},
-		{
-			"id": "154",
-			"province_id": "16",
-			"name": "洛阳市",
-			"zip_code": "471000"
-		},
-		{
-			"id": "155",
-			"province_id": "16",
-			"name": "平顶山市",
-			"zip_code": "467000"
-		},
-		{
-			"id": "156",
-			"province_id": "16",
-			"name": "安阳市",
-			"zip_code": "454900"
-		},
-		{
-			"id": "157",
-			"province_id": "16",
-			"name": "鹤壁市",
-			"zip_code": "456600"
-		},
-		{
-			"id": "158",
-			"province_id": "16",
-			"name": "新乡市",
-			"zip_code": "453000"
-		},
-		{
-			"id": "159",
-			"province_id": "16",
-			"name": "焦作市",
-			"zip_code": "454100"
-		},
-		{
-			"id": "160",
-			"province_id": "16",
-			"name": "濮阳市",
-			"zip_code": "457000"
-		},
-		{
-			"id": "161",
-			"province_id": "16",
-			"name": "许昌市",
-			"zip_code": "461000"
-		},
-		{
-			"id": "162",
-			"province_id": "16",
-			"name": "漯河市",
-			"zip_code": "462000"
-		},
-		{
-			"id": "163",
-			"province_id": "16",
-			"name": "三门峡市",
-			"zip_code": "472000"
-		},
-		{
-			"id": "164",
-			"province_id": "16",
-			"name": "南阳市",
-			"zip_code": "473000"
-		},
-		{
-			"id": "165",
-			"province_id": "16",
-			"name": "商丘市",
-			"zip_code": "476000"
-		},
-		{
-			"id": "166",
-			"province_id": "16",
-			"name": "信阳市",
-			"zip_code": "464000"
-		},
-		{
-			"id": "167",
-			"province_id": "16",
-			"name": "周口市",
-			"zip_code": "466000"
-		},
-		{
-			"id": "168",
-			"province_id": "16",
-			"name": "驻马店市",
-			"zip_code": "463000"
-		},
-		{
-			"id": "169",
-			"province_id": "17",
-			"name": "武汉市",
-			"zip_code": "430000"
-		},
-		{
-			"id": "170",
-			"province_id": "17",
-			"name": "黄石市",
-			"zip_code": "435000"
-		},
-		{
-			"id": "171",
-			"province_id": "17",
-			"name": "十堰市",
-			"zip_code": "442000"
-		},
-		{
-			"id": "172",
-			"province_id": "17",
-			"name": "宜昌市",
-			"zip_code": "443000"
-		},
-		{
-			"id": "173",
-			"province_id": "17",
-			"name": "襄樊市",
-			"zip_code": "441000"
-		},
-		{
-			"id": "174",
-			"province_id": "17",
-			"name": "鄂州市",
-			"zip_code": "436000"
-		},
-		{
-			"id": "175",
-			"province_id": "17",
-			"name": "荆门市",
-			"zip_code": "448000"
-		},
-		{
-			"id": "176",
-			"province_id": "17",
-			"name": "孝感市",
-			"zip_code": "432100"
-		},
-		{
-			"id": "177",
-			"province_id": "17",
-			"name": "荆州市",
-			"zip_code": "434000"
-		},
-		{
-			"id": "178",
-			"province_id": "17",
-			"name": "黄冈市",
-			"zip_code": "438000"
-		},
-		{
-			"id": "179",
-			"province_id": "17",
-			"name": "咸宁市",
-			"zip_code": "437000"
-		},
-		{
-			"id": "180",
-			"province_id": "17",
-			"name": "随州市",
-			"zip_code": "441300"
-		},
-		{
-			"id": "181",
-			"province_id": "17",
-			"name": "恩施土家族苗族自治州",
-			"zip_code": "445000"
-		},
-		{
-			"id": "182",
-			"province_id": "17",
-			"name": "神农架",
-			"zip_code": "442400"
-		},
-		{
-			"id": "183",
-			"province_id": "18",
-			"name": "长沙市",
-			"zip_code": "410000"
-		},
-		{
-			"id": "184",
-			"province_id": "18",
-			"name": "株洲市",
-			"zip_code": "412000"
-		},
-		{
-			"id": "185",
-			"province_id": "18",
-			"name": "湘潭市",
-			"zip_code": "411100"
-		},
-		{
-			"id": "186",
-			"province_id": "18",
-			"name": "衡阳市",
-			"zip_code": "421000"
-		},
-		{
-			"id": "187",
-			"province_id": "18",
-			"name": "邵阳市",
-			"zip_code": "422000"
-		},
-		{
-			"id": "188",
-			"province_id": "18",
-			"name": "岳阳市",
-			"zip_code": "414000"
-		},
-		{
-			"id": "189",
-			"province_id": "18",
-			"name": "常德市",
-			"zip_code": "415000"
-		},
-		{
-			"id": "190",
-			"province_id": "18",
-			"name": "张家界市",
-			"zip_code": "427000"
-		},
-		{
-			"id": "191",
-			"province_id": "18",
-			"name": "益阳市",
-			"zip_code": "413000"
-		},
-		{
-			"id": "192",
-			"province_id": "18",
-			"name": "郴州市",
-			"zip_code": "423000"
-		},
-		{
-			"id": "193",
-			"province_id": "18",
-			"name": "永州市",
-			"zip_code": "425000"
-		},
-		{
-			"id": "194",
-			"province_id": "18",
-			"name": "怀化市",
-			"zip_code": "418000"
-		},
-		{
-			"id": "195",
-			"province_id": "18",
-			"name": "娄底市",
-			"zip_code": "417000"
-		},
-		{
-			"id": "196",
-			"province_id": "18",
-			"name": "湘西土家族苗族自治州",
-			"zip_code": "416000"
-		},
-		{
-			"id": "197",
-			"province_id": "19",
-			"name": "广州市",
-			"zip_code": "510000"
-		},
-		{
-			"id": "198",
-			"province_id": "19",
-			"name": "韶关市",
-			"zip_code": "521000"
-		},
-		{
-			"id": "199",
-			"province_id": "19",
-			"name": "深圳市",
-			"zip_code": "518000"
-		},
-		{
-			"id": "200",
-			"province_id": "19",
-			"name": "珠海市",
-			"zip_code": "519000"
-		},
-		{
-			"id": "201",
-			"province_id": "19",
-			"name": "汕头市",
-			"zip_code": "515000"
-		},
-		{
-			"id": "202",
-			"province_id": "19",
-			"name": "佛山市",
-			"zip_code": "528000"
-		},
-		{
-			"id": "203",
-			"province_id": "19",
-			"name": "江门市",
-			"zip_code": "529000"
-		},
-		{
-			"id": "204",
-			"province_id": "19",
-			"name": "湛江市",
-			"zip_code": "524000"
-		},
-		{
-			"id": "205",
-			"province_id": "19",
-			"name": "茂名市",
-			"zip_code": "525000"
-		},
-		{
-			"id": "206",
-			"province_id": "19",
-			"name": "肇庆市",
-			"zip_code": "526000"
-		},
-		{
-			"id": "207",
-			"province_id": "19",
-			"name": "惠州市",
-			"zip_code": "516000"
-		},
-		{
-			"id": "208",
-			"province_id": "19",
-			"name": "梅州市",
-			"zip_code": "514000"
-		},
-		{
-			"id": "209",
-			"province_id": "19",
-			"name": "汕尾市",
-			"zip_code": "516600"
-		},
-		{
-			"id": "210",
-			"province_id": "19",
-			"name": "河源市",
-			"zip_code": "517000"
-		},
-		{
-			"id": "211",
-			"province_id": "19",
-			"name": "阳江市",
-			"zip_code": "529500"
-		},
-		{
-			"id": "212",
-			"province_id": "19",
-			"name": "清远市",
-			"zip_code": "511500"
-		},
-		{
-			"id": "213",
-			"province_id": "19",
-			"name": "东莞市",
-			"zip_code": "511700"
-		},
-		{
-			"id": "214",
-			"province_id": "19",
-			"name": "中山市",
-			"zip_code": "528400"
-		},
-		{
-			"id": "215",
-			"province_id": "19",
-			"name": "潮州市",
-			"zip_code": "515600"
-		},
-		{
-			"id": "216",
-			"province_id": "19",
-			"name": "揭阳市",
-			"zip_code": "522000"
-		},
-		{
-			"id": "217",
-			"province_id": "19",
-			"name": "云浮市",
-			"zip_code": "527300"
-		},
-		{
-			"id": "218",
-			"province_id": "20",
-			"name": "南宁市",
-			"zip_code": "530000"
-		},
-		{
-			"id": "219",
-			"province_id": "20",
-			"name": "柳州市",
-			"zip_code": "545000"
-		},
-		{
-			"id": "220",
-			"province_id": "20",
-			"name": "桂林市",
-			"zip_code": "541000"
-		},
-		{
-			"id": "221",
-			"province_id": "20",
-			"name": "梧州市",
-			"zip_code": "543000"
-		},
-		{
-			"id": "222",
-			"province_id": "20",
-			"name": "北海市",
-			"zip_code": "536000"
-		},
-		{
-			"id": "223",
-			"province_id": "20",
-			"name": "防城港市",
-			"zip_code": "538000"
-		},
-		{
-			"id": "224",
-			"province_id": "20",
-			"name": "钦州市",
-			"zip_code": "535000"
-		},
-		{
-			"id": "225",
-			"province_id": "20",
-			"name": "贵港市",
-			"zip_code": "537100"
-		},
-		{
-			"id": "226",
-			"province_id": "20",
-			"name": "玉林市",
-			"zip_code": "537000"
-		},
-		{
-			"id": "227",
-			"province_id": "20",
-			"name": "百色市",
-			"zip_code": "533000"
-		},
-		{
-			"id": "228",
-			"province_id": "20",
-			"name": "贺州市",
-			"zip_code": "542800"
-		},
-		{
-			"id": "229",
-			"province_id": "20",
-			"name": "河池市",
-			"zip_code": "547000"
-		},
-		{
-			"id": "230",
-			"province_id": "20",
-			"name": "来宾市",
-			"zip_code": "546100"
-		},
-		{
-			"id": "231",
-			"province_id": "20",
-			"name": "崇左市",
-			"zip_code": "532200"
-		},
-		{
-			"id": "232",
-			"province_id": "21",
-			"name": "海口市",
-			"zip_code": "570000"
-		},
-		{
-			"id": "233",
-			"province_id": "21",
-			"name": "三亚市",
-			"zip_code": "572000"
-		},
-		{
-			"id": "234",
-			"province_id": "22",
-			"name": "重庆市",
-			"zip_code": "400000"
-		},
-		{
-			"id": "235",
-			"province_id": "23",
-			"name": "成都市",
-			"zip_code": "610000"
-		},
-		{
-			"id": "236",
-			"province_id": "23",
-			"name": "自贡市",
-			"zip_code": "643000"
-		},
-		{
-			"id": "237",
-			"province_id": "23",
-			"name": "攀枝花市",
-			"zip_code": "617000"
-		},
-		{
-			"id": "238",
-			"province_id": "23",
-			"name": "泸州市",
-			"zip_code": "646100"
-		},
-		{
-			"id": "239",
-			"province_id": "23",
-			"name": "德阳市",
-			"zip_code": "618000"
-		},
-		{
-			"id": "240",
-			"province_id": "23",
-			"name": "绵阳市",
-			"zip_code": "621000"
-		},
-		{
-			"id": "241",
-			"province_id": "23",
-			"name": "广元市",
-			"zip_code": "628000"
-		},
-		{
-			"id": "242",
-			"province_id": "23",
-			"name": "遂宁市",
-			"zip_code": "629000"
-		},
-		{
-			"id": "243",
-			"province_id": "23",
-			"name": "内江市",
-			"zip_code": "641000"
-		},
-		{
-			"id": "244",
-			"province_id": "23",
-			"name": "乐山市",
-			"zip_code": "614000"
-		},
-		{
-			"id": "245",
-			"province_id": "23",
-			"name": "南充市",
-			"zip_code": "637000"
-		},
-		{
-			"id": "246",
-			"province_id": "23",
-			"name": "眉山市",
-			"zip_code": "612100"
-		},
-		{
-			"id": "247",
-			"province_id": "23",
-			"name": "宜宾市",
-			"zip_code": "644000"
-		},
-		{
-			"id": "248",
-			"province_id": "23",
-			"name": "广安市",
-			"zip_code": "638000"
-		},
-		{
-			"id": "249",
-			"province_id": "23",
-			"name": "达州市",
-			"zip_code": "635000"
-		},
-		{
-			"id": "250",
-			"province_id": "23",
-			"name": "雅安市",
-			"zip_code": "625000"
-		},
-		{
-			"id": "251",
-			"province_id": "23",
-			"name": "巴中市",
-			"zip_code": "635500"
-		},
-		{
-			"id": "252",
-			"province_id": "23",
-			"name": "资阳市",
-			"zip_code": "641300"
-		},
-		{
-			"id": "253",
-			"province_id": "23",
-			"name": "阿坝藏族羌族自治州",
-			"zip_code": "624600"
-		},
-		{
-			"id": "254",
-			"province_id": "23",
-			"name": "甘孜藏族自治州",
-			"zip_code": "626000"
-		},
-		{
-			"id": "255",
-			"province_id": "23",
-			"name": "凉山彝族自治州",
-			"zip_code": "615000"
-		},
-		{
-			"id": "256",
-			"province_id": "24",
-			"name": "贵阳市",
-			"zip_code": "55000"
-		},
-		{
-			"id": "257",
-			"province_id": "24",
-			"name": "六盘水市",
-			"zip_code": "553000"
-		},
-		{
-			"id": "258",
-			"province_id": "24",
-			"name": "遵义市",
-			"zip_code": "563000"
-		},
-		{
-			"id": "259",
-			"province_id": "24",
-			"name": "安顺市",
-			"zip_code": "561000"
-		},
-		{
-			"id": "260",
-			"province_id": "24",
-			"name": "铜仁地区",
-			"zip_code": "554300"
-		},
-		{
-			"id": "261",
-			"province_id": "24",
-			"name": "黔西南布依族苗族自治州",
-			"zip_code": "551500"
-		},
-		{
-			"id": "262",
-			"province_id": "24",
-			"name": "毕节地区",
-			"zip_code": "551700"
-		},
-		{
-			"id": "263",
-			"province_id": "24",
-			"name": "黔东南苗族侗族自治州",
-			"zip_code": "551500"
-		},
-		{
-			"id": "264",
-			"province_id": "24",
-			"name": "黔南布依族苗族自治州",
-			"zip_code": "550100"
-		},
-		{
-			"id": "265",
-			"province_id": "25",
-			"name": "昆明市",
-			"zip_code": "650000"
-		},
-		{
-			"id": "266",
-			"province_id": "25",
-			"name": "曲靖市",
-			"zip_code": "655000"
-		},
-		{
-			"id": "267",
-			"province_id": "25",
-			"name": "玉溪市",
-			"zip_code": "653100"
-		},
-		{
-			"id": "268",
-			"province_id": "25",
-			"name": "保山市",
-			"zip_code": "678000"
-		},
-		{
-			"id": "269",
-			"province_id": "25",
-			"name": "昭通市",
-			"zip_code": "657000"
-		},
-		{
-			"id": "270",
-			"province_id": "25",
-			"name": "丽江市",
-			"zip_code": "674100"
-		},
-		{
-			"id": "271",
-			"province_id": "25",
-			"name": "思茅市",
-			"zip_code": "665000"
-		},
-		{
-			"id": "272",
-			"province_id": "25",
-			"name": "临沧市",
-			"zip_code": "677000"
-		},
-		{
-			"id": "273",
-			"province_id": "25",
-			"name": "楚雄彝族自治州",
-			"zip_code": "675000"
-		},
-		{
-			"id": "274",
-			"province_id": "25",
-			"name": "红河哈尼族彝族自治州",
-			"zip_code": "654400"
-		},
-		{
-			"id": "275",
-			"province_id": "25",
-			"name": "文山壮族苗族自治州",
-			"zip_code": "663000"
-		},
-		{
-			"id": "276",
-			"province_id": "25",
-			"name": "西双版纳傣族自治州",
-			"zip_code": "666200"
-		},
-		{
-			"id": "277",
-			"province_id": "25",
-			"name": "大理白族自治州",
-			"zip_code": "671000"
-		},
-		{
-			"id": "278",
-			"province_id": "25",
-			"name": "德宏傣族景颇族自治州",
-			"zip_code": "678400"
-		},
-		{
-			"id": "279",
-			"province_id": "25",
-			"name": "怒江傈僳族自治州",
-			"zip_code": "671400"
-		},
-		{
-			"id": "280",
-			"province_id": "25",
-			"name": "迪庆藏族自治州",
-			"zip_code": "674400"
-		},
-		{
-			"id": "281",
-			"province_id": "26",
-			"name": "拉萨市",
-			"zip_code": "850000"
-		},
-		{
-			"id": "282",
-			"province_id": "26",
-			"name": "昌都地区",
-			"zip_code": "854000"
-		},
-		{
-			"id": "283",
-			"province_id": "26",
-			"name": "山南地区",
-			"zip_code": "856000"
-		},
-		{
-			"id": "284",
-			"province_id": "26",
-			"name": "日喀则地区",
-			"zip_code": "857000"
-		},
-		{
-			"id": "285",
-			"province_id": "26",
-			"name": "那曲地区",
-			"zip_code": "852000"
-		},
-		{
-			"id": "286",
-			"province_id": "26",
-			"name": "阿里地区",
-			"zip_code": "859100"
-		},
-		{
-			"id": "287",
-			"province_id": "26",
-			"name": "林芝地区",
-			"zip_code": "860100"
-		},
-		{
-			"id": "288",
-			"province_id": "27",
-			"name": "西安市",
-			"zip_code": "710000"
-		},
-		{
-			"id": "289",
-			"province_id": "27",
-			"name": "铜川市",
-			"zip_code": "727000"
-		},
-		{
-			"id": "290",
-			"province_id": "27",
-			"name": "宝鸡市",
-			"zip_code": "721000"
-		},
-		{
-			"id": "291",
-			"province_id": "27",
-			"name": "咸阳市",
-			"zip_code": "712000"
-		},
-		{
-			"id": "292",
-			"province_id": "27",
-			"name": "渭南市",
-			"zip_code": "714000"
-		},
-		{
-			"id": "293",
-			"province_id": "27",
-			"name": "延安市",
-			"zip_code": "716000"
-		},
-		{
-			"id": "294",
-			"province_id": "27",
-			"name": "汉中市",
-			"zip_code": "723000"
-		},
-		{
-			"id": "295",
-			"province_id": "27",
-			"name": "榆林市",
-			"zip_code": "719000"
-		},
-		{
-			"id": "296",
-			"province_id": "27",
-			"name": "安康市",
-			"zip_code": "725000"
-		},
-		{
-			"id": "297",
-			"province_id": "27",
-			"name": "商洛市",
-			"zip_code": "711500"
-		},
-		{
-			"id": "298",
-			"province_id": "28",
-			"name": "兰州市",
-			"zip_code": "730000"
-		},
-		{
-			"id": "299",
-			"province_id": "28",
-			"name": "嘉峪关市",
-			"zip_code": "735100"
-		},
-		{
-			"id": "300",
-			"province_id": "28",
-			"name": "金昌市",
-			"zip_code": "737100"
-		},
-		{
-			"id": "301",
-			"province_id": "28",
-			"name": "白银市",
-			"zip_code": "730900"
-		},
-		{
-			"id": "302",
-			"province_id": "28",
-			"name": "天水市",
-			"zip_code": "741000"
-		},
-		{
-			"id": "303",
-			"province_id": "28",
-			"name": "武威市",
-			"zip_code": "733000"
-		},
-		{
-			"id": "304",
-			"province_id": "28",
-			"name": "张掖市",
-			"zip_code": "734000"
-		},
-		{
-			"id": "305",
-			"province_id": "28",
-			"name": "平凉市",
-			"zip_code": "744000"
-		},
-		{
-			"id": "306",
-			"province_id": "28",
-			"name": "酒泉市",
-			"zip_code": "735000"
-		},
-		{
-			"id": "307",
-			"province_id": "28",
-			"name": "庆阳市",
-			"zip_code": "744500"
-		},
-		{
-			"id": "308",
-			"province_id": "28",
-			"name": "定西市",
-			"zip_code": "743000"
-		},
-		{
-			"id": "309",
-			"province_id": "28",
-			"name": "陇南市",
-			"zip_code": "742100"
-		},
-		{
-			"id": "310",
-			"province_id": "28",
-			"name": "临夏回族自治州",
-			"zip_code": "731100"
-		},
-		{
-			"id": "311",
-			"province_id": "28",
-			"name": "甘南藏族自治州",
-			"zip_code": "747000"
-		},
-		{
-			"id": "312",
-			"province_id": "29",
-			"name": "西宁市",
-			"zip_code": "810000"
-		},
-		{
-			"id": "313",
-			"province_id": "29",
-			"name": "海东地区",
-			"zip_code": "810600"
-		},
-		{
-			"id": "314",
-			"province_id": "29",
-			"name": "海北藏族自治州",
-			"zip_code": "810300"
-		},
-		{
-			"id": "315",
-			"province_id": "29",
-			"name": "黄南藏族自治州",
-			"zip_code": "811300"
-		},
-		{
-			"id": "316",
-			"province_id": "29",
-			"name": "海南藏族自治州",
-			"zip_code": "813000"
-		},
-		{
-			"id": "317",
-			"province_id": "29",
-			"name": "果洛藏族自治州",
-			"zip_code": "814000"
-		},
-		{
-			"id": "318",
-			"province_id": "29",
-			"name": "玉树藏族自治州",
-			"zip_code": "815000"
-		},
-		{
-			"id": "319",
-			"province_id": "29",
-			"name": "海西蒙古族藏族自治州",
-			"zip_code": "817000"
-		},
-		{
-			"id": "320",
-			"province_id": "30",
-			"name": "银川市",
-			"zip_code": "750000"
-		},
-		{
-			"id": "321",
-			"province_id": "30",
-			"name": "石嘴山市",
-			"zip_code": "753000"
-		},
-		{
-			"id": "322",
-			"province_id": "30",
-			"name": "吴忠市",
-			"zip_code": "751100"
-		},
-		{
-			"id": "323",
-			"province_id": "30",
-			"name": "固原市",
-			"zip_code": "756000"
-		},
-		{
-			"id": "324",
-			"province_id": "30",
-			"name": "中卫市",
-			"zip_code": "751700"
-		},
-		{
-			"id": "325",
-			"province_id": "31",
-			"name": "乌鲁木齐市",
-			"zip_code": "830000"
-		},
-		{
-			"id": "326",
-			"province_id": "31",
-			"name": "克拉玛依市",
-			"zip_code": "834000"
-		},
-		{
-			"id": "327",
-			"province_id": "31",
-			"name": "吐鲁番地区",
-			"zip_code": "838000"
-		},
-		{
-			"id": "328",
-			"province_id": "31",
-			"name": "哈密地区",
-			"zip_code": "839000"
-		},
-		{
-			"id": "329",
-			"province_id": "31",
-			"name": "昌吉回族自治州",
-			"zip_code": "831100"
-		},
-		{
-			"id": "330",
-			"province_id": "31",
-			"name": "博尔塔拉蒙古自治州",
-			"zip_code": "833400"
-		},
-		{
-			"id": "331",
-			"province_id": "31",
-			"name": "巴音郭楞蒙古自治州",
-			"zip_code": "841000"
-		},
-		{
-			"id": "332",
-			"province_id": "31",
-			"name": "阿克苏地区",
-			"zip_code": "843000"
-		},
-		{
-			"id": "333",
-			"province_id": "31",
-			"name": "克孜勒苏柯尔克孜自治州",
-			"zip_code": "835600"
-		},
-		{
-			"id": "334",
-			"province_id": "31",
-			"name": "喀什地区",
-			"zip_code": "844000"
-		},
-		{
-			"id": "335",
-			"province_id": "31",
-			"name": "和田地区",
-			"zip_code": "848000"
-		},
-		{
-			"id": "336",
-			"province_id": "31",
-			"name": "伊犁哈萨克自治州",
-			"zip_code": "833200"
-		},
-		{
-			"id": "337",
-			"province_id": "31",
-			"name": "塔城地区",
-			"zip_code": "834700"
-		},
-		{
-			"id": "338",
-			"province_id": "31",
-			"name": "阿勒泰地区",
-			"zip_code": "836500"
-		},
-		{
-			"id": "339",
-			"province_id": "31",
-			"name": "石河子市",
-			"zip_code": "832000"
-		},
-		{
-			"id": "340",
-			"province_id": "31",
-			"name": "阿拉尔市",
-			"zip_code": "843300"
-		},
-		{
-			"id": "341",
-			"province_id": "31",
-			"name": "图木舒克市",
-			"zip_code": "843900"
-		},
-		{
-			"id": "342",
-			"province_id": "31",
-			"name": "五家渠市",
-			"zip_code": "831300"
-		},
-		{
-			"id": "343",
-			"province_id": "32",
-			"name": "香港特别行政区",
-			"zip_code": "000000"
-		},
-		{
-			"id": "344",
-			"province_id": "33",
-			"name": "澳门特别行政区",
-			"zip_code": "000000"
-		},
-		{
-			"id": "345",
-			"province_id": "34",
-			"name": "台湾省",
-			"zip_code": "000000"
-		}
-	],
-	"DISTRICTS": [
-		{
-			"id": "1",
-			"city_id": "1",
-			"name": "东城区"
-		},
-		{
-			"id": "2",
-			"city_id": "1",
-			"name": "西城区"
-		},
-		{
-			"id": "3",
-			"city_id": "1",
-			"name": "崇文区"
-		},
-		{
-			"id": "4",
-			"city_id": "1",
-			"name": "宣武区"
-		},
-		{
-			"id": "5",
-			"city_id": "1",
-			"name": "朝阳区"
-		},
-		{
-			"id": "6",
-			"city_id": "1",
-			"name": "丰台区"
-		},
-		{
-			"id": "7",
-			"city_id": "1",
-			"name": "石景山区"
-		},
-		{
-			"id": "8",
-			"city_id": "1",
-			"name": "海淀区"
-		},
-		{
-			"id": "9",
-			"city_id": "1",
-			"name": "门头沟区"
-		},
-		{
-			"id": "10",
-			"city_id": "1",
-			"name": "房山区"
-		},
-		{
-			"id": "11",
-			"city_id": "1",
-			"name": "通州区"
-		},
-		{
-			"id": "12",
-			"city_id": "1",
-			"name": "顺义区"
-		},
-		{
-			"id": "13",
-			"city_id": "1",
-			"name": "昌平区"
-		},
-		{
-			"id": "14",
-			"city_id": "1",
-			"name": "大兴区"
-		},
-		{
-			"id": "15",
-			"city_id": "1",
-			"name": "怀柔区"
-		},
-		{
-			"id": "16",
-			"city_id": "1",
-			"name": "平谷区"
-		},
-		{
-			"id": "17",
-			"city_id": "1",
-			"name": "密云县"
-		},
-		{
-			"id": "18",
-			"city_id": "1",
-			"name": "延庆县"
-		},
-		{
-			"id": "19",
-			"city_id": "2",
-			"name": "和平区"
-		},
-		{
-			"id": "20",
-			"city_id": "2",
-			"name": "河东区"
-		},
-		{
-			"id": "21",
-			"city_id": "2",
-			"name": "河西区"
-		},
-		{
-			"id": "22",
-			"city_id": "2",
-			"name": "南开区"
-		},
-		{
-			"id": "23",
-			"city_id": "2",
-			"name": "河北区"
-		},
-		{
-			"id": "24",
-			"city_id": "2",
-			"name": "红桥区"
-		},
-		{
-			"id": "25",
-			"city_id": "2",
-			"name": "塘沽区"
-		},
-		{
-			"id": "26",
-			"city_id": "2",
-			"name": "汉沽区"
-		},
-		{
-			"id": "27",
-			"city_id": "2",
-			"name": "大港区"
-		},
-		{
-			"id": "28",
-			"city_id": "2",
-			"name": "东丽区"
-		},
-		{
-			"id": "29",
-			"city_id": "2",
-			"name": "西青区"
-		},
-		{
-			"id": "30",
-			"city_id": "2",
-			"name": "津南区"
-		},
-		{
-			"id": "31",
-			"city_id": "2",
-			"name": "北辰区"
-		},
-		{
-			"id": "32",
-			"city_id": "2",
-			"name": "武清区"
-		},
-		{
-			"id": "33",
-			"city_id": "2",
-			"name": "宝坻区"
-		},
-		{
-			"id": "34",
-			"city_id": "2",
-			"name": "宁河县"
-		},
-		{
-			"id": "35",
-			"city_id": "2",
-			"name": "静海县"
-		},
-		{
-			"id": "36",
-			"city_id": "2",
-			"name": "蓟县"
-		},
-		{
-			"id": "37",
-			"city_id": "3",
-			"name": "长安区"
-		},
-		{
-			"id": "38",
-			"city_id": "3",
-			"name": "桥东区"
-		},
-		{
-			"id": "39",
-			"city_id": "3",
-			"name": "桥西区"
-		},
-		{
-			"id": "40",
-			"city_id": "3",
-			"name": "新华区"
-		},
-		{
-			"id": "41",
-			"city_id": "3",
-			"name": "井陉矿区"
-		},
-		{
-			"id": "42",
-			"city_id": "3",
-			"name": "裕华区"
-		},
-		{
-			"id": "43",
-			"city_id": "3",
-			"name": "井陉县"
-		},
-		{
-			"id": "44",
-			"city_id": "3",
-			"name": "正定县"
-		},
-		{
-			"id": "45",
-			"city_id": "3",
-			"name": "栾城县"
-		},
-		{
-			"id": "46",
-			"city_id": "3",
-			"name": "行唐县"
-		},
-		{
-			"id": "47",
-			"city_id": "3",
-			"name": "灵寿县"
-		},
-		{
-			"id": "48",
-			"city_id": "3",
-			"name": "高邑县"
-		},
-		{
-			"id": "49",
-			"city_id": "3",
-			"name": "深泽县"
-		},
-		{
-			"id": "50",
-			"city_id": "3",
-			"name": "赞皇县"
-		},
-		{
-			"id": "51",
-			"city_id": "3",
-			"name": "无极县"
-		},
-		{
-			"id": "52",
-			"city_id": "3",
-			"name": "平山县"
-		},
-		{
-			"id": "53",
-			"city_id": "3",
-			"name": "元氏县"
-		},
-		{
-			"id": "54",
-			"city_id": "3",
-			"name": "赵县"
-		},
-		{
-			"id": "55",
-			"city_id": "3",
-			"name": "辛集市"
-		},
-		{
-			"id": "56",
-			"city_id": "3",
-			"name": "藁城市"
-		},
-		{
-			"id": "57",
-			"city_id": "3",
-			"name": "晋州市"
-		},
-		{
-			"id": "58",
-			"city_id": "3",
-			"name": "新乐市"
-		},
-		{
-			"id": "59",
-			"city_id": "3",
-			"name": "鹿泉市"
-		},
-		{
-			"id": "60",
-			"city_id": "4",
-			"name": "路南区"
-		},
-		{
-			"id": "61",
-			"city_id": "4",
-			"name": "路北区"
-		},
-		{
-			"id": "62",
-			"city_id": "4",
-			"name": "古冶区"
-		},
-		{
-			"id": "63",
-			"city_id": "4",
-			"name": "开平区"
-		},
-		{
-			"id": "64",
-			"city_id": "4",
-			"name": "丰南区"
-		},
-		{
-			"id": "65",
-			"city_id": "4",
-			"name": "丰润区"
-		},
-		{
-			"id": "66",
-			"city_id": "4",
-			"name": "滦县"
-		},
-		{
-			"id": "67",
-			"city_id": "4",
-			"name": "滦南县"
-		},
-		{
-			"id": "68",
-			"city_id": "4",
-			"name": "乐亭县"
-		},
-		{
-			"id": "69",
-			"city_id": "4",
-			"name": "迁西县"
-		},
-		{
-			"id": "70",
-			"city_id": "4",
-			"name": "玉田县"
-		},
-		{
-			"id": "71",
-			"city_id": "4",
-			"name": "唐海县"
-		},
-		{
-			"id": "72",
-			"city_id": "4",
-			"name": "遵化市"
-		},
-		{
-			"id": "73",
-			"city_id": "4",
-			"name": "迁安市"
-		},
-		{
-			"id": "74",
-			"city_id": "5",
-			"name": "海港区"
-		},
-		{
-			"id": "75",
-			"city_id": "5",
-			"name": "山海关区"
-		},
-		{
-			"id": "76",
-			"city_id": "5",
-			"name": "北戴河区"
-		},
-		{
-			"id": "77",
-			"city_id": "5",
-			"name": "青龙满族自治县"
-		},
-		{
-			"id": "78",
-			"city_id": "5",
-			"name": "昌黎县"
-		},
-		{
-			"id": "79",
-			"city_id": "5",
-			"name": "抚宁县"
-		},
-		{
-			"id": "80",
-			"city_id": "5",
-			"name": "卢龙县"
-		},
-		{
-			"id": "81",
-			"city_id": "6",
-			"name": "邯山区"
-		},
-		{
-			"id": "82",
-			"city_id": "6",
-			"name": "丛台区"
-		},
-		{
-			"id": "83",
-			"city_id": "6",
-			"name": "复兴区"
-		},
-		{
-			"id": "84",
-			"city_id": "6",
-			"name": "峰峰矿区"
-		},
-		{
-			"id": "85",
-			"city_id": "6",
-			"name": "邯郸县"
-		},
-		{
-			"id": "86",
-			"city_id": "6",
-			"name": "临漳县"
-		},
-		{
-			"id": "87",
-			"city_id": "6",
-			"name": "成安县"
-		},
-		{
-			"id": "88",
-			"city_id": "6",
-			"name": "大名县"
-		},
-		{
-			"id": "89",
-			"city_id": "6",
-			"name": "涉县"
-		},
-		{
-			"id": "90",
-			"city_id": "6",
-			"name": "磁县"
-		},
-		{
-			"id": "91",
-			"city_id": "6",
-			"name": "肥乡县"
-		},
-		{
-			"id": "92",
-			"city_id": "6",
-			"name": "永年县"
-		},
-		{
-			"id": "93",
-			"city_id": "6",
-			"name": "邱县"
-		},
-		{
-			"id": "94",
-			"city_id": "6",
-			"name": "鸡泽县"
-		},
-		{
-			"id": "95",
-			"city_id": "6",
-			"name": "广平县"
-		},
-		{
-			"id": "96",
-			"city_id": "6",
-			"name": "馆陶县"
-		},
-		{
-			"id": "97",
-			"city_id": "6",
-			"name": "魏县"
-		},
-		{
-			"id": "98",
-			"city_id": "6",
-			"name": "曲周县"
-		},
-		{
-			"id": "99",
-			"city_id": "6",
-			"name": "武安市"
-		},
-		{
-			"id": "100",
-			"city_id": "7",
-			"name": "桥东区"
-		},
-		{
-			"id": "101",
-			"city_id": "7",
-			"name": "桥西区"
-		},
-		{
-			"id": "102",
-			"city_id": "7",
-			"name": "邢台县"
-		},
-		{
-			"id": "103",
-			"city_id": "7",
-			"name": "临城县"
-		},
-		{
-			"id": "104",
-			"city_id": "7",
-			"name": "内丘县"
-		},
-		{
-			"id": "105",
-			"city_id": "7",
-			"name": "柏乡县"
-		},
-		{
-			"id": "106",
-			"city_id": "7",
-			"name": "隆尧县"
-		},
-		{
-			"id": "107",
-			"city_id": "7",
-			"name": "任县"
-		},
-		{
-			"id": "108",
-			"city_id": "7",
-			"name": "南和县"
-		},
-		{
-			"id": "109",
-			"city_id": "7",
-			"name": "宁晋县"
-		},
-		{
-			"id": "110",
-			"city_id": "7",
-			"name": "巨鹿县"
-		},
-		{
-			"id": "111",
-			"city_id": "7",
-			"name": "新河县"
-		},
-		{
-			"id": "112",
-			"city_id": "7",
-			"name": "广宗县"
-		},
-		{
-			"id": "113",
-			"city_id": "7",
-			"name": "平乡县"
-		},
-		{
-			"id": "114",
-			"city_id": "7",
-			"name": "威县"
-		},
-		{
-			"id": "115",
-			"city_id": "7",
-			"name": "清河县"
-		},
-		{
-			"id": "116",
-			"city_id": "7",
-			"name": "临西县"
-		},
-		{
-			"id": "117",
-			"city_id": "7",
-			"name": "南宫市"
-		},
-		{
-			"id": "118",
-			"city_id": "7",
-			"name": "沙河市"
-		},
-		{
-			"id": "119",
-			"city_id": "8",
-			"name": "新市区"
-		},
-		{
-			"id": "120",
-			"city_id": "8",
-			"name": "北市区"
-		},
-		{
-			"id": "121",
-			"city_id": "8",
-			"name": "南市区"
-		},
-		{
-			"id": "122",
-			"city_id": "8",
-			"name": "满城县"
-		},
-		{
-			"id": "123",
-			"city_id": "8",
-			"name": "清苑县"
-		},
-		{
-			"id": "124",
-			"city_id": "8",
-			"name": "涞水县"
-		},
-		{
-			"id": "125",
-			"city_id": "8",
-			"name": "阜平县"
-		},
-		{
-			"id": "126",
-			"city_id": "8",
-			"name": "徐水县"
-		},
-		{
-			"id": "127",
-			"city_id": "8",
-			"name": "定兴县"
-		},
-		{
-			"id": "128",
-			"city_id": "8",
-			"name": "唐县"
-		},
-		{
-			"id": "129",
-			"city_id": "8",
-			"name": "高阳县"
-		},
-		{
-			"id": "130",
-			"city_id": "8",
-			"name": "容城县"
-		},
-		{
-			"id": "131",
-			"city_id": "8",
-			"name": "涞源县"
-		},
-		{
-			"id": "132",
-			"city_id": "8",
-			"name": "望都县"
-		},
-		{
-			"id": "133",
-			"city_id": "8",
-			"name": "安新县"
-		},
-		{
-			"id": "134",
-			"city_id": "8",
-			"name": "易县"
-		},
-		{
-			"id": "135",
-			"city_id": "8",
-			"name": "曲阳县"
-		},
-		{
-			"id": "136",
-			"city_id": "8",
-			"name": "蠡县"
-		},
-		{
-			"id": "137",
-			"city_id": "8",
-			"name": "顺平县"
-		},
-		{
-			"id": "138",
-			"city_id": "8",
-			"name": "博野县"
-		},
-		{
-			"id": "139",
-			"city_id": "8",
-			"name": "雄县"
-		},
-		{
-			"id": "140",
-			"city_id": "8",
-			"name": "涿州市"
-		},
-		{
-			"id": "141",
-			"city_id": "8",
-			"name": "定州市"
-		},
-		{
-			"id": "142",
-			"city_id": "8",
-			"name": "安国市"
-		},
-		{
-			"id": "143",
-			"city_id": "8",
-			"name": "高碑店市"
-		},
-		{
-			"id": "144",
-			"city_id": "9",
-			"name": "桥东区"
-		},
-		{
-			"id": "145",
-			"city_id": "9",
-			"name": "桥西区"
-		},
-		{
-			"id": "146",
-			"city_id": "9",
-			"name": "宣化区"
-		},
-		{
-			"id": "147",
-			"city_id": "9",
-			"name": "下花园区"
-		},
-		{
-			"id": "148",
-			"city_id": "9",
-			"name": "宣化县"
-		},
-		{
-			"id": "149",
-			"city_id": "9",
-			"name": "张北县"
-		},
-		{
-			"id": "150",
-			"city_id": "9",
-			"name": "康保县"
-		},
-		{
-			"id": "151",
-			"city_id": "9",
-			"name": "沽源县"
-		},
-		{
-			"id": "152",
-			"city_id": "9",
-			"name": "尚义县"
-		},
-		{
-			"id": "153",
-			"city_id": "9",
-			"name": "蔚县"
-		},
-		{
-			"id": "154",
-			"city_id": "9",
-			"name": "阳原县"
-		},
-		{
-			"id": "155",
-			"city_id": "9",
-			"name": "怀安县"
-		},
-		{
-			"id": "156",
-			"city_id": "9",
-			"name": "万全县"
-		},
-		{
-			"id": "157",
-			"city_id": "9",
-			"name": "怀来县"
-		},
-		{
-			"id": "158",
-			"city_id": "9",
-			"name": "涿鹿县"
-		},
-		{
-			"id": "159",
-			"city_id": "9",
-			"name": "赤城县"
-		},
-		{
-			"id": "160",
-			"city_id": "9",
-			"name": "崇礼县"
-		},
-		{
-			"id": "161",
-			"city_id": "10",
-			"name": "双桥区"
-		},
-		{
-			"id": "162",
-			"city_id": "10",
-			"name": "双滦区"
-		},
-		{
-			"id": "163",
-			"city_id": "10",
-			"name": "鹰手营子矿区"
-		},
-		{
-			"id": "164",
-			"city_id": "10",
-			"name": "承德县"
-		},
-		{
-			"id": "165",
-			"city_id": "10",
-			"name": "兴隆县"
-		},
-		{
-			"id": "166",
-			"city_id": "10",
-			"name": "平泉县"
-		},
-		{
-			"id": "167",
-			"city_id": "10",
-			"name": "滦平县"
-		},
-		{
-			"id": "168",
-			"city_id": "10",
-			"name": "隆化县"
-		},
-		{
-			"id": "169",
-			"city_id": "10",
-			"name": "丰宁满族自治县"
-		},
-		{
-			"id": "170",
-			"city_id": "10",
-			"name": "宽城满族自治县"
-		},
-		{
-			"id": "171",
-			"city_id": "10",
-			"name": "围场满族蒙古族自治县"
-		},
-		{
-			"id": "172",
-			"city_id": "11",
-			"name": "新华区"
-		},
-		{
-			"id": "173",
-			"city_id": "11",
-			"name": "运河区"
-		},
-		{
-			"id": "174",
-			"city_id": "11",
-			"name": "沧县"
-		},
-		{
-			"id": "175",
-			"city_id": "11",
-			"name": "青县"
-		},
-		{
-			"id": "176",
-			"city_id": "11",
-			"name": "东光县"
-		},
-		{
-			"id": "177",
-			"city_id": "11",
-			"name": "海兴县"
-		},
-		{
-			"id": "178",
-			"city_id": "11",
-			"name": "盐山县"
-		},
-		{
-			"id": "179",
-			"city_id": "11",
-			"name": "肃宁县"
-		},
-		{
-			"id": "180",
-			"city_id": "11",
-			"name": "南皮县"
-		},
-		{
-			"id": "181",
-			"city_id": "11",
-			"name": "吴桥县"
-		},
-		{
-			"id": "182",
-			"city_id": "11",
-			"name": "献县"
-		},
-		{
-			"id": "183",
-			"city_id": "11",
-			"name": "孟村回族自治县"
-		},
-		{
-			"id": "184",
-			"city_id": "11",
-			"name": "泊头市"
-		},
-		{
-			"id": "185",
-			"city_id": "11",
-			"name": "任丘市"
-		},
-		{
-			"id": "186",
-			"city_id": "11",
-			"name": "黄骅市"
-		},
-		{
-			"id": "187",
-			"city_id": "11",
-			"name": "河间市"
-		},
-		{
-			"id": "188",
-			"city_id": "12",
-			"name": "安次区"
-		},
-		{
-			"id": "189",
-			"city_id": "12",
-			"name": "广阳区"
-		},
-		{
-			"id": "190",
-			"city_id": "12",
-			"name": "固安县"
-		},
-		{
-			"id": "191",
-			"city_id": "12",
-			"name": "永清县"
-		},
-		{
-			"id": "192",
-			"city_id": "12",
-			"name": "香河县"
-		},
-		{
-			"id": "193",
-			"city_id": "12",
-			"name": "大城县"
-		},
-		{
-			"id": "194",
-			"city_id": "12",
-			"name": "文安县"
-		},
-		{
-			"id": "195",
-			"city_id": "12",
-			"name": "大厂回族自治县"
-		},
-		{
-			"id": "196",
-			"city_id": "12",
-			"name": "霸州市"
-		},
-		{
-			"id": "197",
-			"city_id": "12",
-			"name": "三河市"
-		},
-		{
-			"id": "198",
-			"city_id": "13",
-			"name": "桃城区"
-		},
-		{
-			"id": "199",
-			"city_id": "13",
-			"name": "枣强县"
-		},
-		{
-			"id": "200",
-			"city_id": "13",
-			"name": "武邑县"
-		},
-		{
-			"id": "201",
-			"city_id": "13",
-			"name": "武强县"
-		},
-		{
-			"id": "202",
-			"city_id": "13",
-			"name": "饶阳县"
-		},
-		{
-			"id": "203",
-			"city_id": "13",
-			"name": "安平县"
-		},
-		{
-			"id": "204",
-			"city_id": "13",
-			"name": "故城县"
-		},
-		{
-			"id": "205",
-			"city_id": "13",
-			"name": "景县"
-		},
-		{
-			"id": "206",
-			"city_id": "13",
-			"name": "阜城县"
-		},
-		{
-			"id": "207",
-			"city_id": "13",
-			"name": "冀州市"
-		},
-		{
-			"id": "208",
-			"city_id": "13",
-			"name": "深州市"
-		},
-		{
-			"id": "209",
-			"city_id": "14",
-			"name": "小店区"
-		},
-		{
-			"id": "210",
-			"city_id": "14",
-			"name": "迎泽区"
-		},
-		{
-			"id": "211",
-			"city_id": "14",
-			"name": "杏花岭区"
-		},
-		{
-			"id": "212",
-			"city_id": "14",
-			"name": "尖草坪区"
-		},
-		{
-			"id": "213",
-			"city_id": "14",
-			"name": "万柏林区"
-		},
-		{
-			"id": "214",
-			"city_id": "14",
-			"name": "晋源区"
-		},
-		{
-			"id": "215",
-			"city_id": "14",
-			"name": "清徐县"
-		},
-		{
-			"id": "216",
-			"city_id": "14",
-			"name": "阳曲县"
-		},
-		{
-			"id": "217",
-			"city_id": "14",
-			"name": "娄烦县"
-		},
-		{
-			"id": "218",
-			"city_id": "14",
-			"name": "古交市"
-		},
-		{
-			"id": "219",
-			"city_id": "15",
-			"name": "城区"
-		},
-		{
-			"id": "220",
-			"city_id": "15",
-			"name": "矿区"
-		},
-		{
-			"id": "221",
-			"city_id": "15",
-			"name": "南郊区"
-		},
-		{
-			"id": "222",
-			"city_id": "15",
-			"name": "新荣区"
-		},
-		{
-			"id": "223",
-			"city_id": "15",
-			"name": "阳高县"
-		},
-		{
-			"id": "224",
-			"city_id": "15",
-			"name": "天镇县"
-		},
-		{
-			"id": "225",
-			"city_id": "15",
-			"name": "广灵县"
-		},
-		{
-			"id": "226",
-			"city_id": "15",
-			"name": "灵丘县"
-		},
-		{
-			"id": "227",
-			"city_id": "15",
-			"name": "浑源县"
-		},
-		{
-			"id": "228",
-			"city_id": "15",
-			"name": "左云县"
-		},
-		{
-			"id": "229",
-			"city_id": "15",
-			"name": "大同县"
-		},
-		{
-			"id": "230",
-			"city_id": "16",
-			"name": "城区"
-		},
-		{
-			"id": "231",
-			"city_id": "16",
-			"name": "矿区"
-		},
-		{
-			"id": "232",
-			"city_id": "16",
-			"name": "郊区"
-		},
-		{
-			"id": "233",
-			"city_id": "16",
-			"name": "平定县"
-		},
-		{
-			"id": "234",
-			"city_id": "16",
-			"name": "盂县"
-		},
-		{
-			"id": "235",
-			"city_id": "17",
-			"name": "城区"
-		},
-		{
-			"id": "236",
-			"city_id": "17",
-			"name": "郊区"
-		},
-		{
-			"id": "237",
-			"city_id": "17",
-			"name": "长治县"
-		},
-		{
-			"id": "238",
-			"city_id": "17",
-			"name": "襄垣县"
-		},
-		{
-			"id": "239",
-			"city_id": "17",
-			"name": "屯留县"
-		},
-		{
-			"id": "240",
-			"city_id": "17",
-			"name": "平顺县"
-		},
-		{
-			"id": "241",
-			"city_id": "17",
-			"name": "黎城县"
-		},
-		{
-			"id": "242",
-			"city_id": "17",
-			"name": "壶关县"
-		},
-		{
-			"id": "243",
-			"city_id": "17",
-			"name": "长子县"
-		},
-		{
-			"id": "244",
-			"city_id": "17",
-			"name": "武乡县"
-		},
-		{
-			"id": "245",
-			"city_id": "17",
-			"name": "沁县"
-		},
-		{
-			"id": "246",
-			"city_id": "17",
-			"name": "沁源县"
-		},
-		{
-			"id": "247",
-			"city_id": "17",
-			"name": "潞城市"
-		},
-		{
-			"id": "248",
-			"city_id": "18",
-			"name": "城区"
-		},
-		{
-			"id": "249",
-			"city_id": "18",
-			"name": "沁水县"
-		},
-		{
-			"id": "250",
-			"city_id": "18",
-			"name": "阳城县"
-		},
-		{
-			"id": "251",
-			"city_id": "18",
-			"name": "陵川县"
-		},
-		{
-			"id": "252",
-			"city_id": "18",
-			"name": "泽州县"
-		},
-		{
-			"id": "253",
-			"city_id": "18",
-			"name": "高平市"
-		},
-		{
-			"id": "254",
-			"city_id": "19",
-			"name": "朔城区"
-		},
-		{
-			"id": "255",
-			"city_id": "19",
-			"name": "平鲁区"
-		},
-		{
-			"id": "256",
-			"city_id": "19",
-			"name": "山阴县"
-		},
-		{
-			"id": "257",
-			"city_id": "19",
-			"name": "应县"
-		},
-		{
-			"id": "258",
-			"city_id": "19",
-			"name": "右玉县"
-		},
-		{
-			"id": "259",
-			"city_id": "19",
-			"name": "怀仁县"
-		},
-		{
-			"id": "260",
-			"city_id": "20",
-			"name": "榆次区"
-		},
-		{
-			"id": "261",
-			"city_id": "20",
-			"name": "榆社县"
-		},
-		{
-			"id": "262",
-			"city_id": "20",
-			"name": "左权县"
-		},
-		{
-			"id": "263",
-			"city_id": "20",
-			"name": "和顺县"
-		},
-		{
-			"id": "264",
-			"city_id": "20",
-			"name": "昔阳县"
-		},
-		{
-			"id": "265",
-			"city_id": "20",
-			"name": "寿阳县"
-		},
-		{
-			"id": "266",
-			"city_id": "20",
-			"name": "太谷县"
-		},
-		{
-			"id": "267",
-			"city_id": "20",
-			"name": "祁县"
-		},
-		{
-			"id": "268",
-			"city_id": "20",
-			"name": "平遥县"
-		},
-		{
-			"id": "269",
-			"city_id": "20",
-			"name": "灵石县"
-		},
-		{
-			"id": "270",
-			"city_id": "20",
-			"name": "介休市"
-		},
-		{
-			"id": "271",
-			"city_id": "21",
-			"name": "盐湖区"
-		},
-		{
-			"id": "272",
-			"city_id": "21",
-			"name": "临猗县"
-		},
-		{
-			"id": "273",
-			"city_id": "21",
-			"name": "万荣县"
-		},
-		{
-			"id": "274",
-			"city_id": "21",
-			"name": "闻喜县"
-		},
-		{
-			"id": "275",
-			"city_id": "21",
-			"name": "稷山县"
-		},
-		{
-			"id": "276",
-			"city_id": "21",
-			"name": "新绛县"
-		},
-		{
-			"id": "277",
-			"city_id": "21",
-			"name": "绛县"
-		},
-		{
-			"id": "278",
-			"city_id": "21",
-			"name": "垣曲县"
-		},
-		{
-			"id": "279",
-			"city_id": "21",
-			"name": "夏县"
-		},
-		{
-			"id": "280",
-			"city_id": "21",
-			"name": "平陆县"
-		},
-		{
-			"id": "281",
-			"city_id": "21",
-			"name": "芮城县"
-		},
-		{
-			"id": "282",
-			"city_id": "21",
-			"name": "永济市"
-		},
-		{
-			"id": "283",
-			"city_id": "21",
-			"name": "河津市"
-		},
-		{
-			"id": "284",
-			"city_id": "22",
-			"name": "忻府区"
-		},
-		{
-			"id": "285",
-			"city_id": "22",
-			"name": "定襄县"
-		},
-		{
-			"id": "286",
-			"city_id": "22",
-			"name": "五台县"
-		},
-		{
-			"id": "287",
-			"city_id": "22",
-			"name": "代县"
-		},
-		{
-			"id": "288",
-			"city_id": "22",
-			"name": "繁峙县"
-		},
-		{
-			"id": "289",
-			"city_id": "22",
-			"name": "宁武县"
-		},
-		{
-			"id": "290",
-			"city_id": "22",
-			"name": "静乐县"
-		},
-		{
-			"id": "291",
-			"city_id": "22",
-			"name": "神池县"
-		},
-		{
-			"id": "292",
-			"city_id": "22",
-			"name": "五寨县"
-		},
-		{
-			"id": "293",
-			"city_id": "22",
-			"name": "岢岚县"
-		},
-		{
-			"id": "294",
-			"city_id": "22",
-			"name": "河曲县"
-		},
-		{
-			"id": "295",
-			"city_id": "22",
-			"name": "保德县"
-		},
-		{
-			"id": "296",
-			"city_id": "22",
-			"name": "偏关县"
-		},
-		{
-			"id": "297",
-			"city_id": "22",
-			"name": "原平市"
-		},
-		{
-			"id": "298",
-			"city_id": "23",
-			"name": "尧都区"
-		},
-		{
-			"id": "299",
-			"city_id": "23",
-			"name": "曲沃县"
-		},
-		{
-			"id": "300",
-			"city_id": "23",
-			"name": "翼城县"
-		},
-		{
-			"id": "301",
-			"city_id": "23",
-			"name": "襄汾县"
-		},
-		{
-			"id": "302",
-			"city_id": "23",
-			"name": "洪洞县"
-		},
-		{
-			"id": "303",
-			"city_id": "23",
-			"name": "古县"
-		},
-		{
-			"id": "304",
-			"city_id": "23",
-			"name": "安泽县"
-		},
-		{
-			"id": "305",
-			"city_id": "23",
-			"name": "浮山县"
-		},
-		{
-			"id": "306",
-			"city_id": "23",
-			"name": "吉县"
-		},
-		{
-			"id": "307",
-			"city_id": "23",
-			"name": "乡宁县"
-		},
-		{
-			"id": "308",
-			"city_id": "23",
-			"name": "大宁县"
-		},
-		{
-			"id": "309",
-			"city_id": "23",
-			"name": "隰县"
-		},
-		{
-			"id": "310",
-			"city_id": "23",
-			"name": "永和县"
-		},
-		{
-			"id": "311",
-			"city_id": "23",
-			"name": "蒲县"
-		},
-		{
-			"id": "312",
-			"city_id": "23",
-			"name": "汾西县"
-		},
-		{
-			"id": "313",
-			"city_id": "23",
-			"name": "侯马市"
-		},
-		{
-			"id": "314",
-			"city_id": "23",
-			"name": "霍州市"
-		},
-		{
-			"id": "315",
-			"city_id": "24",
-			"name": "离石区"
-		},
-		{
-			"id": "316",
-			"city_id": "24",
-			"name": "文水县"
-		},
-		{
-			"id": "317",
-			"city_id": "24",
-			"name": "交城县"
-		},
-		{
-			"id": "318",
-			"city_id": "24",
-			"name": "兴县"
-		},
-		{
-			"id": "319",
-			"city_id": "24",
-			"name": "临县"
-		},
-		{
-			"id": "320",
-			"city_id": "24",
-			"name": "柳林县"
-		},
-		{
-			"id": "321",
-			"city_id": "24",
-			"name": "石楼县"
-		},
-		{
-			"id": "322",
-			"city_id": "24",
-			"name": "岚县"
-		},
-		{
-			"id": "323",
-			"city_id": "24",
-			"name": "方山县"
-		},
-		{
-			"id": "324",
-			"city_id": "24",
-			"name": "中阳县"
-		},
-		{
-			"id": "325",
-			"city_id": "24",
-			"name": "交口县"
-		},
-		{
-			"id": "326",
-			"city_id": "24",
-			"name": "孝义市"
-		},
-		{
-			"id": "327",
-			"city_id": "24",
-			"name": "汾阳市"
-		},
-		{
-			"id": "328",
-			"city_id": "25",
-			"name": "新城区"
-		},
-		{
-			"id": "329",
-			"city_id": "25",
-			"name": "回民区"
-		},
-		{
-			"id": "330",
-			"city_id": "25",
-			"name": "玉泉区"
-		},
-		{
-			"id": "331",
-			"city_id": "25",
-			"name": "赛罕区"
-		},
-		{
-			"id": "332",
-			"city_id": "25",
-			"name": "土默特左旗"
-		},
-		{
-			"id": "333",
-			"city_id": "25",
-			"name": "托克托县"
-		},
-		{
-			"id": "334",
-			"city_id": "25",
-			"name": "和林格尔县"
-		},
-		{
-			"id": "335",
-			"city_id": "25",
-			"name": "清水河县"
-		},
-		{
-			"id": "336",
-			"city_id": "25",
-			"name": "武川县"
-		},
-		{
-			"id": "337",
-			"city_id": "26",
-			"name": "东河区"
-		},
-		{
-			"id": "338",
-			"city_id": "26",
-			"name": "昆都仑区"
-		},
-		{
-			"id": "339",
-			"city_id": "26",
-			"name": "青山区"
-		},
-		{
-			"id": "340",
-			"city_id": "26",
-			"name": "石拐区"
-		},
-		{
-			"id": "341",
-			"city_id": "26",
-			"name": "白云矿区"
-		},
-		{
-			"id": "342",
-			"city_id": "26",
-			"name": "九原区"
-		},
-		{
-			"id": "343",
-			"city_id": "26",
-			"name": "土默特右旗"
-		},
-		{
-			"id": "344",
-			"city_id": "26",
-			"name": "固阳县"
-		},
-		{
-			"id": "345",
-			"city_id": "26",
-			"name": "达尔罕茂明安联合旗"
-		},
-		{
-			"id": "346",
-			"city_id": "27",
-			"name": "海勃湾区"
-		},
-		{
-			"id": "347",
-			"city_id": "27",
-			"name": "海南区"
-		},
-		{
-			"id": "348",
-			"city_id": "27",
-			"name": "乌达区"
-		},
-		{
-			"id": "349",
-			"city_id": "28",
-			"name": "红山区"
-		},
-		{
-			"id": "350",
-			"city_id": "28",
-			"name": "元宝山区"
-		},
-		{
-			"id": "351",
-			"city_id": "28",
-			"name": "松山区"
-		},
-		{
-			"id": "352",
-			"city_id": "28",
-			"name": "阿鲁科尔沁旗"
-		},
-		{
-			"id": "353",
-			"city_id": "28",
-			"name": "巴林左旗"
-		},
-		{
-			"id": "354",
-			"city_id": "28",
-			"name": "巴林右旗"
-		},
-		{
-			"id": "355",
-			"city_id": "28",
-			"name": "林西县"
-		},
-		{
-			"id": "356",
-			"city_id": "28",
-			"name": "克什克腾旗"
-		},
-		{
-			"id": "357",
-			"city_id": "28",
-			"name": "翁牛特旗"
-		},
-		{
-			"id": "358",
-			"city_id": "28",
-			"name": "喀喇沁旗"
-		},
-		{
-			"id": "359",
-			"city_id": "28",
-			"name": "宁城县"
-		},
-		{
-			"id": "360",
-			"city_id": "28",
-			"name": "敖汉旗"
-		},
-		{
-			"id": "361",
-			"city_id": "29",
-			"name": "科尔沁区"
-		},
-		{
-			"id": "362",
-			"city_id": "29",
-			"name": "科尔沁左翼中旗"
-		},
-		{
-			"id": "363",
-			"city_id": "29",
-			"name": "科尔沁左翼后旗"
-		},
-		{
-			"id": "364",
-			"city_id": "29",
-			"name": "开鲁县"
-		},
-		{
-			"id": "365",
-			"city_id": "29",
-			"name": "库伦旗"
-		},
-		{
-			"id": "366",
-			"city_id": "29",
-			"name": "奈曼旗"
-		},
-		{
-			"id": "367",
-			"city_id": "29",
-			"name": "扎鲁特旗"
-		},
-		{
-			"id": "368",
-			"city_id": "29",
-			"name": "霍林郭勒市"
-		},
-		{
-			"id": "369",
-			"city_id": "30",
-			"name": "东胜区"
-		},
-		{
-			"id": "370",
-			"city_id": "30",
-			"name": "达拉特旗"
-		},
-		{
-			"id": "371",
-			"city_id": "30",
-			"name": "准格尔旗"
-		},
-		{
-			"id": "372",
-			"city_id": "30",
-			"name": "鄂托克前旗"
-		},
-		{
-			"id": "373",
-			"city_id": "30",
-			"name": "鄂托克旗"
-		},
-		{
-			"id": "374",
-			"city_id": "30",
-			"name": "杭锦旗"
-		},
-		{
-			"id": "375",
-			"city_id": "30",
-			"name": "乌审旗"
-		},
-		{
-			"id": "376",
-			"city_id": "30",
-			"name": "伊金霍洛旗"
-		},
-		{
-			"id": "377",
-			"city_id": "31",
-			"name": "海拉尔区"
-		},
-		{
-			"id": "378",
-			"city_id": "31",
-			"name": "阿荣旗"
-		},
-		{
-			"id": "379",
-			"city_id": "31",
-			"name": "莫力达瓦达斡尔族自治旗"
-		},
-		{
-			"id": "380",
-			"city_id": "31",
-			"name": "鄂伦春自治旗"
-		},
-		{
-			"id": "381",
-			"city_id": "31",
-			"name": "鄂温克族自治旗"
-		},
-		{
-			"id": "382",
-			"city_id": "31",
-			"name": "陈巴尔虎旗"
-		},
-		{
-			"id": "383",
-			"city_id": "31",
-			"name": "新巴尔虎左旗"
-		},
-		{
-			"id": "384",
-			"city_id": "31",
-			"name": "新巴尔虎右旗"
-		},
-		{
-			"id": "385",
-			"city_id": "31",
-			"name": "满洲里市"
-		},
-		{
-			"id": "386",
-			"city_id": "31",
-			"name": "牙克石市"
-		},
-		{
-			"id": "387",
-			"city_id": "31",
-			"name": "扎兰屯市"
-		},
-		{
-			"id": "388",
-			"city_id": "31",
-			"name": "额尔古纳市"
-		},
-		{
-			"id": "389",
-			"city_id": "31",
-			"name": "根河市"
-		},
-		{
-			"id": "390",
-			"city_id": "32",
-			"name": "临河区"
-		},
-		{
-			"id": "391",
-			"city_id": "32",
-			"name": "五原县"
-		},
-		{
-			"id": "392",
-			"city_id": "32",
-			"name": "磴口县"
-		},
-		{
-			"id": "393",
-			"city_id": "32",
-			"name": "乌拉特前旗"
-		},
-		{
-			"id": "394",
-			"city_id": "32",
-			"name": "乌拉特中旗"
-		},
-		{
-			"id": "395",
-			"city_id": "32",
-			"name": "乌拉特后旗"
-		},
-		{
-			"id": "396",
-			"city_id": "32",
-			"name": "杭锦后旗"
-		},
-		{
-			"id": "397",
-			"city_id": "33",
-			"name": "集宁区"
-		},
-		{
-			"id": "398",
-			"city_id": "33",
-			"name": "卓资县"
-		},
-		{
-			"id": "399",
-			"city_id": "33",
-			"name": "化德县"
-		},
-		{
-			"id": "400",
-			"city_id": "33",
-			"name": "商都县"
-		},
-		{
-			"id": "401",
-			"city_id": "33",
-			"name": "兴和县"
-		},
-		{
-			"id": "402",
-			"city_id": "33",
-			"name": "凉城县"
-		},
-		{
-			"id": "403",
-			"city_id": "33",
-			"name": "察哈尔右翼前旗"
-		},
-		{
-			"id": "404",
-			"city_id": "33",
-			"name": "察哈尔右翼中旗"
-		},
-		{
-			"id": "405",
-			"city_id": "33",
-			"name": "察哈尔右翼后旗"
-		},
-		{
-			"id": "406",
-			"city_id": "33",
-			"name": "四子王旗"
-		},
-		{
-			"id": "407",
-			"city_id": "33",
-			"name": "丰镇市"
-		},
-		{
-			"id": "408",
-			"city_id": "34",
-			"name": "乌兰浩特市"
-		},
-		{
-			"id": "409",
-			"city_id": "34",
-			"name": "阿尔山市"
-		},
-		{
-			"id": "410",
-			"city_id": "34",
-			"name": "科尔沁右翼前旗"
-		},
-		{
-			"id": "411",
-			"city_id": "34",
-			"name": "科尔沁右翼中旗"
-		},
-		{
-			"id": "412",
-			"city_id": "34",
-			"name": "扎赉特旗"
-		},
-		{
-			"id": "413",
-			"city_id": "34",
-			"name": "突泉县"
-		},
-		{
-			"id": "414",
-			"city_id": "35",
-			"name": "二连浩特市"
-		},
-		{
-			"id": "415",
-			"city_id": "35",
-			"name": "锡林浩特市"
-		},
-		{
-			"id": "416",
-			"city_id": "35",
-			"name": "阿巴嘎旗"
-		},
-		{
-			"id": "417",
-			"city_id": "35",
-			"name": "苏尼特左旗"
-		},
-		{
-			"id": "418",
-			"city_id": "35",
-			"name": "苏尼特右旗"
-		},
-		{
-			"id": "419",
-			"city_id": "35",
-			"name": "东乌珠穆沁旗"
-		},
-		{
-			"id": "420",
-			"city_id": "35",
-			"name": "西乌珠穆沁旗"
-		},
-		{
-			"id": "421",
-			"city_id": "35",
-			"name": "太仆寺旗"
-		},
-		{
-			"id": "422",
-			"city_id": "35",
-			"name": "镶黄旗"
-		},
-		{
-			"id": "423",
-			"city_id": "35",
-			"name": "正镶白旗"
-		},
-		{
-			"id": "424",
-			"city_id": "35",
-			"name": "正蓝旗"
-		},
-		{
-			"id": "425",
-			"city_id": "35",
-			"name": "多伦县"
-		},
-		{
-			"id": "426",
-			"city_id": "36",
-			"name": "阿拉善左旗"
-		},
-		{
-			"id": "427",
-			"city_id": "36",
-			"name": "阿拉善右旗"
-		},
-		{
-			"id": "428",
-			"city_id": "36",
-			"name": "额济纳旗"
-		},
-		{
-			"id": "429",
-			"city_id": "37",
-			"name": "和平区"
-		},
-		{
-			"id": "430",
-			"city_id": "37",
-			"name": "沈河区"
-		},
-		{
-			"id": "431",
-			"city_id": "37",
-			"name": "大东区"
-		},
-		{
-			"id": "432",
-			"city_id": "37",
-			"name": "皇姑区"
-		},
-		{
-			"id": "433",
-			"city_id": "37",
-			"name": "铁西区"
-		},
-		{
-			"id": "434",
-			"city_id": "37",
-			"name": "苏家屯区"
-		},
-		{
-			"id": "435",
-			"city_id": "37",
-			"name": "东陵区"
-		},
-		{
-			"id": "436",
-			"city_id": "37",
-			"name": "新城子区"
-		},
-		{
-			"id": "437",
-			"city_id": "37",
-			"name": "于洪区"
-		},
-		{
-			"id": "438",
-			"city_id": "37",
-			"name": "辽中县"
-		},
-		{
-			"id": "439",
-			"city_id": "37",
-			"name": "康平县"
-		},
-		{
-			"id": "440",
-			"city_id": "37",
-			"name": "法库县"
-		},
-		{
-			"id": "441",
-			"city_id": "37",
-			"name": "新民市"
-		},
-		{
-			"id": "442",
-			"city_id": "38",
-			"name": "中山区"
-		},
-		{
-			"id": "443",
-			"city_id": "38",
-			"name": "西岗区"
-		},
-		{
-			"id": "444",
-			"city_id": "38",
-			"name": "沙河口区"
-		},
-		{
-			"id": "445",
-			"city_id": "38",
-			"name": "甘井子区"
-		},
-		{
-			"id": "446",
-			"city_id": "38",
-			"name": "旅顺口区"
-		},
-		{
-			"id": "447",
-			"city_id": "38",
-			"name": "金州区"
-		},
-		{
-			"id": "448",
-			"city_id": "38",
-			"name": "长海县"
-		},
-		{
-			"id": "449",
-			"city_id": "38",
-			"name": "瓦房店市"
-		},
-		{
-			"id": "450",
-			"city_id": "38",
-			"name": "普兰店市"
-		},
-		{
-			"id": "451",
-			"city_id": "38",
-			"name": "庄河市"
-		},
-		{
-			"id": "452",
-			"city_id": "39",
-			"name": "铁东区"
-		},
-		{
-			"id": "453",
-			"city_id": "39",
-			"name": "铁西区"
-		},
-		{
-			"id": "454",
-			"city_id": "39",
-			"name": "立山区"
-		},
-		{
-			"id": "455",
-			"city_id": "39",
-			"name": "千山区"
-		},
-		{
-			"id": "456",
-			"city_id": "39",
-			"name": "台安县"
-		},
-		{
-			"id": "457",
-			"city_id": "39",
-			"name": "岫岩满族自治县"
-		},
-		{
-			"id": "458",
-			"city_id": "39",
-			"name": "海城市"
-		},
-		{
-			"id": "459",
-			"city_id": "40",
-			"name": "新抚区"
-		},
-		{
-			"id": "460",
-			"city_id": "40",
-			"name": "东洲区"
-		},
-		{
-			"id": "461",
-			"city_id": "40",
-			"name": "望花区"
-		},
-		{
-			"id": "462",
-			"city_id": "40",
-			"name": "顺城区"
-		},
-		{
-			"id": "463",
-			"city_id": "40",
-			"name": "抚顺县"
-		},
-		{
-			"id": "464",
-			"city_id": "40",
-			"name": "新宾满族自治县"
-		},
-		{
-			"id": "465",
-			"city_id": "40",
-			"name": "清原满族自治县"
-		},
-		{
-			"id": "466",
-			"city_id": "41",
-			"name": "平山区"
-		},
-		{
-			"id": "467",
-			"city_id": "41",
-			"name": "溪湖区"
-		},
-		{
-			"id": "468",
-			"city_id": "41",
-			"name": "明山区"
-		},
-		{
-			"id": "469",
-			"city_id": "41",
-			"name": "南芬区"
-		},
-		{
-			"id": "470",
-			"city_id": "41",
-			"name": "本溪满族自治县"
-		},
-		{
-			"id": "471",
-			"city_id": "41",
-			"name": "桓仁满族自治县"
-		},
-		{
-			"id": "472",
-			"city_id": "42",
-			"name": "元宝区"
-		},
-		{
-			"id": "473",
-			"city_id": "42",
-			"name": "振兴区"
-		},
-		{
-			"id": "474",
-			"city_id": "42",
-			"name": "振安区"
-		},
-		{
-			"id": "475",
-			"city_id": "42",
-			"name": "宽甸满族自治县"
-		},
-		{
-			"id": "476",
-			"city_id": "42",
-			"name": "东港市"
-		},
-		{
-			"id": "477",
-			"city_id": "42",
-			"name": "凤城市"
-		},
-		{
-			"id": "478",
-			"city_id": "43",
-			"name": "古塔区"
-		},
-		{
-			"id": "479",
-			"city_id": "43",
-			"name": "凌河区"
-		},
-		{
-			"id": "480",
-			"city_id": "43",
-			"name": "太和区"
-		},
-		{
-			"id": "481",
-			"city_id": "43",
-			"name": "黑山县"
-		},
-		{
-			"id": "482",
-			"city_id": "43",
-			"name": "义县"
-		},
-		{
-			"id": "483",
-			"city_id": "43",
-			"name": "凌海市"
-		},
-		{
-			"id": "484",
-			"city_id": "43",
-			"name": "北宁市"
-		},
-		{
-			"id": "485",
-			"city_id": "44",
-			"name": "站前区"
-		},
-		{
-			"id": "486",
-			"city_id": "44",
-			"name": "西市区"
-		},
-		{
-			"id": "487",
-			"city_id": "44",
-			"name": "鲅鱼圈区"
-		},
-		{
-			"id": "488",
-			"city_id": "44",
-			"name": "老边区"
-		},
-		{
-			"id": "489",
-			"city_id": "44",
-			"name": "盖州市"
-		},
-		{
-			"id": "490",
-			"city_id": "44",
-			"name": "大石桥市"
-		},
-		{
-			"id": "491",
-			"city_id": "45",
-			"name": "海州区"
-		},
-		{
-			"id": "492",
-			"city_id": "45",
-			"name": "新邱区"
-		},
-		{
-			"id": "493",
-			"city_id": "45",
-			"name": "太平区"
-		},
-		{
-			"id": "494",
-			"city_id": "45",
-			"name": "清河门区"
-		},
-		{
-			"id": "495",
-			"city_id": "45",
-			"name": "细河区"
-		},
-		{
-			"id": "496",
-			"city_id": "45",
-			"name": "阜新蒙古族自治县"
-		},
-		{
-			"id": "497",
-			"city_id": "45",
-			"name": "彰武县"
-		},
-		{
-			"id": "498",
-			"city_id": "46",
-			"name": "白塔区"
-		},
-		{
-			"id": "499",
-			"city_id": "46",
-			"name": "文圣区"
-		},
-		{
-			"id": "500",
-			"city_id": "46",
-			"name": "宏伟区"
-		},
-		{
-			"id": "501",
-			"city_id": "46",
-			"name": "弓长岭区"
-		},
-		{
-			"id": "502",
-			"city_id": "46",
-			"name": "太子河区"
-		},
-		{
-			"id": "503",
-			"city_id": "46",
-			"name": "辽阳县"
-		},
-		{
-			"id": "504",
-			"city_id": "46",
-			"name": "灯塔市"
-		},
-		{
-			"id": "505",
-			"city_id": "47",
-			"name": "双台子区"
-		},
-		{
-			"id": "506",
-			"city_id": "47",
-			"name": "兴隆台区"
-		},
-		{
-			"id": "507",
-			"city_id": "47",
-			"name": "大洼县"
-		},
-		{
-			"id": "508",
-			"city_id": "47",
-			"name": "盘山县"
-		},
-		{
-			"id": "509",
-			"city_id": "48",
-			"name": "银州区"
-		},
-		{
-			"id": "510",
-			"city_id": "48",
-			"name": "清河区"
-		},
-		{
-			"id": "511",
-			"city_id": "48",
-			"name": "铁岭县"
-		},
-		{
-			"id": "512",
-			"city_id": "48",
-			"name": "西丰县"
-		},
-		{
-			"id": "513",
-			"city_id": "48",
-			"name": "昌图县"
-		},
-		{
-			"id": "514",
-			"city_id": "48",
-			"name": "调兵山市"
-		},
-		{
-			"id": "515",
-			"city_id": "48",
-			"name": "开原市"
-		},
-		{
-			"id": "516",
-			"city_id": "49",
-			"name": "双塔区"
-		},
-		{
-			"id": "517",
-			"city_id": "49",
-			"name": "龙城区"
-		},
-		{
-			"id": "518",
-			"city_id": "49",
-			"name": "朝阳县"
-		},
-		{
-			"id": "519",
-			"city_id": "49",
-			"name": "建平县"
-		},
-		{
-			"id": "520",
-			"city_id": "49",
-			"name": "喀喇沁左翼蒙古族自治县"
-		},
-		{
-			"id": "521",
-			"city_id": "49",
-			"name": "北票市"
-		},
-		{
-			"id": "522",
-			"city_id": "49",
-			"name": "凌源市"
-		},
-		{
-			"id": "523",
-			"city_id": "50",
-			"name": "连山区"
-		},
-		{
-			"id": "524",
-			"city_id": "50",
-			"name": "龙港区"
-		},
-		{
-			"id": "525",
-			"city_id": "50",
-			"name": "南票区"
-		},
-		{
-			"id": "526",
-			"city_id": "50",
-			"name": "绥中县"
-		},
-		{
-			"id": "527",
-			"city_id": "50",
-			"name": "建昌县"
-		},
-		{
-			"id": "528",
-			"city_id": "50",
-			"name": "兴城市"
-		},
-		{
-			"id": "529",
-			"city_id": "51",
-			"name": "南关区"
-		},
-		{
-			"id": "530",
-			"city_id": "51",
-			"name": "宽城区"
-		},
-		{
-			"id": "531",
-			"city_id": "51",
-			"name": "朝阳区"
-		},
-		{
-			"id": "532",
-			"city_id": "51",
-			"name": "二道区"
-		},
-		{
-			"id": "533",
-			"city_id": "51",
-			"name": "绿园区"
-		},
-		{
-			"id": "534",
-			"city_id": "51",
-			"name": "双阳区"
-		},
-		{
-			"id": "535",
-			"city_id": "51",
-			"name": "农安县"
-		},
-		{
-			"id": "536",
-			"city_id": "51",
-			"name": "九台市"
-		},
-		{
-			"id": "537",
-			"city_id": "51",
-			"name": "榆树市"
-		},
-		{
-			"id": "538",
-			"city_id": "51",
-			"name": "德惠市"
-		},
-		{
-			"id": "539",
-			"city_id": "52",
-			"name": "昌邑区"
-		},
-		{
-			"id": "540",
-			"city_id": "52",
-			"name": "龙潭区"
-		},
-		{
-			"id": "541",
-			"city_id": "52",
-			"name": "船营区"
-		},
-		{
-			"id": "542",
-			"city_id": "52",
-			"name": "丰满区"
-		},
-		{
-			"id": "543",
-			"city_id": "52",
-			"name": "永吉县"
-		},
-		{
-			"id": "544",
-			"city_id": "52",
-			"name": "蛟河市"
-		},
-		{
-			"id": "545",
-			"city_id": "52",
-			"name": "桦甸市"
-		},
-		{
-			"id": "546",
-			"city_id": "52",
-			"name": "舒兰市"
-		},
-		{
-			"id": "547",
-			"city_id": "52",
-			"name": "磐石市"
-		},
-		{
-			"id": "548",
-			"city_id": "53",
-			"name": "铁西区"
-		},
-		{
-			"id": "549",
-			"city_id": "53",
-			"name": "铁东区"
-		},
-		{
-			"id": "550",
-			"city_id": "53",
-			"name": "梨树县"
-		},
-		{
-			"id": "551",
-			"city_id": "53",
-			"name": "伊通满族自治县"
-		},
-		{
-			"id": "552",
-			"city_id": "53",
-			"name": "公主岭市"
-		},
-		{
-			"id": "553",
-			"city_id": "53",
-			"name": "双辽市"
-		},
-		{
-			"id": "554",
-			"city_id": "54",
-			"name": "龙山区"
-		},
-		{
-			"id": "555",
-			"city_id": "54",
-			"name": "西安区"
-		},
-		{
-			"id": "556",
-			"city_id": "54",
-			"name": "东丰县"
-		},
-		{
-			"id": "557",
-			"city_id": "54",
-			"name": "东辽县"
-		},
-		{
-			"id": "558",
-			"city_id": "55",
-			"name": "东昌区"
-		},
-		{
-			"id": "559",
-			"city_id": "55",
-			"name": "二道江区"
-		},
-		{
-			"id": "560",
-			"city_id": "55",
-			"name": "通化县"
-		},
-		{
-			"id": "561",
-			"city_id": "55",
-			"name": "辉南县"
-		},
-		{
-			"id": "562",
-			"city_id": "55",
-			"name": "柳河县"
-		},
-		{
-			"id": "563",
-			"city_id": "55",
-			"name": "梅河口市"
-		},
-		{
-			"id": "564",
-			"city_id": "55",
-			"name": "集安市"
-		},
-		{
-			"id": "565",
-			"city_id": "56",
-			"name": "八道江区"
-		},
-		{
-			"id": "566",
-			"city_id": "56",
-			"name": "抚松县"
-		},
-		{
-			"id": "567",
-			"city_id": "56",
-			"name": "靖宇县"
-		},
-		{
-			"id": "568",
-			"city_id": "56",
-			"name": "长白朝鲜族自治县"
-		},
-		{
-			"id": "569",
-			"city_id": "56",
-			"name": "江源县"
-		},
-		{
-			"id": "570",
-			"city_id": "56",
-			"name": "临江市"
-		},
-		{
-			"id": "571",
-			"city_id": "57",
-			"name": "宁江区"
-		},
-		{
-			"id": "572",
-			"city_id": "57",
-			"name": "前郭尔罗斯蒙古族自治县"
-		},
-		{
-			"id": "573",
-			"city_id": "57",
-			"name": "长岭县"
-		},
-		{
-			"id": "574",
-			"city_id": "57",
-			"name": "乾安县"
-		},
-		{
-			"id": "575",
-			"city_id": "57",
-			"name": "扶余县"
-		},
-		{
-			"id": "576",
-			"city_id": "58",
-			"name": "洮北区"
-		},
-		{
-			"id": "577",
-			"city_id": "58",
-			"name": "镇赉县"
-		},
-		{
-			"id": "578",
-			"city_id": "58",
-			"name": "通榆县"
-		},
-		{
-			"id": "579",
-			"city_id": "58",
-			"name": "洮南市"
-		},
-		{
-			"id": "580",
-			"city_id": "58",
-			"name": "大安市"
-		},
-		{
-			"id": "581",
-			"city_id": "59",
-			"name": "延吉市"
-		},
-		{
-			"id": "582",
-			"city_id": "59",
-			"name": "图们市"
-		},
-		{
-			"id": "583",
-			"city_id": "59",
-			"name": "敦化市"
-		},
-		{
-			"id": "584",
-			"city_id": "59",
-			"name": "珲春市"
-		},
-		{
-			"id": "585",
-			"city_id": "59",
-			"name": "龙井市"
-		},
-		{
-			"id": "586",
-			"city_id": "59",
-			"name": "和龙市"
-		},
-		{
-			"id": "587",
-			"city_id": "59",
-			"name": "汪清县"
-		},
-		{
-			"id": "588",
-			"city_id": "59",
-			"name": "安图县"
-		},
-		{
-			"id": "589",
-			"city_id": "60",
-			"name": "道里区"
-		},
-		{
-			"id": "590",
-			"city_id": "60",
-			"name": "南岗区"
-		},
-		{
-			"id": "591",
-			"city_id": "60",
-			"name": "道外区"
-		},
-		{
-			"id": "592",
-			"city_id": "60",
-			"name": "香坊区"
-		},
-		{
-			"id": "593",
-			"city_id": "60",
-			"name": "动力区"
-		},
-		{
-			"id": "594",
-			"city_id": "60",
-			"name": "平房区"
-		},
-		{
-			"id": "595",
-			"city_id": "60",
-			"name": "松北区"
-		},
-		{
-			"id": "596",
-			"city_id": "60",
-			"name": "呼兰区"
-		},
-		{
-			"id": "597",
-			"city_id": "60",
-			"name": "依兰县"
-		},
-		{
-			"id": "598",
-			"city_id": "60",
-			"name": "方正县"
-		},
-		{
-			"id": "599",
-			"city_id": "60",
-			"name": "宾县"
-		},
-		{
-			"id": "600",
-			"city_id": "60",
-			"name": "巴彦县"
-		},
-		{
-			"id": "601",
-			"city_id": "60",
-			"name": "木兰县"
-		},
-		{
-			"id": "602",
-			"city_id": "60",
-			"name": "通河县"
-		},
-		{
-			"id": "603",
-			"city_id": "60",
-			"name": "延寿县"
-		},
-		{
-			"id": "604",
-			"city_id": "60",
-			"name": "阿城市"
-		},
-		{
-			"id": "605",
-			"city_id": "60",
-			"name": "双城市"
-		},
-		{
-			"id": "606",
-			"city_id": "60",
-			"name": "尚志市"
-		},
-		{
-			"id": "607",
-			"city_id": "60",
-			"name": "五常市"
-		},
-		{
-			"id": "608",
-			"city_id": "61",
-			"name": "龙沙区"
-		},
-		{
-			"id": "609",
-			"city_id": "61",
-			"name": "建华区"
-		},
-		{
-			"id": "610",
-			"city_id": "61",
-			"name": "铁锋区"
-		},
-		{
-			"id": "611",
-			"city_id": "61",
-			"name": "昂昂溪区"
-		},
-		{
-			"id": "612",
-			"city_id": "61",
-			"name": "富拉尔基区"
-		},
-		{
-			"id": "613",
-			"city_id": "61",
-			"name": "碾子山区"
-		},
-		{
-			"id": "614",
-			"city_id": "61",
-			"name": "梅里斯达斡尔族区"
-		},
-		{
-			"id": "615",
-			"city_id": "61",
-			"name": "龙江县"
-		},
-		{
-			"id": "616",
-			"city_id": "61",
-			"name": "依安县"
-		},
-		{
-			"id": "617",
-			"city_id": "61",
-			"name": "泰来县"
-		},
-		{
-			"id": "618",
-			"city_id": "61",
-			"name": "甘南县"
-		},
-		{
-			"id": "619",
-			"city_id": "61",
-			"name": "富裕县"
-		},
-		{
-			"id": "620",
-			"city_id": "61",
-			"name": "克山县"
-		},
-		{
-			"id": "621",
-			"city_id": "61",
-			"name": "克东县"
-		},
-		{
-			"id": "622",
-			"city_id": "61",
-			"name": "拜泉县"
-		},
-		{
-			"id": "623",
-			"city_id": "61",
-			"name": "讷河市"
-		},
-		{
-			"id": "624",
-			"city_id": "62",
-			"name": "鸡冠区"
-		},
-		{
-			"id": "625",
-			"city_id": "62",
-			"name": "恒山区"
-		},
-		{
-			"id": "626",
-			"city_id": "62",
-			"name": "滴道区"
-		},
-		{
-			"id": "627",
-			"city_id": "62",
-			"name": "梨树区"
-		},
-		{
-			"id": "628",
-			"city_id": "62",
-			"name": "城子河区"
-		},
-		{
-			"id": "629",
-			"city_id": "62",
-			"name": "麻山区"
-		},
-		{
-			"id": "630",
-			"city_id": "62",
-			"name": "鸡东县"
-		},
-		{
-			"id": "631",
-			"city_id": "62",
-			"name": "虎林市"
-		},
-		{
-			"id": "632",
-			"city_id": "62",
-			"name": "密山市"
-		},
-		{
-			"id": "633",
-			"city_id": "63",
-			"name": "向阳区"
-		},
-		{
-			"id": "634",
-			"city_id": "63",
-			"name": "工农区"
-		},
-		{
-			"id": "635",
-			"city_id": "63",
-			"name": "南山区"
-		},
-		{
-			"id": "636",
-			"city_id": "63",
-			"name": "兴安区"
-		},
-		{
-			"id": "637",
-			"city_id": "63",
-			"name": "东山区"
-		},
-		{
-			"id": "638",
-			"city_id": "63",
-			"name": "兴山区"
-		},
-		{
-			"id": "639",
-			"city_id": "63",
-			"name": "萝北县"
-		},
-		{
-			"id": "640",
-			"city_id": "63",
-			"name": "绥滨县"
-		},
-		{
-			"id": "641",
-			"city_id": "64",
-			"name": "尖山区"
-		},
-		{
-			"id": "642",
-			"city_id": "64",
-			"name": "岭东区"
-		},
-		{
-			"id": "643",
-			"city_id": "64",
-			"name": "四方台区"
-		},
-		{
-			"id": "644",
-			"city_id": "64",
-			"name": "宝山区"
-		},
-		{
-			"id": "645",
-			"city_id": "64",
-			"name": "集贤县"
-		},
-		{
-			"id": "646",
-			"city_id": "64",
-			"name": "友谊县"
-		},
-		{
-			"id": "647",
-			"city_id": "64",
-			"name": "宝清县"
-		},
-		{
-			"id": "648",
-			"city_id": "64",
-			"name": "饶河县"
-		},
-		{
-			"id": "649",
-			"city_id": "65",
-			"name": "萨尔图区"
-		},
-		{
-			"id": "650",
-			"city_id": "65",
-			"name": "龙凤区"
-		},
-		{
-			"id": "651",
-			"city_id": "65",
-			"name": "让胡路区"
-		},
-		{
-			"id": "652",
-			"city_id": "65",
-			"name": "红岗区"
-		},
-		{
-			"id": "653",
-			"city_id": "65",
-			"name": "大同区"
-		},
-		{
-			"id": "654",
-			"city_id": "65",
-			"name": "肇州县"
-		},
-		{
-			"id": "655",
-			"city_id": "65",
-			"name": "肇源县"
-		},
-		{
-			"id": "656",
-			"city_id": "65",
-			"name": "林甸县"
-		},
-		{
-			"id": "657",
-			"city_id": "65",
-			"name": "杜尔伯特蒙古族自治县"
-		},
-		{
-			"id": "658",
-			"city_id": "66",
-			"name": "伊春区"
-		},
-		{
-			"id": "659",
-			"city_id": "66",
-			"name": "南岔区"
-		},
-		{
-			"id": "660",
-			"city_id": "66",
-			"name": "友好区"
-		},
-		{
-			"id": "661",
-			"city_id": "66",
-			"name": "西林区"
-		},
-		{
-			"id": "662",
-			"city_id": "66",
-			"name": "翠峦区"
-		},
-		{
-			"id": "663",
-			"city_id": "66",
-			"name": "新青区"
-		},
-		{
-			"id": "664",
-			"city_id": "66",
-			"name": "美溪区"
-		},
-		{
-			"id": "665",
-			"city_id": "66",
-			"name": "金山屯区"
-		},
-		{
-			"id": "666",
-			"city_id": "66",
-			"name": "五营区"
-		},
-		{
-			"id": "667",
-			"city_id": "66",
-			"name": "乌马河区"
-		},
-		{
-			"id": "668",
-			"city_id": "66",
-			"name": "汤旺河区"
-		},
-		{
-			"id": "669",
-			"city_id": "66",
-			"name": "带岭区"
-		},
-		{
-			"id": "670",
-			"city_id": "66",
-			"name": "乌伊岭区"
-		},
-		{
-			"id": "671",
-			"city_id": "66",
-			"name": "红星区"
-		},
-		{
-			"id": "672",
-			"city_id": "66",
-			"name": "上甘岭区"
-		},
-		{
-			"id": "673",
-			"city_id": "66",
-			"name": "嘉荫县"
-		},
-		{
-			"id": "674",
-			"city_id": "66",
-			"name": "铁力市"
-		},
-		{
-			"id": "675",
-			"city_id": "67",
-			"name": "永红区"
-		},
-		{
-			"id": "676",
-			"city_id": "67",
-			"name": "向阳区"
-		},
-		{
-			"id": "677",
-			"city_id": "67",
-			"name": "前进区"
-		},
-		{
-			"id": "678",
-			"city_id": "67",
-			"name": "东风区"
-		},
-		{
-			"id": "679",
-			"city_id": "67",
-			"name": "郊区"
-		},
-		{
-			"id": "680",
-			"city_id": "67",
-			"name": "桦南县"
-		},
-		{
-			"id": "681",
-			"city_id": "67",
-			"name": "桦川县"
-		},
-		{
-			"id": "682",
-			"city_id": "67",
-			"name": "汤原县"
-		},
-		{
-			"id": "683",
-			"city_id": "67",
-			"name": "抚远县"
-		},
-		{
-			"id": "684",
-			"city_id": "67",
-			"name": "同江市"
-		},
-		{
-			"id": "685",
-			"city_id": "67",
-			"name": "富锦市"
-		},
-		{
-			"id": "686",
-			"city_id": "68",
-			"name": "新兴区"
-		},
-		{
-			"id": "687",
-			"city_id": "68",
-			"name": "桃山区"
-		},
-		{
-			"id": "688",
-			"city_id": "68",
-			"name": "茄子河区"
-		},
-		{
-			"id": "689",
-			"city_id": "68",
-			"name": "勃利县"
-		},
-		{
-			"id": "690",
-			"city_id": "69",
-			"name": "东安区"
-		},
-		{
-			"id": "691",
-			"city_id": "69",
-			"name": "阳明区"
-		},
-		{
-			"id": "692",
-			"city_id": "69",
-			"name": "爱民区"
-		},
-		{
-			"id": "693",
-			"city_id": "69",
-			"name": "西安区"
-		},
-		{
-			"id": "694",
-			"city_id": "69",
-			"name": "东宁县"
-		},
-		{
-			"id": "695",
-			"city_id": "69",
-			"name": "林口县"
-		},
-		{
-			"id": "696",
-			"city_id": "69",
-			"name": "绥芬河市"
-		},
-		{
-			"id": "697",
-			"city_id": "69",
-			"name": "海林市"
-		},
-		{
-			"id": "698",
-			"city_id": "69",
-			"name": "宁安市"
-		},
-		{
-			"id": "699",
-			"city_id": "69",
-			"name": "穆棱市"
-		},
-		{
-			"id": "700",
-			"city_id": "70",
-			"name": "爱辉区"
-		},
-		{
-			"id": "701",
-			"city_id": "70",
-			"name": "嫩江县"
-		},
-		{
-			"id": "702",
-			"city_id": "70",
-			"name": "逊克县"
-		},
-		{
-			"id": "703",
-			"city_id": "70",
-			"name": "孙吴县"
-		},
-		{
-			"id": "704",
-			"city_id": "70",
-			"name": "北安市"
-		},
-		{
-			"id": "705",
-			"city_id": "70",
-			"name": "五大连池市"
-		},
-		{
-			"id": "706",
-			"city_id": "71",
-			"name": "北林区"
-		},
-		{
-			"id": "707",
-			"city_id": "71",
-			"name": "望奎县"
-		},
-		{
-			"id": "708",
-			"city_id": "71",
-			"name": "兰西县"
-		},
-		{
-			"id": "709",
-			"city_id": "71",
-			"name": "青冈县"
-		},
-		{
-			"id": "710",
-			"city_id": "71",
-			"name": "庆安县"
-		},
-		{
-			"id": "711",
-			"city_id": "71",
-			"name": "明水县"
-		},
-		{
-			"id": "712",
-			"city_id": "71",
-			"name": "绥棱县"
-		},
-		{
-			"id": "713",
-			"city_id": "71",
-			"name": "安达市"
-		},
-		{
-			"id": "714",
-			"city_id": "71",
-			"name": "肇东市"
-		},
-		{
-			"id": "715",
-			"city_id": "71",
-			"name": "海伦市"
-		},
-		{
-			"id": "716",
-			"city_id": "72",
-			"name": "呼玛县"
-		},
-		{
-			"id": "717",
-			"city_id": "72",
-			"name": "塔河县"
-		},
-		{
-			"id": "718",
-			"city_id": "72",
-			"name": "漠河县"
-		},
-		{
-			"id": "719",
-			"city_id": "73",
-			"name": "黄浦区"
-		},
-		{
-			"id": "720",
-			"city_id": "73",
-			"name": "卢湾区"
-		},
-		{
-			"id": "721",
-			"city_id": "73",
-			"name": "徐汇区"
-		},
-		{
-			"id": "722",
-			"city_id": "73",
-			"name": "长宁区"
-		},
-		{
-			"id": "723",
-			"city_id": "73",
-			"name": "静安区"
-		},
-		{
-			"id": "724",
-			"city_id": "73",
-			"name": "普陀区"
-		},
-		{
-			"id": "725",
-			"city_id": "73",
-			"name": "闸北区"
-		},
-		{
-			"id": "726",
-			"city_id": "73",
-			"name": "虹口区"
-		},
-		{
-			"id": "727",
-			"city_id": "73",
-			"name": "杨浦区"
-		},
-		{
-			"id": "728",
-			"city_id": "73",
-			"name": "闵行区"
-		},
-		{
-			"id": "729",
-			"city_id": "73",
-			"name": "宝山区"
-		},
-		{
-			"id": "730",
-			"city_id": "73",
-			"name": "嘉定区"
-		},
-		{
-			"id": "731",
-			"city_id": "73",
-			"name": "浦东新区"
-		},
-		{
-			"id": "732",
-			"city_id": "73",
-			"name": "金山区"
-		},
-		{
-			"id": "733",
-			"city_id": "73",
-			"name": "松江区"
-		},
-		{
-			"id": "734",
-			"city_id": "73",
-			"name": "青浦区"
-		},
-		{
-			"id": "735",
-			"city_id": "73",
-			"name": "南汇区"
-		},
-		{
-			"id": "736",
-			"city_id": "73",
-			"name": "奉贤区"
-		},
-		{
-			"id": "737",
-			"city_id": "73",
-			"name": "崇明县"
-		},
-		{
-			"id": "738",
-			"city_id": "74",
-			"name": "玄武区"
-		},
-		{
-			"id": "740",
-			"city_id": "74",
-			"name": "秦淮区"
-		},
-		{
-			"id": "741",
-			"city_id": "74",
-			"name": "建邺区"
-		},
-		{
-			"id": "742",
-			"city_id": "74",
-			"name": "鼓楼区"
-		},
-		{
-			"id": "743",
-			"city_id": "74",
-			"name": "下关区"
-		},
-		{
-			"id": "744",
-			"city_id": "74",
-			"name": "浦口区"
-		},
-		{
-			"id": "745",
-			"city_id": "74",
-			"name": "栖霞区"
-		},
-		{
-			"id": "746",
-			"city_id": "74",
-			"name": "雨花台区"
-		},
-		{
-			"id": "747",
-			"city_id": "74",
-			"name": "江宁区"
-		},
-		{
-			"id": "748",
-			"city_id": "74",
-			"name": "六合区"
-		},
-		{
-			"id": "749",
-			"city_id": "74",
-			"name": "溧水县"
-		},
-		{
-			"id": "750",
-			"city_id": "74",
-			"name": "高淳县"
-		},
-		{
-			"id": "751",
-			"city_id": "75",
-			"name": "崇安区"
-		},
-		{
-			"id": "752",
-			"city_id": "75",
-			"name": "南长区"
-		},
-		{
-			"id": "753",
-			"city_id": "75",
-			"name": "北塘区"
-		},
-		{
-			"id": "754",
-			"city_id": "75",
-			"name": "锡山区"
-		},
-		{
-			"id": "755",
-			"city_id": "75",
-			"name": "惠山区"
-		},
-		{
-			"id": "756",
-			"city_id": "75",
-			"name": "滨湖区"
-		},
-		{
-			"id": "757",
-			"city_id": "75",
-			"name": "江阴市"
-		},
-		{
-			"id": "758",
-			"city_id": "75",
-			"name": "宜兴市"
-		},
-		{
-			"id": "759",
-			"city_id": "76",
-			"name": "鼓楼区"
-		},
-		{
-			"id": "760",
-			"city_id": "76",
-			"name": "云龙区"
-		},
-		{
-			"id": "761",
-			"city_id": "76",
-			"name": "九里区"
-		},
-		{
-			"id": "762",
-			"city_id": "76",
-			"name": "贾汪区"
-		},
-		{
-			"id": "763",
-			"city_id": "76",
-			"name": "泉山区"
-		},
-		{
-			"id": "764",
-			"city_id": "76",
-			"name": "丰县"
-		},
-		{
-			"id": "765",
-			"city_id": "76",
-			"name": "沛县"
-		},
-		{
-			"id": "766",
-			"city_id": "76",
-			"name": "铜山县"
-		},
-		{
-			"id": "767",
-			"city_id": "76",
-			"name": "睢宁县"
-		},
-		{
-			"id": "768",
-			"city_id": "76",
-			"name": "新沂市"
-		},
-		{
-			"id": "769",
-			"city_id": "76",
-			"name": "邳州市"
-		},
-		{
-			"id": "770",
-			"city_id": "77",
-			"name": "天宁区"
-		},
-		{
-			"id": "771",
-			"city_id": "77",
-			"name": "钟楼区"
-		},
-		{
-			"id": "772",
-			"city_id": "77",
-			"name": "戚墅堰区"
-		},
-		{
-			"id": "773",
-			"city_id": "77",
-			"name": "新北区"
-		},
-		{
-			"id": "774",
-			"city_id": "77",
-			"name": "武进区"
-		},
-		{
-			"id": "775",
-			"city_id": "77",
-			"name": "溧阳市"
-		},
-		{
-			"id": "776",
-			"city_id": "77",
-			"name": "金坛市"
-		},
-		{
-			"id": "777",
-			"city_id": "78",
-			"name": "沧浪区"
-		},
-		{
-			"id": "778",
-			"city_id": "78",
-			"name": "平江区"
-		},
-		{
-			"id": "779",
-			"city_id": "78",
-			"name": "金阊区"
-		},
-		{
-			"id": "780",
-			"city_id": "78",
-			"name": "虎丘区"
-		},
-		{
-			"id": "781",
-			"city_id": "78",
-			"name": "吴中区"
-		},
-		{
-			"id": "782",
-			"city_id": "78",
-			"name": "相城区"
-		},
-		{
-			"id": "783",
-			"city_id": "78",
-			"name": "常熟市"
-		},
-		{
-			"id": "784",
-			"city_id": "78",
-			"name": "张家港市"
-		},
-		{
-			"id": "785",
-			"city_id": "78",
-			"name": "昆山市"
-		},
-		{
-			"id": "786",
-			"city_id": "78",
-			"name": "吴江市"
-		},
-		{
-			"id": "787",
-			"city_id": "78",
-			"name": "太仓市"
-		},
-		{
-			"id": "788",
-			"city_id": "79",
-			"name": "崇川区"
-		},
-		{
-			"id": "789",
-			"city_id": "79",
-			"name": "港闸区"
-		},
-		{
-			"id": "790",
-			"city_id": "79",
-			"name": "海安县"
-		},
-		{
-			"id": "791",
-			"city_id": "79",
-			"name": "如东县"
-		},
-		{
-			"id": "792",
-			"city_id": "79",
-			"name": "启东市"
-		},
-		{
-			"id": "793",
-			"city_id": "79",
-			"name": "如皋市"
-		},
-		{
-			"id": "794",
-			"city_id": "79",
-			"name": "通州市"
-		},
-		{
-			"id": "795",
-			"city_id": "79",
-			"name": "海门市"
-		},
-		{
-			"id": "796",
-			"city_id": "80",
-			"name": "连云区"
-		},
-		{
-			"id": "797",
-			"city_id": "80",
-			"name": "新浦区"
-		},
-		{
-			"id": "798",
-			"city_id": "80",
-			"name": "海州区"
-		},
-		{
-			"id": "799",
-			"city_id": "80",
-			"name": "赣榆县"
-		},
-		{
-			"id": "800",
-			"city_id": "80",
-			"name": "东海县"
-		},
-		{
-			"id": "801",
-			"city_id": "80",
-			"name": "灌云县"
-		},
-		{
-			"id": "802",
-			"city_id": "80",
-			"name": "灌南县"
-		},
-		{
-			"id": "803",
-			"city_id": "81",
-			"name": "清河区"
-		},
-		{
-			"id": "804",
-			"city_id": "81",
-			"name": "楚州区"
-		},
-		{
-			"id": "805",
-			"city_id": "81",
-			"name": "淮阴区"
-		},
-		{
-			"id": "806",
-			"city_id": "81",
-			"name": "清浦区"
-		},
-		{
-			"id": "807",
-			"city_id": "81",
-			"name": "涟水县"
-		},
-		{
-			"id": "808",
-			"city_id": "81",
-			"name": "洪泽县"
-		},
-		{
-			"id": "809",
-			"city_id": "81",
-			"name": "盱眙县"
-		},
-		{
-			"id": "810",
-			"city_id": "81",
-			"name": "金湖县"
-		},
-		{
-			"id": "811",
-			"city_id": "82",
-			"name": "亭湖区"
-		},
-		{
-			"id": "812",
-			"city_id": "82",
-			"name": "盐都区"
-		},
-		{
-			"id": "813",
-			"city_id": "82",
-			"name": "响水县"
-		},
-		{
-			"id": "814",
-			"city_id": "82",
-			"name": "滨海县"
-		},
-		{
-			"id": "815",
-			"city_id": "82",
-			"name": "阜宁县"
-		},
-		{
-			"id": "816",
-			"city_id": "82",
-			"name": "射阳县"
-		},
-		{
-			"id": "817",
-			"city_id": "82",
-			"name": "建湖县"
-		},
-		{
-			"id": "818",
-			"city_id": "82",
-			"name": "东台市"
-		},
-		{
-			"id": "819",
-			"city_id": "82",
-			"name": "大丰市"
-		},
-		{
-			"id": "820",
-			"city_id": "83",
-			"name": "广陵区"
-		},
-		{
-			"id": "821",
-			"city_id": "83",
-			"name": "邗江区"
-		},
-		{
-			"id": "822",
-			"city_id": "83",
-			"name": "维扬区"
-		},
-		{
-			"id": "823",
-			"city_id": "83",
-			"name": "宝应县"
-		},
-		{
-			"id": "824",
-			"city_id": "83",
-			"name": "仪征市"
-		},
-		{
-			"id": "825",
-			"city_id": "83",
-			"name": "高邮市"
-		},
-		{
-			"id": "826",
-			"city_id": "83",
-			"name": "江都市"
-		},
-		{
-			"id": "827",
-			"city_id": "84",
-			"name": "京口区"
-		},
-		{
-			"id": "828",
-			"city_id": "84",
-			"name": "润州区"
-		},
-		{
-			"id": "829",
-			"city_id": "84",
-			"name": "丹徒区"
-		},
-		{
-			"id": "830",
-			"city_id": "84",
-			"name": "丹阳市"
-		},
-		{
-			"id": "831",
-			"city_id": "84",
-			"name": "扬中市"
-		},
-		{
-			"id": "832",
-			"city_id": "84",
-			"name": "句容市"
-		},
-		{
-			"id": "833",
-			"city_id": "85",
-			"name": "海陵区"
-		},
-		{
-			"id": "834",
-			"city_id": "85",
-			"name": "高港区"
-		},
-		{
-			"id": "835",
-			"city_id": "85",
-			"name": "兴化市"
-		},
-		{
-			"id": "836",
-			"city_id": "85",
-			"name": "靖江市"
-		},
-		{
-			"id": "837",
-			"city_id": "85",
-			"name": "泰兴市"
-		},
-		{
-			"id": "838",
-			"city_id": "85",
-			"name": "姜堰市"
-		},
-		{
-			"id": "839",
-			"city_id": "86",
-			"name": "宿城区"
-		},
-		{
-			"id": "840",
-			"city_id": "86",
-			"name": "宿豫区"
-		},
-		{
-			"id": "841",
-			"city_id": "86",
-			"name": "沭阳县"
-		},
-		{
-			"id": "842",
-			"city_id": "86",
-			"name": "泗阳县"
-		},
-		{
-			"id": "843",
-			"city_id": "86",
-			"name": "泗洪县"
-		},
-		{
-			"id": "844",
-			"city_id": "87",
-			"name": "上城区"
-		},
-		{
-			"id": "845",
-			"city_id": "87",
-			"name": "下城区"
-		},
-		{
-			"id": "846",
-			"city_id": "87",
-			"name": "江干区"
-		},
-		{
-			"id": "847",
-			"city_id": "87",
-			"name": "拱墅区"
-		},
-		{
-			"id": "848",
-			"city_id": "87",
-			"name": "西湖区"
-		},
-		{
-			"id": "849",
-			"city_id": "87",
-			"name": "滨江区"
-		},
-		{
-			"id": "850",
-			"city_id": "87",
-			"name": "萧山区"
-		},
-		{
-			"id": "851",
-			"city_id": "87",
-			"name": "余杭区"
-		},
-		{
-			"id": "852",
-			"city_id": "87",
-			"name": "桐庐县"
-		},
-		{
-			"id": "853",
-			"city_id": "87",
-			"name": "淳安县"
-		},
-		{
-			"id": "854",
-			"city_id": "87",
-			"name": "建德市"
-		},
-		{
-			"id": "855",
-			"city_id": "87",
-			"name": "富阳市"
-		},
-		{
-			"id": "856",
-			"city_id": "87",
-			"name": "临安市"
-		},
-		{
-			"id": "857",
-			"city_id": "88",
-			"name": "海曙区"
-		},
-		{
-			"id": "858",
-			"city_id": "88",
-			"name": "江东区"
-		},
-		{
-			"id": "859",
-			"city_id": "88",
-			"name": "江北区"
-		},
-		{
-			"id": "860",
-			"city_id": "88",
-			"name": "北仑区"
-		},
-		{
-			"id": "861",
-			"city_id": "88",
-			"name": "镇海区"
-		},
-		{
-			"id": "862",
-			"city_id": "88",
-			"name": "鄞州区"
-		},
-		{
-			"id": "863",
-			"city_id": "88",
-			"name": "象山县"
-		},
-		{
-			"id": "864",
-			"city_id": "88",
-			"name": "宁海县"
-		},
-		{
-			"id": "865",
-			"city_id": "88",
-			"name": "余姚市"
-		},
-		{
-			"id": "866",
-			"city_id": "88",
-			"name": "慈溪市"
-		},
-		{
-			"id": "867",
-			"city_id": "88",
-			"name": "奉化市"
-		},
-		{
-			"id": "868",
-			"city_id": "89",
-			"name": "鹿城区"
-		},
-		{
-			"id": "869",
-			"city_id": "89",
-			"name": "龙湾区"
-		},
-		{
-			"id": "870",
-			"city_id": "89",
-			"name": "瓯海区"
-		},
-		{
-			"id": "871",
-			"city_id": "89",
-			"name": "洞头县"
-		},
-		{
-			"id": "872",
-			"city_id": "89",
-			"name": "永嘉县"
-		},
-		{
-			"id": "873",
-			"city_id": "89",
-			"name": "平阳县"
-		},
-		{
-			"id": "874",
-			"city_id": "89",
-			"name": "苍南县"
-		},
-		{
-			"id": "875",
-			"city_id": "89",
-			"name": "文成县"
-		},
-		{
-			"id": "876",
-			"city_id": "89",
-			"name": "泰顺县"
-		},
-		{
-			"id": "877",
-			"city_id": "89",
-			"name": "瑞安市"
-		},
-		{
-			"id": "878",
-			"city_id": "89",
-			"name": "乐清市"
-		},
-		{
-			"id": "879",
-			"city_id": "90",
-			"name": "秀城区"
-		},
-		{
-			"id": "880",
-			"city_id": "90",
-			"name": "秀洲区"
-		},
-		{
-			"id": "881",
-			"city_id": "90",
-			"name": "嘉善县"
-		},
-		{
-			"id": "882",
-			"city_id": "90",
-			"name": "海盐县"
-		},
-		{
-			"id": "883",
-			"city_id": "90",
-			"name": "海宁市"
-		},
-		{
-			"id": "884",
-			"city_id": "90",
-			"name": "平湖市"
-		},
-		{
-			"id": "885",
-			"city_id": "90",
-			"name": "桐乡市"
-		},
-		{
-			"id": "886",
-			"city_id": "91",
-			"name": "吴兴区"
-		},
-		{
-			"id": "887",
-			"city_id": "91",
-			"name": "南浔区"
-		},
-		{
-			"id": "888",
-			"city_id": "91",
-			"name": "德清县"
-		},
-		{
-			"id": "889",
-			"city_id": "91",
-			"name": "长兴县"
-		},
-		{
-			"id": "890",
-			"city_id": "91",
-			"name": "安吉县"
-		},
-		{
-			"id": "891",
-			"city_id": "92",
-			"name": "越城区"
-		},
-		{
-			"id": "892",
-			"city_id": "92",
-			"name": "绍兴县"
-		},
-		{
-			"id": "893",
-			"city_id": "92",
-			"name": "新昌县"
-		},
-		{
-			"id": "894",
-			"city_id": "92",
-			"name": "诸暨市"
-		},
-		{
-			"id": "895",
-			"city_id": "92",
-			"name": "上虞市"
-		},
-		{
-			"id": "896",
-			"city_id": "92",
-			"name": "嵊州市"
-		},
-		{
-			"id": "897",
-			"city_id": "93",
-			"name": "婺城区"
-		},
-		{
-			"id": "898",
-			"city_id": "93",
-			"name": "金东区"
-		},
-		{
-			"id": "899",
-			"city_id": "93",
-			"name": "武义县"
-		},
-		{
-			"id": "900",
-			"city_id": "93",
-			"name": "浦江县"
-		},
-		{
-			"id": "901",
-			"city_id": "93",
-			"name": "磐安县"
-		},
-		{
-			"id": "902",
-			"city_id": "93",
-			"name": "兰溪市"
-		},
-		{
-			"id": "903",
-			"city_id": "93",
-			"name": "义乌市"
-		},
-		{
-			"id": "904",
-			"city_id": "93",
-			"name": "东阳市"
-		},
-		{
-			"id": "905",
-			"city_id": "93",
-			"name": "永康市"
-		},
-		{
-			"id": "906",
-			"city_id": "94",
-			"name": "柯城区"
-		},
-		{
-			"id": "907",
-			"city_id": "94",
-			"name": "衢江区"
-		},
-		{
-			"id": "908",
-			"city_id": "94",
-			"name": "常山县"
-		},
-		{
-			"id": "909",
-			"city_id": "94",
-			"name": "开化县"
-		},
-		{
-			"id": "910",
-			"city_id": "94",
-			"name": "龙游县"
-		},
-		{
-			"id": "911",
-			"city_id": "94",
-			"name": "江山市"
-		},
-		{
-			"id": "912",
-			"city_id": "95",
-			"name": "定海区"
-		},
-		{
-			"id": "913",
-			"city_id": "95",
-			"name": "普陀区"
-		},
-		{
-			"id": "914",
-			"city_id": "95",
-			"name": "岱山县"
-		},
-		{
-			"id": "915",
-			"city_id": "95",
-			"name": "嵊泗县"
-		},
-		{
-			"id": "916",
-			"city_id": "96",
-			"name": "椒江区"
-		},
-		{
-			"id": "917",
-			"city_id": "96",
-			"name": "黄岩区"
-		},
-		{
-			"id": "918",
-			"city_id": "96",
-			"name": "路桥区"
-		},
-		{
-			"id": "919",
-			"city_id": "96",
-			"name": "玉环县"
-		},
-		{
-			"id": "920",
-			"city_id": "96",
-			"name": "三门县"
-		},
-		{
-			"id": "921",
-			"city_id": "96",
-			"name": "天台县"
-		},
-		{
-			"id": "922",
-			"city_id": "96",
-			"name": "仙居县"
-		},
-		{
-			"id": "923",
-			"city_id": "96",
-			"name": "温岭市"
-		},
-		{
-			"id": "924",
-			"city_id": "96",
-			"name": "临海市"
-		},
-		{
-			"id": "925",
-			"city_id": "97",
-			"name": "莲都区"
-		},
-		{
-			"id": "926",
-			"city_id": "97",
-			"name": "青田县"
-		},
-		{
-			"id": "927",
-			"city_id": "97",
-			"name": "缙云县"
-		},
-		{
-			"id": "928",
-			"city_id": "97",
-			"name": "遂昌县"
-		},
-		{
-			"id": "929",
-			"city_id": "97",
-			"name": "松阳县"
-		},
-		{
-			"id": "930",
-			"city_id": "97",
-			"name": "云和县"
-		},
-		{
-			"id": "931",
-			"city_id": "97",
-			"name": "庆元县"
-		},
-		{
-			"id": "932",
-			"city_id": "97",
-			"name": "景宁畲族自治县"
-		},
-		{
-			"id": "933",
-			"city_id": "97",
-			"name": "龙泉市"
-		},
-		{
-			"id": "934",
-			"city_id": "98",
-			"name": "瑶海区"
-		},
-		{
-			"id": "935",
-			"city_id": "98",
-			"name": "庐阳区"
-		},
-		{
-			"id": "936",
-			"city_id": "98",
-			"name": "蜀山区"
-		},
-		{
-			"id": "937",
-			"city_id": "98",
-			"name": "包河区"
-		},
-		{
-			"id": "938",
-			"city_id": "98",
-			"name": "长丰县"
-		},
-		{
-			"id": "939",
-			"city_id": "98",
-			"name": "肥东县"
-		},
-		{
-			"id": "940",
-			"city_id": "98",
-			"name": "肥西县"
-		},
-		{
-			"id": "941",
-			"city_id": "99",
-			"name": "镜湖区"
-		},
-		{
-			"id": "942",
-			"city_id": "99",
-			"name": "马塘区"
-		},
-		{
-			"id": "943",
-			"city_id": "99",
-			"name": "新芜区"
-		},
-		{
-			"id": "944",
-			"city_id": "99",
-			"name": "鸠江区"
-		},
-		{
-			"id": "945",
-			"city_id": "99",
-			"name": "芜湖县"
-		},
-		{
-			"id": "946",
-			"city_id": "99",
-			"name": "繁昌县"
-		},
-		{
-			"id": "947",
-			"city_id": "99",
-			"name": "南陵县"
-		},
-		{
-			"id": "948",
-			"city_id": "100",
-			"name": "龙子湖区"
-		},
-		{
-			"id": "949",
-			"city_id": "100",
-			"name": "蚌山区"
-		},
-		{
-			"id": "950",
-			"city_id": "100",
-			"name": "禹会区"
-		},
-		{
-			"id": "951",
-			"city_id": "100",
-			"name": "淮上区"
-		},
-		{
-			"id": "952",
-			"city_id": "100",
-			"name": "怀远县"
-		},
-		{
-			"id": "953",
-			"city_id": "100",
-			"name": "五河县"
-		},
-		{
-			"id": "954",
-			"city_id": "100",
-			"name": "固镇县"
-		},
-		{
-			"id": "955",
-			"city_id": "101",
-			"name": "大通区"
-		},
-		{
-			"id": "956",
-			"city_id": "101",
-			"name": "田家庵区"
-		},
-		{
-			"id": "957",
-			"city_id": "101",
-			"name": "谢家集区"
-		},
-		{
-			"id": "958",
-			"city_id": "101",
-			"name": "八公山区"
-		},
-		{
-			"id": "959",
-			"city_id": "101",
-			"name": "潘集区"
-		},
-		{
-			"id": "960",
-			"city_id": "101",
-			"name": "凤台县"
-		},
-		{
-			"id": "961",
-			"city_id": "102",
-			"name": "金家庄区"
-		},
-		{
-			"id": "962",
-			"city_id": "102",
-			"name": "花山区"
-		},
-		{
-			"id": "963",
-			"city_id": "102",
-			"name": "雨山区"
-		},
-		{
-			"id": "964",
-			"city_id": "102",
-			"name": "当涂县"
-		},
-		{
-			"id": "965",
-			"city_id": "103",
-			"name": "杜集区"
-		},
-		{
-			"id": "966",
-			"city_id": "103",
-			"name": "相山区"
-		},
-		{
-			"id": "967",
-			"city_id": "103",
-			"name": "烈山区"
-		},
-		{
-			"id": "968",
-			"city_id": "103",
-			"name": "濉溪县"
-		},
-		{
-			"id": "969",
-			"city_id": "104",
-			"name": "铜官山区"
-		},
-		{
-			"id": "970",
-			"city_id": "104",
-			"name": "狮子山区"
-		},
-		{
-			"id": "971",
-			"city_id": "104",
-			"name": "郊区"
-		},
-		{
-			"id": "972",
-			"city_id": "104",
-			"name": "铜陵县"
-		},
-		{
-			"id": "973",
-			"city_id": "105",
-			"name": "迎江区"
-		},
-		{
-			"id": "974",
-			"city_id": "105",
-			"name": "大观区"
-		},
-		{
-			"id": "975",
-			"city_id": "105",
-			"name": "郊区"
-		},
-		{
-			"id": "976",
-			"city_id": "105",
-			"name": "怀宁县"
-		},
-		{
-			"id": "977",
-			"city_id": "105",
-			"name": "枞阳县"
-		},
-		{
-			"id": "978",
-			"city_id": "105",
-			"name": "潜山县"
-		},
-		{
-			"id": "979",
-			"city_id": "105",
-			"name": "太湖县"
-		},
-		{
-			"id": "980",
-			"city_id": "105",
-			"name": "宿松县"
-		},
-		{
-			"id": "981",
-			"city_id": "105",
-			"name": "望江县"
-		},
-		{
-			"id": "982",
-			"city_id": "105",
-			"name": "岳西县"
-		},
-		{
-			"id": "983",
-			"city_id": "105",
-			"name": "桐城市"
-		},
-		{
-			"id": "984",
-			"city_id": "106",
-			"name": "屯溪区"
-		},
-		{
-			"id": "985",
-			"city_id": "106",
-			"name": "黄山区"
-		},
-		{
-			"id": "986",
-			"city_id": "106",
-			"name": "徽州区"
-		},
-		{
-			"id": "987",
-			"city_id": "106",
-			"name": "歙县"
-		},
-		{
-			"id": "988",
-			"city_id": "106",
-			"name": "休宁县"
-		},
-		{
-			"id": "989",
-			"city_id": "106",
-			"name": "黟县"
-		},
-		{
-			"id": "990",
-			"city_id": "106",
-			"name": "祁门县"
-		},
-		{
-			"id": "991",
-			"city_id": "107",
-			"name": "琅琊区"
-		},
-		{
-			"id": "992",
-			"city_id": "107",
-			"name": "南谯区"
-		},
-		{
-			"id": "993",
-			"city_id": "107",
-			"name": "来安县"
-		},
-		{
-			"id": "994",
-			"city_id": "107",
-			"name": "全椒县"
-		},
-		{
-			"id": "995",
-			"city_id": "107",
-			"name": "定远县"
-		},
-		{
-			"id": "996",
-			"city_id": "107",
-			"name": "凤阳县"
-		},
-		{
-			"id": "997",
-			"city_id": "107",
-			"name": "天长市"
-		},
-		{
-			"id": "998",
-			"city_id": "107",
-			"name": "明光市"
-		},
-		{
-			"id": "999",
-			"city_id": "108",
-			"name": "颍州区"
-		},
-		{
-			"id": "1000",
-			"city_id": "108",
-			"name": "颍东区"
-		},
-		{
-			"id": "1001",
-			"city_id": "108",
-			"name": "颍泉区"
-		},
-		{
-			"id": "1002",
-			"city_id": "108",
-			"name": "临泉县"
-		},
-		{
-			"id": "1003",
-			"city_id": "108",
-			"name": "太和县"
-		},
-		{
-			"id": "1004",
-			"city_id": "108",
-			"name": "阜南县"
-		},
-		{
-			"id": "1005",
-			"city_id": "108",
-			"name": "颍上县"
-		},
-		{
-			"id": "1006",
-			"city_id": "108",
-			"name": "界首市"
-		},
-		{
-			"id": "1007",
-			"city_id": "109",
-			"name": "埇桥区"
-		},
-		{
-			"id": "1008",
-			"city_id": "109",
-			"name": "砀山县"
-		},
-		{
-			"id": "1009",
-			"city_id": "109",
-			"name": "萧县"
-		},
-		{
-			"id": "1010",
-			"city_id": "109",
-			"name": "灵璧县"
-		},
-		{
-			"id": "1011",
-			"city_id": "109",
-			"name": "泗县"
-		},
-		{
-			"id": "1012",
-			"city_id": "110",
-			"name": "居巢区"
-		},
-		{
-			"id": "1013",
-			"city_id": "110",
-			"name": "庐江县"
-		},
-		{
-			"id": "1014",
-			"city_id": "110",
-			"name": "无为县"
-		},
-		{
-			"id": "1015",
-			"city_id": "110",
-			"name": "含山县"
-		},
-		{
-			"id": "1016",
-			"city_id": "110",
-			"name": "和县"
-		},
-		{
-			"id": "1017",
-			"city_id": "111",
-			"name": "金安区"
-		},
-		{
-			"id": "1018",
-			"city_id": "111",
-			"name": "裕安区"
-		},
-		{
-			"id": "1019",
-			"city_id": "111",
-			"name": "寿县"
-		},
-		{
-			"id": "1020",
-			"city_id": "111",
-			"name": "霍邱县"
-		},
-		{
-			"id": "1021",
-			"city_id": "111",
-			"name": "舒城县"
-		},
-		{
-			"id": "1022",
-			"city_id": "111",
-			"name": "金寨县"
-		},
-		{
-			"id": "1023",
-			"city_id": "111",
-			"name": "霍山县"
-		},
-		{
-			"id": "1024",
-			"city_id": "112",
-			"name": "谯城区"
-		},
-		{
-			"id": "1025",
-			"city_id": "112",
-			"name": "涡阳县"
-		},
-		{
-			"id": "1026",
-			"city_id": "112",
-			"name": "蒙城县"
-		},
-		{
-			"id": "1027",
-			"city_id": "112",
-			"name": "利辛县"
-		},
-		{
-			"id": "1028",
-			"city_id": "113",
-			"name": "贵池区"
-		},
-		{
-			"id": "1029",
-			"city_id": "113",
-			"name": "东至县"
-		},
-		{
-			"id": "1030",
-			"city_id": "113",
-			"name": "石台县"
-		},
-		{
-			"id": "1031",
-			"city_id": "113",
-			"name": "青阳县"
-		},
-		{
-			"id": "1032",
-			"city_id": "114",
-			"name": "宣州区"
-		},
-		{
-			"id": "1033",
-			"city_id": "114",
-			"name": "郎溪县"
-		},
-		{
-			"id": "1034",
-			"city_id": "114",
-			"name": "广德县"
-		},
-		{
-			"id": "1035",
-			"city_id": "114",
-			"name": "泾县"
-		},
-		{
-			"id": "1036",
-			"city_id": "114",
-			"name": "绩溪县"
-		},
-		{
-			"id": "1037",
-			"city_id": "114",
-			"name": "旌德县"
-		},
-		{
-			"id": "1038",
-			"city_id": "114",
-			"name": "宁国市"
-		},
-		{
-			"id": "1039",
-			"city_id": "115",
-			"name": "鼓楼区"
-		},
-		{
-			"id": "1040",
-			"city_id": "115",
-			"name": "台江区"
-		},
-		{
-			"id": "1041",
-			"city_id": "115",
-			"name": "仓山区"
-		},
-		{
-			"id": "1042",
-			"city_id": "115",
-			"name": "马尾区"
-		},
-		{
-			"id": "1043",
-			"city_id": "115",
-			"name": "晋安区"
-		},
-		{
-			"id": "1044",
-			"city_id": "115",
-			"name": "闽侯县"
-		},
-		{
-			"id": "1045",
-			"city_id": "115",
-			"name": "连江县"
-		},
-		{
-			"id": "1046",
-			"city_id": "115",
-			"name": "罗源县"
-		},
-		{
-			"id": "1047",
-			"city_id": "115",
-			"name": "闽清县"
-		},
-		{
-			"id": "1048",
-			"city_id": "115",
-			"name": "永泰县"
-		},
-		{
-			"id": "1049",
-			"city_id": "115",
-			"name": "平潭县"
-		},
-		{
-			"id": "1050",
-			"city_id": "115",
-			"name": "福清市"
-		},
-		{
-			"id": "1051",
-			"city_id": "115",
-			"name": "长乐市"
-		},
-		{
-			"id": "1052",
-			"city_id": "116",
-			"name": "思明区"
-		},
-		{
-			"id": "1053",
-			"city_id": "116",
-			"name": "海沧区"
-		},
-		{
-			"id": "1054",
-			"city_id": "116",
-			"name": "湖里区"
-		},
-		{
-			"id": "1055",
-			"city_id": "116",
-			"name": "集美区"
-		},
-		{
-			"id": "1056",
-			"city_id": "116",
-			"name": "同安区"
-		},
-		{
-			"id": "1057",
-			"city_id": "116",
-			"name": "翔安区"
-		},
-		{
-			"id": "1058",
-			"city_id": "117",
-			"name": "城厢区"
-		},
-		{
-			"id": "1059",
-			"city_id": "117",
-			"name": "涵江区"
-		},
-		{
-			"id": "1060",
-			"city_id": "117",
-			"name": "荔城区"
-		},
-		{
-			"id": "1061",
-			"city_id": "117",
-			"name": "秀屿区"
-		},
-		{
-			"id": "1062",
-			"city_id": "117",
-			"name": "仙游县"
-		},
-		{
-			"id": "1063",
-			"city_id": "118",
-			"name": "梅列区"
-		},
-		{
-			"id": "1064",
-			"city_id": "118",
-			"name": "三元区"
-		},
-		{
-			"id": "1065",
-			"city_id": "118",
-			"name": "明溪县"
-		},
-		{
-			"id": "1066",
-			"city_id": "118",
-			"name": "清流县"
-		},
-		{
-			"id": "1067",
-			"city_id": "118",
-			"name": "宁化县"
-		},
-		{
-			"id": "1068",
-			"city_id": "118",
-			"name": "大田县"
-		},
-		{
-			"id": "1069",
-			"city_id": "118",
-			"name": "尤溪县"
-		},
-		{
-			"id": "1070",
-			"city_id": "118",
-			"name": "沙县"
-		},
-		{
-			"id": "1071",
-			"city_id": "118",
-			"name": "将乐县"
-		},
-		{
-			"id": "1072",
-			"city_id": "118",
-			"name": "泰宁县"
-		},
-		{
-			"id": "1073",
-			"city_id": "118",
-			"name": "建宁县"
-		},
-		{
-			"id": "1074",
-			"city_id": "118",
-			"name": "永安市"
-		},
-		{
-			"id": "1075",
-			"city_id": "119",
-			"name": "鲤城区"
-		},
-		{
-			"id": "1076",
-			"city_id": "119",
-			"name": "丰泽区"
-		},
-		{
-			"id": "1077",
-			"city_id": "119",
-			"name": "洛江区"
-		},
-		{
-			"id": "1078",
-			"city_id": "119",
-			"name": "泉港区"
-		},
-		{
-			"id": "1079",
-			"city_id": "119",
-			"name": "惠安县"
-		},
-		{
-			"id": "1080",
-			"city_id": "119",
-			"name": "安溪县"
-		},
-		{
-			"id": "1081",
-			"city_id": "119",
-			"name": "永春县"
-		},
-		{
-			"id": "1082",
-			"city_id": "119",
-			"name": "德化县"
-		},
-		{
-			"id": "1083",
-			"city_id": "119",
-			"name": "金门县"
-		},
-		{
-			"id": "1084",
-			"city_id": "119",
-			"name": "石狮市"
-		},
-		{
-			"id": "1085",
-			"city_id": "119",
-			"name": "晋江市"
-		},
-		{
-			"id": "1086",
-			"city_id": "119",
-			"name": "南安市"
-		},
-		{
-			"id": "1087",
-			"city_id": "120",
-			"name": "芗城区"
-		},
-		{
-			"id": "1088",
-			"city_id": "120",
-			"name": "龙文区"
-		},
-		{
-			"id": "1089",
-			"city_id": "120",
-			"name": "云霄县"
-		},
-		{
-			"id": "1090",
-			"city_id": "120",
-			"name": "漳浦县"
-		},
-		{
-			"id": "1091",
-			"city_id": "120",
-			"name": "诏安县"
-		},
-		{
-			"id": "1092",
-			"city_id": "120",
-			"name": "长泰县"
-		},
-		{
-			"id": "1093",
-			"city_id": "120",
-			"name": "东山县"
-		},
-		{
-			"id": "1094",
-			"city_id": "120",
-			"name": "南靖县"
-		},
-		{
-			"id": "1095",
-			"city_id": "120",
-			"name": "平和县"
-		},
-		{
-			"id": "1096",
-			"city_id": "120",
-			"name": "华安县"
-		},
-		{
-			"id": "1097",
-			"city_id": "120",
-			"name": "龙海市"
-		},
-		{
-			"id": "1098",
-			"city_id": "121",
-			"name": "延平区"
-		},
-		{
-			"id": "1099",
-			"city_id": "121",
-			"name": "顺昌县"
-		},
-		{
-			"id": "1100",
-			"city_id": "121",
-			"name": "浦城县"
-		},
-		{
-			"id": "1101",
-			"city_id": "121",
-			"name": "光泽县"
-		},
-		{
-			"id": "1102",
-			"city_id": "121",
-			"name": "松溪县"
-		},
-		{
-			"id": "1103",
-			"city_id": "121",
-			"name": "政和县"
-		},
-		{
-			"id": "1104",
-			"city_id": "121",
-			"name": "邵武市"
-		},
-		{
-			"id": "1105",
-			"city_id": "121",
-			"name": "武夷山市"
-		},
-		{
-			"id": "1106",
-			"city_id": "121",
-			"name": "建瓯市"
-		},
-		{
-			"id": "1107",
-			"city_id": "121",
-			"name": "建阳市"
-		},
-		{
-			"id": "1108",
-			"city_id": "122",
-			"name": "新罗区"
-		},
-		{
-			"id": "1109",
-			"city_id": "122",
-			"name": "长汀县"
-		},
-		{
-			"id": "1110",
-			"city_id": "122",
-			"name": "永定县"
-		},
-		{
-			"id": "1111",
-			"city_id": "122",
-			"name": "上杭县"
-		},
-		{
-			"id": "1112",
-			"city_id": "122",
-			"name": "武平县"
-		},
-		{
-			"id": "1113",
-			"city_id": "122",
-			"name": "连城县"
-		},
-		{
-			"id": "1114",
-			"city_id": "122",
-			"name": "漳平市"
-		},
-		{
-			"id": "1115",
-			"city_id": "123",
-			"name": "蕉城区"
-		},
-		{
-			"id": "1116",
-			"city_id": "123",
-			"name": "霞浦县"
-		},
-		{
-			"id": "1117",
-			"city_id": "123",
-			"name": "古田县"
-		},
-		{
-			"id": "1118",
-			"city_id": "123",
-			"name": "屏南县"
-		},
-		{
-			"id": "1119",
-			"city_id": "123",
-			"name": "寿宁县"
-		},
-		{
-			"id": "1120",
-			"city_id": "123",
-			"name": "周宁县"
-		},
-		{
-			"id": "1121",
-			"city_id": "123",
-			"name": "柘荣县"
-		},
-		{
-			"id": "1122",
-			"city_id": "123",
-			"name": "福安市"
-		},
-		{
-			"id": "1123",
-			"city_id": "123",
-			"name": "福鼎市"
-		},
-		{
-			"id": "1124",
-			"city_id": "124",
-			"name": "东湖区"
-		},
-		{
-			"id": "1125",
-			"city_id": "124",
-			"name": "西湖区"
-		},
-		{
-			"id": "1126",
-			"city_id": "124",
-			"name": "青云谱区"
-		},
-		{
-			"id": "1127",
-			"city_id": "124",
-			"name": "湾里区"
-		},
-		{
-			"id": "1128",
-			"city_id": "124",
-			"name": "青山湖区"
-		},
-		{
-			"id": "1129",
-			"city_id": "124",
-			"name": "南昌县"
-		},
-		{
-			"id": "1130",
-			"city_id": "124",
-			"name": "新建县"
-		},
-		{
-			"id": "1131",
-			"city_id": "124",
-			"name": "安义县"
-		},
-		{
-			"id": "1132",
-			"city_id": "124",
-			"name": "进贤县"
-		},
-		{
-			"id": "1133",
-			"city_id": "125",
-			"name": "昌江区"
-		},
-		{
-			"id": "1134",
-			"city_id": "125",
-			"name": "珠山区"
-		},
-		{
-			"id": "1135",
-			"city_id": "125",
-			"name": "浮梁县"
-		},
-		{
-			"id": "1136",
-			"city_id": "125",
-			"name": "乐平市"
-		},
-		{
-			"id": "1137",
-			"city_id": "126",
-			"name": "安源区"
-		},
-		{
-			"id": "1138",
-			"city_id": "126",
-			"name": "湘东区"
-		},
-		{
-			"id": "1139",
-			"city_id": "126",
-			"name": "莲花县"
-		},
-		{
-			"id": "1140",
-			"city_id": "126",
-			"name": "上栗县"
-		},
-		{
-			"id": "1141",
-			"city_id": "126",
-			"name": "芦溪县"
-		},
-		{
-			"id": "1142",
-			"city_id": "127",
-			"name": "庐山区"
-		},
-		{
-			"id": "1143",
-			"city_id": "127",
-			"name": "浔阳区"
-		},
-		{
-			"id": "1144",
-			"city_id": "127",
-			"name": "九江县"
-		},
-		{
-			"id": "1145",
-			"city_id": "127",
-			"name": "武宁县"
-		},
-		{
-			"id": "1146",
-			"city_id": "127",
-			"name": "修水县"
-		},
-		{
-			"id": "1147",
-			"city_id": "127",
-			"name": "永修县"
-		},
-		{
-			"id": "1148",
-			"city_id": "127",
-			"name": "德安县"
-		},
-		{
-			"id": "1149",
-			"city_id": "127",
-			"name": "星子县"
-		},
-		{
-			"id": "1150",
-			"city_id": "127",
-			"name": "都昌县"
-		},
-		{
-			"id": "1151",
-			"city_id": "127",
-			"name": "湖口县"
-		},
-		{
-			"id": "1152",
-			"city_id": "127",
-			"name": "彭泽县"
-		},
-		{
-			"id": "1153",
-			"city_id": "127",
-			"name": "瑞昌市"
-		},
-		{
-			"id": "1154",
-			"city_id": "128",
-			"name": "渝水区"
-		},
-		{
-			"id": "1155",
-			"city_id": "128",
-			"name": "分宜县"
-		},
-		{
-			"id": "1156",
-			"city_id": "129",
-			"name": "月湖区"
-		},
-		{
-			"id": "1157",
-			"city_id": "129",
-			"name": "余江县"
-		},
-		{
-			"id": "1158",
-			"city_id": "129",
-			"name": "贵溪市"
-		},
-		{
-			"id": "1159",
-			"city_id": "130",
-			"name": "章贡区"
-		},
-		{
-			"id": "1160",
-			"city_id": "130",
-			"name": "赣县"
-		},
-		{
-			"id": "1161",
-			"city_id": "130",
-			"name": "信丰县"
-		},
-		{
-			"id": "1162",
-			"city_id": "130",
-			"name": "大余县"
-		},
-		{
-			"id": "1163",
-			"city_id": "130",
-			"name": "上犹县"
-		},
-		{
-			"id": "1164",
-			"city_id": "130",
-			"name": "崇义县"
-		},
-		{
-			"id": "1165",
-			"city_id": "130",
-			"name": "安远县"
-		},
-		{
-			"id": "1166",
-			"city_id": "130",
-			"name": "龙南县"
-		},
-		{
-			"id": "1167",
-			"city_id": "130",
-			"name": "定南县"
-		},
-		{
-			"id": "1168",
-			"city_id": "130",
-			"name": "全南县"
-		},
-		{
-			"id": "1169",
-			"city_id": "130",
-			"name": "宁都县"
-		},
-		{
-			"id": "1170",
-			"city_id": "130",
-			"name": "于都县"
-		},
-		{
-			"id": "1171",
-			"city_id": "130",
-			"name": "兴国县"
-		},
-		{
-			"id": "1172",
-			"city_id": "130",
-			"name": "会昌县"
-		},
-		{
-			"id": "1173",
-			"city_id": "130",
-			"name": "寻乌县"
-		},
-		{
-			"id": "1174",
-			"city_id": "130",
-			"name": "石城县"
-		},
-		{
-			"id": "1175",
-			"city_id": "130",
-			"name": "瑞金市"
-		},
-		{
-			"id": "1176",
-			"city_id": "130",
-			"name": "南康市"
-		},
-		{
-			"id": "1177",
-			"city_id": "131",
-			"name": "吉州区"
-		},
-		{
-			"id": "1178",
-			"city_id": "131",
-			"name": "青原区"
-		},
-		{
-			"id": "1179",
-			"city_id": "131",
-			"name": "吉安县"
-		},
-		{
-			"id": "1180",
-			"city_id": "131",
-			"name": "吉水县"
-		},
-		{
-			"id": "1181",
-			"city_id": "131",
-			"name": "峡江县"
-		},
-		{
-			"id": "1182",
-			"city_id": "131",
-			"name": "新干县"
-		},
-		{
-			"id": "1183",
-			"city_id": "131",
-			"name": "永丰县"
-		},
-		{
-			"id": "1184",
-			"city_id": "131",
-			"name": "泰和县"
-		},
-		{
-			"id": "1185",
-			"city_id": "131",
-			"name": "遂川县"
-		},
-		{
-			"id": "1186",
-			"city_id": "131",
-			"name": "万安县"
-		},
-		{
-			"id": "1187",
-			"city_id": "131",
-			"name": "安福县"
-		},
-		{
-			"id": "1188",
-			"city_id": "131",
-			"name": "永新县"
-		},
-		{
-			"id": "1189",
-			"city_id": "131",
-			"name": "井冈山市"
-		},
-		{
-			"id": "1190",
-			"city_id": "132",
-			"name": "袁州区"
-		},
-		{
-			"id": "1191",
-			"city_id": "132",
-			"name": "奉新县"
-		},
-		{
-			"id": "1192",
-			"city_id": "132",
-			"name": "万载县"
-		},
-		{
-			"id": "1193",
-			"city_id": "132",
-			"name": "上高县"
-		},
-		{
-			"id": "1194",
-			"city_id": "132",
-			"name": "宜丰县"
-		},
-		{
-			"id": "1195",
-			"city_id": "132",
-			"name": "靖安县"
-		},
-		{
-			"id": "1196",
-			"city_id": "132",
-			"name": "铜鼓县"
-		},
-		{
-			"id": "1197",
-			"city_id": "132",
-			"name": "丰城市"
-		},
-		{
-			"id": "1198",
-			"city_id": "132",
-			"name": "樟树市"
-		},
-		{
-			"id": "1199",
-			"city_id": "132",
-			"name": "高安市"
-		},
-		{
-			"id": "1200",
-			"city_id": "133",
-			"name": "临川区"
-		},
-		{
-			"id": "1201",
-			"city_id": "133",
-			"name": "南城县"
-		},
-		{
-			"id": "1202",
-			"city_id": "133",
-			"name": "黎川县"
-		},
-		{
-			"id": "1203",
-			"city_id": "133",
-			"name": "南丰县"
-		},
-		{
-			"id": "1204",
-			"city_id": "133",
-			"name": "崇仁县"
-		},
-		{
-			"id": "1205",
-			"city_id": "133",
-			"name": "乐安县"
-		},
-		{
-			"id": "1206",
-			"city_id": "133",
-			"name": "宜黄县"
-		},
-		{
-			"id": "1207",
-			"city_id": "133",
-			"name": "金溪县"
-		},
-		{
-			"id": "1208",
-			"city_id": "133",
-			"name": "资溪县"
-		},
-		{
-			"id": "1209",
-			"city_id": "133",
-			"name": "东乡县"
-		},
-		{
-			"id": "1210",
-			"city_id": "133",
-			"name": "广昌县"
-		},
-		{
-			"id": "1211",
-			"city_id": "134",
-			"name": "信州区"
-		},
-		{
-			"id": "1212",
-			"city_id": "134",
-			"name": "上饶县"
-		},
-		{
-			"id": "1213",
-			"city_id": "134",
-			"name": "广丰县"
-		},
-		{
-			"id": "1214",
-			"city_id": "134",
-			"name": "玉山县"
-		},
-		{
-			"id": "1215",
-			"city_id": "134",
-			"name": "铅山县"
-		},
-		{
-			"id": "1216",
-			"city_id": "134",
-			"name": "横峰县"
-		},
-		{
-			"id": "1217",
-			"city_id": "134",
-			"name": "弋阳县"
-		},
-		{
-			"id": "1218",
-			"city_id": "134",
-			"name": "余干县"
-		},
-		{
-			"id": "1219",
-			"city_id": "134",
-			"name": "鄱阳县"
-		},
-		{
-			"id": "1220",
-			"city_id": "134",
-			"name": "万年县"
-		},
-		{
-			"id": "1221",
-			"city_id": "134",
-			"name": "婺源县"
-		},
-		{
-			"id": "1222",
-			"city_id": "134",
-			"name": "德兴市"
-		},
-		{
-			"id": "1223",
-			"city_id": "135",
-			"name": "历下区"
-		},
-		{
-			"id": "1224",
-			"city_id": "135",
-			"name": "市中区"
-		},
-		{
-			"id": "1225",
-			"city_id": "135",
-			"name": "槐荫区"
-		},
-		{
-			"id": "1226",
-			"city_id": "135",
-			"name": "天桥区"
-		},
-		{
-			"id": "1227",
-			"city_id": "135",
-			"name": "历城区"
-		},
-		{
-			"id": "1228",
-			"city_id": "135",
-			"name": "长清区"
-		},
-		{
-			"id": "1229",
-			"city_id": "135",
-			"name": "平阴县"
-		},
-		{
-			"id": "1230",
-			"city_id": "135",
-			"name": "济阳县"
-		},
-		{
-			"id": "1231",
-			"city_id": "135",
-			"name": "商河县"
-		},
-		{
-			"id": "1232",
-			"city_id": "135",
-			"name": "章丘市"
-		},
-		{
-			"id": "1233",
-			"city_id": "136",
-			"name": "市南区"
-		},
-		{
-			"id": "1234",
-			"city_id": "136",
-			"name": "市北区"
-		},
-		{
-			"id": "1235",
-			"city_id": "136",
-			"name": "四方区"
-		},
-		{
-			"id": "1236",
-			"city_id": "136",
-			"name": "黄岛区"
-		},
-		{
-			"id": "1237",
-			"city_id": "136",
-			"name": "崂山区"
-		},
-		{
-			"id": "1238",
-			"city_id": "136",
-			"name": "李沧区"
-		},
-		{
-			"id": "1239",
-			"city_id": "136",
-			"name": "城阳区"
-		},
-		{
-			"id": "1240",
-			"city_id": "136",
-			"name": "胶州市"
-		},
-		{
-			"id": "1241",
-			"city_id": "136",
-			"name": "即墨市"
-		},
-		{
-			"id": "1242",
-			"city_id": "136",
-			"name": "平度市"
-		},
-		{
-			"id": "1243",
-			"city_id": "136",
-			"name": "胶南市"
-		},
-		{
-			"id": "1244",
-			"city_id": "136",
-			"name": "莱西市"
-		},
-		{
-			"id": "1245",
-			"city_id": "137",
-			"name": "淄川区"
-		},
-		{
-			"id": "1246",
-			"city_id": "137",
-			"name": "张店区"
-		},
-		{
-			"id": "1247",
-			"city_id": "137",
-			"name": "博山区"
-		},
-		{
-			"id": "1248",
-			"city_id": "137",
-			"name": "临淄区"
-		},
-		{
-			"id": "1249",
-			"city_id": "137",
-			"name": "周村区"
-		},
-		{
-			"id": "1250",
-			"city_id": "137",
-			"name": "桓台县"
-		},
-		{
-			"id": "1251",
-			"city_id": "137",
-			"name": "高青县"
-		},
-		{
-			"id": "1252",
-			"city_id": "137",
-			"name": "沂源县"
-		},
-		{
-			"id": "1253",
-			"city_id": "138",
-			"name": "市中区"
-		},
-		{
-			"id": "1254",
-			"city_id": "138",
-			"name": "薛城区"
-		},
-		{
-			"id": "1255",
-			"city_id": "138",
-			"name": "峄城区"
-		},
-		{
-			"id": "1256",
-			"city_id": "138",
-			"name": "台儿庄区"
-		},
-		{
-			"id": "1257",
-			"city_id": "138",
-			"name": "山亭区"
-		},
-		{
-			"id": "1258",
-			"city_id": "138",
-			"name": "滕州市"
-		},
-		{
-			"id": "1259",
-			"city_id": "139",
-			"name": "东营区"
-		},
-		{
-			"id": "1260",
-			"city_id": "139",
-			"name": "河口区"
-		},
-		{
-			"id": "1261",
-			"city_id": "139",
-			"name": "垦利县"
-		},
-		{
-			"id": "1262",
-			"city_id": "139",
-			"name": "利津县"
-		},
-		{
-			"id": "1263",
-			"city_id": "139",
-			"name": "广饶县"
-		},
-		{
-			"id": "1264",
-			"city_id": "140",
-			"name": "芝罘区"
-		},
-		{
-			"id": "1265",
-			"city_id": "140",
-			"name": "福山区"
-		},
-		{
-			"id": "1266",
-			"city_id": "140",
-			"name": "牟平区"
-		},
-		{
-			"id": "1267",
-			"city_id": "140",
-			"name": "莱山区"
-		},
-		{
-			"id": "1268",
-			"city_id": "140",
-			"name": "长岛县"
-		},
-		{
-			"id": "1269",
-			"city_id": "140",
-			"name": "龙口市"
-		},
-		{
-			"id": "1270",
-			"city_id": "140",
-			"name": "莱阳市"
-		},
-		{
-			"id": "1271",
-			"city_id": "140",
-			"name": "莱州市"
-		},
-		{
-			"id": "1272",
-			"city_id": "140",
-			"name": "蓬莱市"
-		},
-		{
-			"id": "1273",
-			"city_id": "140",
-			"name": "招远市"
-		},
-		{
-			"id": "1274",
-			"city_id": "140",
-			"name": "栖霞市"
-		},
-		{
-			"id": "1275",
-			"city_id": "140",
-			"name": "海阳市"
-		},
-		{
-			"id": "1276",
-			"city_id": "141",
-			"name": "潍城区"
-		},
-		{
-			"id": "1277",
-			"city_id": "141",
-			"name": "寒亭区"
-		},
-		{
-			"id": "1278",
-			"city_id": "141",
-			"name": "坊子区"
-		},
-		{
-			"id": "1279",
-			"city_id": "141",
-			"name": "奎文区"
-		},
-		{
-			"id": "1280",
-			"city_id": "141",
-			"name": "临朐县"
-		},
-		{
-			"id": "1281",
-			"city_id": "141",
-			"name": "昌乐县"
-		},
-		{
-			"id": "1282",
-			"city_id": "141",
-			"name": "青州市"
-		},
-		{
-			"id": "1283",
-			"city_id": "141",
-			"name": "诸城市"
-		},
-		{
-			"id": "1284",
-			"city_id": "141",
-			"name": "寿光市"
-		},
-		{
-			"id": "1285",
-			"city_id": "141",
-			"name": "安丘市"
-		},
-		{
-			"id": "1286",
-			"city_id": "141",
-			"name": "高密市"
-		},
-		{
-			"id": "1287",
-			"city_id": "141",
-			"name": "昌邑市"
-		},
-		{
-			"id": "1288",
-			"city_id": "142",
-			"name": "市中区"
-		},
-		{
-			"id": "1289",
-			"city_id": "142",
-			"name": "任城区"
-		},
-		{
-			"id": "1290",
-			"city_id": "142",
-			"name": "微山县"
-		},
-		{
-			"id": "1291",
-			"city_id": "142",
-			"name": "鱼台县"
-		},
-		{
-			"id": "1292",
-			"city_id": "142",
-			"name": "金乡县"
-		},
-		{
-			"id": "1293",
-			"city_id": "142",
-			"name": "嘉祥县"
-		},
-		{
-			"id": "1294",
-			"city_id": "142",
-			"name": "汶上县"
-		},
-		{
-			"id": "1295",
-			"city_id": "142",
-			"name": "泗水县"
-		},
-		{
-			"id": "1296",
-			"city_id": "142",
-			"name": "梁山县"
-		},
-		{
-			"id": "1297",
-			"city_id": "142",
-			"name": "曲阜市"
-		},
-		{
-			"id": "1298",
-			"city_id": "142",
-			"name": "兖州市"
-		},
-		{
-			"id": "1299",
-			"city_id": "142",
-			"name": "邹城市"
-		},
-		{
-			"id": "1300",
-			"city_id": "143",
-			"name": "泰山区"
-		},
-		{
-			"id": "1301",
-			"city_id": "143",
-			"name": "岱岳区"
-		},
-		{
-			"id": "1302",
-			"city_id": "143",
-			"name": "宁阳县"
-		},
-		{
-			"id": "1303",
-			"city_id": "143",
-			"name": "东平县"
-		},
-		{
-			"id": "1304",
-			"city_id": "143",
-			"name": "新泰市"
-		},
-		{
-			"id": "1305",
-			"city_id": "143",
-			"name": "肥城市"
-		},
-		{
-			"id": "1306",
-			"city_id": "144",
-			"name": "环翠区"
-		},
-		{
-			"id": "1307",
-			"city_id": "144",
-			"name": "文登市"
-		},
-		{
-			"id": "1308",
-			"city_id": "144",
-			"name": "荣成市"
-		},
-		{
-			"id": "1309",
-			"city_id": "144",
-			"name": "乳山市"
-		},
-		{
-			"id": "1310",
-			"city_id": "145",
-			"name": "东港区"
-		},
-		{
-			"id": "1311",
-			"city_id": "145",
-			"name": "岚山区"
-		},
-		{
-			"id": "1312",
-			"city_id": "145",
-			"name": "五莲县"
-		},
-		{
-			"id": "1313",
-			"city_id": "145",
-			"name": "莒县"
-		},
-		{
-			"id": "1314",
-			"city_id": "146",
-			"name": "莱城区"
-		},
-		{
-			"id": "1315",
-			"city_id": "146",
-			"name": "钢城区"
-		},
-		{
-			"id": "1316",
-			"city_id": "147",
-			"name": "兰山区"
-		},
-		{
-			"id": "1317",
-			"city_id": "147",
-			"name": "罗庄区"
-		},
-		{
-			"id": "1318",
-			"city_id": "147",
-			"name": "河东区"
-		},
-		{
-			"id": "1319",
-			"city_id": "147",
-			"name": "沂南县"
-		},
-		{
-			"id": "1320",
-			"city_id": "147",
-			"name": "郯城县"
-		},
-		{
-			"id": "1321",
-			"city_id": "147",
-			"name": "沂水县"
-		},
-		{
-			"id": "1322",
-			"city_id": "147",
-			"name": "苍山县"
-		},
-		{
-			"id": "1323",
-			"city_id": "147",
-			"name": "费县"
-		},
-		{
-			"id": "1324",
-			"city_id": "147",
-			"name": "平邑县"
-		},
-		{
-			"id": "1325",
-			"city_id": "147",
-			"name": "莒南县"
-		},
-		{
-			"id": "1326",
-			"city_id": "147",
-			"name": "蒙阴县"
-		},
-		{
-			"id": "1327",
-			"city_id": "147",
-			"name": "临沭县"
-		},
-		{
-			"id": "1328",
-			"city_id": "148",
-			"name": "德城区"
-		},
-		{
-			"id": "1329",
-			"city_id": "148",
-			"name": "陵县"
-		},
-		{
-			"id": "1330",
-			"city_id": "148",
-			"name": "宁津县"
-		},
-		{
-			"id": "1331",
-			"city_id": "148",
-			"name": "庆云县"
-		},
-		{
-			"id": "1332",
-			"city_id": "148",
-			"name": "临邑县"
-		},
-		{
-			"id": "1333",
-			"city_id": "148",
-			"name": "齐河县"
-		},
-		{
-			"id": "1334",
-			"city_id": "148",
-			"name": "平原县"
-		},
-		{
-			"id": "1335",
-			"city_id": "148",
-			"name": "夏津县"
-		},
-		{
-			"id": "1336",
-			"city_id": "148",
-			"name": "武城县"
-		},
-		{
-			"id": "1337",
-			"city_id": "148",
-			"name": "乐陵市"
-		},
-		{
-			"id": "1338",
-			"city_id": "148",
-			"name": "禹城市"
-		},
-		{
-			"id": "1339",
-			"city_id": "149",
-			"name": "东昌府区"
-		},
-		{
-			"id": "1340",
-			"city_id": "149",
-			"name": "阳谷县"
-		},
-		{
-			"id": "1341",
-			"city_id": "149",
-			"name": "莘县"
-		},
-		{
-			"id": "1342",
-			"city_id": "149",
-			"name": "茌平县"
-		},
-		{
-			"id": "1343",
-			"city_id": "149",
-			"name": "东阿县"
-		},
-		{
-			"id": "1344",
-			"city_id": "149",
-			"name": "冠县"
-		},
-		{
-			"id": "1345",
-			"city_id": "149",
-			"name": "高唐县"
-		},
-		{
-			"id": "1346",
-			"city_id": "149",
-			"name": "临清市"
-		},
-		{
-			"id": "1347",
-			"city_id": "150",
-			"name": "滨城区"
-		},
-		{
-			"id": "1348",
-			"city_id": "150",
-			"name": "惠民县"
-		},
-		{
-			"id": "1349",
-			"city_id": "150",
-			"name": "阳信县"
-		},
-		{
-			"id": "1350",
-			"city_id": "150",
-			"name": "无棣县"
-		},
-		{
-			"id": "1351",
-			"city_id": "150",
-			"name": "沾化县"
-		},
-		{
-			"id": "1352",
-			"city_id": "150",
-			"name": "博兴县"
-		},
-		{
-			"id": "1353",
-			"city_id": "150",
-			"name": "邹平县"
-		},
-		{
-			"id": "1354",
-			"city_id": "151",
-			"name": "牡丹区"
-		},
-		{
-			"id": "1355",
-			"city_id": "151",
-			"name": "曹县"
-		},
-		{
-			"id": "1356",
-			"city_id": "151",
-			"name": "单县"
-		},
-		{
-			"id": "1357",
-			"city_id": "151",
-			"name": "成武县"
-		},
-		{
-			"id": "1358",
-			"city_id": "151",
-			"name": "巨野县"
-		},
-		{
-			"id": "1359",
-			"city_id": "151",
-			"name": "郓城县"
-		},
-		{
-			"id": "1360",
-			"city_id": "151",
-			"name": "鄄城县"
-		},
-		{
-			"id": "1361",
-			"city_id": "151",
-			"name": "定陶县"
-		},
-		{
-			"id": "1362",
-			"city_id": "151",
-			"name": "东明县"
-		},
-		{
-			"id": "1363",
-			"city_id": "152",
-			"name": "中原区"
-		},
-		{
-			"id": "1364",
-			"city_id": "152",
-			"name": "二七区"
-		},
-		{
-			"id": "1365",
-			"city_id": "152",
-			"name": "管城回族区"
-		},
-		{
-			"id": "1366",
-			"city_id": "152",
-			"name": "金水区"
-		},
-		{
-			"id": "1367",
-			"city_id": "152",
-			"name": "上街区"
-		},
-		{
-			"id": "1368",
-			"city_id": "152",
-			"name": "惠济区"
-		},
-		{
-			"id": "1369",
-			"city_id": "152",
-			"name": "中牟县"
-		},
-		{
-			"id": "1370",
-			"city_id": "152",
-			"name": "巩义市"
-		},
-		{
-			"id": "1371",
-			"city_id": "152",
-			"name": "荥阳市"
-		},
-		{
-			"id": "1372",
-			"city_id": "152",
-			"name": "新密市"
-		},
-		{
-			"id": "1373",
-			"city_id": "152",
-			"name": "新郑市"
-		},
-		{
-			"id": "1374",
-			"city_id": "152",
-			"name": "登封市"
-		},
-		{
-			"id": "1375",
-			"city_id": "153",
-			"name": "龙亭区"
-		},
-		{
-			"id": "1376",
-			"city_id": "153",
-			"name": "顺河回族区"
-		},
-		{
-			"id": "1377",
-			"city_id": "153",
-			"name": "鼓楼区"
-		},
-		{
-			"id": "1378",
-			"city_id": "153",
-			"name": "南关区"
-		},
-		{
-			"id": "1379",
-			"city_id": "153",
-			"name": "郊区"
-		},
-		{
-			"id": "1380",
-			"city_id": "153",
-			"name": "杞县"
-		},
-		{
-			"id": "1381",
-			"city_id": "153",
-			"name": "通许县"
-		},
-		{
-			"id": "1382",
-			"city_id": "153",
-			"name": "尉氏县"
-		},
-		{
-			"id": "1383",
-			"city_id": "153",
-			"name": "开封县"
-		},
-		{
-			"id": "1384",
-			"city_id": "153",
-			"name": "兰考县"
-		},
-		{
-			"id": "1385",
-			"city_id": "154",
-			"name": "老城区"
-		},
-		{
-			"id": "1386",
-			"city_id": "154",
-			"name": "西工区"
-		},
-		{
-			"id": "1387",
-			"city_id": "154",
-			"name": "廛河回族区"
-		},
-		{
-			"id": "1388",
-			"city_id": "154",
-			"name": "涧西区"
-		},
-		{
-			"id": "1389",
-			"city_id": "154",
-			"name": "吉利区"
-		},
-		{
-			"id": "1390",
-			"city_id": "154",
-			"name": "洛龙区"
-		},
-		{
-			"id": "1391",
-			"city_id": "154",
-			"name": "孟津县"
-		},
-		{
-			"id": "1392",
-			"city_id": "154",
-			"name": "新安县"
-		},
-		{
-			"id": "1393",
-			"city_id": "154",
-			"name": "栾川县"
-		},
-		{
-			"id": "1394",
-			"city_id": "154",
-			"name": "嵩县"
-		},
-		{
-			"id": "1395",
-			"city_id": "154",
-			"name": "汝阳县"
-		},
-		{
-			"id": "1396",
-			"city_id": "154",
-			"name": "宜阳县"
-		},
-		{
-			"id": "1397",
-			"city_id": "154",
-			"name": "洛宁县"
-		},
-		{
-			"id": "1398",
-			"city_id": "154",
-			"name": "伊川县"
-		},
-		{
-			"id": "1399",
-			"city_id": "154",
-			"name": "偃师市"
-		},
-		{
-			"id": "1400",
-			"city_id": "155",
-			"name": "新华区"
-		},
-		{
-			"id": "1401",
-			"city_id": "155",
-			"name": "卫东区"
-		},
-		{
-			"id": "1402",
-			"city_id": "155",
-			"name": "石龙区"
-		},
-		{
-			"id": "1403",
-			"city_id": "155",
-			"name": "湛河区"
-		},
-		{
-			"id": "1404",
-			"city_id": "155",
-			"name": "宝丰县"
-		},
-		{
-			"id": "1405",
-			"city_id": "155",
-			"name": "叶县"
-		},
-		{
-			"id": "1406",
-			"city_id": "155",
-			"name": "鲁山县"
-		},
-		{
-			"id": "1407",
-			"city_id": "155",
-			"name": "郏县"
-		},
-		{
-			"id": "1408",
-			"city_id": "155",
-			"name": "舞钢市"
-		},
-		{
-			"id": "1409",
-			"city_id": "155",
-			"name": "汝州市"
-		},
-		{
-			"id": "1410",
-			"city_id": "156",
-			"name": "文峰区"
-		},
-		{
-			"id": "1411",
-			"city_id": "156",
-			"name": "北关区"
-		},
-		{
-			"id": "1412",
-			"city_id": "156",
-			"name": "殷都区"
-		},
-		{
-			"id": "1413",
-			"city_id": "156",
-			"name": "龙安区"
-		},
-		{
-			"id": "1414",
-			"city_id": "156",
-			"name": "安阳县"
-		},
-		{
-			"id": "1415",
-			"city_id": "156",
-			"name": "汤阴县"
-		},
-		{
-			"id": "1416",
-			"city_id": "156",
-			"name": "滑县"
-		},
-		{
-			"id": "1417",
-			"city_id": "156",
-			"name": "内黄县"
-		},
-		{
-			"id": "1418",
-			"city_id": "156",
-			"name": "林州市"
-		},
-		{
-			"id": "1419",
-			"city_id": "157",
-			"name": "鹤山区"
-		},
-		{
-			"id": "1420",
-			"city_id": "157",
-			"name": "山城区"
-		},
-		{
-			"id": "1421",
-			"city_id": "157",
-			"name": "淇滨区"
-		},
-		{
-			"id": "1422",
-			"city_id": "157",
-			"name": "浚县"
-		},
-		{
-			"id": "1423",
-			"city_id": "157",
-			"name": "淇县"
-		},
-		{
-			"id": "1424",
-			"city_id": "158",
-			"name": "红旗区"
-		},
-		{
-			"id": "1425",
-			"city_id": "158",
-			"name": "卫滨区"
-		},
-		{
-			"id": "1426",
-			"city_id": "158",
-			"name": "凤泉区"
-		},
-		{
-			"id": "1427",
-			"city_id": "158",
-			"name": "牧野区"
-		},
-		{
-			"id": "1428",
-			"city_id": "158",
-			"name": "新乡县"
-		},
-		{
-			"id": "1429",
-			"city_id": "158",
-			"name": "获嘉县"
-		},
-		{
-			"id": "1430",
-			"city_id": "158",
-			"name": "原阳县"
-		},
-		{
-			"id": "1431",
-			"city_id": "158",
-			"name": "延津县"
-		},
-		{
-			"id": "1432",
-			"city_id": "158",
-			"name": "封丘县"
-		},
-		{
-			"id": "1433",
-			"city_id": "158",
-			"name": "长垣县"
-		},
-		{
-			"id": "1434",
-			"city_id": "158",
-			"name": "卫辉市"
-		},
-		{
-			"id": "1435",
-			"city_id": "158",
-			"name": "辉县市"
-		},
-		{
-			"id": "1436",
-			"city_id": "159",
-			"name": "解放区"
-		},
-		{
-			"id": "1437",
-			"city_id": "159",
-			"name": "中站区"
-		},
-		{
-			"id": "1438",
-			"city_id": "159",
-			"name": "马村区"
-		},
-		{
-			"id": "1439",
-			"city_id": "159",
-			"name": "山阳区"
-		},
-		{
-			"id": "1440",
-			"city_id": "159",
-			"name": "修武县"
-		},
-		{
-			"id": "1441",
-			"city_id": "159",
-			"name": "博爱县"
-		},
-		{
-			"id": "1442",
-			"city_id": "159",
-			"name": "武陟县"
-		},
-		{
-			"id": "1443",
-			"city_id": "159",
-			"name": "温县"
-		},
-		{
-			"id": "1444",
-			"city_id": "159",
-			"name": "济源市"
-		},
-		{
-			"id": "1445",
-			"city_id": "159",
-			"name": "沁阳市"
-		},
-		{
-			"id": "1446",
-			"city_id": "159",
-			"name": "孟州市"
-		},
-		{
-			"id": "1447",
-			"city_id": "160",
-			"name": "华龙区"
-		},
-		{
-			"id": "1448",
-			"city_id": "160",
-			"name": "清丰县"
-		},
-		{
-			"id": "1449",
-			"city_id": "160",
-			"name": "南乐县"
-		},
-		{
-			"id": "1450",
-			"city_id": "160",
-			"name": "范县"
-		},
-		{
-			"id": "1451",
-			"city_id": "160",
-			"name": "台前县"
-		},
-		{
-			"id": "1452",
-			"city_id": "160",
-			"name": "濮阳县"
-		},
-		{
-			"id": "1453",
-			"city_id": "161",
-			"name": "魏都区"
-		},
-		{
-			"id": "1454",
-			"city_id": "161",
-			"name": "许昌县"
-		},
-		{
-			"id": "1455",
-			"city_id": "161",
-			"name": "鄢陵县"
-		},
-		{
-			"id": "1456",
-			"city_id": "161",
-			"name": "襄城县"
-		},
-		{
-			"id": "1457",
-			"city_id": "161",
-			"name": "禹州市"
-		},
-		{
-			"id": "1458",
-			"city_id": "161",
-			"name": "长葛市"
-		},
-		{
-			"id": "1459",
-			"city_id": "162",
-			"name": "源汇区"
-		},
-		{
-			"id": "1460",
-			"city_id": "162",
-			"name": "郾城区"
-		},
-		{
-			"id": "1461",
-			"city_id": "162",
-			"name": "召陵区"
-		},
-		{
-			"id": "1462",
-			"city_id": "162",
-			"name": "舞阳县"
-		},
-		{
-			"id": "1463",
-			"city_id": "162",
-			"name": "临颍县"
-		},
-		{
-			"id": "1464",
-			"city_id": "163",
-			"name": "市辖区"
-		},
-		{
-			"id": "1465",
-			"city_id": "163",
-			"name": "湖滨区"
-		},
-		{
-			"id": "1466",
-			"city_id": "163",
-			"name": "渑池县"
-		},
-		{
-			"id": "1467",
-			"city_id": "163",
-			"name": "陕县"
-		},
-		{
-			"id": "1468",
-			"city_id": "163",
-			"name": "卢氏县"
-		},
-		{
-			"id": "1469",
-			"city_id": "163",
-			"name": "义马市"
-		},
-		{
-			"id": "1470",
-			"city_id": "163",
-			"name": "灵宝市"
-		},
-		{
-			"id": "1471",
-			"city_id": "164",
-			"name": "宛城区"
-		},
-		{
-			"id": "1472",
-			"city_id": "164",
-			"name": "卧龙区"
-		},
-		{
-			"id": "1473",
-			"city_id": "164",
-			"name": "南召县"
-		},
-		{
-			"id": "1474",
-			"city_id": "164",
-			"name": "方城县"
-		},
-		{
-			"id": "1475",
-			"city_id": "164",
-			"name": "西峡县"
-		},
-		{
-			"id": "1476",
-			"city_id": "164",
-			"name": "镇平县"
-		},
-		{
-			"id": "1477",
-			"city_id": "164",
-			"name": "内乡县"
-		},
-		{
-			"id": "1478",
-			"city_id": "164",
-			"name": "淅川县"
-		},
-		{
-			"id": "1479",
-			"city_id": "164",
-			"name": "社旗县"
-		},
-		{
-			"id": "1480",
-			"city_id": "164",
-			"name": "唐河县"
-		},
-		{
-			"id": "1481",
-			"city_id": "164",
-			"name": "新野县"
-		},
-		{
-			"id": "1482",
-			"city_id": "164",
-			"name": "桐柏县"
-		},
-		{
-			"id": "1483",
-			"city_id": "164",
-			"name": "邓州市"
-		},
-		{
-			"id": "1484",
-			"city_id": "165",
-			"name": "梁园区"
-		},
-		{
-			"id": "1485",
-			"city_id": "165",
-			"name": "睢阳区"
-		},
-		{
-			"id": "1486",
-			"city_id": "165",
-			"name": "民权县"
-		},
-		{
-			"id": "1487",
-			"city_id": "165",
-			"name": "睢县"
-		},
-		{
-			"id": "1488",
-			"city_id": "165",
-			"name": "宁陵县"
-		},
-		{
-			"id": "1489",
-			"city_id": "165",
-			"name": "柘城县"
-		},
-		{
-			"id": "1490",
-			"city_id": "165",
-			"name": "虞城县"
-		},
-		{
-			"id": "1491",
-			"city_id": "165",
-			"name": "夏邑县"
-		},
-		{
-			"id": "1492",
-			"city_id": "165",
-			"name": "永城市"
-		},
-		{
-			"id": "1493",
-			"city_id": "166",
-			"name": "浉河区"
-		},
-		{
-			"id": "1494",
-			"city_id": "166",
-			"name": "平桥区"
-		},
-		{
-			"id": "1495",
-			"city_id": "166",
-			"name": "罗山县"
-		},
-		{
-			"id": "1496",
-			"city_id": "166",
-			"name": "光山县"
-		},
-		{
-			"id": "1497",
-			"city_id": "166",
-			"name": "新县"
-		},
-		{
-			"id": "1498",
-			"city_id": "166",
-			"name": "商城县"
-		},
-		{
-			"id": "1499",
-			"city_id": "166",
-			"name": "固始县"
-		},
-		{
-			"id": "1500",
-			"city_id": "166",
-			"name": "潢川县"
-		},
-		{
-			"id": "1501",
-			"city_id": "166",
-			"name": "淮滨县"
-		},
-		{
-			"id": "1502",
-			"city_id": "166",
-			"name": "息县"
-		},
-		{
-			"id": "1503",
-			"city_id": "167",
-			"name": "川汇区"
-		},
-		{
-			"id": "1504",
-			"city_id": "167",
-			"name": "扶沟县"
-		},
-		{
-			"id": "1505",
-			"city_id": "167",
-			"name": "西华县"
-		},
-		{
-			"id": "1506",
-			"city_id": "167",
-			"name": "商水县"
-		},
-		{
-			"id": "1507",
-			"city_id": "167",
-			"name": "沈丘县"
-		},
-		{
-			"id": "1508",
-			"city_id": "167",
-			"name": "郸城县"
-		},
-		{
-			"id": "1509",
-			"city_id": "167",
-			"name": "淮阳县"
-		},
-		{
-			"id": "1510",
-			"city_id": "167",
-			"name": "太康县"
-		},
-		{
-			"id": "1511",
-			"city_id": "167",
-			"name": "鹿邑县"
-		},
-		{
-			"id": "1512",
-			"city_id": "167",
-			"name": "项城市"
-		},
-		{
-			"id": "1513",
-			"city_id": "168",
-			"name": "驿城区"
-		},
-		{
-			"id": "1514",
-			"city_id": "168",
-			"name": "西平县"
-		},
-		{
-			"id": "1515",
-			"city_id": "168",
-			"name": "上蔡县"
-		},
-		{
-			"id": "1516",
-			"city_id": "168",
-			"name": "平舆县"
-		},
-		{
-			"id": "1517",
-			"city_id": "168",
-			"name": "正阳县"
-		},
-		{
-			"id": "1518",
-			"city_id": "168",
-			"name": "确山县"
-		},
-		{
-			"id": "1519",
-			"city_id": "168",
-			"name": "泌阳县"
-		},
-		{
-			"id": "1520",
-			"city_id": "168",
-			"name": "汝南县"
-		},
-		{
-			"id": "1521",
-			"city_id": "168",
-			"name": "遂平县"
-		},
-		{
-			"id": "1522",
-			"city_id": "168",
-			"name": "新蔡县"
-		},
-		{
-			"id": "1523",
-			"city_id": "169",
-			"name": "江岸区"
-		},
-		{
-			"id": "1524",
-			"city_id": "169",
-			"name": "江汉区"
-		},
-		{
-			"id": "1525",
-			"city_id": "169",
-			"name": "硚口区"
-		},
-		{
-			"id": "1526",
-			"city_id": "169",
-			"name": "汉阳区"
-		},
-		{
-			"id": "1527",
-			"city_id": "169",
-			"name": "武昌区"
-		},
-		{
-			"id": "1528",
-			"city_id": "169",
-			"name": "青山区"
-		},
-		{
-			"id": "1529",
-			"city_id": "169",
-			"name": "洪山区"
-		},
-		{
-			"id": "1530",
-			"city_id": "169",
-			"name": "东西湖区"
-		},
-		{
-			"id": "1531",
-			"city_id": "169",
-			"name": "汉南区"
-		},
-		{
-			"id": "1532",
-			"city_id": "169",
-			"name": "蔡甸区"
-		},
-		{
-			"id": "1533",
-			"city_id": "169",
-			"name": "江夏区"
-		},
-		{
-			"id": "1534",
-			"city_id": "169",
-			"name": "黄陂区"
-		},
-		{
-			"id": "1535",
-			"city_id": "169",
-			"name": "新洲区"
-		},
-		{
-			"id": "1536",
-			"city_id": "170",
-			"name": "黄石港区"
-		},
-		{
-			"id": "1537",
-			"city_id": "170",
-			"name": "西塞山区"
-		},
-		{
-			"id": "1538",
-			"city_id": "170",
-			"name": "下陆区"
-		},
-		{
-			"id": "1539",
-			"city_id": "170",
-			"name": "铁山区"
-		},
-		{
-			"id": "1540",
-			"city_id": "170",
-			"name": "阳新县"
-		},
-		{
-			"id": "1541",
-			"city_id": "170",
-			"name": "大冶市"
-		},
-		{
-			"id": "1542",
-			"city_id": "171",
-			"name": "茅箭区"
-		},
-		{
-			"id": "1543",
-			"city_id": "171",
-			"name": "张湾区"
-		},
-		{
-			"id": "1544",
-			"city_id": "171",
-			"name": "郧县"
-		},
-		{
-			"id": "1545",
-			"city_id": "171",
-			"name": "郧西县"
-		},
-		{
-			"id": "1546",
-			"city_id": "171",
-			"name": "竹山县"
-		},
-		{
-			"id": "1547",
-			"city_id": "171",
-			"name": "竹溪县"
-		},
-		{
-			"id": "1548",
-			"city_id": "171",
-			"name": "房县"
-		},
-		{
-			"id": "1549",
-			"city_id": "171",
-			"name": "丹江口市"
-		},
-		{
-			"id": "1550",
-			"city_id": "172",
-			"name": "西陵区"
-		},
-		{
-			"id": "1551",
-			"city_id": "172",
-			"name": "伍家岗区"
-		},
-		{
-			"id": "1552",
-			"city_id": "172",
-			"name": "点军区"
-		},
-		{
-			"id": "1553",
-			"city_id": "172",
-			"name": "猇亭区"
-		},
-		{
-			"id": "1554",
-			"city_id": "172",
-			"name": "夷陵区"
-		},
-		{
-			"id": "1555",
-			"city_id": "172",
-			"name": "远安县"
-		},
-		{
-			"id": "1556",
-			"city_id": "172",
-			"name": "兴山县"
-		},
-		{
-			"id": "1557",
-			"city_id": "172",
-			"name": "秭归县"
-		},
-		{
-			"id": "1558",
-			"city_id": "172",
-			"name": "长阳土家族自治县"
-		},
-		{
-			"id": "1559",
-			"city_id": "172",
-			"name": "五峰土家族自治县"
-		},
-		{
-			"id": "1560",
-			"city_id": "172",
-			"name": "宜都市"
-		},
-		{
-			"id": "1561",
-			"city_id": "172",
-			"name": "当阳市"
-		},
-		{
-			"id": "1562",
-			"city_id": "172",
-			"name": "枝江市"
-		},
-		{
-			"id": "1563",
-			"city_id": "173",
-			"name": "襄城区"
-		},
-		{
-			"id": "1564",
-			"city_id": "173",
-			"name": "樊城区"
-		},
-		{
-			"id": "1565",
-			"city_id": "173",
-			"name": "襄阳区"
-		},
-		{
-			"id": "1566",
-			"city_id": "173",
-			"name": "南漳县"
-		},
-		{
-			"id": "1567",
-			"city_id": "173",
-			"name": "谷城县"
-		},
-		{
-			"id": "1568",
-			"city_id": "173",
-			"name": "保康县"
-		},
-		{
-			"id": "1569",
-			"city_id": "173",
-			"name": "老河口市"
-		},
-		{
-			"id": "1570",
-			"city_id": "173",
-			"name": "枣阳市"
-		},
-		{
-			"id": "1571",
-			"city_id": "173",
-			"name": "宜城市"
-		},
-		{
-			"id": "1572",
-			"city_id": "174",
-			"name": "梁子湖区"
-		},
-		{
-			"id": "1573",
-			"city_id": "174",
-			"name": "华容区"
-		},
-		{
-			"id": "1574",
-			"city_id": "174",
-			"name": "鄂城区"
-		},
-		{
-			"id": "1575",
-			"city_id": "175",
-			"name": "东宝区"
-		},
-		{
-			"id": "1576",
-			"city_id": "175",
-			"name": "掇刀区"
-		},
-		{
-			"id": "1577",
-			"city_id": "175",
-			"name": "京山县"
-		},
-		{
-			"id": "1578",
-			"city_id": "175",
-			"name": "沙洋县"
-		},
-		{
-			"id": "1579",
-			"city_id": "175",
-			"name": "钟祥市"
-		},
-		{
-			"id": "1580",
-			"city_id": "176",
-			"name": "孝南区"
-		},
-		{
-			"id": "1581",
-			"city_id": "176",
-			"name": "孝昌县"
-		},
-		{
-			"id": "1582",
-			"city_id": "176",
-			"name": "大悟县"
-		},
-		{
-			"id": "1583",
-			"city_id": "176",
-			"name": "云梦县"
-		},
-		{
-			"id": "1584",
-			"city_id": "176",
-			"name": "应城市"
-		},
-		{
-			"id": "1585",
-			"city_id": "176",
-			"name": "安陆市"
-		},
-		{
-			"id": "1586",
-			"city_id": "176",
-			"name": "汉川市"
-		},
-		{
-			"id": "1587",
-			"city_id": "177",
-			"name": "沙市区"
-		},
-		{
-			"id": "1588",
-			"city_id": "177",
-			"name": "荆州区"
-		},
-		{
-			"id": "1589",
-			"city_id": "177",
-			"name": "公安县"
-		},
-		{
-			"id": "1590",
-			"city_id": "177",
-			"name": "监利县"
-		},
-		{
-			"id": "1591",
-			"city_id": "177",
-			"name": "江陵县"
-		},
-		{
-			"id": "1592",
-			"city_id": "177",
-			"name": "石首市"
-		},
-		{
-			"id": "1593",
-			"city_id": "177",
-			"name": "洪湖市"
-		},
-		{
-			"id": "1594",
-			"city_id": "177",
-			"name": "松滋市"
-		},
-		{
-			"id": "1595",
-			"city_id": "178",
-			"name": "黄州区"
-		},
-		{
-			"id": "1596",
-			"city_id": "178",
-			"name": "团风县"
-		},
-		{
-			"id": "1597",
-			"city_id": "178",
-			"name": "红安县"
-		},
-		{
-			"id": "1598",
-			"city_id": "178",
-			"name": "罗田县"
-		},
-		{
-			"id": "1599",
-			"city_id": "178",
-			"name": "英山县"
-		},
-		{
-			"id": "1600",
-			"city_id": "178",
-			"name": "浠水县"
-		},
-		{
-			"id": "1601",
-			"city_id": "178",
-			"name": "蕲春县"
-		},
-		{
-			"id": "1602",
-			"city_id": "178",
-			"name": "黄梅县"
-		},
-		{
-			"id": "1603",
-			"city_id": "178",
-			"name": "麻城市"
-		},
-		{
-			"id": "1604",
-			"city_id": "178",
-			"name": "武穴市"
-		},
-		{
-			"id": "1605",
-			"city_id": "179",
-			"name": "咸安区"
-		},
-		{
-			"id": "1606",
-			"city_id": "179",
-			"name": "嘉鱼县"
-		},
-		{
-			"id": "1607",
-			"city_id": "179",
-			"name": "通城县"
-		},
-		{
-			"id": "1608",
-			"city_id": "179",
-			"name": "崇阳县"
-		},
-		{
-			"id": "1609",
-			"city_id": "179",
-			"name": "通山县"
-		},
-		{
-			"id": "1610",
-			"city_id": "179",
-			"name": "赤壁市"
-		},
-		{
-			"id": "1611",
-			"city_id": "180",
-			"name": "曾都区"
-		},
-		{
-			"id": "1612",
-			"city_id": "180",
-			"name": "广水市"
-		},
-		{
-			"id": "1613",
-			"city_id": "181",
-			"name": "恩施市"
-		},
-		{
-			"id": "1614",
-			"city_id": "181",
-			"name": "利川市"
-		},
-		{
-			"id": "1615",
-			"city_id": "181",
-			"name": "建始县"
-		},
-		{
-			"id": "1616",
-			"city_id": "181",
-			"name": "巴东县"
-		},
-		{
-			"id": "1617",
-			"city_id": "181",
-			"name": "宣恩县"
-		},
-		{
-			"id": "1618",
-			"city_id": "181",
-			"name": "咸丰县"
-		},
-		{
-			"id": "1619",
-			"city_id": "181",
-			"name": "来凤县"
-		},
-		{
-			"id": "1620",
-			"city_id": "181",
-			"name": "鹤峰县"
-		},
-		{
-			"id": "1621",
-			"city_id": "182",
-			"name": "仙桃市"
-		},
-		{
-			"id": "1622",
-			"city_id": "182",
-			"name": "潜江市"
-		},
-		{
-			"id": "1623",
-			"city_id": "182",
-			"name": "天门市"
-		},
-		{
-			"id": "1624",
-			"city_id": "182",
-			"name": "神农架林区"
-		},
-		{
-			"id": "1625",
-			"city_id": "183",
-			"name": "芙蓉区"
-		},
-		{
-			"id": "1626",
-			"city_id": "183",
-			"name": "天心区"
-		},
-		{
-			"id": "1627",
-			"city_id": "183",
-			"name": "岳麓区"
-		},
-		{
-			"id": "1628",
-			"city_id": "183",
-			"name": "开福区"
-		},
-		{
-			"id": "1629",
-			"city_id": "183",
-			"name": "雨花区"
-		},
-		{
-			"id": "1630",
-			"city_id": "183",
-			"name": "长沙县"
-		},
-		{
-			"id": "1631",
-			"city_id": "183",
-			"name": "望城县"
-		},
-		{
-			"id": "1632",
-			"city_id": "183",
-			"name": "宁乡县"
-		},
-		{
-			"id": "1633",
-			"city_id": "183",
-			"name": "浏阳市"
-		},
-		{
-			"id": "1634",
-			"city_id": "184",
-			"name": "荷塘区"
-		},
-		{
-			"id": "1635",
-			"city_id": "184",
-			"name": "芦淞区"
-		},
-		{
-			"id": "1636",
-			"city_id": "184",
-			"name": "石峰区"
-		},
-		{
-			"id": "1637",
-			"city_id": "184",
-			"name": "天元区"
-		},
-		{
-			"id": "1638",
-			"city_id": "184",
-			"name": "株洲县"
-		},
-		{
-			"id": "1639",
-			"city_id": "184",
-			"name": "攸县"
-		},
-		{
-			"id": "1640",
-			"city_id": "184",
-			"name": "茶陵县"
-		},
-		{
-			"id": "1641",
-			"city_id": "184",
-			"name": "炎陵县"
-		},
-		{
-			"id": "1642",
-			"city_id": "184",
-			"name": "醴陵市"
-		},
-		{
-			"id": "1643",
-			"city_id": "185",
-			"name": "雨湖区"
-		},
-		{
-			"id": "1644",
-			"city_id": "185",
-			"name": "岳塘区"
-		},
-		{
-			"id": "1645",
-			"city_id": "185",
-			"name": "湘潭县"
-		},
-		{
-			"id": "1646",
-			"city_id": "185",
-			"name": "湘乡市"
-		},
-		{
-			"id": "1647",
-			"city_id": "185",
-			"name": "韶山市"
-		},
-		{
-			"id": "1648",
-			"city_id": "186",
-			"name": "珠晖区"
-		},
-		{
-			"id": "1649",
-			"city_id": "186",
-			"name": "雁峰区"
-		},
-		{
-			"id": "1650",
-			"city_id": "186",
-			"name": "石鼓区"
-		},
-		{
-			"id": "1651",
-			"city_id": "186",
-			"name": "蒸湘区"
-		},
-		{
-			"id": "1652",
-			"city_id": "186",
-			"name": "南岳区"
-		},
-		{
-			"id": "1653",
-			"city_id": "186",
-			"name": "衡阳县"
-		},
-		{
-			"id": "1654",
-			"city_id": "186",
-			"name": "衡南县"
-		},
-		{
-			"id": "1655",
-			"city_id": "186",
-			"name": "衡山县"
-		},
-		{
-			"id": "1656",
-			"city_id": "186",
-			"name": "衡东县"
-		},
-		{
-			"id": "1657",
-			"city_id": "186",
-			"name": "祁东县"
-		},
-		{
-			"id": "1658",
-			"city_id": "186",
-			"name": "耒阳市"
-		},
-		{
-			"id": "1659",
-			"city_id": "186",
-			"name": "常宁市"
-		},
-		{
-			"id": "1660",
-			"city_id": "187",
-			"name": "双清区"
-		},
-		{
-			"id": "1661",
-			"city_id": "187",
-			"name": "大祥区"
-		},
-		{
-			"id": "1662",
-			"city_id": "187",
-			"name": "北塔区"
-		},
-		{
-			"id": "1663",
-			"city_id": "187",
-			"name": "邵东县"
-		},
-		{
-			"id": "1664",
-			"city_id": "187",
-			"name": "新邵县"
-		},
-		{
-			"id": "1665",
-			"city_id": "187",
-			"name": "邵阳县"
-		},
-		{
-			"id": "1666",
-			"city_id": "187",
-			"name": "隆回县"
-		},
-		{
-			"id": "1667",
-			"city_id": "187",
-			"name": "洞口县"
-		},
-		{
-			"id": "1668",
-			"city_id": "187",
-			"name": "绥宁县"
-		},
-		{
-			"id": "1669",
-			"city_id": "187",
-			"name": "新宁县"
-		},
-		{
-			"id": "1670",
-			"city_id": "187",
-			"name": "城步苗族自治县"
-		},
-		{
-			"id": "1671",
-			"city_id": "187",
-			"name": "武冈市"
-		},
-		{
-			"id": "1672",
-			"city_id": "188",
-			"name": "岳阳楼区"
-		},
-		{
-			"id": "1673",
-			"city_id": "188",
-			"name": "云溪区"
-		},
-		{
-			"id": "1674",
-			"city_id": "188",
-			"name": "君山区"
-		},
-		{
-			"id": "1675",
-			"city_id": "188",
-			"name": "岳阳县"
-		},
-		{
-			"id": "1676",
-			"city_id": "188",
-			"name": "华容县"
-		},
-		{
-			"id": "1677",
-			"city_id": "188",
-			"name": "湘阴县"
-		},
-		{
-			"id": "1678",
-			"city_id": "188",
-			"name": "平江县"
-		},
-		{
-			"id": "1679",
-			"city_id": "188",
-			"name": "汨罗市"
-		},
-		{
-			"id": "1680",
-			"city_id": "188",
-			"name": "临湘市"
-		},
-		{
-			"id": "1681",
-			"city_id": "189",
-			"name": "武陵区"
-		},
-		{
-			"id": "1682",
-			"city_id": "189",
-			"name": "鼎城区"
-		},
-		{
-			"id": "1683",
-			"city_id": "189",
-			"name": "安乡县"
-		},
-		{
-			"id": "1684",
-			"city_id": "189",
-			"name": "汉寿县"
-		},
-		{
-			"id": "1685",
-			"city_id": "189",
-			"name": "澧县"
-		},
-		{
-			"id": "1686",
-			"city_id": "189",
-			"name": "临澧县"
-		},
-		{
-			"id": "1687",
-			"city_id": "189",
-			"name": "桃源县"
-		},
-		{
-			"id": "1688",
-			"city_id": "189",
-			"name": "石门县"
-		},
-		{
-			"id": "1689",
-			"city_id": "189",
-			"name": "津市市"
-		},
-		{
-			"id": "1690",
-			"city_id": "190",
-			"name": "永定区"
-		},
-		{
-			"id": "1691",
-			"city_id": "190",
-			"name": "武陵源区"
-		},
-		{
-			"id": "1692",
-			"city_id": "190",
-			"name": "慈利县"
-		},
-		{
-			"id": "1693",
-			"city_id": "190",
-			"name": "桑植县"
-		},
-		{
-			"id": "1694",
-			"city_id": "191",
-			"name": "资阳区"
-		},
-		{
-			"id": "1695",
-			"city_id": "191",
-			"name": "赫山区"
-		},
-		{
-			"id": "1696",
-			"city_id": "191",
-			"name": "南县"
-		},
-		{
-			"id": "1697",
-			"city_id": "191",
-			"name": "桃江县"
-		},
-		{
-			"id": "1698",
-			"city_id": "191",
-			"name": "安化县"
-		},
-		{
-			"id": "1699",
-			"city_id": "191",
-			"name": "沅江市"
-		},
-		{
-			"id": "1700",
-			"city_id": "192",
-			"name": "北湖区"
-		},
-		{
-			"id": "1701",
-			"city_id": "192",
-			"name": "苏仙区"
-		},
-		{
-			"id": "1702",
-			"city_id": "192",
-			"name": "桂阳县"
-		},
-		{
-			"id": "1703",
-			"city_id": "192",
-			"name": "宜章县"
-		},
-		{
-			"id": "1704",
-			"city_id": "192",
-			"name": "永兴县"
-		},
-		{
-			"id": "1705",
-			"city_id": "192",
-			"name": "嘉禾县"
-		},
-		{
-			"id": "1706",
-			"city_id": "192",
-			"name": "临武县"
-		},
-		{
-			"id": "1707",
-			"city_id": "192",
-			"name": "汝城县"
-		},
-		{
-			"id": "1708",
-			"city_id": "192",
-			"name": "桂东县"
-		},
-		{
-			"id": "1709",
-			"city_id": "192",
-			"name": "安仁县"
-		},
-		{
-			"id": "1710",
-			"city_id": "192",
-			"name": "资兴市"
-		},
-		{
-			"id": "1711",
-			"city_id": "193",
-			"name": "芝山区"
-		},
-		{
-			"id": "1712",
-			"city_id": "193",
-			"name": "冷水滩区"
-		},
-		{
-			"id": "1713",
-			"city_id": "193",
-			"name": "祁阳县"
-		},
-		{
-			"id": "1714",
-			"city_id": "193",
-			"name": "东安县"
-		},
-		{
-			"id": "1715",
-			"city_id": "193",
-			"name": "双牌县"
-		},
-		{
-			"id": "1716",
-			"city_id": "193",
-			"name": "道县"
-		},
-		{
-			"id": "1717",
-			"city_id": "193",
-			"name": "江永县"
-		},
-		{
-			"id": "1718",
-			"city_id": "193",
-			"name": "宁远县"
-		},
-		{
-			"id": "1719",
-			"city_id": "193",
-			"name": "蓝山县"
-		},
-		{
-			"id": "1720",
-			"city_id": "193",
-			"name": "新田县"
-		},
-		{
-			"id": "1721",
-			"city_id": "193",
-			"name": "江华瑶族自治县"
-		},
-		{
-			"id": "1722",
-			"city_id": "194",
-			"name": "鹤城区"
-		},
-		{
-			"id": "1723",
-			"city_id": "194",
-			"name": "中方县"
-		},
-		{
-			"id": "1724",
-			"city_id": "194",
-			"name": "沅陵县"
-		},
-		{
-			"id": "1725",
-			"city_id": "194",
-			"name": "辰溪县"
-		},
-		{
-			"id": "1726",
-			"city_id": "194",
-			"name": "溆浦县"
-		},
-		{
-			"id": "1727",
-			"city_id": "194",
-			"name": "会同县"
-		},
-		{
-			"id": "1728",
-			"city_id": "194",
-			"name": "麻阳苗族自治县"
-		},
-		{
-			"id": "1729",
-			"city_id": "194",
-			"name": "新晃侗族自治县"
-		},
-		{
-			"id": "1730",
-			"city_id": "194",
-			"name": "芷江侗族自治县"
-		},
-		{
-			"id": "1731",
-			"city_id": "194",
-			"name": "靖州苗族侗族自治县"
-		},
-		{
-			"id": "1732",
-			"city_id": "194",
-			"name": "通道侗族自治县"
-		},
-		{
-			"id": "1733",
-			"city_id": "194",
-			"name": "洪江市"
-		},
-		{
-			"id": "1734",
-			"city_id": "195",
-			"name": "娄星区"
-		},
-		{
-			"id": "1735",
-			"city_id": "195",
-			"name": "双峰县"
-		},
-		{
-			"id": "1736",
-			"city_id": "195",
-			"name": "新化县"
-		},
-		{
-			"id": "1737",
-			"city_id": "195",
-			"name": "冷水江市"
-		},
-		{
-			"id": "1738",
-			"city_id": "195",
-			"name": "涟源市"
-		},
-		{
-			"id": "1739",
-			"city_id": "196",
-			"name": "吉首市"
-		},
-		{
-			"id": "1740",
-			"city_id": "196",
-			"name": "泸溪县"
-		},
-		{
-			"id": "1741",
-			"city_id": "196",
-			"name": "凤凰县"
-		},
-		{
-			"id": "1742",
-			"city_id": "196",
-			"name": "花垣县"
-		},
-		{
-			"id": "1743",
-			"city_id": "196",
-			"name": "保靖县"
-		},
-		{
-			"id": "1744",
-			"city_id": "196",
-			"name": "古丈县"
-		},
-		{
-			"id": "1745",
-			"city_id": "196",
-			"name": "永顺县"
-		},
-		{
-			"id": "1746",
-			"city_id": "196",
-			"name": "龙山县"
-		},
-		{
-			"id": "1747",
-			"city_id": "197",
-			"name": "东山区"
-		},
-		{
-			"id": "1748",
-			"city_id": "197",
-			"name": "荔湾区"
-		},
-		{
-			"id": "1749",
-			"city_id": "197",
-			"name": "越秀区"
-		},
-		{
-			"id": "1750",
-			"city_id": "197",
-			"name": "海珠区"
-		},
-		{
-			"id": "1751",
-			"city_id": "197",
-			"name": "天河区"
-		},
-		{
-			"id": "1752",
-			"city_id": "197",
-			"name": "芳村区"
-		},
-		{
-			"id": "1753",
-			"city_id": "197",
-			"name": "白云区"
-		},
-		{
-			"id": "1754",
-			"city_id": "197",
-			"name": "黄埔区"
-		},
-		{
-			"id": "1755",
-			"city_id": "197",
-			"name": "番禺区"
-		},
-		{
-			"id": "1756",
-			"city_id": "197",
-			"name": "花都区"
-		},
-		{
-			"id": "1757",
-			"city_id": "197",
-			"name": "增城市"
-		},
-		{
-			"id": "1758",
-			"city_id": "197",
-			"name": "从化市"
-		},
-		{
-			"id": "1759",
-			"city_id": "198",
-			"name": "武江区"
-		},
-		{
-			"id": "1760",
-			"city_id": "198",
-			"name": "浈江区"
-		},
-		{
-			"id": "1761",
-			"city_id": "198",
-			"name": "曲江区"
-		},
-		{
-			"id": "1762",
-			"city_id": "198",
-			"name": "始兴县"
-		},
-		{
-			"id": "1763",
-			"city_id": "198",
-			"name": "仁化县"
-		},
-		{
-			"id": "1764",
-			"city_id": "198",
-			"name": "翁源县"
-		},
-		{
-			"id": "1765",
-			"city_id": "198",
-			"name": "乳源瑶族自治县"
-		},
-		{
-			"id": "1766",
-			"city_id": "198",
-			"name": "新丰县"
-		},
-		{
-			"id": "1767",
-			"city_id": "198",
-			"name": "乐昌市"
-		},
-		{
-			"id": "1768",
-			"city_id": "198",
-			"name": "南雄市"
-		},
-		{
-			"id": "1769",
-			"city_id": "199",
-			"name": "罗湖区"
-		},
-		{
-			"id": "1770",
-			"city_id": "199",
-			"name": "福田区"
-		},
-		{
-			"id": "1771",
-			"city_id": "199",
-			"name": "南山区"
-		},
-		{
-			"id": "1772",
-			"city_id": "199",
-			"name": "宝安区"
-		},
-		{
-			"id": "1773",
-			"city_id": "199",
-			"name": "龙岗区"
-		},
-		{
-			"id": "1774",
-			"city_id": "199",
-			"name": "盐田区"
-		},
-		{
-			"id": "1775",
-			"city_id": "200",
-			"name": "香洲区"
-		},
-		{
-			"id": "1776",
-			"city_id": "200",
-			"name": "斗门区"
-		},
-		{
-			"id": "1777",
-			"city_id": "200",
-			"name": "金湾区"
-		},
-		{
-			"id": "1778",
-			"city_id": "201",
-			"name": "龙湖区"
-		},
-		{
-			"id": "1779",
-			"city_id": "201",
-			"name": "金平区"
-		},
-		{
-			"id": "1780",
-			"city_id": "201",
-			"name": "濠江区"
-		},
-		{
-			"id": "1781",
-			"city_id": "201",
-			"name": "潮阳区"
-		},
-		{
-			"id": "1782",
-			"city_id": "201",
-			"name": "潮南区"
-		},
-		{
-			"id": "1783",
-			"city_id": "201",
-			"name": "澄海区"
-		},
-		{
-			"id": "1784",
-			"city_id": "201",
-			"name": "南澳县"
-		},
-		{
-			"id": "1785",
-			"city_id": "202",
-			"name": "禅城区"
-		},
-		{
-			"id": "1786",
-			"city_id": "202",
-			"name": "南海区"
-		},
-		{
-			"id": "1787",
-			"city_id": "202",
-			"name": "顺德区"
-		},
-		{
-			"id": "1788",
-			"city_id": "202",
-			"name": "三水区"
-		},
-		{
-			"id": "1789",
-			"city_id": "202",
-			"name": "高明区"
-		},
-		{
-			"id": "1790",
-			"city_id": "203",
-			"name": "蓬江区"
-		},
-		{
-			"id": "1791",
-			"city_id": "203",
-			"name": "江海区"
-		},
-		{
-			"id": "1792",
-			"city_id": "203",
-			"name": "新会区"
-		},
-		{
-			"id": "1793",
-			"city_id": "203",
-			"name": "台山市"
-		},
-		{
-			"id": "1794",
-			"city_id": "203",
-			"name": "开平市"
-		},
-		{
-			"id": "1795",
-			"city_id": "203",
-			"name": "鹤山市"
-		},
-		{
-			"id": "1796",
-			"city_id": "203",
-			"name": "恩平市"
-		},
-		{
-			"id": "1797",
-			"city_id": "204",
-			"name": "赤坎区"
-		},
-		{
-			"id": "1798",
-			"city_id": "204",
-			"name": "霞山区"
-		},
-		{
-			"id": "1799",
-			"city_id": "204",
-			"name": "坡头区"
-		},
-		{
-			"id": "1800",
-			"city_id": "204",
-			"name": "麻章区"
-		},
-		{
-			"id": "1801",
-			"city_id": "204",
-			"name": "遂溪县"
-		},
-		{
-			"id": "1802",
-			"city_id": "204",
-			"name": "徐闻县"
-		},
-		{
-			"id": "1803",
-			"city_id": "204",
-			"name": "廉江市"
-		},
-		{
-			"id": "1804",
-			"city_id": "204",
-			"name": "雷州市"
-		},
-		{
-			"id": "1805",
-			"city_id": "204",
-			"name": "吴川市"
-		},
-		{
-			"id": "1806",
-			"city_id": "205",
-			"name": "茂南区"
-		},
-		{
-			"id": "1807",
-			"city_id": "205",
-			"name": "茂港区"
-		},
-		{
-			"id": "1808",
-			"city_id": "205",
-			"name": "电白县"
-		},
-		{
-			"id": "1809",
-			"city_id": "205",
-			"name": "高州市"
-		},
-		{
-			"id": "1810",
-			"city_id": "205",
-			"name": "化州市"
-		},
-		{
-			"id": "1811",
-			"city_id": "205",
-			"name": "信宜市"
-		},
-		{
-			"id": "1812",
-			"city_id": "206",
-			"name": "端州区"
-		},
-		{
-			"id": "1813",
-			"city_id": "206",
-			"name": "鼎湖区"
-		},
-		{
-			"id": "1814",
-			"city_id": "206",
-			"name": "广宁县"
-		},
-		{
-			"id": "1815",
-			"city_id": "206",
-			"name": "怀集县"
-		},
-		{
-			"id": "1816",
-			"city_id": "206",
-			"name": "封开县"
-		},
-		{
-			"id": "1817",
-			"city_id": "206",
-			"name": "德庆县"
-		},
-		{
-			"id": "1818",
-			"city_id": "206",
-			"name": "高要市"
-		},
-		{
-			"id": "1819",
-			"city_id": "206",
-			"name": "四会市"
-		},
-		{
-			"id": "1820",
-			"city_id": "207",
-			"name": "惠城区"
-		},
-		{
-			"id": "1821",
-			"city_id": "207",
-			"name": "惠阳区"
-		},
-		{
-			"id": "1822",
-			"city_id": "207",
-			"name": "博罗县"
-		},
-		{
-			"id": "1823",
-			"city_id": "207",
-			"name": "惠东县"
-		},
-		{
-			"id": "1824",
-			"city_id": "207",
-			"name": "龙门县"
-		},
-		{
-			"id": "1825",
-			"city_id": "208",
-			"name": "梅江区"
-		},
-		{
-			"id": "1826",
-			"city_id": "208",
-			"name": "梅县"
-		},
-		{
-			"id": "1827",
-			"city_id": "208",
-			"name": "大埔县"
-		},
-		{
-			"id": "1828",
-			"city_id": "208",
-			"name": "丰顺县"
-		},
-		{
-			"id": "1829",
-			"city_id": "208",
-			"name": "五华县"
-		},
-		{
-			"id": "1830",
-			"city_id": "208",
-			"name": "平远县"
-		},
-		{
-			"id": "1831",
-			"city_id": "208",
-			"name": "蕉岭县"
-		},
-		{
-			"id": "1832",
-			"city_id": "208",
-			"name": "兴宁市"
-		},
-		{
-			"id": "1833",
-			"city_id": "209",
-			"name": "城区"
-		},
-		{
-			"id": "1834",
-			"city_id": "209",
-			"name": "海丰县"
-		},
-		{
-			"id": "1835",
-			"city_id": "209",
-			"name": "陆河县"
-		},
-		{
-			"id": "1836",
-			"city_id": "209",
-			"name": "陆丰市"
-		},
-		{
-			"id": "1837",
-			"city_id": "210",
-			"name": "源城区"
-		},
-		{
-			"id": "1838",
-			"city_id": "210",
-			"name": "紫金县"
-		},
-		{
-			"id": "1839",
-			"city_id": "210",
-			"name": "龙川县"
-		},
-		{
-			"id": "1840",
-			"city_id": "210",
-			"name": "连平县"
-		},
-		{
-			"id": "1841",
-			"city_id": "210",
-			"name": "和平县"
-		},
-		{
-			"id": "1842",
-			"city_id": "210",
-			"name": "东源县"
-		},
-		{
-			"id": "1843",
-			"city_id": "211",
-			"name": "江城区"
-		},
-		{
-			"id": "1844",
-			"city_id": "211",
-			"name": "阳西县"
-		},
-		{
-			"id": "1845",
-			"city_id": "211",
-			"name": "阳东县"
-		},
-		{
-			"id": "1846",
-			"city_id": "211",
-			"name": "阳春市"
-		},
-		{
-			"id": "1847",
-			"city_id": "212",
-			"name": "清城区"
-		},
-		{
-			"id": "1848",
-			"city_id": "212",
-			"name": "佛冈县"
-		},
-		{
-			"id": "1849",
-			"city_id": "212",
-			"name": "阳山县"
-		},
-		{
-			"id": "1850",
-			"city_id": "212",
-			"name": "连山壮族瑶族自治县"
-		},
-		{
-			"id": "1851",
-			"city_id": "212",
-			"name": "连南瑶族自治县"
-		},
-		{
-			"id": "1852",
-			"city_id": "212",
-			"name": "清新县"
-		},
-		{
-			"id": "1853",
-			"city_id": "212",
-			"name": "英德市"
-		},
-		{
-			"id": "1854",
-			"city_id": "212",
-			"name": "连州市"
-		},
-		{
-			"id": "1855",
-			"city_id": "215",
-			"name": "湘桥区"
-		},
-		{
-			"id": "1856",
-			"city_id": "215",
-			"name": "潮安县"
-		},
-		{
-			"id": "1857",
-			"city_id": "215",
-			"name": "饶平县"
-		},
-		{
-			"id": "1858",
-			"city_id": "216",
-			"name": "榕城区"
-		},
-		{
-			"id": "1859",
-			"city_id": "216",
-			"name": "揭东县"
-		},
-		{
-			"id": "1860",
-			"city_id": "216",
-			"name": "揭西县"
-		},
-		{
-			"id": "1861",
-			"city_id": "216",
-			"name": "惠来县"
-		},
-		{
-			"id": "1862",
-			"city_id": "216",
-			"name": "普宁市"
-		},
-		{
-			"id": "1863",
-			"city_id": "217",
-			"name": "云城区"
-		},
-		{
-			"id": "1864",
-			"city_id": "217",
-			"name": "新兴县"
-		},
-		{
-			"id": "1865",
-			"city_id": "217",
-			"name": "郁南县"
-		},
-		{
-			"id": "1866",
-			"city_id": "217",
-			"name": "云安县"
-		},
-		{
-			"id": "1867",
-			"city_id": "217",
-			"name": "罗定市"
-		},
-		{
-			"id": "1868",
-			"city_id": "218",
-			"name": "兴宁区"
-		},
-		{
-			"id": "1869",
-			"city_id": "218",
-			"name": "青秀区"
-		},
-		{
-			"id": "1870",
-			"city_id": "218",
-			"name": "江南区"
-		},
-		{
-			"id": "1871",
-			"city_id": "218",
-			"name": "西乡塘区"
-		},
-		{
-			"id": "1872",
-			"city_id": "218",
-			"name": "良庆区"
-		},
-		{
-			"id": "1873",
-			"city_id": "218",
-			"name": "邕宁区"
-		},
-		{
-			"id": "1874",
-			"city_id": "218",
-			"name": "武鸣县"
-		},
-		{
-			"id": "1875",
-			"city_id": "218",
-			"name": "隆安县"
-		},
-		{
-			"id": "1876",
-			"city_id": "218",
-			"name": "马山县"
-		},
-		{
-			"id": "1877",
-			"city_id": "218",
-			"name": "上林县"
-		},
-		{
-			"id": "1878",
-			"city_id": "218",
-			"name": "宾阳县"
-		},
-		{
-			"id": "1879",
-			"city_id": "218",
-			"name": "横县"
-		},
-		{
-			"id": "1880",
-			"city_id": "219",
-			"name": "城中区"
-		},
-		{
-			"id": "1881",
-			"city_id": "219",
-			"name": "鱼峰区"
-		},
-		{
-			"id": "1882",
-			"city_id": "219",
-			"name": "柳南区"
-		},
-		{
-			"id": "1883",
-			"city_id": "219",
-			"name": "柳北区"
-		},
-		{
-			"id": "1884",
-			"city_id": "219",
-			"name": "柳江县"
-		},
-		{
-			"id": "1885",
-			"city_id": "219",
-			"name": "柳城县"
-		},
-		{
-			"id": "1886",
-			"city_id": "219",
-			"name": "鹿寨县"
-		},
-		{
-			"id": "1887",
-			"city_id": "219",
-			"name": "融安县"
-		},
-		{
-			"id": "1888",
-			"city_id": "219",
-			"name": "融水苗族自治县"
-		},
-		{
-			"id": "1889",
-			"city_id": "219",
-			"name": "三江侗族自治县"
-		},
-		{
-			"id": "1890",
-			"city_id": "220",
-			"name": "秀峰区"
-		},
-		{
-			"id": "1891",
-			"city_id": "220",
-			"name": "叠彩区"
-		},
-		{
-			"id": "1892",
-			"city_id": "220",
-			"name": "象山区"
-		},
-		{
-			"id": "1893",
-			"city_id": "220",
-			"name": "七星区"
-		},
-		{
-			"id": "1894",
-			"city_id": "220",
-			"name": "雁山区"
-		},
-		{
-			"id": "1895",
-			"city_id": "220",
-			"name": "阳朔县"
-		},
-		{
-			"id": "1896",
-			"city_id": "220",
-			"name": "临桂县"
-		},
-		{
-			"id": "1897",
-			"city_id": "220",
-			"name": "灵川县"
-		},
-		{
-			"id": "1898",
-			"city_id": "220",
-			"name": "全州县"
-		},
-		{
-			"id": "1899",
-			"city_id": "220",
-			"name": "兴安县"
-		},
-		{
-			"id": "1900",
-			"city_id": "220",
-			"name": "永福县"
-		},
-		{
-			"id": "1901",
-			"city_id": "220",
-			"name": "灌阳县"
-		},
-		{
-			"id": "1902",
-			"city_id": "220",
-			"name": "龙胜各族自治县"
-		},
-		{
-			"id": "1903",
-			"city_id": "220",
-			"name": "资源县"
-		},
-		{
-			"id": "1904",
-			"city_id": "220",
-			"name": "平乐县"
-		},
-		{
-			"id": "1905",
-			"city_id": "220",
-			"name": "荔蒲县"
-		},
-		{
-			"id": "1906",
-			"city_id": "220",
-			"name": "恭城瑶族自治县"
-		},
-		{
-			"id": "1907",
-			"city_id": "221",
-			"name": "万秀区"
-		},
-		{
-			"id": "1908",
-			"city_id": "221",
-			"name": "蝶山区"
-		},
-		{
-			"id": "1909",
-			"city_id": "221",
-			"name": "长洲区"
-		},
-		{
-			"id": "1910",
-			"city_id": "221",
-			"name": "苍梧县"
-		},
-		{
-			"id": "1911",
-			"city_id": "221",
-			"name": "藤县"
-		},
-		{
-			"id": "1912",
-			"city_id": "221",
-			"name": "蒙山县"
-		},
-		{
-			"id": "1913",
-			"city_id": "221",
-			"name": "岑溪市"
-		},
-		{
-			"id": "1914",
-			"city_id": "222",
-			"name": "海城区"
-		},
-		{
-			"id": "1915",
-			"city_id": "222",
-			"name": "银海区"
-		},
-		{
-			"id": "1916",
-			"city_id": "222",
-			"name": "铁山港区"
-		},
-		{
-			"id": "1917",
-			"city_id": "222",
-			"name": "合浦县"
-		},
-		{
-			"id": "1918",
-			"city_id": "223",
-			"name": "港口区"
-		},
-		{
-			"id": "1919",
-			"city_id": "223",
-			"name": "防城区"
-		},
-		{
-			"id": "1920",
-			"city_id": "223",
-			"name": "上思县"
-		},
-		{
-			"id": "1921",
-			"city_id": "223",
-			"name": "东兴市"
-		},
-		{
-			"id": "1922",
-			"city_id": "224",
-			"name": "钦南区"
-		},
-		{
-			"id": "1923",
-			"city_id": "224",
-			"name": "钦北区"
-		},
-		{
-			"id": "1924",
-			"city_id": "224",
-			"name": "灵山县"
-		},
-		{
-			"id": "1925",
-			"city_id": "224",
-			"name": "浦北县"
-		},
-		{
-			"id": "1926",
-			"city_id": "225",
-			"name": "港北区"
-		},
-		{
-			"id": "1927",
-			"city_id": "225",
-			"name": "港南区"
-		},
-		{
-			"id": "1928",
-			"city_id": "225",
-			"name": "覃塘区"
-		},
-		{
-			"id": "1929",
-			"city_id": "225",
-			"name": "平南县"
-		},
-		{
-			"id": "1930",
-			"city_id": "225",
-			"name": "桂平市"
-		},
-		{
-			"id": "1931",
-			"city_id": "226",
-			"name": "玉州区"
-		},
-		{
-			"id": "1932",
-			"city_id": "226",
-			"name": "容县"
-		},
-		{
-			"id": "1933",
-			"city_id": "226",
-			"name": "陆川县"
-		},
-		{
-			"id": "1934",
-			"city_id": "226",
-			"name": "博白县"
-		},
-		{
-			"id": "1935",
-			"city_id": "226",
-			"name": "兴业县"
-		},
-		{
-			"id": "1936",
-			"city_id": "226",
-			"name": "北流市"
-		},
-		{
-			"id": "1937",
-			"city_id": "227",
-			"name": "右江区"
-		},
-		{
-			"id": "1938",
-			"city_id": "227",
-			"name": "田阳县"
-		},
-		{
-			"id": "1939",
-			"city_id": "227",
-			"name": "田东县"
-		},
-		{
-			"id": "1940",
-			"city_id": "227",
-			"name": "平果县"
-		},
-		{
-			"id": "1941",
-			"city_id": "227",
-			"name": "德保县"
-		},
-		{
-			"id": "1942",
-			"city_id": "227",
-			"name": "靖西县"
-		},
-		{
-			"id": "1943",
-			"city_id": "227",
-			"name": "那坡县"
-		},
-		{
-			"id": "1944",
-			"city_id": "227",
-			"name": "凌云县"
-		},
-		{
-			"id": "1945",
-			"city_id": "227",
-			"name": "乐业县"
-		},
-		{
-			"id": "1946",
-			"city_id": "227",
-			"name": "田林县"
-		},
-		{
-			"id": "1947",
-			"city_id": "227",
-			"name": "西林县"
-		},
-		{
-			"id": "1948",
-			"city_id": "227",
-			"name": "隆林各族自治县"
-		},
-		{
-			"id": "1949",
-			"city_id": "228",
-			"name": "八步区"
-		},
-		{
-			"id": "1950",
-			"city_id": "228",
-			"name": "昭平县"
-		},
-		{
-			"id": "1951",
-			"city_id": "228",
-			"name": "钟山县"
-		},
-		{
-			"id": "1952",
-			"city_id": "228",
-			"name": "富川瑶族自治县"
-		},
-		{
-			"id": "1953",
-			"city_id": "229",
-			"name": "金城江区"
-		},
-		{
-			"id": "1954",
-			"city_id": "229",
-			"name": "南丹县"
-		},
-		{
-			"id": "1955",
-			"city_id": "229",
-			"name": "天峨县"
-		},
-		{
-			"id": "1956",
-			"city_id": "229",
-			"name": "凤山县"
-		},
-		{
-			"id": "1957",
-			"city_id": "229",
-			"name": "东兰县"
-		},
-		{
-			"id": "1958",
-			"city_id": "229",
-			"name": "罗城仫佬族自治县"
-		},
-		{
-			"id": "1959",
-			"city_id": "229",
-			"name": "环江毛南族自治县"
-		},
-		{
-			"id": "1960",
-			"city_id": "229",
-			"name": "巴马瑶族自治县"
-		},
-		{
-			"id": "1961",
-			"city_id": "229",
-			"name": "都安瑶族自治县"
-		},
-		{
-			"id": "1962",
-			"city_id": "229",
-			"name": "大化瑶族自治县"
-		},
-		{
-			"id": "1963",
-			"city_id": "229",
-			"name": "宜州市"
-		},
-		{
-			"id": "1964",
-			"city_id": "230",
-			"name": "兴宾区"
-		},
-		{
-			"id": "1965",
-			"city_id": "230",
-			"name": "忻城县"
-		},
-		{
-			"id": "1966",
-			"city_id": "230",
-			"name": "象州县"
-		},
-		{
-			"id": "1967",
-			"city_id": "230",
-			"name": "武宣县"
-		},
-		{
-			"id": "1968",
-			"city_id": "230",
-			"name": "金秀瑶族自治县"
-		},
-		{
-			"id": "1969",
-			"city_id": "230",
-			"name": "合山市"
-		},
-		{
-			"id": "1970",
-			"city_id": "231",
-			"name": "江洲区"
-		},
-		{
-			"id": "1971",
-			"city_id": "231",
-			"name": "扶绥县"
-		},
-		{
-			"id": "1972",
-			"city_id": "231",
-			"name": "宁明县"
-		},
-		{
-			"id": "1973",
-			"city_id": "231",
-			"name": "龙州县"
-		},
-		{
-			"id": "1974",
-			"city_id": "231",
-			"name": "大新县"
-		},
-		{
-			"id": "1975",
-			"city_id": "231",
-			"name": "天等县"
-		},
-		{
-			"id": "1976",
-			"city_id": "231",
-			"name": "凭祥市"
-		},
-		{
-			"id": "1977",
-			"city_id": "232",
-			"name": "秀英区"
-		},
-		{
-			"id": "1978",
-			"city_id": "232",
-			"name": "龙华区"
-		},
-		{
-			"id": "1979",
-			"city_id": "232",
-			"name": "琼山区"
-		},
-		{
-			"id": "1980",
-			"city_id": "232",
-			"name": "美兰区"
-		},
-		{
-			"id": "1981",
-			"city_id": "233",
-			"name": "五指山市"
-		},
-		{
-			"id": "1982",
-			"city_id": "233",
-			"name": "琼海市"
-		},
-		{
-			"id": "1983",
-			"city_id": "233",
-			"name": "儋州市"
-		},
-		{
-			"id": "1984",
-			"city_id": "233",
-			"name": "文昌市"
-		},
-		{
-			"id": "1985",
-			"city_id": "233",
-			"name": "万宁市"
-		},
-		{
-			"id": "1986",
-			"city_id": "233",
-			"name": "东方市"
-		},
-		{
-			"id": "1987",
-			"city_id": "233",
-			"name": "定安县"
-		},
-		{
-			"id": "1988",
-			"city_id": "233",
-			"name": "屯昌县"
-		},
-		{
-			"id": "1989",
-			"city_id": "233",
-			"name": "澄迈县"
-		},
-		{
-			"id": "1990",
-			"city_id": "233",
-			"name": "临高县"
-		},
-		{
-			"id": "1991",
-			"city_id": "233",
-			"name": "白沙黎族自治县"
-		},
-		{
-			"id": "1992",
-			"city_id": "233",
-			"name": "昌江黎族自治县"
-		},
-		{
-			"id": "1993",
-			"city_id": "233",
-			"name": "乐东黎族自治县"
-		},
-		{
-			"id": "1994",
-			"city_id": "233",
-			"name": "陵水黎族自治县"
-		},
-		{
-			"id": "1995",
-			"city_id": "233",
-			"name": "保亭黎族苗族自治县"
-		},
-		{
-			"id": "1996",
-			"city_id": "233",
-			"name": "琼中黎族苗族自治县"
-		},
-		{
-			"id": "1997",
-			"city_id": "233",
-			"name": "西沙群岛"
-		},
-		{
-			"id": "1998",
-			"city_id": "233",
-			"name": "南沙群岛"
-		},
-		{
-			"id": "1999",
-			"city_id": "233",
-			"name": "中沙群岛的岛礁及其海域"
-		},
-		{
-			"id": "2000",
-			"city_id": "234",
-			"name": "万州区"
-		},
-		{
-			"id": "2001",
-			"city_id": "234",
-			"name": "涪陵区"
-		},
-		{
-			"id": "2002",
-			"city_id": "234",
-			"name": "渝中区"
-		},
-		{
-			"id": "2003",
-			"city_id": "234",
-			"name": "大渡口区"
-		},
-		{
-			"id": "2004",
-			"city_id": "234",
-			"name": "江北区"
-		},
-		{
-			"id": "2005",
-			"city_id": "234",
-			"name": "沙坪坝区"
-		},
-		{
-			"id": "2006",
-			"city_id": "234",
-			"name": "九龙坡区"
-		},
-		{
-			"id": "2007",
-			"city_id": "234",
-			"name": "南岸区"
-		},
-		{
-			"id": "2008",
-			"city_id": "234",
-			"name": "北碚区"
-		},
-		{
-			"id": "2009",
-			"city_id": "234",
-			"name": "万盛区"
-		},
-		{
-			"id": "2010",
-			"city_id": "234",
-			"name": "双桥区"
-		},
-		{
-			"id": "2011",
-			"city_id": "234",
-			"name": "渝北区"
-		},
-		{
-			"id": "2012",
-			"city_id": "234",
-			"name": "巴南区"
-		},
-		{
-			"id": "2013",
-			"city_id": "234",
-			"name": "黔江区"
-		},
-		{
-			"id": "2014",
-			"city_id": "234",
-			"name": "长寿区"
-		},
-		{
-			"id": "2015",
-			"city_id": "234",
-			"name": "綦江县"
-		},
-		{
-			"id": "2016",
-			"city_id": "234",
-			"name": "潼南县"
-		},
-		{
-			"id": "2017",
-			"city_id": "234",
-			"name": "铜梁县"
-		},
-		{
-			"id": "2018",
-			"city_id": "234",
-			"name": "大足县"
-		},
-		{
-			"id": "2019",
-			"city_id": "234",
-			"name": "荣昌县"
-		},
-		{
-			"id": "2020",
-			"city_id": "234",
-			"name": "璧山县"
-		},
-		{
-			"id": "2021",
-			"city_id": "234",
-			"name": "梁平县"
-		},
-		{
-			"id": "2022",
-			"city_id": "234",
-			"name": "城口县"
-		},
-		{
-			"id": "2023",
-			"city_id": "234",
-			"name": "丰都县"
-		},
-		{
-			"id": "2024",
-			"city_id": "234",
-			"name": "垫江县"
-		},
-		{
-			"id": "2025",
-			"city_id": "234",
-			"name": "武隆县"
-		},
-		{
-			"id": "2026",
-			"city_id": "234",
-			"name": "忠县"
-		},
-		{
-			"id": "2027",
-			"city_id": "234",
-			"name": "开县"
-		},
-		{
-			"id": "2028",
-			"city_id": "234",
-			"name": "云阳县"
-		},
-		{
-			"id": "2029",
-			"city_id": "234",
-			"name": "奉节县"
-		},
-		{
-			"id": "2030",
-			"city_id": "234",
-			"name": "巫山县"
-		},
-		{
-			"id": "2031",
-			"city_id": "234",
-			"name": "巫溪县"
-		},
-		{
-			"id": "2032",
-			"city_id": "234",
-			"name": "石柱土家族自治县"
-		},
-		{
-			"id": "2033",
-			"city_id": "234",
-			"name": "秀山土家族苗族自治县"
-		},
-		{
-			"id": "2034",
-			"city_id": "234",
-			"name": "酉阳土家族苗族自治县"
-		},
-		{
-			"id": "2035",
-			"city_id": "234",
-			"name": "彭水苗族土家族自治县"
-		},
-		{
-			"id": "2036",
-			"city_id": "234",
-			"name": "江津市"
-		},
-		{
-			"id": "2037",
-			"city_id": "234",
-			"name": "合川市"
-		},
-		{
-			"id": "2038",
-			"city_id": "234",
-			"name": "永川市"
-		},
-		{
-			"id": "2039",
-			"city_id": "234",
-			"name": "南川市"
-		},
-		{
-			"id": "2040",
-			"city_id": "235",
-			"name": "锦江区"
-		},
-		{
-			"id": "2041",
-			"city_id": "235",
-			"name": "青羊区"
-		},
-		{
-			"id": "2042",
-			"city_id": "235",
-			"name": "金牛区"
-		},
-		{
-			"id": "2043",
-			"city_id": "235",
-			"name": "武侯区"
-		},
-		{
-			"id": "2044",
-			"city_id": "235",
-			"name": "成华区"
-		},
-		{
-			"id": "2045",
-			"city_id": "235",
-			"name": "龙泉驿区"
-		},
-		{
-			"id": "2046",
-			"city_id": "235",
-			"name": "青白江区"
-		},
-		{
-			"id": "2047",
-			"city_id": "235",
-			"name": "新都区"
-		},
-		{
-			"id": "2048",
-			"city_id": "235",
-			"name": "温江区"
-		},
-		{
-			"id": "2049",
-			"city_id": "235",
-			"name": "金堂县"
-		},
-		{
-			"id": "2050",
-			"city_id": "235",
-			"name": "双流县"
-		},
-		{
-			"id": "2051",
-			"city_id": "235",
-			"name": "郫县"
-		},
-		{
-			"id": "2052",
-			"city_id": "235",
-			"name": "大邑县"
-		},
-		{
-			"id": "2053",
-			"city_id": "235",
-			"name": "蒲江县"
-		},
-		{
-			"id": "2054",
-			"city_id": "235",
-			"name": "新津县"
-		},
-		{
-			"id": "2055",
-			"city_id": "235",
-			"name": "都江堰市"
-		},
-		{
-			"id": "2056",
-			"city_id": "235",
-			"name": "彭州市"
-		},
-		{
-			"id": "2057",
-			"city_id": "235",
-			"name": "邛崃市"
-		},
-		{
-			"id": "2058",
-			"city_id": "235",
-			"name": "崇州市"
-		},
-		{
-			"id": "2059",
-			"city_id": "236",
-			"name": "自流井区"
-		},
-		{
-			"id": "2060",
-			"city_id": "236",
-			"name": "贡井区"
-		},
-		{
-			"id": "2061",
-			"city_id": "236",
-			"name": "大安区"
-		},
-		{
-			"id": "2062",
-			"city_id": "236",
-			"name": "沿滩区"
-		},
-		{
-			"id": "2063",
-			"city_id": "236",
-			"name": "荣县"
-		},
-		{
-			"id": "2064",
-			"city_id": "236",
-			"name": "富顺县"
-		},
-		{
-			"id": "2065",
-			"city_id": "237",
-			"name": "东区"
-		},
-		{
-			"id": "2066",
-			"city_id": "237",
-			"name": "西区"
-		},
-		{
-			"id": "2067",
-			"city_id": "237",
-			"name": "仁和区"
-		},
-		{
-			"id": "2068",
-			"city_id": "237",
-			"name": "米易县"
-		},
-		{
-			"id": "2069",
-			"city_id": "237",
-			"name": "盐边县"
-		},
-		{
-			"id": "2070",
-			"city_id": "238",
-			"name": "江阳区"
-		},
-		{
-			"id": "2071",
-			"city_id": "238",
-			"name": "纳溪区"
-		},
-		{
-			"id": "2072",
-			"city_id": "238",
-			"name": "龙马潭区"
-		},
-		{
-			"id": "2073",
-			"city_id": "238",
-			"name": "泸县"
-		},
-		{
-			"id": "2074",
-			"city_id": "238",
-			"name": "合江县"
-		},
-		{
-			"id": "2075",
-			"city_id": "238",
-			"name": "叙永县"
-		},
-		{
-			"id": "2076",
-			"city_id": "238",
-			"name": "古蔺县"
-		},
-		{
-			"id": "2077",
-			"city_id": "239",
-			"name": "旌阳区"
-		},
-		{
-			"id": "2078",
-			"city_id": "239",
-			"name": "中江县"
-		},
-		{
-			"id": "2079",
-			"city_id": "239",
-			"name": "罗江县"
-		},
-		{
-			"id": "2080",
-			"city_id": "239",
-			"name": "广汉市"
-		},
-		{
-			"id": "2081",
-			"city_id": "239",
-			"name": "什邡市"
-		},
-		{
-			"id": "2082",
-			"city_id": "239",
-			"name": "绵竹市"
-		},
-		{
-			"id": "2083",
-			"city_id": "240",
-			"name": "涪城区"
-		},
-		{
-			"id": "2084",
-			"city_id": "240",
-			"name": "游仙区"
-		},
-		{
-			"id": "2085",
-			"city_id": "240",
-			"name": "三台县"
-		},
-		{
-			"id": "2086",
-			"city_id": "240",
-			"name": "盐亭县"
-		},
-		{
-			"id": "2087",
-			"city_id": "240",
-			"name": "安县"
-		},
-		{
-			"id": "2088",
-			"city_id": "240",
-			"name": "梓潼县"
-		},
-		{
-			"id": "2089",
-			"city_id": "240",
-			"name": "北川羌族自治县"
-		},
-		{
-			"id": "2090",
-			"city_id": "240",
-			"name": "平武县"
-		},
-		{
-			"id": "2091",
-			"city_id": "240",
-			"name": "江油市"
-		},
-		{
-			"id": "2092",
-			"city_id": "241",
-			"name": "市中区"
-		},
-		{
-			"id": "2093",
-			"city_id": "241",
-			"name": "元坝区"
-		},
-		{
-			"id": "2094",
-			"city_id": "241",
-			"name": "朝天区"
-		},
-		{
-			"id": "2095",
-			"city_id": "241",
-			"name": "旺苍县"
-		},
-		{
-			"id": "2096",
-			"city_id": "241",
-			"name": "青川县"
-		},
-		{
-			"id": "2097",
-			"city_id": "241",
-			"name": "剑阁县"
-		},
-		{
-			"id": "2098",
-			"city_id": "241",
-			"name": "苍溪县"
-		},
-		{
-			"id": "2099",
-			"city_id": "242",
-			"name": "船山区"
-		},
-		{
-			"id": "2100",
-			"city_id": "242",
-			"name": "安居区"
-		},
-		{
-			"id": "2101",
-			"city_id": "242",
-			"name": "蓬溪县"
-		},
-		{
-			"id": "2102",
-			"city_id": "242",
-			"name": "射洪县"
-		},
-		{
-			"id": "2103",
-			"city_id": "242",
-			"name": "大英县"
-		},
-		{
-			"id": "2104",
-			"city_id": "243",
-			"name": "市中区"
-		},
-		{
-			"id": "2105",
-			"city_id": "243",
-			"name": "东兴区"
-		},
-		{
-			"id": "2106",
-			"city_id": "243",
-			"name": "威远县"
-		},
-		{
-			"id": "2107",
-			"city_id": "243",
-			"name": "资中县"
-		},
-		{
-			"id": "2108",
-			"city_id": "243",
-			"name": "隆昌县"
-		},
-		{
-			"id": "2109",
-			"city_id": "244",
-			"name": "市中区"
-		},
-		{
-			"id": "2110",
-			"city_id": "244",
-			"name": "沙湾区"
-		},
-		{
-			"id": "2111",
-			"city_id": "244",
-			"name": "五通桥区"
-		},
-		{
-			"id": "2112",
-			"city_id": "244",
-			"name": "金口河区"
-		},
-		{
-			"id": "2113",
-			"city_id": "244",
-			"name": "犍为县"
-		},
-		{
-			"id": "2114",
-			"city_id": "244",
-			"name": "井研县"
-		},
-		{
-			"id": "2115",
-			"city_id": "244",
-			"name": "夹江县"
-		},
-		{
-			"id": "2116",
-			"city_id": "244",
-			"name": "沐川县"
-		},
-		{
-			"id": "2117",
-			"city_id": "244",
-			"name": "峨边彝族自治县"
-		},
-		{
-			"id": "2118",
-			"city_id": "244",
-			"name": "马边彝族自治县"
-		},
-		{
-			"id": "2119",
-			"city_id": "244",
-			"name": "峨眉山市"
-		},
-		{
-			"id": "2120",
-			"city_id": "245",
-			"name": "顺庆区"
-		},
-		{
-			"id": "2121",
-			"city_id": "245",
-			"name": "高坪区"
-		},
-		{
-			"id": "2122",
-			"city_id": "245",
-			"name": "嘉陵区"
-		},
-		{
-			"id": "2123",
-			"city_id": "245",
-			"name": "南部县"
-		},
-		{
-			"id": "2124",
-			"city_id": "245",
-			"name": "营山县"
-		},
-		{
-			"id": "2125",
-			"city_id": "245",
-			"name": "蓬安县"
-		},
-		{
-			"id": "2126",
-			"city_id": "245",
-			"name": "仪陇县"
-		},
-		{
-			"id": "2127",
-			"city_id": "245",
-			"name": "西充县"
-		},
-		{
-			"id": "2128",
-			"city_id": "245",
-			"name": "阆中市"
-		},
-		{
-			"id": "2129",
-			"city_id": "246",
-			"name": "东坡区"
-		},
-		{
-			"id": "2130",
-			"city_id": "246",
-			"name": "仁寿县"
-		},
-		{
-			"id": "2131",
-			"city_id": "246",
-			"name": "彭山县"
-		},
-		{
-			"id": "2132",
-			"city_id": "246",
-			"name": "洪雅县"
-		},
-		{
-			"id": "2133",
-			"city_id": "246",
-			"name": "丹棱县"
-		},
-		{
-			"id": "2134",
-			"city_id": "246",
-			"name": "青神县"
-		},
-		{
-			"id": "2135",
-			"city_id": "247",
-			"name": "翠屏区"
-		},
-		{
-			"id": "2136",
-			"city_id": "247",
-			"name": "宜宾县"
-		},
-		{
-			"id": "2137",
-			"city_id": "247",
-			"name": "南溪县"
-		},
-		{
-			"id": "2138",
-			"city_id": "247",
-			"name": "江安县"
-		},
-		{
-			"id": "2139",
-			"city_id": "247",
-			"name": "长宁县"
-		},
-		{
-			"id": "2140",
-			"city_id": "247",
-			"name": "高县"
-		},
-		{
-			"id": "2141",
-			"city_id": "247",
-			"name": "珙县"
-		},
-		{
-			"id": "2142",
-			"city_id": "247",
-			"name": "筠连县"
-		},
-		{
-			"id": "2143",
-			"city_id": "247",
-			"name": "兴文县"
-		},
-		{
-			"id": "2144",
-			"city_id": "247",
-			"name": "屏山县"
-		},
-		{
-			"id": "2145",
-			"city_id": "248",
-			"name": "广安区"
-		},
-		{
-			"id": "2146",
-			"city_id": "248",
-			"name": "岳池县"
-		},
-		{
-			"id": "2147",
-			"city_id": "248",
-			"name": "武胜县"
-		},
-		{
-			"id": "2148",
-			"city_id": "248",
-			"name": "邻水县"
-		},
-		{
-			"id": "2149",
-			"city_id": "248",
-			"name": "华蓥市"
-		},
-		{
-			"id": "2150",
-			"city_id": "249",
-			"name": "通川区"
-		},
-		{
-			"id": "2151",
-			"city_id": "249",
-			"name": "达县"
-		},
-		{
-			"id": "2152",
-			"city_id": "249",
-			"name": "宣汉县"
-		},
-		{
-			"id": "2153",
-			"city_id": "249",
-			"name": "开江县"
-		},
-		{
-			"id": "2154",
-			"city_id": "249",
-			"name": "大竹县"
-		},
-		{
-			"id": "2155",
-			"city_id": "249",
-			"name": "渠县"
-		},
-		{
-			"id": "2156",
-			"city_id": "249",
-			"name": "万源市"
-		},
-		{
-			"id": "2157",
-			"city_id": "250",
-			"name": "雨城区"
-		},
-		{
-			"id": "2158",
-			"city_id": "250",
-			"name": "名山县"
-		},
-		{
-			"id": "2159",
-			"city_id": "250",
-			"name": "荥经县"
-		},
-		{
-			"id": "2160",
-			"city_id": "250",
-			"name": "汉源县"
-		},
-		{
-			"id": "2161",
-			"city_id": "250",
-			"name": "石棉县"
-		},
-		{
-			"id": "2162",
-			"city_id": "250",
-			"name": "天全县"
-		},
-		{
-			"id": "2163",
-			"city_id": "250",
-			"name": "芦山县"
-		},
-		{
-			"id": "2164",
-			"city_id": "250",
-			"name": "宝兴县"
-		},
-		{
-			"id": "2165",
-			"city_id": "251",
-			"name": "巴州区"
-		},
-		{
-			"id": "2166",
-			"city_id": "251",
-			"name": "通江县"
-		},
-		{
-			"id": "2167",
-			"city_id": "251",
-			"name": "南江县"
-		},
-		{
-			"id": "2168",
-			"city_id": "251",
-			"name": "平昌县"
-		},
-		{
-			"id": "2169",
-			"city_id": "252",
-			"name": "雁江区"
-		},
-		{
-			"id": "2170",
-			"city_id": "252",
-			"name": "安岳县"
-		},
-		{
-			"id": "2171",
-			"city_id": "252",
-			"name": "乐至县"
-		},
-		{
-			"id": "2172",
-			"city_id": "252",
-			"name": "简阳市"
-		},
-		{
-			"id": "2173",
-			"city_id": "253",
-			"name": "汶川县"
-		},
-		{
-			"id": "2174",
-			"city_id": "253",
-			"name": "理县"
-		},
-		{
-			"id": "2175",
-			"city_id": "253",
-			"name": "茂县"
-		},
-		{
-			"id": "2176",
-			"city_id": "253",
-			"name": "松潘县"
-		},
-		{
-			"id": "2177",
-			"city_id": "253",
-			"name": "九寨沟县"
-		},
-		{
-			"id": "2178",
-			"city_id": "253",
-			"name": "金川县"
-		},
-		{
-			"id": "2179",
-			"city_id": "253",
-			"name": "小金县"
-		},
-		{
-			"id": "2180",
-			"city_id": "253",
-			"name": "黑水县"
-		},
-		{
-			"id": "2181",
-			"city_id": "253",
-			"name": "马尔康县"
-		},
-		{
-			"id": "2182",
-			"city_id": "253",
-			"name": "壤塘县"
-		},
-		{
-			"id": "2183",
-			"city_id": "253",
-			"name": "阿坝县"
-		},
-		{
-			"id": "2184",
-			"city_id": "253",
-			"name": "若尔盖县"
-		},
-		{
-			"id": "2185",
-			"city_id": "253",
-			"name": "红原县"
-		},
-		{
-			"id": "2186",
-			"city_id": "254",
-			"name": "康定县"
-		},
-		{
-			"id": "2187",
-			"city_id": "254",
-			"name": "泸定县"
-		},
-		{
-			"id": "2188",
-			"city_id": "254",
-			"name": "丹巴县"
-		},
-		{
-			"id": "2189",
-			"city_id": "254",
-			"name": "九龙县"
-		},
-		{
-			"id": "2190",
-			"city_id": "254",
-			"name": "雅江县"
-		},
-		{
-			"id": "2191",
-			"city_id": "254",
-			"name": "道孚县"
-		},
-		{
-			"id": "2192",
-			"city_id": "254",
-			"name": "炉霍县"
-		},
-		{
-			"id": "2193",
-			"city_id": "254",
-			"name": "甘孜县"
-		},
-		{
-			"id": "2194",
-			"city_id": "254",
-			"name": "新龙县"
-		},
-		{
-			"id": "2195",
-			"city_id": "254",
-			"name": "德格县"
-		},
-		{
-			"id": "2196",
-			"city_id": "254",
-			"name": "白玉县"
-		},
-		{
-			"id": "2197",
-			"city_id": "254",
-			"name": "石渠县"
-		},
-		{
-			"id": "2198",
-			"city_id": "254",
-			"name": "色达县"
-		},
-		{
-			"id": "2199",
-			"city_id": "254",
-			"name": "理塘县"
-		},
-		{
-			"id": "2200",
-			"city_id": "254",
-			"name": "巴塘县"
-		},
-		{
-			"id": "2201",
-			"city_id": "254",
-			"name": "乡城县"
-		},
-		{
-			"id": "2202",
-			"city_id": "254",
-			"name": "稻城县"
-		},
-		{
-			"id": "2203",
-			"city_id": "254",
-			"name": "得荣县"
-		},
-		{
-			"id": "2204",
-			"city_id": "255",
-			"name": "西昌市"
-		},
-		{
-			"id": "2205",
-			"city_id": "255",
-			"name": "木里藏族自治县"
-		},
-		{
-			"id": "2206",
-			"city_id": "255",
-			"name": "盐源县"
-		},
-		{
-			"id": "2207",
-			"city_id": "255",
-			"name": "德昌县"
-		},
-		{
-			"id": "2208",
-			"city_id": "255",
-			"name": "会理县"
-		},
-		{
-			"id": "2209",
-			"city_id": "255",
-			"name": "会东县"
-		},
-		{
-			"id": "2210",
-			"city_id": "255",
-			"name": "宁南县"
-		},
-		{
-			"id": "2211",
-			"city_id": "255",
-			"name": "普格县"
-		},
-		{
-			"id": "2212",
-			"city_id": "255",
-			"name": "布拖县"
-		},
-		{
-			"id": "2213",
-			"city_id": "255",
-			"name": "金阳县"
-		},
-		{
-			"id": "2214",
-			"city_id": "255",
-			"name": "昭觉县"
-		},
-		{
-			"id": "2215",
-			"city_id": "255",
-			"name": "喜德县"
-		},
-		{
-			"id": "2216",
-			"city_id": "255",
-			"name": "冕宁县"
-		},
-		{
-			"id": "2217",
-			"city_id": "255",
-			"name": "越西县"
-		},
-		{
-			"id": "2218",
-			"city_id": "255",
-			"name": "甘洛县"
-		},
-		{
-			"id": "2219",
-			"city_id": "255",
-			"name": "美姑县"
-		},
-		{
-			"id": "2220",
-			"city_id": "255",
-			"name": "雷波县"
-		},
-		{
-			"id": "2221",
-			"city_id": "256",
-			"name": "南明区"
-		},
-		{
-			"id": "2222",
-			"city_id": "256",
-			"name": "云岩区"
-		},
-		{
-			"id": "2223",
-			"city_id": "256",
-			"name": "花溪区"
-		},
-		{
-			"id": "2224",
-			"city_id": "256",
-			"name": "乌当区"
-		},
-		{
-			"id": "2225",
-			"city_id": "256",
-			"name": "白云区"
-		},
-		{
-			"id": "2226",
-			"city_id": "256",
-			"name": "小河区"
-		},
-		{
-			"id": "2227",
-			"city_id": "256",
-			"name": "开阳县"
-		},
-		{
-			"id": "2228",
-			"city_id": "256",
-			"name": "息烽县"
-		},
-		{
-			"id": "2229",
-			"city_id": "256",
-			"name": "修文县"
-		},
-		{
-			"id": "2230",
-			"city_id": "256",
-			"name": "清镇市"
-		},
-		{
-			"id": "2231",
-			"city_id": "257",
-			"name": "钟山区"
-		},
-		{
-			"id": "2232",
-			"city_id": "257",
-			"name": "六枝特区"
-		},
-		{
-			"id": "2233",
-			"city_id": "257",
-			"name": "水城县"
-		},
-		{
-			"id": "2234",
-			"city_id": "257",
-			"name": "盘县"
-		},
-		{
-			"id": "2235",
-			"city_id": "258",
-			"name": "红花岗区"
-		},
-		{
-			"id": "2236",
-			"city_id": "258",
-			"name": "汇川区"
-		},
-		{
-			"id": "2237",
-			"city_id": "258",
-			"name": "遵义县"
-		},
-		{
-			"id": "2238",
-			"city_id": "258",
-			"name": "桐梓县"
-		},
-		{
-			"id": "2239",
-			"city_id": "258",
-			"name": "绥阳县"
-		},
-		{
-			"id": "2240",
-			"city_id": "258",
-			"name": "正安县"
-		},
-		{
-			"id": "2241",
-			"city_id": "258",
-			"name": "道真仡佬族苗族自治县"
-		},
-		{
-			"id": "2242",
-			"city_id": "258",
-			"name": "务川仡佬族苗族自治县"
-		},
-		{
-			"id": "2243",
-			"city_id": "258",
-			"name": "凤冈县"
-		},
-		{
-			"id": "2244",
-			"city_id": "258",
-			"name": "湄潭县"
-		},
-		{
-			"id": "2245",
-			"city_id": "258",
-			"name": "余庆县"
-		},
-		{
-			"id": "2246",
-			"city_id": "258",
-			"name": "习水县"
-		},
-		{
-			"id": "2247",
-			"city_id": "258",
-			"name": "赤水市"
-		},
-		{
-			"id": "2248",
-			"city_id": "258",
-			"name": "仁怀市"
-		},
-		{
-			"id": "2249",
-			"city_id": "259",
-			"name": "西秀区"
-		},
-		{
-			"id": "2250",
-			"city_id": "259",
-			"name": "平坝县"
-		},
-		{
-			"id": "2251",
-			"city_id": "259",
-			"name": "普定县"
-		},
-		{
-			"id": "2252",
-			"city_id": "259",
-			"name": "镇宁布依族苗族自治县"
-		},
-		{
-			"id": "2253",
-			"city_id": "259",
-			"name": "关岭布依族苗族自治县"
-		},
-		{
-			"id": "2254",
-			"city_id": "259",
-			"name": "紫云苗族布依族自治县"
-		},
-		{
-			"id": "2255",
-			"city_id": "260",
-			"name": "铜仁市"
-		},
-		{
-			"id": "2256",
-			"city_id": "260",
-			"name": "江口县"
-		},
-		{
-			"id": "2257",
-			"city_id": "260",
-			"name": "玉屏侗族自治县"
-		},
-		{
-			"id": "2258",
-			"city_id": "260",
-			"name": "石阡县"
-		},
-		{
-			"id": "2259",
-			"city_id": "260",
-			"name": "思南县"
-		},
-		{
-			"id": "2260",
-			"city_id": "260",
-			"name": "印江土家族苗族自治县"
-		},
-		{
-			"id": "2261",
-			"city_id": "260",
-			"name": "德江县"
-		},
-		{
-			"id": "2262",
-			"city_id": "260",
-			"name": "沿河土家族自治县"
-		},
-		{
-			"id": "2263",
-			"city_id": "260",
-			"name": "松桃苗族自治县"
-		},
-		{
-			"id": "2264",
-			"city_id": "260",
-			"name": "万山特区"
-		},
-		{
-			"id": "2265",
-			"city_id": "261",
-			"name": "兴义市"
-		},
-		{
-			"id": "2266",
-			"city_id": "261",
-			"name": "兴仁县"
-		},
-		{
-			"id": "2267",
-			"city_id": "261",
-			"name": "普安县"
-		},
-		{
-			"id": "2268",
-			"city_id": "261",
-			"name": "晴隆县"
-		},
-		{
-			"id": "2269",
-			"city_id": "261",
-			"name": "贞丰县"
-		},
-		{
-			"id": "2270",
-			"city_id": "261",
-			"name": "望谟县"
-		},
-		{
-			"id": "2271",
-			"city_id": "261",
-			"name": "册亨县"
-		},
-		{
-			"id": "2272",
-			"city_id": "261",
-			"name": "安龙县"
-		},
-		{
-			"id": "2273",
-			"city_id": "262",
-			"name": "毕节市"
-		},
-		{
-			"id": "2274",
-			"city_id": "262",
-			"name": "大方县"
-		},
-		{
-			"id": "2275",
-			"city_id": "262",
-			"name": "黔西县"
-		},
-		{
-			"id": "2276",
-			"city_id": "262",
-			"name": "金沙县"
-		},
-		{
-			"id": "2277",
-			"city_id": "262",
-			"name": "织金县"
-		},
-		{
-			"id": "2278",
-			"city_id": "262",
-			"name": "纳雍县"
-		},
-		{
-			"id": "2279",
-			"city_id": "262",
-			"name": "威宁彝族回族苗族自治县"
-		},
-		{
-			"id": "2280",
-			"city_id": "262",
-			"name": "赫章县"
-		},
-		{
-			"id": "2281",
-			"city_id": "263",
-			"name": "凯里市"
-		},
-		{
-			"id": "2282",
-			"city_id": "263",
-			"name": "黄平县"
-		},
-		{
-			"id": "2283",
-			"city_id": "263",
-			"name": "施秉县"
-		},
-		{
-			"id": "2284",
-			"city_id": "263",
-			"name": "三穗县"
-		},
-		{
-			"id": "2285",
-			"city_id": "263",
-			"name": "镇远县"
-		},
-		{
-			"id": "2286",
-			"city_id": "263",
-			"name": "岑巩县"
-		},
-		{
-			"id": "2287",
-			"city_id": "263",
-			"name": "天柱县"
-		},
-		{
-			"id": "2288",
-			"city_id": "263",
-			"name": "锦屏县"
-		},
-		{
-			"id": "2289",
-			"city_id": "263",
-			"name": "剑河县"
-		},
-		{
-			"id": "2290",
-			"city_id": "263",
-			"name": "台江县"
-		},
-		{
-			"id": "2291",
-			"city_id": "263",
-			"name": "黎平县"
-		},
-		{
-			"id": "2292",
-			"city_id": "263",
-			"name": "榕江县"
-		},
-		{
-			"id": "2293",
-			"city_id": "263",
-			"name": "从江县"
-		},
-		{
-			"id": "2294",
-			"city_id": "263",
-			"name": "雷山县"
-		},
-		{
-			"id": "2295",
-			"city_id": "263",
-			"name": "麻江县"
-		},
-		{
-			"id": "2296",
-			"city_id": "263",
-			"name": "丹寨县"
-		},
-		{
-			"id": "2297",
-			"city_id": "264",
-			"name": "都匀市"
-		},
-		{
-			"id": "2298",
-			"city_id": "264",
-			"name": "福泉市"
-		},
-		{
-			"id": "2299",
-			"city_id": "264",
-			"name": "荔波县"
-		},
-		{
-			"id": "2300",
-			"city_id": "264",
-			"name": "贵定县"
-		},
-		{
-			"id": "2301",
-			"city_id": "264",
-			"name": "瓮安县"
-		},
-		{
-			"id": "2302",
-			"city_id": "264",
-			"name": "独山县"
-		},
-		{
-			"id": "2303",
-			"city_id": "264",
-			"name": "平塘县"
-		},
-		{
-			"id": "2304",
-			"city_id": "264",
-			"name": "罗甸县"
-		},
-		{
-			"id": "2305",
-			"city_id": "264",
-			"name": "长顺县"
-		},
-		{
-			"id": "2306",
-			"city_id": "264",
-			"name": "龙里县"
-		},
-		{
-			"id": "2307",
-			"city_id": "264",
-			"name": "惠水县"
-		},
-		{
-			"id": "2308",
-			"city_id": "264",
-			"name": "三都水族自治县"
-		},
-		{
-			"id": "2309",
-			"city_id": "265",
-			"name": "五华区"
-		},
-		{
-			"id": "2310",
-			"city_id": "265",
-			"name": "盘龙区"
-		},
-		{
-			"id": "2311",
-			"city_id": "265",
-			"name": "官渡区"
-		},
-		{
-			"id": "2312",
-			"city_id": "265",
-			"name": "西山区"
-		},
-		{
-			"id": "2313",
-			"city_id": "265",
-			"name": "东川区"
-		},
-		{
-			"id": "2314",
-			"city_id": "265",
-			"name": "呈贡县"
-		},
-		{
-			"id": "2315",
-			"city_id": "265",
-			"name": "晋宁县"
-		},
-		{
-			"id": "2316",
-			"city_id": "265",
-			"name": "富民县"
-		},
-		{
-			"id": "2317",
-			"city_id": "265",
-			"name": "宜良县"
-		},
-		{
-			"id": "2318",
-			"city_id": "265",
-			"name": "石林彝族自治县"
-		},
-		{
-			"id": "2319",
-			"city_id": "265",
-			"name": "嵩明县"
-		},
-		{
-			"id": "2320",
-			"city_id": "265",
-			"name": "禄劝彝族苗族自治县"
-		},
-		{
-			"id": "2321",
-			"city_id": "265",
-			"name": "寻甸回族彝族自治县"
-		},
-		{
-			"id": "2322",
-			"city_id": "265",
-			"name": "安宁市"
-		},
-		{
-			"id": "2323",
-			"city_id": "266",
-			"name": "麒麟区"
-		},
-		{
-			"id": "2324",
-			"city_id": "266",
-			"name": "马龙县"
-		},
-		{
-			"id": "2325",
-			"city_id": "266",
-			"name": "陆良县"
-		},
-		{
-			"id": "2326",
-			"city_id": "266",
-			"name": "师宗县"
-		},
-		{
-			"id": "2327",
-			"city_id": "266",
-			"name": "罗平县"
-		},
-		{
-			"id": "2328",
-			"city_id": "266",
-			"name": "富源县"
-		},
-		{
-			"id": "2329",
-			"city_id": "266",
-			"name": "会泽县"
-		},
-		{
-			"id": "2330",
-			"city_id": "266",
-			"name": "沾益县"
-		},
-		{
-			"id": "2331",
-			"city_id": "266",
-			"name": "宣威市"
-		},
-		{
-			"id": "2332",
-			"city_id": "267",
-			"name": "红塔区"
-		},
-		{
-			"id": "2333",
-			"city_id": "267",
-			"name": "江川县"
-		},
-		{
-			"id": "2334",
-			"city_id": "267",
-			"name": "澄江县"
-		},
-		{
-			"id": "2335",
-			"city_id": "267",
-			"name": "通海县"
-		},
-		{
-			"id": "2336",
-			"city_id": "267",
-			"name": "华宁县"
-		},
-		{
-			"id": "2337",
-			"city_id": "267",
-			"name": "易门县"
-		},
-		{
-			"id": "2338",
-			"city_id": "267",
-			"name": "峨山彝族自治县"
-		},
-		{
-			"id": "2339",
-			"city_id": "267",
-			"name": "新平彝族傣族自治县"
-		},
-		{
-			"id": "2340",
-			"city_id": "267",
-			"name": "元江哈尼族彝族傣族自治县"
-		},
-		{
-			"id": "2341",
-			"city_id": "268",
-			"name": "隆阳区"
-		},
-		{
-			"id": "2342",
-			"city_id": "268",
-			"name": "施甸县"
-		},
-		{
-			"id": "2343",
-			"city_id": "268",
-			"name": "腾冲县"
-		},
-		{
-			"id": "2344",
-			"city_id": "268",
-			"name": "龙陵县"
-		},
-		{
-			"id": "2345",
-			"city_id": "268",
-			"name": "昌宁县"
-		},
-		{
-			"id": "2346",
-			"city_id": "269",
-			"name": "昭阳区"
-		},
-		{
-			"id": "2347",
-			"city_id": "269",
-			"name": "鲁甸县"
-		},
-		{
-			"id": "2348",
-			"city_id": "269",
-			"name": "巧家县"
-		},
-		{
-			"id": "2349",
-			"city_id": "269",
-			"name": "盐津县"
-		},
-		{
-			"id": "2350",
-			"city_id": "269",
-			"name": "大关县"
-		},
-		{
-			"id": "2351",
-			"city_id": "269",
-			"name": "永善县"
-		},
-		{
-			"id": "2352",
-			"city_id": "269",
-			"name": "绥江县"
-		},
-		{
-			"id": "2353",
-			"city_id": "269",
-			"name": "镇雄县"
-		},
-		{
-			"id": "2354",
-			"city_id": "269",
-			"name": "彝良县"
-		},
-		{
-			"id": "2355",
-			"city_id": "269",
-			"name": "威信县"
-		},
-		{
-			"id": "2356",
-			"city_id": "269",
-			"name": "水富县"
-		},
-		{
-			"id": "2357",
-			"city_id": "270",
-			"name": "古城区"
-		},
-		{
-			"id": "2358",
-			"city_id": "270",
-			"name": "玉龙纳西族自治县"
-		},
-		{
-			"id": "2359",
-			"city_id": "270",
-			"name": "永胜县"
-		},
-		{
-			"id": "2360",
-			"city_id": "270",
-			"name": "华坪县"
-		},
-		{
-			"id": "2361",
-			"city_id": "270",
-			"name": "宁蒗彝族自治县"
-		},
-		{
-			"id": "2362",
-			"city_id": "271",
-			"name": "翠云区"
-		},
-		{
-			"id": "2363",
-			"city_id": "271",
-			"name": "普洱哈尼族彝族自治县"
-		},
-		{
-			"id": "2364",
-			"city_id": "271",
-			"name": "墨江哈尼族自治县"
-		},
-		{
-			"id": "2365",
-			"city_id": "271",
-			"name": "景东彝族自治县"
-		},
-		{
-			"id": "2366",
-			"city_id": "271",
-			"name": "景谷傣族彝族自治县"
-		},
-		{
-			"id": "2367",
-			"city_id": "271",
-			"name": "镇沅彝族哈尼族拉祜族自治县"
-		},
-		{
-			"id": "2368",
-			"city_id": "271",
-			"name": "江城哈尼族彝族自治县"
-		},
-		{
-			"id": "2369",
-			"city_id": "271",
-			"name": "孟连傣族拉祜族佤族自治县"
-		},
-		{
-			"id": "2370",
-			"city_id": "271",
-			"name": "澜沧拉祜族自治县"
-		},
-		{
-			"id": "2371",
-			"city_id": "271",
-			"name": "西盟佤族自治县"
-		},
-		{
-			"id": "2372",
-			"city_id": "272",
-			"name": "临翔区"
-		},
-		{
-			"id": "2373",
-			"city_id": "272",
-			"name": "凤庆县"
-		},
-		{
-			"id": "2374",
-			"city_id": "272",
-			"name": "云县"
-		},
-		{
-			"id": "2375",
-			"city_id": "272",
-			"name": "永德县"
-		},
-		{
-			"id": "2376",
-			"city_id": "272",
-			"name": "镇康县"
-		},
-		{
-			"id": "2377",
-			"city_id": "272",
-			"name": "双江拉祜族佤族布朗族傣族自治县"
-		},
-		{
-			"id": "2378",
-			"city_id": "272",
-			"name": "耿马傣族佤族自治县"
-		},
-		{
-			"id": "2379",
-			"city_id": "272",
-			"name": "沧源佤族自治县"
-		},
-		{
-			"id": "2380",
-			"city_id": "273",
-			"name": "楚雄市"
-		},
-		{
-			"id": "2381",
-			"city_id": "273",
-			"name": "双柏县"
-		},
-		{
-			"id": "2382",
-			"city_id": "273",
-			"name": "牟定县"
-		},
-		{
-			"id": "2383",
-			"city_id": "273",
-			"name": "南华县"
-		},
-		{
-			"id": "2384",
-			"city_id": "273",
-			"name": "姚安县"
-		},
-		{
-			"id": "2385",
-			"city_id": "273",
-			"name": "大姚县"
-		},
-		{
-			"id": "2386",
-			"city_id": "273",
-			"name": "永仁县"
-		},
-		{
-			"id": "2387",
-			"city_id": "273",
-			"name": "元谋县"
-		},
-		{
-			"id": "2388",
-			"city_id": "273",
-			"name": "武定县"
-		},
-		{
-			"id": "2389",
-			"city_id": "273",
-			"name": "禄丰县"
-		},
-		{
-			"id": "2390",
-			"city_id": "274",
-			"name": "个旧市"
-		},
-		{
-			"id": "2391",
-			"city_id": "274",
-			"name": "开远市"
-		},
-		{
-			"id": "2392",
-			"city_id": "274",
-			"name": "蒙自县"
-		},
-		{
-			"id": "2393",
-			"city_id": "274",
-			"name": "屏边苗族自治县"
-		},
-		{
-			"id": "2394",
-			"city_id": "274",
-			"name": "建水县"
-		},
-		{
-			"id": "2395",
-			"city_id": "274",
-			"name": "石屏县"
-		},
-		{
-			"id": "2396",
-			"city_id": "274",
-			"name": "弥勒县"
-		},
-		{
-			"id": "2397",
-			"city_id": "274",
-			"name": "泸西县"
-		},
-		{
-			"id": "2398",
-			"city_id": "274",
-			"name": "元阳县"
-		},
-		{
-			"id": "2399",
-			"city_id": "274",
-			"name": "红河县"
-		},
-		{
-			"id": "2400",
-			"city_id": "274",
-			"name": "金平苗族瑶族傣族自治县"
-		},
-		{
-			"id": "2401",
-			"city_id": "274",
-			"name": "绿春县"
-		},
-		{
-			"id": "2402",
-			"city_id": "274",
-			"name": "河口瑶族自治县"
-		},
-		{
-			"id": "2403",
-			"city_id": "275",
-			"name": "文山县"
-		},
-		{
-			"id": "2404",
-			"city_id": "275",
-			"name": "砚山县"
-		},
-		{
-			"id": "2405",
-			"city_id": "275",
-			"name": "西畴县"
-		},
-		{
-			"id": "2406",
-			"city_id": "275",
-			"name": "麻栗坡县"
-		},
-		{
-			"id": "2407",
-			"city_id": "275",
-			"name": "马关县"
-		},
-		{
-			"id": "2408",
-			"city_id": "275",
-			"name": "丘北县"
-		},
-		{
-			"id": "2409",
-			"city_id": "275",
-			"name": "广南县"
-		},
-		{
-			"id": "2410",
-			"city_id": "275",
-			"name": "富宁县"
-		},
-		{
-			"id": "2411",
-			"city_id": "276",
-			"name": "景洪市"
-		},
-		{
-			"id": "2412",
-			"city_id": "276",
-			"name": "勐海县"
-		},
-		{
-			"id": "2413",
-			"city_id": "276",
-			"name": "勐腊县"
-		},
-		{
-			"id": "2414",
-			"city_id": "277",
-			"name": "大理市"
-		},
-		{
-			"id": "2415",
-			"city_id": "277",
-			"name": "漾濞彝族自治县"
-		},
-		{
-			"id": "2416",
-			"city_id": "277",
-			"name": "祥云县"
-		},
-		{
-			"id": "2417",
-			"city_id": "277",
-			"name": "宾川县"
-		},
-		{
-			"id": "2418",
-			"city_id": "277",
-			"name": "弥渡县"
-		},
-		{
-			"id": "2419",
-			"city_id": "277",
-			"name": "南涧彝族自治县"
-		},
-		{
-			"id": "2420",
-			"city_id": "277",
-			"name": "巍山彝族回族自治县"
-		},
-		{
-			"id": "2421",
-			"city_id": "277",
-			"name": "永平县"
-		},
-		{
-			"id": "2422",
-			"city_id": "277",
-			"name": "云龙县"
-		},
-		{
-			"id": "2423",
-			"city_id": "277",
-			"name": "洱源县"
-		},
-		{
-			"id": "2424",
-			"city_id": "277",
-			"name": "剑川县"
-		},
-		{
-			"id": "2425",
-			"city_id": "277",
-			"name": "鹤庆县"
-		},
-		{
-			"id": "2426",
-			"city_id": "278",
-			"name": "瑞丽市"
-		},
-		{
-			"id": "2427",
-			"city_id": "278",
-			"name": "潞西市"
-		},
-		{
-			"id": "2428",
-			"city_id": "278",
-			"name": "梁河县"
-		},
-		{
-			"id": "2429",
-			"city_id": "278",
-			"name": "盈江县"
-		},
-		{
-			"id": "2430",
-			"city_id": "278",
-			"name": "陇川县"
-		},
-		{
-			"id": "2431",
-			"city_id": "279",
-			"name": "泸水县"
-		},
-		{
-			"id": "2432",
-			"city_id": "279",
-			"name": "福贡县"
-		},
-		{
-			"id": "2433",
-			"city_id": "279",
-			"name": "贡山独龙族怒族自治县"
-		},
-		{
-			"id": "2434",
-			"city_id": "279",
-			"name": "兰坪白族普米族自治县"
-		},
-		{
-			"id": "2435",
-			"city_id": "280",
-			"name": "香格里拉县"
-		},
-		{
-			"id": "2436",
-			"city_id": "280",
-			"name": "德钦县"
-		},
-		{
-			"id": "2437",
-			"city_id": "280",
-			"name": "维西傈僳族自治县"
-		},
-		{
-			"id": "2438",
-			"city_id": "281",
-			"name": "城关区"
-		},
-		{
-			"id": "2439",
-			"city_id": "281",
-			"name": "林周县"
-		},
-		{
-			"id": "2440",
-			"city_id": "281",
-			"name": "当雄县"
-		},
-		{
-			"id": "2441",
-			"city_id": "281",
-			"name": "尼木县"
-		},
-		{
-			"id": "2442",
-			"city_id": "281",
-			"name": "曲水县"
-		},
-		{
-			"id": "2443",
-			"city_id": "281",
-			"name": "堆龙德庆县"
-		},
-		{
-			"id": "2444",
-			"city_id": "281",
-			"name": "达孜县"
-		},
-		{
-			"id": "2445",
-			"city_id": "281",
-			"name": "墨竹工卡县"
-		},
-		{
-			"id": "2446",
-			"city_id": "282",
-			"name": "昌都县"
-		},
-		{
-			"id": "2447",
-			"city_id": "282",
-			"name": "江达县"
-		},
-		{
-			"id": "2448",
-			"city_id": "282",
-			"name": "贡觉县"
-		},
-		{
-			"id": "2449",
-			"city_id": "282",
-			"name": "类乌齐县"
-		},
-		{
-			"id": "2450",
-			"city_id": "282",
-			"name": "丁青县"
-		},
-		{
-			"id": "2451",
-			"city_id": "282",
-			"name": "察雅县"
-		},
-		{
-			"id": "2452",
-			"city_id": "282",
-			"name": "八宿县"
-		},
-		{
-			"id": "2453",
-			"city_id": "282",
-			"name": "左贡县"
-		},
-		{
-			"id": "2454",
-			"city_id": "282",
-			"name": "芒康县"
-		},
-		{
-			"id": "2455",
-			"city_id": "282",
-			"name": "洛隆县"
-		},
-		{
-			"id": "2456",
-			"city_id": "282",
-			"name": "边坝县"
-		},
-		{
-			"id": "2457",
-			"city_id": "283",
-			"name": "乃东县"
-		},
-		{
-			"id": "2458",
-			"city_id": "283",
-			"name": "扎囊县"
-		},
-		{
-			"id": "2459",
-			"city_id": "283",
-			"name": "贡嘎县"
-		},
-		{
-			"id": "2460",
-			"city_id": "283",
-			"name": "桑日县"
-		},
-		{
-			"id": "2461",
-			"city_id": "283",
-			"name": "琼结县"
-		},
-		{
-			"id": "2462",
-			"city_id": "283",
-			"name": "曲松县"
-		},
-		{
-			"id": "2463",
-			"city_id": "283",
-			"name": "措美县"
-		},
-		{
-			"id": "2464",
-			"city_id": "283",
-			"name": "洛扎县"
-		},
-		{
-			"id": "2465",
-			"city_id": "283",
-			"name": "加查县"
-		},
-		{
-			"id": "2466",
-			"city_id": "283",
-			"name": "隆子县"
-		},
-		{
-			"id": "2467",
-			"city_id": "283",
-			"name": "错那县"
-		},
-		{
-			"id": "2468",
-			"city_id": "283",
-			"name": "浪卡子县"
-		},
-		{
-			"id": "2469",
-			"city_id": "284",
-			"name": "日喀则市"
-		},
-		{
-			"id": "2470",
-			"city_id": "284",
-			"name": "南木林县"
-		},
-		{
-			"id": "2471",
-			"city_id": "284",
-			"name": "江孜县"
-		},
-		{
-			"id": "2472",
-			"city_id": "284",
-			"name": "定日县"
-		},
-		{
-			"id": "2473",
-			"city_id": "284",
-			"name": "萨迦县"
-		},
-		{
-			"id": "2474",
-			"city_id": "284",
-			"name": "拉孜县"
-		},
-		{
-			"id": "2475",
-			"city_id": "284",
-			"name": "昂仁县"
-		},
-		{
-			"id": "2476",
-			"city_id": "284",
-			"name": "谢通门县"
-		},
-		{
-			"id": "2477",
-			"city_id": "284",
-			"name": "白朗县"
-		},
-		{
-			"id": "2478",
-			"city_id": "284",
-			"name": "仁布县"
-		},
-		{
-			"id": "2479",
-			"city_id": "284",
-			"name": "康马县"
-		},
-		{
-			"id": "2480",
-			"city_id": "284",
-			"name": "定结县"
-		},
-		{
-			"id": "2481",
-			"city_id": "284",
-			"name": "仲巴县"
-		},
-		{
-			"id": "2482",
-			"city_id": "284",
-			"name": "亚东县"
-		},
-		{
-			"id": "2483",
-			"city_id": "284",
-			"name": "吉隆县"
-		},
-		{
-			"id": "2484",
-			"city_id": "284",
-			"name": "聂拉木县"
-		},
-		{
-			"id": "2485",
-			"city_id": "284",
-			"name": "萨嘎县"
-		},
-		{
-			"id": "2486",
-			"city_id": "284",
-			"name": "岗巴县"
-		},
-		{
-			"id": "2487",
-			"city_id": "285",
-			"name": "那曲县"
-		},
-		{
-			"id": "2488",
-			"city_id": "285",
-			"name": "嘉黎县"
-		},
-		{
-			"id": "2489",
-			"city_id": "285",
-			"name": "比如县"
-		},
-		{
-			"id": "2490",
-			"city_id": "285",
-			"name": "聂荣县"
-		},
-		{
-			"id": "2491",
-			"city_id": "285",
-			"name": "安多县"
-		},
-		{
-			"id": "2492",
-			"city_id": "285",
-			"name": "申扎县"
-		},
-		{
-			"id": "2493",
-			"city_id": "285",
-			"name": "索县"
-		},
-		{
-			"id": "2494",
-			"city_id": "285",
-			"name": "班戈县"
-		},
-		{
-			"id": "2495",
-			"city_id": "285",
-			"name": "巴青县"
-		},
-		{
-			"id": "2496",
-			"city_id": "285",
-			"name": "尼玛县"
-		},
-		{
-			"id": "2497",
-			"city_id": "286",
-			"name": "普兰县"
-		},
-		{
-			"id": "2498",
-			"city_id": "286",
-			"name": "札达县"
-		},
-		{
-			"id": "2499",
-			"city_id": "286",
-			"name": "噶尔县"
-		},
-		{
-			"id": "2500",
-			"city_id": "286",
-			"name": "日土县"
-		},
-		{
-			"id": "2501",
-			"city_id": "286",
-			"name": "革吉县"
-		},
-		{
-			"id": "2502",
-			"city_id": "286",
-			"name": "改则县"
-		},
-		{
-			"id": "2503",
-			"city_id": "286",
-			"name": "措勤县"
-		},
-		{
-			"id": "2504",
-			"city_id": "287",
-			"name": "林芝县"
-		},
-		{
-			"id": "2505",
-			"city_id": "287",
-			"name": "工布江达县"
-		},
-		{
-			"id": "2506",
-			"city_id": "287",
-			"name": "米林县"
-		},
-		{
-			"id": "2507",
-			"city_id": "287",
-			"name": "墨脱县"
-		},
-		{
-			"id": "2508",
-			"city_id": "287",
-			"name": "波密县"
-		},
-		{
-			"id": "2509",
-			"city_id": "287",
-			"name": "察隅县"
-		},
-		{
-			"id": "2510",
-			"city_id": "287",
-			"name": "朗县"
-		},
-		{
-			"id": "2511",
-			"city_id": "288",
-			"name": "新城区"
-		},
-		{
-			"id": "2512",
-			"city_id": "288",
-			"name": "碑林区"
-		},
-		{
-			"id": "2513",
-			"city_id": "288",
-			"name": "莲湖区"
-		},
-		{
-			"id": "2514",
-			"city_id": "288",
-			"name": "灞桥区"
-		},
-		{
-			"id": "2515",
-			"city_id": "288",
-			"name": "未央区"
-		},
-		{
-			"id": "2516",
-			"city_id": "288",
-			"name": "雁塔区"
-		},
-		{
-			"id": "2517",
-			"city_id": "288",
-			"name": "阎良区"
-		},
-		{
-			"id": "2518",
-			"city_id": "288",
-			"name": "临潼区"
-		},
-		{
-			"id": "2519",
-			"city_id": "288",
-			"name": "长安区"
-		},
-		{
-			"id": "2520",
-			"city_id": "288",
-			"name": "蓝田县"
-		},
-		{
-			"id": "2521",
-			"city_id": "288",
-			"name": "周至县"
-		},
-		{
-			"id": "2522",
-			"city_id": "288",
-			"name": "户县"
-		},
-		{
-			"id": "2523",
-			"city_id": "288",
-			"name": "高陵县"
-		},
-		{
-			"id": "2524",
-			"city_id": "289",
-			"name": "王益区"
-		},
-		{
-			"id": "2525",
-			"city_id": "289",
-			"name": "印台区"
-		},
-		{
-			"id": "2526",
-			"city_id": "289",
-			"name": "耀州区"
-		},
-		{
-			"id": "2527",
-			"city_id": "289",
-			"name": "宜君县"
-		},
-		{
-			"id": "2528",
-			"city_id": "290",
-			"name": "渭滨区"
-		},
-		{
-			"id": "2529",
-			"city_id": "290",
-			"name": "金台区"
-		},
-		{
-			"id": "2530",
-			"city_id": "290",
-			"name": "陈仓区"
-		},
-		{
-			"id": "2531",
-			"city_id": "290",
-			"name": "凤翔县"
-		},
-		{
-			"id": "2532",
-			"city_id": "290",
-			"name": "岐山县"
-		},
-		{
-			"id": "2533",
-			"city_id": "290",
-			"name": "扶风县"
-		},
-		{
-			"id": "2534",
-			"city_id": "290",
-			"name": "眉县"
-		},
-		{
-			"id": "2535",
-			"city_id": "290",
-			"name": "陇县"
-		},
-		{
-			"id": "2536",
-			"city_id": "290",
-			"name": "千阳县"
-		},
-		{
-			"id": "2537",
-			"city_id": "290",
-			"name": "麟游县"
-		},
-		{
-			"id": "2538",
-			"city_id": "290",
-			"name": "凤县"
-		},
-		{
-			"id": "2539",
-			"city_id": "290",
-			"name": "太白县"
-		},
-		{
-			"id": "2540",
-			"city_id": "291",
-			"name": "秦都区"
-		},
-		{
-			"id": "2541",
-			"city_id": "291",
-			"name": "杨凌区"
-		},
-		{
-			"id": "2542",
-			"city_id": "291",
-			"name": "渭城区"
-		},
-		{
-			"id": "2543",
-			"city_id": "291",
-			"name": "三原县"
-		},
-		{
-			"id": "2544",
-			"city_id": "291",
-			"name": "泾阳县"
-		},
-		{
-			"id": "2545",
-			"city_id": "291",
-			"name": "乾县"
-		},
-		{
-			"id": "2546",
-			"city_id": "291",
-			"name": "礼泉县"
-		},
-		{
-			"id": "2547",
-			"city_id": "291",
-			"name": "永寿县"
-		},
-		{
-			"id": "2548",
-			"city_id": "291",
-			"name": "彬县"
-		},
-		{
-			"id": "2549",
-			"city_id": "291",
-			"name": "长武县"
-		},
-		{
-			"id": "2550",
-			"city_id": "291",
-			"name": "旬邑县"
-		},
-		{
-			"id": "2551",
-			"city_id": "291",
-			"name": "淳化县"
-		},
-		{
-			"id": "2552",
-			"city_id": "291",
-			"name": "武功县"
-		},
-		{
-			"id": "2553",
-			"city_id": "291",
-			"name": "兴平市"
-		},
-		{
-			"id": "2554",
-			"city_id": "292",
-			"name": "临渭区"
-		},
-		{
-			"id": "2555",
-			"city_id": "292",
-			"name": "华县"
-		},
-		{
-			"id": "2556",
-			"city_id": "292",
-			"name": "潼关县"
-		},
-		{
-			"id": "2557",
-			"city_id": "292",
-			"name": "大荔县"
-		},
-		{
-			"id": "2558",
-			"city_id": "292",
-			"name": "合阳县"
-		},
-		{
-			"id": "2559",
-			"city_id": "292",
-			"name": "澄城县"
-		},
-		{
-			"id": "2560",
-			"city_id": "292",
-			"name": "蒲城县"
-		},
-		{
-			"id": "2561",
-			"city_id": "292",
-			"name": "白水县"
-		},
-		{
-			"id": "2562",
-			"city_id": "292",
-			"name": "富平县"
-		},
-		{
-			"id": "2563",
-			"city_id": "292",
-			"name": "韩城市"
-		},
-		{
-			"id": "2564",
-			"city_id": "292",
-			"name": "华阴市"
-		},
-		{
-			"id": "2565",
-			"city_id": "293",
-			"name": "宝塔区"
-		},
-		{
-			"id": "2566",
-			"city_id": "293",
-			"name": "延长县"
-		},
-		{
-			"id": "2567",
-			"city_id": "293",
-			"name": "延川县"
-		},
-		{
-			"id": "2568",
-			"city_id": "293",
-			"name": "子长县"
-		},
-		{
-			"id": "2569",
-			"city_id": "293",
-			"name": "安塞县"
-		},
-		{
-			"id": "2570",
-			"city_id": "293",
-			"name": "志丹县"
-		},
-		{
-			"id": "2571",
-			"city_id": "293",
-			"name": "吴旗县"
-		},
-		{
-			"id": "2572",
-			"city_id": "293",
-			"name": "甘泉县"
-		},
-		{
-			"id": "2573",
-			"city_id": "293",
-			"name": "富县"
-		},
-		{
-			"id": "2574",
-			"city_id": "293",
-			"name": "洛川县"
-		},
-		{
-			"id": "2575",
-			"city_id": "293",
-			"name": "宜川县"
-		},
-		{
-			"id": "2576",
-			"city_id": "293",
-			"name": "黄龙县"
-		},
-		{
-			"id": "2577",
-			"city_id": "293",
-			"name": "黄陵县"
-		},
-		{
-			"id": "2578",
-			"city_id": "294",
-			"name": "汉台区"
-		},
-		{
-			"id": "2579",
-			"city_id": "294",
-			"name": "南郑县"
-		},
-		{
-			"id": "2580",
-			"city_id": "294",
-			"name": "城固县"
-		},
-		{
-			"id": "2581",
-			"city_id": "294",
-			"name": "洋县"
-		},
-		{
-			"id": "2582",
-			"city_id": "294",
-			"name": "西乡县"
-		},
-		{
-			"id": "2583",
-			"city_id": "294",
-			"name": "勉县"
-		},
-		{
-			"id": "2584",
-			"city_id": "294",
-			"name": "宁强县"
-		},
-		{
-			"id": "2585",
-			"city_id": "294",
-			"name": "略阳县"
-		},
-		{
-			"id": "2586",
-			"city_id": "294",
-			"name": "镇巴县"
-		},
-		{
-			"id": "2587",
-			"city_id": "294",
-			"name": "留坝县"
-		},
-		{
-			"id": "2588",
-			"city_id": "294",
-			"name": "佛坪县"
-		},
-		{
-			"id": "2589",
-			"city_id": "295",
-			"name": "榆阳区"
-		},
-		{
-			"id": "2590",
-			"city_id": "295",
-			"name": "神木县"
-		},
-		{
-			"id": "2591",
-			"city_id": "295",
-			"name": "府谷县"
-		},
-		{
-			"id": "2592",
-			"city_id": "295",
-			"name": "横山县"
-		},
-		{
-			"id": "2593",
-			"city_id": "295",
-			"name": "靖边县"
-		},
-		{
-			"id": "2594",
-			"city_id": "295",
-			"name": "定边县"
-		},
-		{
-			"id": "2595",
-			"city_id": "295",
-			"name": "绥德县"
-		},
-		{
-			"id": "2596",
-			"city_id": "295",
-			"name": "米脂县"
-		},
-		{
-			"id": "2597",
-			"city_id": "295",
-			"name": "佳县"
-		},
-		{
-			"id": "2598",
-			"city_id": "295",
-			"name": "吴堡县"
-		},
-		{
-			"id": "2599",
-			"city_id": "295",
-			"name": "清涧县"
-		},
-		{
-			"id": "2600",
-			"city_id": "295",
-			"name": "子洲县"
-		},
-		{
-			"id": "2601",
-			"city_id": "296",
-			"name": "汉滨区"
-		},
-		{
-			"id": "2602",
-			"city_id": "296",
-			"name": "汉阴县"
-		},
-		{
-			"id": "2603",
-			"city_id": "296",
-			"name": "石泉县"
-		},
-		{
-			"id": "2604",
-			"city_id": "296",
-			"name": "宁陕县"
-		},
-		{
-			"id": "2605",
-			"city_id": "296",
-			"name": "紫阳县"
-		},
-		{
-			"id": "2606",
-			"city_id": "296",
-			"name": "岚皋县"
-		},
-		{
-			"id": "2607",
-			"city_id": "296",
-			"name": "平利县"
-		},
-		{
-			"id": "2608",
-			"city_id": "296",
-			"name": "镇坪县"
-		},
-		{
-			"id": "2609",
-			"city_id": "296",
-			"name": "旬阳县"
-		},
-		{
-			"id": "2610",
-			"city_id": "296",
-			"name": "白河县"
-		},
-		{
-			"id": "2611",
-			"city_id": "297",
-			"name": "商州区"
-		},
-		{
-			"id": "2612",
-			"city_id": "297",
-			"name": "洛南县"
-		},
-		{
-			"id": "2613",
-			"city_id": "297",
-			"name": "丹凤县"
-		},
-		{
-			"id": "2614",
-			"city_id": "297",
-			"name": "商南县"
-		},
-		{
-			"id": "2615",
-			"city_id": "297",
-			"name": "山阳县"
-		},
-		{
-			"id": "2616",
-			"city_id": "297",
-			"name": "镇安县"
-		},
-		{
-			"id": "2617",
-			"city_id": "297",
-			"name": "柞水县"
-		},
-		{
-			"id": "2618",
-			"city_id": "298",
-			"name": "城关区"
-		},
-		{
-			"id": "2619",
-			"city_id": "298",
-			"name": "七里河区"
-		},
-		{
-			"id": "2620",
-			"city_id": "298",
-			"name": "西固区"
-		},
-		{
-			"id": "2621",
-			"city_id": "298",
-			"name": "安宁区"
-		},
-		{
-			"id": "2622",
-			"city_id": "298",
-			"name": "红古区"
-		},
-		{
-			"id": "2623",
-			"city_id": "298",
-			"name": "永登县"
-		},
-		{
-			"id": "2624",
-			"city_id": "298",
-			"name": "皋兰县"
-		},
-		{
-			"id": "2625",
-			"city_id": "298",
-			"name": "榆中县"
-		},
-		{
-			"id": "2626",
-			"city_id": "300",
-			"name": "金川区"
-		},
-		{
-			"id": "2627",
-			"city_id": "300",
-			"name": "永昌县"
-		},
-		{
-			"id": "2628",
-			"city_id": "301",
-			"name": "白银区"
-		},
-		{
-			"id": "2629",
-			"city_id": "301",
-			"name": "平川区"
-		},
-		{
-			"id": "2630",
-			"city_id": "301",
-			"name": "靖远县"
-		},
-		{
-			"id": "2631",
-			"city_id": "301",
-			"name": "会宁县"
-		},
-		{
-			"id": "2632",
-			"city_id": "301",
-			"name": "景泰县"
-		},
-		{
-			"id": "2633",
-			"city_id": "302",
-			"name": "秦城区"
-		},
-		{
-			"id": "2634",
-			"city_id": "302",
-			"name": "北道区"
-		},
-		{
-			"id": "2635",
-			"city_id": "302",
-			"name": "清水县"
-		},
-		{
-			"id": "2636",
-			"city_id": "302",
-			"name": "秦安县"
-		},
-		{
-			"id": "2637",
-			"city_id": "302",
-			"name": "甘谷县"
-		},
-		{
-			"id": "2638",
-			"city_id": "302",
-			"name": "武山县"
-		},
-		{
-			"id": "2639",
-			"city_id": "302",
-			"name": "张家川回族自治县"
-		},
-		{
-			"id": "2640",
-			"city_id": "303",
-			"name": "凉州区"
-		},
-		{
-			"id": "2641",
-			"city_id": "303",
-			"name": "民勤县"
-		},
-		{
-			"id": "2642",
-			"city_id": "303",
-			"name": "古浪县"
-		},
-		{
-			"id": "2643",
-			"city_id": "303",
-			"name": "天祝藏族自治县"
-		},
-		{
-			"id": "2644",
-			"city_id": "304",
-			"name": "甘州区"
-		},
-		{
-			"id": "2645",
-			"city_id": "304",
-			"name": "肃南裕固族自治县"
-		},
-		{
-			"id": "2646",
-			"city_id": "304",
-			"name": "民乐县"
-		},
-		{
-			"id": "2647",
-			"city_id": "304",
-			"name": "临泽县"
-		},
-		{
-			"id": "2648",
-			"city_id": "304",
-			"name": "高台县"
-		},
-		{
-			"id": "2649",
-			"city_id": "304",
-			"name": "山丹县"
-		},
-		{
-			"id": "2650",
-			"city_id": "305",
-			"name": "崆峒区"
-		},
-		{
-			"id": "2651",
-			"city_id": "305",
-			"name": "泾川县"
-		},
-		{
-			"id": "2652",
-			"city_id": "305",
-			"name": "灵台县"
-		},
-		{
-			"id": "2653",
-			"city_id": "305",
-			"name": "崇信县"
-		},
-		{
-			"id": "2654",
-			"city_id": "305",
-			"name": "华亭县"
-		},
-		{
-			"id": "2655",
-			"city_id": "305",
-			"name": "庄浪县"
-		},
-		{
-			"id": "2656",
-			"city_id": "305",
-			"name": "静宁县"
-		},
-		{
-			"id": "2657",
-			"city_id": "306",
-			"name": "肃州区"
-		},
-		{
-			"id": "2658",
-			"city_id": "306",
-			"name": "金塔县"
-		},
-		{
-			"id": "2659",
-			"city_id": "306",
-			"name": "安西县"
-		},
-		{
-			"id": "2660",
-			"city_id": "306",
-			"name": "肃北蒙古族自治县"
-		},
-		{
-			"id": "2661",
-			"city_id": "306",
-			"name": "阿克塞哈萨克族自治县"
-		},
-		{
-			"id": "2662",
-			"city_id": "306",
-			"name": "玉门市"
-		},
-		{
-			"id": "2663",
-			"city_id": "306",
-			"name": "敦煌市"
-		},
-		{
-			"id": "2664",
-			"city_id": "307",
-			"name": "西峰区"
-		},
-		{
-			"id": "2665",
-			"city_id": "307",
-			"name": "庆城县"
-		},
-		{
-			"id": "2666",
-			"city_id": "307",
-			"name": "环县"
-		},
-		{
-			"id": "2667",
-			"city_id": "307",
-			"name": "华池县"
-		},
-		{
-			"id": "2668",
-			"city_id": "307",
-			"name": "合水县"
-		},
-		{
-			"id": "2669",
-			"city_id": "307",
-			"name": "正宁县"
-		},
-		{
-			"id": "2670",
-			"city_id": "307",
-			"name": "宁县"
-		},
-		{
-			"id": "2671",
-			"city_id": "307",
-			"name": "镇原县"
-		},
-		{
-			"id": "2672",
-			"city_id": "308",
-			"name": "安定区"
-		},
-		{
-			"id": "2673",
-			"city_id": "308",
-			"name": "通渭县"
-		},
-		{
-			"id": "2674",
-			"city_id": "308",
-			"name": "陇西县"
-		},
-		{
-			"id": "2675",
-			"city_id": "308",
-			"name": "渭源县"
-		},
-		{
-			"id": "2676",
-			"city_id": "308",
-			"name": "临洮县"
-		},
-		{
-			"id": "2677",
-			"city_id": "308",
-			"name": "漳县"
-		},
-		{
-			"id": "2678",
-			"city_id": "308",
-			"name": "岷县"
-		},
-		{
-			"id": "2679",
-			"city_id": "309",
-			"name": "武都区"
-		},
-		{
-			"id": "2680",
-			"city_id": "309",
-			"name": "成县"
-		},
-		{
-			"id": "2681",
-			"city_id": "309",
-			"name": "文县"
-		},
-		{
-			"id": "2682",
-			"city_id": "309",
-			"name": "宕昌县"
-		},
-		{
-			"id": "2683",
-			"city_id": "309",
-			"name": "康县"
-		},
-		{
-			"id": "2684",
-			"city_id": "309",
-			"name": "西和县"
-		},
-		{
-			"id": "2685",
-			"city_id": "309",
-			"name": "礼县"
-		},
-		{
-			"id": "2686",
-			"city_id": "309",
-			"name": "徽县"
-		},
-		{
-			"id": "2687",
-			"city_id": "309",
-			"name": "两当县"
-		},
-		{
-			"id": "2688",
-			"city_id": "310",
-			"name": "临夏市"
-		},
-		{
-			"id": "2689",
-			"city_id": "310",
-			"name": "临夏县"
-		},
-		{
-			"id": "2690",
-			"city_id": "310",
-			"name": "康乐县"
-		},
-		{
-			"id": "2691",
-			"city_id": "310",
-			"name": "永靖县"
-		},
-		{
-			"id": "2692",
-			"city_id": "310",
-			"name": "广河县"
-		},
-		{
-			"id": "2693",
-			"city_id": "310",
-			"name": "和政县"
-		},
-		{
-			"id": "2694",
-			"city_id": "310",
-			"name": "东乡族自治县"
-		},
-		{
-			"id": "2695",
-			"city_id": "310",
-			"name": "积石山保安族东乡族撒拉族自治县"
-		},
-		{
-			"id": "2696",
-			"city_id": "311",
-			"name": "合作市"
-		},
-		{
-			"id": "2697",
-			"city_id": "311",
-			"name": "临潭县"
-		},
-		{
-			"id": "2698",
-			"city_id": "311",
-			"name": "卓尼县"
-		},
-		{
-			"id": "2699",
-			"city_id": "311",
-			"name": "舟曲县"
-		},
-		{
-			"id": "2700",
-			"city_id": "311",
-			"name": "迭部县"
-		},
-		{
-			"id": "2701",
-			"city_id": "311",
-			"name": "玛曲县"
-		},
-		{
-			"id": "2702",
-			"city_id": "311",
-			"name": "碌曲县"
-		},
-		{
-			"id": "2703",
-			"city_id": "311",
-			"name": "夏河县"
-		},
-		{
-			"id": "2704",
-			"city_id": "312",
-			"name": "城东区"
-		},
-		{
-			"id": "2705",
-			"city_id": "312",
-			"name": "城中区"
-		},
-		{
-			"id": "2706",
-			"city_id": "312",
-			"name": "城西区"
-		},
-		{
-			"id": "2707",
-			"city_id": "312",
-			"name": "城北区"
-		},
-		{
-			"id": "2708",
-			"city_id": "312",
-			"name": "大通回族土族自治县"
-		},
-		{
-			"id": "2709",
-			"city_id": "312",
-			"name": "湟中县"
-		},
-		{
-			"id": "2710",
-			"city_id": "312",
-			"name": "湟源县"
-		},
-		{
-			"id": "2711",
-			"city_id": "313",
-			"name": "平安县"
-		},
-		{
-			"id": "2712",
-			"city_id": "313",
-			"name": "民和回族土族自治县"
-		},
-		{
-			"id": "2713",
-			"city_id": "313",
-			"name": "乐都县"
-		},
-		{
-			"id": "2714",
-			"city_id": "313",
-			"name": "互助土族自治县"
-		},
-		{
-			"id": "2715",
-			"city_id": "313",
-			"name": "化隆回族自治县"
-		},
-		{
-			"id": "2716",
-			"city_id": "313",
-			"name": "循化撒拉族自治县"
-		},
-		{
-			"id": "2717",
-			"city_id": "314",
-			"name": "门源回族自治县"
-		},
-		{
-			"id": "2718",
-			"city_id": "314",
-			"name": "祁连县"
-		},
-		{
-			"id": "2719",
-			"city_id": "314",
-			"name": "海晏县"
-		},
-		{
-			"id": "2720",
-			"city_id": "314",
-			"name": "刚察县"
-		},
-		{
-			"id": "2721",
-			"city_id": "315",
-			"name": "同仁县"
-		},
-		{
-			"id": "2722",
-			"city_id": "315",
-			"name": "尖扎县"
-		},
-		{
-			"id": "2723",
-			"city_id": "315",
-			"name": "泽库县"
-		},
-		{
-			"id": "2724",
-			"city_id": "315",
-			"name": "河南蒙古族自治县"
-		},
-		{
-			"id": "2725",
-			"city_id": "316",
-			"name": "共和县"
-		},
-		{
-			"id": "2726",
-			"city_id": "316",
-			"name": "同德县"
-		},
-		{
-			"id": "2727",
-			"city_id": "316",
-			"name": "贵德县"
-		},
-		{
-			"id": "2728",
-			"city_id": "316",
-			"name": "兴海县"
-		},
-		{
-			"id": "2729",
-			"city_id": "316",
-			"name": "贵南县"
-		},
-		{
-			"id": "2730",
-			"city_id": "317",
-			"name": "玛沁县"
-		},
-		{
-			"id": "2731",
-			"city_id": "317",
-			"name": "班玛县"
-		},
-		{
-			"id": "2732",
-			"city_id": "317",
-			"name": "甘德县"
-		},
-		{
-			"id": "2733",
-			"city_id": "317",
-			"name": "达日县"
-		},
-		{
-			"id": "2734",
-			"city_id": "317",
-			"name": "久治县"
-		},
-		{
-			"id": "2735",
-			"city_id": "317",
-			"name": "玛多县"
-		},
-		{
-			"id": "2736",
-			"city_id": "318",
-			"name": "玉树县"
-		},
-		{
-			"id": "2737",
-			"city_id": "318",
-			"name": "杂多县"
-		},
-		{
-			"id": "2738",
-			"city_id": "318",
-			"name": "称多县"
-		},
-		{
-			"id": "2739",
-			"city_id": "318",
-			"name": "治多县"
-		},
-		{
-			"id": "2740",
-			"city_id": "318",
-			"name": "囊谦县"
-		},
-		{
-			"id": "2741",
-			"city_id": "318",
-			"name": "曲麻莱县"
-		},
-		{
-			"id": "2742",
-			"city_id": "319",
-			"name": "格尔木市"
-		},
-		{
-			"id": "2743",
-			"city_id": "319",
-			"name": "德令哈市"
-		},
-		{
-			"id": "2744",
-			"city_id": "319",
-			"name": "乌兰县"
-		},
-		{
-			"id": "2745",
-			"city_id": "319",
-			"name": "都兰县"
-		},
-		{
-			"id": "2746",
-			"city_id": "319",
-			"name": "天峻县"
-		},
-		{
-			"id": "2747",
-			"city_id": "320",
-			"name": "兴庆区"
-		},
-		{
-			"id": "2748",
-			"city_id": "320",
-			"name": "西夏区"
-		},
-		{
-			"id": "2749",
-			"city_id": "320",
-			"name": "金凤区"
-		},
-		{
-			"id": "2750",
-			"city_id": "320",
-			"name": "永宁县"
-		},
-		{
-			"id": "2751",
-			"city_id": "320",
-			"name": "贺兰县"
-		},
-		{
-			"id": "2752",
-			"city_id": "320",
-			"name": "灵武市"
-		},
-		{
-			"id": "2753",
-			"city_id": "321",
-			"name": "大武口区"
-		},
-		{
-			"id": "2754",
-			"city_id": "321",
-			"name": "惠农区"
-		},
-		{
-			"id": "2755",
-			"city_id": "321",
-			"name": "平罗县"
-		},
-		{
-			"id": "2756",
-			"city_id": "322",
-			"name": "利通区"
-		},
-		{
-			"id": "2757",
-			"city_id": "322",
-			"name": "盐池县"
-		},
-		{
-			"id": "2758",
-			"city_id": "322",
-			"name": "同心县"
-		},
-		{
-			"id": "2759",
-			"city_id": "322",
-			"name": "青铜峡市"
-		},
-		{
-			"id": "2760",
-			"city_id": "323",
-			"name": "原州区"
-		},
-		{
-			"id": "2761",
-			"city_id": "323",
-			"name": "西吉县"
-		},
-		{
-			"id": "2762",
-			"city_id": "323",
-			"name": "隆德县"
-		},
-		{
-			"id": "2763",
-			"city_id": "323",
-			"name": "泾源县"
-		},
-		{
-			"id": "2764",
-			"city_id": "323",
-			"name": "彭阳县"
-		},
-		{
-			"id": "2765",
-			"city_id": "324",
-			"name": "沙坡头区"
-		},
-		{
-			"id": "2766",
-			"city_id": "324",
-			"name": "中宁县"
-		},
-		{
-			"id": "2767",
-			"city_id": "324",
-			"name": "海原县"
-		},
-		{
-			"id": "2768",
-			"city_id": "325",
-			"name": "天山区"
-		},
-		{
-			"id": "2769",
-			"city_id": "325",
-			"name": "沙依巴克区"
-		},
-		{
-			"id": "2770",
-			"city_id": "325",
-			"name": "新市区"
-		},
-		{
-			"id": "2771",
-			"city_id": "325",
-			"name": "水磨沟区"
-		},
-		{
-			"id": "2772",
-			"city_id": "325",
-			"name": "头屯河区"
-		},
-		{
-			"id": "2773",
-			"city_id": "325",
-			"name": "达坂城区"
-		},
-		{
-			"id": "2774",
-			"city_id": "325",
-			"name": "东山区"
-		},
-		{
-			"id": "2775",
-			"city_id": "325",
-			"name": "乌鲁木齐县"
-		},
-		{
-			"id": "2776",
-			"city_id": "326",
-			"name": "独山子区"
-		},
-		{
-			"id": "2777",
-			"city_id": "326",
-			"name": "克拉玛依区"
-		},
-		{
-			"id": "2778",
-			"city_id": "326",
-			"name": "白碱滩区"
-		},
-		{
-			"id": "2779",
-			"city_id": "326",
-			"name": "乌尔禾区"
-		},
-		{
-			"id": "2780",
-			"city_id": "327",
-			"name": "吐鲁番市"
-		},
-		{
-			"id": "2781",
-			"city_id": "327",
-			"name": "鄯善县"
-		},
-		{
-			"id": "2782",
-			"city_id": "327",
-			"name": "托克逊县"
-		},
-		{
-			"id": "2783",
-			"city_id": "328",
-			"name": "哈密市"
-		},
-		{
-			"id": "2784",
-			"city_id": "328",
-			"name": "巴里坤哈萨克自治县"
-		},
-		{
-			"id": "2785",
-			"city_id": "328",
-			"name": "伊吾县"
-		},
-		{
-			"id": "2786",
-			"city_id": "329",
-			"name": "昌吉市"
-		},
-		{
-			"id": "2787",
-			"city_id": "329",
-			"name": "阜康市"
-		},
-		{
-			"id": "2788",
-			"city_id": "329",
-			"name": "米泉市"
-		},
-		{
-			"id": "2789",
-			"city_id": "329",
-			"name": "呼图壁县"
-		},
-		{
-			"id": "2790",
-			"city_id": "329",
-			"name": "玛纳斯县"
-		},
-		{
-			"id": "2791",
-			"city_id": "329",
-			"name": "奇台县"
-		},
-		{
-			"id": "2792",
-			"city_id": "329",
-			"name": "吉木萨尔县"
-		},
-		{
-			"id": "2793",
-			"city_id": "329",
-			"name": "木垒哈萨克自治县"
-		},
-		{
-			"id": "2794",
-			"city_id": "330",
-			"name": "博乐市"
-		},
-		{
-			"id": "2795",
-			"city_id": "330",
-			"name": "精河县"
-		},
-		{
-			"id": "2796",
-			"city_id": "330",
-			"name": "温泉县"
-		},
-		{
-			"id": "2797",
-			"city_id": "331",
-			"name": "库尔勒市"
-		},
-		{
-			"id": "2798",
-			"city_id": "331",
-			"name": "轮台县"
-		},
-		{
-			"id": "2799",
-			"city_id": "331",
-			"name": "尉犁县"
-		},
-		{
-			"id": "2800",
-			"city_id": "331",
-			"name": "若羌县"
-		},
-		{
-			"id": "2801",
-			"city_id": "331",
-			"name": "且末县"
-		},
-		{
-			"id": "2802",
-			"city_id": "331",
-			"name": "焉耆回族自治县"
-		},
-		{
-			"id": "2803",
-			"city_id": "331",
-			"name": "和静县"
-		},
-		{
-			"id": "2804",
-			"city_id": "331",
-			"name": "和硕县"
-		},
-		{
-			"id": "2805",
-			"city_id": "331",
-			"name": "博湖县"
-		},
-		{
-			"id": "2806",
-			"city_id": "332",
-			"name": "阿克苏市"
-		},
-		{
-			"id": "2807",
-			"city_id": "332",
-			"name": "温宿县"
-		},
-		{
-			"id": "2808",
-			"city_id": "332",
-			"name": "库车县"
-		},
-		{
-			"id": "2809",
-			"city_id": "332",
-			"name": "沙雅县"
-		},
-		{
-			"id": "2810",
-			"city_id": "332",
-			"name": "新和县"
-		},
-		{
-			"id": "2811",
-			"city_id": "332",
-			"name": "拜城县"
-		},
-		{
-			"id": "2812",
-			"city_id": "332",
-			"name": "乌什县"
-		},
-		{
-			"id": "2813",
-			"city_id": "332",
-			"name": "阿瓦提县"
-		},
-		{
-			"id": "2814",
-			"city_id": "332",
-			"name": "柯坪县"
-		},
-		{
-			"id": "2815",
-			"city_id": "333",
-			"name": "阿图什市"
-		},
-		{
-			"id": "2816",
-			"city_id": "333",
-			"name": "阿克陶县"
-		},
-		{
-			"id": "2817",
-			"city_id": "333",
-			"name": "阿合奇县"
-		},
-		{
-			"id": "2818",
-			"city_id": "333",
-			"name": "乌恰县"
-		},
-		{
-			"id": "2819",
-			"city_id": "334",
-			"name": "喀什市"
-		},
-		{
-			"id": "2820",
-			"city_id": "334",
-			"name": "疏附县"
-		},
-		{
-			"id": "2821",
-			"city_id": "334",
-			"name": "疏勒县"
-		},
-		{
-			"id": "2822",
-			"city_id": "334",
-			"name": "英吉沙县"
-		},
-		{
-			"id": "2823",
-			"city_id": "334",
-			"name": "泽普县"
-		},
-		{
-			"id": "2824",
-			"city_id": "334",
-			"name": "莎车县"
-		},
-		{
-			"id": "2825",
-			"city_id": "334",
-			"name": "叶城县"
-		},
-		{
-			"id": "2826",
-			"city_id": "334",
-			"name": "麦盖提县"
-		},
-		{
-			"id": "2827",
-			"city_id": "334",
-			"name": "岳普湖县"
-		},
-		{
-			"id": "2828",
-			"city_id": "334",
-			"name": "伽师县"
-		},
-		{
-			"id": "2829",
-			"city_id": "334",
-			"name": "巴楚县"
-		},
-		{
-			"id": "2830",
-			"city_id": "334",
-			"name": "塔什库尔干塔吉克自治县"
-		},
-		{
-			"id": "2831",
-			"city_id": "335",
-			"name": "和田市"
-		},
-		{
-			"id": "2832",
-			"city_id": "335",
-			"name": "和田县"
-		},
-		{
-			"id": "2833",
-			"city_id": "335",
-			"name": "墨玉县"
-		},
-		{
-			"id": "2834",
-			"city_id": "335",
-			"name": "皮山县"
-		},
-		{
-			"id": "2835",
-			"city_id": "335",
-			"name": "洛浦县"
-		},
-		{
-			"id": "2836",
-			"city_id": "335",
-			"name": "策勒县"
-		},
-		{
-			"id": "2837",
-			"city_id": "335",
-			"name": "于田县"
-		},
-		{
-			"id": "2838",
-			"city_id": "335",
-			"name": "民丰县"
-		},
-		{
-			"id": "2839",
-			"city_id": "336",
-			"name": "伊宁市"
-		},
-		{
-			"id": "2840",
-			"city_id": "336",
-			"name": "奎屯市"
-		},
-		{
-			"id": "2841",
-			"city_id": "336",
-			"name": "伊宁县"
-		},
-		{
-			"id": "2842",
-			"city_id": "336",
-			"name": "察布查尔锡伯自治县"
-		},
-		{
-			"id": "2843",
-			"city_id": "336",
-			"name": "霍城县"
-		},
-		{
-			"id": "2844",
-			"city_id": "336",
-			"name": "巩留县"
-		},
-		{
-			"id": "2845",
-			"city_id": "336",
-			"name": "新源县"
-		},
-		{
-			"id": "2846",
-			"city_id": "336",
-			"name": "昭苏县"
-		},
-		{
-			"id": "2847",
-			"city_id": "336",
-			"name": "特克斯县"
-		},
-		{
-			"id": "2848",
-			"city_id": "336",
-			"name": "尼勒克县"
-		},
-		{
-			"id": "2849",
-			"city_id": "337",
-			"name": "塔城市"
-		},
-		{
-			"id": "2850",
-			"city_id": "337",
-			"name": "乌苏市"
-		},
-		{
-			"id": "2851",
-			"city_id": "337",
-			"name": "额敏县"
-		},
-		{
-			"id": "2852",
-			"city_id": "337",
-			"name": "沙湾县"
-		},
-		{
-			"id": "2853",
-			"city_id": "337",
-			"name": "托里县"
-		},
-		{
-			"id": "2854",
-			"city_id": "337",
-			"name": "裕民县"
-		},
-		{
-			"id": "2855",
-			"city_id": "337",
-			"name": "和布克赛尔蒙古自治县"
-		},
-		{
-			"id": "2856",
-			"city_id": "338",
-			"name": "阿勒泰市"
-		},
-		{
-			"id": "2857",
-			"city_id": "338",
-			"name": "布尔津县"
-		},
-		{
-			"id": "2858",
-			"city_id": "338",
-			"name": "富蕴县"
-		},
-		{
-			"id": "2859",
-			"city_id": "338",
-			"name": "福海县"
-		},
-		{
-			"id": "2860",
-			"city_id": "338",
-			"name": "哈巴河县"
-		},
-		{
-			"id": "2861",
-			"city_id": "338",
-			"name": "青河县"
-		},
-		{
-			"id": "2862",
-			"city_id": "338",
-			"name": "吉木乃县"
-		},
-		{
-			"id": "2863",
-			"city_id": "214",
-			"name": "中山市"
-		},
-		{
-			"id": "2864",
-			"city_id": "75",
-			"name": "新吴区"
-		},
-		{
-			"id": "2865",
-			"city_id": "75",
-			"name": "梁溪区"
-		},
-		{
-			"id": "2866",
-			"city_id": "213",
-			"name": "东莞市"
-		},
-		{
-			"id": "2867",
-			"city_id": "343",
-			"name": "香港特别行政区"
-		},
-		{
-			"id": "2868",
-			"city_id": "344",
-			"name": "澳门特别行政区"
-		},
-		{
-			"id": "2869",
-			"city_id": "345",
-			"name": "台湾省"
-		},
-		{
-			"id": "2870",
-			"city_id": "78",
-			"name": "姑苏区"
-		},
-		{
-			"id": "2871",
-			"city_id": "233",
-			"name": "天涯区"
-		},
-		{
-			"id": "2872",
-			"city_id": "241",
-			"name": "利州区"
-		},
-		{
-			"id": "2873",
-			"city_id": "78",
-			"name": "工业园区"
-		}
-	]
+    "PROVINCES": [
+        {
+            "id": "1",
+            "name": "北京市"
+        },
+        {
+            "id": "2",
+            "name": "天津市"
+        },
+        {
+            "id": "3",
+            "name": "河北省"
+        },
+        {
+            "id": "4",
+            "name": "山西省"
+        },
+        {
+            "id": "5",
+            "name": "内蒙古自治区"
+        },
+        {
+            "id": "6",
+            "name": "辽宁省"
+        },
+        {
+            "id": "7",
+            "name": "吉林省"
+        },
+        {
+            "id": "8",
+            "name": "黑龙江省"
+        },
+        {
+            "id": "9",
+            "name": "上海市"
+        },
+        {
+            "id": "10",
+            "name": "江苏省"
+        },
+        {
+            "id": "11",
+            "name": "浙江省"
+        },
+        {
+            "id": "12",
+            "name": "安徽省"
+        },
+        {
+            "id": "13",
+            "name": "福建省"
+        },
+        {
+            "id": "14",
+            "name": "江西省"
+        },
+        {
+            "id": "15",
+            "name": "山东省"
+        },
+        {
+            "id": "16",
+            "name": "河南省"
+        },
+        {
+            "id": "17",
+            "name": "湖北省"
+        },
+        {
+            "id": "18",
+            "name": "湖南省"
+        },
+        {
+            "id": "19",
+            "name": "广东省"
+        },
+        {
+            "id": "20",
+            "name": "广西壮族自治区"
+        },
+        {
+            "id": "21",
+            "name": "海南省"
+        },
+        {
+            "id": "22",
+            "name": "重庆市"
+        },
+        {
+            "id": "23",
+            "name": "四川省"
+        },
+        {
+            "id": "24",
+            "name": "贵州省"
+        },
+        {
+            "id": "25",
+            "name": "云南省"
+        },
+        {
+            "id": "26",
+            "name": "西藏自治区"
+        },
+        {
+            "id": "27",
+            "name": "陕西省"
+        },
+        {
+            "id": "28",
+            "name": "甘肃省"
+        },
+        {
+            "id": "29",
+            "name": "青海省"
+        },
+        {
+            "id": "30",
+            "name": "宁夏回族自治区"
+        },
+        {
+            "id": "31",
+            "name": "新疆维吾尔自治区"
+        },
+        {
+            "id": "32",
+            "name": "香港特别行政区"
+        },
+        {
+            "id": "33",
+            "name": "澳门特别行政区"
+        },
+        {
+            "id": "34",
+            "name": "台湾省"
+        }
+    ],
+    "CITIES": [
+        {
+            "zip_code": "100000",
+            "province_id": "1",
+            "id": "1",
+            "name": "北京市"
+        },
+        {
+            "zip_code": "100000",
+            "province_id": "2",
+            "id": "2",
+            "name": "天津市"
+        },
+        {
+            "zip_code": "050000",
+            "province_id": "3",
+            "id": "3",
+            "name": "石家庄市"
+        },
+        {
+            "zip_code": "063000",
+            "province_id": "3",
+            "id": "4",
+            "name": "唐山市"
+        },
+        {
+            "zip_code": "066000",
+            "province_id": "3",
+            "id": "5",
+            "name": "秦皇岛市"
+        },
+        {
+            "zip_code": "056000",
+            "province_id": "3",
+            "id": "6",
+            "name": "邯郸市"
+        },
+        {
+            "zip_code": "054000",
+            "province_id": "3",
+            "id": "7",
+            "name": "邢台市"
+        },
+        {
+            "zip_code": "071000",
+            "province_id": "3",
+            "id": "8",
+            "name": "保定市"
+        },
+        {
+            "zip_code": "075000",
+            "province_id": "3",
+            "id": "9",
+            "name": "张家口市"
+        },
+        {
+            "zip_code": "067000",
+            "province_id": "3",
+            "id": "10",
+            "name": "承德市"
+        },
+        {
+            "zip_code": "061000",
+            "province_id": "3",
+            "id": "11",
+            "name": "沧州市"
+        },
+        {
+            "zip_code": "065000",
+            "province_id": "3",
+            "id": "12",
+            "name": "廊坊市"
+        },
+        {
+            "zip_code": "053000",
+            "province_id": "3",
+            "id": "13",
+            "name": "衡水市"
+        },
+        {
+            "zip_code": "030000",
+            "province_id": "4",
+            "id": "14",
+            "name": "太原市"
+        },
+        {
+            "zip_code": "037000",
+            "province_id": "4",
+            "id": "15",
+            "name": "大同市"
+        },
+        {
+            "zip_code": "045000",
+            "province_id": "4",
+            "id": "16",
+            "name": "阳泉市"
+        },
+        {
+            "zip_code": "046000",
+            "province_id": "4",
+            "id": "17",
+            "name": "长治市"
+        },
+        {
+            "zip_code": "048000",
+            "province_id": "4",
+            "id": "18",
+            "name": "晋城市"
+        },
+        {
+            "zip_code": "036000",
+            "province_id": "4",
+            "id": "19",
+            "name": "朔州市"
+        },
+        {
+            "zip_code": "030600",
+            "province_id": "4",
+            "id": "20",
+            "name": "晋中市"
+        },
+        {
+            "zip_code": "044000",
+            "province_id": "4",
+            "id": "21",
+            "name": "运城市"
+        },
+        {
+            "zip_code": "034000",
+            "province_id": "4",
+            "id": "22",
+            "name": "忻州市"
+        },
+        {
+            "zip_code": "041000",
+            "province_id": "4",
+            "id": "23",
+            "name": "临汾市"
+        },
+        {
+            "zip_code": "030500",
+            "province_id": "4",
+            "id": "24",
+            "name": "吕梁市"
+        },
+        {
+            "zip_code": "010000",
+            "province_id": "5",
+            "id": "25",
+            "name": "呼和浩特市"
+        },
+        {
+            "zip_code": "014000",
+            "province_id": "5",
+            "id": "26",
+            "name": "包头市"
+        },
+        {
+            "zip_code": "016000",
+            "province_id": "5",
+            "id": "27",
+            "name": "乌海市"
+        },
+        {
+            "zip_code": "024000",
+            "province_id": "5",
+            "id": "28",
+            "name": "赤峰市"
+        },
+        {
+            "zip_code": "028000",
+            "province_id": "5",
+            "id": "29",
+            "name": "通辽市"
+        },
+        {
+            "zip_code": "010300",
+            "province_id": "5",
+            "id": "30",
+            "name": "鄂尔多斯市"
+        },
+        {
+            "zip_code": "021000",
+            "province_id": "5",
+            "id": "31",
+            "name": "呼伦贝尔市"
+        },
+        {
+            "zip_code": "014400",
+            "province_id": "5",
+            "id": "32",
+            "name": "巴彦淖尔市"
+        },
+        {
+            "zip_code": "011800",
+            "province_id": "5",
+            "id": "33",
+            "name": "乌兰察布市"
+        },
+        {
+            "zip_code": "137500",
+            "province_id": "5",
+            "id": "34",
+            "name": "兴安盟"
+        },
+        {
+            "zip_code": "011100",
+            "province_id": "5",
+            "id": "35",
+            "name": "锡林郭勒盟"
+        },
+        {
+            "zip_code": "016000",
+            "province_id": "5",
+            "id": "36",
+            "name": "阿拉善盟"
+        },
+        {
+            "zip_code": "110000",
+            "province_id": "6",
+            "id": "37",
+            "name": "沈阳市"
+        },
+        {
+            "zip_code": "116000",
+            "province_id": "6",
+            "id": "38",
+            "name": "大连市"
+        },
+        {
+            "zip_code": "114000",
+            "province_id": "6",
+            "id": "39",
+            "name": "鞍山市"
+        },
+        {
+            "zip_code": "113000",
+            "province_id": "6",
+            "id": "40",
+            "name": "抚顺市"
+        },
+        {
+            "zip_code": "117000",
+            "province_id": "6",
+            "id": "41",
+            "name": "本溪市"
+        },
+        {
+            "zip_code": "118000",
+            "province_id": "6",
+            "id": "42",
+            "name": "丹东市"
+        },
+        {
+            "zip_code": "121000",
+            "province_id": "6",
+            "id": "43",
+            "name": "锦州市"
+        },
+        {
+            "zip_code": "115000",
+            "province_id": "6",
+            "id": "44",
+            "name": "营口市"
+        },
+        {
+            "zip_code": "123000",
+            "province_id": "6",
+            "id": "45",
+            "name": "阜新市"
+        },
+        {
+            "zip_code": "111000",
+            "province_id": "6",
+            "id": "46",
+            "name": "辽阳市"
+        },
+        {
+            "zip_code": "124000",
+            "province_id": "6",
+            "id": "47",
+            "name": "盘锦市"
+        },
+        {
+            "zip_code": "112000",
+            "province_id": "6",
+            "id": "48",
+            "name": "铁岭市"
+        },
+        {
+            "zip_code": "122000",
+            "province_id": "6",
+            "id": "49",
+            "name": "朝阳市"
+        },
+        {
+            "zip_code": "125000",
+            "province_id": "6",
+            "id": "50",
+            "name": "葫芦岛市"
+        },
+        {
+            "zip_code": "130000",
+            "province_id": "7",
+            "id": "51",
+            "name": "长春市"
+        },
+        {
+            "zip_code": "132000",
+            "province_id": "7",
+            "id": "52",
+            "name": "吉林市"
+        },
+        {
+            "zip_code": "136000",
+            "province_id": "7",
+            "id": "53",
+            "name": "四平市"
+        },
+        {
+            "zip_code": "136200",
+            "province_id": "7",
+            "id": "54",
+            "name": "辽源市"
+        },
+        {
+            "zip_code": "134000",
+            "province_id": "7",
+            "id": "55",
+            "name": "通化市"
+        },
+        {
+            "zip_code": "134300",
+            "province_id": "7",
+            "id": "56",
+            "name": "白山市"
+        },
+        {
+            "zip_code": "131100",
+            "province_id": "7",
+            "id": "57",
+            "name": "松原市"
+        },
+        {
+            "zip_code": "137000",
+            "province_id": "7",
+            "id": "58",
+            "name": "白城市"
+        },
+        {
+            "zip_code": "133000",
+            "province_id": "7",
+            "id": "59",
+            "name": "延边朝鲜族自治州"
+        },
+        {
+            "zip_code": "150000",
+            "province_id": "8",
+            "id": "60",
+            "name": "哈尔滨市"
+        },
+        {
+            "zip_code": "161000",
+            "province_id": "8",
+            "id": "61",
+            "name": "齐齐哈尔市"
+        },
+        {
+            "zip_code": "158100",
+            "province_id": "8",
+            "id": "62",
+            "name": "鸡西市"
+        },
+        {
+            "zip_code": "154100",
+            "province_id": "8",
+            "id": "63",
+            "name": "鹤岗市"
+        },
+        {
+            "zip_code": "155100",
+            "province_id": "8",
+            "id": "64",
+            "name": "双鸭山市"
+        },
+        {
+            "zip_code": "163000",
+            "province_id": "8",
+            "id": "65",
+            "name": "大庆市"
+        },
+        {
+            "zip_code": "152300",
+            "province_id": "8",
+            "id": "66",
+            "name": "伊春市"
+        },
+        {
+            "zip_code": "154000",
+            "province_id": "8",
+            "id": "67",
+            "name": "佳木斯市"
+        },
+        {
+            "zip_code": "154600",
+            "province_id": "8",
+            "id": "68",
+            "name": "七台河市"
+        },
+        {
+            "zip_code": "157000",
+            "province_id": "8",
+            "id": "69",
+            "name": "牡丹江市"
+        },
+        {
+            "zip_code": "164300",
+            "province_id": "8",
+            "id": "70",
+            "name": "黑河市"
+        },
+        {
+            "zip_code": "152000",
+            "province_id": "8",
+            "id": "71",
+            "name": "绥化市"
+        },
+        {
+            "zip_code": "165000",
+            "province_id": "8",
+            "id": "72",
+            "name": "大兴安岭地区"
+        },
+        {
+            "zip_code": "200000",
+            "province_id": "9",
+            "id": "73",
+            "name": "上海市"
+        },
+        {
+            "zip_code": "210000",
+            "province_id": "10",
+            "id": "74",
+            "name": "南京市"
+        },
+        {
+            "zip_code": "214000",
+            "province_id": "10",
+            "id": "75",
+            "name": "无锡市"
+        },
+        {
+            "zip_code": "221000",
+            "province_id": "10",
+            "id": "76",
+            "name": "徐州市"
+        },
+        {
+            "zip_code": "213000",
+            "province_id": "10",
+            "id": "77",
+            "name": "常州市"
+        },
+        {
+            "zip_code": "215000",
+            "province_id": "10",
+            "id": "78",
+            "name": "苏州市"
+        },
+        {
+            "zip_code": "226000",
+            "province_id": "10",
+            "id": "79",
+            "name": "南通市"
+        },
+        {
+            "zip_code": "222000",
+            "province_id": "10",
+            "id": "80",
+            "name": "连云港市"
+        },
+        {
+            "zip_code": "223200",
+            "province_id": "10",
+            "id": "81",
+            "name": "淮安市"
+        },
+        {
+            "zip_code": "224000",
+            "province_id": "10",
+            "id": "82",
+            "name": "盐城市"
+        },
+        {
+            "zip_code": "225000",
+            "province_id": "10",
+            "id": "83",
+            "name": "扬州市"
+        },
+        {
+            "zip_code": "212000",
+            "province_id": "10",
+            "id": "84",
+            "name": "镇江市"
+        },
+        {
+            "zip_code": "225300",
+            "province_id": "10",
+            "id": "85",
+            "name": "泰州市"
+        },
+        {
+            "zip_code": "223800",
+            "province_id": "10",
+            "id": "86",
+            "name": "宿迁市"
+        },
+        {
+            "zip_code": "310000",
+            "province_id": "11",
+            "id": "87",
+            "name": "杭州市"
+        },
+        {
+            "zip_code": "315000",
+            "province_id": "11",
+            "id": "88",
+            "name": "宁波市"
+        },
+        {
+            "zip_code": "325000",
+            "province_id": "11",
+            "id": "89",
+            "name": "温州市"
+        },
+        {
+            "zip_code": "314000",
+            "province_id": "11",
+            "id": "90",
+            "name": "嘉兴市"
+        },
+        {
+            "zip_code": "313000",
+            "province_id": "11",
+            "id": "91",
+            "name": "湖州市"
+        },
+        {
+            "zip_code": "312000",
+            "province_id": "11",
+            "id": "92",
+            "name": "绍兴市"
+        },
+        {
+            "zip_code": "321000",
+            "province_id": "11",
+            "id": "93",
+            "name": "金华市"
+        },
+        {
+            "zip_code": "324000",
+            "province_id": "11",
+            "id": "94",
+            "name": "衢州市"
+        },
+        {
+            "zip_code": "316000",
+            "province_id": "11",
+            "id": "95",
+            "name": "舟山市"
+        },
+        {
+            "zip_code": "318000",
+            "province_id": "11",
+            "id": "96",
+            "name": "台州市"
+        },
+        {
+            "zip_code": "323000",
+            "province_id": "11",
+            "id": "97",
+            "name": "丽水市"
+        },
+        {
+            "zip_code": "230000",
+            "province_id": "12",
+            "id": "98",
+            "name": "合肥市"
+        },
+        {
+            "zip_code": "241000",
+            "province_id": "12",
+            "id": "99",
+            "name": "芜湖市"
+        },
+        {
+            "zip_code": "233000",
+            "province_id": "12",
+            "id": "100",
+            "name": "蚌埠市"
+        },
+        {
+            "zip_code": "232000",
+            "province_id": "12",
+            "id": "101",
+            "name": "淮南市"
+        },
+        {
+            "zip_code": "243000",
+            "province_id": "12",
+            "id": "102",
+            "name": "马鞍山市"
+        },
+        {
+            "zip_code": "235000",
+            "province_id": "12",
+            "id": "103",
+            "name": "淮北市"
+        },
+        {
+            "zip_code": "244000",
+            "province_id": "12",
+            "id": "104",
+            "name": "铜陵市"
+        },
+        {
+            "zip_code": "246000",
+            "province_id": "12",
+            "id": "105",
+            "name": "安庆市"
+        },
+        {
+            "zip_code": "242700",
+            "province_id": "12",
+            "id": "106",
+            "name": "黄山市"
+        },
+        {
+            "zip_code": "239000",
+            "province_id": "12",
+            "id": "107",
+            "name": "滁州市"
+        },
+        {
+            "zip_code": "236100",
+            "province_id": "12",
+            "id": "108",
+            "name": "阜阳市"
+        },
+        {
+            "zip_code": "234100",
+            "province_id": "12",
+            "id": "109",
+            "name": "宿州市"
+        },
+        {
+            "zip_code": "238000",
+            "province_id": "12",
+            "id": "110",
+            "name": "巢湖市"
+        },
+        {
+            "zip_code": "237000",
+            "province_id": "12",
+            "id": "111",
+            "name": "六安市"
+        },
+        {
+            "zip_code": "236800",
+            "province_id": "12",
+            "id": "112",
+            "name": "亳州市"
+        },
+        {
+            "zip_code": "247100",
+            "province_id": "12",
+            "id": "113",
+            "name": "池州市"
+        },
+        {
+            "zip_code": "366000",
+            "province_id": "12",
+            "id": "114",
+            "name": "宣城市"
+        },
+        {
+            "zip_code": "350000",
+            "province_id": "13",
+            "id": "115",
+            "name": "福州市"
+        },
+        {
+            "zip_code": "361000",
+            "province_id": "13",
+            "id": "116",
+            "name": "厦门市"
+        },
+        {
+            "zip_code": "351100",
+            "province_id": "13",
+            "id": "117",
+            "name": "莆田市"
+        },
+        {
+            "zip_code": "365000",
+            "province_id": "13",
+            "id": "118",
+            "name": "三明市"
+        },
+        {
+            "zip_code": "362000",
+            "province_id": "13",
+            "id": "119",
+            "name": "泉州市"
+        },
+        {
+            "zip_code": "363000",
+            "province_id": "13",
+            "id": "120",
+            "name": "漳州市"
+        },
+        {
+            "zip_code": "353000",
+            "province_id": "13",
+            "id": "121",
+            "name": "南平市"
+        },
+        {
+            "zip_code": "364000",
+            "province_id": "13",
+            "id": "122",
+            "name": "龙岩市"
+        },
+        {
+            "zip_code": "352100",
+            "province_id": "13",
+            "id": "123",
+            "name": "宁德市"
+        },
+        {
+            "zip_code": "330000",
+            "province_id": "14",
+            "id": "124",
+            "name": "南昌市"
+        },
+        {
+            "zip_code": "333000",
+            "province_id": "14",
+            "id": "125",
+            "name": "景德镇市"
+        },
+        {
+            "zip_code": "337000",
+            "province_id": "14",
+            "id": "126",
+            "name": "萍乡市"
+        },
+        {
+            "zip_code": "332000",
+            "province_id": "14",
+            "id": "127",
+            "name": "九江市"
+        },
+        {
+            "zip_code": "338000",
+            "province_id": "14",
+            "id": "128",
+            "name": "新余市"
+        },
+        {
+            "zip_code": "335000",
+            "province_id": "14",
+            "id": "129",
+            "name": "鹰潭市"
+        },
+        {
+            "zip_code": "341000",
+            "province_id": "14",
+            "id": "130",
+            "name": "赣州市"
+        },
+        {
+            "zip_code": "343000",
+            "province_id": "14",
+            "id": "131",
+            "name": "吉安市"
+        },
+        {
+            "zip_code": "336000",
+            "province_id": "14",
+            "id": "132",
+            "name": "宜春市"
+        },
+        {
+            "zip_code": "332900",
+            "province_id": "14",
+            "id": "133",
+            "name": "抚州市"
+        },
+        {
+            "zip_code": "334000",
+            "province_id": "14",
+            "id": "134",
+            "name": "上饶市"
+        },
+        {
+            "zip_code": "250000",
+            "province_id": "15",
+            "id": "135",
+            "name": "济南市"
+        },
+        {
+            "zip_code": "266000",
+            "province_id": "15",
+            "id": "136",
+            "name": "青岛市"
+        },
+        {
+            "zip_code": "255000",
+            "province_id": "15",
+            "id": "137",
+            "name": "淄博市"
+        },
+        {
+            "zip_code": "277100",
+            "province_id": "15",
+            "id": "138",
+            "name": "枣庄市"
+        },
+        {
+            "zip_code": "257000",
+            "province_id": "15",
+            "id": "139",
+            "name": "东营市"
+        },
+        {
+            "zip_code": "264000",
+            "province_id": "15",
+            "id": "140",
+            "name": "烟台市"
+        },
+        {
+            "zip_code": "261000",
+            "province_id": "15",
+            "id": "141",
+            "name": "潍坊市"
+        },
+        {
+            "zip_code": "272100",
+            "province_id": "15",
+            "id": "142",
+            "name": "济宁市"
+        },
+        {
+            "zip_code": "271000",
+            "province_id": "15",
+            "id": "143",
+            "name": "泰安市"
+        },
+        {
+            "zip_code": "265700",
+            "province_id": "15",
+            "id": "144",
+            "name": "威海市"
+        },
+        {
+            "zip_code": "276800",
+            "province_id": "15",
+            "id": "145",
+            "name": "日照市"
+        },
+        {
+            "zip_code": "271100",
+            "province_id": "15",
+            "id": "146",
+            "name": "莱芜市"
+        },
+        {
+            "zip_code": "276000",
+            "province_id": "15",
+            "id": "147",
+            "name": "临沂市"
+        },
+        {
+            "zip_code": "253000",
+            "province_id": "15",
+            "id": "148",
+            "name": "德州市"
+        },
+        {
+            "zip_code": "252000",
+            "province_id": "15",
+            "id": "149",
+            "name": "聊城市"
+        },
+        {
+            "zip_code": "256600",
+            "province_id": "15",
+            "id": "150",
+            "name": "滨州市"
+        },
+        {
+            "zip_code": "255000",
+            "province_id": "15",
+            "id": "151",
+            "name": "菏泽市"
+        },
+        {
+            "zip_code": "450000",
+            "province_id": "16",
+            "id": "152",
+            "name": "郑州市"
+        },
+        {
+            "zip_code": "475000",
+            "province_id": "16",
+            "id": "153",
+            "name": "开封市"
+        },
+        {
+            "zip_code": "471000",
+            "province_id": "16",
+            "id": "154",
+            "name": "洛阳市"
+        },
+        {
+            "zip_code": "467000",
+            "province_id": "16",
+            "id": "155",
+            "name": "平顶山市"
+        },
+        {
+            "zip_code": "454900",
+            "province_id": "16",
+            "id": "156",
+            "name": "安阳市"
+        },
+        {
+            "zip_code": "456600",
+            "province_id": "16",
+            "id": "157",
+            "name": "鹤壁市"
+        },
+        {
+            "zip_code": "453000",
+            "province_id": "16",
+            "id": "158",
+            "name": "新乡市"
+        },
+        {
+            "zip_code": "454100",
+            "province_id": "16",
+            "id": "159",
+            "name": "焦作市"
+        },
+        {
+            "zip_code": "457000",
+            "province_id": "16",
+            "id": "160",
+            "name": "濮阳市"
+        },
+        {
+            "zip_code": "461000",
+            "province_id": "16",
+            "id": "161",
+            "name": "许昌市"
+        },
+        {
+            "zip_code": "462000",
+            "province_id": "16",
+            "id": "162",
+            "name": "漯河市"
+        },
+        {
+            "zip_code": "472000",
+            "province_id": "16",
+            "id": "163",
+            "name": "三门峡市"
+        },
+        {
+            "zip_code": "473000",
+            "province_id": "16",
+            "id": "164",
+            "name": "南阳市"
+        },
+        {
+            "zip_code": "476000",
+            "province_id": "16",
+            "id": "165",
+            "name": "商丘市"
+        },
+        {
+            "zip_code": "464000",
+            "province_id": "16",
+            "id": "166",
+            "name": "信阳市"
+        },
+        {
+            "zip_code": "466000",
+            "province_id": "16",
+            "id": "167",
+            "name": "周口市"
+        },
+        {
+            "zip_code": "463000",
+            "province_id": "16",
+            "id": "168",
+            "name": "驻马店市"
+        },
+        {
+            "zip_code": "430000",
+            "province_id": "17",
+            "id": "169",
+            "name": "武汉市"
+        },
+        {
+            "zip_code": "435000",
+            "province_id": "17",
+            "id": "170",
+            "name": "黄石市"
+        },
+        {
+            "zip_code": "442000",
+            "province_id": "17",
+            "id": "171",
+            "name": "十堰市"
+        },
+        {
+            "zip_code": "443000",
+            "province_id": "17",
+            "id": "172",
+            "name": "宜昌市"
+        },
+        {
+            "zip_code": "441000",
+            "province_id": "17",
+            "id": "173",
+            "name": "襄阳市"
+        },
+        {
+            "zip_code": "436000",
+            "province_id": "17",
+            "id": "174",
+            "name": "鄂州市"
+        },
+        {
+            "zip_code": "448000",
+            "province_id": "17",
+            "id": "175",
+            "name": "荆门市"
+        },
+        {
+            "zip_code": "432100",
+            "province_id": "17",
+            "id": "176",
+            "name": "孝感市"
+        },
+        {
+            "zip_code": "434000",
+            "province_id": "17",
+            "id": "177",
+            "name": "荆州市"
+        },
+        {
+            "zip_code": "438000",
+            "province_id": "17",
+            "id": "178",
+            "name": "黄冈市"
+        },
+        {
+            "zip_code": "437000",
+            "province_id": "17",
+            "id": "179",
+            "name": "咸宁市"
+        },
+        {
+            "zip_code": "441300",
+            "province_id": "17",
+            "id": "180",
+            "name": "随州市"
+        },
+        {
+            "zip_code": "445000",
+            "province_id": "17",
+            "id": "181",
+            "name": "恩施土家族苗族自治州"
+        },
+        {
+            "zip_code": "442400",
+            "province_id": "17",
+            "id": "182",
+            "name": "省直辖县"
+        },
+        {
+            "zip_code": "410000",
+            "province_id": "18",
+            "id": "183",
+            "name": "长沙市"
+        },
+        {
+            "zip_code": "412000",
+            "province_id": "18",
+            "id": "184",
+            "name": "株洲市"
+        },
+        {
+            "zip_code": "411100",
+            "province_id": "18",
+            "id": "185",
+            "name": "湘潭市"
+        },
+        {
+            "zip_code": "421000",
+            "province_id": "18",
+            "id": "186",
+            "name": "衡阳市"
+        },
+        {
+            "zip_code": "422000",
+            "province_id": "18",
+            "id": "187",
+            "name": "邵阳市"
+        },
+        {
+            "zip_code": "414000",
+            "province_id": "18",
+            "id": "188",
+            "name": "岳阳市"
+        },
+        {
+            "zip_code": "415000",
+            "province_id": "18",
+            "id": "189",
+            "name": "常德市"
+        },
+        {
+            "zip_code": "427000",
+            "province_id": "18",
+            "id": "190",
+            "name": "张家界市"
+        },
+        {
+            "zip_code": "413000",
+            "province_id": "18",
+            "id": "191",
+            "name": "益阳市"
+        },
+        {
+            "zip_code": "423000",
+            "province_id": "18",
+            "id": "192",
+            "name": "郴州市"
+        },
+        {
+            "zip_code": "425000",
+            "province_id": "18",
+            "id": "193",
+            "name": "永州市"
+        },
+        {
+            "zip_code": "418000",
+            "province_id": "18",
+            "id": "194",
+            "name": "怀化市"
+        },
+        {
+            "zip_code": "417000",
+            "province_id": "18",
+            "id": "195",
+            "name": "娄底市"
+        },
+        {
+            "zip_code": "416000",
+            "province_id": "18",
+            "id": "196",
+            "name": "湘西土家族苗族自治州"
+        },
+        {
+            "zip_code": "510000",
+            "province_id": "19",
+            "id": "197",
+            "name": "广州市"
+        },
+        {
+            "zip_code": "521000",
+            "province_id": "19",
+            "id": "198",
+            "name": "韶关市"
+        },
+        {
+            "zip_code": "518000",
+            "province_id": "19",
+            "id": "199",
+            "name": "深圳市"
+        },
+        {
+            "zip_code": "519000",
+            "province_id": "19",
+            "id": "200",
+            "name": "珠海市"
+        },
+        {
+            "zip_code": "515000",
+            "province_id": "19",
+            "id": "201",
+            "name": "汕头市"
+        },
+        {
+            "zip_code": "528000",
+            "province_id": "19",
+            "id": "202",
+            "name": "佛山市"
+        },
+        {
+            "zip_code": "529000",
+            "province_id": "19",
+            "id": "203",
+            "name": "江门市"
+        },
+        {
+            "zip_code": "524000",
+            "province_id": "19",
+            "id": "204",
+            "name": "湛江市"
+        },
+        {
+            "zip_code": "525000",
+            "province_id": "19",
+            "id": "205",
+            "name": "茂名市"
+        },
+        {
+            "zip_code": "526000",
+            "province_id": "19",
+            "id": "206",
+            "name": "肇庆市"
+        },
+        {
+            "zip_code": "516000",
+            "province_id": "19",
+            "id": "207",
+            "name": "惠州市"
+        },
+        {
+            "zip_code": "514000",
+            "province_id": "19",
+            "id": "208",
+            "name": "梅州市"
+        },
+        {
+            "zip_code": "516600",
+            "province_id": "19",
+            "id": "209",
+            "name": "汕尾市"
+        },
+        {
+            "zip_code": "517000",
+            "province_id": "19",
+            "id": "210",
+            "name": "河源市"
+        },
+        {
+            "zip_code": "529500",
+            "province_id": "19",
+            "id": "211",
+            "name": "阳江市"
+        },
+        {
+            "zip_code": "511500",
+            "province_id": "19",
+            "id": "212",
+            "name": "清远市"
+        },
+        {
+            "zip_code": "511700",
+            "province_id": "19",
+            "id": "213",
+            "name": "东莞市"
+        },
+        {
+            "zip_code": "528400",
+            "province_id": "19",
+            "id": "214",
+            "name": "中山市"
+        },
+        {
+            "zip_code": "515600",
+            "province_id": "19",
+            "id": "215",
+            "name": "潮州市"
+        },
+        {
+            "zip_code": "522000",
+            "province_id": "19",
+            "id": "216",
+            "name": "揭阳市"
+        },
+        {
+            "zip_code": "527300",
+            "province_id": "19",
+            "id": "217",
+            "name": "云浮市"
+        },
+        {
+            "zip_code": "530000",
+            "province_id": "20",
+            "id": "218",
+            "name": "南宁市"
+        },
+        {
+            "zip_code": "545000",
+            "province_id": "20",
+            "id": "219",
+            "name": "柳州市"
+        },
+        {
+            "zip_code": "541000",
+            "province_id": "20",
+            "id": "220",
+            "name": "桂林市"
+        },
+        {
+            "zip_code": "543000",
+            "province_id": "20",
+            "id": "221",
+            "name": "梧州市"
+        },
+        {
+            "zip_code": "536000",
+            "province_id": "20",
+            "id": "222",
+            "name": "北海市"
+        },
+        {
+            "zip_code": "538000",
+            "province_id": "20",
+            "id": "223",
+            "name": "防城港市"
+        },
+        {
+            "zip_code": "535000",
+            "province_id": "20",
+            "id": "224",
+            "name": "钦州市"
+        },
+        {
+            "zip_code": "537100",
+            "province_id": "20",
+            "id": "225",
+            "name": "贵港市"
+        },
+        {
+            "zip_code": "537000",
+            "province_id": "20",
+            "id": "226",
+            "name": "玉林市"
+        },
+        {
+            "zip_code": "533000",
+            "province_id": "20",
+            "id": "227",
+            "name": "百色市"
+        },
+        {
+            "zip_code": "542800",
+            "province_id": "20",
+            "id": "228",
+            "name": "贺州市"
+        },
+        {
+            "zip_code": "547000",
+            "province_id": "20",
+            "id": "229",
+            "name": "河池市"
+        },
+        {
+            "zip_code": "546100",
+            "province_id": "20",
+            "id": "230",
+            "name": "来宾市"
+        },
+        {
+            "zip_code": "532200",
+            "province_id": "20",
+            "id": "231",
+            "name": "崇左市"
+        },
+        {
+            "zip_code": "570000",
+            "province_id": "21",
+            "id": "232",
+            "name": "海口市"
+        },
+        {
+            "zip_code": "572000",
+            "province_id": "21",
+            "id": "233",
+            "name": "三亚市"
+        },
+        {
+            "zip_code": "400000",
+            "province_id": "22",
+            "id": "234",
+            "name": "重庆市"
+        },
+        {
+            "zip_code": "610000",
+            "province_id": "23",
+            "id": "235",
+            "name": "成都市"
+        },
+        {
+            "zip_code": "643000",
+            "province_id": "23",
+            "id": "236",
+            "name": "自贡市"
+        },
+        {
+            "zip_code": "617000",
+            "province_id": "23",
+            "id": "237",
+            "name": "攀枝花市"
+        },
+        {
+            "zip_code": "646100",
+            "province_id": "23",
+            "id": "238",
+            "name": "泸州市"
+        },
+        {
+            "zip_code": "618000",
+            "province_id": "23",
+            "id": "239",
+            "name": "德阳市"
+        },
+        {
+            "zip_code": "621000",
+            "province_id": "23",
+            "id": "240",
+            "name": "绵阳市"
+        },
+        {
+            "zip_code": "628000",
+            "province_id": "23",
+            "id": "241",
+            "name": "广元市"
+        },
+        {
+            "zip_code": "629000",
+            "province_id": "23",
+            "id": "242",
+            "name": "遂宁市"
+        },
+        {
+            "zip_code": "641000",
+            "province_id": "23",
+            "id": "243",
+            "name": "内江市"
+        },
+        {
+            "zip_code": "614000",
+            "province_id": "23",
+            "id": "244",
+            "name": "乐山市"
+        },
+        {
+            "zip_code": "637000",
+            "province_id": "23",
+            "id": "245",
+            "name": "南充市"
+        },
+        {
+            "zip_code": "612100",
+            "province_id": "23",
+            "id": "246",
+            "name": "眉山市"
+        },
+        {
+            "zip_code": "644000",
+            "province_id": "23",
+            "id": "247",
+            "name": "宜宾市"
+        },
+        {
+            "zip_code": "638000",
+            "province_id": "23",
+            "id": "248",
+            "name": "广安市"
+        },
+        {
+            "zip_code": "635000",
+            "province_id": "23",
+            "id": "249",
+            "name": "达州市"
+        },
+        {
+            "zip_code": "625000",
+            "province_id": "23",
+            "id": "250",
+            "name": "雅安市"
+        },
+        {
+            "zip_code": "635500",
+            "province_id": "23",
+            "id": "251",
+            "name": "巴中市"
+        },
+        {
+            "zip_code": "641300",
+            "province_id": "23",
+            "id": "252",
+            "name": "资阳市"
+        },
+        {
+            "zip_code": "624600",
+            "province_id": "23",
+            "id": "253",
+            "name": "阿坝藏族羌族自治州"
+        },
+        {
+            "zip_code": "626000",
+            "province_id": "23",
+            "id": "254",
+            "name": "甘孜藏族自治州"
+        },
+        {
+            "zip_code": "615000",
+            "province_id": "23",
+            "id": "255",
+            "name": "凉山彝族自治州"
+        },
+        {
+            "zip_code": "55000",
+            "province_id": "24",
+            "id": "256",
+            "name": "贵阳市"
+        },
+        {
+            "zip_code": "553000",
+            "province_id": "24",
+            "id": "257",
+            "name": "六盘水市"
+        },
+        {
+            "zip_code": "563000",
+            "province_id": "24",
+            "id": "258",
+            "name": "遵义市"
+        },
+        {
+            "zip_code": "561000",
+            "province_id": "24",
+            "id": "259",
+            "name": "安顺市"
+        },
+        {
+            "zip_code": "554300",
+            "province_id": "24",
+            "id": "260",
+            "name": "铜仁市"
+        },
+        {
+            "zip_code": "551500",
+            "province_id": "24",
+            "id": "261",
+            "name": "黔西南布依族苗族自治州"
+        },
+        {
+            "zip_code": "551700",
+            "province_id": "24",
+            "id": "262",
+            "name": "毕节市"
+        },
+        {
+            "zip_code": "551500",
+            "province_id": "24",
+            "id": "263",
+            "name": "黔东南苗族侗族自治州"
+        },
+        {
+            "zip_code": "550100",
+            "province_id": "24",
+            "id": "264",
+            "name": "黔南布依族苗族自治州"
+        },
+        {
+            "zip_code": "650000",
+            "province_id": "25",
+            "id": "265",
+            "name": "昆明市"
+        },
+        {
+            "zip_code": "655000",
+            "province_id": "25",
+            "id": "266",
+            "name": "曲靖市"
+        },
+        {
+            "zip_code": "653100",
+            "province_id": "25",
+            "id": "267",
+            "name": "玉溪市"
+        },
+        {
+            "zip_code": "678000",
+            "province_id": "25",
+            "id": "268",
+            "name": "保山市"
+        },
+        {
+            "zip_code": "657000",
+            "province_id": "25",
+            "id": "269",
+            "name": "昭通市"
+        },
+        {
+            "zip_code": "674100",
+            "province_id": "25",
+            "id": "270",
+            "name": "丽江市"
+        },
+        {
+            "zip_code": "665000",
+            "province_id": "25",
+            "id": "271",
+            "name": "普洱市"
+        },
+        {
+            "zip_code": "677000",
+            "province_id": "25",
+            "id": "272",
+            "name": "临沧市"
+        },
+        {
+            "zip_code": "675000",
+            "province_id": "25",
+            "id": "273",
+            "name": "楚雄彝族自治州"
+        },
+        {
+            "zip_code": "654400",
+            "province_id": "25",
+            "id": "274",
+            "name": "红河哈尼族彝族自治州"
+        },
+        {
+            "zip_code": "663000",
+            "province_id": "25",
+            "id": "275",
+            "name": "文山壮族苗族自治州"
+        },
+        {
+            "zip_code": "666200",
+            "province_id": "25",
+            "id": "276",
+            "name": "西双版纳傣族自治州"
+        },
+        {
+            "zip_code": "671000",
+            "province_id": "25",
+            "id": "277",
+            "name": "大理白族自治州"
+        },
+        {
+            "zip_code": "678400",
+            "province_id": "25",
+            "id": "278",
+            "name": "德宏傣族景颇族自治州"
+        },
+        {
+            "zip_code": "671400",
+            "province_id": "25",
+            "id": "279",
+            "name": "怒江傈僳族自治州"
+        },
+        {
+            "zip_code": "674400",
+            "province_id": "25",
+            "id": "280",
+            "name": "迪庆藏族自治州"
+        },
+        {
+            "zip_code": "850000",
+            "province_id": "26",
+            "id": "281",
+            "name": "拉萨市"
+        },
+        {
+            "zip_code": "854000",
+            "province_id": "26",
+            "id": "282",
+            "name": "昌都市"
+        },
+        {
+            "zip_code": "856000",
+            "province_id": "26",
+            "id": "283",
+            "name": "山南市"
+        },
+        {
+            "zip_code": "857000",
+            "province_id": "26",
+            "id": "284",
+            "name": "日喀则市"
+        },
+        {
+            "zip_code": "852000",
+            "province_id": "26",
+            "id": "285",
+            "name": "那曲市"
+        },
+        {
+            "zip_code": "859100",
+            "province_id": "26",
+            "id": "286",
+            "name": "阿里地区"
+        },
+        {
+            "zip_code": "860100",
+            "province_id": "26",
+            "id": "287",
+            "name": "林芝市"
+        },
+        {
+            "zip_code": "710000",
+            "province_id": "27",
+            "id": "288",
+            "name": "西安市"
+        },
+        {
+            "zip_code": "727000",
+            "province_id": "27",
+            "id": "289",
+            "name": "铜川市"
+        },
+        {
+            "zip_code": "721000",
+            "province_id": "27",
+            "id": "290",
+            "name": "宝鸡市"
+        },
+        {
+            "zip_code": "712000",
+            "province_id": "27",
+            "id": "291",
+            "name": "咸阳市"
+        },
+        {
+            "zip_code": "714000",
+            "province_id": "27",
+            "id": "292",
+            "name": "渭南市"
+        },
+        {
+            "zip_code": "716000",
+            "province_id": "27",
+            "id": "293",
+            "name": "延安市"
+        },
+        {
+            "zip_code": "723000",
+            "province_id": "27",
+            "id": "294",
+            "name": "汉中市"
+        },
+        {
+            "zip_code": "719000",
+            "province_id": "27",
+            "id": "295",
+            "name": "榆林市"
+        },
+        {
+            "zip_code": "725000",
+            "province_id": "27",
+            "id": "296",
+            "name": "安康市"
+        },
+        {
+            "zip_code": "711500",
+            "province_id": "27",
+            "id": "297",
+            "name": "商洛市"
+        },
+        {
+            "zip_code": "730000",
+            "province_id": "28",
+            "id": "298",
+            "name": "兰州市"
+        },
+        {
+            "zip_code": "735100",
+            "province_id": "28",
+            "id": "299",
+            "name": "嘉峪关市"
+        },
+        {
+            "zip_code": "737100",
+            "province_id": "28",
+            "id": "300",
+            "name": "金昌市"
+        },
+        {
+            "zip_code": "730900",
+            "province_id": "28",
+            "id": "301",
+            "name": "白银市"
+        },
+        {
+            "zip_code": "741000",
+            "province_id": "28",
+            "id": "302",
+            "name": "天水市"
+        },
+        {
+            "zip_code": "733000",
+            "province_id": "28",
+            "id": "303",
+            "name": "武威市"
+        },
+        {
+            "zip_code": "734000",
+            "province_id": "28",
+            "id": "304",
+            "name": "张掖市"
+        },
+        {
+            "zip_code": "744000",
+            "province_id": "28",
+            "id": "305",
+            "name": "平凉市"
+        },
+        {
+            "zip_code": "735000",
+            "province_id": "28",
+            "id": "306",
+            "name": "酒泉市"
+        },
+        {
+            "zip_code": "744500",
+            "province_id": "28",
+            "id": "307",
+            "name": "庆阳市"
+        },
+        {
+            "zip_code": "743000",
+            "province_id": "28",
+            "id": "308",
+            "name": "定西市"
+        },
+        {
+            "zip_code": "742100",
+            "province_id": "28",
+            "id": "309",
+            "name": "陇南市"
+        },
+        {
+            "zip_code": "731100",
+            "province_id": "28",
+            "id": "310",
+            "name": "临夏回族自治州"
+        },
+        {
+            "zip_code": "747000",
+            "province_id": "28",
+            "id": "311",
+            "name": "甘南藏族自治州"
+        },
+        {
+            "zip_code": "810000",
+            "province_id": "29",
+            "id": "312",
+            "name": "西宁市"
+        },
+        {
+            "zip_code": "810600",
+            "province_id": "29",
+            "id": "313",
+            "name": "海东市"
+        },
+        {
+            "zip_code": "810300",
+            "province_id": "29",
+            "id": "314",
+            "name": "海北藏族自治州"
+        },
+        {
+            "zip_code": "811300",
+            "province_id": "29",
+            "id": "315",
+            "name": "黄南藏族自治州"
+        },
+        {
+            "zip_code": "813000",
+            "province_id": "29",
+            "id": "316",
+            "name": "海南藏族自治州"
+        },
+        {
+            "zip_code": "814000",
+            "province_id": "29",
+            "id": "317",
+            "name": "果洛藏族自治州"
+        },
+        {
+            "zip_code": "815000",
+            "province_id": "29",
+            "id": "318",
+            "name": "玉树藏族自治州"
+        },
+        {
+            "zip_code": "817000",
+            "province_id": "29",
+            "id": "319",
+            "name": "海西蒙古族藏族自治州"
+        },
+        {
+            "zip_code": "750000",
+            "province_id": "30",
+            "id": "320",
+            "name": "银川市"
+        },
+        {
+            "zip_code": "753000",
+            "province_id": "30",
+            "id": "321",
+            "name": "石嘴山市"
+        },
+        {
+            "zip_code": "751100",
+            "province_id": "30",
+            "id": "322",
+            "name": "吴忠市"
+        },
+        {
+            "zip_code": "756000",
+            "province_id": "30",
+            "id": "323",
+            "name": "固原市"
+        },
+        {
+            "zip_code": "751700",
+            "province_id": "30",
+            "id": "324",
+            "name": "中卫市"
+        },
+        {
+            "zip_code": "830000",
+            "province_id": "31",
+            "id": "325",
+            "name": "乌鲁木齐市"
+        },
+        {
+            "zip_code": "834000",
+            "province_id": "31",
+            "id": "326",
+            "name": "克拉玛依市"
+        },
+        {
+            "zip_code": "838000",
+            "province_id": "31",
+            "id": "327",
+            "name": "吐鲁番市"
+        },
+        {
+            "zip_code": "839000",
+            "province_id": "31",
+            "id": "328",
+            "name": "哈密市"
+        },
+        {
+            "zip_code": "831100",
+            "province_id": "31",
+            "id": "329",
+            "name": "昌吉回族自治州"
+        },
+        {
+            "zip_code": "833400",
+            "province_id": "31",
+            "id": "330",
+            "name": "博尔塔拉蒙古自治州"
+        },
+        {
+            "zip_code": "841000",
+            "province_id": "31",
+            "id": "331",
+            "name": "巴音郭楞蒙古自治州"
+        },
+        {
+            "zip_code": "843000",
+            "province_id": "31",
+            "id": "332",
+            "name": "阿克苏地区"
+        },
+        {
+            "zip_code": "835600",
+            "province_id": "31",
+            "id": "333",
+            "name": "克孜勒苏柯尔克孜自治州"
+        },
+        {
+            "zip_code": "844000",
+            "province_id": "31",
+            "id": "334",
+            "name": "喀什地区"
+        },
+        {
+            "zip_code": "848000",
+            "province_id": "31",
+            "id": "335",
+            "name": "和田地区"
+        },
+        {
+            "zip_code": "833200",
+            "province_id": "31",
+            "id": "336",
+            "name": "伊犁哈萨克自治州"
+        },
+        {
+            "zip_code": "834700",
+            "province_id": "31",
+            "id": "337",
+            "name": "塔城地区"
+        },
+        {
+            "zip_code": "836500",
+            "province_id": "31",
+            "id": "338",
+            "name": "阿勒泰地区"
+        },
+        {
+            "zip_code": "832000",
+            "province_id": "31",
+            "id": "339",
+            "name": "石河子市"
+        },
+        {
+            "zip_code": "843300",
+            "province_id": "31",
+            "id": "340",
+            "name": "阿拉尔市"
+        },
+        {
+            "zip_code": "843900",
+            "province_id": "31",
+            "id": "341",
+            "name": "图木舒克市"
+        },
+        {
+            "zip_code": "831300",
+            "province_id": "31",
+            "id": "342",
+            "name": "五家渠市"
+        },
+        {
+            "zip_code": "000000",
+            "province_id": "32",
+            "id": "343",
+            "name": "香港特别行政区"
+        },
+        {
+            "zip_code": "000000",
+            "province_id": "33",
+            "id": "344",
+            "name": "澳门特别行政区"
+        },
+        {
+            "zip_code": "000000",
+            "province_id": "34",
+            "id": "345",
+            "name": "台湾省"
+        },
+        {
+            "zip_code": "000000",
+            "province_id": "21",
+            "id": "346",
+            "name": "三沙市"
+        },
+        {
+            "zip_code": "400000",
+            "province_id": "22",
+            "id": "348",
+            "name": "县"
+        },
+        {
+            "zip_code": "572000",
+            "province_id": "21",
+            "id": "349",
+            "name": "省直辖县"
+        },
+        {
+            "zip_code": "000000",
+            "province_id": "16",
+            "id": "350",
+            "name": "省直辖县"
+        }
+    ],
+    "DISTRICTS": [
+        {
+            "city_id": "1",
+            "id": "1",
+            "name": "东城区"
+        },
+        {
+            "city_id": "1",
+            "id": "2",
+            "name": "西城区"
+        },
+        {
+            "city_id": "1",
+            "id": "3",
+            "name": "崇文区"
+        },
+        {
+            "city_id": "1",
+            "id": "4",
+            "name": "宣武区"
+        },
+        {
+            "city_id": "1",
+            "id": "5",
+            "name": "朝阳区"
+        },
+        {
+            "city_id": "1",
+            "id": "6",
+            "name": "丰台区"
+        },
+        {
+            "city_id": "1",
+            "id": "7",
+            "name": "石景山区"
+        },
+        {
+            "city_id": "1",
+            "id": "8",
+            "name": "海淀区"
+        },
+        {
+            "city_id": "1",
+            "id": "9",
+            "name": "门头沟区"
+        },
+        {
+            "city_id": "1",
+            "id": "10",
+            "name": "房山区"
+        },
+        {
+            "city_id": "1",
+            "id": "11",
+            "name": "通州区"
+        },
+        {
+            "city_id": "1",
+            "id": "12",
+            "name": "顺义区"
+        },
+        {
+            "city_id": "1",
+            "id": "13",
+            "name": "昌平区"
+        },
+        {
+            "city_id": "1",
+            "id": "14",
+            "name": "大兴区"
+        },
+        {
+            "city_id": "1",
+            "id": "15",
+            "name": "怀柔区"
+        },
+        {
+            "city_id": "1",
+            "id": "16",
+            "name": "平谷区"
+        },
+        {
+            "city_id": "1",
+            "id": "17",
+            "name": "密云区"
+        },
+        {
+            "city_id": "1",
+            "id": "18",
+            "name": "延庆区"
+        },
+        {
+            "city_id": "2",
+            "id": "19",
+            "name": "和平区"
+        },
+        {
+            "city_id": "2",
+            "id": "20",
+            "name": "河东区"
+        },
+        {
+            "city_id": "2",
+            "id": "21",
+            "name": "河西区"
+        },
+        {
+            "city_id": "2",
+            "id": "22",
+            "name": "南开区"
+        },
+        {
+            "city_id": "2",
+            "id": "23",
+            "name": "河北区"
+        },
+        {
+            "city_id": "2",
+            "id": "24",
+            "name": "红桥区"
+        },
+        {
+            "city_id": "2",
+            "id": "25",
+            "name": "塘沽区"
+        },
+        {
+            "city_id": "2",
+            "id": "26",
+            "name": "汉沽区"
+        },
+        {
+            "city_id": "2",
+            "id": "27",
+            "name": "大港区"
+        },
+        {
+            "city_id": "2",
+            "id": "28",
+            "name": "东丽区"
+        },
+        {
+            "city_id": "2",
+            "id": "29",
+            "name": "西青区"
+        },
+        {
+            "city_id": "2",
+            "id": "30",
+            "name": "津南区"
+        },
+        {
+            "city_id": "2",
+            "id": "31",
+            "name": "北辰区"
+        },
+        {
+            "city_id": "2",
+            "id": "32",
+            "name": "武清区"
+        },
+        {
+            "city_id": "2",
+            "id": "33",
+            "name": "宝坻区"
+        },
+        {
+            "city_id": "2",
+            "id": "34",
+            "name": "宁河区"
+        },
+        {
+            "city_id": "2",
+            "id": "35",
+            "name": "静海区"
+        },
+        {
+            "city_id": "2",
+            "id": "36",
+            "name": "蓟县"
+        },
+        {
+            "city_id": "3",
+            "id": "37",
+            "name": "长安区"
+        },
+        {
+            "city_id": "3",
+            "id": "38",
+            "name": "桥东区"
+        },
+        {
+            "city_id": "3",
+            "id": "39",
+            "name": "桥西区"
+        },
+        {
+            "city_id": "3",
+            "id": "40",
+            "name": "新华区"
+        },
+        {
+            "city_id": "3",
+            "id": "41",
+            "name": "井陉矿区"
+        },
+        {
+            "city_id": "3",
+            "id": "42",
+            "name": "裕华区"
+        },
+        {
+            "city_id": "3",
+            "id": "43",
+            "name": "井陉县"
+        },
+        {
+            "city_id": "3",
+            "id": "44",
+            "name": "正定县"
+        },
+        {
+            "city_id": "3",
+            "id": "45",
+            "name": "栾城区"
+        },
+        {
+            "city_id": "3",
+            "id": "46",
+            "name": "行唐县"
+        },
+        {
+            "city_id": "3",
+            "id": "47",
+            "name": "灵寿县"
+        },
+        {
+            "city_id": "3",
+            "id": "48",
+            "name": "高邑县"
+        },
+        {
+            "city_id": "3",
+            "id": "49",
+            "name": "深泽县"
+        },
+        {
+            "city_id": "3",
+            "id": "50",
+            "name": "赞皇县"
+        },
+        {
+            "city_id": "3",
+            "id": "51",
+            "name": "无极县"
+        },
+        {
+            "city_id": "3",
+            "id": "52",
+            "name": "平山县"
+        },
+        {
+            "city_id": "3",
+            "id": "53",
+            "name": "元氏县"
+        },
+        {
+            "city_id": "3",
+            "id": "54",
+            "name": "赵县"
+        },
+        {
+            "city_id": "3",
+            "id": "55",
+            "name": "辛集市"
+        },
+        {
+            "city_id": "3",
+            "id": "56",
+            "name": "藁城区"
+        },
+        {
+            "city_id": "3",
+            "id": "57",
+            "name": "晋州市"
+        },
+        {
+            "city_id": "3",
+            "id": "58",
+            "name": "新乐市"
+        },
+        {
+            "city_id": "3",
+            "id": "59",
+            "name": "鹿泉区"
+        },
+        {
+            "city_id": "4",
+            "id": "60",
+            "name": "路南区"
+        },
+        {
+            "city_id": "4",
+            "id": "61",
+            "name": "路北区"
+        },
+        {
+            "city_id": "4",
+            "id": "62",
+            "name": "古冶区"
+        },
+        {
+            "city_id": "4",
+            "id": "63",
+            "name": "开平区"
+        },
+        {
+            "city_id": "4",
+            "id": "64",
+            "name": "丰南区"
+        },
+        {
+            "city_id": "4",
+            "id": "65",
+            "name": "丰润区"
+        },
+        {
+            "city_id": "4",
+            "id": "66",
+            "name": "滦县"
+        },
+        {
+            "city_id": "4",
+            "id": "67",
+            "name": "滦南县"
+        },
+        {
+            "city_id": "4",
+            "id": "68",
+            "name": "乐亭县"
+        },
+        {
+            "city_id": "4",
+            "id": "69",
+            "name": "迁西县"
+        },
+        {
+            "city_id": "4",
+            "id": "70",
+            "name": "玉田县"
+        },
+        {
+            "city_id": "4",
+            "id": "71",
+            "name": "唐海县"
+        },
+        {
+            "city_id": "4",
+            "id": "72",
+            "name": "遵化市"
+        },
+        {
+            "city_id": "4",
+            "id": "73",
+            "name": "迁安市"
+        },
+        {
+            "city_id": "5",
+            "id": "74",
+            "name": "海港区"
+        },
+        {
+            "city_id": "5",
+            "id": "75",
+            "name": "山海关区"
+        },
+        {
+            "city_id": "5",
+            "id": "76",
+            "name": "北戴河区"
+        },
+        {
+            "city_id": "5",
+            "id": "77",
+            "name": "青龙满族自治县"
+        },
+        {
+            "city_id": "5",
+            "id": "78",
+            "name": "昌黎县"
+        },
+        {
+            "city_id": "5",
+            "id": "79",
+            "name": "抚宁区"
+        },
+        {
+            "city_id": "5",
+            "id": "80",
+            "name": "卢龙县"
+        },
+        {
+            "city_id": "6",
+            "id": "81",
+            "name": "邯山区"
+        },
+        {
+            "city_id": "6",
+            "id": "82",
+            "name": "丛台区"
+        },
+        {
+            "city_id": "6",
+            "id": "83",
+            "name": "复兴区"
+        },
+        {
+            "city_id": "6",
+            "id": "84",
+            "name": "峰峰矿区"
+        },
+        {
+            "city_id": "6",
+            "id": "85",
+            "name": "邯郸县"
+        },
+        {
+            "city_id": "6",
+            "id": "86",
+            "name": "临漳县"
+        },
+        {
+            "city_id": "6",
+            "id": "87",
+            "name": "成安县"
+        },
+        {
+            "city_id": "6",
+            "id": "88",
+            "name": "大名县"
+        },
+        {
+            "city_id": "6",
+            "id": "89",
+            "name": "涉县"
+        },
+        {
+            "city_id": "6",
+            "id": "90",
+            "name": "磁县"
+        },
+        {
+            "city_id": "6",
+            "id": "91",
+            "name": "肥乡区"
+        },
+        {
+            "city_id": "6",
+            "id": "92",
+            "name": "永年区"
+        },
+        {
+            "city_id": "6",
+            "id": "93",
+            "name": "邱县"
+        },
+        {
+            "city_id": "6",
+            "id": "94",
+            "name": "鸡泽县"
+        },
+        {
+            "city_id": "6",
+            "id": "95",
+            "name": "广平县"
+        },
+        {
+            "city_id": "6",
+            "id": "96",
+            "name": "馆陶县"
+        },
+        {
+            "city_id": "6",
+            "id": "97",
+            "name": "魏县"
+        },
+        {
+            "city_id": "6",
+            "id": "98",
+            "name": "曲周县"
+        },
+        {
+            "city_id": "6",
+            "id": "99",
+            "name": "武安市"
+        },
+        {
+            "city_id": "7",
+            "id": "100",
+            "name": "桥东区"
+        },
+        {
+            "city_id": "7",
+            "id": "101",
+            "name": "桥西区"
+        },
+        {
+            "city_id": "7",
+            "id": "102",
+            "name": "邢台县"
+        },
+        {
+            "city_id": "7",
+            "id": "103",
+            "name": "临城县"
+        },
+        {
+            "city_id": "7",
+            "id": "104",
+            "name": "内丘县"
+        },
+        {
+            "city_id": "7",
+            "id": "105",
+            "name": "柏乡县"
+        },
+        {
+            "city_id": "7",
+            "id": "106",
+            "name": "隆尧县"
+        },
+        {
+            "city_id": "7",
+            "id": "107",
+            "name": "任县"
+        },
+        {
+            "city_id": "7",
+            "id": "108",
+            "name": "南和县"
+        },
+        {
+            "city_id": "7",
+            "id": "109",
+            "name": "宁晋县"
+        },
+        {
+            "city_id": "7",
+            "id": "110",
+            "name": "巨鹿县"
+        },
+        {
+            "city_id": "7",
+            "id": "111",
+            "name": "新河县"
+        },
+        {
+            "city_id": "7",
+            "id": "112",
+            "name": "广宗县"
+        },
+        {
+            "city_id": "7",
+            "id": "113",
+            "name": "平乡县"
+        },
+        {
+            "city_id": "7",
+            "id": "114",
+            "name": "威县"
+        },
+        {
+            "city_id": "7",
+            "id": "115",
+            "name": "清河县"
+        },
+        {
+            "city_id": "7",
+            "id": "116",
+            "name": "临西县"
+        },
+        {
+            "city_id": "7",
+            "id": "117",
+            "name": "南宫市"
+        },
+        {
+            "city_id": "7",
+            "id": "118",
+            "name": "沙河市"
+        },
+        {
+            "city_id": "8",
+            "id": "119",
+            "name": "新市区"
+        },
+        {
+            "city_id": "8",
+            "id": "120",
+            "name": "北市区"
+        },
+        {
+            "city_id": "8",
+            "id": "121",
+            "name": "南市区"
+        },
+        {
+            "city_id": "8",
+            "id": "122",
+            "name": "满城区"
+        },
+        {
+            "city_id": "8",
+            "id": "123",
+            "name": "清苑区"
+        },
+        {
+            "city_id": "8",
+            "id": "124",
+            "name": "涞水县"
+        },
+        {
+            "city_id": "8",
+            "id": "125",
+            "name": "阜平县"
+        },
+        {
+            "city_id": "8",
+            "id": "126",
+            "name": "徐水区"
+        },
+        {
+            "city_id": "8",
+            "id": "127",
+            "name": "定兴县"
+        },
+        {
+            "city_id": "8",
+            "id": "128",
+            "name": "唐县"
+        },
+        {
+            "city_id": "8",
+            "id": "129",
+            "name": "高阳县"
+        },
+        {
+            "city_id": "8",
+            "id": "130",
+            "name": "容城县"
+        },
+        {
+            "city_id": "8",
+            "id": "131",
+            "name": "涞源县"
+        },
+        {
+            "city_id": "8",
+            "id": "132",
+            "name": "望都县"
+        },
+        {
+            "city_id": "8",
+            "id": "133",
+            "name": "安新县"
+        },
+        {
+            "city_id": "8",
+            "id": "134",
+            "name": "易县"
+        },
+        {
+            "city_id": "8",
+            "id": "135",
+            "name": "曲阳县"
+        },
+        {
+            "city_id": "8",
+            "id": "136",
+            "name": "蠡县"
+        },
+        {
+            "city_id": "8",
+            "id": "137",
+            "name": "顺平县"
+        },
+        {
+            "city_id": "8",
+            "id": "138",
+            "name": "博野县"
+        },
+        {
+            "city_id": "8",
+            "id": "139",
+            "name": "雄县"
+        },
+        {
+            "city_id": "8",
+            "id": "140",
+            "name": "涿州市"
+        },
+        {
+            "city_id": "8",
+            "id": "141",
+            "name": "定州市"
+        },
+        {
+            "city_id": "8",
+            "id": "142",
+            "name": "安国市"
+        },
+        {
+            "city_id": "8",
+            "id": "143",
+            "name": "高碑店市"
+        },
+        {
+            "city_id": "9",
+            "id": "144",
+            "name": "桥东区"
+        },
+        {
+            "city_id": "9",
+            "id": "145",
+            "name": "桥西区"
+        },
+        {
+            "city_id": "9",
+            "id": "146",
+            "name": "宣化区"
+        },
+        {
+            "city_id": "9",
+            "id": "147",
+            "name": "下花园区"
+        },
+        {
+            "city_id": "9",
+            "id": "148",
+            "name": "宣化县"
+        },
+        {
+            "city_id": "9",
+            "id": "149",
+            "name": "张北县"
+        },
+        {
+            "city_id": "9",
+            "id": "150",
+            "name": "康保县"
+        },
+        {
+            "city_id": "9",
+            "id": "151",
+            "name": "沽源县"
+        },
+        {
+            "city_id": "9",
+            "id": "152",
+            "name": "尚义县"
+        },
+        {
+            "city_id": "9",
+            "id": "153",
+            "name": "蔚县"
+        },
+        {
+            "city_id": "9",
+            "id": "154",
+            "name": "阳原县"
+        },
+        {
+            "city_id": "9",
+            "id": "155",
+            "name": "怀安县"
+        },
+        {
+            "city_id": "9",
+            "id": "156",
+            "name": "万全区"
+        },
+        {
+            "city_id": "9",
+            "id": "157",
+            "name": "怀来县"
+        },
+        {
+            "city_id": "9",
+            "id": "158",
+            "name": "涿鹿县"
+        },
+        {
+            "city_id": "9",
+            "id": "159",
+            "name": "赤城县"
+        },
+        {
+            "city_id": "9",
+            "id": "160",
+            "name": "崇礼区"
+        },
+        {
+            "city_id": "10",
+            "id": "161",
+            "name": "双桥区"
+        },
+        {
+            "city_id": "10",
+            "id": "162",
+            "name": "双滦区"
+        },
+        {
+            "city_id": "10",
+            "id": "163",
+            "name": "鹰手营子矿区"
+        },
+        {
+            "city_id": "10",
+            "id": "164",
+            "name": "承德县"
+        },
+        {
+            "city_id": "10",
+            "id": "165",
+            "name": "兴隆县"
+        },
+        {
+            "city_id": "10",
+            "id": "166",
+            "name": "平泉市"
+        },
+        {
+            "city_id": "10",
+            "id": "167",
+            "name": "滦平县"
+        },
+        {
+            "city_id": "10",
+            "id": "168",
+            "name": "隆化县"
+        },
+        {
+            "city_id": "10",
+            "id": "169",
+            "name": "丰宁满族自治县"
+        },
+        {
+            "city_id": "10",
+            "id": "170",
+            "name": "宽城满族自治县"
+        },
+        {
+            "city_id": "10",
+            "id": "171",
+            "name": "围场满族蒙古族自治县"
+        },
+        {
+            "city_id": "11",
+            "id": "172",
+            "name": "新华区"
+        },
+        {
+            "city_id": "11",
+            "id": "173",
+            "name": "运河区"
+        },
+        {
+            "city_id": "11",
+            "id": "174",
+            "name": "沧县"
+        },
+        {
+            "city_id": "11",
+            "id": "175",
+            "name": "青县"
+        },
+        {
+            "city_id": "11",
+            "id": "176",
+            "name": "东光县"
+        },
+        {
+            "city_id": "11",
+            "id": "177",
+            "name": "海兴县"
+        },
+        {
+            "city_id": "11",
+            "id": "178",
+            "name": "盐山县"
+        },
+        {
+            "city_id": "11",
+            "id": "179",
+            "name": "肃宁县"
+        },
+        {
+            "city_id": "11",
+            "id": "180",
+            "name": "南皮县"
+        },
+        {
+            "city_id": "11",
+            "id": "181",
+            "name": "吴桥县"
+        },
+        {
+            "city_id": "11",
+            "id": "182",
+            "name": "献县"
+        },
+        {
+            "city_id": "11",
+            "id": "183",
+            "name": "孟村回族自治县"
+        },
+        {
+            "city_id": "11",
+            "id": "184",
+            "name": "泊头市"
+        },
+        {
+            "city_id": "11",
+            "id": "185",
+            "name": "任丘市"
+        },
+        {
+            "city_id": "11",
+            "id": "186",
+            "name": "黄骅市"
+        },
+        {
+            "city_id": "11",
+            "id": "187",
+            "name": "河间市"
+        },
+        {
+            "city_id": "12",
+            "id": "188",
+            "name": "安次区"
+        },
+        {
+            "city_id": "12",
+            "id": "189",
+            "name": "广阳区"
+        },
+        {
+            "city_id": "12",
+            "id": "190",
+            "name": "固安县"
+        },
+        {
+            "city_id": "12",
+            "id": "191",
+            "name": "永清县"
+        },
+        {
+            "city_id": "12",
+            "id": "192",
+            "name": "香河县"
+        },
+        {
+            "city_id": "12",
+            "id": "193",
+            "name": "大城县"
+        },
+        {
+            "city_id": "12",
+            "id": "194",
+            "name": "文安县"
+        },
+        {
+            "city_id": "12",
+            "id": "195",
+            "name": "大厂回族自治县"
+        },
+        {
+            "city_id": "12",
+            "id": "196",
+            "name": "霸州市"
+        },
+        {
+            "city_id": "12",
+            "id": "197",
+            "name": "三河市"
+        },
+        {
+            "city_id": "13",
+            "id": "198",
+            "name": "桃城区"
+        },
+        {
+            "city_id": "13",
+            "id": "199",
+            "name": "枣强县"
+        },
+        {
+            "city_id": "13",
+            "id": "200",
+            "name": "武邑县"
+        },
+        {
+            "city_id": "13",
+            "id": "201",
+            "name": "武强县"
+        },
+        {
+            "city_id": "13",
+            "id": "202",
+            "name": "饶阳县"
+        },
+        {
+            "city_id": "13",
+            "id": "203",
+            "name": "安平县"
+        },
+        {
+            "city_id": "13",
+            "id": "204",
+            "name": "故城县"
+        },
+        {
+            "city_id": "13",
+            "id": "205",
+            "name": "景县"
+        },
+        {
+            "city_id": "13",
+            "id": "206",
+            "name": "阜城县"
+        },
+        {
+            "city_id": "13",
+            "id": "207",
+            "name": "冀州区"
+        },
+        {
+            "city_id": "13",
+            "id": "208",
+            "name": "深州市"
+        },
+        {
+            "city_id": "14",
+            "id": "209",
+            "name": "小店区"
+        },
+        {
+            "city_id": "14",
+            "id": "210",
+            "name": "迎泽区"
+        },
+        {
+            "city_id": "14",
+            "id": "211",
+            "name": "杏花岭区"
+        },
+        {
+            "city_id": "14",
+            "id": "212",
+            "name": "尖草坪区"
+        },
+        {
+            "city_id": "14",
+            "id": "213",
+            "name": "万柏林区"
+        },
+        {
+            "city_id": "14",
+            "id": "214",
+            "name": "晋源区"
+        },
+        {
+            "city_id": "14",
+            "id": "215",
+            "name": "清徐县"
+        },
+        {
+            "city_id": "14",
+            "id": "216",
+            "name": "阳曲县"
+        },
+        {
+            "city_id": "14",
+            "id": "217",
+            "name": "娄烦县"
+        },
+        {
+            "city_id": "14",
+            "id": "218",
+            "name": "古交市"
+        },
+        {
+            "city_id": "15",
+            "id": "219",
+            "name": "城区"
+        },
+        {
+            "city_id": "15",
+            "id": "220",
+            "name": "矿区"
+        },
+        {
+            "city_id": "15",
+            "id": "221",
+            "name": "南郊区"
+        },
+        {
+            "city_id": "15",
+            "id": "222",
+            "name": "新荣区"
+        },
+        {
+            "city_id": "15",
+            "id": "223",
+            "name": "阳高县"
+        },
+        {
+            "city_id": "15",
+            "id": "224",
+            "name": "天镇县"
+        },
+        {
+            "city_id": "15",
+            "id": "225",
+            "name": "广灵县"
+        },
+        {
+            "city_id": "15",
+            "id": "226",
+            "name": "灵丘县"
+        },
+        {
+            "city_id": "15",
+            "id": "227",
+            "name": "浑源县"
+        },
+        {
+            "city_id": "15",
+            "id": "228",
+            "name": "左云县"
+        },
+        {
+            "city_id": "15",
+            "id": "229",
+            "name": "大同县"
+        },
+        {
+            "city_id": "16",
+            "id": "230",
+            "name": "城区"
+        },
+        {
+            "city_id": "16",
+            "id": "231",
+            "name": "矿区"
+        },
+        {
+            "city_id": "16",
+            "id": "232",
+            "name": "郊区"
+        },
+        {
+            "city_id": "16",
+            "id": "233",
+            "name": "平定县"
+        },
+        {
+            "city_id": "16",
+            "id": "234",
+            "name": "盂县"
+        },
+        {
+            "city_id": "17",
+            "id": "235",
+            "name": "城区"
+        },
+        {
+            "city_id": "17",
+            "id": "236",
+            "name": "郊区"
+        },
+        {
+            "city_id": "17",
+            "id": "237",
+            "name": "长治县"
+        },
+        {
+            "city_id": "17",
+            "id": "238",
+            "name": "襄垣县"
+        },
+        {
+            "city_id": "17",
+            "id": "239",
+            "name": "屯留区"
+        },
+        {
+            "city_id": "17",
+            "id": "240",
+            "name": "平顺县"
+        },
+        {
+            "city_id": "17",
+            "id": "241",
+            "name": "黎城县"
+        },
+        {
+            "city_id": "17",
+            "id": "242",
+            "name": "壶关县"
+        },
+        {
+            "city_id": "17",
+            "id": "243",
+            "name": "长子县"
+        },
+        {
+            "city_id": "17",
+            "id": "244",
+            "name": "武乡县"
+        },
+        {
+            "city_id": "17",
+            "id": "245",
+            "name": "沁县"
+        },
+        {
+            "city_id": "17",
+            "id": "246",
+            "name": "沁源县"
+        },
+        {
+            "city_id": "17",
+            "id": "247",
+            "name": "潞城区"
+        },
+        {
+            "city_id": "18",
+            "id": "248",
+            "name": "城区"
+        },
+        {
+            "city_id": "18",
+            "id": "249",
+            "name": "沁水县"
+        },
+        {
+            "city_id": "18",
+            "id": "250",
+            "name": "阳城县"
+        },
+        {
+            "city_id": "18",
+            "id": "251",
+            "name": "陵川县"
+        },
+        {
+            "city_id": "18",
+            "id": "252",
+            "name": "泽州县"
+        },
+        {
+            "city_id": "18",
+            "id": "253",
+            "name": "高平市"
+        },
+        {
+            "city_id": "19",
+            "id": "254",
+            "name": "朔城区"
+        },
+        {
+            "city_id": "19",
+            "id": "255",
+            "name": "平鲁区"
+        },
+        {
+            "city_id": "19",
+            "id": "256",
+            "name": "山阴县"
+        },
+        {
+            "city_id": "19",
+            "id": "257",
+            "name": "应县"
+        },
+        {
+            "city_id": "19",
+            "id": "258",
+            "name": "右玉县"
+        },
+        {
+            "city_id": "19",
+            "id": "259",
+            "name": "怀仁市"
+        },
+        {
+            "city_id": "20",
+            "id": "260",
+            "name": "榆次区"
+        },
+        {
+            "city_id": "20",
+            "id": "261",
+            "name": "榆社县"
+        },
+        {
+            "city_id": "20",
+            "id": "262",
+            "name": "左权县"
+        },
+        {
+            "city_id": "20",
+            "id": "263",
+            "name": "和顺县"
+        },
+        {
+            "city_id": "20",
+            "id": "264",
+            "name": "昔阳县"
+        },
+        {
+            "city_id": "20",
+            "id": "265",
+            "name": "寿阳县"
+        },
+        {
+            "city_id": "20",
+            "id": "266",
+            "name": "太谷县"
+        },
+        {
+            "city_id": "20",
+            "id": "267",
+            "name": "祁县"
+        },
+        {
+            "city_id": "20",
+            "id": "268",
+            "name": "平遥县"
+        },
+        {
+            "city_id": "20",
+            "id": "269",
+            "name": "灵石县"
+        },
+        {
+            "city_id": "20",
+            "id": "270",
+            "name": "介休市"
+        },
+        {
+            "city_id": "21",
+            "id": "271",
+            "name": "盐湖区"
+        },
+        {
+            "city_id": "21",
+            "id": "272",
+            "name": "临猗县"
+        },
+        {
+            "city_id": "21",
+            "id": "273",
+            "name": "万荣县"
+        },
+        {
+            "city_id": "21",
+            "id": "274",
+            "name": "闻喜县"
+        },
+        {
+            "city_id": "21",
+            "id": "275",
+            "name": "稷山县"
+        },
+        {
+            "city_id": "21",
+            "id": "276",
+            "name": "新绛县"
+        },
+        {
+            "city_id": "21",
+            "id": "277",
+            "name": "绛县"
+        },
+        {
+            "city_id": "21",
+            "id": "278",
+            "name": "垣曲县"
+        },
+        {
+            "city_id": "21",
+            "id": "279",
+            "name": "夏县"
+        },
+        {
+            "city_id": "21",
+            "id": "280",
+            "name": "平陆县"
+        },
+        {
+            "city_id": "21",
+            "id": "281",
+            "name": "芮城县"
+        },
+        {
+            "city_id": "21",
+            "id": "282",
+            "name": "永济市"
+        },
+        {
+            "city_id": "21",
+            "id": "283",
+            "name": "河津市"
+        },
+        {
+            "city_id": "22",
+            "id": "284",
+            "name": "忻府区"
+        },
+        {
+            "city_id": "22",
+            "id": "285",
+            "name": "定襄县"
+        },
+        {
+            "city_id": "22",
+            "id": "286",
+            "name": "五台县"
+        },
+        {
+            "city_id": "22",
+            "id": "287",
+            "name": "代县"
+        },
+        {
+            "city_id": "22",
+            "id": "288",
+            "name": "繁峙县"
+        },
+        {
+            "city_id": "22",
+            "id": "289",
+            "name": "宁武县"
+        },
+        {
+            "city_id": "22",
+            "id": "290",
+            "name": "静乐县"
+        },
+        {
+            "city_id": "22",
+            "id": "291",
+            "name": "神池县"
+        },
+        {
+            "city_id": "22",
+            "id": "292",
+            "name": "五寨县"
+        },
+        {
+            "city_id": "22",
+            "id": "293",
+            "name": "岢岚县"
+        },
+        {
+            "city_id": "22",
+            "id": "294",
+            "name": "河曲县"
+        },
+        {
+            "city_id": "22",
+            "id": "295",
+            "name": "保德县"
+        },
+        {
+            "city_id": "22",
+            "id": "296",
+            "name": "偏关县"
+        },
+        {
+            "city_id": "22",
+            "id": "297",
+            "name": "原平市"
+        },
+        {
+            "city_id": "23",
+            "id": "298",
+            "name": "尧都区"
+        },
+        {
+            "city_id": "23",
+            "id": "299",
+            "name": "曲沃县"
+        },
+        {
+            "city_id": "23",
+            "id": "300",
+            "name": "翼城县"
+        },
+        {
+            "city_id": "23",
+            "id": "301",
+            "name": "襄汾县"
+        },
+        {
+            "city_id": "23",
+            "id": "302",
+            "name": "洪洞县"
+        },
+        {
+            "city_id": "23",
+            "id": "303",
+            "name": "古县"
+        },
+        {
+            "city_id": "23",
+            "id": "304",
+            "name": "安泽县"
+        },
+        {
+            "city_id": "23",
+            "id": "305",
+            "name": "浮山县"
+        },
+        {
+            "city_id": "23",
+            "id": "306",
+            "name": "吉县"
+        },
+        {
+            "city_id": "23",
+            "id": "307",
+            "name": "乡宁县"
+        },
+        {
+            "city_id": "23",
+            "id": "308",
+            "name": "大宁县"
+        },
+        {
+            "city_id": "23",
+            "id": "309",
+            "name": "隰县"
+        },
+        {
+            "city_id": "23",
+            "id": "310",
+            "name": "永和县"
+        },
+        {
+            "city_id": "23",
+            "id": "311",
+            "name": "蒲县"
+        },
+        {
+            "city_id": "23",
+            "id": "312",
+            "name": "汾西县"
+        },
+        {
+            "city_id": "23",
+            "id": "313",
+            "name": "侯马市"
+        },
+        {
+            "city_id": "23",
+            "id": "314",
+            "name": "霍州市"
+        },
+        {
+            "city_id": "24",
+            "id": "315",
+            "name": "离石区"
+        },
+        {
+            "city_id": "24",
+            "id": "316",
+            "name": "文水县"
+        },
+        {
+            "city_id": "24",
+            "id": "317",
+            "name": "交城县"
+        },
+        {
+            "city_id": "24",
+            "id": "318",
+            "name": "兴县"
+        },
+        {
+            "city_id": "24",
+            "id": "319",
+            "name": "临县"
+        },
+        {
+            "city_id": "24",
+            "id": "320",
+            "name": "柳林县"
+        },
+        {
+            "city_id": "24",
+            "id": "321",
+            "name": "石楼县"
+        },
+        {
+            "city_id": "24",
+            "id": "322",
+            "name": "岚县"
+        },
+        {
+            "city_id": "24",
+            "id": "323",
+            "name": "方山县"
+        },
+        {
+            "city_id": "24",
+            "id": "324",
+            "name": "中阳县"
+        },
+        {
+            "city_id": "24",
+            "id": "325",
+            "name": "交口县"
+        },
+        {
+            "city_id": "24",
+            "id": "326",
+            "name": "孝义市"
+        },
+        {
+            "city_id": "24",
+            "id": "327",
+            "name": "汾阳市"
+        },
+        {
+            "city_id": "25",
+            "id": "328",
+            "name": "新城区"
+        },
+        {
+            "city_id": "25",
+            "id": "329",
+            "name": "回民区"
+        },
+        {
+            "city_id": "25",
+            "id": "330",
+            "name": "玉泉区"
+        },
+        {
+            "city_id": "25",
+            "id": "331",
+            "name": "赛罕区"
+        },
+        {
+            "city_id": "25",
+            "id": "332",
+            "name": "土默特左旗"
+        },
+        {
+            "city_id": "25",
+            "id": "333",
+            "name": "托克托县"
+        },
+        {
+            "city_id": "25",
+            "id": "334",
+            "name": "和林格尔县"
+        },
+        {
+            "city_id": "25",
+            "id": "335",
+            "name": "清水河县"
+        },
+        {
+            "city_id": "25",
+            "id": "336",
+            "name": "武川县"
+        },
+        {
+            "city_id": "26",
+            "id": "337",
+            "name": "东河区"
+        },
+        {
+            "city_id": "26",
+            "id": "338",
+            "name": "昆都仑区"
+        },
+        {
+            "city_id": "26",
+            "id": "339",
+            "name": "青山区"
+        },
+        {
+            "city_id": "26",
+            "id": "340",
+            "name": "石拐区"
+        },
+        {
+            "city_id": "26",
+            "id": "341",
+            "name": "白云矿区"
+        },
+        {
+            "city_id": "26",
+            "id": "342",
+            "name": "九原区"
+        },
+        {
+            "city_id": "26",
+            "id": "343",
+            "name": "土默特右旗"
+        },
+        {
+            "city_id": "26",
+            "id": "344",
+            "name": "固阳县"
+        },
+        {
+            "city_id": "26",
+            "id": "345",
+            "name": "达尔罕茂明安联合旗"
+        },
+        {
+            "city_id": "27",
+            "id": "346",
+            "name": "海勃湾区"
+        },
+        {
+            "city_id": "27",
+            "id": "347",
+            "name": "海南区"
+        },
+        {
+            "city_id": "27",
+            "id": "348",
+            "name": "乌达区"
+        },
+        {
+            "city_id": "28",
+            "id": "349",
+            "name": "红山区"
+        },
+        {
+            "city_id": "28",
+            "id": "350",
+            "name": "元宝山区"
+        },
+        {
+            "city_id": "28",
+            "id": "351",
+            "name": "松山区"
+        },
+        {
+            "city_id": "28",
+            "id": "352",
+            "name": "阿鲁科尔沁旗"
+        },
+        {
+            "city_id": "28",
+            "id": "353",
+            "name": "巴林左旗"
+        },
+        {
+            "city_id": "28",
+            "id": "354",
+            "name": "巴林右旗"
+        },
+        {
+            "city_id": "28",
+            "id": "355",
+            "name": "林西县"
+        },
+        {
+            "city_id": "28",
+            "id": "356",
+            "name": "克什克腾旗"
+        },
+        {
+            "city_id": "28",
+            "id": "357",
+            "name": "翁牛特旗"
+        },
+        {
+            "city_id": "28",
+            "id": "358",
+            "name": "喀喇沁旗"
+        },
+        {
+            "city_id": "28",
+            "id": "359",
+            "name": "宁城县"
+        },
+        {
+            "city_id": "28",
+            "id": "360",
+            "name": "敖汉旗"
+        },
+        {
+            "city_id": "29",
+            "id": "361",
+            "name": "科尔沁区"
+        },
+        {
+            "city_id": "29",
+            "id": "362",
+            "name": "科尔沁左翼中旗"
+        },
+        {
+            "city_id": "29",
+            "id": "363",
+            "name": "科尔沁左翼后旗"
+        },
+        {
+            "city_id": "29",
+            "id": "364",
+            "name": "开鲁县"
+        },
+        {
+            "city_id": "29",
+            "id": "365",
+            "name": "库伦旗"
+        },
+        {
+            "city_id": "29",
+            "id": "366",
+            "name": "奈曼旗"
+        },
+        {
+            "city_id": "29",
+            "id": "367",
+            "name": "扎鲁特旗"
+        },
+        {
+            "city_id": "29",
+            "id": "368",
+            "name": "霍林郭勒市"
+        },
+        {
+            "city_id": "30",
+            "id": "369",
+            "name": "东胜区"
+        },
+        {
+            "city_id": "30",
+            "id": "370",
+            "name": "达拉特旗"
+        },
+        {
+            "city_id": "30",
+            "id": "371",
+            "name": "准格尔旗"
+        },
+        {
+            "city_id": "30",
+            "id": "372",
+            "name": "鄂托克前旗"
+        },
+        {
+            "city_id": "30",
+            "id": "373",
+            "name": "鄂托克旗"
+        },
+        {
+            "city_id": "30",
+            "id": "374",
+            "name": "杭锦旗"
+        },
+        {
+            "city_id": "30",
+            "id": "375",
+            "name": "乌审旗"
+        },
+        {
+            "city_id": "30",
+            "id": "376",
+            "name": "伊金霍洛旗"
+        },
+        {
+            "city_id": "31",
+            "id": "377",
+            "name": "海拉尔区"
+        },
+        {
+            "city_id": "31",
+            "id": "378",
+            "name": "阿荣旗"
+        },
+        {
+            "city_id": "31",
+            "id": "379",
+            "name": "莫力达瓦达斡尔族自治旗"
+        },
+        {
+            "city_id": "31",
+            "id": "380",
+            "name": "鄂伦春自治旗"
+        },
+        {
+            "city_id": "31",
+            "id": "381",
+            "name": "鄂温克族自治旗"
+        },
+        {
+            "city_id": "31",
+            "id": "382",
+            "name": "陈巴尔虎旗"
+        },
+        {
+            "city_id": "31",
+            "id": "383",
+            "name": "新巴尔虎左旗"
+        },
+        {
+            "city_id": "31",
+            "id": "384",
+            "name": "新巴尔虎右旗"
+        },
+        {
+            "city_id": "31",
+            "id": "385",
+            "name": "满洲里市"
+        },
+        {
+            "city_id": "31",
+            "id": "386",
+            "name": "牙克石市"
+        },
+        {
+            "city_id": "31",
+            "id": "387",
+            "name": "扎兰屯市"
+        },
+        {
+            "city_id": "31",
+            "id": "388",
+            "name": "额尔古纳市"
+        },
+        {
+            "city_id": "31",
+            "id": "389",
+            "name": "根河市"
+        },
+        {
+            "city_id": "32",
+            "id": "390",
+            "name": "临河区"
+        },
+        {
+            "city_id": "32",
+            "id": "391",
+            "name": "五原县"
+        },
+        {
+            "city_id": "32",
+            "id": "392",
+            "name": "磴口县"
+        },
+        {
+            "city_id": "32",
+            "id": "393",
+            "name": "乌拉特前旗"
+        },
+        {
+            "city_id": "32",
+            "id": "394",
+            "name": "乌拉特中旗"
+        },
+        {
+            "city_id": "32",
+            "id": "395",
+            "name": "乌拉特后旗"
+        },
+        {
+            "city_id": "32",
+            "id": "396",
+            "name": "杭锦后旗"
+        },
+        {
+            "city_id": "33",
+            "id": "397",
+            "name": "集宁区"
+        },
+        {
+            "city_id": "33",
+            "id": "398",
+            "name": "卓资县"
+        },
+        {
+            "city_id": "33",
+            "id": "399",
+            "name": "化德县"
+        },
+        {
+            "city_id": "33",
+            "id": "400",
+            "name": "商都县"
+        },
+        {
+            "city_id": "33",
+            "id": "401",
+            "name": "兴和县"
+        },
+        {
+            "city_id": "33",
+            "id": "402",
+            "name": "凉城县"
+        },
+        {
+            "city_id": "33",
+            "id": "403",
+            "name": "察哈尔右翼前旗"
+        },
+        {
+            "city_id": "33",
+            "id": "404",
+            "name": "察哈尔右翼中旗"
+        },
+        {
+            "city_id": "33",
+            "id": "405",
+            "name": "察哈尔右翼后旗"
+        },
+        {
+            "city_id": "33",
+            "id": "406",
+            "name": "四子王旗"
+        },
+        {
+            "city_id": "33",
+            "id": "407",
+            "name": "丰镇市"
+        },
+        {
+            "city_id": "34",
+            "id": "408",
+            "name": "乌兰浩特市"
+        },
+        {
+            "city_id": "34",
+            "id": "409",
+            "name": "阿尔山市"
+        },
+        {
+            "city_id": "34",
+            "id": "410",
+            "name": "科尔沁右翼前旗"
+        },
+        {
+            "city_id": "34",
+            "id": "411",
+            "name": "科尔沁右翼中旗"
+        },
+        {
+            "city_id": "34",
+            "id": "412",
+            "name": "扎赉特旗"
+        },
+        {
+            "city_id": "34",
+            "id": "413",
+            "name": "突泉县"
+        },
+        {
+            "city_id": "35",
+            "id": "414",
+            "name": "二连浩特市"
+        },
+        {
+            "city_id": "35",
+            "id": "415",
+            "name": "锡林浩特市"
+        },
+        {
+            "city_id": "35",
+            "id": "416",
+            "name": "阿巴嘎旗"
+        },
+        {
+            "city_id": "35",
+            "id": "417",
+            "name": "苏尼特左旗"
+        },
+        {
+            "city_id": "35",
+            "id": "418",
+            "name": "苏尼特右旗"
+        },
+        {
+            "city_id": "35",
+            "id": "419",
+            "name": "东乌珠穆沁旗"
+        },
+        {
+            "city_id": "35",
+            "id": "420",
+            "name": "西乌珠穆沁旗"
+        },
+        {
+            "city_id": "35",
+            "id": "421",
+            "name": "太仆寺旗"
+        },
+        {
+            "city_id": "35",
+            "id": "422",
+            "name": "镶黄旗"
+        },
+        {
+            "city_id": "35",
+            "id": "423",
+            "name": "正镶白旗"
+        },
+        {
+            "city_id": "35",
+            "id": "424",
+            "name": "正蓝旗"
+        },
+        {
+            "city_id": "35",
+            "id": "425",
+            "name": "多伦县"
+        },
+        {
+            "city_id": "36",
+            "id": "426",
+            "name": "阿拉善左旗"
+        },
+        {
+            "city_id": "36",
+            "id": "427",
+            "name": "阿拉善右旗"
+        },
+        {
+            "city_id": "36",
+            "id": "428",
+            "name": "额济纳旗"
+        },
+        {
+            "city_id": "37",
+            "id": "429",
+            "name": "和平区"
+        },
+        {
+            "city_id": "37",
+            "id": "430",
+            "name": "沈河区"
+        },
+        {
+            "city_id": "37",
+            "id": "431",
+            "name": "大东区"
+        },
+        {
+            "city_id": "37",
+            "id": "432",
+            "name": "皇姑区"
+        },
+        {
+            "city_id": "37",
+            "id": "433",
+            "name": "铁西区"
+        },
+        {
+            "city_id": "37",
+            "id": "434",
+            "name": "苏家屯区"
+        },
+        {
+            "city_id": "37",
+            "id": "435",
+            "name": "东陵区"
+        },
+        {
+            "city_id": "37",
+            "id": "436",
+            "name": "新城子区"
+        },
+        {
+            "city_id": "37",
+            "id": "437",
+            "name": "于洪区"
+        },
+        {
+            "city_id": "37",
+            "id": "438",
+            "name": "辽中区"
+        },
+        {
+            "city_id": "37",
+            "id": "439",
+            "name": "康平县"
+        },
+        {
+            "city_id": "37",
+            "id": "440",
+            "name": "法库县"
+        },
+        {
+            "city_id": "37",
+            "id": "441",
+            "name": "新民市"
+        },
+        {
+            "city_id": "38",
+            "id": "442",
+            "name": "中山区"
+        },
+        {
+            "city_id": "38",
+            "id": "443",
+            "name": "西岗区"
+        },
+        {
+            "city_id": "38",
+            "id": "444",
+            "name": "沙河口区"
+        },
+        {
+            "city_id": "38",
+            "id": "445",
+            "name": "甘井子区"
+        },
+        {
+            "city_id": "38",
+            "id": "446",
+            "name": "旅顺口区"
+        },
+        {
+            "city_id": "38",
+            "id": "447",
+            "name": "金州区"
+        },
+        {
+            "city_id": "38",
+            "id": "448",
+            "name": "长海县"
+        },
+        {
+            "city_id": "38",
+            "id": "449",
+            "name": "瓦房店市"
+        },
+        {
+            "city_id": "38",
+            "id": "450",
+            "name": "普兰店区"
+        },
+        {
+            "city_id": "38",
+            "id": "451",
+            "name": "庄河市"
+        },
+        {
+            "city_id": "39",
+            "id": "452",
+            "name": "铁东区"
+        },
+        {
+            "city_id": "39",
+            "id": "453",
+            "name": "铁西区"
+        },
+        {
+            "city_id": "39",
+            "id": "454",
+            "name": "立山区"
+        },
+        {
+            "city_id": "39",
+            "id": "455",
+            "name": "千山区"
+        },
+        {
+            "city_id": "39",
+            "id": "456",
+            "name": "台安县"
+        },
+        {
+            "city_id": "39",
+            "id": "457",
+            "name": "岫岩满族自治县"
+        },
+        {
+            "city_id": "39",
+            "id": "458",
+            "name": "海城市"
+        },
+        {
+            "city_id": "40",
+            "id": "459",
+            "name": "新抚区"
+        },
+        {
+            "city_id": "40",
+            "id": "460",
+            "name": "东洲区"
+        },
+        {
+            "city_id": "40",
+            "id": "461",
+            "name": "望花区"
+        },
+        {
+            "city_id": "40",
+            "id": "462",
+            "name": "顺城区"
+        },
+        {
+            "city_id": "40",
+            "id": "463",
+            "name": "抚顺县"
+        },
+        {
+            "city_id": "40",
+            "id": "464",
+            "name": "新宾满族自治县"
+        },
+        {
+            "city_id": "40",
+            "id": "465",
+            "name": "清原满族自治县"
+        },
+        {
+            "city_id": "41",
+            "id": "466",
+            "name": "平山区"
+        },
+        {
+            "city_id": "41",
+            "id": "467",
+            "name": "溪湖区"
+        },
+        {
+            "city_id": "41",
+            "id": "468",
+            "name": "明山区"
+        },
+        {
+            "city_id": "41",
+            "id": "469",
+            "name": "南芬区"
+        },
+        {
+            "city_id": "41",
+            "id": "470",
+            "name": "本溪满族自治县"
+        },
+        {
+            "city_id": "41",
+            "id": "471",
+            "name": "桓仁满族自治县"
+        },
+        {
+            "city_id": "42",
+            "id": "472",
+            "name": "元宝区"
+        },
+        {
+            "city_id": "42",
+            "id": "473",
+            "name": "振兴区"
+        },
+        {
+            "city_id": "42",
+            "id": "474",
+            "name": "振安区"
+        },
+        {
+            "city_id": "42",
+            "id": "475",
+            "name": "宽甸满族自治县"
+        },
+        {
+            "city_id": "42",
+            "id": "476",
+            "name": "东港市"
+        },
+        {
+            "city_id": "42",
+            "id": "477",
+            "name": "凤城市"
+        },
+        {
+            "city_id": "43",
+            "id": "478",
+            "name": "古塔区"
+        },
+        {
+            "city_id": "43",
+            "id": "479",
+            "name": "凌河区"
+        },
+        {
+            "city_id": "43",
+            "id": "480",
+            "name": "太和区"
+        },
+        {
+            "city_id": "43",
+            "id": "481",
+            "name": "黑山县"
+        },
+        {
+            "city_id": "43",
+            "id": "482",
+            "name": "义县"
+        },
+        {
+            "city_id": "43",
+            "id": "483",
+            "name": "凌海市"
+        },
+        {
+            "city_id": "43",
+            "id": "484",
+            "name": "北宁市"
+        },
+        {
+            "city_id": "44",
+            "id": "485",
+            "name": "站前区"
+        },
+        {
+            "city_id": "44",
+            "id": "486",
+            "name": "西市区"
+        },
+        {
+            "city_id": "44",
+            "id": "487",
+            "name": "鲅鱼圈区"
+        },
+        {
+            "city_id": "44",
+            "id": "488",
+            "name": "老边区"
+        },
+        {
+            "city_id": "44",
+            "id": "489",
+            "name": "盖州市"
+        },
+        {
+            "city_id": "44",
+            "id": "490",
+            "name": "大石桥市"
+        },
+        {
+            "city_id": "45",
+            "id": "491",
+            "name": "海州区"
+        },
+        {
+            "city_id": "45",
+            "id": "492",
+            "name": "新邱区"
+        },
+        {
+            "city_id": "45",
+            "id": "493",
+            "name": "太平区"
+        },
+        {
+            "city_id": "45",
+            "id": "494",
+            "name": "清河门区"
+        },
+        {
+            "city_id": "45",
+            "id": "495",
+            "name": "细河区"
+        },
+        {
+            "city_id": "45",
+            "id": "496",
+            "name": "阜新蒙古族自治县"
+        },
+        {
+            "city_id": "45",
+            "id": "497",
+            "name": "彰武县"
+        },
+        {
+            "city_id": "46",
+            "id": "498",
+            "name": "白塔区"
+        },
+        {
+            "city_id": "46",
+            "id": "499",
+            "name": "文圣区"
+        },
+        {
+            "city_id": "46",
+            "id": "500",
+            "name": "宏伟区"
+        },
+        {
+            "city_id": "46",
+            "id": "501",
+            "name": "弓长岭区"
+        },
+        {
+            "city_id": "46",
+            "id": "502",
+            "name": "太子河区"
+        },
+        {
+            "city_id": "46",
+            "id": "503",
+            "name": "辽阳县"
+        },
+        {
+            "city_id": "46",
+            "id": "504",
+            "name": "灯塔市"
+        },
+        {
+            "city_id": "47",
+            "id": "505",
+            "name": "双台子区"
+        },
+        {
+            "city_id": "47",
+            "id": "506",
+            "name": "兴隆台区"
+        },
+        {
+            "city_id": "47",
+            "id": "507",
+            "name": "大洼区"
+        },
+        {
+            "city_id": "47",
+            "id": "508",
+            "name": "盘山县"
+        },
+        {
+            "city_id": "48",
+            "id": "509",
+            "name": "银州区"
+        },
+        {
+            "city_id": "48",
+            "id": "510",
+            "name": "清河区"
+        },
+        {
+            "city_id": "48",
+            "id": "511",
+            "name": "铁岭县"
+        },
+        {
+            "city_id": "48",
+            "id": "512",
+            "name": "西丰县"
+        },
+        {
+            "city_id": "48",
+            "id": "513",
+            "name": "昌图县"
+        },
+        {
+            "city_id": "48",
+            "id": "514",
+            "name": "调兵山市"
+        },
+        {
+            "city_id": "48",
+            "id": "515",
+            "name": "开原市"
+        },
+        {
+            "city_id": "49",
+            "id": "516",
+            "name": "双塔区"
+        },
+        {
+            "city_id": "49",
+            "id": "517",
+            "name": "龙城区"
+        },
+        {
+            "city_id": "49",
+            "id": "518",
+            "name": "朝阳县"
+        },
+        {
+            "city_id": "49",
+            "id": "519",
+            "name": "建平县"
+        },
+        {
+            "city_id": "49",
+            "id": "520",
+            "name": "喀喇沁左翼蒙古族自治县"
+        },
+        {
+            "city_id": "49",
+            "id": "521",
+            "name": "北票市"
+        },
+        {
+            "city_id": "49",
+            "id": "522",
+            "name": "凌源市"
+        },
+        {
+            "city_id": "50",
+            "id": "523",
+            "name": "连山区"
+        },
+        {
+            "city_id": "50",
+            "id": "524",
+            "name": "龙港区"
+        },
+        {
+            "city_id": "50",
+            "id": "525",
+            "name": "南票区"
+        },
+        {
+            "city_id": "50",
+            "id": "526",
+            "name": "绥中县"
+        },
+        {
+            "city_id": "50",
+            "id": "527",
+            "name": "建昌县"
+        },
+        {
+            "city_id": "50",
+            "id": "528",
+            "name": "兴城市"
+        },
+        {
+            "city_id": "51",
+            "id": "529",
+            "name": "南关区"
+        },
+        {
+            "city_id": "51",
+            "id": "530",
+            "name": "宽城区"
+        },
+        {
+            "city_id": "51",
+            "id": "531",
+            "name": "朝阳区"
+        },
+        {
+            "city_id": "51",
+            "id": "532",
+            "name": "二道区"
+        },
+        {
+            "city_id": "51",
+            "id": "533",
+            "name": "绿园区"
+        },
+        {
+            "city_id": "51",
+            "id": "534",
+            "name": "双阳区"
+        },
+        {
+            "city_id": "51",
+            "id": "535",
+            "name": "农安县"
+        },
+        {
+            "city_id": "51",
+            "id": "536",
+            "name": "九台区"
+        },
+        {
+            "city_id": "51",
+            "id": "537",
+            "name": "榆树市"
+        },
+        {
+            "city_id": "51",
+            "id": "538",
+            "name": "德惠市"
+        },
+        {
+            "city_id": "52",
+            "id": "539",
+            "name": "昌邑区"
+        },
+        {
+            "city_id": "52",
+            "id": "540",
+            "name": "龙潭区"
+        },
+        {
+            "city_id": "52",
+            "id": "541",
+            "name": "船营区"
+        },
+        {
+            "city_id": "52",
+            "id": "542",
+            "name": "丰满区"
+        },
+        {
+            "city_id": "52",
+            "id": "543",
+            "name": "永吉县"
+        },
+        {
+            "city_id": "52",
+            "id": "544",
+            "name": "蛟河市"
+        },
+        {
+            "city_id": "52",
+            "id": "545",
+            "name": "桦甸市"
+        },
+        {
+            "city_id": "52",
+            "id": "546",
+            "name": "舒兰市"
+        },
+        {
+            "city_id": "52",
+            "id": "547",
+            "name": "磐石市"
+        },
+        {
+            "city_id": "53",
+            "id": "548",
+            "name": "铁西区"
+        },
+        {
+            "city_id": "53",
+            "id": "549",
+            "name": "铁东区"
+        },
+        {
+            "city_id": "53",
+            "id": "550",
+            "name": "梨树县"
+        },
+        {
+            "city_id": "53",
+            "id": "551",
+            "name": "伊通满族自治县"
+        },
+        {
+            "city_id": "53",
+            "id": "552",
+            "name": "公主岭市"
+        },
+        {
+            "city_id": "53",
+            "id": "553",
+            "name": "双辽市"
+        },
+        {
+            "city_id": "54",
+            "id": "554",
+            "name": "龙山区"
+        },
+        {
+            "city_id": "54",
+            "id": "555",
+            "name": "西安区"
+        },
+        {
+            "city_id": "54",
+            "id": "556",
+            "name": "东丰县"
+        },
+        {
+            "city_id": "54",
+            "id": "557",
+            "name": "东辽县"
+        },
+        {
+            "city_id": "55",
+            "id": "558",
+            "name": "东昌区"
+        },
+        {
+            "city_id": "55",
+            "id": "559",
+            "name": "二道江区"
+        },
+        {
+            "city_id": "55",
+            "id": "560",
+            "name": "通化县"
+        },
+        {
+            "city_id": "55",
+            "id": "561",
+            "name": "辉南县"
+        },
+        {
+            "city_id": "55",
+            "id": "562",
+            "name": "柳河县"
+        },
+        {
+            "city_id": "55",
+            "id": "563",
+            "name": "梅河口市"
+        },
+        {
+            "city_id": "55",
+            "id": "564",
+            "name": "集安市"
+        },
+        {
+            "city_id": "56",
+            "id": "565",
+            "name": "八道江区"
+        },
+        {
+            "city_id": "56",
+            "id": "566",
+            "name": "抚松县"
+        },
+        {
+            "city_id": "56",
+            "id": "567",
+            "name": "靖宇县"
+        },
+        {
+            "city_id": "56",
+            "id": "568",
+            "name": "长白朝鲜族自治县"
+        },
+        {
+            "city_id": "56",
+            "id": "569",
+            "name": "江源区"
+        },
+        {
+            "city_id": "56",
+            "id": "570",
+            "name": "临江市"
+        },
+        {
+            "city_id": "57",
+            "id": "571",
+            "name": "宁江区"
+        },
+        {
+            "city_id": "57",
+            "id": "572",
+            "name": "前郭尔罗斯蒙古族自治县"
+        },
+        {
+            "city_id": "57",
+            "id": "573",
+            "name": "长岭县"
+        },
+        {
+            "city_id": "57",
+            "id": "574",
+            "name": "乾安县"
+        },
+        {
+            "city_id": "57",
+            "id": "575",
+            "name": "扶余市"
+        },
+        {
+            "city_id": "58",
+            "id": "576",
+            "name": "洮北区"
+        },
+        {
+            "city_id": "58",
+            "id": "577",
+            "name": "镇赉县"
+        },
+        {
+            "city_id": "58",
+            "id": "578",
+            "name": "通榆县"
+        },
+        {
+            "city_id": "58",
+            "id": "579",
+            "name": "洮南市"
+        },
+        {
+            "city_id": "58",
+            "id": "580",
+            "name": "大安市"
+        },
+        {
+            "city_id": "59",
+            "id": "581",
+            "name": "延吉市"
+        },
+        {
+            "city_id": "59",
+            "id": "582",
+            "name": "图们市"
+        },
+        {
+            "city_id": "59",
+            "id": "583",
+            "name": "敦化市"
+        },
+        {
+            "city_id": "59",
+            "id": "584",
+            "name": "珲春市"
+        },
+        {
+            "city_id": "59",
+            "id": "585",
+            "name": "龙井市"
+        },
+        {
+            "city_id": "59",
+            "id": "586",
+            "name": "和龙市"
+        },
+        {
+            "city_id": "59",
+            "id": "587",
+            "name": "汪清县"
+        },
+        {
+            "city_id": "59",
+            "id": "588",
+            "name": "安图县"
+        },
+        {
+            "city_id": "60",
+            "id": "589",
+            "name": "道里区"
+        },
+        {
+            "city_id": "60",
+            "id": "590",
+            "name": "南岗区"
+        },
+        {
+            "city_id": "60",
+            "id": "591",
+            "name": "道外区"
+        },
+        {
+            "city_id": "60",
+            "id": "592",
+            "name": "香坊区"
+        },
+        {
+            "city_id": "60",
+            "id": "593",
+            "name": "动力区"
+        },
+        {
+            "city_id": "60",
+            "id": "594",
+            "name": "平房区"
+        },
+        {
+            "city_id": "60",
+            "id": "595",
+            "name": "松北区"
+        },
+        {
+            "city_id": "60",
+            "id": "596",
+            "name": "呼兰区"
+        },
+        {
+            "city_id": "60",
+            "id": "597",
+            "name": "依兰县"
+        },
+        {
+            "city_id": "60",
+            "id": "598",
+            "name": "方正县"
+        },
+        {
+            "city_id": "60",
+            "id": "599",
+            "name": "宾县"
+        },
+        {
+            "city_id": "60",
+            "id": "600",
+            "name": "巴彦县"
+        },
+        {
+            "city_id": "60",
+            "id": "601",
+            "name": "木兰县"
+        },
+        {
+            "city_id": "60",
+            "id": "602",
+            "name": "通河县"
+        },
+        {
+            "city_id": "60",
+            "id": "603",
+            "name": "延寿县"
+        },
+        {
+            "city_id": "60",
+            "id": "604",
+            "name": "阿城区"
+        },
+        {
+            "city_id": "60",
+            "id": "605",
+            "name": "双城区"
+        },
+        {
+            "city_id": "60",
+            "id": "606",
+            "name": "尚志市"
+        },
+        {
+            "city_id": "60",
+            "id": "607",
+            "name": "五常市"
+        },
+        {
+            "city_id": "61",
+            "id": "608",
+            "name": "龙沙区"
+        },
+        {
+            "city_id": "61",
+            "id": "609",
+            "name": "建华区"
+        },
+        {
+            "city_id": "61",
+            "id": "610",
+            "name": "铁锋区"
+        },
+        {
+            "city_id": "61",
+            "id": "611",
+            "name": "昂昂溪区"
+        },
+        {
+            "city_id": "61",
+            "id": "612",
+            "name": "富拉尔基区"
+        },
+        {
+            "city_id": "61",
+            "id": "613",
+            "name": "碾子山区"
+        },
+        {
+            "city_id": "61",
+            "id": "614",
+            "name": "梅里斯达斡尔族区"
+        },
+        {
+            "city_id": "61",
+            "id": "615",
+            "name": "龙江县"
+        },
+        {
+            "city_id": "61",
+            "id": "616",
+            "name": "依安县"
+        },
+        {
+            "city_id": "61",
+            "id": "617",
+            "name": "泰来县"
+        },
+        {
+            "city_id": "61",
+            "id": "618",
+            "name": "甘南县"
+        },
+        {
+            "city_id": "61",
+            "id": "619",
+            "name": "富裕县"
+        },
+        {
+            "city_id": "61",
+            "id": "620",
+            "name": "克山县"
+        },
+        {
+            "city_id": "61",
+            "id": "621",
+            "name": "克东县"
+        },
+        {
+            "city_id": "61",
+            "id": "622",
+            "name": "拜泉县"
+        },
+        {
+            "city_id": "61",
+            "id": "623",
+            "name": "讷河市"
+        },
+        {
+            "city_id": "62",
+            "id": "624",
+            "name": "鸡冠区"
+        },
+        {
+            "city_id": "62",
+            "id": "625",
+            "name": "恒山区"
+        },
+        {
+            "city_id": "62",
+            "id": "626",
+            "name": "滴道区"
+        },
+        {
+            "city_id": "62",
+            "id": "627",
+            "name": "梨树区"
+        },
+        {
+            "city_id": "62",
+            "id": "628",
+            "name": "城子河区"
+        },
+        {
+            "city_id": "62",
+            "id": "629",
+            "name": "麻山区"
+        },
+        {
+            "city_id": "62",
+            "id": "630",
+            "name": "鸡东县"
+        },
+        {
+            "city_id": "62",
+            "id": "631",
+            "name": "虎林市"
+        },
+        {
+            "city_id": "62",
+            "id": "632",
+            "name": "密山市"
+        },
+        {
+            "city_id": "63",
+            "id": "633",
+            "name": "向阳区"
+        },
+        {
+            "city_id": "63",
+            "id": "634",
+            "name": "工农区"
+        },
+        {
+            "city_id": "63",
+            "id": "635",
+            "name": "南山区"
+        },
+        {
+            "city_id": "63",
+            "id": "636",
+            "name": "兴安区"
+        },
+        {
+            "city_id": "63",
+            "id": "637",
+            "name": "东山区"
+        },
+        {
+            "city_id": "63",
+            "id": "638",
+            "name": "兴山区"
+        },
+        {
+            "city_id": "63",
+            "id": "639",
+            "name": "萝北县"
+        },
+        {
+            "city_id": "63",
+            "id": "640",
+            "name": "绥滨县"
+        },
+        {
+            "city_id": "64",
+            "id": "641",
+            "name": "尖山区"
+        },
+        {
+            "city_id": "64",
+            "id": "642",
+            "name": "岭东区"
+        },
+        {
+            "city_id": "64",
+            "id": "643",
+            "name": "四方台区"
+        },
+        {
+            "city_id": "64",
+            "id": "644",
+            "name": "宝山区"
+        },
+        {
+            "city_id": "64",
+            "id": "645",
+            "name": "集贤县"
+        },
+        {
+            "city_id": "64",
+            "id": "646",
+            "name": "友谊县"
+        },
+        {
+            "city_id": "64",
+            "id": "647",
+            "name": "宝清县"
+        },
+        {
+            "city_id": "64",
+            "id": "648",
+            "name": "饶河县"
+        },
+        {
+            "city_id": "65",
+            "id": "649",
+            "name": "萨尔图区"
+        },
+        {
+            "city_id": "65",
+            "id": "650",
+            "name": "龙凤区"
+        },
+        {
+            "city_id": "65",
+            "id": "651",
+            "name": "让胡路区"
+        },
+        {
+            "city_id": "65",
+            "id": "652",
+            "name": "红岗区"
+        },
+        {
+            "city_id": "65",
+            "id": "653",
+            "name": "大同区"
+        },
+        {
+            "city_id": "65",
+            "id": "654",
+            "name": "肇州县"
+        },
+        {
+            "city_id": "65",
+            "id": "655",
+            "name": "肇源县"
+        },
+        {
+            "city_id": "65",
+            "id": "656",
+            "name": "林甸县"
+        },
+        {
+            "city_id": "65",
+            "id": "657",
+            "name": "杜尔伯特蒙古族自治县"
+        },
+        {
+            "city_id": "66",
+            "id": "658",
+            "name": "伊春区"
+        },
+        {
+            "city_id": "66",
+            "id": "659",
+            "name": "南岔区"
+        },
+        {
+            "city_id": "66",
+            "id": "660",
+            "name": "友好区"
+        },
+        {
+            "city_id": "66",
+            "id": "661",
+            "name": "西林区"
+        },
+        {
+            "city_id": "66",
+            "id": "662",
+            "name": "翠峦区"
+        },
+        {
+            "city_id": "66",
+            "id": "663",
+            "name": "新青区"
+        },
+        {
+            "city_id": "66",
+            "id": "664",
+            "name": "美溪区"
+        },
+        {
+            "city_id": "66",
+            "id": "665",
+            "name": "金山屯区"
+        },
+        {
+            "city_id": "66",
+            "id": "666",
+            "name": "五营区"
+        },
+        {
+            "city_id": "66",
+            "id": "667",
+            "name": "乌马河区"
+        },
+        {
+            "city_id": "66",
+            "id": "668",
+            "name": "汤旺河区"
+        },
+        {
+            "city_id": "66",
+            "id": "669",
+            "name": "带岭区"
+        },
+        {
+            "city_id": "66",
+            "id": "670",
+            "name": "乌伊岭区"
+        },
+        {
+            "city_id": "66",
+            "id": "671",
+            "name": "红星区"
+        },
+        {
+            "city_id": "66",
+            "id": "672",
+            "name": "上甘岭区"
+        },
+        {
+            "city_id": "66",
+            "id": "673",
+            "name": "嘉荫县"
+        },
+        {
+            "city_id": "66",
+            "id": "674",
+            "name": "铁力市"
+        },
+        {
+            "city_id": "67",
+            "id": "675",
+            "name": "永红区"
+        },
+        {
+            "city_id": "67",
+            "id": "676",
+            "name": "向阳区"
+        },
+        {
+            "city_id": "67",
+            "id": "677",
+            "name": "前进区"
+        },
+        {
+            "city_id": "67",
+            "id": "678",
+            "name": "东风区"
+        },
+        {
+            "city_id": "67",
+            "id": "679",
+            "name": "郊区"
+        },
+        {
+            "city_id": "67",
+            "id": "680",
+            "name": "桦南县"
+        },
+        {
+            "city_id": "67",
+            "id": "681",
+            "name": "桦川县"
+        },
+        {
+            "city_id": "67",
+            "id": "682",
+            "name": "汤原县"
+        },
+        {
+            "city_id": "67",
+            "id": "683",
+            "name": "抚远市"
+        },
+        {
+            "city_id": "67",
+            "id": "684",
+            "name": "同江市"
+        },
+        {
+            "city_id": "67",
+            "id": "685",
+            "name": "富锦市"
+        },
+        {
+            "city_id": "68",
+            "id": "686",
+            "name": "新兴区"
+        },
+        {
+            "city_id": "68",
+            "id": "687",
+            "name": "桃山区"
+        },
+        {
+            "city_id": "68",
+            "id": "688",
+            "name": "茄子河区"
+        },
+        {
+            "city_id": "68",
+            "id": "689",
+            "name": "勃利县"
+        },
+        {
+            "city_id": "69",
+            "id": "690",
+            "name": "东安区"
+        },
+        {
+            "city_id": "69",
+            "id": "691",
+            "name": "阳明区"
+        },
+        {
+            "city_id": "69",
+            "id": "692",
+            "name": "爱民区"
+        },
+        {
+            "city_id": "69",
+            "id": "693",
+            "name": "西安区"
+        },
+        {
+            "city_id": "69",
+            "id": "694",
+            "name": "东宁市"
+        },
+        {
+            "city_id": "69",
+            "id": "695",
+            "name": "林口县"
+        },
+        {
+            "city_id": "69",
+            "id": "696",
+            "name": "绥芬河市"
+        },
+        {
+            "city_id": "69",
+            "id": "697",
+            "name": "海林市"
+        },
+        {
+            "city_id": "69",
+            "id": "698",
+            "name": "宁安市"
+        },
+        {
+            "city_id": "69",
+            "id": "699",
+            "name": "穆棱市"
+        },
+        {
+            "city_id": "70",
+            "id": "700",
+            "name": "爱辉区"
+        },
+        {
+            "city_id": "70",
+            "id": "701",
+            "name": "嫩江县"
+        },
+        {
+            "city_id": "70",
+            "id": "702",
+            "name": "逊克县"
+        },
+        {
+            "city_id": "70",
+            "id": "703",
+            "name": "孙吴县"
+        },
+        {
+            "city_id": "70",
+            "id": "704",
+            "name": "北安市"
+        },
+        {
+            "city_id": "70",
+            "id": "705",
+            "name": "五大连池市"
+        },
+        {
+            "city_id": "71",
+            "id": "706",
+            "name": "北林区"
+        },
+        {
+            "city_id": "71",
+            "id": "707",
+            "name": "望奎县"
+        },
+        {
+            "city_id": "71",
+            "id": "708",
+            "name": "兰西县"
+        },
+        {
+            "city_id": "71",
+            "id": "709",
+            "name": "青冈县"
+        },
+        {
+            "city_id": "71",
+            "id": "710",
+            "name": "庆安县"
+        },
+        {
+            "city_id": "71",
+            "id": "711",
+            "name": "明水县"
+        },
+        {
+            "city_id": "71",
+            "id": "712",
+            "name": "绥棱县"
+        },
+        {
+            "city_id": "71",
+            "id": "713",
+            "name": "安达市"
+        },
+        {
+            "city_id": "71",
+            "id": "714",
+            "name": "肇东市"
+        },
+        {
+            "city_id": "71",
+            "id": "715",
+            "name": "海伦市"
+        },
+        {
+            "city_id": "72",
+            "id": "716",
+            "name": "呼玛县"
+        },
+        {
+            "city_id": "72",
+            "id": "717",
+            "name": "塔河县"
+        },
+        {
+            "city_id": "72",
+            "id": "718",
+            "name": "漠河市"
+        },
+        {
+            "city_id": "73",
+            "id": "719",
+            "name": "黄浦区"
+        },
+        {
+            "city_id": "73",
+            "id": "720",
+            "name": "卢湾区"
+        },
+        {
+            "city_id": "73",
+            "id": "721",
+            "name": "徐汇区"
+        },
+        {
+            "city_id": "73",
+            "id": "722",
+            "name": "长宁区"
+        },
+        {
+            "city_id": "73",
+            "id": "723",
+            "name": "静安区"
+        },
+        {
+            "city_id": "73",
+            "id": "724",
+            "name": "普陀区"
+        },
+        {
+            "city_id": "73",
+            "id": "725",
+            "name": "闸北区"
+        },
+        {
+            "city_id": "73",
+            "id": "726",
+            "name": "虹口区"
+        },
+        {
+            "city_id": "73",
+            "id": "727",
+            "name": "杨浦区"
+        },
+        {
+            "city_id": "73",
+            "id": "728",
+            "name": "闵行区"
+        },
+        {
+            "city_id": "73",
+            "id": "729",
+            "name": "宝山区"
+        },
+        {
+            "city_id": "73",
+            "id": "730",
+            "name": "嘉定区"
+        },
+        {
+            "city_id": "73",
+            "id": "731",
+            "name": "浦东新区"
+        },
+        {
+            "city_id": "73",
+            "id": "732",
+            "name": "金山区"
+        },
+        {
+            "city_id": "73",
+            "id": "733",
+            "name": "松江区"
+        },
+        {
+            "city_id": "73",
+            "id": "734",
+            "name": "青浦区"
+        },
+        {
+            "city_id": "73",
+            "id": "735",
+            "name": "南汇区"
+        },
+        {
+            "city_id": "73",
+            "id": "736",
+            "name": "奉贤区"
+        },
+        {
+            "city_id": "73",
+            "id": "737",
+            "name": "崇明区"
+        },
+        {
+            "city_id": "74",
+            "id": "738",
+            "name": "玄武区"
+        },
+        {
+            "city_id": "74",
+            "id": "740",
+            "name": "秦淮区"
+        },
+        {
+            "city_id": "74",
+            "id": "741",
+            "name": "建邺区"
+        },
+        {
+            "city_id": "74",
+            "id": "742",
+            "name": "鼓楼区"
+        },
+        {
+            "city_id": "74",
+            "id": "743",
+            "name": "下关区"
+        },
+        {
+            "city_id": "74",
+            "id": "744",
+            "name": "浦口区"
+        },
+        {
+            "city_id": "74",
+            "id": "745",
+            "name": "栖霞区"
+        },
+        {
+            "city_id": "74",
+            "id": "746",
+            "name": "雨花台区"
+        },
+        {
+            "city_id": "74",
+            "id": "747",
+            "name": "江宁区"
+        },
+        {
+            "city_id": "74",
+            "id": "748",
+            "name": "六合区"
+        },
+        {
+            "city_id": "74",
+            "id": "749",
+            "name": "溧水区"
+        },
+        {
+            "city_id": "74",
+            "id": "750",
+            "name": "高淳区"
+        },
+        {
+            "city_id": "75",
+            "id": "751",
+            "name": "崇安区"
+        },
+        {
+            "city_id": "75",
+            "id": "752",
+            "name": "南长区"
+        },
+        {
+            "city_id": "75",
+            "id": "753",
+            "name": "北塘区"
+        },
+        {
+            "city_id": "75",
+            "id": "754",
+            "name": "锡山区"
+        },
+        {
+            "city_id": "75",
+            "id": "755",
+            "name": "惠山区"
+        },
+        {
+            "city_id": "75",
+            "id": "756",
+            "name": "滨湖区"
+        },
+        {
+            "city_id": "75",
+            "id": "757",
+            "name": "江阴市"
+        },
+        {
+            "city_id": "75",
+            "id": "758",
+            "name": "宜兴市"
+        },
+        {
+            "city_id": "76",
+            "id": "759",
+            "name": "鼓楼区"
+        },
+        {
+            "city_id": "76",
+            "id": "760",
+            "name": "云龙区"
+        },
+        {
+            "city_id": "76",
+            "id": "761",
+            "name": "九里区"
+        },
+        {
+            "city_id": "76",
+            "id": "762",
+            "name": "贾汪区"
+        },
+        {
+            "city_id": "76",
+            "id": "763",
+            "name": "泉山区"
+        },
+        {
+            "city_id": "76",
+            "id": "764",
+            "name": "丰县"
+        },
+        {
+            "city_id": "76",
+            "id": "765",
+            "name": "沛县"
+        },
+        {
+            "city_id": "76",
+            "id": "766",
+            "name": "铜山区"
+        },
+        {
+            "city_id": "76",
+            "id": "767",
+            "name": "睢宁县"
+        },
+        {
+            "city_id": "76",
+            "id": "768",
+            "name": "新沂市"
+        },
+        {
+            "city_id": "76",
+            "id": "769",
+            "name": "邳州市"
+        },
+        {
+            "city_id": "77",
+            "id": "770",
+            "name": "天宁区"
+        },
+        {
+            "city_id": "77",
+            "id": "771",
+            "name": "钟楼区"
+        },
+        {
+            "city_id": "77",
+            "id": "772",
+            "name": "戚墅堰区"
+        },
+        {
+            "city_id": "77",
+            "id": "773",
+            "name": "新北区"
+        },
+        {
+            "city_id": "77",
+            "id": "774",
+            "name": "武进区"
+        },
+        {
+            "city_id": "77",
+            "id": "775",
+            "name": "溧阳市"
+        },
+        {
+            "city_id": "77",
+            "id": "776",
+            "name": "金坛区"
+        },
+        {
+            "city_id": "78",
+            "id": "777",
+            "name": "沧浪区"
+        },
+        {
+            "city_id": "78",
+            "id": "778",
+            "name": "平江区"
+        },
+        {
+            "city_id": "78",
+            "id": "779",
+            "name": "金阊区"
+        },
+        {
+            "city_id": "78",
+            "id": "780",
+            "name": "虎丘区"
+        },
+        {
+            "city_id": "78",
+            "id": "781",
+            "name": "吴中区"
+        },
+        {
+            "city_id": "78",
+            "id": "782",
+            "name": "相城区"
+        },
+        {
+            "city_id": "78",
+            "id": "783",
+            "name": "常熟市"
+        },
+        {
+            "city_id": "78",
+            "id": "784",
+            "name": "张家港市"
+        },
+        {
+            "city_id": "78",
+            "id": "785",
+            "name": "昆山市"
+        },
+        {
+            "city_id": "78",
+            "id": "786",
+            "name": "吴江区"
+        },
+        {
+            "city_id": "78",
+            "id": "787",
+            "name": "太仓市"
+        },
+        {
+            "city_id": "79",
+            "id": "788",
+            "name": "崇川区"
+        },
+        {
+            "city_id": "79",
+            "id": "789",
+            "name": "港闸区"
+        },
+        {
+            "city_id": "79",
+            "id": "790",
+            "name": "海安市"
+        },
+        {
+            "city_id": "79",
+            "id": "791",
+            "name": "如东县"
+        },
+        {
+            "city_id": "79",
+            "id": "792",
+            "name": "启东市"
+        },
+        {
+            "city_id": "79",
+            "id": "793",
+            "name": "如皋市"
+        },
+        {
+            "city_id": "79",
+            "id": "794",
+            "name": "通州区"
+        },
+        {
+            "city_id": "79",
+            "id": "795",
+            "name": "海门市"
+        },
+        {
+            "city_id": "80",
+            "id": "796",
+            "name": "连云区"
+        },
+        {
+            "city_id": "80",
+            "id": "797",
+            "name": "新浦区"
+        },
+        {
+            "city_id": "80",
+            "id": "798",
+            "name": "海州区"
+        },
+        {
+            "city_id": "80",
+            "id": "799",
+            "name": "赣榆区"
+        },
+        {
+            "city_id": "80",
+            "id": "800",
+            "name": "东海县"
+        },
+        {
+            "city_id": "80",
+            "id": "801",
+            "name": "灌云县"
+        },
+        {
+            "city_id": "80",
+            "id": "802",
+            "name": "灌南县"
+        },
+        {
+            "city_id": "81",
+            "id": "803",
+            "name": "清河区"
+        },
+        {
+            "city_id": "81",
+            "id": "804",
+            "name": "楚州区"
+        },
+        {
+            "city_id": "81",
+            "id": "805",
+            "name": "淮阴区"
+        },
+        {
+            "city_id": "81",
+            "id": "806",
+            "name": "清浦区"
+        },
+        {
+            "city_id": "81",
+            "id": "807",
+            "name": "涟水县"
+        },
+        {
+            "city_id": "81",
+            "id": "808",
+            "name": "洪泽区"
+        },
+        {
+            "city_id": "81",
+            "id": "809",
+            "name": "盱眙县"
+        },
+        {
+            "city_id": "81",
+            "id": "810",
+            "name": "金湖县"
+        },
+        {
+            "city_id": "82",
+            "id": "811",
+            "name": "亭湖区"
+        },
+        {
+            "city_id": "82",
+            "id": "812",
+            "name": "盐都区"
+        },
+        {
+            "city_id": "82",
+            "id": "813",
+            "name": "响水县"
+        },
+        {
+            "city_id": "82",
+            "id": "814",
+            "name": "滨海县"
+        },
+        {
+            "city_id": "82",
+            "id": "815",
+            "name": "阜宁县"
+        },
+        {
+            "city_id": "82",
+            "id": "816",
+            "name": "射阳县"
+        },
+        {
+            "city_id": "82",
+            "id": "817",
+            "name": "建湖县"
+        },
+        {
+            "city_id": "82",
+            "id": "818",
+            "name": "东台市"
+        },
+        {
+            "city_id": "82",
+            "id": "819",
+            "name": "大丰区"
+        },
+        {
+            "city_id": "83",
+            "id": "820",
+            "name": "广陵区"
+        },
+        {
+            "city_id": "83",
+            "id": "821",
+            "name": "邗江区"
+        },
+        {
+            "city_id": "83",
+            "id": "822",
+            "name": "维扬区"
+        },
+        {
+            "city_id": "83",
+            "id": "823",
+            "name": "宝应县"
+        },
+        {
+            "city_id": "83",
+            "id": "824",
+            "name": "仪征市"
+        },
+        {
+            "city_id": "83",
+            "id": "825",
+            "name": "高邮市"
+        },
+        {
+            "city_id": "83",
+            "id": "826",
+            "name": "江都区"
+        },
+        {
+            "city_id": "84",
+            "id": "827",
+            "name": "京口区"
+        },
+        {
+            "city_id": "84",
+            "id": "828",
+            "name": "润州区"
+        },
+        {
+            "city_id": "84",
+            "id": "829",
+            "name": "丹徒区"
+        },
+        {
+            "city_id": "84",
+            "id": "830",
+            "name": "丹阳市"
+        },
+        {
+            "city_id": "84",
+            "id": "831",
+            "name": "扬中市"
+        },
+        {
+            "city_id": "84",
+            "id": "832",
+            "name": "句容市"
+        },
+        {
+            "city_id": "85",
+            "id": "833",
+            "name": "海陵区"
+        },
+        {
+            "city_id": "85",
+            "id": "834",
+            "name": "高港区"
+        },
+        {
+            "city_id": "85",
+            "id": "835",
+            "name": "兴化市"
+        },
+        {
+            "city_id": "85",
+            "id": "836",
+            "name": "靖江市"
+        },
+        {
+            "city_id": "85",
+            "id": "837",
+            "name": "泰兴市"
+        },
+        {
+            "city_id": "85",
+            "id": "838",
+            "name": "姜堰区"
+        },
+        {
+            "city_id": "86",
+            "id": "839",
+            "name": "宿城区"
+        },
+        {
+            "city_id": "86",
+            "id": "840",
+            "name": "宿豫区"
+        },
+        {
+            "city_id": "86",
+            "id": "841",
+            "name": "沭阳县"
+        },
+        {
+            "city_id": "86",
+            "id": "842",
+            "name": "泗阳县"
+        },
+        {
+            "city_id": "86",
+            "id": "843",
+            "name": "泗洪县"
+        },
+        {
+            "city_id": "87",
+            "id": "844",
+            "name": "上城区"
+        },
+        {
+            "city_id": "87",
+            "id": "845",
+            "name": "下城区"
+        },
+        {
+            "city_id": "87",
+            "id": "846",
+            "name": "江干区"
+        },
+        {
+            "city_id": "87",
+            "id": "847",
+            "name": "拱墅区"
+        },
+        {
+            "city_id": "87",
+            "id": "848",
+            "name": "西湖区"
+        },
+        {
+            "city_id": "87",
+            "id": "849",
+            "name": "滨江区"
+        },
+        {
+            "city_id": "87",
+            "id": "850",
+            "name": "萧山区"
+        },
+        {
+            "city_id": "87",
+            "id": "851",
+            "name": "余杭区"
+        },
+        {
+            "city_id": "87",
+            "id": "852",
+            "name": "桐庐县"
+        },
+        {
+            "city_id": "87",
+            "id": "853",
+            "name": "淳安县"
+        },
+        {
+            "city_id": "87",
+            "id": "854",
+            "name": "建德市"
+        },
+        {
+            "city_id": "87",
+            "id": "855",
+            "name": "富阳区"
+        },
+        {
+            "city_id": "87",
+            "id": "856",
+            "name": "临安区"
+        },
+        {
+            "city_id": "88",
+            "id": "857",
+            "name": "海曙区"
+        },
+        {
+            "city_id": "88",
+            "id": "858",
+            "name": "江东区"
+        },
+        {
+            "city_id": "88",
+            "id": "859",
+            "name": "江北区"
+        },
+        {
+            "city_id": "88",
+            "id": "860",
+            "name": "北仑区"
+        },
+        {
+            "city_id": "88",
+            "id": "861",
+            "name": "镇海区"
+        },
+        {
+            "city_id": "88",
+            "id": "862",
+            "name": "鄞州区"
+        },
+        {
+            "city_id": "88",
+            "id": "863",
+            "name": "象山县"
+        },
+        {
+            "city_id": "88",
+            "id": "864",
+            "name": "宁海县"
+        },
+        {
+            "city_id": "88",
+            "id": "865",
+            "name": "余姚市"
+        },
+        {
+            "city_id": "88",
+            "id": "866",
+            "name": "慈溪市"
+        },
+        {
+            "city_id": "88",
+            "id": "867",
+            "name": "奉化区"
+        },
+        {
+            "city_id": "89",
+            "id": "868",
+            "name": "鹿城区"
+        },
+        {
+            "city_id": "89",
+            "id": "869",
+            "name": "龙湾区"
+        },
+        {
+            "city_id": "89",
+            "id": "870",
+            "name": "瓯海区"
+        },
+        {
+            "city_id": "89",
+            "id": "871",
+            "name": "洞头区"
+        },
+        {
+            "city_id": "89",
+            "id": "872",
+            "name": "永嘉县"
+        },
+        {
+            "city_id": "89",
+            "id": "873",
+            "name": "平阳县"
+        },
+        {
+            "city_id": "89",
+            "id": "874",
+            "name": "苍南县"
+        },
+        {
+            "city_id": "89",
+            "id": "875",
+            "name": "文成县"
+        },
+        {
+            "city_id": "89",
+            "id": "876",
+            "name": "泰顺县"
+        },
+        {
+            "city_id": "89",
+            "id": "877",
+            "name": "瑞安市"
+        },
+        {
+            "city_id": "89",
+            "id": "878",
+            "name": "乐清市"
+        },
+        {
+            "city_id": "90",
+            "id": "879",
+            "name": "秀城区"
+        },
+        {
+            "city_id": "90",
+            "id": "880",
+            "name": "秀洲区"
+        },
+        {
+            "city_id": "90",
+            "id": "881",
+            "name": "嘉善县"
+        },
+        {
+            "city_id": "90",
+            "id": "882",
+            "name": "海盐县"
+        },
+        {
+            "city_id": "90",
+            "id": "883",
+            "name": "海宁市"
+        },
+        {
+            "city_id": "90",
+            "id": "884",
+            "name": "平湖市"
+        },
+        {
+            "city_id": "90",
+            "id": "885",
+            "name": "桐乡市"
+        },
+        {
+            "city_id": "91",
+            "id": "886",
+            "name": "吴兴区"
+        },
+        {
+            "city_id": "91",
+            "id": "887",
+            "name": "南浔区"
+        },
+        {
+            "city_id": "91",
+            "id": "888",
+            "name": "德清县"
+        },
+        {
+            "city_id": "91",
+            "id": "889",
+            "name": "长兴县"
+        },
+        {
+            "city_id": "91",
+            "id": "890",
+            "name": "安吉县"
+        },
+        {
+            "city_id": "92",
+            "id": "891",
+            "name": "越城区"
+        },
+        {
+            "city_id": "92",
+            "id": "892",
+            "name": "绍兴县"
+        },
+        {
+            "city_id": "92",
+            "id": "893",
+            "name": "新昌县"
+        },
+        {
+            "city_id": "92",
+            "id": "894",
+            "name": "诸暨市"
+        },
+        {
+            "city_id": "92",
+            "id": "895",
+            "name": "上虞区"
+        },
+        {
+            "city_id": "92",
+            "id": "896",
+            "name": "嵊州市"
+        },
+        {
+            "city_id": "93",
+            "id": "897",
+            "name": "婺城区"
+        },
+        {
+            "city_id": "93",
+            "id": "898",
+            "name": "金东区"
+        },
+        {
+            "city_id": "93",
+            "id": "899",
+            "name": "武义县"
+        },
+        {
+            "city_id": "93",
+            "id": "900",
+            "name": "浦江县"
+        },
+        {
+            "city_id": "93",
+            "id": "901",
+            "name": "磐安县"
+        },
+        {
+            "city_id": "93",
+            "id": "902",
+            "name": "兰溪市"
+        },
+        {
+            "city_id": "93",
+            "id": "903",
+            "name": "义乌市"
+        },
+        {
+            "city_id": "93",
+            "id": "904",
+            "name": "东阳市"
+        },
+        {
+            "city_id": "93",
+            "id": "905",
+            "name": "永康市"
+        },
+        {
+            "city_id": "94",
+            "id": "906",
+            "name": "柯城区"
+        },
+        {
+            "city_id": "94",
+            "id": "907",
+            "name": "衢江区"
+        },
+        {
+            "city_id": "94",
+            "id": "908",
+            "name": "常山县"
+        },
+        {
+            "city_id": "94",
+            "id": "909",
+            "name": "开化县"
+        },
+        {
+            "city_id": "94",
+            "id": "910",
+            "name": "龙游县"
+        },
+        {
+            "city_id": "94",
+            "id": "911",
+            "name": "江山市"
+        },
+        {
+            "city_id": "95",
+            "id": "912",
+            "name": "定海区"
+        },
+        {
+            "city_id": "95",
+            "id": "913",
+            "name": "普陀区"
+        },
+        {
+            "city_id": "95",
+            "id": "914",
+            "name": "岱山县"
+        },
+        {
+            "city_id": "95",
+            "id": "915",
+            "name": "嵊泗县"
+        },
+        {
+            "city_id": "96",
+            "id": "916",
+            "name": "椒江区"
+        },
+        {
+            "city_id": "96",
+            "id": "917",
+            "name": "黄岩区"
+        },
+        {
+            "city_id": "96",
+            "id": "918",
+            "name": "路桥区"
+        },
+        {
+            "city_id": "96",
+            "id": "919",
+            "name": "玉环市"
+        },
+        {
+            "city_id": "96",
+            "id": "920",
+            "name": "三门县"
+        },
+        {
+            "city_id": "96",
+            "id": "921",
+            "name": "天台县"
+        },
+        {
+            "city_id": "96",
+            "id": "922",
+            "name": "仙居县"
+        },
+        {
+            "city_id": "96",
+            "id": "923",
+            "name": "温岭市"
+        },
+        {
+            "city_id": "96",
+            "id": "924",
+            "name": "临海市"
+        },
+        {
+            "city_id": "97",
+            "id": "925",
+            "name": "莲都区"
+        },
+        {
+            "city_id": "97",
+            "id": "926",
+            "name": "青田县"
+        },
+        {
+            "city_id": "97",
+            "id": "927",
+            "name": "缙云县"
+        },
+        {
+            "city_id": "97",
+            "id": "928",
+            "name": "遂昌县"
+        },
+        {
+            "city_id": "97",
+            "id": "929",
+            "name": "松阳县"
+        },
+        {
+            "city_id": "97",
+            "id": "930",
+            "name": "云和县"
+        },
+        {
+            "city_id": "97",
+            "id": "931",
+            "name": "庆元县"
+        },
+        {
+            "city_id": "97",
+            "id": "932",
+            "name": "景宁畲族自治县"
+        },
+        {
+            "city_id": "97",
+            "id": "933",
+            "name": "龙泉市"
+        },
+        {
+            "city_id": "98",
+            "id": "934",
+            "name": "瑶海区"
+        },
+        {
+            "city_id": "98",
+            "id": "935",
+            "name": "庐阳区"
+        },
+        {
+            "city_id": "98",
+            "id": "936",
+            "name": "蜀山区"
+        },
+        {
+            "city_id": "98",
+            "id": "937",
+            "name": "包河区"
+        },
+        {
+            "city_id": "98",
+            "id": "938",
+            "name": "长丰县"
+        },
+        {
+            "city_id": "98",
+            "id": "939",
+            "name": "肥东县"
+        },
+        {
+            "city_id": "98",
+            "id": "940",
+            "name": "肥西县"
+        },
+        {
+            "city_id": "99",
+            "id": "941",
+            "name": "镜湖区"
+        },
+        {
+            "city_id": "99",
+            "id": "942",
+            "name": "马塘区"
+        },
+        {
+            "city_id": "99",
+            "id": "943",
+            "name": "新芜区"
+        },
+        {
+            "city_id": "99",
+            "id": "944",
+            "name": "鸠江区"
+        },
+        {
+            "city_id": "99",
+            "id": "945",
+            "name": "芜湖县"
+        },
+        {
+            "city_id": "99",
+            "id": "946",
+            "name": "繁昌县"
+        },
+        {
+            "city_id": "99",
+            "id": "947",
+            "name": "南陵县"
+        },
+        {
+            "city_id": "100",
+            "id": "948",
+            "name": "龙子湖区"
+        },
+        {
+            "city_id": "100",
+            "id": "949",
+            "name": "蚌山区"
+        },
+        {
+            "city_id": "100",
+            "id": "950",
+            "name": "禹会区"
+        },
+        {
+            "city_id": "100",
+            "id": "951",
+            "name": "淮上区"
+        },
+        {
+            "city_id": "100",
+            "id": "952",
+            "name": "怀远县"
+        },
+        {
+            "city_id": "100",
+            "id": "953",
+            "name": "五河县"
+        },
+        {
+            "city_id": "100",
+            "id": "954",
+            "name": "固镇县"
+        },
+        {
+            "city_id": "101",
+            "id": "955",
+            "name": "大通区"
+        },
+        {
+            "city_id": "101",
+            "id": "956",
+            "name": "田家庵区"
+        },
+        {
+            "city_id": "101",
+            "id": "957",
+            "name": "谢家集区"
+        },
+        {
+            "city_id": "101",
+            "id": "958",
+            "name": "八公山区"
+        },
+        {
+            "city_id": "101",
+            "id": "959",
+            "name": "潘集区"
+        },
+        {
+            "city_id": "101",
+            "id": "960",
+            "name": "凤台县"
+        },
+        {
+            "city_id": "102",
+            "id": "961",
+            "name": "金家庄区"
+        },
+        {
+            "city_id": "102",
+            "id": "962",
+            "name": "花山区"
+        },
+        {
+            "city_id": "102",
+            "id": "963",
+            "name": "雨山区"
+        },
+        {
+            "city_id": "102",
+            "id": "964",
+            "name": "当涂县"
+        },
+        {
+            "city_id": "103",
+            "id": "965",
+            "name": "杜集区"
+        },
+        {
+            "city_id": "103",
+            "id": "966",
+            "name": "相山区"
+        },
+        {
+            "city_id": "103",
+            "id": "967",
+            "name": "烈山区"
+        },
+        {
+            "city_id": "103",
+            "id": "968",
+            "name": "濉溪县"
+        },
+        {
+            "city_id": "104",
+            "id": "969",
+            "name": "铜官区"
+        },
+        {
+            "city_id": "104",
+            "id": "970",
+            "name": "狮子山区"
+        },
+        {
+            "city_id": "104",
+            "id": "971",
+            "name": "郊区"
+        },
+        {
+            "city_id": "104",
+            "id": "972",
+            "name": "铜陵县"
+        },
+        {
+            "city_id": "105",
+            "id": "973",
+            "name": "迎江区"
+        },
+        {
+            "city_id": "105",
+            "id": "974",
+            "name": "大观区"
+        },
+        {
+            "city_id": "105",
+            "id": "975",
+            "name": "郊区"
+        },
+        {
+            "city_id": "105",
+            "id": "976",
+            "name": "怀宁县"
+        },
+        {
+            "city_id": "105",
+            "id": "977",
+            "name": "枞阳县"
+        },
+        {
+            "city_id": "105",
+            "id": "978",
+            "name": "潜山县"
+        },
+        {
+            "city_id": "105",
+            "id": "979",
+            "name": "太湖县"
+        },
+        {
+            "city_id": "105",
+            "id": "980",
+            "name": "宿松县"
+        },
+        {
+            "city_id": "105",
+            "id": "981",
+            "name": "望江县"
+        },
+        {
+            "city_id": "105",
+            "id": "982",
+            "name": "岳西县"
+        },
+        {
+            "city_id": "105",
+            "id": "983",
+            "name": "桐城市"
+        },
+        {
+            "city_id": "106",
+            "id": "984",
+            "name": "屯溪区"
+        },
+        {
+            "city_id": "106",
+            "id": "985",
+            "name": "黄山区"
+        },
+        {
+            "city_id": "106",
+            "id": "986",
+            "name": "徽州区"
+        },
+        {
+            "city_id": "106",
+            "id": "987",
+            "name": "歙县"
+        },
+        {
+            "city_id": "106",
+            "id": "988",
+            "name": "休宁县"
+        },
+        {
+            "city_id": "106",
+            "id": "989",
+            "name": "黟县"
+        },
+        {
+            "city_id": "106",
+            "id": "990",
+            "name": "祁门县"
+        },
+        {
+            "city_id": "107",
+            "id": "991",
+            "name": "琅琊区"
+        },
+        {
+            "city_id": "107",
+            "id": "992",
+            "name": "南谯区"
+        },
+        {
+            "city_id": "107",
+            "id": "993",
+            "name": "来安县"
+        },
+        {
+            "city_id": "107",
+            "id": "994",
+            "name": "全椒县"
+        },
+        {
+            "city_id": "107",
+            "id": "995",
+            "name": "定远县"
+        },
+        {
+            "city_id": "107",
+            "id": "996",
+            "name": "凤阳县"
+        },
+        {
+            "city_id": "107",
+            "id": "997",
+            "name": "天长市"
+        },
+        {
+            "city_id": "107",
+            "id": "998",
+            "name": "明光市"
+        },
+        {
+            "city_id": "108",
+            "id": "999",
+            "name": "颍州区"
+        },
+        {
+            "city_id": "108",
+            "id": "1000",
+            "name": "颍东区"
+        },
+        {
+            "city_id": "108",
+            "id": "1001",
+            "name": "颍泉区"
+        },
+        {
+            "city_id": "108",
+            "id": "1002",
+            "name": "临泉县"
+        },
+        {
+            "city_id": "108",
+            "id": "1003",
+            "name": "太和县"
+        },
+        {
+            "city_id": "108",
+            "id": "1004",
+            "name": "阜南县"
+        },
+        {
+            "city_id": "108",
+            "id": "1005",
+            "name": "颍上县"
+        },
+        {
+            "city_id": "108",
+            "id": "1006",
+            "name": "界首市"
+        },
+        {
+            "city_id": "109",
+            "id": "1007",
+            "name": "埇桥区"
+        },
+        {
+            "city_id": "109",
+            "id": "1008",
+            "name": "砀山县"
+        },
+        {
+            "city_id": "109",
+            "id": "1009",
+            "name": "萧县"
+        },
+        {
+            "city_id": "109",
+            "id": "1010",
+            "name": "灵璧县"
+        },
+        {
+            "city_id": "109",
+            "id": "1011",
+            "name": "泗县"
+        },
+        {
+            "city_id": "110",
+            "id": "1012",
+            "name": "居巢区"
+        },
+        {
+            "city_id": "110",
+            "id": "1013",
+            "name": "庐江县"
+        },
+        {
+            "city_id": "110",
+            "id": "1014",
+            "name": "无为县"
+        },
+        {
+            "city_id": "110",
+            "id": "1015",
+            "name": "含山县"
+        },
+        {
+            "city_id": "110",
+            "id": "1016",
+            "name": "和县"
+        },
+        {
+            "city_id": "111",
+            "id": "1017",
+            "name": "金安区"
+        },
+        {
+            "city_id": "111",
+            "id": "1018",
+            "name": "裕安区"
+        },
+        {
+            "city_id": "111",
+            "id": "1019",
+            "name": "寿县"
+        },
+        {
+            "city_id": "111",
+            "id": "1020",
+            "name": "霍邱县"
+        },
+        {
+            "city_id": "111",
+            "id": "1021",
+            "name": "舒城县"
+        },
+        {
+            "city_id": "111",
+            "id": "1022",
+            "name": "金寨县"
+        },
+        {
+            "city_id": "111",
+            "id": "1023",
+            "name": "霍山县"
+        },
+        {
+            "city_id": "112",
+            "id": "1024",
+            "name": "谯城区"
+        },
+        {
+            "city_id": "112",
+            "id": "1025",
+            "name": "涡阳县"
+        },
+        {
+            "city_id": "112",
+            "id": "1026",
+            "name": "蒙城县"
+        },
+        {
+            "city_id": "112",
+            "id": "1027",
+            "name": "利辛县"
+        },
+        {
+            "city_id": "113",
+            "id": "1028",
+            "name": "贵池区"
+        },
+        {
+            "city_id": "113",
+            "id": "1029",
+            "name": "东至县"
+        },
+        {
+            "city_id": "113",
+            "id": "1030",
+            "name": "石台县"
+        },
+        {
+            "city_id": "113",
+            "id": "1031",
+            "name": "青阳县"
+        },
+        {
+            "city_id": "114",
+            "id": "1032",
+            "name": "宣州区"
+        },
+        {
+            "city_id": "114",
+            "id": "1033",
+            "name": "郎溪县"
+        },
+        {
+            "city_id": "114",
+            "id": "1034",
+            "name": "广德县"
+        },
+        {
+            "city_id": "114",
+            "id": "1035",
+            "name": "泾县"
+        },
+        {
+            "city_id": "114",
+            "id": "1036",
+            "name": "绩溪县"
+        },
+        {
+            "city_id": "114",
+            "id": "1037",
+            "name": "旌德县"
+        },
+        {
+            "city_id": "114",
+            "id": "1038",
+            "name": "宁国市"
+        },
+        {
+            "city_id": "115",
+            "id": "1039",
+            "name": "鼓楼区"
+        },
+        {
+            "city_id": "115",
+            "id": "1040",
+            "name": "台江区"
+        },
+        {
+            "city_id": "115",
+            "id": "1041",
+            "name": "仓山区"
+        },
+        {
+            "city_id": "115",
+            "id": "1042",
+            "name": "马尾区"
+        },
+        {
+            "city_id": "115",
+            "id": "1043",
+            "name": "晋安区"
+        },
+        {
+            "city_id": "115",
+            "id": "1044",
+            "name": "闽侯县"
+        },
+        {
+            "city_id": "115",
+            "id": "1045",
+            "name": "连江县"
+        },
+        {
+            "city_id": "115",
+            "id": "1046",
+            "name": "罗源县"
+        },
+        {
+            "city_id": "115",
+            "id": "1047",
+            "name": "闽清县"
+        },
+        {
+            "city_id": "115",
+            "id": "1048",
+            "name": "永泰县"
+        },
+        {
+            "city_id": "115",
+            "id": "1049",
+            "name": "平潭县"
+        },
+        {
+            "city_id": "115",
+            "id": "1050",
+            "name": "福清市"
+        },
+        {
+            "city_id": "115",
+            "id": "1051",
+            "name": "长乐区"
+        },
+        {
+            "city_id": "116",
+            "id": "1052",
+            "name": "思明区"
+        },
+        {
+            "city_id": "116",
+            "id": "1053",
+            "name": "海沧区"
+        },
+        {
+            "city_id": "116",
+            "id": "1054",
+            "name": "湖里区"
+        },
+        {
+            "city_id": "116",
+            "id": "1055",
+            "name": "集美区"
+        },
+        {
+            "city_id": "116",
+            "id": "1056",
+            "name": "同安区"
+        },
+        {
+            "city_id": "116",
+            "id": "1057",
+            "name": "翔安区"
+        },
+        {
+            "city_id": "117",
+            "id": "1058",
+            "name": "城厢区"
+        },
+        {
+            "city_id": "117",
+            "id": "1059",
+            "name": "涵江区"
+        },
+        {
+            "city_id": "117",
+            "id": "1060",
+            "name": "荔城区"
+        },
+        {
+            "city_id": "117",
+            "id": "1061",
+            "name": "秀屿区"
+        },
+        {
+            "city_id": "117",
+            "id": "1062",
+            "name": "仙游县"
+        },
+        {
+            "city_id": "118",
+            "id": "1063",
+            "name": "梅列区"
+        },
+        {
+            "city_id": "118",
+            "id": "1064",
+            "name": "三元区"
+        },
+        {
+            "city_id": "118",
+            "id": "1065",
+            "name": "明溪县"
+        },
+        {
+            "city_id": "118",
+            "id": "1066",
+            "name": "清流县"
+        },
+        {
+            "city_id": "118",
+            "id": "1067",
+            "name": "宁化县"
+        },
+        {
+            "city_id": "118",
+            "id": "1068",
+            "name": "大田县"
+        },
+        {
+            "city_id": "118",
+            "id": "1069",
+            "name": "尤溪县"
+        },
+        {
+            "city_id": "118",
+            "id": "1070",
+            "name": "沙县"
+        },
+        {
+            "city_id": "118",
+            "id": "1071",
+            "name": "将乐县"
+        },
+        {
+            "city_id": "118",
+            "id": "1072",
+            "name": "泰宁县"
+        },
+        {
+            "city_id": "118",
+            "id": "1073",
+            "name": "建宁县"
+        },
+        {
+            "city_id": "118",
+            "id": "1074",
+            "name": "永安市"
+        },
+        {
+            "city_id": "119",
+            "id": "1075",
+            "name": "鲤城区"
+        },
+        {
+            "city_id": "119",
+            "id": "1076",
+            "name": "丰泽区"
+        },
+        {
+            "city_id": "119",
+            "id": "1077",
+            "name": "洛江区"
+        },
+        {
+            "city_id": "119",
+            "id": "1078",
+            "name": "泉港区"
+        },
+        {
+            "city_id": "119",
+            "id": "1079",
+            "name": "惠安县"
+        },
+        {
+            "city_id": "119",
+            "id": "1080",
+            "name": "安溪县"
+        },
+        {
+            "city_id": "119",
+            "id": "1081",
+            "name": "永春县"
+        },
+        {
+            "city_id": "119",
+            "id": "1082",
+            "name": "德化县"
+        },
+        {
+            "city_id": "119",
+            "id": "1083",
+            "name": "金门县"
+        },
+        {
+            "city_id": "119",
+            "id": "1084",
+            "name": "石狮市"
+        },
+        {
+            "city_id": "119",
+            "id": "1085",
+            "name": "晋江市"
+        },
+        {
+            "city_id": "119",
+            "id": "1086",
+            "name": "南安市"
+        },
+        {
+            "city_id": "120",
+            "id": "1087",
+            "name": "芗城区"
+        },
+        {
+            "city_id": "120",
+            "id": "1088",
+            "name": "龙文区"
+        },
+        {
+            "city_id": "120",
+            "id": "1089",
+            "name": "云霄县"
+        },
+        {
+            "city_id": "120",
+            "id": "1090",
+            "name": "漳浦县"
+        },
+        {
+            "city_id": "120",
+            "id": "1091",
+            "name": "诏安县"
+        },
+        {
+            "city_id": "120",
+            "id": "1092",
+            "name": "长泰县"
+        },
+        {
+            "city_id": "120",
+            "id": "1093",
+            "name": "东山县"
+        },
+        {
+            "city_id": "120",
+            "id": "1094",
+            "name": "南靖县"
+        },
+        {
+            "city_id": "120",
+            "id": "1095",
+            "name": "平和县"
+        },
+        {
+            "city_id": "120",
+            "id": "1096",
+            "name": "华安县"
+        },
+        {
+            "city_id": "120",
+            "id": "1097",
+            "name": "龙海市"
+        },
+        {
+            "city_id": "121",
+            "id": "1098",
+            "name": "延平区"
+        },
+        {
+            "city_id": "121",
+            "id": "1099",
+            "name": "顺昌县"
+        },
+        {
+            "city_id": "121",
+            "id": "1100",
+            "name": "浦城县"
+        },
+        {
+            "city_id": "121",
+            "id": "1101",
+            "name": "光泽县"
+        },
+        {
+            "city_id": "121",
+            "id": "1102",
+            "name": "松溪县"
+        },
+        {
+            "city_id": "121",
+            "id": "1103",
+            "name": "政和县"
+        },
+        {
+            "city_id": "121",
+            "id": "1104",
+            "name": "邵武市"
+        },
+        {
+            "city_id": "121",
+            "id": "1105",
+            "name": "武夷山市"
+        },
+        {
+            "city_id": "121",
+            "id": "1106",
+            "name": "建瓯市"
+        },
+        {
+            "city_id": "121",
+            "id": "1107",
+            "name": "建阳区"
+        },
+        {
+            "city_id": "122",
+            "id": "1108",
+            "name": "新罗区"
+        },
+        {
+            "city_id": "122",
+            "id": "1109",
+            "name": "长汀县"
+        },
+        {
+            "city_id": "122",
+            "id": "1110",
+            "name": "永定区"
+        },
+        {
+            "city_id": "122",
+            "id": "1111",
+            "name": "上杭县"
+        },
+        {
+            "city_id": "122",
+            "id": "1112",
+            "name": "武平县"
+        },
+        {
+            "city_id": "122",
+            "id": "1113",
+            "name": "连城县"
+        },
+        {
+            "city_id": "122",
+            "id": "1114",
+            "name": "漳平市"
+        },
+        {
+            "city_id": "123",
+            "id": "1115",
+            "name": "蕉城区"
+        },
+        {
+            "city_id": "123",
+            "id": "1116",
+            "name": "霞浦县"
+        },
+        {
+            "city_id": "123",
+            "id": "1117",
+            "name": "古田县"
+        },
+        {
+            "city_id": "123",
+            "id": "1118",
+            "name": "屏南县"
+        },
+        {
+            "city_id": "123",
+            "id": "1119",
+            "name": "寿宁县"
+        },
+        {
+            "city_id": "123",
+            "id": "1120",
+            "name": "周宁县"
+        },
+        {
+            "city_id": "123",
+            "id": "1121",
+            "name": "柘荣县"
+        },
+        {
+            "city_id": "123",
+            "id": "1122",
+            "name": "福安市"
+        },
+        {
+            "city_id": "123",
+            "id": "1123",
+            "name": "福鼎市"
+        },
+        {
+            "city_id": "124",
+            "id": "1124",
+            "name": "东湖区"
+        },
+        {
+            "city_id": "124",
+            "id": "1125",
+            "name": "西湖区"
+        },
+        {
+            "city_id": "124",
+            "id": "1126",
+            "name": "青云谱区"
+        },
+        {
+            "city_id": "124",
+            "id": "1127",
+            "name": "湾里区"
+        },
+        {
+            "city_id": "124",
+            "id": "1128",
+            "name": "青山湖区"
+        },
+        {
+            "city_id": "124",
+            "id": "1129",
+            "name": "南昌县"
+        },
+        {
+            "city_id": "124",
+            "id": "1130",
+            "name": "新建区"
+        },
+        {
+            "city_id": "124",
+            "id": "1131",
+            "name": "安义县"
+        },
+        {
+            "city_id": "124",
+            "id": "1132",
+            "name": "进贤县"
+        },
+        {
+            "city_id": "125",
+            "id": "1133",
+            "name": "昌江区"
+        },
+        {
+            "city_id": "125",
+            "id": "1134",
+            "name": "珠山区"
+        },
+        {
+            "city_id": "125",
+            "id": "1135",
+            "name": "浮梁县"
+        },
+        {
+            "city_id": "125",
+            "id": "1136",
+            "name": "乐平市"
+        },
+        {
+            "city_id": "126",
+            "id": "1137",
+            "name": "安源区"
+        },
+        {
+            "city_id": "126",
+            "id": "1138",
+            "name": "湘东区"
+        },
+        {
+            "city_id": "126",
+            "id": "1139",
+            "name": "莲花县"
+        },
+        {
+            "city_id": "126",
+            "id": "1140",
+            "name": "上栗县"
+        },
+        {
+            "city_id": "126",
+            "id": "1141",
+            "name": "芦溪县"
+        },
+        {
+            "city_id": "127",
+            "id": "1142",
+            "name": "庐山市"
+        },
+        {
+            "city_id": "127",
+            "id": "1143",
+            "name": "浔阳区"
+        },
+        {
+            "city_id": "127",
+            "id": "1144",
+            "name": "九江县"
+        },
+        {
+            "city_id": "127",
+            "id": "1145",
+            "name": "武宁县"
+        },
+        {
+            "city_id": "127",
+            "id": "1146",
+            "name": "修水县"
+        },
+        {
+            "city_id": "127",
+            "id": "1147",
+            "name": "永修县"
+        },
+        {
+            "city_id": "127",
+            "id": "1148",
+            "name": "德安县"
+        },
+        {
+            "city_id": "127",
+            "id": "1149",
+            "name": "星子县"
+        },
+        {
+            "city_id": "127",
+            "id": "1150",
+            "name": "都昌县"
+        },
+        {
+            "city_id": "127",
+            "id": "1151",
+            "name": "湖口县"
+        },
+        {
+            "city_id": "127",
+            "id": "1152",
+            "name": "彭泽县"
+        },
+        {
+            "city_id": "127",
+            "id": "1153",
+            "name": "瑞昌市"
+        },
+        {
+            "city_id": "128",
+            "id": "1154",
+            "name": "渝水区"
+        },
+        {
+            "city_id": "128",
+            "id": "1155",
+            "name": "分宜县"
+        },
+        {
+            "city_id": "129",
+            "id": "1156",
+            "name": "月湖区"
+        },
+        {
+            "city_id": "129",
+            "id": "1157",
+            "name": "余江区"
+        },
+        {
+            "city_id": "129",
+            "id": "1158",
+            "name": "贵溪市"
+        },
+        {
+            "city_id": "130",
+            "id": "1159",
+            "name": "章贡区"
+        },
+        {
+            "city_id": "130",
+            "id": "1160",
+            "name": "赣县区"
+        },
+        {
+            "city_id": "130",
+            "id": "1161",
+            "name": "信丰县"
+        },
+        {
+            "city_id": "130",
+            "id": "1162",
+            "name": "大余县"
+        },
+        {
+            "city_id": "130",
+            "id": "1163",
+            "name": "上犹县"
+        },
+        {
+            "city_id": "130",
+            "id": "1164",
+            "name": "崇义县"
+        },
+        {
+            "city_id": "130",
+            "id": "1165",
+            "name": "安远县"
+        },
+        {
+            "city_id": "130",
+            "id": "1166",
+            "name": "龙南县"
+        },
+        {
+            "city_id": "130",
+            "id": "1167",
+            "name": "定南县"
+        },
+        {
+            "city_id": "130",
+            "id": "1168",
+            "name": "全南县"
+        },
+        {
+            "city_id": "130",
+            "id": "1169",
+            "name": "宁都县"
+        },
+        {
+            "city_id": "130",
+            "id": "1170",
+            "name": "于都县"
+        },
+        {
+            "city_id": "130",
+            "id": "1171",
+            "name": "兴国县"
+        },
+        {
+            "city_id": "130",
+            "id": "1172",
+            "name": "会昌县"
+        },
+        {
+            "city_id": "130",
+            "id": "1173",
+            "name": "寻乌县"
+        },
+        {
+            "city_id": "130",
+            "id": "1174",
+            "name": "石城县"
+        },
+        {
+            "city_id": "130",
+            "id": "1175",
+            "name": "瑞金市"
+        },
+        {
+            "city_id": "130",
+            "id": "1176",
+            "name": "南康区"
+        },
+        {
+            "city_id": "131",
+            "id": "1177",
+            "name": "吉州区"
+        },
+        {
+            "city_id": "131",
+            "id": "1178",
+            "name": "青原区"
+        },
+        {
+            "city_id": "131",
+            "id": "1179",
+            "name": "吉安县"
+        },
+        {
+            "city_id": "131",
+            "id": "1180",
+            "name": "吉水县"
+        },
+        {
+            "city_id": "131",
+            "id": "1181",
+            "name": "峡江县"
+        },
+        {
+            "city_id": "131",
+            "id": "1182",
+            "name": "新干县"
+        },
+        {
+            "city_id": "131",
+            "id": "1183",
+            "name": "永丰县"
+        },
+        {
+            "city_id": "131",
+            "id": "1184",
+            "name": "泰和县"
+        },
+        {
+            "city_id": "131",
+            "id": "1185",
+            "name": "遂川县"
+        },
+        {
+            "city_id": "131",
+            "id": "1186",
+            "name": "万安县"
+        },
+        {
+            "city_id": "131",
+            "id": "1187",
+            "name": "安福县"
+        },
+        {
+            "city_id": "131",
+            "id": "1188",
+            "name": "永新县"
+        },
+        {
+            "city_id": "131",
+            "id": "1189",
+            "name": "井冈山市"
+        },
+        {
+            "city_id": "132",
+            "id": "1190",
+            "name": "袁州区"
+        },
+        {
+            "city_id": "132",
+            "id": "1191",
+            "name": "奉新县"
+        },
+        {
+            "city_id": "132",
+            "id": "1192",
+            "name": "万载县"
+        },
+        {
+            "city_id": "132",
+            "id": "1193",
+            "name": "上高县"
+        },
+        {
+            "city_id": "132",
+            "id": "1194",
+            "name": "宜丰县"
+        },
+        {
+            "city_id": "132",
+            "id": "1195",
+            "name": "靖安县"
+        },
+        {
+            "city_id": "132",
+            "id": "1196",
+            "name": "铜鼓县"
+        },
+        {
+            "city_id": "132",
+            "id": "1197",
+            "name": "丰城市"
+        },
+        {
+            "city_id": "132",
+            "id": "1198",
+            "name": "樟树市"
+        },
+        {
+            "city_id": "132",
+            "id": "1199",
+            "name": "高安市"
+        },
+        {
+            "city_id": "133",
+            "id": "1200",
+            "name": "临川区"
+        },
+        {
+            "city_id": "133",
+            "id": "1201",
+            "name": "南城县"
+        },
+        {
+            "city_id": "133",
+            "id": "1202",
+            "name": "黎川县"
+        },
+        {
+            "city_id": "133",
+            "id": "1203",
+            "name": "南丰县"
+        },
+        {
+            "city_id": "133",
+            "id": "1204",
+            "name": "崇仁县"
+        },
+        {
+            "city_id": "133",
+            "id": "1205",
+            "name": "乐安县"
+        },
+        {
+            "city_id": "133",
+            "id": "1206",
+            "name": "宜黄县"
+        },
+        {
+            "city_id": "133",
+            "id": "1207",
+            "name": "金溪县"
+        },
+        {
+            "city_id": "133",
+            "id": "1208",
+            "name": "资溪县"
+        },
+        {
+            "city_id": "133",
+            "id": "1209",
+            "name": "东乡区"
+        },
+        {
+            "city_id": "133",
+            "id": "1210",
+            "name": "广昌县"
+        },
+        {
+            "city_id": "134",
+            "id": "1211",
+            "name": "信州区"
+        },
+        {
+            "city_id": "134",
+            "id": "1212",
+            "name": "上饶县"
+        },
+        {
+            "city_id": "134",
+            "id": "1213",
+            "name": "广丰区"
+        },
+        {
+            "city_id": "134",
+            "id": "1214",
+            "name": "玉山县"
+        },
+        {
+            "city_id": "134",
+            "id": "1215",
+            "name": "铅山县"
+        },
+        {
+            "city_id": "134",
+            "id": "1216",
+            "name": "横峰县"
+        },
+        {
+            "city_id": "134",
+            "id": "1217",
+            "name": "弋阳县"
+        },
+        {
+            "city_id": "134",
+            "id": "1218",
+            "name": "余干县"
+        },
+        {
+            "city_id": "134",
+            "id": "1219",
+            "name": "鄱阳县"
+        },
+        {
+            "city_id": "134",
+            "id": "1220",
+            "name": "万年县"
+        },
+        {
+            "city_id": "134",
+            "id": "1221",
+            "name": "婺源县"
+        },
+        {
+            "city_id": "134",
+            "id": "1222",
+            "name": "德兴市"
+        },
+        {
+            "city_id": "135",
+            "id": "1223",
+            "name": "历下区"
+        },
+        {
+            "city_id": "135",
+            "id": "1224",
+            "name": "市中区"
+        },
+        {
+            "city_id": "135",
+            "id": "1225",
+            "name": "槐荫区"
+        },
+        {
+            "city_id": "135",
+            "id": "1226",
+            "name": "天桥区"
+        },
+        {
+            "city_id": "135",
+            "id": "1227",
+            "name": "历城区"
+        },
+        {
+            "city_id": "135",
+            "id": "1228",
+            "name": "长清区"
+        },
+        {
+            "city_id": "135",
+            "id": "1229",
+            "name": "平阴县"
+        },
+        {
+            "city_id": "135",
+            "id": "1230",
+            "name": "济阳区"
+        },
+        {
+            "city_id": "135",
+            "id": "1231",
+            "name": "商河县"
+        },
+        {
+            "city_id": "135",
+            "id": "1232",
+            "name": "章丘区"
+        },
+        {
+            "city_id": "136",
+            "id": "1233",
+            "name": "市南区"
+        },
+        {
+            "city_id": "136",
+            "id": "1234",
+            "name": "市北区"
+        },
+        {
+            "city_id": "136",
+            "id": "1235",
+            "name": "四方区"
+        },
+        {
+            "city_id": "136",
+            "id": "1236",
+            "name": "黄岛区"
+        },
+        {
+            "city_id": "136",
+            "id": "1237",
+            "name": "崂山区"
+        },
+        {
+            "city_id": "136",
+            "id": "1238",
+            "name": "李沧区"
+        },
+        {
+            "city_id": "136",
+            "id": "1239",
+            "name": "城阳区"
+        },
+        {
+            "city_id": "136",
+            "id": "1240",
+            "name": "胶州市"
+        },
+        {
+            "city_id": "136",
+            "id": "1241",
+            "name": "即墨区"
+        },
+        {
+            "city_id": "136",
+            "id": "1242",
+            "name": "平度市"
+        },
+        {
+            "city_id": "136",
+            "id": "1243",
+            "name": "胶南市"
+        },
+        {
+            "city_id": "136",
+            "id": "1244",
+            "name": "莱西市"
+        },
+        {
+            "city_id": "137",
+            "id": "1245",
+            "name": "淄川区"
+        },
+        {
+            "city_id": "137",
+            "id": "1246",
+            "name": "张店区"
+        },
+        {
+            "city_id": "137",
+            "id": "1247",
+            "name": "博山区"
+        },
+        {
+            "city_id": "137",
+            "id": "1248",
+            "name": "临淄区"
+        },
+        {
+            "city_id": "137",
+            "id": "1249",
+            "name": "周村区"
+        },
+        {
+            "city_id": "137",
+            "id": "1250",
+            "name": "桓台县"
+        },
+        {
+            "city_id": "137",
+            "id": "1251",
+            "name": "高青县"
+        },
+        {
+            "city_id": "137",
+            "id": "1252",
+            "name": "沂源县"
+        },
+        {
+            "city_id": "138",
+            "id": "1253",
+            "name": "市中区"
+        },
+        {
+            "city_id": "138",
+            "id": "1254",
+            "name": "薛城区"
+        },
+        {
+            "city_id": "138",
+            "id": "1255",
+            "name": "峄城区"
+        },
+        {
+            "city_id": "138",
+            "id": "1256",
+            "name": "台儿庄区"
+        },
+        {
+            "city_id": "138",
+            "id": "1257",
+            "name": "山亭区"
+        },
+        {
+            "city_id": "138",
+            "id": "1258",
+            "name": "滕州市"
+        },
+        {
+            "city_id": "139",
+            "id": "1259",
+            "name": "东营区"
+        },
+        {
+            "city_id": "139",
+            "id": "1260",
+            "name": "河口区"
+        },
+        {
+            "city_id": "139",
+            "id": "1261",
+            "name": "垦利区"
+        },
+        {
+            "city_id": "139",
+            "id": "1262",
+            "name": "利津县"
+        },
+        {
+            "city_id": "139",
+            "id": "1263",
+            "name": "广饶县"
+        },
+        {
+            "city_id": "140",
+            "id": "1264",
+            "name": "芝罘区"
+        },
+        {
+            "city_id": "140",
+            "id": "1265",
+            "name": "福山区"
+        },
+        {
+            "city_id": "140",
+            "id": "1266",
+            "name": "牟平区"
+        },
+        {
+            "city_id": "140",
+            "id": "1267",
+            "name": "莱山区"
+        },
+        {
+            "city_id": "140",
+            "id": "1268",
+            "name": "长岛县"
+        },
+        {
+            "city_id": "140",
+            "id": "1269",
+            "name": "龙口市"
+        },
+        {
+            "city_id": "140",
+            "id": "1270",
+            "name": "莱阳市"
+        },
+        {
+            "city_id": "140",
+            "id": "1271",
+            "name": "莱州市"
+        },
+        {
+            "city_id": "140",
+            "id": "1272",
+            "name": "蓬莱市"
+        },
+        {
+            "city_id": "140",
+            "id": "1273",
+            "name": "招远市"
+        },
+        {
+            "city_id": "140",
+            "id": "1274",
+            "name": "栖霞市"
+        },
+        {
+            "city_id": "140",
+            "id": "1275",
+            "name": "海阳市"
+        },
+        {
+            "city_id": "141",
+            "id": "1276",
+            "name": "潍城区"
+        },
+        {
+            "city_id": "141",
+            "id": "1277",
+            "name": "寒亭区"
+        },
+        {
+            "city_id": "141",
+            "id": "1278",
+            "name": "坊子区"
+        },
+        {
+            "city_id": "141",
+            "id": "1279",
+            "name": "奎文区"
+        },
+        {
+            "city_id": "141",
+            "id": "1280",
+            "name": "临朐县"
+        },
+        {
+            "city_id": "141",
+            "id": "1281",
+            "name": "昌乐县"
+        },
+        {
+            "city_id": "141",
+            "id": "1282",
+            "name": "青州市"
+        },
+        {
+            "city_id": "141",
+            "id": "1283",
+            "name": "诸城市"
+        },
+        {
+            "city_id": "141",
+            "id": "1284",
+            "name": "寿光市"
+        },
+        {
+            "city_id": "141",
+            "id": "1285",
+            "name": "安丘市"
+        },
+        {
+            "city_id": "141",
+            "id": "1286",
+            "name": "高密市"
+        },
+        {
+            "city_id": "141",
+            "id": "1287",
+            "name": "昌邑市"
+        },
+        {
+            "city_id": "142",
+            "id": "1288",
+            "name": "市中区"
+        },
+        {
+            "city_id": "142",
+            "id": "1289",
+            "name": "任城区"
+        },
+        {
+            "city_id": "142",
+            "id": "1290",
+            "name": "微山县"
+        },
+        {
+            "city_id": "142",
+            "id": "1291",
+            "name": "鱼台县"
+        },
+        {
+            "city_id": "142",
+            "id": "1292",
+            "name": "金乡县"
+        },
+        {
+            "city_id": "142",
+            "id": "1293",
+            "name": "嘉祥县"
+        },
+        {
+            "city_id": "142",
+            "id": "1294",
+            "name": "汶上县"
+        },
+        {
+            "city_id": "142",
+            "id": "1295",
+            "name": "泗水县"
+        },
+        {
+            "city_id": "142",
+            "id": "1296",
+            "name": "梁山县"
+        },
+        {
+            "city_id": "142",
+            "id": "1297",
+            "name": "曲阜市"
+        },
+        {
+            "city_id": "142",
+            "id": "1298",
+            "name": "兖州区"
+        },
+        {
+            "city_id": "142",
+            "id": "1299",
+            "name": "邹城市"
+        },
+        {
+            "city_id": "143",
+            "id": "1300",
+            "name": "泰山区"
+        },
+        {
+            "city_id": "143",
+            "id": "1301",
+            "name": "岱岳区"
+        },
+        {
+            "city_id": "143",
+            "id": "1302",
+            "name": "宁阳县"
+        },
+        {
+            "city_id": "143",
+            "id": "1303",
+            "name": "东平县"
+        },
+        {
+            "city_id": "143",
+            "id": "1304",
+            "name": "新泰市"
+        },
+        {
+            "city_id": "143",
+            "id": "1305",
+            "name": "肥城市"
+        },
+        {
+            "city_id": "144",
+            "id": "1306",
+            "name": "环翠区"
+        },
+        {
+            "city_id": "144",
+            "id": "1307",
+            "name": "文登区"
+        },
+        {
+            "city_id": "144",
+            "id": "1308",
+            "name": "荣成市"
+        },
+        {
+            "city_id": "144",
+            "id": "1309",
+            "name": "乳山市"
+        },
+        {
+            "city_id": "145",
+            "id": "1310",
+            "name": "东港区"
+        },
+        {
+            "city_id": "145",
+            "id": "1311",
+            "name": "岚山区"
+        },
+        {
+            "city_id": "145",
+            "id": "1312",
+            "name": "五莲县"
+        },
+        {
+            "city_id": "145",
+            "id": "1313",
+            "name": "莒县"
+        },
+        {
+            "city_id": "146",
+            "id": "1314",
+            "name": "莱城区"
+        },
+        {
+            "city_id": "146",
+            "id": "1315",
+            "name": "钢城区"
+        },
+        {
+            "city_id": "147",
+            "id": "1316",
+            "name": "兰山区"
+        },
+        {
+            "city_id": "147",
+            "id": "1317",
+            "name": "罗庄区"
+        },
+        {
+            "city_id": "147",
+            "id": "1318",
+            "name": "河东区"
+        },
+        {
+            "city_id": "147",
+            "id": "1319",
+            "name": "沂南县"
+        },
+        {
+            "city_id": "147",
+            "id": "1320",
+            "name": "郯城县"
+        },
+        {
+            "city_id": "147",
+            "id": "1321",
+            "name": "沂水县"
+        },
+        {
+            "city_id": "147",
+            "id": "1322",
+            "name": "苍山县"
+        },
+        {
+            "city_id": "147",
+            "id": "1323",
+            "name": "费县"
+        },
+        {
+            "city_id": "147",
+            "id": "1324",
+            "name": "平邑县"
+        },
+        {
+            "city_id": "147",
+            "id": "1325",
+            "name": "莒南县"
+        },
+        {
+            "city_id": "147",
+            "id": "1326",
+            "name": "蒙阴县"
+        },
+        {
+            "city_id": "147",
+            "id": "1327",
+            "name": "临沭县"
+        },
+        {
+            "city_id": "148",
+            "id": "1328",
+            "name": "德城区"
+        },
+        {
+            "city_id": "148",
+            "id": "1329",
+            "name": "陵县"
+        },
+        {
+            "city_id": "148",
+            "id": "1330",
+            "name": "宁津县"
+        },
+        {
+            "city_id": "148",
+            "id": "1331",
+            "name": "庆云县"
+        },
+        {
+            "city_id": "148",
+            "id": "1332",
+            "name": "临邑县"
+        },
+        {
+            "city_id": "148",
+            "id": "1333",
+            "name": "齐河县"
+        },
+        {
+            "city_id": "148",
+            "id": "1334",
+            "name": "平原县"
+        },
+        {
+            "city_id": "148",
+            "id": "1335",
+            "name": "夏津县"
+        },
+        {
+            "city_id": "148",
+            "id": "1336",
+            "name": "武城县"
+        },
+        {
+            "city_id": "148",
+            "id": "1337",
+            "name": "乐陵市"
+        },
+        {
+            "city_id": "148",
+            "id": "1338",
+            "name": "禹城市"
+        },
+        {
+            "city_id": "149",
+            "id": "1339",
+            "name": "东昌府区"
+        },
+        {
+            "city_id": "149",
+            "id": "1340",
+            "name": "阳谷县"
+        },
+        {
+            "city_id": "149",
+            "id": "1341",
+            "name": "莘县"
+        },
+        {
+            "city_id": "149",
+            "id": "1342",
+            "name": "茌平县"
+        },
+        {
+            "city_id": "149",
+            "id": "1343",
+            "name": "东阿县"
+        },
+        {
+            "city_id": "149",
+            "id": "1344",
+            "name": "冠县"
+        },
+        {
+            "city_id": "149",
+            "id": "1345",
+            "name": "高唐县"
+        },
+        {
+            "city_id": "149",
+            "id": "1346",
+            "name": "临清市"
+        },
+        {
+            "city_id": "150",
+            "id": "1347",
+            "name": "滨城区"
+        },
+        {
+            "city_id": "150",
+            "id": "1348",
+            "name": "惠民县"
+        },
+        {
+            "city_id": "150",
+            "id": "1349",
+            "name": "阳信县"
+        },
+        {
+            "city_id": "150",
+            "id": "1350",
+            "name": "无棣县"
+        },
+        {
+            "city_id": "150",
+            "id": "1351",
+            "name": "沾化区"
+        },
+        {
+            "city_id": "150",
+            "id": "1352",
+            "name": "博兴县"
+        },
+        {
+            "city_id": "150",
+            "id": "1353",
+            "name": "邹平市"
+        },
+        {
+            "city_id": "151",
+            "id": "1354",
+            "name": "牡丹区"
+        },
+        {
+            "city_id": "151",
+            "id": "1355",
+            "name": "曹县"
+        },
+        {
+            "city_id": "151",
+            "id": "1356",
+            "name": "单县"
+        },
+        {
+            "city_id": "151",
+            "id": "1357",
+            "name": "成武县"
+        },
+        {
+            "city_id": "151",
+            "id": "1358",
+            "name": "巨野县"
+        },
+        {
+            "city_id": "151",
+            "id": "1359",
+            "name": "郓城县"
+        },
+        {
+            "city_id": "151",
+            "id": "1360",
+            "name": "鄄城县"
+        },
+        {
+            "city_id": "151",
+            "id": "1361",
+            "name": "定陶区"
+        },
+        {
+            "city_id": "151",
+            "id": "1362",
+            "name": "东明县"
+        },
+        {
+            "city_id": "152",
+            "id": "1363",
+            "name": "中原区"
+        },
+        {
+            "city_id": "152",
+            "id": "1364",
+            "name": "二七区"
+        },
+        {
+            "city_id": "152",
+            "id": "1365",
+            "name": "管城回族区"
+        },
+        {
+            "city_id": "152",
+            "id": "1366",
+            "name": "金水区"
+        },
+        {
+            "city_id": "152",
+            "id": "1367",
+            "name": "上街区"
+        },
+        {
+            "city_id": "152",
+            "id": "1368",
+            "name": "惠济区"
+        },
+        {
+            "city_id": "152",
+            "id": "1369",
+            "name": "中牟县"
+        },
+        {
+            "city_id": "152",
+            "id": "1370",
+            "name": "巩义市"
+        },
+        {
+            "city_id": "152",
+            "id": "1371",
+            "name": "荥阳市"
+        },
+        {
+            "city_id": "152",
+            "id": "1372",
+            "name": "新密市"
+        },
+        {
+            "city_id": "152",
+            "id": "1373",
+            "name": "新郑市"
+        },
+        {
+            "city_id": "152",
+            "id": "1374",
+            "name": "登封市"
+        },
+        {
+            "city_id": "153",
+            "id": "1375",
+            "name": "龙亭区"
+        },
+        {
+            "city_id": "153",
+            "id": "1376",
+            "name": "顺河回族区"
+        },
+        {
+            "city_id": "153",
+            "id": "1377",
+            "name": "鼓楼区"
+        },
+        {
+            "city_id": "153",
+            "id": "1378",
+            "name": "南关区"
+        },
+        {
+            "city_id": "153",
+            "id": "1379",
+            "name": "郊区"
+        },
+        {
+            "city_id": "153",
+            "id": "1380",
+            "name": "杞县"
+        },
+        {
+            "city_id": "153",
+            "id": "1381",
+            "name": "通许县"
+        },
+        {
+            "city_id": "153",
+            "id": "1382",
+            "name": "尉氏县"
+        },
+        {
+            "city_id": "153",
+            "id": "1383",
+            "name": "开封县"
+        },
+        {
+            "city_id": "153",
+            "id": "1384",
+            "name": "兰考县"
+        },
+        {
+            "city_id": "154",
+            "id": "1385",
+            "name": "老城区"
+        },
+        {
+            "city_id": "154",
+            "id": "1386",
+            "name": "西工区"
+        },
+        {
+            "city_id": "154",
+            "id": "1387",
+            "name": "廛河回族区"
+        },
+        {
+            "city_id": "154",
+            "id": "1388",
+            "name": "涧西区"
+        },
+        {
+            "city_id": "154",
+            "id": "1389",
+            "name": "吉利区"
+        },
+        {
+            "city_id": "154",
+            "id": "1390",
+            "name": "洛龙区"
+        },
+        {
+            "city_id": "154",
+            "id": "1391",
+            "name": "孟津县"
+        },
+        {
+            "city_id": "154",
+            "id": "1392",
+            "name": "新安县"
+        },
+        {
+            "city_id": "154",
+            "id": "1393",
+            "name": "栾川县"
+        },
+        {
+            "city_id": "154",
+            "id": "1394",
+            "name": "嵩县"
+        },
+        {
+            "city_id": "154",
+            "id": "1395",
+            "name": "汝阳县"
+        },
+        {
+            "city_id": "154",
+            "id": "1396",
+            "name": "宜阳县"
+        },
+        {
+            "city_id": "154",
+            "id": "1397",
+            "name": "洛宁县"
+        },
+        {
+            "city_id": "154",
+            "id": "1398",
+            "name": "伊川县"
+        },
+        {
+            "city_id": "154",
+            "id": "1399",
+            "name": "偃师市"
+        },
+        {
+            "city_id": "155",
+            "id": "1400",
+            "name": "新华区"
+        },
+        {
+            "city_id": "155",
+            "id": "1401",
+            "name": "卫东区"
+        },
+        {
+            "city_id": "155",
+            "id": "1402",
+            "name": "石龙区"
+        },
+        {
+            "city_id": "155",
+            "id": "1403",
+            "name": "湛河区"
+        },
+        {
+            "city_id": "155",
+            "id": "1404",
+            "name": "宝丰县"
+        },
+        {
+            "city_id": "155",
+            "id": "1405",
+            "name": "叶县"
+        },
+        {
+            "city_id": "155",
+            "id": "1406",
+            "name": "鲁山县"
+        },
+        {
+            "city_id": "155",
+            "id": "1407",
+            "name": "郏县"
+        },
+        {
+            "city_id": "155",
+            "id": "1408",
+            "name": "舞钢市"
+        },
+        {
+            "city_id": "155",
+            "id": "1409",
+            "name": "汝州市"
+        },
+        {
+            "city_id": "156",
+            "id": "1410",
+            "name": "文峰区"
+        },
+        {
+            "city_id": "156",
+            "id": "1411",
+            "name": "北关区"
+        },
+        {
+            "city_id": "156",
+            "id": "1412",
+            "name": "殷都区"
+        },
+        {
+            "city_id": "156",
+            "id": "1413",
+            "name": "龙安区"
+        },
+        {
+            "city_id": "156",
+            "id": "1414",
+            "name": "安阳县"
+        },
+        {
+            "city_id": "156",
+            "id": "1415",
+            "name": "汤阴县"
+        },
+        {
+            "city_id": "156",
+            "id": "1416",
+            "name": "滑县"
+        },
+        {
+            "city_id": "156",
+            "id": "1417",
+            "name": "内黄县"
+        },
+        {
+            "city_id": "156",
+            "id": "1418",
+            "name": "林州市"
+        },
+        {
+            "city_id": "157",
+            "id": "1419",
+            "name": "鹤山区"
+        },
+        {
+            "city_id": "157",
+            "id": "1420",
+            "name": "山城区"
+        },
+        {
+            "city_id": "157",
+            "id": "1421",
+            "name": "淇滨区"
+        },
+        {
+            "city_id": "157",
+            "id": "1422",
+            "name": "浚县"
+        },
+        {
+            "city_id": "157",
+            "id": "1423",
+            "name": "淇县"
+        },
+        {
+            "city_id": "158",
+            "id": "1424",
+            "name": "红旗区"
+        },
+        {
+            "city_id": "158",
+            "id": "1425",
+            "name": "卫滨区"
+        },
+        {
+            "city_id": "158",
+            "id": "1426",
+            "name": "凤泉区"
+        },
+        {
+            "city_id": "158",
+            "id": "1427",
+            "name": "牧野区"
+        },
+        {
+            "city_id": "158",
+            "id": "1428",
+            "name": "新乡县"
+        },
+        {
+            "city_id": "158",
+            "id": "1429",
+            "name": "获嘉县"
+        },
+        {
+            "city_id": "158",
+            "id": "1430",
+            "name": "原阳县"
+        },
+        {
+            "city_id": "158",
+            "id": "1431",
+            "name": "延津县"
+        },
+        {
+            "city_id": "158",
+            "id": "1432",
+            "name": "封丘县"
+        },
+        {
+            "city_id": "158",
+            "id": "1433",
+            "name": "长垣县"
+        },
+        {
+            "city_id": "158",
+            "id": "1434",
+            "name": "卫辉市"
+        },
+        {
+            "city_id": "158",
+            "id": "1435",
+            "name": "辉县市"
+        },
+        {
+            "city_id": "159",
+            "id": "1436",
+            "name": "解放区"
+        },
+        {
+            "city_id": "159",
+            "id": "1437",
+            "name": "中站区"
+        },
+        {
+            "city_id": "159",
+            "id": "1438",
+            "name": "马村区"
+        },
+        {
+            "city_id": "159",
+            "id": "1439",
+            "name": "山阳区"
+        },
+        {
+            "city_id": "159",
+            "id": "1440",
+            "name": "修武县"
+        },
+        {
+            "city_id": "159",
+            "id": "1441",
+            "name": "博爱县"
+        },
+        {
+            "city_id": "159",
+            "id": "1442",
+            "name": "武陟县"
+        },
+        {
+            "city_id": "159",
+            "id": "1443",
+            "name": "温县"
+        },
+        {
+            "city_id": "350",
+            "id": "1444",
+            "name": "济源市"
+        },
+        {
+            "city_id": "159",
+            "id": "1445",
+            "name": "沁阳市"
+        },
+        {
+            "city_id": "159",
+            "id": "1446",
+            "name": "孟州市"
+        },
+        {
+            "city_id": "160",
+            "id": "1447",
+            "name": "华龙区"
+        },
+        {
+            "city_id": "160",
+            "id": "1448",
+            "name": "清丰县"
+        },
+        {
+            "city_id": "160",
+            "id": "1449",
+            "name": "南乐县"
+        },
+        {
+            "city_id": "160",
+            "id": "1450",
+            "name": "范县"
+        },
+        {
+            "city_id": "160",
+            "id": "1451",
+            "name": "台前县"
+        },
+        {
+            "city_id": "160",
+            "id": "1452",
+            "name": "濮阳县"
+        },
+        {
+            "city_id": "161",
+            "id": "1453",
+            "name": "魏都区"
+        },
+        {
+            "city_id": "161",
+            "id": "1454",
+            "name": "许昌县"
+        },
+        {
+            "city_id": "161",
+            "id": "1455",
+            "name": "鄢陵县"
+        },
+        {
+            "city_id": "161",
+            "id": "1456",
+            "name": "襄城县"
+        },
+        {
+            "city_id": "161",
+            "id": "1457",
+            "name": "禹州市"
+        },
+        {
+            "city_id": "161",
+            "id": "1458",
+            "name": "长葛市"
+        },
+        {
+            "city_id": "162",
+            "id": "1459",
+            "name": "源汇区"
+        },
+        {
+            "city_id": "162",
+            "id": "1460",
+            "name": "郾城区"
+        },
+        {
+            "city_id": "162",
+            "id": "1461",
+            "name": "召陵区"
+        },
+        {
+            "city_id": "162",
+            "id": "1462",
+            "name": "舞阳县"
+        },
+        {
+            "city_id": "162",
+            "id": "1463",
+            "name": "临颍县"
+        },
+        {
+            "city_id": "163",
+            "id": "1464",
+            "name": "市辖区"
+        },
+        {
+            "city_id": "163",
+            "id": "1465",
+            "name": "湖滨区"
+        },
+        {
+            "city_id": "163",
+            "id": "1466",
+            "name": "渑池县"
+        },
+        {
+            "city_id": "163",
+            "id": "1467",
+            "name": "陕县"
+        },
+        {
+            "city_id": "163",
+            "id": "1468",
+            "name": "卢氏县"
+        },
+        {
+            "city_id": "163",
+            "id": "1469",
+            "name": "义马市"
+        },
+        {
+            "city_id": "163",
+            "id": "1470",
+            "name": "灵宝市"
+        },
+        {
+            "city_id": "164",
+            "id": "1471",
+            "name": "宛城区"
+        },
+        {
+            "city_id": "164",
+            "id": "1472",
+            "name": "卧龙区"
+        },
+        {
+            "city_id": "164",
+            "id": "1473",
+            "name": "南召县"
+        },
+        {
+            "city_id": "164",
+            "id": "1474",
+            "name": "方城县"
+        },
+        {
+            "city_id": "164",
+            "id": "1475",
+            "name": "西峡县"
+        },
+        {
+            "city_id": "164",
+            "id": "1476",
+            "name": "镇平县"
+        },
+        {
+            "city_id": "164",
+            "id": "1477",
+            "name": "内乡县"
+        },
+        {
+            "city_id": "164",
+            "id": "1478",
+            "name": "淅川县"
+        },
+        {
+            "city_id": "164",
+            "id": "1479",
+            "name": "社旗县"
+        },
+        {
+            "city_id": "164",
+            "id": "1480",
+            "name": "唐河县"
+        },
+        {
+            "city_id": "164",
+            "id": "1481",
+            "name": "新野县"
+        },
+        {
+            "city_id": "164",
+            "id": "1482",
+            "name": "桐柏县"
+        },
+        {
+            "city_id": "164",
+            "id": "1483",
+            "name": "邓州市"
+        },
+        {
+            "city_id": "165",
+            "id": "1484",
+            "name": "梁园区"
+        },
+        {
+            "city_id": "165",
+            "id": "1485",
+            "name": "睢阳区"
+        },
+        {
+            "city_id": "165",
+            "id": "1486",
+            "name": "民权县"
+        },
+        {
+            "city_id": "165",
+            "id": "1487",
+            "name": "睢县"
+        },
+        {
+            "city_id": "165",
+            "id": "1488",
+            "name": "宁陵县"
+        },
+        {
+            "city_id": "165",
+            "id": "1489",
+            "name": "柘城县"
+        },
+        {
+            "city_id": "165",
+            "id": "1490",
+            "name": "虞城县"
+        },
+        {
+            "city_id": "165",
+            "id": "1491",
+            "name": "夏邑县"
+        },
+        {
+            "city_id": "165",
+            "id": "1492",
+            "name": "永城市"
+        },
+        {
+            "city_id": "166",
+            "id": "1493",
+            "name": "浉河区"
+        },
+        {
+            "city_id": "166",
+            "id": "1494",
+            "name": "平桥区"
+        },
+        {
+            "city_id": "166",
+            "id": "1495",
+            "name": "罗山县"
+        },
+        {
+            "city_id": "166",
+            "id": "1496",
+            "name": "光山县"
+        },
+        {
+            "city_id": "166",
+            "id": "1497",
+            "name": "新县"
+        },
+        {
+            "city_id": "166",
+            "id": "1498",
+            "name": "商城县"
+        },
+        {
+            "city_id": "166",
+            "id": "1499",
+            "name": "固始县"
+        },
+        {
+            "city_id": "166",
+            "id": "1500",
+            "name": "潢川县"
+        },
+        {
+            "city_id": "166",
+            "id": "1501",
+            "name": "淮滨县"
+        },
+        {
+            "city_id": "166",
+            "id": "1502",
+            "name": "息县"
+        },
+        {
+            "city_id": "167",
+            "id": "1503",
+            "name": "川汇区"
+        },
+        {
+            "city_id": "167",
+            "id": "1504",
+            "name": "扶沟县"
+        },
+        {
+            "city_id": "167",
+            "id": "1505",
+            "name": "西华县"
+        },
+        {
+            "city_id": "167",
+            "id": "1506",
+            "name": "商水县"
+        },
+        {
+            "city_id": "167",
+            "id": "1507",
+            "name": "沈丘县"
+        },
+        {
+            "city_id": "167",
+            "id": "1508",
+            "name": "郸城县"
+        },
+        {
+            "city_id": "167",
+            "id": "1509",
+            "name": "淮阳县"
+        },
+        {
+            "city_id": "167",
+            "id": "1510",
+            "name": "太康县"
+        },
+        {
+            "city_id": "167",
+            "id": "1511",
+            "name": "鹿邑县"
+        },
+        {
+            "city_id": "167",
+            "id": "1512",
+            "name": "项城市"
+        },
+        {
+            "city_id": "168",
+            "id": "1513",
+            "name": "驿城区"
+        },
+        {
+            "city_id": "168",
+            "id": "1514",
+            "name": "西平县"
+        },
+        {
+            "city_id": "168",
+            "id": "1515",
+            "name": "上蔡县"
+        },
+        {
+            "city_id": "168",
+            "id": "1516",
+            "name": "平舆县"
+        },
+        {
+            "city_id": "168",
+            "id": "1517",
+            "name": "正阳县"
+        },
+        {
+            "city_id": "168",
+            "id": "1518",
+            "name": "确山县"
+        },
+        {
+            "city_id": "168",
+            "id": "1519",
+            "name": "泌阳县"
+        },
+        {
+            "city_id": "168",
+            "id": "1520",
+            "name": "汝南县"
+        },
+        {
+            "city_id": "168",
+            "id": "1521",
+            "name": "遂平县"
+        },
+        {
+            "city_id": "168",
+            "id": "1522",
+            "name": "新蔡县"
+        },
+        {
+            "city_id": "169",
+            "id": "1523",
+            "name": "江岸区"
+        },
+        {
+            "city_id": "169",
+            "id": "1524",
+            "name": "江汉区"
+        },
+        {
+            "city_id": "169",
+            "id": "1525",
+            "name": "硚口区"
+        },
+        {
+            "city_id": "169",
+            "id": "1526",
+            "name": "汉阳区"
+        },
+        {
+            "city_id": "169",
+            "id": "1527",
+            "name": "武昌区"
+        },
+        {
+            "city_id": "169",
+            "id": "1528",
+            "name": "青山区"
+        },
+        {
+            "city_id": "169",
+            "id": "1529",
+            "name": "洪山区"
+        },
+        {
+            "city_id": "169",
+            "id": "1530",
+            "name": "东西湖区"
+        },
+        {
+            "city_id": "169",
+            "id": "1531",
+            "name": "汉南区"
+        },
+        {
+            "city_id": "169",
+            "id": "1532",
+            "name": "蔡甸区"
+        },
+        {
+            "city_id": "169",
+            "id": "1533",
+            "name": "江夏区"
+        },
+        {
+            "city_id": "169",
+            "id": "1534",
+            "name": "黄陂区"
+        },
+        {
+            "city_id": "169",
+            "id": "1535",
+            "name": "新洲区"
+        },
+        {
+            "city_id": "170",
+            "id": "1536",
+            "name": "黄石港区"
+        },
+        {
+            "city_id": "170",
+            "id": "1537",
+            "name": "西塞山区"
+        },
+        {
+            "city_id": "170",
+            "id": "1538",
+            "name": "下陆区"
+        },
+        {
+            "city_id": "170",
+            "id": "1539",
+            "name": "铁山区"
+        },
+        {
+            "city_id": "170",
+            "id": "1540",
+            "name": "阳新县"
+        },
+        {
+            "city_id": "170",
+            "id": "1541",
+            "name": "大冶市"
+        },
+        {
+            "city_id": "171",
+            "id": "1542",
+            "name": "茅箭区"
+        },
+        {
+            "city_id": "171",
+            "id": "1543",
+            "name": "张湾区"
+        },
+        {
+            "city_id": "171",
+            "id": "1544",
+            "name": "郧县"
+        },
+        {
+            "city_id": "171",
+            "id": "1545",
+            "name": "郧西县"
+        },
+        {
+            "city_id": "171",
+            "id": "1546",
+            "name": "竹山县"
+        },
+        {
+            "city_id": "171",
+            "id": "1547",
+            "name": "竹溪县"
+        },
+        {
+            "city_id": "171",
+            "id": "1548",
+            "name": "房县"
+        },
+        {
+            "city_id": "171",
+            "id": "1549",
+            "name": "丹江口市"
+        },
+        {
+            "city_id": "172",
+            "id": "1550",
+            "name": "西陵区"
+        },
+        {
+            "city_id": "172",
+            "id": "1551",
+            "name": "伍家岗区"
+        },
+        {
+            "city_id": "172",
+            "id": "1552",
+            "name": "点军区"
+        },
+        {
+            "city_id": "172",
+            "id": "1553",
+            "name": "猇亭区"
+        },
+        {
+            "city_id": "172",
+            "id": "1554",
+            "name": "夷陵区"
+        },
+        {
+            "city_id": "172",
+            "id": "1555",
+            "name": "远安县"
+        },
+        {
+            "city_id": "172",
+            "id": "1556",
+            "name": "兴山县"
+        },
+        {
+            "city_id": "172",
+            "id": "1557",
+            "name": "秭归县"
+        },
+        {
+            "city_id": "172",
+            "id": "1558",
+            "name": "长阳土家族自治县"
+        },
+        {
+            "city_id": "172",
+            "id": "1559",
+            "name": "五峰土家族自治县"
+        },
+        {
+            "city_id": "172",
+            "id": "1560",
+            "name": "宜都市"
+        },
+        {
+            "city_id": "172",
+            "id": "1561",
+            "name": "当阳市"
+        },
+        {
+            "city_id": "172",
+            "id": "1562",
+            "name": "枝江市"
+        },
+        {
+            "city_id": "173",
+            "id": "1563",
+            "name": "襄城区"
+        },
+        {
+            "city_id": "173",
+            "id": "1564",
+            "name": "樊城区"
+        },
+        {
+            "city_id": "173",
+            "id": "1565",
+            "name": "襄阳区"
+        },
+        {
+            "city_id": "173",
+            "id": "1566",
+            "name": "南漳县"
+        },
+        {
+            "city_id": "173",
+            "id": "1567",
+            "name": "谷城县"
+        },
+        {
+            "city_id": "173",
+            "id": "1568",
+            "name": "保康县"
+        },
+        {
+            "city_id": "173",
+            "id": "1569",
+            "name": "老河口市"
+        },
+        {
+            "city_id": "173",
+            "id": "1570",
+            "name": "枣阳市"
+        },
+        {
+            "city_id": "173",
+            "id": "1571",
+            "name": "宜城市"
+        },
+        {
+            "city_id": "174",
+            "id": "1572",
+            "name": "梁子湖区"
+        },
+        {
+            "city_id": "174",
+            "id": "1573",
+            "name": "华容区"
+        },
+        {
+            "city_id": "174",
+            "id": "1574",
+            "name": "鄂城区"
+        },
+        {
+            "city_id": "175",
+            "id": "1575",
+            "name": "东宝区"
+        },
+        {
+            "city_id": "175",
+            "id": "1576",
+            "name": "掇刀区"
+        },
+        {
+            "city_id": "175",
+            "id": "1577",
+            "name": "京山市"
+        },
+        {
+            "city_id": "175",
+            "id": "1578",
+            "name": "沙洋县"
+        },
+        {
+            "city_id": "175",
+            "id": "1579",
+            "name": "钟祥市"
+        },
+        {
+            "city_id": "176",
+            "id": "1580",
+            "name": "孝南区"
+        },
+        {
+            "city_id": "176",
+            "id": "1581",
+            "name": "孝昌县"
+        },
+        {
+            "city_id": "176",
+            "id": "1582",
+            "name": "大悟县"
+        },
+        {
+            "city_id": "176",
+            "id": "1583",
+            "name": "云梦县"
+        },
+        {
+            "city_id": "176",
+            "id": "1584",
+            "name": "应城市"
+        },
+        {
+            "city_id": "176",
+            "id": "1585",
+            "name": "安陆市"
+        },
+        {
+            "city_id": "176",
+            "id": "1586",
+            "name": "汉川市"
+        },
+        {
+            "city_id": "177",
+            "id": "1587",
+            "name": "沙市区"
+        },
+        {
+            "city_id": "177",
+            "id": "1588",
+            "name": "荆州区"
+        },
+        {
+            "city_id": "177",
+            "id": "1589",
+            "name": "公安县"
+        },
+        {
+            "city_id": "177",
+            "id": "1590",
+            "name": "监利县"
+        },
+        {
+            "city_id": "177",
+            "id": "1591",
+            "name": "江陵县"
+        },
+        {
+            "city_id": "177",
+            "id": "1592",
+            "name": "石首市"
+        },
+        {
+            "city_id": "177",
+            "id": "1593",
+            "name": "洪湖市"
+        },
+        {
+            "city_id": "177",
+            "id": "1594",
+            "name": "松滋市"
+        },
+        {
+            "city_id": "178",
+            "id": "1595",
+            "name": "黄州区"
+        },
+        {
+            "city_id": "178",
+            "id": "1596",
+            "name": "团风县"
+        },
+        {
+            "city_id": "178",
+            "id": "1597",
+            "name": "红安县"
+        },
+        {
+            "city_id": "178",
+            "id": "1598",
+            "name": "罗田县"
+        },
+        {
+            "city_id": "178",
+            "id": "1599",
+            "name": "英山县"
+        },
+        {
+            "city_id": "178",
+            "id": "1600",
+            "name": "浠水县"
+        },
+        {
+            "city_id": "178",
+            "id": "1601",
+            "name": "蕲春县"
+        },
+        {
+            "city_id": "178",
+            "id": "1602",
+            "name": "黄梅县"
+        },
+        {
+            "city_id": "178",
+            "id": "1603",
+            "name": "麻城市"
+        },
+        {
+            "city_id": "178",
+            "id": "1604",
+            "name": "武穴市"
+        },
+        {
+            "city_id": "179",
+            "id": "1605",
+            "name": "咸安区"
+        },
+        {
+            "city_id": "179",
+            "id": "1606",
+            "name": "嘉鱼县"
+        },
+        {
+            "city_id": "179",
+            "id": "1607",
+            "name": "通城县"
+        },
+        {
+            "city_id": "179",
+            "id": "1608",
+            "name": "崇阳县"
+        },
+        {
+            "city_id": "179",
+            "id": "1609",
+            "name": "通山县"
+        },
+        {
+            "city_id": "179",
+            "id": "1610",
+            "name": "赤壁市"
+        },
+        {
+            "city_id": "180",
+            "id": "1611",
+            "name": "曾都区"
+        },
+        {
+            "city_id": "180",
+            "id": "1612",
+            "name": "广水市"
+        },
+        {
+            "city_id": "181",
+            "id": "1613",
+            "name": "恩施市"
+        },
+        {
+            "city_id": "181",
+            "id": "1614",
+            "name": "利川市"
+        },
+        {
+            "city_id": "181",
+            "id": "1615",
+            "name": "建始县"
+        },
+        {
+            "city_id": "181",
+            "id": "1616",
+            "name": "巴东县"
+        },
+        {
+            "city_id": "181",
+            "id": "1617",
+            "name": "宣恩县"
+        },
+        {
+            "city_id": "181",
+            "id": "1618",
+            "name": "咸丰县"
+        },
+        {
+            "city_id": "181",
+            "id": "1619",
+            "name": "来凤县"
+        },
+        {
+            "city_id": "181",
+            "id": "1620",
+            "name": "鹤峰县"
+        },
+        {
+            "city_id": "182",
+            "id": "1621",
+            "name": "仙桃市"
+        },
+        {
+            "city_id": "182",
+            "id": "1622",
+            "name": "潜江市"
+        },
+        {
+            "city_id": "182",
+            "id": "1623",
+            "name": "天门市"
+        },
+        {
+            "city_id": "182",
+            "id": "1624",
+            "name": "神农架林区"
+        },
+        {
+            "city_id": "183",
+            "id": "1625",
+            "name": "芙蓉区"
+        },
+        {
+            "city_id": "183",
+            "id": "1626",
+            "name": "天心区"
+        },
+        {
+            "city_id": "183",
+            "id": "1627",
+            "name": "岳麓区"
+        },
+        {
+            "city_id": "183",
+            "id": "1628",
+            "name": "开福区"
+        },
+        {
+            "city_id": "183",
+            "id": "1629",
+            "name": "雨花区"
+        },
+        {
+            "city_id": "183",
+            "id": "1630",
+            "name": "长沙县"
+        },
+        {
+            "city_id": "183",
+            "id": "1631",
+            "name": "望城区"
+        },
+        {
+            "city_id": "183",
+            "id": "1632",
+            "name": "宁乡市"
+        },
+        {
+            "city_id": "183",
+            "id": "1633",
+            "name": "浏阳市"
+        },
+        {
+            "city_id": "184",
+            "id": "1634",
+            "name": "荷塘区"
+        },
+        {
+            "city_id": "184",
+            "id": "1635",
+            "name": "芦淞区"
+        },
+        {
+            "city_id": "184",
+            "id": "1636",
+            "name": "石峰区"
+        },
+        {
+            "city_id": "184",
+            "id": "1637",
+            "name": "天元区"
+        },
+        {
+            "city_id": "184",
+            "id": "1638",
+            "name": "株洲县"
+        },
+        {
+            "city_id": "184",
+            "id": "1639",
+            "name": "攸县"
+        },
+        {
+            "city_id": "184",
+            "id": "1640",
+            "name": "茶陵县"
+        },
+        {
+            "city_id": "184",
+            "id": "1641",
+            "name": "炎陵县"
+        },
+        {
+            "city_id": "184",
+            "id": "1642",
+            "name": "醴陵市"
+        },
+        {
+            "city_id": "185",
+            "id": "1643",
+            "name": "雨湖区"
+        },
+        {
+            "city_id": "185",
+            "id": "1644",
+            "name": "岳塘区"
+        },
+        {
+            "city_id": "185",
+            "id": "1645",
+            "name": "湘潭县"
+        },
+        {
+            "city_id": "185",
+            "id": "1646",
+            "name": "湘乡市"
+        },
+        {
+            "city_id": "185",
+            "id": "1647",
+            "name": "韶山市"
+        },
+        {
+            "city_id": "186",
+            "id": "1648",
+            "name": "珠晖区"
+        },
+        {
+            "city_id": "186",
+            "id": "1649",
+            "name": "雁峰区"
+        },
+        {
+            "city_id": "186",
+            "id": "1650",
+            "name": "石鼓区"
+        },
+        {
+            "city_id": "186",
+            "id": "1651",
+            "name": "蒸湘区"
+        },
+        {
+            "city_id": "186",
+            "id": "1652",
+            "name": "南岳区"
+        },
+        {
+            "city_id": "186",
+            "id": "1653",
+            "name": "衡阳县"
+        },
+        {
+            "city_id": "186",
+            "id": "1654",
+            "name": "衡南县"
+        },
+        {
+            "city_id": "186",
+            "id": "1655",
+            "name": "衡山县"
+        },
+        {
+            "city_id": "186",
+            "id": "1656",
+            "name": "衡东县"
+        },
+        {
+            "city_id": "186",
+            "id": "1657",
+            "name": "祁东县"
+        },
+        {
+            "city_id": "186",
+            "id": "1658",
+            "name": "耒阳市"
+        },
+        {
+            "city_id": "186",
+            "id": "1659",
+            "name": "常宁市"
+        },
+        {
+            "city_id": "187",
+            "id": "1660",
+            "name": "双清区"
+        },
+        {
+            "city_id": "187",
+            "id": "1661",
+            "name": "大祥区"
+        },
+        {
+            "city_id": "187",
+            "id": "1662",
+            "name": "北塔区"
+        },
+        {
+            "city_id": "187",
+            "id": "1663",
+            "name": "邵东县"
+        },
+        {
+            "city_id": "187",
+            "id": "1664",
+            "name": "新邵县"
+        },
+        {
+            "city_id": "187",
+            "id": "1665",
+            "name": "邵阳县"
+        },
+        {
+            "city_id": "187",
+            "id": "1666",
+            "name": "隆回县"
+        },
+        {
+            "city_id": "187",
+            "id": "1667",
+            "name": "洞口县"
+        },
+        {
+            "city_id": "187",
+            "id": "1668",
+            "name": "绥宁县"
+        },
+        {
+            "city_id": "187",
+            "id": "1669",
+            "name": "新宁县"
+        },
+        {
+            "city_id": "187",
+            "id": "1670",
+            "name": "城步苗族自治县"
+        },
+        {
+            "city_id": "187",
+            "id": "1671",
+            "name": "武冈市"
+        },
+        {
+            "city_id": "188",
+            "id": "1672",
+            "name": "岳阳楼区"
+        },
+        {
+            "city_id": "188",
+            "id": "1673",
+            "name": "云溪区"
+        },
+        {
+            "city_id": "188",
+            "id": "1674",
+            "name": "君山区"
+        },
+        {
+            "city_id": "188",
+            "id": "1675",
+            "name": "岳阳县"
+        },
+        {
+            "city_id": "188",
+            "id": "1676",
+            "name": "华容县"
+        },
+        {
+            "city_id": "188",
+            "id": "1677",
+            "name": "湘阴县"
+        },
+        {
+            "city_id": "188",
+            "id": "1678",
+            "name": "平江县"
+        },
+        {
+            "city_id": "188",
+            "id": "1679",
+            "name": "汨罗市"
+        },
+        {
+            "city_id": "188",
+            "id": "1680",
+            "name": "临湘市"
+        },
+        {
+            "city_id": "189",
+            "id": "1681",
+            "name": "武陵区"
+        },
+        {
+            "city_id": "189",
+            "id": "1682",
+            "name": "鼎城区"
+        },
+        {
+            "city_id": "189",
+            "id": "1683",
+            "name": "安乡县"
+        },
+        {
+            "city_id": "189",
+            "id": "1684",
+            "name": "汉寿县"
+        },
+        {
+            "city_id": "189",
+            "id": "1685",
+            "name": "澧县"
+        },
+        {
+            "city_id": "189",
+            "id": "1686",
+            "name": "临澧县"
+        },
+        {
+            "city_id": "189",
+            "id": "1687",
+            "name": "桃源县"
+        },
+        {
+            "city_id": "189",
+            "id": "1688",
+            "name": "石门县"
+        },
+        {
+            "city_id": "189",
+            "id": "1689",
+            "name": "津市市"
+        },
+        {
+            "city_id": "190",
+            "id": "1690",
+            "name": "永定区"
+        },
+        {
+            "city_id": "190",
+            "id": "1691",
+            "name": "武陵源区"
+        },
+        {
+            "city_id": "190",
+            "id": "1692",
+            "name": "慈利县"
+        },
+        {
+            "city_id": "190",
+            "id": "1693",
+            "name": "桑植县"
+        },
+        {
+            "city_id": "191",
+            "id": "1694",
+            "name": "资阳区"
+        },
+        {
+            "city_id": "191",
+            "id": "1695",
+            "name": "赫山区"
+        },
+        {
+            "city_id": "191",
+            "id": "1696",
+            "name": "南县"
+        },
+        {
+            "city_id": "191",
+            "id": "1697",
+            "name": "桃江县"
+        },
+        {
+            "city_id": "191",
+            "id": "1698",
+            "name": "安化县"
+        },
+        {
+            "city_id": "191",
+            "id": "1699",
+            "name": "沅江市"
+        },
+        {
+            "city_id": "192",
+            "id": "1700",
+            "name": "北湖区"
+        },
+        {
+            "city_id": "192",
+            "id": "1701",
+            "name": "苏仙区"
+        },
+        {
+            "city_id": "192",
+            "id": "1702",
+            "name": "桂阳县"
+        },
+        {
+            "city_id": "192",
+            "id": "1703",
+            "name": "宜章县"
+        },
+        {
+            "city_id": "192",
+            "id": "1704",
+            "name": "永兴县"
+        },
+        {
+            "city_id": "192",
+            "id": "1705",
+            "name": "嘉禾县"
+        },
+        {
+            "city_id": "192",
+            "id": "1706",
+            "name": "临武县"
+        },
+        {
+            "city_id": "192",
+            "id": "1707",
+            "name": "汝城县"
+        },
+        {
+            "city_id": "192",
+            "id": "1708",
+            "name": "桂东县"
+        },
+        {
+            "city_id": "192",
+            "id": "1709",
+            "name": "安仁县"
+        },
+        {
+            "city_id": "192",
+            "id": "1710",
+            "name": "资兴市"
+        },
+        {
+            "city_id": "193",
+            "id": "1711",
+            "name": "芝山区"
+        },
+        {
+            "city_id": "193",
+            "id": "1712",
+            "name": "冷水滩区"
+        },
+        {
+            "city_id": "193",
+            "id": "1713",
+            "name": "祁阳县"
+        },
+        {
+            "city_id": "193",
+            "id": "1714",
+            "name": "东安县"
+        },
+        {
+            "city_id": "193",
+            "id": "1715",
+            "name": "双牌县"
+        },
+        {
+            "city_id": "193",
+            "id": "1716",
+            "name": "道县"
+        },
+        {
+            "city_id": "193",
+            "id": "1717",
+            "name": "江永县"
+        },
+        {
+            "city_id": "193",
+            "id": "1718",
+            "name": "宁远县"
+        },
+        {
+            "city_id": "193",
+            "id": "1719",
+            "name": "蓝山县"
+        },
+        {
+            "city_id": "193",
+            "id": "1720",
+            "name": "新田县"
+        },
+        {
+            "city_id": "193",
+            "id": "1721",
+            "name": "江华瑶族自治县"
+        },
+        {
+            "city_id": "194",
+            "id": "1722",
+            "name": "鹤城区"
+        },
+        {
+            "city_id": "194",
+            "id": "1723",
+            "name": "中方县"
+        },
+        {
+            "city_id": "194",
+            "id": "1724",
+            "name": "沅陵县"
+        },
+        {
+            "city_id": "194",
+            "id": "1725",
+            "name": "辰溪县"
+        },
+        {
+            "city_id": "194",
+            "id": "1726",
+            "name": "溆浦县"
+        },
+        {
+            "city_id": "194",
+            "id": "1727",
+            "name": "会同县"
+        },
+        {
+            "city_id": "194",
+            "id": "1728",
+            "name": "麻阳苗族自治县"
+        },
+        {
+            "city_id": "194",
+            "id": "1729",
+            "name": "新晃侗族自治县"
+        },
+        {
+            "city_id": "194",
+            "id": "1730",
+            "name": "芷江侗族自治县"
+        },
+        {
+            "city_id": "194",
+            "id": "1731",
+            "name": "靖州苗族侗族自治县"
+        },
+        {
+            "city_id": "194",
+            "id": "1732",
+            "name": "通道侗族自治县"
+        },
+        {
+            "city_id": "194",
+            "id": "1733",
+            "name": "洪江市"
+        },
+        {
+            "city_id": "195",
+            "id": "1734",
+            "name": "娄星区"
+        },
+        {
+            "city_id": "195",
+            "id": "1735",
+            "name": "双峰县"
+        },
+        {
+            "city_id": "195",
+            "id": "1736",
+            "name": "新化县"
+        },
+        {
+            "city_id": "195",
+            "id": "1737",
+            "name": "冷水江市"
+        },
+        {
+            "city_id": "195",
+            "id": "1738",
+            "name": "涟源市"
+        },
+        {
+            "city_id": "196",
+            "id": "1739",
+            "name": "吉首市"
+        },
+        {
+            "city_id": "196",
+            "id": "1740",
+            "name": "泸溪县"
+        },
+        {
+            "city_id": "196",
+            "id": "1741",
+            "name": "凤凰县"
+        },
+        {
+            "city_id": "196",
+            "id": "1742",
+            "name": "花垣县"
+        },
+        {
+            "city_id": "196",
+            "id": "1743",
+            "name": "保靖县"
+        },
+        {
+            "city_id": "196",
+            "id": "1744",
+            "name": "古丈县"
+        },
+        {
+            "city_id": "196",
+            "id": "1745",
+            "name": "永顺县"
+        },
+        {
+            "city_id": "196",
+            "id": "1746",
+            "name": "龙山县"
+        },
+        {
+            "city_id": "197",
+            "id": "1747",
+            "name": "东山区"
+        },
+        {
+            "city_id": "197",
+            "id": "1748",
+            "name": "荔湾区"
+        },
+        {
+            "city_id": "197",
+            "id": "1749",
+            "name": "越秀区"
+        },
+        {
+            "city_id": "197",
+            "id": "1750",
+            "name": "海珠区"
+        },
+        {
+            "city_id": "197",
+            "id": "1751",
+            "name": "天河区"
+        },
+        {
+            "city_id": "197",
+            "id": "1752",
+            "name": "芳村区"
+        },
+        {
+            "city_id": "197",
+            "id": "1753",
+            "name": "白云区"
+        },
+        {
+            "city_id": "197",
+            "id": "1754",
+            "name": "黄埔区"
+        },
+        {
+            "city_id": "197",
+            "id": "1755",
+            "name": "番禺区"
+        },
+        {
+            "city_id": "197",
+            "id": "1756",
+            "name": "花都区"
+        },
+        {
+            "city_id": "197",
+            "id": "1757",
+            "name": "增城区"
+        },
+        {
+            "city_id": "197",
+            "id": "1758",
+            "name": "从化区"
+        },
+        {
+            "city_id": "198",
+            "id": "1759",
+            "name": "武江区"
+        },
+        {
+            "city_id": "198",
+            "id": "1760",
+            "name": "浈江区"
+        },
+        {
+            "city_id": "198",
+            "id": "1761",
+            "name": "曲江区"
+        },
+        {
+            "city_id": "198",
+            "id": "1762",
+            "name": "始兴县"
+        },
+        {
+            "city_id": "198",
+            "id": "1763",
+            "name": "仁化县"
+        },
+        {
+            "city_id": "198",
+            "id": "1764",
+            "name": "翁源县"
+        },
+        {
+            "city_id": "198",
+            "id": "1765",
+            "name": "乳源瑶族自治县"
+        },
+        {
+            "city_id": "198",
+            "id": "1766",
+            "name": "新丰县"
+        },
+        {
+            "city_id": "198",
+            "id": "1767",
+            "name": "乐昌市"
+        },
+        {
+            "city_id": "198",
+            "id": "1768",
+            "name": "南雄市"
+        },
+        {
+            "city_id": "199",
+            "id": "1769",
+            "name": "罗湖区"
+        },
+        {
+            "city_id": "199",
+            "id": "1770",
+            "name": "福田区"
+        },
+        {
+            "city_id": "199",
+            "id": "1771",
+            "name": "南山区"
+        },
+        {
+            "city_id": "199",
+            "id": "1772",
+            "name": "宝安区"
+        },
+        {
+            "city_id": "199",
+            "id": "1773",
+            "name": "龙岗区"
+        },
+        {
+            "city_id": "199",
+            "id": "1774",
+            "name": "盐田区"
+        },
+        {
+            "city_id": "200",
+            "id": "1775",
+            "name": "香洲区"
+        },
+        {
+            "city_id": "200",
+            "id": "1776",
+            "name": "斗门区"
+        },
+        {
+            "city_id": "200",
+            "id": "1777",
+            "name": "金湾区"
+        },
+        {
+            "city_id": "201",
+            "id": "1778",
+            "name": "龙湖区"
+        },
+        {
+            "city_id": "201",
+            "id": "1779",
+            "name": "金平区"
+        },
+        {
+            "city_id": "201",
+            "id": "1780",
+            "name": "濠江区"
+        },
+        {
+            "city_id": "201",
+            "id": "1781",
+            "name": "潮阳区"
+        },
+        {
+            "city_id": "201",
+            "id": "1782",
+            "name": "潮南区"
+        },
+        {
+            "city_id": "201",
+            "id": "1783",
+            "name": "澄海区"
+        },
+        {
+            "city_id": "201",
+            "id": "1784",
+            "name": "南澳县"
+        },
+        {
+            "city_id": "202",
+            "id": "1785",
+            "name": "禅城区"
+        },
+        {
+            "city_id": "202",
+            "id": "1786",
+            "name": "南海区"
+        },
+        {
+            "city_id": "202",
+            "id": "1787",
+            "name": "顺德区"
+        },
+        {
+            "city_id": "202",
+            "id": "1788",
+            "name": "三水区"
+        },
+        {
+            "city_id": "202",
+            "id": "1789",
+            "name": "高明区"
+        },
+        {
+            "city_id": "203",
+            "id": "1790",
+            "name": "蓬江区"
+        },
+        {
+            "city_id": "203",
+            "id": "1791",
+            "name": "江海区"
+        },
+        {
+            "city_id": "203",
+            "id": "1792",
+            "name": "新会区"
+        },
+        {
+            "city_id": "203",
+            "id": "1793",
+            "name": "台山市"
+        },
+        {
+            "city_id": "203",
+            "id": "1794",
+            "name": "开平市"
+        },
+        {
+            "city_id": "203",
+            "id": "1795",
+            "name": "鹤山市"
+        },
+        {
+            "city_id": "203",
+            "id": "1796",
+            "name": "恩平市"
+        },
+        {
+            "city_id": "204",
+            "id": "1797",
+            "name": "赤坎区"
+        },
+        {
+            "city_id": "204",
+            "id": "1798",
+            "name": "霞山区"
+        },
+        {
+            "city_id": "204",
+            "id": "1799",
+            "name": "坡头区"
+        },
+        {
+            "city_id": "204",
+            "id": "1800",
+            "name": "麻章区"
+        },
+        {
+            "city_id": "204",
+            "id": "1801",
+            "name": "遂溪县"
+        },
+        {
+            "city_id": "204",
+            "id": "1802",
+            "name": "徐闻县"
+        },
+        {
+            "city_id": "204",
+            "id": "1803",
+            "name": "廉江市"
+        },
+        {
+            "city_id": "204",
+            "id": "1804",
+            "name": "雷州市"
+        },
+        {
+            "city_id": "204",
+            "id": "1805",
+            "name": "吴川市"
+        },
+        {
+            "city_id": "205",
+            "id": "1806",
+            "name": "茂南区"
+        },
+        {
+            "city_id": "205",
+            "id": "1807",
+            "name": "茂港区"
+        },
+        {
+            "city_id": "205",
+            "id": "1808",
+            "name": "电白区"
+        },
+        {
+            "city_id": "205",
+            "id": "1809",
+            "name": "高州市"
+        },
+        {
+            "city_id": "205",
+            "id": "1810",
+            "name": "化州市"
+        },
+        {
+            "city_id": "205",
+            "id": "1811",
+            "name": "信宜市"
+        },
+        {
+            "city_id": "206",
+            "id": "1812",
+            "name": "端州区"
+        },
+        {
+            "city_id": "206",
+            "id": "1813",
+            "name": "鼎湖区"
+        },
+        {
+            "city_id": "206",
+            "id": "1814",
+            "name": "广宁县"
+        },
+        {
+            "city_id": "206",
+            "id": "1815",
+            "name": "怀集县"
+        },
+        {
+            "city_id": "206",
+            "id": "1816",
+            "name": "封开县"
+        },
+        {
+            "city_id": "206",
+            "id": "1817",
+            "name": "德庆县"
+        },
+        {
+            "city_id": "206",
+            "id": "1818",
+            "name": "高要区"
+        },
+        {
+            "city_id": "206",
+            "id": "1819",
+            "name": "四会市"
+        },
+        {
+            "city_id": "207",
+            "id": "1820",
+            "name": "惠城区"
+        },
+        {
+            "city_id": "207",
+            "id": "1821",
+            "name": "惠阳区"
+        },
+        {
+            "city_id": "207",
+            "id": "1822",
+            "name": "博罗县"
+        },
+        {
+            "city_id": "207",
+            "id": "1823",
+            "name": "惠东县"
+        },
+        {
+            "city_id": "207",
+            "id": "1824",
+            "name": "龙门县"
+        },
+        {
+            "city_id": "208",
+            "id": "1825",
+            "name": "梅江区"
+        },
+        {
+            "city_id": "208",
+            "id": "1826",
+            "name": "梅县区"
+        },
+        {
+            "city_id": "208",
+            "id": "1827",
+            "name": "大埔县"
+        },
+        {
+            "city_id": "208",
+            "id": "1828",
+            "name": "丰顺县"
+        },
+        {
+            "city_id": "208",
+            "id": "1829",
+            "name": "五华县"
+        },
+        {
+            "city_id": "208",
+            "id": "1830",
+            "name": "平远县"
+        },
+        {
+            "city_id": "208",
+            "id": "1831",
+            "name": "蕉岭县"
+        },
+        {
+            "city_id": "208",
+            "id": "1832",
+            "name": "兴宁市"
+        },
+        {
+            "city_id": "209",
+            "id": "1833",
+            "name": "城区"
+        },
+        {
+            "city_id": "209",
+            "id": "1834",
+            "name": "海丰县"
+        },
+        {
+            "city_id": "209",
+            "id": "1835",
+            "name": "陆河县"
+        },
+        {
+            "city_id": "209",
+            "id": "1836",
+            "name": "陆丰市"
+        },
+        {
+            "city_id": "210",
+            "id": "1837",
+            "name": "源城区"
+        },
+        {
+            "city_id": "210",
+            "id": "1838",
+            "name": "紫金县"
+        },
+        {
+            "city_id": "210",
+            "id": "1839",
+            "name": "龙川县"
+        },
+        {
+            "city_id": "210",
+            "id": "1840",
+            "name": "连平县"
+        },
+        {
+            "city_id": "210",
+            "id": "1841",
+            "name": "和平县"
+        },
+        {
+            "city_id": "210",
+            "id": "1842",
+            "name": "东源县"
+        },
+        {
+            "city_id": "211",
+            "id": "1843",
+            "name": "江城区"
+        },
+        {
+            "city_id": "211",
+            "id": "1844",
+            "name": "阳西县"
+        },
+        {
+            "city_id": "211",
+            "id": "1845",
+            "name": "阳东区"
+        },
+        {
+            "city_id": "211",
+            "id": "1846",
+            "name": "阳春市"
+        },
+        {
+            "city_id": "212",
+            "id": "1847",
+            "name": "清城区"
+        },
+        {
+            "city_id": "212",
+            "id": "1848",
+            "name": "佛冈县"
+        },
+        {
+            "city_id": "212",
+            "id": "1849",
+            "name": "阳山县"
+        },
+        {
+            "city_id": "212",
+            "id": "1850",
+            "name": "连山壮族瑶族自治县"
+        },
+        {
+            "city_id": "212",
+            "id": "1851",
+            "name": "连南瑶族自治县"
+        },
+        {
+            "city_id": "212",
+            "id": "1852",
+            "name": "清新区"
+        },
+        {
+            "city_id": "212",
+            "id": "1853",
+            "name": "英德市"
+        },
+        {
+            "city_id": "212",
+            "id": "1854",
+            "name": "连州市"
+        },
+        {
+            "city_id": "215",
+            "id": "1855",
+            "name": "湘桥区"
+        },
+        {
+            "city_id": "215",
+            "id": "1856",
+            "name": "潮安区"
+        },
+        {
+            "city_id": "215",
+            "id": "1857",
+            "name": "饶平县"
+        },
+        {
+            "city_id": "216",
+            "id": "1858",
+            "name": "榕城区"
+        },
+        {
+            "city_id": "216",
+            "id": "1859",
+            "name": "揭东区"
+        },
+        {
+            "city_id": "216",
+            "id": "1860",
+            "name": "揭西县"
+        },
+        {
+            "city_id": "216",
+            "id": "1861",
+            "name": "惠来县"
+        },
+        {
+            "city_id": "216",
+            "id": "1862",
+            "name": "普宁市"
+        },
+        {
+            "city_id": "217",
+            "id": "1863",
+            "name": "云城区"
+        },
+        {
+            "city_id": "217",
+            "id": "1864",
+            "name": "新兴县"
+        },
+        {
+            "city_id": "217",
+            "id": "1865",
+            "name": "郁南县"
+        },
+        {
+            "city_id": "217",
+            "id": "1866",
+            "name": "云安区"
+        },
+        {
+            "city_id": "217",
+            "id": "1867",
+            "name": "罗定市"
+        },
+        {
+            "city_id": "218",
+            "id": "1868",
+            "name": "兴宁区"
+        },
+        {
+            "city_id": "218",
+            "id": "1869",
+            "name": "青秀区"
+        },
+        {
+            "city_id": "218",
+            "id": "1870",
+            "name": "江南区"
+        },
+        {
+            "city_id": "218",
+            "id": "1871",
+            "name": "西乡塘区"
+        },
+        {
+            "city_id": "218",
+            "id": "1872",
+            "name": "良庆区"
+        },
+        {
+            "city_id": "218",
+            "id": "1873",
+            "name": "邕宁区"
+        },
+        {
+            "city_id": "218",
+            "id": "1874",
+            "name": "武鸣区"
+        },
+        {
+            "city_id": "218",
+            "id": "1875",
+            "name": "隆安县"
+        },
+        {
+            "city_id": "218",
+            "id": "1876",
+            "name": "马山县"
+        },
+        {
+            "city_id": "218",
+            "id": "1877",
+            "name": "上林县"
+        },
+        {
+            "city_id": "218",
+            "id": "1878",
+            "name": "宾阳县"
+        },
+        {
+            "city_id": "218",
+            "id": "1879",
+            "name": "横县"
+        },
+        {
+            "city_id": "219",
+            "id": "1880",
+            "name": "城中区"
+        },
+        {
+            "city_id": "219",
+            "id": "1881",
+            "name": "鱼峰区"
+        },
+        {
+            "city_id": "219",
+            "id": "1882",
+            "name": "柳南区"
+        },
+        {
+            "city_id": "219",
+            "id": "1883",
+            "name": "柳北区"
+        },
+        {
+            "city_id": "219",
+            "id": "1884",
+            "name": "柳江区"
+        },
+        {
+            "city_id": "219",
+            "id": "1885",
+            "name": "柳城县"
+        },
+        {
+            "city_id": "219",
+            "id": "1886",
+            "name": "鹿寨县"
+        },
+        {
+            "city_id": "219",
+            "id": "1887",
+            "name": "融安县"
+        },
+        {
+            "city_id": "219",
+            "id": "1888",
+            "name": "融水苗族自治县"
+        },
+        {
+            "city_id": "219",
+            "id": "1889",
+            "name": "三江侗族自治县"
+        },
+        {
+            "city_id": "220",
+            "id": "1890",
+            "name": "秀峰区"
+        },
+        {
+            "city_id": "220",
+            "id": "1891",
+            "name": "叠彩区"
+        },
+        {
+            "city_id": "220",
+            "id": "1892",
+            "name": "象山区"
+        },
+        {
+            "city_id": "220",
+            "id": "1893",
+            "name": "七星区"
+        },
+        {
+            "city_id": "220",
+            "id": "1894",
+            "name": "雁山区"
+        },
+        {
+            "city_id": "220",
+            "id": "1895",
+            "name": "阳朔县"
+        },
+        {
+            "city_id": "220",
+            "id": "1896",
+            "name": "临桂区"
+        },
+        {
+            "city_id": "220",
+            "id": "1897",
+            "name": "灵川县"
+        },
+        {
+            "city_id": "220",
+            "id": "1898",
+            "name": "全州县"
+        },
+        {
+            "city_id": "220",
+            "id": "1899",
+            "name": "兴安县"
+        },
+        {
+            "city_id": "220",
+            "id": "1900",
+            "name": "永福县"
+        },
+        {
+            "city_id": "220",
+            "id": "1901",
+            "name": "灌阳县"
+        },
+        {
+            "city_id": "220",
+            "id": "1902",
+            "name": "龙胜各族自治县"
+        },
+        {
+            "city_id": "220",
+            "id": "1903",
+            "name": "资源县"
+        },
+        {
+            "city_id": "220",
+            "id": "1904",
+            "name": "平乐县"
+        },
+        {
+            "city_id": "220",
+            "id": "1905",
+            "name": "荔蒲县"
+        },
+        {
+            "city_id": "220",
+            "id": "1906",
+            "name": "恭城瑶族自治县"
+        },
+        {
+            "city_id": "221",
+            "id": "1907",
+            "name": "万秀区"
+        },
+        {
+            "city_id": "221",
+            "id": "1908",
+            "name": "蝶山区"
+        },
+        {
+            "city_id": "221",
+            "id": "1909",
+            "name": "长洲区"
+        },
+        {
+            "city_id": "221",
+            "id": "1910",
+            "name": "苍梧县"
+        },
+        {
+            "city_id": "221",
+            "id": "1911",
+            "name": "藤县"
+        },
+        {
+            "city_id": "221",
+            "id": "1912",
+            "name": "蒙山县"
+        },
+        {
+            "city_id": "221",
+            "id": "1913",
+            "name": "岑溪市"
+        },
+        {
+            "city_id": "222",
+            "id": "1914",
+            "name": "海城区"
+        },
+        {
+            "city_id": "222",
+            "id": "1915",
+            "name": "银海区"
+        },
+        {
+            "city_id": "222",
+            "id": "1916",
+            "name": "铁山港区"
+        },
+        {
+            "city_id": "222",
+            "id": "1917",
+            "name": "合浦县"
+        },
+        {
+            "city_id": "223",
+            "id": "1918",
+            "name": "港口区"
+        },
+        {
+            "city_id": "223",
+            "id": "1919",
+            "name": "防城区"
+        },
+        {
+            "city_id": "223",
+            "id": "1920",
+            "name": "上思县"
+        },
+        {
+            "city_id": "223",
+            "id": "1921",
+            "name": "东兴市"
+        },
+        {
+            "city_id": "224",
+            "id": "1922",
+            "name": "钦南区"
+        },
+        {
+            "city_id": "224",
+            "id": "1923",
+            "name": "钦北区"
+        },
+        {
+            "city_id": "224",
+            "id": "1924",
+            "name": "灵山县"
+        },
+        {
+            "city_id": "224",
+            "id": "1925",
+            "name": "浦北县"
+        },
+        {
+            "city_id": "225",
+            "id": "1926",
+            "name": "港北区"
+        },
+        {
+            "city_id": "225",
+            "id": "1927",
+            "name": "港南区"
+        },
+        {
+            "city_id": "225",
+            "id": "1928",
+            "name": "覃塘区"
+        },
+        {
+            "city_id": "225",
+            "id": "1929",
+            "name": "平南县"
+        },
+        {
+            "city_id": "225",
+            "id": "1930",
+            "name": "桂平市"
+        },
+        {
+            "city_id": "226",
+            "id": "1931",
+            "name": "玉州区"
+        },
+        {
+            "city_id": "226",
+            "id": "1932",
+            "name": "容县"
+        },
+        {
+            "city_id": "226",
+            "id": "1933",
+            "name": "陆川县"
+        },
+        {
+            "city_id": "226",
+            "id": "1934",
+            "name": "博白县"
+        },
+        {
+            "city_id": "226",
+            "id": "1935",
+            "name": "兴业县"
+        },
+        {
+            "city_id": "226",
+            "id": "1936",
+            "name": "北流市"
+        },
+        {
+            "city_id": "227",
+            "id": "1937",
+            "name": "右江区"
+        },
+        {
+            "city_id": "227",
+            "id": "1938",
+            "name": "田阳县"
+        },
+        {
+            "city_id": "227",
+            "id": "1939",
+            "name": "田东县"
+        },
+        {
+            "city_id": "227",
+            "id": "1940",
+            "name": "平果县"
+        },
+        {
+            "city_id": "227",
+            "id": "1941",
+            "name": "德保县"
+        },
+        {
+            "city_id": "227",
+            "id": "1942",
+            "name": "靖西市"
+        },
+        {
+            "city_id": "227",
+            "id": "1943",
+            "name": "那坡县"
+        },
+        {
+            "city_id": "227",
+            "id": "1944",
+            "name": "凌云县"
+        },
+        {
+            "city_id": "227",
+            "id": "1945",
+            "name": "乐业县"
+        },
+        {
+            "city_id": "227",
+            "id": "1946",
+            "name": "田林县"
+        },
+        {
+            "city_id": "227",
+            "id": "1947",
+            "name": "西林县"
+        },
+        {
+            "city_id": "227",
+            "id": "1948",
+            "name": "隆林各族自治县"
+        },
+        {
+            "city_id": "228",
+            "id": "1949",
+            "name": "八步区"
+        },
+        {
+            "city_id": "228",
+            "id": "1950",
+            "name": "昭平县"
+        },
+        {
+            "city_id": "228",
+            "id": "1951",
+            "name": "钟山县"
+        },
+        {
+            "city_id": "228",
+            "id": "1952",
+            "name": "富川瑶族自治县"
+        },
+        {
+            "city_id": "229",
+            "id": "1953",
+            "name": "金城江区"
+        },
+        {
+            "city_id": "229",
+            "id": "1954",
+            "name": "南丹县"
+        },
+        {
+            "city_id": "229",
+            "id": "1955",
+            "name": "天峨县"
+        },
+        {
+            "city_id": "229",
+            "id": "1956",
+            "name": "凤山县"
+        },
+        {
+            "city_id": "229",
+            "id": "1957",
+            "name": "东兰县"
+        },
+        {
+            "city_id": "229",
+            "id": "1958",
+            "name": "罗城仫佬族自治县"
+        },
+        {
+            "city_id": "229",
+            "id": "1959",
+            "name": "环江毛南族自治县"
+        },
+        {
+            "city_id": "229",
+            "id": "1960",
+            "name": "巴马瑶族自治县"
+        },
+        {
+            "city_id": "229",
+            "id": "1961",
+            "name": "都安瑶族自治县"
+        },
+        {
+            "city_id": "229",
+            "id": "1962",
+            "name": "大化瑶族自治县"
+        },
+        {
+            "city_id": "229",
+            "id": "1963",
+            "name": "宜州区"
+        },
+        {
+            "city_id": "230",
+            "id": "1964",
+            "name": "兴宾区"
+        },
+        {
+            "city_id": "230",
+            "id": "1965",
+            "name": "忻城县"
+        },
+        {
+            "city_id": "230",
+            "id": "1966",
+            "name": "象州县"
+        },
+        {
+            "city_id": "230",
+            "id": "1967",
+            "name": "武宣县"
+        },
+        {
+            "city_id": "230",
+            "id": "1968",
+            "name": "金秀瑶族自治县"
+        },
+        {
+            "city_id": "230",
+            "id": "1969",
+            "name": "合山市"
+        },
+        {
+            "city_id": "231",
+            "id": "1970",
+            "name": "江洲区"
+        },
+        {
+            "city_id": "231",
+            "id": "1971",
+            "name": "扶绥县"
+        },
+        {
+            "city_id": "231",
+            "id": "1972",
+            "name": "宁明县"
+        },
+        {
+            "city_id": "231",
+            "id": "1973",
+            "name": "龙州县"
+        },
+        {
+            "city_id": "231",
+            "id": "1974",
+            "name": "大新县"
+        },
+        {
+            "city_id": "231",
+            "id": "1975",
+            "name": "天等县"
+        },
+        {
+            "city_id": "231",
+            "id": "1976",
+            "name": "凭祥市"
+        },
+        {
+            "city_id": "232",
+            "id": "1977",
+            "name": "秀英区"
+        },
+        {
+            "city_id": "232",
+            "id": "1978",
+            "name": "龙华区"
+        },
+        {
+            "city_id": "232",
+            "id": "1979",
+            "name": "琼山区"
+        },
+        {
+            "city_id": "232",
+            "id": "1980",
+            "name": "美兰区"
+        },
+        {
+            "city_id": "349",
+            "id": "1981",
+            "name": "五指山市"
+        },
+        {
+            "city_id": "349",
+            "id": "1982",
+            "name": "琼海市"
+        },
+        {
+            "city_id": "233",
+            "id": "1983",
+            "name": "儋州市"
+        },
+        {
+            "city_id": "349",
+            "id": "1984",
+            "name": "文昌市"
+        },
+        {
+            "city_id": "349",
+            "id": "1985",
+            "name": "万宁市"
+        },
+        {
+            "city_id": "349",
+            "id": "1986",
+            "name": "东方市"
+        },
+        {
+            "city_id": "349",
+            "id": "1987",
+            "name": "定安县"
+        },
+        {
+            "city_id": "349",
+            "id": "1988",
+            "name": "屯昌县"
+        },
+        {
+            "city_id": "349",
+            "id": "1989",
+            "name": "澄迈县"
+        },
+        {
+            "city_id": "349",
+            "id": "1990",
+            "name": "临高县"
+        },
+        {
+            "city_id": "349",
+            "id": "1991",
+            "name": "白沙黎族自治县"
+        },
+        {
+            "city_id": "349",
+            "id": "1992",
+            "name": "昌江黎族自治县"
+        },
+        {
+            "city_id": "349",
+            "id": "1993",
+            "name": "乐东黎族自治县"
+        },
+        {
+            "city_id": "349",
+            "id": "1994",
+            "name": "陵水黎族自治县"
+        },
+        {
+            "city_id": "349",
+            "id": "1995",
+            "name": "保亭黎族苗族自治县"
+        },
+        {
+            "city_id": "349",
+            "id": "1996",
+            "name": "琼中黎族苗族自治县"
+        },
+        {
+            "city_id": "233",
+            "id": "1997",
+            "name": "西沙群岛"
+        },
+        {
+            "city_id": "233",
+            "id": "1998",
+            "name": "南沙群岛"
+        },
+        {
+            "city_id": "233",
+            "id": "1999",
+            "name": "中沙群岛的岛礁及其海域"
+        },
+        {
+            "city_id": "234",
+            "id": "2000",
+            "name": "万州区"
+        },
+        {
+            "city_id": "234",
+            "id": "2001",
+            "name": "涪陵区"
+        },
+        {
+            "city_id": "234",
+            "id": "2002",
+            "name": "渝中区"
+        },
+        {
+            "city_id": "234",
+            "id": "2003",
+            "name": "大渡口区"
+        },
+        {
+            "city_id": "234",
+            "id": "2004",
+            "name": "江北区"
+        },
+        {
+            "city_id": "234",
+            "id": "2005",
+            "name": "沙坪坝区"
+        },
+        {
+            "city_id": "234",
+            "id": "2006",
+            "name": "九龙坡区"
+        },
+        {
+            "city_id": "234",
+            "id": "2007",
+            "name": "南岸区"
+        },
+        {
+            "city_id": "234",
+            "id": "2008",
+            "name": "北碚区"
+        },
+        {
+            "city_id": "234",
+            "id": "2009",
+            "name": "万盛区"
+        },
+        {
+            "city_id": "234",
+            "id": "2010",
+            "name": "双桥区"
+        },
+        {
+            "city_id": "234",
+            "id": "2011",
+            "name": "渝北区"
+        },
+        {
+            "city_id": "234",
+            "id": "2012",
+            "name": "巴南区"
+        },
+        {
+            "city_id": "234",
+            "id": "2013",
+            "name": "黔江区"
+        },
+        {
+            "city_id": "234",
+            "id": "2014",
+            "name": "长寿区"
+        },
+        {
+            "city_id": "234",
+            "id": "2015",
+            "name": "綦江区"
+        },
+        {
+            "city_id": "234",
+            "id": "2016",
+            "name": "潼南区"
+        },
+        {
+            "city_id": "234",
+            "id": "2017",
+            "name": "铜梁区"
+        },
+        {
+            "city_id": "234",
+            "id": "2018",
+            "name": "大足区"
+        },
+        {
+            "city_id": "234",
+            "id": "2019",
+            "name": "荣昌区"
+        },
+        {
+            "city_id": "234",
+            "id": "2020",
+            "name": "璧山区"
+        },
+        {
+            "city_id": "234",
+            "id": "2021",
+            "name": "梁平区"
+        },
+        {
+            "city_id": "348",
+            "id": "2022",
+            "name": "城口县"
+        },
+        {
+            "city_id": "348",
+            "id": "2023",
+            "name": "丰都县"
+        },
+        {
+            "city_id": "348",
+            "id": "2024",
+            "name": "垫江县"
+        },
+        {
+            "city_id": "234",
+            "id": "2025",
+            "name": "武隆区"
+        },
+        {
+            "city_id": "348",
+            "id": "2026",
+            "name": "忠县"
+        },
+        {
+            "city_id": "234",
+            "id": "2027",
+            "name": "开县"
+        },
+        {
+            "city_id": "348",
+            "id": "2028",
+            "name": "云阳县"
+        },
+        {
+            "city_id": "348",
+            "id": "2029",
+            "name": "奉节县"
+        },
+        {
+            "city_id": "348",
+            "id": "2030",
+            "name": "巫山县"
+        },
+        {
+            "city_id": "348",
+            "id": "2031",
+            "name": "巫溪县"
+        },
+        {
+            "city_id": "348",
+            "id": "2032",
+            "name": "石柱土家族自治县"
+        },
+        {
+            "city_id": "348",
+            "id": "2033",
+            "name": "秀山土家族苗族自治县"
+        },
+        {
+            "city_id": "348",
+            "id": "2034",
+            "name": "酉阳土家族苗族自治县"
+        },
+        {
+            "city_id": "348",
+            "id": "2035",
+            "name": "彭水苗族土家族自治县"
+        },
+        {
+            "city_id": "234",
+            "id": "2036",
+            "name": "江津区"
+        },
+        {
+            "city_id": "234",
+            "id": "2037",
+            "name": "合川区"
+        },
+        {
+            "city_id": "234",
+            "id": "2038",
+            "name": "永川区"
+        },
+        {
+            "city_id": "234",
+            "id": "2039",
+            "name": "南川区"
+        },
+        {
+            "city_id": "235",
+            "id": "2040",
+            "name": "锦江区"
+        },
+        {
+            "city_id": "235",
+            "id": "2041",
+            "name": "青羊区"
+        },
+        {
+            "city_id": "235",
+            "id": "2042",
+            "name": "金牛区"
+        },
+        {
+            "city_id": "235",
+            "id": "2043",
+            "name": "武侯区"
+        },
+        {
+            "city_id": "235",
+            "id": "2044",
+            "name": "成华区"
+        },
+        {
+            "city_id": "235",
+            "id": "2045",
+            "name": "龙泉驿区"
+        },
+        {
+            "city_id": "235",
+            "id": "2046",
+            "name": "青白江区"
+        },
+        {
+            "city_id": "235",
+            "id": "2047",
+            "name": "新都区"
+        },
+        {
+            "city_id": "235",
+            "id": "2048",
+            "name": "温江区"
+        },
+        {
+            "city_id": "235",
+            "id": "2049",
+            "name": "金堂县"
+        },
+        {
+            "city_id": "235",
+            "id": "2050",
+            "name": "双流区"
+        },
+        {
+            "city_id": "235",
+            "id": "2051",
+            "name": "郫县"
+        },
+        {
+            "city_id": "235",
+            "id": "2052",
+            "name": "大邑县"
+        },
+        {
+            "city_id": "235",
+            "id": "2053",
+            "name": "蒲江县"
+        },
+        {
+            "city_id": "235",
+            "id": "2054",
+            "name": "新津县"
+        },
+        {
+            "city_id": "235",
+            "id": "2055",
+            "name": "都江堰市"
+        },
+        {
+            "city_id": "235",
+            "id": "2056",
+            "name": "彭州市"
+        },
+        {
+            "city_id": "235",
+            "id": "2057",
+            "name": "邛崃市"
+        },
+        {
+            "city_id": "235",
+            "id": "2058",
+            "name": "崇州市"
+        },
+        {
+            "city_id": "236",
+            "id": "2059",
+            "name": "自流井区"
+        },
+        {
+            "city_id": "236",
+            "id": "2060",
+            "name": "贡井区"
+        },
+        {
+            "city_id": "236",
+            "id": "2061",
+            "name": "大安区"
+        },
+        {
+            "city_id": "236",
+            "id": "2062",
+            "name": "沿滩区"
+        },
+        {
+            "city_id": "236",
+            "id": "2063",
+            "name": "荣县"
+        },
+        {
+            "city_id": "236",
+            "id": "2064",
+            "name": "富顺县"
+        },
+        {
+            "city_id": "237",
+            "id": "2065",
+            "name": "东区"
+        },
+        {
+            "city_id": "237",
+            "id": "2066",
+            "name": "西区"
+        },
+        {
+            "city_id": "237",
+            "id": "2067",
+            "name": "仁和区"
+        },
+        {
+            "city_id": "237",
+            "id": "2068",
+            "name": "米易县"
+        },
+        {
+            "city_id": "237",
+            "id": "2069",
+            "name": "盐边县"
+        },
+        {
+            "city_id": "238",
+            "id": "2070",
+            "name": "江阳区"
+        },
+        {
+            "city_id": "238",
+            "id": "2071",
+            "name": "纳溪区"
+        },
+        {
+            "city_id": "238",
+            "id": "2072",
+            "name": "龙马潭区"
+        },
+        {
+            "city_id": "238",
+            "id": "2073",
+            "name": "泸县"
+        },
+        {
+            "city_id": "238",
+            "id": "2074",
+            "name": "合江县"
+        },
+        {
+            "city_id": "238",
+            "id": "2075",
+            "name": "叙永县"
+        },
+        {
+            "city_id": "238",
+            "id": "2076",
+            "name": "古蔺县"
+        },
+        {
+            "city_id": "239",
+            "id": "2077",
+            "name": "旌阳区"
+        },
+        {
+            "city_id": "239",
+            "id": "2078",
+            "name": "中江县"
+        },
+        {
+            "city_id": "239",
+            "id": "2079",
+            "name": "罗江区"
+        },
+        {
+            "city_id": "239",
+            "id": "2080",
+            "name": "广汉市"
+        },
+        {
+            "city_id": "239",
+            "id": "2081",
+            "name": "什邡市"
+        },
+        {
+            "city_id": "239",
+            "id": "2082",
+            "name": "绵竹市"
+        },
+        {
+            "city_id": "240",
+            "id": "2083",
+            "name": "涪城区"
+        },
+        {
+            "city_id": "240",
+            "id": "2084",
+            "name": "游仙区"
+        },
+        {
+            "city_id": "240",
+            "id": "2085",
+            "name": "三台县"
+        },
+        {
+            "city_id": "240",
+            "id": "2086",
+            "name": "盐亭县"
+        },
+        {
+            "city_id": "240",
+            "id": "2087",
+            "name": "安县"
+        },
+        {
+            "city_id": "240",
+            "id": "2088",
+            "name": "梓潼县"
+        },
+        {
+            "city_id": "240",
+            "id": "2089",
+            "name": "北川羌族自治县"
+        },
+        {
+            "city_id": "240",
+            "id": "2090",
+            "name": "平武县"
+        },
+        {
+            "city_id": "240",
+            "id": "2091",
+            "name": "江油市"
+        },
+        {
+            "city_id": "241",
+            "id": "2092",
+            "name": "市中区"
+        },
+        {
+            "city_id": "241",
+            "id": "2093",
+            "name": "元坝区"
+        },
+        {
+            "city_id": "241",
+            "id": "2094",
+            "name": "朝天区"
+        },
+        {
+            "city_id": "241",
+            "id": "2095",
+            "name": "旺苍县"
+        },
+        {
+            "city_id": "241",
+            "id": "2096",
+            "name": "青川县"
+        },
+        {
+            "city_id": "241",
+            "id": "2097",
+            "name": "剑阁县"
+        },
+        {
+            "city_id": "241",
+            "id": "2098",
+            "name": "苍溪县"
+        },
+        {
+            "city_id": "242",
+            "id": "2099",
+            "name": "船山区"
+        },
+        {
+            "city_id": "242",
+            "id": "2100",
+            "name": "安居区"
+        },
+        {
+            "city_id": "242",
+            "id": "2101",
+            "name": "蓬溪县"
+        },
+        {
+            "city_id": "242",
+            "id": "2102",
+            "name": "射洪县"
+        },
+        {
+            "city_id": "242",
+            "id": "2103",
+            "name": "大英县"
+        },
+        {
+            "city_id": "243",
+            "id": "2104",
+            "name": "市中区"
+        },
+        {
+            "city_id": "243",
+            "id": "2105",
+            "name": "东兴区"
+        },
+        {
+            "city_id": "243",
+            "id": "2106",
+            "name": "威远县"
+        },
+        {
+            "city_id": "243",
+            "id": "2107",
+            "name": "资中县"
+        },
+        {
+            "city_id": "243",
+            "id": "2108",
+            "name": "隆昌市"
+        },
+        {
+            "city_id": "244",
+            "id": "2109",
+            "name": "市中区"
+        },
+        {
+            "city_id": "244",
+            "id": "2110",
+            "name": "沙湾区"
+        },
+        {
+            "city_id": "244",
+            "id": "2111",
+            "name": "五通桥区"
+        },
+        {
+            "city_id": "244",
+            "id": "2112",
+            "name": "金口河区"
+        },
+        {
+            "city_id": "244",
+            "id": "2113",
+            "name": "犍为县"
+        },
+        {
+            "city_id": "244",
+            "id": "2114",
+            "name": "井研县"
+        },
+        {
+            "city_id": "244",
+            "id": "2115",
+            "name": "夹江县"
+        },
+        {
+            "city_id": "244",
+            "id": "2116",
+            "name": "沐川县"
+        },
+        {
+            "city_id": "244",
+            "id": "2117",
+            "name": "峨边彝族自治县"
+        },
+        {
+            "city_id": "244",
+            "id": "2118",
+            "name": "马边彝族自治县"
+        },
+        {
+            "city_id": "244",
+            "id": "2119",
+            "name": "峨眉山市"
+        },
+        {
+            "city_id": "245",
+            "id": "2120",
+            "name": "顺庆区"
+        },
+        {
+            "city_id": "245",
+            "id": "2121",
+            "name": "高坪区"
+        },
+        {
+            "city_id": "245",
+            "id": "2122",
+            "name": "嘉陵区"
+        },
+        {
+            "city_id": "245",
+            "id": "2123",
+            "name": "南部县"
+        },
+        {
+            "city_id": "245",
+            "id": "2124",
+            "name": "营山县"
+        },
+        {
+            "city_id": "245",
+            "id": "2125",
+            "name": "蓬安县"
+        },
+        {
+            "city_id": "245",
+            "id": "2126",
+            "name": "仪陇县"
+        },
+        {
+            "city_id": "245",
+            "id": "2127",
+            "name": "西充县"
+        },
+        {
+            "city_id": "245",
+            "id": "2128",
+            "name": "阆中市"
+        },
+        {
+            "city_id": "246",
+            "id": "2129",
+            "name": "东坡区"
+        },
+        {
+            "city_id": "246",
+            "id": "2130",
+            "name": "仁寿县"
+        },
+        {
+            "city_id": "246",
+            "id": "2131",
+            "name": "彭山区"
+        },
+        {
+            "city_id": "246",
+            "id": "2132",
+            "name": "洪雅县"
+        },
+        {
+            "city_id": "246",
+            "id": "2133",
+            "name": "丹棱县"
+        },
+        {
+            "city_id": "246",
+            "id": "2134",
+            "name": "青神县"
+        },
+        {
+            "city_id": "247",
+            "id": "2135",
+            "name": "翠屏区"
+        },
+        {
+            "city_id": "247",
+            "id": "2136",
+            "name": "宜宾县"
+        },
+        {
+            "city_id": "247",
+            "id": "2137",
+            "name": "南溪区"
+        },
+        {
+            "city_id": "247",
+            "id": "2138",
+            "name": "江安县"
+        },
+        {
+            "city_id": "247",
+            "id": "2139",
+            "name": "长宁县"
+        },
+        {
+            "city_id": "247",
+            "id": "2140",
+            "name": "高县"
+        },
+        {
+            "city_id": "247",
+            "id": "2141",
+            "name": "珙县"
+        },
+        {
+            "city_id": "247",
+            "id": "2142",
+            "name": "筠连县"
+        },
+        {
+            "city_id": "247",
+            "id": "2143",
+            "name": "兴文县"
+        },
+        {
+            "city_id": "247",
+            "id": "2144",
+            "name": "屏山县"
+        },
+        {
+            "city_id": "248",
+            "id": "2145",
+            "name": "广安区"
+        },
+        {
+            "city_id": "248",
+            "id": "2146",
+            "name": "岳池县"
+        },
+        {
+            "city_id": "248",
+            "id": "2147",
+            "name": "武胜县"
+        },
+        {
+            "city_id": "248",
+            "id": "2148",
+            "name": "邻水县"
+        },
+        {
+            "city_id": "248",
+            "id": "2149",
+            "name": "华蓥市"
+        },
+        {
+            "city_id": "249",
+            "id": "2150",
+            "name": "通川区"
+        },
+        {
+            "city_id": "249",
+            "id": "2151",
+            "name": "达县"
+        },
+        {
+            "city_id": "249",
+            "id": "2152",
+            "name": "宣汉县"
+        },
+        {
+            "city_id": "249",
+            "id": "2153",
+            "name": "开江县"
+        },
+        {
+            "city_id": "249",
+            "id": "2154",
+            "name": "大竹县"
+        },
+        {
+            "city_id": "249",
+            "id": "2155",
+            "name": "渠县"
+        },
+        {
+            "city_id": "249",
+            "id": "2156",
+            "name": "万源市"
+        },
+        {
+            "city_id": "250",
+            "id": "2157",
+            "name": "雨城区"
+        },
+        {
+            "city_id": "250",
+            "id": "2158",
+            "name": "名山区"
+        },
+        {
+            "city_id": "250",
+            "id": "2159",
+            "name": "荥经县"
+        },
+        {
+            "city_id": "250",
+            "id": "2160",
+            "name": "汉源县"
+        },
+        {
+            "city_id": "250",
+            "id": "2161",
+            "name": "石棉县"
+        },
+        {
+            "city_id": "250",
+            "id": "2162",
+            "name": "天全县"
+        },
+        {
+            "city_id": "250",
+            "id": "2163",
+            "name": "芦山县"
+        },
+        {
+            "city_id": "250",
+            "id": "2164",
+            "name": "宝兴县"
+        },
+        {
+            "city_id": "251",
+            "id": "2165",
+            "name": "巴州区"
+        },
+        {
+            "city_id": "251",
+            "id": "2166",
+            "name": "通江县"
+        },
+        {
+            "city_id": "251",
+            "id": "2167",
+            "name": "南江县"
+        },
+        {
+            "city_id": "251",
+            "id": "2168",
+            "name": "平昌县"
+        },
+        {
+            "city_id": "252",
+            "id": "2169",
+            "name": "雁江区"
+        },
+        {
+            "city_id": "252",
+            "id": "2170",
+            "name": "安岳县"
+        },
+        {
+            "city_id": "252",
+            "id": "2171",
+            "name": "乐至县"
+        },
+        {
+            "city_id": "252",
+            "id": "2172",
+            "name": "简阳市"
+        },
+        {
+            "city_id": "253",
+            "id": "2173",
+            "name": "汶川县"
+        },
+        {
+            "city_id": "253",
+            "id": "2174",
+            "name": "理县"
+        },
+        {
+            "city_id": "253",
+            "id": "2175",
+            "name": "茂县"
+        },
+        {
+            "city_id": "253",
+            "id": "2176",
+            "name": "松潘县"
+        },
+        {
+            "city_id": "253",
+            "id": "2177",
+            "name": "九寨沟县"
+        },
+        {
+            "city_id": "253",
+            "id": "2178",
+            "name": "金川县"
+        },
+        {
+            "city_id": "253",
+            "id": "2179",
+            "name": "小金县"
+        },
+        {
+            "city_id": "253",
+            "id": "2180",
+            "name": "黑水县"
+        },
+        {
+            "city_id": "253",
+            "id": "2181",
+            "name": "马尔康市"
+        },
+        {
+            "city_id": "253",
+            "id": "2182",
+            "name": "壤塘县"
+        },
+        {
+            "city_id": "253",
+            "id": "2183",
+            "name": "阿坝县"
+        },
+        {
+            "city_id": "253",
+            "id": "2184",
+            "name": "若尔盖县"
+        },
+        {
+            "city_id": "253",
+            "id": "2185",
+            "name": "红原县"
+        },
+        {
+            "city_id": "254",
+            "id": "2186",
+            "name": "康定市"
+        },
+        {
+            "city_id": "254",
+            "id": "2187",
+            "name": "泸定县"
+        },
+        {
+            "city_id": "254",
+            "id": "2188",
+            "name": "丹巴县"
+        },
+        {
+            "city_id": "254",
+            "id": "2189",
+            "name": "九龙县"
+        },
+        {
+            "city_id": "254",
+            "id": "2190",
+            "name": "雅江县"
+        },
+        {
+            "city_id": "254",
+            "id": "2191",
+            "name": "道孚县"
+        },
+        {
+            "city_id": "254",
+            "id": "2192",
+            "name": "炉霍县"
+        },
+        {
+            "city_id": "254",
+            "id": "2193",
+            "name": "甘孜县"
+        },
+        {
+            "city_id": "254",
+            "id": "2194",
+            "name": "新龙县"
+        },
+        {
+            "city_id": "254",
+            "id": "2195",
+            "name": "德格县"
+        },
+        {
+            "city_id": "254",
+            "id": "2196",
+            "name": "白玉县"
+        },
+        {
+            "city_id": "254",
+            "id": "2197",
+            "name": "石渠县"
+        },
+        {
+            "city_id": "254",
+            "id": "2198",
+            "name": "色达县"
+        },
+        {
+            "city_id": "254",
+            "id": "2199",
+            "name": "理塘县"
+        },
+        {
+            "city_id": "254",
+            "id": "2200",
+            "name": "巴塘县"
+        },
+        {
+            "city_id": "254",
+            "id": "2201",
+            "name": "乡城县"
+        },
+        {
+            "city_id": "254",
+            "id": "2202",
+            "name": "稻城县"
+        },
+        {
+            "city_id": "254",
+            "id": "2203",
+            "name": "得荣县"
+        },
+        {
+            "city_id": "255",
+            "id": "2204",
+            "name": "西昌市"
+        },
+        {
+            "city_id": "255",
+            "id": "2205",
+            "name": "木里藏族自治县"
+        },
+        {
+            "city_id": "255",
+            "id": "2206",
+            "name": "盐源县"
+        },
+        {
+            "city_id": "255",
+            "id": "2207",
+            "name": "德昌县"
+        },
+        {
+            "city_id": "255",
+            "id": "2208",
+            "name": "会理县"
+        },
+        {
+            "city_id": "255",
+            "id": "2209",
+            "name": "会东县"
+        },
+        {
+            "city_id": "255",
+            "id": "2210",
+            "name": "宁南县"
+        },
+        {
+            "city_id": "255",
+            "id": "2211",
+            "name": "普格县"
+        },
+        {
+            "city_id": "255",
+            "id": "2212",
+            "name": "布拖县"
+        },
+        {
+            "city_id": "255",
+            "id": "2213",
+            "name": "金阳县"
+        },
+        {
+            "city_id": "255",
+            "id": "2214",
+            "name": "昭觉县"
+        },
+        {
+            "city_id": "255",
+            "id": "2215",
+            "name": "喜德县"
+        },
+        {
+            "city_id": "255",
+            "id": "2216",
+            "name": "冕宁县"
+        },
+        {
+            "city_id": "255",
+            "id": "2217",
+            "name": "越西县"
+        },
+        {
+            "city_id": "255",
+            "id": "2218",
+            "name": "甘洛县"
+        },
+        {
+            "city_id": "255",
+            "id": "2219",
+            "name": "美姑县"
+        },
+        {
+            "city_id": "255",
+            "id": "2220",
+            "name": "雷波县"
+        },
+        {
+            "city_id": "256",
+            "id": "2221",
+            "name": "南明区"
+        },
+        {
+            "city_id": "256",
+            "id": "2222",
+            "name": "云岩区"
+        },
+        {
+            "city_id": "256",
+            "id": "2223",
+            "name": "花溪区"
+        },
+        {
+            "city_id": "256",
+            "id": "2224",
+            "name": "乌当区"
+        },
+        {
+            "city_id": "256",
+            "id": "2225",
+            "name": "白云区"
+        },
+        {
+            "city_id": "256",
+            "id": "2226",
+            "name": "小河区"
+        },
+        {
+            "city_id": "256",
+            "id": "2227",
+            "name": "开阳县"
+        },
+        {
+            "city_id": "256",
+            "id": "2228",
+            "name": "息烽县"
+        },
+        {
+            "city_id": "256",
+            "id": "2229",
+            "name": "修文县"
+        },
+        {
+            "city_id": "256",
+            "id": "2230",
+            "name": "清镇市"
+        },
+        {
+            "city_id": "257",
+            "id": "2231",
+            "name": "钟山区"
+        },
+        {
+            "city_id": "257",
+            "id": "2232",
+            "name": "六枝特区"
+        },
+        {
+            "city_id": "257",
+            "id": "2233",
+            "name": "水城县"
+        },
+        {
+            "city_id": "257",
+            "id": "2234",
+            "name": "盘县"
+        },
+        {
+            "city_id": "258",
+            "id": "2235",
+            "name": "红花岗区"
+        },
+        {
+            "city_id": "258",
+            "id": "2236",
+            "name": "汇川区"
+        },
+        {
+            "city_id": "258",
+            "id": "2237",
+            "name": "遵义县"
+        },
+        {
+            "city_id": "258",
+            "id": "2238",
+            "name": "桐梓县"
+        },
+        {
+            "city_id": "258",
+            "id": "2239",
+            "name": "绥阳县"
+        },
+        {
+            "city_id": "258",
+            "id": "2240",
+            "name": "正安县"
+        },
+        {
+            "city_id": "258",
+            "id": "2241",
+            "name": "道真仡佬族苗族自治县"
+        },
+        {
+            "city_id": "258",
+            "id": "2242",
+            "name": "务川仡佬族苗族自治县"
+        },
+        {
+            "city_id": "258",
+            "id": "2243",
+            "name": "凤冈县"
+        },
+        {
+            "city_id": "258",
+            "id": "2244",
+            "name": "湄潭县"
+        },
+        {
+            "city_id": "258",
+            "id": "2245",
+            "name": "余庆县"
+        },
+        {
+            "city_id": "258",
+            "id": "2246",
+            "name": "习水县"
+        },
+        {
+            "city_id": "258",
+            "id": "2247",
+            "name": "赤水市"
+        },
+        {
+            "city_id": "258",
+            "id": "2248",
+            "name": "仁怀市"
+        },
+        {
+            "city_id": "259",
+            "id": "2249",
+            "name": "西秀区"
+        },
+        {
+            "city_id": "259",
+            "id": "2250",
+            "name": "平坝区"
+        },
+        {
+            "city_id": "259",
+            "id": "2251",
+            "name": "普定县"
+        },
+        {
+            "city_id": "259",
+            "id": "2252",
+            "name": "镇宁布依族苗族自治县"
+        },
+        {
+            "city_id": "259",
+            "id": "2253",
+            "name": "关岭布依族苗族自治县"
+        },
+        {
+            "city_id": "259",
+            "id": "2254",
+            "name": "紫云苗族布依族自治县"
+        },
+        {
+            "city_id": "260",
+            "id": "2255",
+            "name": "铜仁市"
+        },
+        {
+            "city_id": "260",
+            "id": "2256",
+            "name": "江口县"
+        },
+        {
+            "city_id": "260",
+            "id": "2257",
+            "name": "玉屏侗族自治县"
+        },
+        {
+            "city_id": "260",
+            "id": "2258",
+            "name": "石阡县"
+        },
+        {
+            "city_id": "260",
+            "id": "2259",
+            "name": "思南县"
+        },
+        {
+            "city_id": "260",
+            "id": "2260",
+            "name": "印江土家族苗族自治县"
+        },
+        {
+            "city_id": "260",
+            "id": "2261",
+            "name": "德江县"
+        },
+        {
+            "city_id": "260",
+            "id": "2262",
+            "name": "沿河土家族自治县"
+        },
+        {
+            "city_id": "260",
+            "id": "2263",
+            "name": "松桃苗族自治县"
+        },
+        {
+            "city_id": "260",
+            "id": "2264",
+            "name": "万山区"
+        },
+        {
+            "city_id": "261",
+            "id": "2265",
+            "name": "兴义市"
+        },
+        {
+            "city_id": "261",
+            "id": "2266",
+            "name": "兴仁市"
+        },
+        {
+            "city_id": "261",
+            "id": "2267",
+            "name": "普安县"
+        },
+        {
+            "city_id": "261",
+            "id": "2268",
+            "name": "晴隆县"
+        },
+        {
+            "city_id": "261",
+            "id": "2269",
+            "name": "贞丰县"
+        },
+        {
+            "city_id": "261",
+            "id": "2270",
+            "name": "望谟县"
+        },
+        {
+            "city_id": "261",
+            "id": "2271",
+            "name": "册亨县"
+        },
+        {
+            "city_id": "261",
+            "id": "2272",
+            "name": "安龙县"
+        },
+        {
+            "city_id": "262",
+            "id": "2273",
+            "name": "毕节市"
+        },
+        {
+            "city_id": "262",
+            "id": "2274",
+            "name": "大方县"
+        },
+        {
+            "city_id": "262",
+            "id": "2275",
+            "name": "黔西县"
+        },
+        {
+            "city_id": "262",
+            "id": "2276",
+            "name": "金沙县"
+        },
+        {
+            "city_id": "262",
+            "id": "2277",
+            "name": "织金县"
+        },
+        {
+            "city_id": "262",
+            "id": "2278",
+            "name": "纳雍县"
+        },
+        {
+            "city_id": "262",
+            "id": "2279",
+            "name": "威宁彝族回族苗族自治县"
+        },
+        {
+            "city_id": "262",
+            "id": "2280",
+            "name": "赫章县"
+        },
+        {
+            "city_id": "263",
+            "id": "2281",
+            "name": "凯里市"
+        },
+        {
+            "city_id": "263",
+            "id": "2282",
+            "name": "黄平县"
+        },
+        {
+            "city_id": "263",
+            "id": "2283",
+            "name": "施秉县"
+        },
+        {
+            "city_id": "263",
+            "id": "2284",
+            "name": "三穗县"
+        },
+        {
+            "city_id": "263",
+            "id": "2285",
+            "name": "镇远县"
+        },
+        {
+            "city_id": "263",
+            "id": "2286",
+            "name": "岑巩县"
+        },
+        {
+            "city_id": "263",
+            "id": "2287",
+            "name": "天柱县"
+        },
+        {
+            "city_id": "263",
+            "id": "2288",
+            "name": "锦屏县"
+        },
+        {
+            "city_id": "263",
+            "id": "2289",
+            "name": "剑河县"
+        },
+        {
+            "city_id": "263",
+            "id": "2290",
+            "name": "台江县"
+        },
+        {
+            "city_id": "263",
+            "id": "2291",
+            "name": "黎平县"
+        },
+        {
+            "city_id": "263",
+            "id": "2292",
+            "name": "榕江县"
+        },
+        {
+            "city_id": "263",
+            "id": "2293",
+            "name": "从江县"
+        },
+        {
+            "city_id": "263",
+            "id": "2294",
+            "name": "雷山县"
+        },
+        {
+            "city_id": "263",
+            "id": "2295",
+            "name": "麻江县"
+        },
+        {
+            "city_id": "263",
+            "id": "2296",
+            "name": "丹寨县"
+        },
+        {
+            "city_id": "264",
+            "id": "2297",
+            "name": "都匀市"
+        },
+        {
+            "city_id": "264",
+            "id": "2298",
+            "name": "福泉市"
+        },
+        {
+            "city_id": "264",
+            "id": "2299",
+            "name": "荔波县"
+        },
+        {
+            "city_id": "264",
+            "id": "2300",
+            "name": "贵定县"
+        },
+        {
+            "city_id": "264",
+            "id": "2301",
+            "name": "瓮安县"
+        },
+        {
+            "city_id": "264",
+            "id": "2302",
+            "name": "独山县"
+        },
+        {
+            "city_id": "264",
+            "id": "2303",
+            "name": "平塘县"
+        },
+        {
+            "city_id": "264",
+            "id": "2304",
+            "name": "罗甸县"
+        },
+        {
+            "city_id": "264",
+            "id": "2305",
+            "name": "长顺县"
+        },
+        {
+            "city_id": "264",
+            "id": "2306",
+            "name": "龙里县"
+        },
+        {
+            "city_id": "264",
+            "id": "2307",
+            "name": "惠水县"
+        },
+        {
+            "city_id": "264",
+            "id": "2308",
+            "name": "三都水族自治县"
+        },
+        {
+            "city_id": "265",
+            "id": "2309",
+            "name": "五华区"
+        },
+        {
+            "city_id": "265",
+            "id": "2310",
+            "name": "盘龙区"
+        },
+        {
+            "city_id": "265",
+            "id": "2311",
+            "name": "官渡区"
+        },
+        {
+            "city_id": "265",
+            "id": "2312",
+            "name": "西山区"
+        },
+        {
+            "city_id": "265",
+            "id": "2313",
+            "name": "东川区"
+        },
+        {
+            "city_id": "265",
+            "id": "2314",
+            "name": "呈贡区"
+        },
+        {
+            "city_id": "265",
+            "id": "2315",
+            "name": "晋宁区"
+        },
+        {
+            "city_id": "265",
+            "id": "2316",
+            "name": "富民县"
+        },
+        {
+            "city_id": "265",
+            "id": "2317",
+            "name": "宜良县"
+        },
+        {
+            "city_id": "265",
+            "id": "2318",
+            "name": "石林彝族自治县"
+        },
+        {
+            "city_id": "265",
+            "id": "2319",
+            "name": "嵩明县"
+        },
+        {
+            "city_id": "265",
+            "id": "2320",
+            "name": "禄劝彝族苗族自治县"
+        },
+        {
+            "city_id": "265",
+            "id": "2321",
+            "name": "寻甸回族彝族自治县"
+        },
+        {
+            "city_id": "265",
+            "id": "2322",
+            "name": "安宁市"
+        },
+        {
+            "city_id": "266",
+            "id": "2323",
+            "name": "麒麟区"
+        },
+        {
+            "city_id": "266",
+            "id": "2324",
+            "name": "马龙区"
+        },
+        {
+            "city_id": "266",
+            "id": "2325",
+            "name": "陆良县"
+        },
+        {
+            "city_id": "266",
+            "id": "2326",
+            "name": "师宗县"
+        },
+        {
+            "city_id": "266",
+            "id": "2327",
+            "name": "罗平县"
+        },
+        {
+            "city_id": "266",
+            "id": "2328",
+            "name": "富源县"
+        },
+        {
+            "city_id": "266",
+            "id": "2329",
+            "name": "会泽县"
+        },
+        {
+            "city_id": "266",
+            "id": "2330",
+            "name": "沾益区"
+        },
+        {
+            "city_id": "266",
+            "id": "2331",
+            "name": "宣威市"
+        },
+        {
+            "city_id": "267",
+            "id": "2332",
+            "name": "红塔区"
+        },
+        {
+            "city_id": "267",
+            "id": "2333",
+            "name": "江川区"
+        },
+        {
+            "city_id": "267",
+            "id": "2334",
+            "name": "澄江县"
+        },
+        {
+            "city_id": "267",
+            "id": "2335",
+            "name": "通海县"
+        },
+        {
+            "city_id": "267",
+            "id": "2336",
+            "name": "华宁县"
+        },
+        {
+            "city_id": "267",
+            "id": "2337",
+            "name": "易门县"
+        },
+        {
+            "city_id": "267",
+            "id": "2338",
+            "name": "峨山彝族自治县"
+        },
+        {
+            "city_id": "267",
+            "id": "2339",
+            "name": "新平彝族傣族自治县"
+        },
+        {
+            "city_id": "267",
+            "id": "2340",
+            "name": "元江哈尼族彝族傣族自治县"
+        },
+        {
+            "city_id": "268",
+            "id": "2341",
+            "name": "隆阳区"
+        },
+        {
+            "city_id": "268",
+            "id": "2342",
+            "name": "施甸县"
+        },
+        {
+            "city_id": "268",
+            "id": "2343",
+            "name": "腾冲市"
+        },
+        {
+            "city_id": "268",
+            "id": "2344",
+            "name": "龙陵县"
+        },
+        {
+            "city_id": "268",
+            "id": "2345",
+            "name": "昌宁县"
+        },
+        {
+            "city_id": "269",
+            "id": "2346",
+            "name": "昭阳区"
+        },
+        {
+            "city_id": "269",
+            "id": "2347",
+            "name": "鲁甸县"
+        },
+        {
+            "city_id": "269",
+            "id": "2348",
+            "name": "巧家县"
+        },
+        {
+            "city_id": "269",
+            "id": "2349",
+            "name": "盐津县"
+        },
+        {
+            "city_id": "269",
+            "id": "2350",
+            "name": "大关县"
+        },
+        {
+            "city_id": "269",
+            "id": "2351",
+            "name": "永善县"
+        },
+        {
+            "city_id": "269",
+            "id": "2352",
+            "name": "绥江县"
+        },
+        {
+            "city_id": "269",
+            "id": "2353",
+            "name": "镇雄县"
+        },
+        {
+            "city_id": "269",
+            "id": "2354",
+            "name": "彝良县"
+        },
+        {
+            "city_id": "269",
+            "id": "2355",
+            "name": "威信县"
+        },
+        {
+            "city_id": "269",
+            "id": "2356",
+            "name": "水富市"
+        },
+        {
+            "city_id": "270",
+            "id": "2357",
+            "name": "古城区"
+        },
+        {
+            "city_id": "270",
+            "id": "2358",
+            "name": "玉龙纳西族自治县"
+        },
+        {
+            "city_id": "270",
+            "id": "2359",
+            "name": "永胜县"
+        },
+        {
+            "city_id": "270",
+            "id": "2360",
+            "name": "华坪县"
+        },
+        {
+            "city_id": "270",
+            "id": "2361",
+            "name": "宁蒗彝族自治县"
+        },
+        {
+            "city_id": "271",
+            "id": "2362",
+            "name": "翠云区"
+        },
+        {
+            "city_id": "271",
+            "id": "2363",
+            "name": "普洱哈尼族彝族自治县"
+        },
+        {
+            "city_id": "271",
+            "id": "2364",
+            "name": "墨江哈尼族自治县"
+        },
+        {
+            "city_id": "271",
+            "id": "2365",
+            "name": "景东彝族自治县"
+        },
+        {
+            "city_id": "271",
+            "id": "2366",
+            "name": "景谷傣族彝族自治县"
+        },
+        {
+            "city_id": "271",
+            "id": "2367",
+            "name": "镇沅彝族哈尼族拉祜族自治县"
+        },
+        {
+            "city_id": "271",
+            "id": "2368",
+            "name": "江城哈尼族彝族自治县"
+        },
+        {
+            "city_id": "271",
+            "id": "2369",
+            "name": "孟连傣族拉祜族佤族自治县"
+        },
+        {
+            "city_id": "271",
+            "id": "2370",
+            "name": "澜沧拉祜族自治县"
+        },
+        {
+            "city_id": "271",
+            "id": "2371",
+            "name": "西盟佤族自治县"
+        },
+        {
+            "city_id": "272",
+            "id": "2372",
+            "name": "临翔区"
+        },
+        {
+            "city_id": "272",
+            "id": "2373",
+            "name": "凤庆县"
+        },
+        {
+            "city_id": "272",
+            "id": "2374",
+            "name": "云县"
+        },
+        {
+            "city_id": "272",
+            "id": "2375",
+            "name": "永德县"
+        },
+        {
+            "city_id": "272",
+            "id": "2376",
+            "name": "镇康县"
+        },
+        {
+            "city_id": "272",
+            "id": "2377",
+            "name": "双江拉祜族佤族布朗族傣族自治县"
+        },
+        {
+            "city_id": "272",
+            "id": "2378",
+            "name": "耿马傣族佤族自治县"
+        },
+        {
+            "city_id": "272",
+            "id": "2379",
+            "name": "沧源佤族自治县"
+        },
+        {
+            "city_id": "273",
+            "id": "2380",
+            "name": "楚雄市"
+        },
+        {
+            "city_id": "273",
+            "id": "2381",
+            "name": "双柏县"
+        },
+        {
+            "city_id": "273",
+            "id": "2382",
+            "name": "牟定县"
+        },
+        {
+            "city_id": "273",
+            "id": "2383",
+            "name": "南华县"
+        },
+        {
+            "city_id": "273",
+            "id": "2384",
+            "name": "姚安县"
+        },
+        {
+            "city_id": "273",
+            "id": "2385",
+            "name": "大姚县"
+        },
+        {
+            "city_id": "273",
+            "id": "2386",
+            "name": "永仁县"
+        },
+        {
+            "city_id": "273",
+            "id": "2387",
+            "name": "元谋县"
+        },
+        {
+            "city_id": "273",
+            "id": "2388",
+            "name": "武定县"
+        },
+        {
+            "city_id": "273",
+            "id": "2389",
+            "name": "禄丰县"
+        },
+        {
+            "city_id": "274",
+            "id": "2390",
+            "name": "个旧市"
+        },
+        {
+            "city_id": "274",
+            "id": "2391",
+            "name": "开远市"
+        },
+        {
+            "city_id": "274",
+            "id": "2392",
+            "name": "蒙自市"
+        },
+        {
+            "city_id": "274",
+            "id": "2393",
+            "name": "屏边苗族自治县"
+        },
+        {
+            "city_id": "274",
+            "id": "2394",
+            "name": "建水县"
+        },
+        {
+            "city_id": "274",
+            "id": "2395",
+            "name": "石屏县"
+        },
+        {
+            "city_id": "274",
+            "id": "2396",
+            "name": "弥勒市"
+        },
+        {
+            "city_id": "274",
+            "id": "2397",
+            "name": "泸西县"
+        },
+        {
+            "city_id": "274",
+            "id": "2398",
+            "name": "元阳县"
+        },
+        {
+            "city_id": "274",
+            "id": "2399",
+            "name": "红河县"
+        },
+        {
+            "city_id": "274",
+            "id": "2400",
+            "name": "金平苗族瑶族傣族自治县"
+        },
+        {
+            "city_id": "274",
+            "id": "2401",
+            "name": "绿春县"
+        },
+        {
+            "city_id": "274",
+            "id": "2402",
+            "name": "河口瑶族自治县"
+        },
+        {
+            "city_id": "275",
+            "id": "2403",
+            "name": "文山市"
+        },
+        {
+            "city_id": "275",
+            "id": "2404",
+            "name": "砚山县"
+        },
+        {
+            "city_id": "275",
+            "id": "2405",
+            "name": "西畴县"
+        },
+        {
+            "city_id": "275",
+            "id": "2406",
+            "name": "麻栗坡县"
+        },
+        {
+            "city_id": "275",
+            "id": "2407",
+            "name": "马关县"
+        },
+        {
+            "city_id": "275",
+            "id": "2408",
+            "name": "丘北县"
+        },
+        {
+            "city_id": "275",
+            "id": "2409",
+            "name": "广南县"
+        },
+        {
+            "city_id": "275",
+            "id": "2410",
+            "name": "富宁县"
+        },
+        {
+            "city_id": "276",
+            "id": "2411",
+            "name": "景洪市"
+        },
+        {
+            "city_id": "276",
+            "id": "2412",
+            "name": "勐海县"
+        },
+        {
+            "city_id": "276",
+            "id": "2413",
+            "name": "勐腊县"
+        },
+        {
+            "city_id": "277",
+            "id": "2414",
+            "name": "大理市"
+        },
+        {
+            "city_id": "277",
+            "id": "2415",
+            "name": "漾濞彝族自治县"
+        },
+        {
+            "city_id": "277",
+            "id": "2416",
+            "name": "祥云县"
+        },
+        {
+            "city_id": "277",
+            "id": "2417",
+            "name": "宾川县"
+        },
+        {
+            "city_id": "277",
+            "id": "2418",
+            "name": "弥渡县"
+        },
+        {
+            "city_id": "277",
+            "id": "2419",
+            "name": "南涧彝族自治县"
+        },
+        {
+            "city_id": "277",
+            "id": "2420",
+            "name": "巍山彝族回族自治县"
+        },
+        {
+            "city_id": "277",
+            "id": "2421",
+            "name": "永平县"
+        },
+        {
+            "city_id": "277",
+            "id": "2422",
+            "name": "云龙县"
+        },
+        {
+            "city_id": "277",
+            "id": "2423",
+            "name": "洱源县"
+        },
+        {
+            "city_id": "277",
+            "id": "2424",
+            "name": "剑川县"
+        },
+        {
+            "city_id": "277",
+            "id": "2425",
+            "name": "鹤庆县"
+        },
+        {
+            "city_id": "278",
+            "id": "2426",
+            "name": "瑞丽市"
+        },
+        {
+            "city_id": "278",
+            "id": "2427",
+            "name": "潞西市"
+        },
+        {
+            "city_id": "278",
+            "id": "2428",
+            "name": "梁河县"
+        },
+        {
+            "city_id": "278",
+            "id": "2429",
+            "name": "盈江县"
+        },
+        {
+            "city_id": "278",
+            "id": "2430",
+            "name": "陇川县"
+        },
+        {
+            "city_id": "279",
+            "id": "2431",
+            "name": "泸水市"
+        },
+        {
+            "city_id": "279",
+            "id": "2432",
+            "name": "福贡县"
+        },
+        {
+            "city_id": "279",
+            "id": "2433",
+            "name": "贡山独龙族怒族自治县"
+        },
+        {
+            "city_id": "279",
+            "id": "2434",
+            "name": "兰坪白族普米族自治县"
+        },
+        {
+            "city_id": "280",
+            "id": "2435",
+            "name": "香格里拉市"
+        },
+        {
+            "city_id": "280",
+            "id": "2436",
+            "name": "德钦县"
+        },
+        {
+            "city_id": "280",
+            "id": "2437",
+            "name": "维西傈僳族自治县"
+        },
+        {
+            "city_id": "281",
+            "id": "2438",
+            "name": "城关区"
+        },
+        {
+            "city_id": "281",
+            "id": "2439",
+            "name": "林周县"
+        },
+        {
+            "city_id": "281",
+            "id": "2440",
+            "name": "当雄县"
+        },
+        {
+            "city_id": "281",
+            "id": "2441",
+            "name": "尼木县"
+        },
+        {
+            "city_id": "281",
+            "id": "2442",
+            "name": "曲水县"
+        },
+        {
+            "city_id": "281",
+            "id": "2443",
+            "name": "堆龙德庆区"
+        },
+        {
+            "city_id": "281",
+            "id": "2444",
+            "name": "达孜区"
+        },
+        {
+            "city_id": "281",
+            "id": "2445",
+            "name": "墨竹工卡县"
+        },
+        {
+            "city_id": "282",
+            "id": "2446",
+            "name": "昌都县"
+        },
+        {
+            "city_id": "282",
+            "id": "2447",
+            "name": "江达县"
+        },
+        {
+            "city_id": "282",
+            "id": "2448",
+            "name": "贡觉县"
+        },
+        {
+            "city_id": "282",
+            "id": "2449",
+            "name": "类乌齐县"
+        },
+        {
+            "city_id": "282",
+            "id": "2450",
+            "name": "丁青县"
+        },
+        {
+            "city_id": "282",
+            "id": "2451",
+            "name": "察雅县"
+        },
+        {
+            "city_id": "282",
+            "id": "2452",
+            "name": "八宿县"
+        },
+        {
+            "city_id": "282",
+            "id": "2453",
+            "name": "左贡县"
+        },
+        {
+            "city_id": "282",
+            "id": "2454",
+            "name": "芒康县"
+        },
+        {
+            "city_id": "282",
+            "id": "2455",
+            "name": "洛隆县"
+        },
+        {
+            "city_id": "282",
+            "id": "2456",
+            "name": "边坝县"
+        },
+        {
+            "city_id": "283",
+            "id": "2457",
+            "name": "乃东区"
+        },
+        {
+            "city_id": "283",
+            "id": "2458",
+            "name": "扎囊县"
+        },
+        {
+            "city_id": "283",
+            "id": "2459",
+            "name": "贡嘎县"
+        },
+        {
+            "city_id": "283",
+            "id": "2460",
+            "name": "桑日县"
+        },
+        {
+            "city_id": "283",
+            "id": "2461",
+            "name": "琼结县"
+        },
+        {
+            "city_id": "283",
+            "id": "2462",
+            "name": "曲松县"
+        },
+        {
+            "city_id": "283",
+            "id": "2463",
+            "name": "措美县"
+        },
+        {
+            "city_id": "283",
+            "id": "2464",
+            "name": "洛扎县"
+        },
+        {
+            "city_id": "283",
+            "id": "2465",
+            "name": "加查县"
+        },
+        {
+            "city_id": "283",
+            "id": "2466",
+            "name": "隆子县"
+        },
+        {
+            "city_id": "283",
+            "id": "2467",
+            "name": "错那县"
+        },
+        {
+            "city_id": "283",
+            "id": "2468",
+            "name": "浪卡子县"
+        },
+        {
+            "city_id": "284",
+            "id": "2469",
+            "name": "日喀则市"
+        },
+        {
+            "city_id": "284",
+            "id": "2470",
+            "name": "南木林县"
+        },
+        {
+            "city_id": "284",
+            "id": "2471",
+            "name": "江孜县"
+        },
+        {
+            "city_id": "284",
+            "id": "2472",
+            "name": "定日县"
+        },
+        {
+            "city_id": "284",
+            "id": "2473",
+            "name": "萨迦县"
+        },
+        {
+            "city_id": "284",
+            "id": "2474",
+            "name": "拉孜县"
+        },
+        {
+            "city_id": "284",
+            "id": "2475",
+            "name": "昂仁县"
+        },
+        {
+            "city_id": "284",
+            "id": "2476",
+            "name": "谢通门县"
+        },
+        {
+            "city_id": "284",
+            "id": "2477",
+            "name": "白朗县"
+        },
+        {
+            "city_id": "284",
+            "id": "2478",
+            "name": "仁布县"
+        },
+        {
+            "city_id": "284",
+            "id": "2479",
+            "name": "康马县"
+        },
+        {
+            "city_id": "284",
+            "id": "2480",
+            "name": "定结县"
+        },
+        {
+            "city_id": "284",
+            "id": "2481",
+            "name": "仲巴县"
+        },
+        {
+            "city_id": "284",
+            "id": "2482",
+            "name": "亚东县"
+        },
+        {
+            "city_id": "284",
+            "id": "2483",
+            "name": "吉隆县"
+        },
+        {
+            "city_id": "284",
+            "id": "2484",
+            "name": "聂拉木县"
+        },
+        {
+            "city_id": "284",
+            "id": "2485",
+            "name": "萨嘎县"
+        },
+        {
+            "city_id": "284",
+            "id": "2486",
+            "name": "岗巴县"
+        },
+        {
+            "city_id": "285",
+            "id": "2487",
+            "name": "那曲县"
+        },
+        {
+            "city_id": "285",
+            "id": "2488",
+            "name": "嘉黎县"
+        },
+        {
+            "city_id": "285",
+            "id": "2489",
+            "name": "比如县"
+        },
+        {
+            "city_id": "285",
+            "id": "2490",
+            "name": "聂荣县"
+        },
+        {
+            "city_id": "285",
+            "id": "2491",
+            "name": "安多县"
+        },
+        {
+            "city_id": "285",
+            "id": "2492",
+            "name": "申扎县"
+        },
+        {
+            "city_id": "285",
+            "id": "2493",
+            "name": "索县"
+        },
+        {
+            "city_id": "285",
+            "id": "2494",
+            "name": "班戈县"
+        },
+        {
+            "city_id": "285",
+            "id": "2495",
+            "name": "巴青县"
+        },
+        {
+            "city_id": "285",
+            "id": "2496",
+            "name": "尼玛县"
+        },
+        {
+            "city_id": "286",
+            "id": "2497",
+            "name": "普兰县"
+        },
+        {
+            "city_id": "286",
+            "id": "2498",
+            "name": "札达县"
+        },
+        {
+            "city_id": "286",
+            "id": "2499",
+            "name": "噶尔县"
+        },
+        {
+            "city_id": "286",
+            "id": "2500",
+            "name": "日土县"
+        },
+        {
+            "city_id": "286",
+            "id": "2501",
+            "name": "革吉县"
+        },
+        {
+            "city_id": "286",
+            "id": "2502",
+            "name": "改则县"
+        },
+        {
+            "city_id": "286",
+            "id": "2503",
+            "name": "措勤县"
+        },
+        {
+            "city_id": "287",
+            "id": "2504",
+            "name": "林芝县"
+        },
+        {
+            "city_id": "287",
+            "id": "2505",
+            "name": "工布江达县"
+        },
+        {
+            "city_id": "287",
+            "id": "2506",
+            "name": "米林县"
+        },
+        {
+            "city_id": "287",
+            "id": "2507",
+            "name": "墨脱县"
+        },
+        {
+            "city_id": "287",
+            "id": "2508",
+            "name": "波密县"
+        },
+        {
+            "city_id": "287",
+            "id": "2509",
+            "name": "察隅县"
+        },
+        {
+            "city_id": "287",
+            "id": "2510",
+            "name": "朗县"
+        },
+        {
+            "city_id": "288",
+            "id": "2511",
+            "name": "新城区"
+        },
+        {
+            "city_id": "288",
+            "id": "2512",
+            "name": "碑林区"
+        },
+        {
+            "city_id": "288",
+            "id": "2513",
+            "name": "莲湖区"
+        },
+        {
+            "city_id": "288",
+            "id": "2514",
+            "name": "灞桥区"
+        },
+        {
+            "city_id": "288",
+            "id": "2515",
+            "name": "未央区"
+        },
+        {
+            "city_id": "288",
+            "id": "2516",
+            "name": "雁塔区"
+        },
+        {
+            "city_id": "288",
+            "id": "2517",
+            "name": "阎良区"
+        },
+        {
+            "city_id": "288",
+            "id": "2518",
+            "name": "临潼区"
+        },
+        {
+            "city_id": "288",
+            "id": "2519",
+            "name": "长安区"
+        },
+        {
+            "city_id": "288",
+            "id": "2520",
+            "name": "蓝田县"
+        },
+        {
+            "city_id": "288",
+            "id": "2521",
+            "name": "周至县"
+        },
+        {
+            "city_id": "288",
+            "id": "2522",
+            "name": "户县"
+        },
+        {
+            "city_id": "288",
+            "id": "2523",
+            "name": "高陵区"
+        },
+        {
+            "city_id": "289",
+            "id": "2524",
+            "name": "王益区"
+        },
+        {
+            "city_id": "289",
+            "id": "2525",
+            "name": "印台区"
+        },
+        {
+            "city_id": "289",
+            "id": "2526",
+            "name": "耀州区"
+        },
+        {
+            "city_id": "289",
+            "id": "2527",
+            "name": "宜君县"
+        },
+        {
+            "city_id": "290",
+            "id": "2528",
+            "name": "渭滨区"
+        },
+        {
+            "city_id": "290",
+            "id": "2529",
+            "name": "金台区"
+        },
+        {
+            "city_id": "290",
+            "id": "2530",
+            "name": "陈仓区"
+        },
+        {
+            "city_id": "290",
+            "id": "2531",
+            "name": "凤翔县"
+        },
+        {
+            "city_id": "290",
+            "id": "2532",
+            "name": "岐山县"
+        },
+        {
+            "city_id": "290",
+            "id": "2533",
+            "name": "扶风县"
+        },
+        {
+            "city_id": "290",
+            "id": "2534",
+            "name": "眉县"
+        },
+        {
+            "city_id": "290",
+            "id": "2535",
+            "name": "陇县"
+        },
+        {
+            "city_id": "290",
+            "id": "2536",
+            "name": "千阳县"
+        },
+        {
+            "city_id": "290",
+            "id": "2537",
+            "name": "麟游县"
+        },
+        {
+            "city_id": "290",
+            "id": "2538",
+            "name": "凤县"
+        },
+        {
+            "city_id": "290",
+            "id": "2539",
+            "name": "太白县"
+        },
+        {
+            "city_id": "291",
+            "id": "2540",
+            "name": "秦都区"
+        },
+        {
+            "city_id": "291",
+            "id": "2541",
+            "name": "杨凌区"
+        },
+        {
+            "city_id": "291",
+            "id": "2542",
+            "name": "渭城区"
+        },
+        {
+            "city_id": "291",
+            "id": "2543",
+            "name": "三原县"
+        },
+        {
+            "city_id": "291",
+            "id": "2544",
+            "name": "泾阳县"
+        },
+        {
+            "city_id": "291",
+            "id": "2545",
+            "name": "乾县"
+        },
+        {
+            "city_id": "291",
+            "id": "2546",
+            "name": "礼泉县"
+        },
+        {
+            "city_id": "291",
+            "id": "2547",
+            "name": "永寿县"
+        },
+        {
+            "city_id": "291",
+            "id": "2548",
+            "name": "彬县"
+        },
+        {
+            "city_id": "291",
+            "id": "2549",
+            "name": "长武县"
+        },
+        {
+            "city_id": "291",
+            "id": "2550",
+            "name": "旬邑县"
+        },
+        {
+            "city_id": "291",
+            "id": "2551",
+            "name": "淳化县"
+        },
+        {
+            "city_id": "291",
+            "id": "2552",
+            "name": "武功县"
+        },
+        {
+            "city_id": "291",
+            "id": "2553",
+            "name": "兴平市"
+        },
+        {
+            "city_id": "292",
+            "id": "2554",
+            "name": "临渭区"
+        },
+        {
+            "city_id": "292",
+            "id": "2555",
+            "name": "华县"
+        },
+        {
+            "city_id": "292",
+            "id": "2556",
+            "name": "潼关县"
+        },
+        {
+            "city_id": "292",
+            "id": "2557",
+            "name": "大荔县"
+        },
+        {
+            "city_id": "292",
+            "id": "2558",
+            "name": "合阳县"
+        },
+        {
+            "city_id": "292",
+            "id": "2559",
+            "name": "澄城县"
+        },
+        {
+            "city_id": "292",
+            "id": "2560",
+            "name": "蒲城县"
+        },
+        {
+            "city_id": "292",
+            "id": "2561",
+            "name": "白水县"
+        },
+        {
+            "city_id": "292",
+            "id": "2562",
+            "name": "富平县"
+        },
+        {
+            "city_id": "292",
+            "id": "2563",
+            "name": "韩城市"
+        },
+        {
+            "city_id": "292",
+            "id": "2564",
+            "name": "华阴市"
+        },
+        {
+            "city_id": "293",
+            "id": "2565",
+            "name": "宝塔区"
+        },
+        {
+            "city_id": "293",
+            "id": "2566",
+            "name": "延长县"
+        },
+        {
+            "city_id": "293",
+            "id": "2567",
+            "name": "延川县"
+        },
+        {
+            "city_id": "293",
+            "id": "2568",
+            "name": "子长县"
+        },
+        {
+            "city_id": "293",
+            "id": "2569",
+            "name": "安塞区"
+        },
+        {
+            "city_id": "293",
+            "id": "2570",
+            "name": "志丹县"
+        },
+        {
+            "city_id": "293",
+            "id": "2571",
+            "name": "吴旗县"
+        },
+        {
+            "city_id": "293",
+            "id": "2572",
+            "name": "甘泉县"
+        },
+        {
+            "city_id": "293",
+            "id": "2573",
+            "name": "富县"
+        },
+        {
+            "city_id": "293",
+            "id": "2574",
+            "name": "洛川县"
+        },
+        {
+            "city_id": "293",
+            "id": "2575",
+            "name": "宜川县"
+        },
+        {
+            "city_id": "293",
+            "id": "2576",
+            "name": "黄龙县"
+        },
+        {
+            "city_id": "293",
+            "id": "2577",
+            "name": "黄陵县"
+        },
+        {
+            "city_id": "294",
+            "id": "2578",
+            "name": "汉台区"
+        },
+        {
+            "city_id": "294",
+            "id": "2579",
+            "name": "南郑区"
+        },
+        {
+            "city_id": "294",
+            "id": "2580",
+            "name": "城固县"
+        },
+        {
+            "city_id": "294",
+            "id": "2581",
+            "name": "洋县"
+        },
+        {
+            "city_id": "294",
+            "id": "2582",
+            "name": "西乡县"
+        },
+        {
+            "city_id": "294",
+            "id": "2583",
+            "name": "勉县"
+        },
+        {
+            "city_id": "294",
+            "id": "2584",
+            "name": "宁强县"
+        },
+        {
+            "city_id": "294",
+            "id": "2585",
+            "name": "略阳县"
+        },
+        {
+            "city_id": "294",
+            "id": "2586",
+            "name": "镇巴县"
+        },
+        {
+            "city_id": "294",
+            "id": "2587",
+            "name": "留坝县"
+        },
+        {
+            "city_id": "294",
+            "id": "2588",
+            "name": "佛坪县"
+        },
+        {
+            "city_id": "295",
+            "id": "2589",
+            "name": "榆阳区"
+        },
+        {
+            "city_id": "295",
+            "id": "2590",
+            "name": "神木市"
+        },
+        {
+            "city_id": "295",
+            "id": "2591",
+            "name": "府谷县"
+        },
+        {
+            "city_id": "295",
+            "id": "2592",
+            "name": "横山区"
+        },
+        {
+            "city_id": "295",
+            "id": "2593",
+            "name": "靖边县"
+        },
+        {
+            "city_id": "295",
+            "id": "2594",
+            "name": "定边县"
+        },
+        {
+            "city_id": "295",
+            "id": "2595",
+            "name": "绥德县"
+        },
+        {
+            "city_id": "295",
+            "id": "2596",
+            "name": "米脂县"
+        },
+        {
+            "city_id": "295",
+            "id": "2597",
+            "name": "佳县"
+        },
+        {
+            "city_id": "295",
+            "id": "2598",
+            "name": "吴堡县"
+        },
+        {
+            "city_id": "295",
+            "id": "2599",
+            "name": "清涧县"
+        },
+        {
+            "city_id": "295",
+            "id": "2600",
+            "name": "子洲县"
+        },
+        {
+            "city_id": "296",
+            "id": "2601",
+            "name": "汉滨区"
+        },
+        {
+            "city_id": "296",
+            "id": "2602",
+            "name": "汉阴县"
+        },
+        {
+            "city_id": "296",
+            "id": "2603",
+            "name": "石泉县"
+        },
+        {
+            "city_id": "296",
+            "id": "2604",
+            "name": "宁陕县"
+        },
+        {
+            "city_id": "296",
+            "id": "2605",
+            "name": "紫阳县"
+        },
+        {
+            "city_id": "296",
+            "id": "2606",
+            "name": "岚皋县"
+        },
+        {
+            "city_id": "296",
+            "id": "2607",
+            "name": "平利县"
+        },
+        {
+            "city_id": "296",
+            "id": "2608",
+            "name": "镇坪县"
+        },
+        {
+            "city_id": "296",
+            "id": "2609",
+            "name": "旬阳县"
+        },
+        {
+            "city_id": "296",
+            "id": "2610",
+            "name": "白河县"
+        },
+        {
+            "city_id": "297",
+            "id": "2611",
+            "name": "商州区"
+        },
+        {
+            "city_id": "297",
+            "id": "2612",
+            "name": "洛南县"
+        },
+        {
+            "city_id": "297",
+            "id": "2613",
+            "name": "丹凤县"
+        },
+        {
+            "city_id": "297",
+            "id": "2614",
+            "name": "商南县"
+        },
+        {
+            "city_id": "297",
+            "id": "2615",
+            "name": "山阳县"
+        },
+        {
+            "city_id": "297",
+            "id": "2616",
+            "name": "镇安县"
+        },
+        {
+            "city_id": "297",
+            "id": "2617",
+            "name": "柞水县"
+        },
+        {
+            "city_id": "298",
+            "id": "2618",
+            "name": "城关区"
+        },
+        {
+            "city_id": "298",
+            "id": "2619",
+            "name": "七里河区"
+        },
+        {
+            "city_id": "298",
+            "id": "2620",
+            "name": "西固区"
+        },
+        {
+            "city_id": "298",
+            "id": "2621",
+            "name": "安宁区"
+        },
+        {
+            "city_id": "298",
+            "id": "2622",
+            "name": "红古区"
+        },
+        {
+            "city_id": "298",
+            "id": "2623",
+            "name": "永登县"
+        },
+        {
+            "city_id": "298",
+            "id": "2624",
+            "name": "皋兰县"
+        },
+        {
+            "city_id": "298",
+            "id": "2625",
+            "name": "榆中县"
+        },
+        {
+            "city_id": "300",
+            "id": "2626",
+            "name": "金川区"
+        },
+        {
+            "city_id": "300",
+            "id": "2627",
+            "name": "永昌县"
+        },
+        {
+            "city_id": "301",
+            "id": "2628",
+            "name": "白银区"
+        },
+        {
+            "city_id": "301",
+            "id": "2629",
+            "name": "平川区"
+        },
+        {
+            "city_id": "301",
+            "id": "2630",
+            "name": "靖远县"
+        },
+        {
+            "city_id": "301",
+            "id": "2631",
+            "name": "会宁县"
+        },
+        {
+            "city_id": "301",
+            "id": "2632",
+            "name": "景泰县"
+        },
+        {
+            "city_id": "302",
+            "id": "2633",
+            "name": "秦城区"
+        },
+        {
+            "city_id": "302",
+            "id": "2634",
+            "name": "北道区"
+        },
+        {
+            "city_id": "302",
+            "id": "2635",
+            "name": "清水县"
+        },
+        {
+            "city_id": "302",
+            "id": "2636",
+            "name": "秦安县"
+        },
+        {
+            "city_id": "302",
+            "id": "2637",
+            "name": "甘谷县"
+        },
+        {
+            "city_id": "302",
+            "id": "2638",
+            "name": "武山县"
+        },
+        {
+            "city_id": "302",
+            "id": "2639",
+            "name": "张家川回族自治县"
+        },
+        {
+            "city_id": "303",
+            "id": "2640",
+            "name": "凉州区"
+        },
+        {
+            "city_id": "303",
+            "id": "2641",
+            "name": "民勤县"
+        },
+        {
+            "city_id": "303",
+            "id": "2642",
+            "name": "古浪县"
+        },
+        {
+            "city_id": "303",
+            "id": "2643",
+            "name": "天祝藏族自治县"
+        },
+        {
+            "city_id": "304",
+            "id": "2644",
+            "name": "甘州区"
+        },
+        {
+            "city_id": "304",
+            "id": "2645",
+            "name": "肃南裕固族自治县"
+        },
+        {
+            "city_id": "304",
+            "id": "2646",
+            "name": "民乐县"
+        },
+        {
+            "city_id": "304",
+            "id": "2647",
+            "name": "临泽县"
+        },
+        {
+            "city_id": "304",
+            "id": "2648",
+            "name": "高台县"
+        },
+        {
+            "city_id": "304",
+            "id": "2649",
+            "name": "山丹县"
+        },
+        {
+            "city_id": "305",
+            "id": "2650",
+            "name": "崆峒区"
+        },
+        {
+            "city_id": "305",
+            "id": "2651",
+            "name": "泾川县"
+        },
+        {
+            "city_id": "305",
+            "id": "2652",
+            "name": "灵台县"
+        },
+        {
+            "city_id": "305",
+            "id": "2653",
+            "name": "崇信县"
+        },
+        {
+            "city_id": "305",
+            "id": "2654",
+            "name": "华亭市"
+        },
+        {
+            "city_id": "305",
+            "id": "2655",
+            "name": "庄浪县"
+        },
+        {
+            "city_id": "305",
+            "id": "2656",
+            "name": "静宁县"
+        },
+        {
+            "city_id": "306",
+            "id": "2657",
+            "name": "肃州区"
+        },
+        {
+            "city_id": "306",
+            "id": "2658",
+            "name": "金塔县"
+        },
+        {
+            "city_id": "306",
+            "id": "2659",
+            "name": "安西县"
+        },
+        {
+            "city_id": "306",
+            "id": "2660",
+            "name": "肃北蒙古族自治县"
+        },
+        {
+            "city_id": "306",
+            "id": "2661",
+            "name": "阿克塞哈萨克族自治县"
+        },
+        {
+            "city_id": "306",
+            "id": "2662",
+            "name": "玉门市"
+        },
+        {
+            "city_id": "306",
+            "id": "2663",
+            "name": "敦煌市"
+        },
+        {
+            "city_id": "307",
+            "id": "2664",
+            "name": "西峰区"
+        },
+        {
+            "city_id": "307",
+            "id": "2665",
+            "name": "庆城县"
+        },
+        {
+            "city_id": "307",
+            "id": "2666",
+            "name": "环县"
+        },
+        {
+            "city_id": "307",
+            "id": "2667",
+            "name": "华池县"
+        },
+        {
+            "city_id": "307",
+            "id": "2668",
+            "name": "合水县"
+        },
+        {
+            "city_id": "307",
+            "id": "2669",
+            "name": "正宁县"
+        },
+        {
+            "city_id": "307",
+            "id": "2670",
+            "name": "宁县"
+        },
+        {
+            "city_id": "307",
+            "id": "2671",
+            "name": "镇原县"
+        },
+        {
+            "city_id": "308",
+            "id": "2672",
+            "name": "安定区"
+        },
+        {
+            "city_id": "308",
+            "id": "2673",
+            "name": "通渭县"
+        },
+        {
+            "city_id": "308",
+            "id": "2674",
+            "name": "陇西县"
+        },
+        {
+            "city_id": "308",
+            "id": "2675",
+            "name": "渭源县"
+        },
+        {
+            "city_id": "308",
+            "id": "2676",
+            "name": "临洮县"
+        },
+        {
+            "city_id": "308",
+            "id": "2677",
+            "name": "漳县"
+        },
+        {
+            "city_id": "308",
+            "id": "2678",
+            "name": "岷县"
+        },
+        {
+            "city_id": "309",
+            "id": "2679",
+            "name": "武都区"
+        },
+        {
+            "city_id": "309",
+            "id": "2680",
+            "name": "成县"
+        },
+        {
+            "city_id": "309",
+            "id": "2681",
+            "name": "文县"
+        },
+        {
+            "city_id": "309",
+            "id": "2682",
+            "name": "宕昌县"
+        },
+        {
+            "city_id": "309",
+            "id": "2683",
+            "name": "康县"
+        },
+        {
+            "city_id": "309",
+            "id": "2684",
+            "name": "西和县"
+        },
+        {
+            "city_id": "309",
+            "id": "2685",
+            "name": "礼县"
+        },
+        {
+            "city_id": "309",
+            "id": "2686",
+            "name": "徽县"
+        },
+        {
+            "city_id": "309",
+            "id": "2687",
+            "name": "两当县"
+        },
+        {
+            "city_id": "310",
+            "id": "2688",
+            "name": "临夏市"
+        },
+        {
+            "city_id": "310",
+            "id": "2689",
+            "name": "临夏县"
+        },
+        {
+            "city_id": "310",
+            "id": "2690",
+            "name": "康乐县"
+        },
+        {
+            "city_id": "310",
+            "id": "2691",
+            "name": "永靖县"
+        },
+        {
+            "city_id": "310",
+            "id": "2692",
+            "name": "广河县"
+        },
+        {
+            "city_id": "310",
+            "id": "2693",
+            "name": "和政县"
+        },
+        {
+            "city_id": "310",
+            "id": "2694",
+            "name": "东乡族自治县"
+        },
+        {
+            "city_id": "310",
+            "id": "2695",
+            "name": "积石山保安族东乡族撒拉族自治县"
+        },
+        {
+            "city_id": "311",
+            "id": "2696",
+            "name": "合作市"
+        },
+        {
+            "city_id": "311",
+            "id": "2697",
+            "name": "临潭县"
+        },
+        {
+            "city_id": "311",
+            "id": "2698",
+            "name": "卓尼县"
+        },
+        {
+            "city_id": "311",
+            "id": "2699",
+            "name": "舟曲县"
+        },
+        {
+            "city_id": "311",
+            "id": "2700",
+            "name": "迭部县"
+        },
+        {
+            "city_id": "311",
+            "id": "2701",
+            "name": "玛曲县"
+        },
+        {
+            "city_id": "311",
+            "id": "2702",
+            "name": "碌曲县"
+        },
+        {
+            "city_id": "311",
+            "id": "2703",
+            "name": "夏河县"
+        },
+        {
+            "city_id": "312",
+            "id": "2704",
+            "name": "城东区"
+        },
+        {
+            "city_id": "312",
+            "id": "2705",
+            "name": "城中区"
+        },
+        {
+            "city_id": "312",
+            "id": "2706",
+            "name": "城西区"
+        },
+        {
+            "city_id": "312",
+            "id": "2707",
+            "name": "城北区"
+        },
+        {
+            "city_id": "312",
+            "id": "2708",
+            "name": "大通回族土族自治县"
+        },
+        {
+            "city_id": "312",
+            "id": "2709",
+            "name": "湟中县"
+        },
+        {
+            "city_id": "312",
+            "id": "2710",
+            "name": "湟源县"
+        },
+        {
+            "city_id": "313",
+            "id": "2711",
+            "name": "平安区"
+        },
+        {
+            "city_id": "313",
+            "id": "2712",
+            "name": "民和回族土族自治县"
+        },
+        {
+            "city_id": "313",
+            "id": "2713",
+            "name": "乐都区"
+        },
+        {
+            "city_id": "313",
+            "id": "2714",
+            "name": "互助土族自治县"
+        },
+        {
+            "city_id": "313",
+            "id": "2715",
+            "name": "化隆回族自治县"
+        },
+        {
+            "city_id": "313",
+            "id": "2716",
+            "name": "循化撒拉族自治县"
+        },
+        {
+            "city_id": "314",
+            "id": "2717",
+            "name": "门源回族自治县"
+        },
+        {
+            "city_id": "314",
+            "id": "2718",
+            "name": "祁连县"
+        },
+        {
+            "city_id": "314",
+            "id": "2719",
+            "name": "海晏县"
+        },
+        {
+            "city_id": "314",
+            "id": "2720",
+            "name": "刚察县"
+        },
+        {
+            "city_id": "315",
+            "id": "2721",
+            "name": "同仁县"
+        },
+        {
+            "city_id": "315",
+            "id": "2722",
+            "name": "尖扎县"
+        },
+        {
+            "city_id": "315",
+            "id": "2723",
+            "name": "泽库县"
+        },
+        {
+            "city_id": "315",
+            "id": "2724",
+            "name": "河南蒙古族自治县"
+        },
+        {
+            "city_id": "316",
+            "id": "2725",
+            "name": "共和县"
+        },
+        {
+            "city_id": "316",
+            "id": "2726",
+            "name": "同德县"
+        },
+        {
+            "city_id": "316",
+            "id": "2727",
+            "name": "贵德县"
+        },
+        {
+            "city_id": "316",
+            "id": "2728",
+            "name": "兴海县"
+        },
+        {
+            "city_id": "316",
+            "id": "2729",
+            "name": "贵南县"
+        },
+        {
+            "city_id": "317",
+            "id": "2730",
+            "name": "玛沁县"
+        },
+        {
+            "city_id": "317",
+            "id": "2731",
+            "name": "班玛县"
+        },
+        {
+            "city_id": "317",
+            "id": "2732",
+            "name": "甘德县"
+        },
+        {
+            "city_id": "317",
+            "id": "2733",
+            "name": "达日县"
+        },
+        {
+            "city_id": "317",
+            "id": "2734",
+            "name": "久治县"
+        },
+        {
+            "city_id": "317",
+            "id": "2735",
+            "name": "玛多县"
+        },
+        {
+            "city_id": "318",
+            "id": "2736",
+            "name": "玉树市"
+        },
+        {
+            "city_id": "318",
+            "id": "2737",
+            "name": "杂多县"
+        },
+        {
+            "city_id": "318",
+            "id": "2738",
+            "name": "称多县"
+        },
+        {
+            "city_id": "318",
+            "id": "2739",
+            "name": "治多县"
+        },
+        {
+            "city_id": "318",
+            "id": "2740",
+            "name": "囊谦县"
+        },
+        {
+            "city_id": "318",
+            "id": "2741",
+            "name": "曲麻莱县"
+        },
+        {
+            "city_id": "319",
+            "id": "2742",
+            "name": "格尔木市"
+        },
+        {
+            "city_id": "319",
+            "id": "2743",
+            "name": "德令哈市"
+        },
+        {
+            "city_id": "319",
+            "id": "2744",
+            "name": "乌兰县"
+        },
+        {
+            "city_id": "319",
+            "id": "2745",
+            "name": "都兰县"
+        },
+        {
+            "city_id": "319",
+            "id": "2746",
+            "name": "天峻县"
+        },
+        {
+            "city_id": "320",
+            "id": "2747",
+            "name": "兴庆区"
+        },
+        {
+            "city_id": "320",
+            "id": "2748",
+            "name": "西夏区"
+        },
+        {
+            "city_id": "320",
+            "id": "2749",
+            "name": "金凤区"
+        },
+        {
+            "city_id": "320",
+            "id": "2750",
+            "name": "永宁县"
+        },
+        {
+            "city_id": "320",
+            "id": "2751",
+            "name": "贺兰县"
+        },
+        {
+            "city_id": "320",
+            "id": "2752",
+            "name": "灵武市"
+        },
+        {
+            "city_id": "321",
+            "id": "2753",
+            "name": "大武口区"
+        },
+        {
+            "city_id": "321",
+            "id": "2754",
+            "name": "惠农区"
+        },
+        {
+            "city_id": "321",
+            "id": "2755",
+            "name": "平罗县"
+        },
+        {
+            "city_id": "322",
+            "id": "2756",
+            "name": "利通区"
+        },
+        {
+            "city_id": "322",
+            "id": "2757",
+            "name": "盐池县"
+        },
+        {
+            "city_id": "322",
+            "id": "2758",
+            "name": "同心县"
+        },
+        {
+            "city_id": "322",
+            "id": "2759",
+            "name": "青铜峡市"
+        },
+        {
+            "city_id": "323",
+            "id": "2760",
+            "name": "原州区"
+        },
+        {
+            "city_id": "323",
+            "id": "2761",
+            "name": "西吉县"
+        },
+        {
+            "city_id": "323",
+            "id": "2762",
+            "name": "隆德县"
+        },
+        {
+            "city_id": "323",
+            "id": "2763",
+            "name": "泾源县"
+        },
+        {
+            "city_id": "323",
+            "id": "2764",
+            "name": "彭阳县"
+        },
+        {
+            "city_id": "324",
+            "id": "2765",
+            "name": "沙坡头区"
+        },
+        {
+            "city_id": "324",
+            "id": "2766",
+            "name": "中宁县"
+        },
+        {
+            "city_id": "324",
+            "id": "2767",
+            "name": "海原县"
+        },
+        {
+            "city_id": "325",
+            "id": "2768",
+            "name": "天山区"
+        },
+        {
+            "city_id": "325",
+            "id": "2769",
+            "name": "沙依巴克区"
+        },
+        {
+            "city_id": "325",
+            "id": "2770",
+            "name": "新市区"
+        },
+        {
+            "city_id": "325",
+            "id": "2771",
+            "name": "水磨沟区"
+        },
+        {
+            "city_id": "325",
+            "id": "2772",
+            "name": "头屯河区"
+        },
+        {
+            "city_id": "325",
+            "id": "2773",
+            "name": "达坂城区"
+        },
+        {
+            "city_id": "325",
+            "id": "2774",
+            "name": "东山区"
+        },
+        {
+            "city_id": "325",
+            "id": "2775",
+            "name": "乌鲁木齐县"
+        },
+        {
+            "city_id": "326",
+            "id": "2776",
+            "name": "独山子区"
+        },
+        {
+            "city_id": "326",
+            "id": "2777",
+            "name": "克拉玛依区"
+        },
+        {
+            "city_id": "326",
+            "id": "2778",
+            "name": "白碱滩区"
+        },
+        {
+            "city_id": "326",
+            "id": "2779",
+            "name": "乌尔禾区"
+        },
+        {
+            "city_id": "327",
+            "id": "2780",
+            "name": "吐鲁番市"
+        },
+        {
+            "city_id": "327",
+            "id": "2781",
+            "name": "鄯善县"
+        },
+        {
+            "city_id": "327",
+            "id": "2782",
+            "name": "托克逊县"
+        },
+        {
+            "city_id": "328",
+            "id": "2783",
+            "name": "哈密市"
+        },
+        {
+            "city_id": "328",
+            "id": "2784",
+            "name": "巴里坤哈萨克自治县"
+        },
+        {
+            "city_id": "328",
+            "id": "2785",
+            "name": "伊吾县"
+        },
+        {
+            "city_id": "329",
+            "id": "2786",
+            "name": "昌吉市"
+        },
+        {
+            "city_id": "329",
+            "id": "2787",
+            "name": "阜康市"
+        },
+        {
+            "city_id": "329",
+            "id": "2788",
+            "name": "米泉市"
+        },
+        {
+            "city_id": "329",
+            "id": "2789",
+            "name": "呼图壁县"
+        },
+        {
+            "city_id": "329",
+            "id": "2790",
+            "name": "玛纳斯县"
+        },
+        {
+            "city_id": "329",
+            "id": "2791",
+            "name": "奇台县"
+        },
+        {
+            "city_id": "329",
+            "id": "2792",
+            "name": "吉木萨尔县"
+        },
+        {
+            "city_id": "329",
+            "id": "2793",
+            "name": "木垒哈萨克自治县"
+        },
+        {
+            "city_id": "330",
+            "id": "2794",
+            "name": "博乐市"
+        },
+        {
+            "city_id": "330",
+            "id": "2795",
+            "name": "精河县"
+        },
+        {
+            "city_id": "330",
+            "id": "2796",
+            "name": "温泉县"
+        },
+        {
+            "city_id": "331",
+            "id": "2797",
+            "name": "库尔勒市"
+        },
+        {
+            "city_id": "331",
+            "id": "2798",
+            "name": "轮台县"
+        },
+        {
+            "city_id": "331",
+            "id": "2799",
+            "name": "尉犁县"
+        },
+        {
+            "city_id": "331",
+            "id": "2800",
+            "name": "若羌县"
+        },
+        {
+            "city_id": "331",
+            "id": "2801",
+            "name": "且末县"
+        },
+        {
+            "city_id": "331",
+            "id": "2802",
+            "name": "焉耆回族自治县"
+        },
+        {
+            "city_id": "331",
+            "id": "2803",
+            "name": "和静县"
+        },
+        {
+            "city_id": "331",
+            "id": "2804",
+            "name": "和硕县"
+        },
+        {
+            "city_id": "331",
+            "id": "2805",
+            "name": "博湖县"
+        },
+        {
+            "city_id": "332",
+            "id": "2806",
+            "name": "阿克苏市"
+        },
+        {
+            "city_id": "332",
+            "id": "2807",
+            "name": "温宿县"
+        },
+        {
+            "city_id": "332",
+            "id": "2808",
+            "name": "库车县"
+        },
+        {
+            "city_id": "332",
+            "id": "2809",
+            "name": "沙雅县"
+        },
+        {
+            "city_id": "332",
+            "id": "2810",
+            "name": "新和县"
+        },
+        {
+            "city_id": "332",
+            "id": "2811",
+            "name": "拜城县"
+        },
+        {
+            "city_id": "332",
+            "id": "2812",
+            "name": "乌什县"
+        },
+        {
+            "city_id": "332",
+            "id": "2813",
+            "name": "阿瓦提县"
+        },
+        {
+            "city_id": "332",
+            "id": "2814",
+            "name": "柯坪县"
+        },
+        {
+            "city_id": "333",
+            "id": "2815",
+            "name": "阿图什市"
+        },
+        {
+            "city_id": "333",
+            "id": "2816",
+            "name": "阿克陶县"
+        },
+        {
+            "city_id": "333",
+            "id": "2817",
+            "name": "阿合奇县"
+        },
+        {
+            "city_id": "333",
+            "id": "2818",
+            "name": "乌恰县"
+        },
+        {
+            "city_id": "334",
+            "id": "2819",
+            "name": "喀什市"
+        },
+        {
+            "city_id": "334",
+            "id": "2820",
+            "name": "疏附县"
+        },
+        {
+            "city_id": "334",
+            "id": "2821",
+            "name": "疏勒县"
+        },
+        {
+            "city_id": "334",
+            "id": "2822",
+            "name": "英吉沙县"
+        },
+        {
+            "city_id": "334",
+            "id": "2823",
+            "name": "泽普县"
+        },
+        {
+            "city_id": "334",
+            "id": "2824",
+            "name": "莎车县"
+        },
+        {
+            "city_id": "334",
+            "id": "2825",
+            "name": "叶城县"
+        },
+        {
+            "city_id": "334",
+            "id": "2826",
+            "name": "麦盖提县"
+        },
+        {
+            "city_id": "334",
+            "id": "2827",
+            "name": "岳普湖县"
+        },
+        {
+            "city_id": "334",
+            "id": "2828",
+            "name": "伽师县"
+        },
+        {
+            "city_id": "334",
+            "id": "2829",
+            "name": "巴楚县"
+        },
+        {
+            "city_id": "334",
+            "id": "2830",
+            "name": "塔什库尔干塔吉克自治县"
+        },
+        {
+            "city_id": "335",
+            "id": "2831",
+            "name": "和田市"
+        },
+        {
+            "city_id": "335",
+            "id": "2832",
+            "name": "和田县"
+        },
+        {
+            "city_id": "335",
+            "id": "2833",
+            "name": "墨玉县"
+        },
+        {
+            "city_id": "335",
+            "id": "2834",
+            "name": "皮山县"
+        },
+        {
+            "city_id": "335",
+            "id": "2835",
+            "name": "洛浦县"
+        },
+        {
+            "city_id": "335",
+            "id": "2836",
+            "name": "策勒县"
+        },
+        {
+            "city_id": "335",
+            "id": "2837",
+            "name": "于田县"
+        },
+        {
+            "city_id": "335",
+            "id": "2838",
+            "name": "民丰县"
+        },
+        {
+            "city_id": "336",
+            "id": "2839",
+            "name": "伊宁市"
+        },
+        {
+            "city_id": "336",
+            "id": "2840",
+            "name": "奎屯市"
+        },
+        {
+            "city_id": "336",
+            "id": "2841",
+            "name": "伊宁县"
+        },
+        {
+            "city_id": "336",
+            "id": "2842",
+            "name": "察布查尔锡伯自治县"
+        },
+        {
+            "city_id": "336",
+            "id": "2843",
+            "name": "霍城县"
+        },
+        {
+            "city_id": "336",
+            "id": "2844",
+            "name": "巩留县"
+        },
+        {
+            "city_id": "336",
+            "id": "2845",
+            "name": "新源县"
+        },
+        {
+            "city_id": "336",
+            "id": "2846",
+            "name": "昭苏县"
+        },
+        {
+            "city_id": "336",
+            "id": "2847",
+            "name": "特克斯县"
+        },
+        {
+            "city_id": "336",
+            "id": "2848",
+            "name": "尼勒克县"
+        },
+        {
+            "city_id": "337",
+            "id": "2849",
+            "name": "塔城市"
+        },
+        {
+            "city_id": "337",
+            "id": "2850",
+            "name": "乌苏市"
+        },
+        {
+            "city_id": "337",
+            "id": "2851",
+            "name": "额敏县"
+        },
+        {
+            "city_id": "337",
+            "id": "2852",
+            "name": "沙湾县"
+        },
+        {
+            "city_id": "337",
+            "id": "2853",
+            "name": "托里县"
+        },
+        {
+            "city_id": "337",
+            "id": "2854",
+            "name": "裕民县"
+        },
+        {
+            "city_id": "337",
+            "id": "2855",
+            "name": "和布克赛尔蒙古自治县"
+        },
+        {
+            "city_id": "338",
+            "id": "2856",
+            "name": "阿勒泰市"
+        },
+        {
+            "city_id": "338",
+            "id": "2857",
+            "name": "布尔津县"
+        },
+        {
+            "city_id": "338",
+            "id": "2858",
+            "name": "富蕴县"
+        },
+        {
+            "city_id": "338",
+            "id": "2859",
+            "name": "福海县"
+        },
+        {
+            "city_id": "338",
+            "id": "2860",
+            "name": "哈巴河县"
+        },
+        {
+            "city_id": "338",
+            "id": "2861",
+            "name": "青河县"
+        },
+        {
+            "city_id": "338",
+            "id": "2862",
+            "name": "吉木乃县"
+        },
+        {
+            "city_id": "214",
+            "id": "2863",
+            "name": "中山市"
+        },
+        {
+            "city_id": "75",
+            "id": "2864",
+            "name": "新吴区"
+        },
+        {
+            "city_id": "75",
+            "id": "2865",
+            "name": "梁溪区"
+        },
+        {
+            "city_id": "213",
+            "id": "2866",
+            "name": "东莞港"
+        },
+        {
+            "city_id": "343",
+            "id": "2867",
+            "name": "香港特别行政区"
+        },
+        {
+            "city_id": "344",
+            "id": "2868",
+            "name": "澳门特别行政区"
+        },
+        {
+            "city_id": "345",
+            "id": "2869",
+            "name": "台湾省"
+        },
+        {
+            "city_id": "78",
+            "id": "2870",
+            "name": "姑苏区"
+        },
+        {
+            "city_id": "233",
+            "id": "2871",
+            "name": "天涯区"
+        },
+        {
+            "city_id": "241",
+            "id": "2872",
+            "name": "利州区"
+        },
+        {
+            "city_id": "78",
+            "id": "2873",
+            "name": "工业园区"
+        },
+        {
+            "city_id": "213",
+            "id": "2874",
+            "name": "石龙镇"
+        },
+        {
+            "city_id": "292",
+            "id": "2875",
+            "name": "华州区"
+        },
+        {
+            "city_id": "30",
+            "id": "2876",
+            "name": "康巴什区"
+        },
+        {
+            "city_id": "43",
+            "id": "2877",
+            "name": "经济技术开发区"
+        },
+        {
+            "city_id": "214",
+            "id": "2878",
+            "name": "东区街道办事处"
+        },
+        {
+            "city_id": "156",
+            "id": "2879",
+            "name": "开发区"
+        },
+        {
+            "city_id": "180",
+            "id": "2880",
+            "name": "随县"
+        },
+        {
+            "city_id": "271",
+            "id": "2881",
+            "name": "宁洱哈尼族彝族自治县"
+        },
+        {
+            "city_id": "127",
+            "id": "2882",
+            "name": "经济技术开发区"
+        },
+        {
+            "city_id": "141",
+            "id": "2883",
+            "name": "开发区"
+        },
+        {
+            "city_id": "141",
+            "id": "2884",
+            "name": "高新区"
+        },
+        {
+            "city_id": "135",
+            "id": "2885",
+            "name": "莱芜区"
+        },
+        {
+            "city_id": "235",
+            "id": "2886",
+            "name": "郫都区"
+        },
+        {
+            "city_id": "109",
+            "id": "2887",
+            "name": "经济开发区"
+        },
+        {
+            "city_id": "101",
+            "id": "2888",
+            "name": "寿县"
+        },
+        {
+            "city_id": "336",
+            "id": "2889",
+            "name": "霍尔果斯市"
+        },
+        {
+            "city_id": "235",
+            "id": "2890",
+            "name": "高新区"
+        },
+        {
+            "city_id": "247",
+            "id": "2891",
+            "name": "叙州区"
+        },
+        {
+            "city_id": "127",
+            "id": "2892",
+            "name": "共青城市"
+        },
+        {
+            "city_id": "98",
+            "id": "2893",
+            "name": "庐江县"
+        },
+        {
+            "city_id": "104",
+            "id": "2894",
+            "name": "义安区"
+        },
+        {
+            "city_id": "251",
+            "id": "2895",
+            "name": "恩阳区"
+        },
+        {
+            "city_id": "213",
+            "id": "2896",
+            "name": "寮步镇"
+        },
+        {
+            "city_id": "213",
+            "id": "2897",
+            "name": "石排镇"
+        },
+        {
+            "city_id": "213",
+            "id": "2898",
+            "name": "大岭山镇"
+        },
+        {
+            "city_id": "213",
+            "id": "2899",
+            "name": "松山湖管委会"
+        },
+        {
+            "city_id": "213",
+            "id": "2900",
+            "name": "企石镇"
+        },
+        {
+            "city_id": "213",
+            "id": "2901",
+            "name": "凤岗镇"
+        },
+        {
+            "city_id": "213",
+            "id": "2902",
+            "name": "厚街镇"
+        },
+        {
+            "city_id": "213",
+            "id": "2903",
+            "name": "常平镇"
+        },
+        {
+            "city_id": "213",
+            "id": "2904",
+            "name": "清溪镇"
+        },
+        {
+            "city_id": "213",
+            "id": "2905",
+            "name": "望牛墩镇"
+        },
+        {
+            "city_id": "104",
+            "id": "2906",
+            "name": "枞阳县"
+        },
+        {
+            "city_id": "322",
+            "id": "2907",
+            "name": "红寺堡区"
+        },
+        {
+            "city_id": "241",
+            "id": "2908",
+            "name": "昭化区"
+        },
+        {
+            "city_id": "171",
+            "id": "2909",
+            "name": "郧阳区"
+        },
+        {
+            "city_id": "12",
+            "id": "2910",
+            "name": "开发区"
+        },
+        {
+            "city_id": "240",
+            "id": "2911",
+            "name": "高新区"
+        },
+        {
+            "city_id": "213",
+            "id": "2912",
+            "name": "塘厦镇"
+        },
+        {
+            "city_id": "213",
+            "id": "2913",
+            "name": "横沥镇"
+        },
+        {
+            "city_id": "213",
+            "id": "2914",
+            "name": "大朗镇"
+        },
+        {
+            "city_id": "213",
+            "id": "2915",
+            "name": "黄江镇"
+        },
+        {
+            "city_id": "213",
+            "id": "2916",
+            "name": "东莞生态园"
+        },
+        {
+            "city_id": "256",
+            "id": "2917",
+            "name": "观山湖区"
+        },
+        {
+            "city_id": "260",
+            "id": "2918",
+            "name": "碧江区"
+        },
+        {
+            "city_id": "37",
+            "id": "2919",
+            "name": "沈北新区"
+        },
+        {
+            "city_id": "37",
+            "id": "2920",
+            "name": "浑南区"
+        },
+        {
+            "city_id": "291",
+            "id": "2921",
+            "name": "彬州市"
+        },
+        {
+            "city_id": "140",
+            "id": "2922",
+            "name": "开发区"
+        },
+        {
+            "city_id": "257",
+            "id": "2923",
+            "name": "盘州市"
+        },
+        {
+            "city_id": "4",
+            "id": "2924",
+            "name": "曹妃甸区"
+        },
+        {
+            "city_id": "325",
+            "id": "2925",
+            "name": "米东区"
+        },
+        {
+            "city_id": "37",
+            "id": "2926",
+            "name": "经济技术开发区"
+        },
+        {
+            "city_id": "102",
+            "id": "2927",
+            "name": "博望区"
+        },
+        {
+            "city_id": "285",
+            "id": "2928",
+            "name": "双湖县"
+        },
+        {
+            "city_id": "213",
+            "id": "2929",
+            "name": "长安镇"
+        },
+        {
+            "city_id": "213",
+            "id": "2930",
+            "name": "东坑镇"
+        },
+        {
+            "city_id": "213",
+            "id": "2931",
+            "name": "樟木头镇"
+        },
+        {
+            "city_id": "213",
+            "id": "2932",
+            "name": "莞城街道办事处"
+        },
+        {
+            "city_id": "213",
+            "id": "2933",
+            "name": "中堂镇"
+        },
+        {
+            "city_id": "213",
+            "id": "2934",
+            "name": "南城街道办事处"
+        },
+        {
+            "city_id": "135",
+            "id": "2935",
+            "name": "高新区"
+        },
+        {
+            "city_id": "81",
+            "id": "2936",
+            "name": "清江浦区"
+        },
+        {
+            "city_id": "8",
+            "id": "2937",
+            "name": "竞秀区"
+        },
+        {
+            "city_id": "319",
+            "id": "2938",
+            "name": "茫崖市"
+        },
+        {
+            "city_id": "15",
+            "id": "2939",
+            "name": "平城区"
+        },
+        {
+            "city_id": "76",
+            "id": "2940",
+            "name": "工业园区"
+        },
+        {
+            "city_id": "213",
+            "id": "2941",
+            "name": "谢岗镇"
+        },
+        {
+            "city_id": "213",
+            "id": "2942",
+            "name": "虎门镇"
+        },
+        {
+            "city_id": "213",
+            "id": "2943",
+            "name": "麻涌镇"
+        },
+        {
+            "city_id": "213",
+            "id": "2944",
+            "name": "万江街道办事处"
+        },
+        {
+            "city_id": "213",
+            "id": "2945",
+            "name": "洪梅镇"
+        },
+        {
+            "city_id": "213",
+            "id": "2946",
+            "name": "东城街道办事处"
+        },
+        {
+            "city_id": "213",
+            "id": "2947",
+            "name": "茶山镇"
+        },
+        {
+            "city_id": "213",
+            "id": "2948",
+            "name": "石碣镇"
+        },
+        {
+            "city_id": "213",
+            "id": "2949",
+            "name": "高埗镇"
+        },
+        {
+            "city_id": "213",
+            "id": "2950",
+            "name": "道滘镇"
+        },
+        {
+            "city_id": "214",
+            "id": "2951",
+            "name": "大涌镇"
+        },
+        {
+            "city_id": "214",
+            "id": "2952",
+            "name": "南朗镇"
+        },
+        {
+            "city_id": "214",
+            "id": "2953",
+            "name": "古镇镇"
+        },
+        {
+            "city_id": "214",
+            "id": "2954",
+            "name": "坦洲镇"
+        },
+        {
+            "city_id": "214",
+            "id": "2955",
+            "name": "西区街道办事处"
+        },
+        {
+            "city_id": "214",
+            "id": "2956",
+            "name": "南区街道办事处"
+        },
+        {
+            "city_id": "285",
+            "id": "2957",
+            "name": "色尼区"
+        },
+        {
+            "city_id": "81",
+            "id": "2958",
+            "name": "淮安区"
+        },
+        {
+            "city_id": "98",
+            "id": "2959",
+            "name": "巢湖市"
+        },
+        {
+            "city_id": "199",
+            "id": "2960",
+            "name": "坪山区"
+        },
+        {
+            "city_id": "102",
+            "id": "2961",
+            "name": "含山县"
+        },
+        {
+            "city_id": "102",
+            "id": "2962",
+            "name": "和县"
+        },
+        {
+            "city_id": "231",
+            "id": "2963",
+            "name": "江州区"
+        },
+        {
+            "city_id": "72",
+            "id": "2964",
+            "name": "呼中区"
+        },
+        {
+            "city_id": "72",
+            "id": "2965",
+            "name": "松岭区"
+        },
+        {
+            "city_id": "72",
+            "id": "2966",
+            "name": "新林区"
+        },
+        {
+            "city_id": "72",
+            "id": "2967",
+            "name": "加格达奇区"
+        },
+        {
+            "city_id": "233",
+            "id": "2968",
+            "name": "崖州区"
+        },
+        {
+            "city_id": "204",
+            "id": "2969",
+            "name": "经济技术开发区"
+        },
+        {
+            "city_id": "262",
+            "id": "2970",
+            "name": "七星关区"
+        },
+        {
+            "city_id": "240",
+            "id": "2971",
+            "name": "安州区"
+        },
+        {
+            "city_id": "153",
+            "id": "2972",
+            "name": "禹王台区"
+        },
+        {
+            "city_id": "98",
+            "id": "2973",
+            "name": "经济技术开发区"
+        },
+        {
+            "city_id": "98",
+            "id": "2974",
+            "name": "高新技术开发区"
+        },
+        {
+            "city_id": "199",
+            "id": "2975",
+            "name": "龙华区"
+        },
+        {
+            "city_id": "327",
+            "id": "2976",
+            "name": "高昌区"
+        },
+        {
+            "city_id": "81",
+            "id": "2977",
+            "name": "经济开发区"
+        },
+        {
+            "city_id": "184",
+            "id": "2978",
+            "name": "渌口区"
+        },
+        {
+            "city_id": "214",
+            "id": "2979",
+            "name": "横栏镇"
+        },
+        {
+            "city_id": "214",
+            "id": "2980",
+            "name": "三角镇"
+        },
+        {
+            "city_id": "214",
+            "id": "2981",
+            "name": "南头镇"
+        },
+        {
+            "city_id": "214",
+            "id": "2982",
+            "name": "神湾镇"
+        },
+        {
+            "city_id": "214",
+            "id": "2983",
+            "name": "东凤镇"
+        },
+        {
+            "city_id": "214",
+            "id": "2984",
+            "name": "五桂山街道办事处"
+        },
+        {
+            "city_id": "214",
+            "id": "2985",
+            "name": "黄圃镇"
+        },
+        {
+            "city_id": "214",
+            "id": "2986",
+            "name": "小榄镇"
+        },
+        {
+            "city_id": "214",
+            "id": "2987",
+            "name": "石岐区街道办事处"
+        },
+        {
+            "city_id": "302",
+            "id": "2988",
+            "name": "麦积区"
+        },
+        {
+            "city_id": "302",
+            "id": "2989",
+            "name": "秦州区"
+        },
+        {
+            "city_id": "99",
+            "id": "2990",
+            "name": "三山区"
+        },
+        {
+            "city_id": "99",
+            "id": "2991",
+            "name": "弋江区"
+        },
+        {
+            "city_id": "142",
+            "id": "2992",
+            "name": "高新区"
+        },
+        {
+            "city_id": "213",
+            "id": "2993",
+            "name": "桥头镇"
+        },
+        {
+            "city_id": "233",
+            "id": "2994",
+            "name": "海棠区"
+        },
+        {
+            "city_id": "233",
+            "id": "2995",
+            "name": "吉阳区"
+        },
+        {
+            "city_id": "153",
+            "id": "2996",
+            "name": "祥符区"
+        },
+        {
+            "city_id": "235",
+            "id": "2997",
+            "name": "简阳市"
+        },
+        {
+            "city_id": "5",
+            "id": "2998",
+            "name": "经济技术开发区"
+        },
+        {
+            "city_id": "39",
+            "id": "2999",
+            "name": "高新区"
+        },
+        {
+            "city_id": "152",
+            "id": "3000",
+            "name": "经济技术开发区"
+        },
+        {
+            "city_id": "152",
+            "id": "3001",
+            "name": "高新技术开发区"
+        },
+        {
+            "city_id": "288",
+            "id": "3002",
+            "name": "鄠邑区"
+        },
+        {
+            "city_id": "161",
+            "id": "3003",
+            "name": "建安区"
+        },
+        {
+            "city_id": "306",
+            "id": "3004",
+            "name": "瓜州县"
+        },
+        {
+            "city_id": "214",
+            "id": "3005",
+            "name": "民众镇"
+        },
+        {
+            "city_id": "214",
+            "id": "3006",
+            "name": "阜沙镇"
+        },
+        {
+            "city_id": "214",
+            "id": "3007",
+            "name": "东升镇"
+        },
+        {
+            "city_id": "214",
+            "id": "3008",
+            "name": "板芙镇"
+        },
+        {
+            "city_id": "214",
+            "id": "3009",
+            "name": "沙溪镇"
+        },
+        {
+            "city_id": "214",
+            "id": "3010",
+            "name": "港口镇"
+        },
+        {
+            "city_id": "214",
+            "id": "3011",
+            "name": "三乡镇"
+        },
+        {
+            "city_id": "2",
+            "id": "3012",
+            "name": "蓟州区"
+        },
+        {
+            "city_id": "248",
+            "id": "3013",
+            "name": "前锋区"
+        },
+        {
+            "city_id": "56",
+            "id": "3014",
+            "name": "浑江区"
+        },
+        {
+            "city_id": "78",
+            "id": "3015",
+            "name": "高新区"
+        },
+        {
+            "city_id": "144",
+            "id": "3016",
+            "name": "经济技术开发区"
+        },
+        {
+            "city_id": "127",
+            "id": "3017",
+            "name": "柴桑区"
+        },
+        {
+            "city_id": "127",
+            "id": "3018",
+            "name": "濂溪区"
+        },
+        {
+            "city_id": "99",
+            "id": "3019",
+            "name": "无为县"
+        },
+        {
+            "city_id": "226",
+            "id": "3020",
+            "name": "福绵区"
+        },
+        {
+            "city_id": "249",
+            "id": "3021",
+            "name": "达川区"
+        },
+        {
+            "city_id": "26",
+            "id": "3022",
+            "name": "白云鄂博矿区"
+        },
+        {
+            "city_id": "234",
+            "id": "3023",
+            "name": "开州区"
+        },
+        {
+            "city_id": "8",
+            "id": "3024",
+            "name": "莲池区"
+        },
+        {
+            "city_id": "221",
+            "id": "3025",
+            "name": "龙圩区"
+        },
+        {
+            "city_id": "15",
+            "id": "3026",
+            "name": "云冈区"
+        },
+        {
+            "city_id": "15",
+            "id": "3027",
+            "name": "云州区"
+        },
+        {
+            "city_id": "154",
+            "id": "3028",
+            "name": "瀍河回族区"
+        },
+        {
+            "city_id": "282",
+            "id": "3029",
+            "name": "卡若区"
+        },
+        {
+            "city_id": "79",
+            "id": "3030",
+            "name": "高新区"
+        },
+        {
+            "city_id": "199",
+            "id": "3031",
+            "name": "光明区"
+        },
+        {
+            "city_id": "214",
+            "id": "3032",
+            "name": "火炬开发区街道办事处"
+        },
+        {
+            "city_id": "83",
+            "id": "3033",
+            "name": "经济开发区"
+        },
+        {
+            "city_id": "105",
+            "id": "3034",
+            "name": "宜秀区"
+        },
+        {
+            "city_id": "90",
+            "id": "3035",
+            "name": "南湖区"
+        },
+        {
+            "city_id": "163",
+            "id": "3036",
+            "name": "陕州区"
+        },
+        {
+            "city_id": "278",
+            "id": "3037",
+            "name": "芒市"
+        },
+        {
+            "city_id": "287",
+            "id": "3038",
+            "name": "巴宜区"
+        },
+        {
+            "city_id": "51",
+            "id": "3039",
+            "name": "经济技术开发区"
+        },
+        {
+            "city_id": "258",
+            "id": "3040",
+            "name": "播州区"
+        },
+        {
+            "city_id": "197",
+            "id": "3041",
+            "name": "南沙区"
+        },
+        {
+            "city_id": "328",
+            "id": "3042",
+            "name": "伊州区"
+        },
+        {
+            "city_id": "124",
+            "id": "3043",
+            "name": "高新区"
+        },
+        {
+            "city_id": "124",
+            "id": "3044",
+            "name": "经济技术开发区"
+        },
+        {
+            "city_id": "284",
+            "id": "3045",
+            "name": "桑珠孜区"
+        },
+        {
+            "city_id": "136",
+            "id": "3046",
+            "name": "开发区"
+        },
+        {
+            "city_id": "4",
+            "id": "3047",
+            "name": "滦州市"
+        },
+        {
+            "city_id": "172",
+            "id": "3048",
+            "name": "经济开发区"
+        },
+        {
+            "city_id": "173",
+            "id": "3049",
+            "name": "襄州区"
+        },
+        {
+            "city_id": "228",
+            "id": "3050",
+            "name": "平桂区"
+        },
+        {
+            "city_id": "148",
+            "id": "3051",
+            "name": "陵城区"
+        },
+        {
+            "city_id": "271",
+            "id": "3052",
+            "name": "思茅区"
+        },
+        {
+            "city_id": "92",
+            "id": "3053",
+            "name": "柯桥区"
+        },
+        {
+            "city_id": "111",
+            "id": "3054",
+            "name": "叶集区"
+        },
+        {
+            "city_id": "291",
+            "id": "3055",
+            "name": "杨陵区"
+        },
+        {
+            "city_id": "2",
+            "id": "3056",
+            "name": "滨海新区"
+        },
+        {
+            "city_id": "31",
+            "id": "3057",
+            "name": "扎赉诺尔区"
+        },
+        {
+            "city_id": "330",
+            "id": "3058",
+            "name": "阿拉山口市"
+        },
+        {
+            "city_id": "293",
+            "id": "3059",
+            "name": "吴起县"
+        },
+        {
+            "city_id": "17",
+            "id": "3060",
+            "name": "上党区"
+        },
+        {
+            "city_id": "17",
+            "id": "3061",
+            "name": "潞州区"
+        },
+        {
+            "city_id": "43",
+            "id": "3062",
+            "name": "北镇市"
+        },
+        {
+            "city_id": "213",
+            "id": "3063",
+            "name": "沙田镇"
+        },
+        {
+            "city_id": "147",
+            "id": "3064",
+            "name": "兰陵县"
+        },
+        {
+            "city_id": "167",
+            "id": "3065",
+            "name": "经济开发区"
+        },
+        {
+            "city_id": "220",
+            "id": "3066",
+            "name": "荔浦市"
+        },
+        {
+            "city_id": "193",
+            "id": "3067",
+            "name": "零陵区"
+        },
+        {
+            "city_id": "346",
+            "id": "3068",
+            "name": "中沙群岛的岛礁及其海域"
+        },
+        {
+            "city_id": "346",
+            "id": "3069",
+            "name": "西沙群岛"
+        },
+        {
+            "city_id": "346",
+            "id": "3070",
+            "name": "南沙群岛"
+        },
+        {
+            "city_id": "299",
+            "id": "3071",
+            "name": "新城镇"
+        },
+        {
+            "city_id": "299",
+            "id": "3072",
+            "name": "镜铁区"
+        },
+        {
+            "city_id": "299",
+            "id": "3073",
+            "name": "长城区"
+        },
+        {
+            "city_id": "299",
+            "id": "3074",
+            "name": "雄关区"
+        },
+        {
+            "city_id": "299",
+            "id": "3075",
+            "name": "文殊镇"
+        },
+        {
+            "city_id": "299",
+            "id": "3076",
+            "name": "峪泉镇"
+        },
+        {
+            "city_id": "299",
+            "id": "3077",
+            "name": "市辖区"
+        }
+    ]
 }`
