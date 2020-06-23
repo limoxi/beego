@@ -124,7 +124,7 @@ func(this *QueryParser) Parse(filters map[string]interface{}) *Query{
 		isNested := len(strings.Split(realKey, ".")) > 1
 
 		if len(strings.Split(k, ">")) > 1{
-			k = strings.Replace(k, ">", ".", 1)
+			k = strings.Replace(k, ">", ".", -1)
 		}
 
 		mustNode, mustNotNode := this.makeQuery(k, v)

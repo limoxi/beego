@@ -19,7 +19,9 @@ func ConvertToBeegoOrmFilter(filters Map) Map {
 			if len(keyString) == 3 {
 				switch keyString[2] {
 				case "equal":
-					match = "exact"
+					key = fmt.Sprintf("%s", keyString[1])
+					params[key] = v
+					continue
 				case "contain":
 					match = "contains"
 				case "gt", "gte", "lt", "lte", "in":
