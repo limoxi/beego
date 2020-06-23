@@ -93,7 +93,7 @@ func formatProperties(d *Data) error {
 				d.Properties[k] = v.(time.Time).Format(DATE_FORMAT)
 			default:
 				if isNotNumber(v) {
-					return errors.New("Invalid property value type. Supported types: numbers, string, time.Time, bool")
+					return errors.New(fmt.Sprintf("Key %s has invalid property value type. Supported types: numbers, string, time.Time, bool", k))
 				}
 			}
 		}
