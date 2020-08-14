@@ -237,6 +237,18 @@ func (this *ESClient) GetSumAgg(name string) float64{
 	return 0
 }
 
+// GetSumAggWithFilter 带 filter 的聚合
+func (this *ESClient) GetSumAggWithFilter(aggName string) float64 {
+	filterAgg, iOK := this.GetAggregation().Filter(aggName)
+	if iOK {
+		result, iiOK := filterAgg.Sum(aggName)
+		if iiOK {
+			return math.Trunc(*result.Value*1e2+0.5)*1e-2 // 四舍五入保留两位小数
+		}
+	}
+	return 0
+}
+
 // GetNestedSumAgg 嵌套聚合查询
 func (this *ESClient) GetNestedSumAgg(nestedName, aggName string) float64{
 	nestAgg, ok := this.GetAggregation().Nested(nestedName)
