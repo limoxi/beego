@@ -40,6 +40,35 @@ func (this *redisStruct) Do(ctx context.Context, commandName string, args ...int
 	return c.Do(commandName, args...)
 }
 
+var hash2script = make(map[string]*redis.Script)
+
+func (this *redisStruct) LoadScript(keyCount int, scriptContent string) (hash string, err error) {
+	c := pool.Get()
+	defer c.Close()
+	
+	script := redis.NewScript(keyCount, scriptContent)
+	err = script.Load(c)
+	if err != nil {
+		return "", err
+	}
+	
+	hash = script.Hash()
+	hash2script[hash] = script
+	
+	return hash, nil
+}
+
+func (this *redisStruct) RunScript(hash string, keysAndArgs ...interface{}) (interface{}, error) {
+	c := pool.Get()
+	defer c.Close()
+	
+	if script, ok := hash2script[hash]; ok {
+		return script.Do(c, keysAndArgs...)
+	} else {
+		return "", errors.New("no script for hash")
+	}
+}
+
 // Get cache from redis.
 func (this *redisStruct) Get(ctx context.Context, key string) interface{} {
 	if v, err := this.Do(ctx,"GET", key); err == nil {
