@@ -33,11 +33,40 @@ func (this *redisStruct) Do(ctx context.Context, commandName string, args ...int
 			defer subSpan.Finish()
 		}
 	}
-	
+
+	c := pool.Get()
+	defer c.Close()
+
+	return c.Do(commandName, args...)
+}
+
+var hash2script = make(map[string]*redis.Script)
+
+func (this *redisStruct) LoadScript(keyCount int, scriptContent string) (hash string, err error) {
 	c := pool.Get()
 	defer c.Close()
 	
-	return c.Do(commandName, args...)
+	script := redis.NewScript(keyCount, scriptContent)
+	err = script.Load(c)
+	if err != nil {
+		return "", err
+	}
+	
+	hash = script.Hash()
+	hash2script[hash] = script
+	
+	return hash, nil
+}
+
+func (this *redisStruct) RunScript(hash string, keysAndArgs ...interface{}) (interface{}, error) {
+	c := pool.Get()
+	defer c.Close()
+	
+	if script, ok := hash2script[hash]; ok {
+		return script.Do(c, keysAndArgs...)
+	} else {
+		return "", errors.New("no script for hash")
+	}
 }
 
 // Get cache from redis.
@@ -52,7 +81,7 @@ func (this *redisStruct) Get(ctx context.Context, key string) interface{} {
 func (this *redisStruct) GetMulti(ctx context.Context, keys []string) []interface{} {
 	c := pool.Get()
 	defer c.Close()
-	
+
 	//记录open tracing
 	span := opentracing.SpanFromContext(ctx)
 	if span != nil {
@@ -65,7 +94,7 @@ func (this *redisStruct) GetMulti(ctx context.Context, keys []string) []interfac
 			defer subSpan.Finish()
 		}
 	}
-	
+
 	var args []interface{}
 	for _, key := range keys {
 		args = append(args, key)
@@ -75,6 +104,14 @@ func (this *redisStruct) GetMulti(ctx context.Context, keys []string) []interfac
 		return nil
 	}
 	return values
+}
+
+// Hset Sets field in the hash stored at key to value.
+// If key does not exist, a new key holding a hash is created.
+// If field already exists in the hash, it is overwritten.
+func (this *redisStruct) Hset(ctx context.Context, key string, field string, val interface{}) error {
+	_, err := this.Do(ctx,"HSET", key, field, val)
+	return err
 }
 
 // Put put cache to redis.
@@ -121,7 +158,7 @@ func (this *redisStruct) Decr(ctx context.Context, key string) error {
 func (this *redisStruct) ClearAll(ctx context.Context, prefix string) error {
 	c := pool.Get()
 	defer c.Close()
-	
+
 	//记录open tracing
 	span := opentracing.SpanFromContext(ctx)
 	if span != nil {
@@ -134,7 +171,7 @@ func (this *redisStruct) ClearAll(ctx context.Context, prefix string) error {
 			defer subSpan.Finish()
 		}
 	}
-	
+
 	cachedKeys, err := redis.Strings(c.Do("KEYS", prefix+":*"))
 	if err != nil {
 		return err
@@ -151,13 +188,13 @@ func dialFunc() (c redis.Conn, err error) {
 	if redisAddress == "" {
 		return nil, errors.New("invalid redisAddress")
 	}
-	
+
 	c, err = redis.Dial("tcp", redisAddress)
 	if err != nil {
 		beego.Error(err)
 		return nil, err
 	}
-	
+
 	if redisPassword != "" {
 		if _, err := c.Do("AUTH", redisPassword); err != nil {
 			beego.Error(err)
@@ -165,7 +202,7 @@ func dialFunc() (c redis.Conn, err error) {
 			return nil, err
 		}
 	}
-	
+
 	_, selecterr := c.Do("SELECT", dbNum)
 	if selecterr != nil {
 		beego.Error(selecterr)
@@ -181,11 +218,11 @@ func init() {
 	redisAddress = beego.AppConfig.String("redis::ADDRESS")
 	dbNum, _ = beego.AppConfig.Int("redis::DB")
 	redisPassword = beego.AppConfig.String("redis::PASSWORD")
-	
+
 	if redisAddress == "" {
 		return
 	}
-	
+
 	beego.Info(fmt.Sprintf("Redis: %s - %d", redisAddress, dbNum))
 	// initialize a new pool
 	pool = &redis.Pool{
@@ -201,7 +238,7 @@ func init() {
 			return err
 		},
 	}
-	
+
 	//pool热身
 	c := pool.Get()
 	defer c.Close()
