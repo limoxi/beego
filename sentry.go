@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"github.com/getsentry/raven-go"
 	"github.com/kfchen81/beego/context"
+	"github.com/kfchen81/beego/metrics"
 	"net/http"
 	"runtime/debug"
 	"strings"
@@ -18,6 +19,8 @@ var sentryChannel = make(chan map[string]interface{}, 2048)
 func isEnableSentry() bool {
 	return AppConfig.DefaultBool("sentry::ENABLE_SENTRY", false)
 }
+
+const SENTRY_CHANNEL_TIMEOUT = 50
 
 // CapturePanicToSentry will collect error info then send to sentry
 func CaptureErrorToSentry(ctx *context.Context, err string) {
@@ -55,7 +58,8 @@ func CaptureErrorToSentry(ctx *context.Context, err string) {
 	select {
 	case sentryChannel <- data:
 	
-	case <-time.After(time.Millisecond * 500):
+	case <-time.After(time.Millisecond * SENTRY_CHANNEL_TIMEOUT):
+		metrics.GetSentryChannelTimeoutCounter().Inc()
 		Warn("[sentry] push timeout")
 	}
 	
@@ -79,7 +83,8 @@ func CaptureTaskErrorToSentry(ctx go_context.Context, errMsg string) {
 	select {
 	case sentryChannel <- data:
 	
-	case <-time.After(time.Millisecond * 500):
+	case <-time.After(time.Millisecond * SENTRY_CHANNEL_TIMEOUT):
+		metrics.GetSentryChannelTimeoutCounter().Inc()
 		Warn("[sentry] push timeout")
 	}
 }
@@ -102,7 +107,8 @@ func PushErrorToSentry(errMsg string, req *http.Request) {
 	select {
 	case sentryChannel <- data:
 	
-	case <-time.After(time.Millisecond * 500):
+	case <-time.After(time.Millisecond * SENTRY_CHANNEL_TIMEOUT):
+		metrics.GetSentryChannelTimeoutCounter().Inc()
 		Warn("[sentry] push timeout")
 	}
 }
@@ -126,7 +132,8 @@ func PushErrorWithExtraDataToSentry(errMsg string, extra map[string]interface{},
 	select {
 	case sentryChannel <- data:
 	
-	case <-time.After(time.Millisecond * 500):
+	case <-time.After(time.Millisecond * SENTRY_CHANNEL_TIMEOUT):
+		metrics.GetSentryChannelTimeoutCounter().Inc()
 		Warn("[sentry] push timeout")
 	}
 }
@@ -203,7 +210,8 @@ func runSentryWorker(ch chan map[string]interface{}) {
 	
 	for {
 		data := <-sentryChannel
-		
+		metrics.GetSentryChannelUnreadGuage().Set(float64(len(sentryChannel)))
+		metrics.GetSentryChannelErrorCounter().Inc()
 		sendSentryPacketV2(data)
 	}
 }

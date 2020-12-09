@@ -39,6 +39,21 @@ var panicCounter = promauto.NewCounter(prometheus.CounterOpts{
 	Help: "total counts for panic",
 })
 
+var sentryChannelErrorCounter = promauto.NewCounter(prometheus.CounterOpts{
+	Name: "sentry_channel_error_total",
+	Help: "total error counts for sentry channel",
+})
+
+var sentryChannelUnreadGauge = promauto.NewGauge(prometheus.GaugeOpts{
+	Name: "sentry_channel_unread",
+	Help: "unread counts for sentry channel",
+})
+
+var sentryChannelTimeoutCounter = promauto.NewCounter(prometheus.CounterOpts{
+	Name: "sentry_channel_timeout_total",
+	Help: "timeout counts for sentry channel",
+})
+
 var resourceRetryCounter = promauto.NewCounter(prometheus.CounterOpts{
 	Name: "resource_retry_total",
 	Help: "total counts for resource's retry",
@@ -103,6 +118,11 @@ var taServerPushTimer = promauto.NewHistogram(prometheus.HistogramOpts{
 	Help: "using time of ta server push",
 })
 
+var dbConnectionPoolGauge = promauto.NewGaugeVec(prometheus.GaugeOpts{
+	Name: "db_connection_pool_gauge",
+	Help: "count of ta pushed times and failed times",
+}, []string{"db", "type"})
+
 func GetEsRequestTimer() *prometheus.HistogramVec{
 	return esRequestTimer
 }
@@ -165,6 +185,22 @@ func GetBusinessErrorCounter() prometheus.Counter {
 
 func GetResourceRetryCounter() prometheus.Counter {
 	return resourceRetryCounter
+}
+
+func GetSentryChannelErrorCounter() prometheus.Counter {
+	return sentryChannelErrorCounter
+}
+
+func GetSentryChannelUnreadGuage() prometheus.Gauge {
+	return sentryChannelUnreadGauge
+}
+
+func GetSentryChannelTimeoutCounter() prometheus.Counter {
+	return sentryChannelTimeoutCounter
+}
+
+func GetDBConnectionPoolGauge() *prometheus.GaugeVec {
+	return dbConnectionPoolGauge
 }
 
 func init() {

@@ -302,3 +302,12 @@ func GetDB(aliasNames ...string) (*sql.DB, error) {
 	}
 	return nil, fmt.Errorf("DataBase of alias name `%s` not found", name)
 }
+
+func GetAllDBNames () []string {
+	names := make([]string, 0)
+	for name, _ := range dataBaseCache.cache {
+		names = append(names, name)
+	}
+	
+	return names
+}

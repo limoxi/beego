@@ -141,7 +141,7 @@ func doPaginate(itemCount int64, curPage int, itemCountPerPage int) INextPageInf
 
 	//计算需要显示的页数序列
 	if paginateResult.MaxPage <= 5 {
-		paginateResult.DisplayPages = _range(1, paginateResult.MaxPage)
+		paginateResult.DisplayPages = _range(1, paginateResult.MaxPage+1)
 	} else if curPage+2 <= paginateResult.MaxPage {
 		if curPage >= 3 {
 			paginateResult.DisplayPages = _range(curPage-2, curPage+3)
