@@ -70,7 +70,7 @@ func (this *ESClient) prepareUpdateData(updateService *elastic.UpdateByQueryServ
 	updateService.Conflicts("proceed").Slices(50).WaitForCompletion(this.syncUpdate).Size(-1)
 }
 
-func (this *ESClient) Update(data map[string]interface{}, filters map[string]interface{}){
+func (this *ESClient) Update(data map[string]interface{}, filters map[string]interface{}) error{
 	startTime := time.Now()
 	updateService := this.client.UpdateByQuery(this.indexName).Type(this.docType)
 	this.prepareUpdateData(updateService, data, filters)
@@ -88,8 +88,8 @@ func (this *ESClient) Update(data map[string]interface{}, filters map[string]int
 	metrics.GetEsRequestTimer().WithLabelValues(this.indexName, "update").Observe(timeDur.Seconds())
 	if err != nil{
 		beego.Error(err)
-		panic(vanilla.NewSystemError("es_update:failed", "更新索引数据失败"))
 	}
+	return err
 }
 
 func (this *ESClient) Push(id string, data interface{}) {

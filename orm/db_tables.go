@@ -355,6 +355,10 @@ func (t *dbTables) getCondSQL(cond *Condition, sub bool, tz *time.Location) (whe
 			params = append(params, ps...)
 		} else {
 			exprs := p.exprs
+			rawSql := false
+			if len(exprs) == 1 && exprs[0] == "raw_sql"{
+				rawSql = true
+			}
 
 			num := len(exprs) - 1
 			operator := ""
@@ -364,7 +368,7 @@ func (t *dbTables) getCondSQL(cond *Condition, sub bool, tz *time.Location) (whe
 			}
 
 			index, _, fi, suc := t.parseExprs(mi, exprs)
-			if !suc {
+			if !suc && !rawSql{
 				panic(fmt.Errorf("unknown field/column name `%s`", strings.Join(p.exprs, ExprSep)))
 			}
 
@@ -380,8 +384,11 @@ func (t *dbTables) getCondSQL(cond *Condition, sub bool, tz *time.Location) (whe
 				operSQL, args = t.base.GenerateOperatorSQL(mi, fi, operator, p.args, tz)
 			}
 
-			leftCol := fmt.Sprintf("%s.%s%s%s", index, Q, fi.column, Q)
-			t.base.GenerateOperatorLeftCol(fi, operator, &leftCol)
+			leftCol := ""
+			if !rawSql{
+				leftCol = fmt.Sprintf("%s.%s%s%s", index, Q, fi.column, Q)
+				t.base.GenerateOperatorLeftCol(fi, operator, &leftCol)
+			}
 
 			where += fmt.Sprintf("%s %s ", leftCol, operSQL)
 			params = append(params, args...)
