@@ -40,6 +40,13 @@ var corpLoginCache cache.Cache
 var userTTLOption = cache.WithTTL(time.Duration(24) * time.Hour)
 var userLoginCache cache.Cache
 
+// http client 参数
+var _HTTP_DIAL_TIMEOUT = 5
+var _HTTP_DIAL_KEEPALIVE = 60
+var _HTTP_IdleConnsPerHost = 1000
+var _HTTP_MaxIdleConns = 2000
+var _HTTP_IdleConnTimeout = 60
+
 const InvalidJwtError = "jwt:invalid_jwt_token"
 
 // Request
@@ -91,23 +98,43 @@ func (this *Resource) request(method string, service string, resource string, da
 		}
 	}
 	
+	//hasBid := false
+	//bid := ""
+	//if bidData, ok := data["bid"]; ok {
+	//	bid = bidData.(string)
+	//	hasBid = true
+	//}
+	
 	usePeanutPure := os.Getenv("USE_PEANUT_PURE")
 	if usePeanutPure == "1" && service == "peanut" {
 		service = "peanut_pure"
 	}
 	
 	apiServerHost := beego.AppConfig.String("api::API_SERVER_HOST")
+	
+	//if hasBid {
+	//	beego.Warn(fmt.Sprintf("[bid] @resource before create client bid(%s)", bid))
+	//}
 	//创建client
 	var netTransport = &http.Transport{
-		Dial: (&net.Dialer{
-			Timeout: 5 * time.Second,
-		}).Dial,
-		TLSHandshakeTimeout: 5 * time.Second,
+		DialContext: (&net.Dialer{
+			Timeout: time.Duration(_HTTP_DIAL_TIMEOUT) * time.Second,
+			KeepAlive: time.Duration(_HTTP_DIAL_KEEPALIVE) * time.Second,
+		}).DialContext,
+		MaxIdleConnsPerHost:   _HTTP_IdleConnsPerHost,
+		MaxIdleConns:          _HTTP_MaxIdleConns,
+		IdleConnTimeout:       time.Duration(_HTTP_IdleConnTimeout) * time.Second,
+		TLSHandshakeTimeout:   10 * time.Second,
+		ExpectContinueTimeout: 2 * time.Second,
 	}
 	var netClient = &http.Client{
-		Timeout:   time.Second * 10,
+		Timeout:   time.Second * 20,
 		Transport: netTransport,
 	}
+	
+	//if hasBid {
+	//	beego.Warn(fmt.Sprintf("[bid] @resource after create client bid(%s)", bid))
+	//}
 
 	//构建url.Values
 	params := url.Values{"_v": {"1"}, "__source_service": {_SERVICE_NAME}}
@@ -271,6 +298,16 @@ func (this *Resource) requestWithRetry(method string, service string, resource s
 		if i >= _RETRY_COUNT-1 {
 			break
 		}
+		
+		hasBid := false
+		bid := ""
+		if bidData, ok := data["bid"]; ok {
+			bid = bidData.(string)
+			hasBid = true
+		}
+		if hasBid {
+			beego.Warn(fmt.Sprintf("[bid] retry error(%s), bid(%s)", httpErr.Error(), bid))
+		}
 	}
 	
 	return resp, err
@@ -425,6 +462,14 @@ func init() {
 	beego.Info("[init] use _USER_LOGIN_SECRET: ", _USER_LOGIN_SECRET)
 	beego.Info("[init] use _ENABLE_RESOURCE_LOGIN_CACHE: ", _ENABLE_RESOURCE_LOGIN_CACHE)
 	beego.Info("[init] use _RESOURCE_LOGIN_CACHE_SIZE: ", _RESOURCE_LOGIN_CACHE_SIZE)
+	
+	_HTTP_DIAL_TIMEOUT = beego.AppConfig.DefaultInt("httpclient::DIAL_TIMEOUT", 5)
+	_HTTP_DIAL_KEEPALIVE = beego.AppConfig.DefaultInt("httpclient::DIAL_KEEPALIVE", 60)
+	_HTTP_IdleConnsPerHost = beego.AppConfig.DefaultInt("httpclient::MAX_IDLE_CONNS_PER_HOST", 1000)
+	_HTTP_MaxIdleConns = beego.AppConfig.DefaultInt("httpclient::MAX_IDLE_CONNS", 2000)
+	_HTTP_IdleConnTimeout = beego.AppConfig.DefaultInt("httpclient::IDLE_CONN_TIMEOUT", 60)
+	msg := fmt.Sprintf("[init] use http parameters dial_timeout(%d), dial_keepalive(%d), maxIdleConnsPerHost(%d), maxIdleConns(%d), idleConnTimeout(%d)", _HTTP_DIAL_TIMEOUT, _HTTP_DIAL_KEEPALIVE, _HTTP_IdleConnsPerHost, _HTTP_MaxIdleConns, _HTTP_IdleConnTimeout)
+	beego.Info(msg)
 
 	userLoginCache = cache.NewLRUCache("user_jwt_token", _RESOURCE_LOGIN_CACHE_SIZE, userTTLOption, v2kOption)
 	corpLoginCache = cache.NewLRUCache("corp_jwt_token", _RESOURCE_LOGIN_CACHE_SIZE, corpTTLOption, v2kOption)
