@@ -47,6 +47,7 @@ func (d *dbQueryTracable) CreateSpan(query string) opentracing.Span {
 		opentracing.ChildOf(d.span.Context()),
 	)
 	span.LogKV("sql", query)
+	span.SetTag("db.statement", query)
 	
 	return span
 }
