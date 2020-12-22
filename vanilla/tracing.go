@@ -32,16 +32,19 @@ func initJaeger(service string) (opentracing.Tracer, io.Closer) {
 		cfg = &config.Configuration{
 			Disabled: true,
 		}
-		beego.Warn("Open Tracing is disabled!!")
+		beego.Warn("[tracing] Open Tracing is disabled!!")
 	} else {
+		sampleRate := beego.AppConfig.DefaultFloat("tracing::SAMPLE_RATE", 0.1)
+		bufferFlushInterval := beego.AppConfig.DefaultInt("tracing::BUFFER_FLUSH_INTERVAL", 3)
+		beego.Info(fmt.Sprintf("[tracing] enable. sample_rate(%v), buffer_flush_interval(%d)", sampleRate, bufferFlushInterval))
 		cfg = &config.Configuration{
 			Sampler: &config.SamplerConfig{
 				Type:  "probabilistic",
-				Param: 0.2,
+				Param: sampleRate,
 			},
 			Reporter: &config.ReporterConfig{
 				LogSpans: false,
-				BufferFlushInterval: 5 * time.Second,
+				BufferFlushInterval: time.Duration(bufferFlushInterval) * time.Second,
 			},
 		}
 	}

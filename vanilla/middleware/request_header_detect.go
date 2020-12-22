@@ -11,7 +11,6 @@ import (
 
 var RequestHeaderDetectFilter = func(ctx *context.Context) {
 	reqMode := ctx.Input.Header(vanilla.REQUEST_HEADER_FORMAT)
-	beego.Info("request mode: ===========>", reqMode)
 	if reqMode != ""{
 		v := ctx.Input.GetData("bContext")
 		var bCtx go_context.Context

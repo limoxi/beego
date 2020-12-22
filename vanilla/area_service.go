@@ -171,6 +171,18 @@ func (this *AreaService) GetCityByName(name string) *City{
 	return name2City[name]
 }
 
+func (this *AreaService) GetCityByNameInProvince(provinceId int, name string) *City{
+	cities := this.GetCitiesForProvince(provinceId)
+	var city *City
+	for _, _city := range cities{
+		if _city.Name == name {
+			city = _city
+			break
+		}
+	}
+	return city
+}
+
 func (this *AreaService) GetCitiesByNames(names []string) []*City {
 	cities := make([]*City, 0)
 	for _, name := range names {
@@ -262,7 +274,7 @@ func (this *AreaService) GetAreaByName(name string) *Area {
 	}
 
 	province := this.GetProvinceByName(items[0])
-	city := this.GetCityByName(items[1])
+	city := this.GetCityByNameInProvince(province.Id, items[1])
 	district := this.GetDistrictByName(city.Id, items[2])
 	
 	return &Area{
